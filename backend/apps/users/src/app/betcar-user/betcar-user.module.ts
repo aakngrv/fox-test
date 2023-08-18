@@ -1,11 +1,15 @@
 import { Module } from '@nestjs/common';
 import { BetcarUserController } from './betcar-user.controller';
-import { BetcarUserService } from './betcar-user.service';
-import { BetcarUserMemoryRepository } from "./betcar-user-memory.repository";
+import { MongooseModule } from '@nestjs/mongoose';
+import { BetcarUserModel, BetcarUserSchema } from './betcar-user.model';
+import { BetcarUserRepository } from './betcar-user.repository';
 
 @Module({
   controllers: [BetcarUserController],
-  providers: [BetcarUserService, BetcarUserMemoryRepository],
-  exports: [BetcarUserMemoryRepository]
+  imports: [MongooseModule.forFeature([
+    { name: BetcarUserModel.name, schema: BetcarUserSchema }
+  ])],
+  providers: [BetcarUserRepository],
+  exports: [BetcarUserRepository]
 })
 export class BetcarUserModule {}
