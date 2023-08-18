@@ -1,15 +1,15 @@
-import { BetcarUserMemoryRepository } from "../betcar-user/betcar-user-memory.repository";
 import { ConflictException, Injectable, NotFoundException, UnauthorizedException } from '@nestjs/common';
 import { CreateUserDto } from "./dto/create-user.dto";
 import { UserRole } from '@backend/shared/shared-types';
 import { AUTH_USER_EXISTS, AUTH_USER_NOT_FOUND, AUTH_USER_PASSWORD_WRONG } from './authentication.constant';
 import { BetcarUserEntity } from "../betcar-user/betcar-user.entity";
 import { LoginUserDto } from './dto/login-user.dto';
+import { BetcarUserRepository } from '../betcar-user/betcar-user.repository';
 
 @Injectable()
 export class AuthenticationService {
   constructor(
-    private readonly betcarUserRepository: BetcarUserMemoryRepository
+    private readonly betcarUserRepository: BetcarUserRepository
   ) {}
 
   public async register(dto: CreateUserDto) {
