@@ -41,4 +41,5 @@ Thumbs.db
 
 # Environments
 *.env
+*.env.dev
 !/apps/users/.env.dev
