@@ -1,0 +1,34 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model CarModel {
+  carId      Int     @id @default(autoincrement()) @map("car_id")
+  carModel   String  @default("") @map("car_model")
+  executorId String? @map("executor_id")
+
+  @@map("cars_models")
+}
+
+// ** Модели сервиса "Документы" ** //
+
+model SellerDetails {
+  sellerDetailsId Int      @id @default(autoincrement()) @map("seller_details_id")
+  name            String   @default("")
+  phone           String   @default("")
+  carCost         String   @default("") @map("car_cost")
+  role            Boolean  @default(true)
+  comment         String   @default("")
+  createdAt       DateTime @default(now()) @map("created_at")
+  publishAt       DateTime @updatedAt @map("publish_at")
+  carId           Int?     @map("car_id")
+
+  @@map("sellers_details")
+}
+
+// sdfsdfsdfsdfsdfsdf
