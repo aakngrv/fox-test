@@ -30,5 +30,3 @@ model SellerDetails {
 
   @@map("sellers_details")
 }
-
-// sdfsdfsdfsdfsdfsdf
