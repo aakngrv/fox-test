@@ -1,21 +1,21 @@
 {
-  "name": "models-models-documents",
+  "name": "models-models-betcar",
   "$schema": "../../../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "libs/models/models-documents/src",
+  "sourceRoot": "libs/models/models-betcar/src",
   "projectType": "library",
   "targets": {
     "lint": {
       "executor": "@nx/linter:eslint",
       "outputs": ["{options.outputFile}"],
       "options": {
-        "lintFilePatterns": ["libs/models/models-documents/**/*.ts"]
+        "lintFilePatterns": ["libs/models/models-betcar/**/*.ts"]
       }
     },
     "test": {
       "executor": "@nx/jest:jest",
       "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
       "options": {
-        "jestConfig": "libs/models/models-documents/jest.config.ts",
+        "jestConfig": "libs/models/models-betcar/jest.config.ts",
         "passWithNoTests": true
       },
       "configurations": {
