@@ -16,6 +16,9 @@
     "baseUrl": ".",
     "paths": {
       "@backend/config/config-users": ["libs/config/config-users/src/index.ts"],
+      "@backend/models/models-betcar": [
+        "libs/models/models-betcar/src/index.ts"
+      ],
       "@backend/shared/shared-types": ["libs/shared/shared-types/src/index.ts"],
       "@backend/util/util-core": ["libs/util/util-core/src/index.ts"],
       "@backend/util/util-types": ["libs/util/util-types/src/index.ts"]
