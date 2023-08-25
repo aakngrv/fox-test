@@ -1,0 +1,265 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model CarModel {
+  carId      Int     @id @default(autoincrement()) @map("car_id")
+  carModel   String  @default("")                  @map("car_model")
+  executorId String?                               @map("executor_id")
+
+  @@map("cars_models")
+}
+
+// ** Модели сервиса "Документы" ** //
+
+model SellerDetails {
+  sellerDetailsId Int      @id @default(autoincrement()) @map("seller_details_id")
+  name            String   @default("")
+  phone           String   @default("")
+  carCost         String   @default("")                  @map("car_cost")
+  role            Boolean  @default(false)
+  comment         String   @default("")
+  createdAt       DateTime @default(now())               @map("created_at")
+  publishAt       DateTime @updatedAt                    @map("publish_at")
+
+  @@map("sellers_details")
+}
+
+model VehicleData {
+  vehicleDataId       Int     @id @default(autoincrement()) @map("vehicle_data_id")
+  vin                 String  @default("")
+  frameNumber         String  @default("")                  @map("frame_number")
+  comment             String  @default("")
+  haveAServiceBook    Boolean @default(false)               @map("have_a_service_book")
+  additionalDocuments String  @default("")
+  sts                 String  @default("")
+  tcp                 String  @default("")
+  stateNumber         String  @default("")                  @map("state_number")
+  carType             String  @default("")                  @map("car_type")
+  carBrand            String  @default("")                  @map("car_brand")
+  carModel            String  @default("")                  @map("car_model")
+  manufactureYear     String  @default("")                  @map("manufacture_year")
+  bodyType            String  @default("")                  @map("body_type")
+  generation          String  @default("")
+  enginesType         String  @default("")                  @map("engines_type")
+  enginesModification String  @default("")                  @map("engines_modification")
+  enginesNumber       String  @default("")                  @map("engines_number")
+  driveUnit           String  @default("")                  @map("drive_unit")
+  gearboxType         String  @default("")                  @map("gearbox_type")
+  modification        String  @default("")                  @map("modification")
+  engineCapacity      String  @default("")                  @map("engine_capacity")
+  power               String  @default("")                  @map("power")
+  color               String  @default("")
+  metallic            Boolean @default(false)
+  mileage             String  @default("")
+  notInstalled        Boolean @default(false) @map("not_installed")
+  newCar              Boolean @default(false) @map("new_car")
+  emergency           Boolean @default(false)
+  notOnTrack          Boolean @default(false) @map("not_on_track")
+  totalComment        String  @default("")    @map("total_comment")
+
+  @@map("vehicles_datas")
+}
+
+model AdditionalDocuments {
+  additionalDocumentsId Int    @id @default(autoincrement()) @map("additional_documents_id")
+  comment               String @default("")
+
+  @@map("additional_documents")
+}
+// Добавить "Видео" "Фото" "Файл"
+
+model TCP {
+  tcpId           Int    @id @default(autoincrement()) @map("tcp_id")
+  availabilityTCP String @default("")                  @map("availability_tcp")
+  chassis         String @default("")
+  series          String @default("")
+  number          String @default("")
+  dateOfIssue     String @default("")                  @map("date_of_issue")
+  numberOfOwners  String @default("")                  @map("number_of_owners")
+
+  @@map("tcp")
+}
+// Добавить "Видео" "Фото" "Файл"
+
+model STS {
+  stsId       Int     @id @default(autoincrement()) @map("sts_id")
+  absent      Boolean @default(false)
+  series      String  @default("")
+  number      String  @default("")
+  dateOfIssue String  @default("")                  @map("date_of_issue")
+  issuedBy    String  @default("")                  @map("issued_by")
+
+  @@map("sts")
+}
+// Добавить "Видео" "Фото" "Файл"
+
+model Location {
+  locationId Int     @id @default(autoincrement()) @map("location_id")
+  country    String  @default("")
+  region     String  @default("")
+  city       String  @default("")
+  address    String  @default("")
+  comment    String  @default("")
+
+  @@map("locations")
+}
+// Добавить карты
+
+// *********** End of table "Documents" ************ //
+// -------------------------------------------------------------------------------------------
+
+// ** Модели сервиса "Комплектация" ** //
+
+model ComplectationReview {
+  complectationReviewId          Int     @id @default(autoincrement()) @map("complectation_review_id")
+  complectationtName             String  @default("")                  @map("equipment_name")
+  highBeamControlSystem          Boolean @default(false)               @map("high_beam_control_system")
+  adaptiveLightingSystem         Boolean @default(false)               @map("adaptive_lighting_system")
+  automaticHeadlightRangeControl Boolean @default(false)               @map("automatic_headlight_range_control")
+  fogLights                      Boolean @default(false)               @map("fog_lights")
+  headlightWasher                Boolean @default(false)               @map("headlight_washer")
+  lights                         String  @default("")
+  rainSensor                     Boolean @default(false)               @map("rain_sensor")
+  lightSensor                    Boolean @default(false)               @map("light_sensor")
+  electricalHeating              String  @default("")                  @map("electrical_heating")
+  comment                        String  @default("")
+
+  @@map("complectation-reviews")
+}
+
+model ComplectationBody {
+  complectationBodyId Int     @id @default(autoincrement()) @map("complectation_body_id")
+  roofRails           Boolean @default(false)               @map("roof_rails")
+  bodyStickers        Boolean @default(false)               @map("body_stickers") 
+  airbrushing         Boolean @default(false)
+  bodyKit             Boolean @default(false)               @map("body_kit")
+  discType            String  @default("")                  @map("disc_type")
+
+
+  @@map("complectation-bodies")
+}
+
+model ComplectationProtection {
+  complectationProtectionId Int     @id @default(autoincrement()) @map("complectation_protection_id")
+  interiorIntrusionSensor   Boolean @default(false)               @map("interior_intrusion_sensor")
+  centralLocking            Boolean @default(false)               @map("central_locking")
+  immobilizer               Boolean @default(false)   
+  signaling                 String  @default("")
+
+  @@map("complectation_protections")
+}
+
+model ComplectationMultimedia {
+  compectationMultimediaId          Int     @id @default(autoincrement()) @map("complectation_multimedia_id")
+  bluetooth                         Boolean @default(false)
+  cd                                Boolean @default(false)
+  usb                               Boolean @default(false)
+  aux                               Boolean @default(false)
+  dvd                               Boolean @default(false)
+  tv                                Boolean @default(false)
+  subwoofer                         Boolean @default(false)
+  audioSystem                       String  @default("")                  @map("audio_system")
+  multimediaSystemForRearPassengers Boolean @default(false)               @map("multimedia_system_for_rear_passengers")
+  voiceControl                      Boolean @default(false)               @map("voice_control")
+  navigationSystem                  Boolean @default(false)               @map("navigation_system")
+  socket220V                        Boolean @default(false)               @map("socket_220_v")
+  socket12V                         Boolean @default(false)               @map("socket_12_v")
+
+  @@map("complectation_multimedias")
+}
+
+model ComplectationSalon {
+  complectationSalonId         Int     @id @default(autoincrement()) @map("complectation_salon_id")
+  interiorMaterial             String  @default("")                  @map("interior_material")
+  interiorColor                String  @default("")                  @map("interior_color")
+  steeringWheelLeatherTrim     Boolean @default(false)               @map("steering_wheel_leather_trim")
+  leatherTrimmedGearshiftLever Boolean @default(false)               @map("leather_trimmed_gearshift_lever")
+  numberOfSeats                String  @default("")                  @map("number_of_seats")
+  heatedSeats                  String  @default("")                  @map("heated_seats")
+  seatHeighAdjustment          String  @default("")                  @map("seat_height_adjustment")
+  powerSeats                   String  @default("")                  @map("power_seats")
+  seatPositionMemory           String  @default("")                  @map("seat_position_memory")
+  seatVentilation              String  @default("")                  @map("seat_ventilation")
+  frontCenterArmrest           Boolean @default(false)               @map("front_center_armrest")
+  panoramicView                Boolean @default(false)               @map("panoramic_view")
+  foldingRearSeat              Boolean @default(false)               @map("folding_rear_seat")
+  sportsFrontSeats             Boolean @default(false)               @map("sports_front_seats")
+  steeringWheelHeating         Boolean @default(false)               @map("steering_wheel_heating")
+  tintedGlass                  Boolean @default(false)               @map("tinted_glass")
+  thirdRowOfSeats              Boolean @default(false)               @map("third_row_of_seats")
+  luke                         Boolean @default(false)
+ 
+  @@map("complectation_salons")
+}
+
+model ComplectationComfort {
+  complectationComfortId     Int     @id @default(autoincrement()) @map("complectation_comfort_id")
+  remoteEngineStart          Boolean @default(false)               @map("remote_engine_start")
+  engineStartButton          Boolean @default(false)               @map("engine_start_button")
+  onBoardComputer            Boolean @default(false)               @map("on_board_computer")
+  camera                     String  @default("")
+  airConditioner             String  @default("")                  @map("air_conditioner")
+  cruiseControl              String  @default("")                  @map("cruise_control")
+  steeringWheelAdjustment    String  @default("")                  @map("steering_wheel_adjustment")
+  parkingAssistanceSystem    String  @default("")                  @map("parking_assistance_system")
+  powerSteering              String  @default("")                  @map("power_steering")
+  electricLifts              String  @default("")                  @map("electric_lifts")
+  programmableStartingHeater Boolean @default(false)               @map("programmable_starting_heater")
+  gearshiftPaddles           Boolean @default(false)               @map("gearshift_paddles")
+  handsFreeTrunkOpening      Boolean @default(false)               @map("hands-free_trunk_opening")
+  electriTrunkLid            Boolean @default(false)               @map("electric_trunk_lid")
+  electronicDashboard        Boolean @default(false)               @map("electronic_dashboard")
+  adjustablePedalAssembly    Boolean @default(false)               @map("adjustable_pedal_assembly")
+  multifunctionSteeringWheel Boolean @default(false)               @map("multifunction_steering_wheel")
+  keylessEntrySystem         Boolean @default(false)               @map("keyless_entry_system")
+  electrofoldingOfMirrors    Boolean @default(false)               @map("electrofolding_of_mirrors")
+  powerMirrors               Boolean @default(false)               @map("power_mirrors")
+  startStopSystem            Boolean @default(false)               @map("start-stop_system")
+ 
+  @@map("complectation_comforts")
+}
+
+model ComplectationSafety {
+  complectationSafetyId Int     @id @default(autoincrement()) @map("complectation_safety_id")
+  abs                   Boolean @default(false)
+  esp                   Boolean @default(false)
+  auxiliarySystems      String  @default("")                  @map("auxiliary_systems")
+  airbags               String  @default("")
+  isofix                String  @default("")  
+  rearDoorLock          Boolean @default(false)               @map("rear_door_lock")
+  tirePressureSensor    Boolean @default(false)               @map("tire_pressure_sensor")
+  armoredBody           Boolean @default(false)               @map("armored_body")
+  eraGlonass            Boolean @default(false)               @map("era-glonass")
+
+  @@map("complectation_safeties")
+}
+
+model ComplectationOther {
+  complectationOtherId Int     @id @default(autoincrement()) @map("complectation_other_id")
+  suspension           String  @default("")
+  numberOfKeys         String  @default("")                  @map("number_of_keys")
+  gasEquipment         Boolean @default(false)               @map("gas_equipment")
+  spareWheel           Boolean @default(false)               @map("spare_wheel")
+  airSuspension        Boolean @default(false)               @map("air_suspension")
+  crankcaseProtection  Boolean @default(false)               @map("crankcase_protection")
+  autorun              Boolean @default(false)
+  hitch                Boolean @default(false)
+
+
+  @@map("complectation_others")
+}
+
+model ComplectationTires {
+  complectationTiresId  Int     @id @default(autoincrement()) @map("complectatin_tires_id")
+  tireUniformity        Boolean @default(false)               @map("tire_uniformity")
+  additionalSetOfWheels Boolean @default(false)               @map("additional_set_of_wheels")
+
+  @@map("complectation_tires")
+}
+// Что-то еще, схема машины

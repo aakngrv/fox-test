@@ -1,0 +1,64 @@
+{
+  "name": "body-and-interior",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/body-and-interior/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nx/webpack:webpack",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
+      "options": {
+        "target": "node",
+        "compiler": "tsc",
+        "outputPath": "dist/apps/body-and-interior",
+        "main": "apps/body-and-interior/src/main.ts",
+        "tsConfig": "apps/body-and-interior/tsconfig.app.json",
+        "assets": ["apps/body-and-interior/src/assets"],
+        "isolatedConfig": true,
+        "webpackConfig": "apps/body-and-interior/webpack.config.js"
+      },
+      "configurations": {
+        "development": {},
+        "production": {}
+      }
+    },
+    "serve": {
+      "executor": "@nx/js:node",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "body-and-interior:build"
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "body-and-interior:build:development"
+        },
+        "production": {
+          "buildTarget": "body-and-interior:build:production"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nx/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/body-and-interior/**/*.ts"]
+      }
+    },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "options": {
+        "jestConfig": "apps/body-and-interior/jest.config.ts",
+        "passWithNoTests": true
+      },
+      "configurations": {
+        "ci": {
+          "ci": true,
+          "codeCoverage": true
+        }
+      }
+    }
+  },
+  "tags": []
+}
