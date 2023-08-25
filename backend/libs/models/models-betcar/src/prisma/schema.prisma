@@ -31,7 +31,7 @@ model SellerDetails {
 }
 
 model CarData {
-  carDataId       Int     @id @default(autoincrement()) @map("car_data_id")
+  carDataId           Int     @id @default(autoincrement()) @map("car_data_id")
   vin                 String  @default("")
   frameNumber         String  @default("")                  @map("frame_number")
   comment             String  @default("")
@@ -57,11 +57,11 @@ model CarData {
   color               String  @default("")
   metallic            Boolean @default(false)
   mileage             String  @default("")
-  notInstalled        Boolean @default(false) @map("not_installed")
-  newCar              Boolean @default(false) @map("new_car")
+  notInstalled        Boolean @default(false)               @map("not_installed")
+  newCar              Boolean @default(false)               @map("new_car")
   emergency           Boolean @default(false)
-  notOnTrack          Boolean @default(false) @map("not_on_track")
-  totalComment        String  @default("")    @map("total_comment")
+  notOnTrack          Boolean @default(false)               @map("not_on_track")
+  totalComment        String  @default("")                  @map("total_comment")
 
   @@map("cars_datas")
 }
