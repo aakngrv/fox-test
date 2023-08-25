@@ -32,7 +32,7 @@ model SellerDetails {
 }
 
 model VehicleData {
-  vehicleDataId       Int     @id @default(autoincrement()) @map("vehicke_data_id")
+  vehicleDataId       Int     @id @default(autoincrement()) @map("vehicle_data_id")
   vin                 String  @default("")
   frameNumber         String  @default("") @map("frame_number")
   comment             String  @default("")
@@ -73,6 +73,7 @@ model AdditionalDocuments {
 
   @@map("additional_documents")
 }
+
 // Добавить "Видео" "Фото" "Файл"
 
 model TCP {
@@ -86,6 +87,7 @@ model TCP {
 
   @@map("tcp")
 }
+
 // Добавить "Видео" "Фото" "Файл"
 
 model STS {
@@ -98,6 +100,7 @@ model STS {
 
   @@map("sts")
 }
+
 // Добавить "Видео" "Фото" "Файл"
 
 model Location {
@@ -110,4 +113,5 @@ model Location {
 
   @@map("locations")
 }
+
 // Добавить карты
