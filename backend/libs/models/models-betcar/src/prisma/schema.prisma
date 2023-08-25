@@ -30,8 +30,8 @@ model SellerDetails {
   @@map("sellers_details")
 }
 
-model VehicleData {
-  vehicleDataId       Int     @id @default(autoincrement()) @map("vehicle_data_id")
+model CarData {
+  carDataId       Int     @id @default(autoincrement()) @map("car_data_id")
   vin                 String  @default("")
   frameNumber         String  @default("")                  @map("frame_number")
   comment             String  @default("")
@@ -63,7 +63,7 @@ model VehicleData {
   notOnTrack          Boolean @default(false) @map("not_on_track")
   totalComment        String  @default("")    @map("total_comment")
 
-  @@map("vehicles_datas")
+  @@map("cars_datas")
 }
 
 model AdditionalDocuments {
@@ -112,7 +112,7 @@ model Location {
 // Добавить карты
 
 // *********** End of table "Documents" ************ //
-// -------------------------------------------------------------------------------------------
+// =================================================================================================
 
 // ** Модели сервиса "Комплектация" ** //
 
@@ -265,4 +265,4 @@ model ComplectationTires {
 // Что-то еще, схема машины
 
 // *********** End of table "Complectation" ************ //
-// -------------------------------------------------------------------------------------------
+// =================================================================================================
