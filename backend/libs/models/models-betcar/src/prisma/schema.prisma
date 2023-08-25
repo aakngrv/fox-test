@@ -262,4 +262,4 @@ model ComplectationTires {
 
   @@map("complectation_tires")
 }
-// Что-то еще
+// Что-то еще, схема машины
