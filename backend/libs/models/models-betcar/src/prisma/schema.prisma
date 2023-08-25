@@ -197,3 +197,69 @@ model ComplectationSalon {
  
   @@map("complectation_salons")
 }
+
+model ComplectationComfort {
+  complectationComfortId     Int     @id @default(autoincrement()) @map("complectation_comfort_id")
+  remoteEngineStart          Boolean @default(false)               @map("remote_engine_start")
+  engineStartButton          Boolean @default(false)               @map("engine_start_button")
+  onBoardComputer            Boolean @default(false)               @map("on_board_computer")
+  camera                     String  @default("")
+  airConditioner             String  @default("")                  @map("air_conditioner")
+  cruiseControl              String  @default("")                  @map("cruise_control")
+  steeringWheelAdjustment    String  @default("")                  @map("steering_wheel_adjustment")
+  parkingAssistanceSystem    String  @default("")                  @map("parking_assistance_system")
+  powerSteering              String  @default("")                  @map("power_steering")
+  electricLifts              String  @default("")                  @map("electric_lifts")
+  programmableStartingHeater Boolean @default(false)               @map("programmable_starting_heater")
+  gearshiftPaddles           Boolean @default(false)               @map("gearshift_paddles")
+  handsFreeTrunkOpening      Boolean @default(false)               @map("hands-free_trunk_opening")
+  electriTrunkLid            Boolean @default(false)               @map("electric_trunk_lid")
+  electronicDashboard        Boolean @default(false)               @map("electronic_dashboard")
+  adjustablePedalAssembly    Boolean @default(false)               @map("adjustable_pedal_assembly")
+  multifunctionSteeringWheel Boolean @default(false)               @map("multifunction_steering_wheel")
+  keylessEntrySystem         Boolean @default(false)               @map("keyless_entry_system")
+  electrofoldingOfMirrors    Boolean @default(false)               @map("electrofolding_of_mirrors")
+  powerMirrors               Boolean @default(false)               @map("power_mirrors")
+  startStopSystem            Boolean @default(false)               @map("start-stop_system")
+ 
+  @@map("complectation_comforts")
+}
+
+model ComplectationSafety {
+  complectationSafetyId Int     @id @default(autoincrement()) @map("complectation_safety_id")
+  abs                   Boolean @default(false)
+  esp                   Boolean @default(false)
+  auxiliarySystems      String  @default("")                  @map("auxiliary_systems")
+  airbags               String  @default("")
+  isofix                String  @default("")  
+  rearDoorLock          Boolean @default(false)               @map("rear_door_lock")
+  tirePressureSensor    Boolean @default(false)               @map("tire_pressure_sensor")
+  armoredBody           Boolean @default(false)               @map("armored_body")
+  eraGlonass            Boolean @default(false)               @map("era-glonass")
+
+  @@map("complectation_safeties")
+}
+
+model ComplectationOther {
+  complectationOtherId Int     @id @default(autoincrement()) @map("complectation_other_id")
+  suspension           String  @default("")
+  numberOfKeys         String  @default("")                  @map("number_of_keys")
+  gasEquipment         Boolean @default(false)               @map("gas_equipment")
+  spareWheel           Boolean @default(false)               @map("spare_wheel")
+  airSuspension        Boolean @default(false)               @map("air_suspension")
+  crankcaseProtection  Boolean @default(false)               @map("crankcase_protection")
+  autorun              Boolean @default(false)
+  hitch                Boolean @default(false)
+
+
+  @@map("complectation_others")
+}
+
+model ComplectationTires {
+  complectationTiresId  Int     @id @default(autoincrement()) @map("complectatin_tires_id")
+  tireUniformity        Boolean @default(false)               @map("tire_uniformity")
+  additionalSetOfWheels Boolean @default(false)               @map("additional_set_of_wheels")
+
+  @@map("complectation_tires")
+}
+// Что-то еще
