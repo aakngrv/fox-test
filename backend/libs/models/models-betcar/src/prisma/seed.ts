@@ -15,7 +15,6 @@ async function fillDb() {
       mileageInTheGearbox: "8494",
       mileageInAdditionalBlocks: "54343",
       comment: "zabis"
-
     }
   });
   await prisma.dashboard.upsert({
