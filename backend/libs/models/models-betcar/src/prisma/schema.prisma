@@ -106,8 +106,6 @@ model STS {
   @@map("sts")
 }
 
-// Добавить "Видео" "Фото" "Файл"
-
 model Location {
   locationId Int    @id @default(autoincrement()) @map("location_id")
   country    String @default("")
