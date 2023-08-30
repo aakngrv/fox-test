@@ -1,7 +1,7 @@
 {
-  "name": "equipment",
+  "name": "complectation",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "apps/equipment/src",
+  "sourceRoot": "apps/complectation/src",
   "projectType": "application",
   "targets": {
     "build": {
@@ -11,12 +11,12 @@
       "options": {
         "target": "node",
         "compiler": "tsc",
-        "outputPath": "dist/apps/equipment",
-        "main": "apps/equipment/src/main.ts",
-        "tsConfig": "apps/equipment/tsconfig.app.json",
-        "assets": ["apps/equipment/src/assets"],
+        "outputPath": "dist/apps/complectation",
+        "main": "apps/complectation/src/main.ts",
+        "tsConfig": "apps/complectation/tsconfig.app.json",
+        "assets": ["apps/complectation/src/assets"],
         "isolatedConfig": true,
-        "webpackConfig": "apps/equipment/webpack.config.js"
+        "webpackConfig": "apps/complectation/webpack.config.js"
       },
       "configurations": {
         "development": {},
@@ -27,14 +27,14 @@
       "executor": "@nx/js:node",
       "defaultConfiguration": "development",
       "options": {
-        "buildTarget": "equipment:build"
+        "buildTarget": "complectation:build"
       },
       "configurations": {
         "development": {
-          "buildTarget": "equipment:build:development"
+          "buildTarget": "complectation:build:development"
         },
         "production": {
-          "buildTarget": "equipment:build:production"
+          "buildTarget": "complectation:build:production"
         }
       }
     },
@@ -42,14 +42,14 @@
       "executor": "@nx/linter:eslint",
       "outputs": ["{options.outputFile}"],
       "options": {
-        "lintFilePatterns": ["apps/equipment/**/*.ts"]
+        "lintFilePatterns": ["apps/complectation/**/*.ts"]
       }
     },
     "test": {
       "executor": "@nx/jest:jest",
       "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
       "options": {
-        "jestConfig": "apps/equipment/jest.config.ts",
+        "jestConfig": "apps/complectation/jest.config.ts",
         "passWithNoTests": true
       },
       "configurations": {
