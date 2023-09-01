@@ -56,12 +56,12 @@ model CarData {
   engineCapacity      String  @default("") @map("engine_capacity")
   power               String  @default("") @map("power")
   color               String  @default("")
-  metallic            Boolean @default(false)
+  isMetallic          Boolean @default(false) @map("is_metallic")
   mileage             String  @default("")
-  notInstalled        Boolean @default(false) @map("not_installed")
-  newCar              Boolean @default(false) @map("new_car")
-  emergency           Boolean @default(false)
-  notOnTrack          Boolean @default(false) @map("not_on_track")
+  isNotInstalled      Boolean @default(false) @map("is_not_installed")
+  isNewCar            Boolean @default(false) @map("is_new_car")
+  isEmergency         Boolean @default(false) @map("is_emergency")
+  isNotOnTrack        Boolean @default(false) @map("is_not_on_track")
   totalComment        String  @default("") @map("total_comment")
 
   @@map("cars_datas")
@@ -94,7 +94,7 @@ model TCP {
 
 model STS {
   stsId       Int     @id @default(autoincrement()) @map("sts_id")
-  absent      Boolean @default(false)
+  isAbsent    Boolean @default(false) @map("is_absent")
   series      String  @default("")
   number      String  @default("")
   dateOfIssue String  @default("") @map("date_of_issue")
@@ -444,7 +444,7 @@ model ExteriorPhoto {
   rightPhoto      String @default("") @map("right_photo")
   rightVideo      String @default("") @map("right_video")
 
-  @@map("extetior_photos")
+  @@map("exterior_photos")
 }
 
 model InteriorPhoto {
