@@ -126,7 +126,7 @@ model Location {
 
 model ComplectationReview {
   complectationReviewId          Int     @id @default(autoincrement()) @map("complectation_review_id")
-  complectationtName             String  @default("") @map("equipment_name")
+  complectationName              String  @default("") @map("complectation_name")
   highBeamControlSystem          Boolean @default(false) @map("high_beam_control_system")
   adaptiveLightingSystem         Boolean @default(false) @map("adaptive_lighting_system")
   automaticHeadlightRangeControl Boolean @default(false) @map("automatic_headlight_range_control")
@@ -163,7 +163,7 @@ model ComplectationProtection {
 }
 
 model ComplectationMultimedia {
-  compectationMultimediaId          Int     @id @default(autoincrement()) @map("complectation_multimedia_id")
+  complectationMultimediaId         Int     @id @default(autoincrement()) @map("complectation_multimedia_id")
   bluetooth                         Boolean @default(false)
   cd                                Boolean @default(false)
   usb                               Boolean @default(false)
@@ -189,7 +189,7 @@ model ComplectationSalon {
   leatherTrimmedGearshiftLever Boolean @default(false) @map("leather_trimmed_gearshift_lever")
   numberOfSeats                String  @default("") @map("number_of_seats")
   heatedSeats                  String  @default("") @map("heated_seats")
-  seatHeighAdjustment          String  @default("") @map("seat_height_adjustment")
+  seatHeightAdjustment         String  @default("") @map("seat_height_adjustment")
   powerSeats                   String  @default("") @map("power_seats")
   seatPositionMemory           String  @default("") @map("seat_position_memory")
   seatVentilation              String  @default("") @map("seat_ventilation")
@@ -220,7 +220,7 @@ model ComplectationComfort {
   programmableStartingHeater Boolean @default(false) @map("programmable_starting_heater")
   gearshiftPaddles           Boolean @default(false) @map("gearshift_paddles")
   handsFreeTrunkOpening      Boolean @default(false) @map("hands-free_trunk_opening")
-  electriTrunkLid            Boolean @default(false) @map("electric_trunk_lid")
+  electricTrunkLid           Boolean @default(false) @map("electric_trunk_lid")
   electronicDashboard        Boolean @default(false) @map("electronic_dashboard")
   adjustablePedalAssembly    Boolean @default(false) @map("adjustable_pedal_assembly")
   multifunctionSteeringWheel Boolean @default(false) @map("multifunction_steering_wheel")
