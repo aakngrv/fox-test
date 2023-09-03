@@ -112,9 +112,11 @@ export interface ComplectationOther {
   suspension: string;
   numberOfKeys: string;
   gasEquipment: boolean;
+  motoristSet: boolean;
   spareWheel: boolean;
   airSuspension: boolean;
   crankcaseProtection: boolean;
+  tool: boolean;
   autorun: boolean;
   hitch: boolean;
 }

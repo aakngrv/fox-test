@@ -252,9 +252,11 @@ model ComplectationOther {
   suspension           String  @default("")
   numberOfKeys         String  @default("") @map("number_of_keys")
   gasEquipment         Boolean @default(false) @map("gas_equipment")
+  motoristSet          Boolean @default(false) @map("motorist_set")
   spareWheel           Boolean @default(false) @map("spare_wheel")
   airSuspension        Boolean @default(false) @map("air_suspension")
   crankcaseProtection  Boolean @default(false) @map("crankcase_protection")
+  tool                 Boolean @default(false)
   autorun              Boolean @default(false)
   hitch                Boolean @default(false)
 
