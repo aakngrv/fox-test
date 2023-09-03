@@ -34,12 +34,12 @@ export interface CarData {
   engineCapacity: string;
   power: string;
   color: string;
-  metallic: boolean;
+  isMetallic: boolean;
   mileage: string;
-  notInstalled: boolean;
-  newCar: boolean;
-  emergency: boolean;
-  notOnTrack: boolean;
+  isNotInstalled: boolean;
+  isNewCar: boolean;
+  isEmergency: boolean;
+  isNotOnTrack: boolean;
   totalComment: string;
 }
 

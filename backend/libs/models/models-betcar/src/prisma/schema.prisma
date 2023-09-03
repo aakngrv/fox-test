@@ -56,12 +56,12 @@ model CarData {
   engineCapacity      String  @default("") @map("engine_capacity")
   power               String  @default("") @map("power")
   color               String  @default("")
-  metallic            Boolean @default(false)
+  isMetallic          Boolean @default(false) @map("is_metallic")
   mileage             String  @default("")
-  notInstalled        Boolean @default(false) @map("not_installed")
-  newCar              Boolean @default(false) @map("new_car")
-  emergency           Boolean @default(false)
-  notOnTrack          Boolean @default(false) @map("not_on_track")
+  isNotInstalled      Boolean @default(false) @map("is_not_installed")
+  isNewCar            Boolean @default(false) @map("is_new_car")
+  isEmergency         Boolean @default(false) @map("is_emergency")
+  isNotOnTrack        Boolean @default(false) @map("is_not_on_track")
   totalComment        String  @default("") @map("total_comment")
 
   @@map("cars_datas")
@@ -94,7 +94,7 @@ model TCP {
 
 model STS {
   stsId       Int     @id @default(autoincrement()) @map("sts_id")
-  absent      Boolean @default(false)
+  isAbsent    Boolean @default(false) @map("is_absent")
   series      String  @default("")
   number      String  @default("")
   dateOfIssue String  @default("") @map("date_of_issue")
@@ -126,7 +126,7 @@ model Location {
 
 model ComplectationReview {
   complectationReviewId          Int     @id @default(autoincrement()) @map("complectation_review_id")
-  complectationtName             String  @default("") @map("equipment_name")
+  complectationName              String  @default("") @map("complectation_name")
   highBeamControlSystem          Boolean @default(false) @map("high_beam_control_system")
   adaptiveLightingSystem         Boolean @default(false) @map("adaptive_lighting_system")
   automaticHeadlightRangeControl Boolean @default(false) @map("automatic_headlight_range_control")
@@ -163,7 +163,7 @@ model ComplectationProtection {
 }
 
 model ComplectationMultimedia {
-  compectationMultimediaId          Int     @id @default(autoincrement()) @map("complectation_multimedia_id")
+  complectationMultimediaId         Int     @id @default(autoincrement()) @map("complectation_multimedia_id")
   bluetooth                         Boolean @default(false)
   cd                                Boolean @default(false)
   usb                               Boolean @default(false)
@@ -189,7 +189,7 @@ model ComplectationSalon {
   leatherTrimmedGearshiftLever Boolean @default(false) @map("leather_trimmed_gearshift_lever")
   numberOfSeats                String  @default("") @map("number_of_seats")
   heatedSeats                  String  @default("") @map("heated_seats")
-  seatHeighAdjustment          String  @default("") @map("seat_height_adjustment")
+  seatHeightAdjustment         String  @default("") @map("seat_height_adjustment")
   powerSeats                   String  @default("") @map("power_seats")
   seatPositionMemory           String  @default("") @map("seat_position_memory")
   seatVentilation              String  @default("") @map("seat_ventilation")
@@ -220,7 +220,7 @@ model ComplectationComfort {
   programmableStartingHeater Boolean @default(false) @map("programmable_starting_heater")
   gearshiftPaddles           Boolean @default(false) @map("gearshift_paddles")
   handsFreeTrunkOpening      Boolean @default(false) @map("hands-free_trunk_opening")
-  electriTrunkLid            Boolean @default(false) @map("electric_trunk_lid")
+  electricTrunkLid           Boolean @default(false) @map("electric_trunk_lid")
   electronicDashboard        Boolean @default(false) @map("electronic_dashboard")
   adjustablePedalAssembly    Boolean @default(false) @map("adjustable_pedal_assembly")
   multifunctionSteeringWheel Boolean @default(false) @map("multifunction_steering_wheel")
@@ -252,9 +252,11 @@ model ComplectationOther {
   suspension           String  @default("")
   numberOfKeys         String  @default("") @map("number_of_keys")
   gasEquipment         Boolean @default(false) @map("gas_equipment")
+  motoristSet          Boolean @default(false) @map("motorist_set")
   spareWheel           Boolean @default(false) @map("spare_wheel")
   airSuspension        Boolean @default(false) @map("air_suspension")
   crankcaseProtection  Boolean @default(false) @map("crankcase_protection")
+  tool                 Boolean @default(false)
   autorun              Boolean @default(false)
   hitch                Boolean @default(false)
 
@@ -444,7 +446,7 @@ model ExteriorPhoto {
   rightPhoto      String @default("") @map("right_photo")
   rightVideo      String @default("") @map("right_video")
 
-  @@map("extetior_photos")
+  @@map("exterior_photos")
 }
 
 model InteriorPhoto {
