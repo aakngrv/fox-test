@@ -1,5 +1,5 @@
 export interface ComplectationReview  {
-  complectationReviewId: number;
+  id?: number;
   complectationName: string;
   highBeamControlSystem: boolean;
   adaptiveLightingSystem: boolean;
@@ -14,7 +14,7 @@ export interface ComplectationReview  {
 }
 
 export interface ComplectationBody {
-  complectationBodyId: number;
+  id?: number;
   roofRails: boolean;
   bodyStickers: boolean;
   airbrushing: boolean;
@@ -23,7 +23,7 @@ export interface ComplectationBody {
 }
 
 export interface ComplectationProtection {
-  complectationProtectionId: number;
+  id?: number;
   interiorIntrusionSensor: boolean;
   centralLocking: boolean;
   immobilizer: boolean;
@@ -31,7 +31,7 @@ export interface ComplectationProtection {
 }
 
 export interface ComplectationMultimedia {
-  complectationMultimediaId: number;
+  id?: number;
   bluetooth: boolean;
   cd: boolean;
   usb: boolean;
@@ -48,7 +48,7 @@ export interface ComplectationMultimedia {
 }
 
 export interface ComplectationSalon {
-  complectationSalonId: number;
+  id?: number;
   interiorMaterial: string;
   interiorColor: string;
   steeringWheelLeatherTrim: boolean;
@@ -70,7 +70,7 @@ export interface ComplectationSalon {
 }
 
 export interface ComplectationComfort {
-  complectationComfortId: number;
+  id?: number;
   remoteEngineStart: boolean;
   engineStartButton: boolean;
   onBoardComputer: boolean;
@@ -95,7 +95,7 @@ export interface ComplectationComfort {
 }
 
 export interface ComplectationSafety {
-  complectationSafetyId: number;
+  id?: number;
   abs: boolean;
   esp: boolean;
   auxiliarySystems: string;
@@ -108,7 +108,7 @@ export interface ComplectationSafety {
 }
 
 export interface ComplectationOther {
-  complectationOtherId: number;
+  id?: number;
   suspension: string;
   numberOfKeys: string;
   gasEquipment: boolean;
@@ -122,7 +122,7 @@ export interface ComplectationOther {
 }
 
 export interface ComplectationTires {
-  complectationTiresId: number;
+  id?: number;
   tireUniformity: boolean;
   additionalSetOfWheels: boolean;
   seasonality: string;
