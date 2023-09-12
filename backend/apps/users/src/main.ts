@@ -19,7 +19,7 @@ async function bootstrap() {
   const configService = app.get(ConfigService);
 
   const document = SwaggerModule.createDocument(app, config);
-  SwaggerModule.setup('spec', app, document);
+  SwaggerModule.setup('users-spec', app, document);
 
   const port = configService.get('application.port');
   await app.listen(port);
@@ -29,7 +29,7 @@ async function bootstrap() {
 
   Logger.log(
     `🎯  Current mode: ${configService.get('application.environment')}`
-  )
+  );
 }
 
 bootstrap();

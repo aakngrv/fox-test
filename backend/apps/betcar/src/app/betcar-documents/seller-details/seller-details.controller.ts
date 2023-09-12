@@ -4,26 +4,31 @@ import { fillObject } from '@backend/util/util-core';
 import { SellerDetailsRdo } from './rdo/seller-details.rdo';
 import { CreateSellerDetailsDto } from './dto/create-seller-details.dto';
 import { UpdateSellerDetailsDto } from './dto/update-seller-details.dto';
+import { ApiResponse, ApiTags } from '@nestjs/swagger';
 
+@ApiTags('Данные продавца')
 @Controller('seller-details')
 export class SellerDetailsController {
   constructor(
     private readonly sellerDetailsService: SellerDetailsService
   ) {}
-
+  
+  @ApiResponse({
+    type: SellerDetailsRdo,
+    status: HttpStatus.OK,
+    description: 'Данные продавца найдены'
+  })
   @Get('/:id')
   async show(@Param('id') id: string) {
     const sellerDetailsId = parseInt(id, 10);
     const existSellerDetails = await this.sellerDetailsService.getSellerDetails(sellerDetailsId);
     return fillObject(SellerDetailsRdo, existSellerDetails);
   }
-
-  @Get('/')
-  async index() {
-    const sellersDetails = await this.sellerDetailsService.getSellersDetails();
-    return fillObject(SellerDetailsRdo, sellersDetails);
-  }
-
+  
+  @ApiResponse({
+    status: HttpStatus.CREATED,
+    description: 'Данные продавца успешно созданы.'
+  })
   @Post('/')
   async create(@Body() dto: CreateSellerDetailsDto) {
     const newSellerDetaisl = await this.sellerDetailsService.createSellerDetails(dto);
@@ -31,16 +36,25 @@ export class SellerDetailsController {
   }
 
   @Delete('/:id')
+  @ApiResponse({
+    status: HttpStatus.NO_CONTENT,
+    description: 'Данные продавца успешно удалены.'
+  })
   @HttpCode(HttpStatus.NO_CONTENT)
   async destroy(@Param('id') id: string) {
     const sellerDetailsId = parseInt(id, 10);
     this.sellerDetailsService.deleteSellerDetails(sellerDetailsId);
   }
-
+  
+  @ApiResponse({
+    status: HttpStatus.OK,
+    description: 'Данные продавца успешно обновлены.'
+  })
+  @HttpCode(HttpStatus.OK)
   @Patch('/:id')
   async update(@Param('id') id: string, @Body() dto: UpdateSellerDetailsDto) {
     const sellerDetailsId = parseInt(id, 10);
-    const updatedSellerDetails = await this.sellerDetailsService.updateSellerDetails(sellerDetailsId, dto)
+    const updatedSellerDetails = this.sellerDetailsService.updateSellerDetails(sellerDetailsId, dto)
     return fillObject(SellerDetailsRdo, updatedSellerDetails);
   }
 }

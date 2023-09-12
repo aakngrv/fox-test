@@ -8,8 +8,6 @@ export class SellerDetailsEntity implements Entity<SellerDetailsEntity>, SellerD
     public carCost: string;
     public role: boolean;
     public comment: string;
-    public createdAt?: Date;
-    public publishAt?: Date;
 
   constructor(sellerDetails: SellerDetails) {
     this.fillEntity(sellerDetails);
@@ -24,8 +22,6 @@ export class SellerDetailsEntity implements Entity<SellerDetailsEntity>, SellerD
     this.carCost = entity.carCost;
     this.role = entity.role;
     this.comment = entity.comment;
-    this.createdAt = entity.createdAt;
-    this.publishAt = entity.publishAt;
   }
 
   public toObject(): SellerDetailsEntity {

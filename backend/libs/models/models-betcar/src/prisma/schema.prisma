@@ -25,8 +25,6 @@ model SellerDetails {
   carCost         String   @default("") @map("car_cost")
   role            Boolean  @default(false)
   comment         String   @default("")
-  createdAt       DateTime @default(now()) @map("created_at")
-  publishAt       DateTime @updatedAt @map("publish_at")
 
   @@map("sellers_details")
 }

@@ -7,9 +7,7 @@ import { UpdateSellerDetailsDto } from './dto/update-seller-details.dto';
 
 @Injectable()
 export class SellerDetailsService {
-  updateSellerDetails(sellerDetailsId: number, dto: UpdateSellerDetailsDto) {
-      throw new Error('Method not implemented.');
-  }
+
   constructor(
     private readonly sellerDetailsRepository: SellerDetailsRepository
   ) {}
@@ -27,11 +25,7 @@ export class SellerDetailsService {
     return this.sellerDetailsRepository.findById(id);
   }
 
-  async getSellersDetails(): Promise<SellerDetails[]> {
-    return this.sellerDetailsRepository.find();
-  }
-
-  async updateCategory(id: number, dto: UpdateSellerDetailsDto): Promise<SellerDetails> {
+  async updateSellerDetails(id: number, dto: UpdateSellerDetailsDto): Promise<SellerDetails> {
     return this.sellerDetailsRepository.update(id, new SellerDetailsEntity(dto));
   }
 }
