@@ -8,6 +8,15 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+model Report {
+  reportId   Int       @id @default(autoincrement()) @map("report_id")
+  executorId String?   @default("") @map("executor_id")
+  createdAt  DateTime  @default(now()) @map("created_at")
+  publishAt  DateTime  @updatedAt @map("publish_at")
+
+  @@map("reports")
+}
+
 model CarModel {
   carId      Int     @id @default(autoincrement()) @map("car_id")
   carModel   String  @default("") @map("car_model")

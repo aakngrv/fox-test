@@ -1,4 +1,14 @@
 -- CreateTable
+CREATE TABLE "reports" (
+    "report_id" SERIAL NOT NULL,
+    "executor_id" TEXT DEFAULT '',
+    "created_at" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    "publish_at" TIMESTAMP(3) NOT NULL,
+
+    CONSTRAINT "reports_pkey" PRIMARY KEY ("report_id")
+);
+
+-- CreateTable
 CREATE TABLE "cars_models" (
     "car_id" SERIAL NOT NULL,
     "car_model" TEXT NOT NULL DEFAULT '',
@@ -15,8 +25,6 @@ CREATE TABLE "sellers_details" (
     "car_cost" TEXT NOT NULL DEFAULT '',
     "role" BOOLEAN NOT NULL DEFAULT false,
     "comment" TEXT NOT NULL DEFAULT '',
-    "created_at" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    "publish_at" TIMESTAMP(3) NOT NULL,
 
     CONSTRAINT "sellers_details_pkey" PRIMARY KEY ("seller_details_id")
 );
@@ -47,12 +55,12 @@ CREATE TABLE "cars_datas" (
     "engine_capacity" TEXT NOT NULL DEFAULT '',
     "power" TEXT NOT NULL DEFAULT '',
     "color" TEXT NOT NULL DEFAULT '',
-    "metallic" BOOLEAN NOT NULL DEFAULT false,
+    "is_metallic" BOOLEAN NOT NULL DEFAULT false,
     "mileage" TEXT NOT NULL DEFAULT '',
-    "not_installed" BOOLEAN NOT NULL DEFAULT false,
-    "new_car" BOOLEAN NOT NULL DEFAULT false,
-    "emergency" BOOLEAN NOT NULL DEFAULT false,
-    "not_on_track" BOOLEAN NOT NULL DEFAULT false,
+    "is_not_installed" BOOLEAN NOT NULL DEFAULT false,
+    "is_new_car" BOOLEAN NOT NULL DEFAULT false,
+    "is_emergency" BOOLEAN NOT NULL DEFAULT false,
+    "is_not_on_track" BOOLEAN NOT NULL DEFAULT false,
     "total_comment" TEXT NOT NULL DEFAULT '',
 
     CONSTRAINT "cars_datas_pkey" PRIMARY KEY ("car_data_id")
@@ -88,7 +96,7 @@ CREATE TABLE "tcp" (
 -- CreateTable
 CREATE TABLE "sts" (
     "sts_id" SERIAL NOT NULL,
-    "absent" BOOLEAN NOT NULL DEFAULT false,
+    "is_absent" BOOLEAN NOT NULL DEFAULT false,
     "series" TEXT NOT NULL DEFAULT '',
     "number" TEXT NOT NULL DEFAULT '',
     "date_of_issue" TEXT NOT NULL DEFAULT '',
@@ -115,7 +123,7 @@ CREATE TABLE "locations" (
 -- CreateTable
 CREATE TABLE "complectation-reviews" (
     "complectation_review_id" SERIAL NOT NULL,
-    "equipment_name" TEXT NOT NULL DEFAULT '',
+    "complectation_name" TEXT NOT NULL DEFAULT '',
     "high_beam_control_system" BOOLEAN NOT NULL DEFAULT false,
     "adaptive_lighting_system" BOOLEAN NOT NULL DEFAULT false,
     "automatic_headlight_range_control" BOOLEAN NOT NULL DEFAULT false,
@@ -248,9 +256,11 @@ CREATE TABLE "complectation_others" (
     "suspension" TEXT NOT NULL DEFAULT '',
     "number_of_keys" TEXT NOT NULL DEFAULT '',
     "gas_equipment" BOOLEAN NOT NULL DEFAULT false,
+    "motorist_set" BOOLEAN NOT NULL DEFAULT false,
     "spare_wheel" BOOLEAN NOT NULL DEFAULT false,
     "air_suspension" BOOLEAN NOT NULL DEFAULT false,
     "crankcase_protection" BOOLEAN NOT NULL DEFAULT false,
+    "tool" BOOLEAN NOT NULL DEFAULT false,
     "autorun" BOOLEAN NOT NULL DEFAULT false,
     "hitch" BOOLEAN NOT NULL DEFAULT false,
 
@@ -426,7 +436,7 @@ CREATE TABLE "interior_damages" (
 );
 
 -- CreateTable
-CREATE TABLE "extetior_photos" (
+CREATE TABLE "exterior_photos" (
     "exterior_photo_id" SERIAL NOT NULL,
     "right_front_photo" TEXT NOT NULL DEFAULT '',
     "right_front_video" TEXT NOT NULL DEFAULT '',
@@ -445,7 +455,7 @@ CREATE TABLE "extetior_photos" (
     "right_photo" TEXT NOT NULL DEFAULT '',
     "right_video" TEXT NOT NULL DEFAULT '',
 
-    CONSTRAINT "extetior_photos_pkey" PRIMARY KEY ("exterior_photo_id")
+    CONSTRAINT "exterior_photos_pkey" PRIMARY KEY ("exterior_photo_id")
 );
 
 -- CreateTable
@@ -521,6 +531,21 @@ CREATE TABLE "running_engines" (
     "comment" TEXT NOT NULL DEFAULT '',
 
     CONSTRAINT "running_engines_pkey" PRIMARY KEY ("running_engine_id")
+);
+
+-- CreateTable
+CREATE TABLE "dashboards" (
+    "dashboard_id" SERIAL NOT NULL,
+    "check_engine" BOOLEAN NOT NULL DEFAULT false,
+    "oil_pressure" BOOLEAN NOT NULL DEFAULT false,
+    "airbag" BOOLEAN NOT NULL DEFAULT false,
+    "mileage_on_dashboard" TEXT NOT NULL DEFAULT '',
+    "mileage_in_the_engine_block" TEXT NOT NULL DEFAULT '',
+    "mileage_in_the_gearbox" TEXT NOT NULL DEFAULT '',
+    "mileage_in_additional_blocks" TEXT NOT NULL DEFAULT '',
+    "comment" TEXT NOT NULL DEFAULT '',
+
+    CONSTRAINT "dashboards_pkey" PRIMARY KEY ("dashboard_id")
 );
 
 -- CreateTable
