@@ -18,7 +18,7 @@ export class SellerDetailsService {
   }
 
   async deleteSellerDetails(id: number): Promise<void> {
-    this.sellerDetailsRepository.destroy(id);
+    await this.sellerDetailsRepository.destroy(id);
   }
 
   async getSellerDetails(id: number): Promise<SellerDetails> {
