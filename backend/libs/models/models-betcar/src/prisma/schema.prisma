@@ -10,7 +10,7 @@ datasource db {
 
 model Report {
   reportId   Int       @id @default(autoincrement()) @map("report_id")
-  executorId String?   @default("") @map("executor_id")
+  executorId String?   @map("executor_id")
   createdAt  DateTime  @default(now()) @map("created_at")
   publishAt  DateTime  @updatedAt @map("publish_at")
 
@@ -145,7 +145,7 @@ model ComplectationReview {
   electricalHeating              String  @default("") @map("electrical_heating")
   comment                        String  @default("")
 
-  @@map("complectation-reviews")
+  @@map("complectation_reviews")
 }
 
 model ComplectationBody {
@@ -156,7 +156,7 @@ model ComplectationBody {
   bodyKit             Boolean @default(false) @map("body_kit")
   discType            String  @default("") @map("disc_type")
 
-  @@map("complectation-bodies")
+  @@map("complectation_bodies")
 }
 
 model ComplectationProtection {

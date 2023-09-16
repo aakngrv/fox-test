@@ -5,3 +5,4 @@ export * from './lib/complectation.interface';
 export * from './lib/body-and-interior.interface';
 export * from './lib/technical-inspection.interface';
 export * from './lib/expert-opinion.interface';
+export * from './lib/report.interface';

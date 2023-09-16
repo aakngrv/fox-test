@@ -121,7 +121,7 @@ CREATE TABLE "locations" (
 );
 
 -- CreateTable
-CREATE TABLE "complectation-reviews" (
+CREATE TABLE "complectation_reviews" (
     "complectation_review_id" SERIAL NOT NULL,
     "complectation_name" TEXT NOT NULL DEFAULT '',
     "high_beam_control_system" BOOLEAN NOT NULL DEFAULT false,
@@ -135,11 +135,11 @@ CREATE TABLE "complectation-reviews" (
     "electrical_heating" TEXT NOT NULL DEFAULT '',
     "comment" TEXT NOT NULL DEFAULT '',
 
-    CONSTRAINT "complectation-reviews_pkey" PRIMARY KEY ("complectation_review_id")
+    CONSTRAINT "complectation_reviews_pkey" PRIMARY KEY ("complectation_review_id")
 );
 
 -- CreateTable
-CREATE TABLE "complectation-bodies" (
+CREATE TABLE "complectation_bodies" (
     "complectation_body_id" SERIAL NOT NULL,
     "roof_rails" BOOLEAN NOT NULL DEFAULT false,
     "body_stickers" BOOLEAN NOT NULL DEFAULT false,
@@ -147,7 +147,7 @@ CREATE TABLE "complectation-bodies" (
     "body_kit" BOOLEAN NOT NULL DEFAULT false,
     "disc_type" TEXT NOT NULL DEFAULT '',
 
-    CONSTRAINT "complectation-bodies_pkey" PRIMARY KEY ("complectation_body_id")
+    CONSTRAINT "complectation_bodies_pkey" PRIMARY KEY ("complectation_body_id")
 );
 
 -- CreateTable

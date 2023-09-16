@@ -5,8 +5,6 @@ export interface SellerDetails {
   carCost: string;
   role: boolean;
   comment: string;
-  createdAt?: Date;
-  publishAt?: Date;
 }
 
 export interface CarData {

@@ -2,6 +2,7 @@ import { Entity } from '@backend/util/util-types';
 import { SellerDetails } from '@backend/shared/shared-types';
 
 export class SellerDetailsEntity implements Entity<SellerDetailsEntity>, SellerDetails {
+
     public id: number;
     public name: string;
     public phone: string;
@@ -13,9 +14,7 @@ export class SellerDetailsEntity implements Entity<SellerDetailsEntity>, SellerD
     this.fillEntity(sellerDetails);
   } 
    
- 
-
-  public fillEntity(entity: SellerDetails) {
+  public fillEntity(entity: SellerDetails): void {
     this.id = entity.id;
     this.name = entity.name;
     this.phone = entity.phone;
