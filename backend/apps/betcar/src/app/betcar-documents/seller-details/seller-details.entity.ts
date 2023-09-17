@@ -3,7 +3,8 @@ import { SellerDetails } from '@backend/shared/shared-types';
 
 export class SellerDetailsEntity implements Entity<SellerDetailsEntity>, SellerDetails {
 
-    public id: number;
+    public sellerDetailsId?: number;
+    public reportId: number;
     public name: string;
     public phone: string;
     public carCost: string;
@@ -15,7 +16,8 @@ export class SellerDetailsEntity implements Entity<SellerDetailsEntity>, SellerD
   } 
    
   public fillEntity(entity: SellerDetails): void {
-    this.id = entity.id;
+    this.sellerDetailsId = entity.sellerDetailsId;
+    this.reportId = entity.reportId;
     this.name = entity.name;
     this.phone = entity.phone;
     this.carCost = entity.carCost;

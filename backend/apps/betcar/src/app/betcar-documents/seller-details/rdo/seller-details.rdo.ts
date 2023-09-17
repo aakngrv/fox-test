@@ -8,7 +8,14 @@ export class SellerDetailsRdo {
     example: '21'
   })
   @Expose()
-  public id: string;
+  public sellerDetailsId: string;
+
+  @ApiProperty({
+    description: 'ID отчета',
+    example: '21'
+  })
+  @Expose()
+  public reportId: string;
   
   @ApiProperty({
     description: 'Имя продавца',

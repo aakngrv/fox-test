@@ -1,6 +1,10 @@
+import { SellerDetails } from "./documents.interface";
+
 export interface Report {
-  id?: number;
+  reportId?: number;
   executorId: string;
+  title: string;
+  sellerDetails: SellerDetails[];
   createdAt: Date;
   publishAt: Date;
 }

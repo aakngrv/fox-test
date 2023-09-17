@@ -9,10 +9,12 @@ datasource db {
 }
 
 model Report {
-  reportId   Int       @id @default(autoincrement()) @map("report_id")
-  executorId String?   @map("executor_id")
-  createdAt  DateTime  @default(now()) @map("created_at")
-  publishAt  DateTime  @updatedAt @map("publish_at")
+  reportId      Int             @id @default(autoincrement()) @map("report_id")
+  executorId    String?         @map("executor_id")
+  title         String          @default("") 
+  createdAt     DateTime        @default(now()) @map("created_at")
+  publishAt     DateTime        @updatedAt @map("publish_at")
+  sellerDetails SellerDetails[] 
 
   @@map("reports")
 }
@@ -28,12 +30,14 @@ model CarModel {
 // ** Модели сервиса "Документы" ** //
 
 model SellerDetails {
-  sellerDetailsId Int      @id @default(autoincrement()) @map("seller_details_id")
-  name            String   @default("")
-  phone           String   @default("")
-  carCost         String   @default("") @map("car_cost")
-  role            Boolean  @default(false)
-  comment         String   @default("")
+  sellerDetailsId Int     @id @default(autoincrement()) @map("seller_details_id")
+  reportId        Int     @map("report_id")
+  report          Report  @relation(fields: [reportId], references: [reportId], onDelete: Cascade, onUpdate: Cascade)
+  name            String  @default("")
+  phone           String  @default("")
+  carCost         String  @default("") @map("car_cost")
+  role            Boolean @default(false)
+  comment         String  @default("")
 
   @@map("sellers_details")
 }

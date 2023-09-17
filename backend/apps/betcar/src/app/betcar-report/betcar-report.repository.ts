@@ -12,8 +12,17 @@ export class BetcarReportRepository implements CRUDRepository<BetcarReportEntity
   ) {}
 
   public async create(item: BetcarReportEntity): Promise<Report> {
+    const entityData = item.toObject();
     return this.prisma.report.create({
-      data: { ...item.toObject() }
+      data: {
+        ...entityData,
+        sellerDetails: {
+          connect: []
+        }
+      }, 
+      include: {
+        sellerDetails: true
+      }
     });
   }
 
@@ -30,15 +39,17 @@ export class BetcarReportRepository implements CRUDRepository<BetcarReportEntity
       where: {
         reportId
       },
+      include: {
+        sellerDetails: true
+      }
     });
   }
 
   public find(): Promise<Report[]> {
     return this.prisma.report.findMany({
-      // include: {
-      //   comments: true,
-      //   categories: true
-      // }
+      include: {
+        sellerDetails: true
+      }
     });
   }
 

@@ -9,6 +9,7 @@ import { ApiResponse, ApiTags } from '@nestjs/swagger';
 @ApiTags('Данные продавца')
 @Controller('seller-details')
 export class SellerDetailsController {
+  
   constructor(
     private readonly sellerDetailsService: SellerDetailsService
   ) {}
@@ -31,8 +32,8 @@ export class SellerDetailsController {
   })
   @Post('/')
   async create(@Body() dto: CreateSellerDetailsDto) {
-    const newSellerDetaisl = await this.sellerDetailsService.createSellerDetails(dto);
-    return fillObject(SellerDetailsRdo, newSellerDetaisl);
+    const newSellerDetails = await this.sellerDetailsService.createSellerDetails(dto);
+    return fillObject(SellerDetailsRdo, newSellerDetails);
   }
 
   @Delete('/:id')

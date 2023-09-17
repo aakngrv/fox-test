@@ -1,5 +1,6 @@
 export interface SellerDetails {
-  id?: number;
+  sellerDetailsId?: number;
+  reportId?: number;
   name: string;
   phone: string;
   carCost: string;

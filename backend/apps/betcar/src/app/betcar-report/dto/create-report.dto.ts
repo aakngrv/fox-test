@@ -6,7 +6,13 @@ export class CreateReportDto {
     description: 'ID подборщика',
     example: '13'
   })
-  public  executorId: String;
+  public  executorId: string;
+  
+  @ApiProperty({
+    description: 'Заголовок отчета',
+    example: 'Осмтор автомобиля BMW X6'
+  })
+  public title: string;
 
   @ApiProperty({
     description: 'ID подборщика',
