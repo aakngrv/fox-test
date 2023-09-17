@@ -1,12 +1,19 @@
+import { SellerDetails } from '@prisma/client';
 import { Expose } from 'class-transformer';
 
 export class ReportRdo {
   
   @Expose()
-  public id: string
+  public reportId: string
   
   @Expose()
-  public  executorId: String;
+  public  executorId: string;
+
+  @Expose()
+  public title: string
+  
+  @Expose()
+  public sellerDetails: SellerDetails[];
 
   @Expose()
   public  createdAt: string;
@@ -14,3 +21,6 @@ export class ReportRdo {
   @Expose()
   public publishAt: string;
 }
+
+
+
