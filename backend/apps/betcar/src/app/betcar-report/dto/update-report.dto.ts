@@ -1,5 +1,10 @@
+import { ApiProperty } from '@nestjs/swagger';
+
 export class UpdateReportDto {
-    public title?: string;
-    public description?: string;
-    public content?: string;
-  }
+  
+  @ApiProperty({
+    description: 'Заголовок отчета',
+    example: 'Осмтор автомобиля BMW X6'
+  })
+  public title: string;
+}

@@ -7,31 +7,31 @@ import { UpdateReportDto } from './dto/update-report.dto';
 import { BetcarReportEntity } from './betcar-report.entity';
 
 @Injectable()
-export class BlogPostService {
+export class BetcarReportService {
   constructor(
-    private readonly blogPostRepository: BlogPostRepository,
-    private readonly blogCategoryRepository: BlogCategoryRepository
+    private readonly betcarReportRepository: BetcarReportRepository,
+    private readonly sellerDetailsRepository: SellerDetailsRepository
   ) {}
 
-  async createPost(dto: CreatePostDto): Promise<Post> {
-    const categories = await this.blogCategoryRepository.find(dto.categories);
-    const postEntity = new BlogPostEntity({ ...dto, categories, comments: [] });
-    return this.blogPostRepository.create(postEntity);
+  async createReport(dto: CreateReportDto): Promise<Report> {
+    const sellerDetails = await this.sellerDetailsRepository.find(dto.sellerDetails);
+    const reportEntity = new BetcarReportEntity({ ...dto, sellerDetails});
+    return this.betcarReportRepository.create(reportEntity);
   }
 
-  async deletePost(id: number): Promise<void> {
-    this.blogPostRepository.destroy(id);
+  async deleteReport(id: number): Promise<void> {
+    this.betcarReportRepository.destroy(id);
   }
 
-  async getPost(id: number): Promise<Post> {
-    return this.blogPostRepository.findById(id);
+  async getReport(id: number): Promise<Report> {
+    return this.betcarReportRepository.findById(id);
   }
 
-  async getPosts(): Promise<Post[]> {
-    return this.blogPostRepository.find();
+  async getReports(): Promise<Report[]> {
+    return this.betcarReportRepository.find();
   }
 
-  async updatePost(_id: number, _dto: UpdatePostDto): Promise<Post> {
+  async updateReport(_id: number, _dto: UpdateReportDto): Promise<Report> {
     throw new Error('Not implemented…');
   }
 }

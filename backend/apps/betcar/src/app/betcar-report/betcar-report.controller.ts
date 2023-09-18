@@ -1,60 +1,46 @@
-// import { BetcarReportService } from './betcar-report.service';
-// import { Body, Controller, Delete, Get, HttpCode, HttpStatus, Param, Patch, Post } from '@nestjs/common';
-// import { fillObject } from '@backend/util/util-core';
-// import { SellerDetailsRdo } from './rdo/seller-details.rdo';
-// import { CreateSellerDetailsDto } from './dto/create-seller-details.dto';
-// import { UpdateSellerDetailsDto } from './dto/update-seller-details.dto';
-// import { ApiResponse, ApiTags } from '@nestjs/swagger';
+import { Body, Controller, Delete, Get, HttpCode, HttpStatus, Param, Patch, Post } from '@nestjs/common';
+import { BetcarReportService } from './betcar-report.service';
+import { fillObject } from '@backend/util/util-core';
+import { ReportRdo } from './rdo/report.rdo'; 
+import { CreateReportDto } from './dto/create-report.dto';
+import { UpdateReportDto } from './dto/update-report.dto';
 
-// @ApiTags('Данные продавца')
-// @Controller('seller-details')
-// export class BetcarReportController {
-//   constructor(
-//     private readonly sellerDetailsService: SellerDetailsService
-//   ) {}
-  
-//   @ApiResponse({
-//     type: SellerDetailsRdo,
-//     status: HttpStatus.OK,
-//     description: 'Данные продавца найдены'
-//   })
-//   @Get('/:id')
-//   async show(@Param('id') id: string) {
-//     const sellerDetailsId = parseInt(id, 10);
-//     const existSellerDetails = await this.sellerDetailsService.getSellerDetails(sellerDetailsId);
-//     return fillObject(SellerDetailsRdo, existSellerDetails);
-//   }
-  
-//   @ApiResponse({
-//     status: HttpStatus.CREATED,
-//     description: 'Данные продавца успешно созданы.'
-//   })
-//   @Post('/')
-//   async create(@Body() dto: CreateSellerDetailsDto) {
-//     const newSellerDetaisl = await this.sellerDetailsService.createSellerDetails(dto);
-//     return fillObject(SellerDetailsRdo, newSellerDetaisl);
-//   }
+@Controller('reports')
+export class BetcarReportController {
+  constructor(
+    private readonly betcarReportService: BetcarReportService
+  ) {}
 
-//   @Delete('/:id')
-//   @ApiResponse({
-//     status: HttpStatus.NO_CONTENT,
-//     description: 'Данные продавца успешно удалены.'
-//   })
-//   @HttpCode(HttpStatus.NO_CONTENT)
-//   async destroy(@Param('id') id: string) {
-//     const sellerDetailsId = parseInt(id, 10);
-//     this.sellerDetailsService.deleteSellerDetails(sellerDetailsId);
-//   }
-  
-//   @ApiResponse({
-//     status: HttpStatus.OK,
-//     description: 'Данные продавца успешно обновлены.'
-//   })
-//   @HttpCode(HttpStatus.OK)
-//   @Patch('/:id')
-//   async update(@Param('id') id: string, @Body() dto: UpdateSellerDetailsDto) {
-//     const sellerDetailsId = parseInt(id, 10);
-//     const updatedSellerDetails = this.sellerDetailsService.updateSellerDetails(sellerDetailsId, dto)
-//     return fillObject(SellerDetailsRdo, updatedSellerDetails);
-//   }
-// }
+  @Get('/:id')
+  async show(@Param('id') id: string) {
+    const reportId = parseInt(id, 10);
+    const report = await this.betcarReportService.getReport(reportId);
+    return fillObject(ReportRdo, report);
+  }
+
+  @Get('/')
+  async index() {
+    const reports = await this.betcarReportService.getReports();
+    return fillObject(ReportRdo, reports);
+  }
+
+  @Post('/')
+  async create(@Body() dto: CreateReportDto) {
+    const newReport = await this.betcarReportService.createReport(dto);
+    return fillObject(ReportRdo, newReport);
+  }
+
+  @Delete('/:id')
+  @HttpCode(HttpStatus.NO_CONTENT)
+  async destroy(@Param('id') id: string) {
+    const reportId = parseInt(id, 10);
+    this.betcarReportService.deleteReport(reportId);
+  }
+
+  @Patch('/:id')
+  async update(@Param('id') id: string, @Body() dto: UpdateReportDto) {
+    const reportId = parseInt(id, 10);
+    const updatedReport = await this.betcarReportService.updateReport(reportId, dto);
+    return fillObject(ReportRdo, updatedReport)
+  }
+}
