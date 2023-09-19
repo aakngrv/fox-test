@@ -20,7 +20,7 @@ export class BetcarReportService {
   }
 
   async deleteReport(id: number): Promise<void> {
-    this.betcarReportRepository.destroy(id);
+    await this.betcarReportRepository.destroy(id);
   }
 
   async getReport(id: number): Promise<Report> {

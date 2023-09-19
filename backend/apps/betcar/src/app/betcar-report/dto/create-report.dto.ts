@@ -17,7 +17,7 @@ export class CreateReportDto {
   
   @ApiProperty({
     description: 'Массив объектов с данными о продавце',
-    example: '[{executorId: 3, title: Audi A6, ... }]'
+    example: '[]'
   })
   public sellerDetails: number[];
 

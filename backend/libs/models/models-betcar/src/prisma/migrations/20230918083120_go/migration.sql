@@ -1,7 +1,8 @@
 -- CreateTable
 CREATE TABLE "reports" (
     "report_id" SERIAL NOT NULL,
-    "executor_id" TEXT DEFAULT '',
+    "executor_id" TEXT,
+    "title" TEXT NOT NULL DEFAULT '',
     "created_at" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
     "publish_at" TIMESTAMP(3) NOT NULL,
 
@@ -20,6 +21,7 @@ CREATE TABLE "cars_models" (
 -- CreateTable
 CREATE TABLE "sellers_details" (
     "seller_details_id" SERIAL NOT NULL,
+    "report_id" INTEGER NOT NULL,
     "name" TEXT NOT NULL DEFAULT '',
     "phone" TEXT NOT NULL DEFAULT '',
     "car_cost" TEXT NOT NULL DEFAULT '',
@@ -574,3 +576,6 @@ CREATE TABLE "experts_opinions" (
 
     CONSTRAINT "experts_opinions_pkey" PRIMARY KEY ("expert_opinion")
 );
+
+-- AddForeignKey
+ALTER TABLE "sellers_details" ADD CONSTRAINT "sellers_details_report_id_fkey" FOREIGN KEY ("report_id") REFERENCES "reports"("report_id") ON DELETE CASCADE ON UPDATE CASCADE;
