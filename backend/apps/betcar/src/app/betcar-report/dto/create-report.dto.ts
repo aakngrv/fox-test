@@ -5,31 +5,31 @@ export class CreateReportDto {
    
   @ApiProperty({
     description: 'ID подборщика',
-    example: '13'
+    example: '1'
   })
   public  executorId: string;
   
   @ApiProperty({
     description: 'Заголовок отчета',
-    example: 'Осмтор автомобиля BMW X6'
+    example: 'Осмотр автомобиля BMW X6'
   })
   public title: string;
   
   @ApiProperty({
     description: 'Массив объектов с данными о продавце',
-    example: '[{executorId: 3, title: Audi A6, ... }]'
+    example: ''
   })
   public sellerDetails: number[];
 
   @ApiProperty({
-    description: 'ID подборщика',
-    example: '13'
+    description: 'Дата создания',
+    example: ''
   })
   public  createdAt: Date;
 
   @ApiProperty({
-    description: 'ID подборщика',
-    example: '13'
+    description: 'Дата публикации',
+    example: ''
   })
   public  publishAt: Date;
 }
