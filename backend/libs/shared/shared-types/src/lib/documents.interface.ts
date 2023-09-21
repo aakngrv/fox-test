@@ -9,7 +9,8 @@ export interface SellerDetails {
 }
 
 export interface CarData {
-  id?: number;
+  carDataId?: number;
+  reportId: number;
   vin: string;
   frameNumber: string;
   comment: string;
@@ -43,7 +44,7 @@ export interface CarData {
 }
 
 export interface AdditionalDocuments {
-  id?: number;
+  additionalDocumentsId?: number;
   comment: string;
   video: string;
   photo: string;
@@ -51,7 +52,7 @@ export interface AdditionalDocuments {
 }
 
 export interface TCP {
-  id?: number;
+  tcpId?: number;
   availabilityTCP: string;
   chassis: string;
   series: string;

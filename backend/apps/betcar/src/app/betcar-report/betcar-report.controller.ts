@@ -5,7 +5,7 @@ import { ReportRdo } from './rdo/report.rdo';
 import { CreateReportDto } from './dto/create-report.dto';
 import { UpdateReportDto } from './dto/update-report.dto';
 import { ApiResponse, ApiTags } from '@nestjs/swagger';
-import { SellerDetailsRdo } from '../betcar-documents/seller-details/rdo/seller-details.rdo';
+
 
 @ApiTags('Отчеты')
 @Controller('reports')
@@ -25,7 +25,7 @@ export class BetcarReportController {
   }
   
   @ApiResponse({
-    type: SellerDetailsRdo,
+    type: ReportRdo,
     status: HttpStatus.OK,
     description: 'Данные отчета найдены'
   })
@@ -37,7 +37,7 @@ export class BetcarReportController {
   }
   
   @ApiResponse({
-    type: SellerDetailsRdo,
+    type: ReportRdo,
     status: HttpStatus.OK,
     description: 'Данные отчетов найдены'
   })
