@@ -10,7 +10,7 @@ export interface SellerDetails {
 
 export interface CarData {
   carDataId?: number;
-  reportId: number;
+  reportId?: number;
   vin: string;
   frameNumber: string;
   comment: string;
