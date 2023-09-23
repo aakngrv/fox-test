@@ -1,5 +1,5 @@
 import { ApiProperty } from '@nestjs/swagger';
-import { SellerDetails } from '@prisma/client';
+import { CarData, SellerDetails } from '@prisma/client';
 import { Expose } from 'class-transformer';
 
 export class ReportRdo {
@@ -31,6 +31,14 @@ export class ReportRdo {
   })
   @Expose()
   public sellerDetails: SellerDetails[];
+
+  @ApiProperty({
+    description: 'Данные автомобиля',
+    example: ''
+  })
+  @Expose()
+  public carData: CarData[];
+
   @ApiProperty({
     description: 'Дата создания',
     example: ''

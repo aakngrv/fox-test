@@ -3,9 +3,13 @@ import { BetcarReportController } from './betcar-report.controller';
 import { BetcarReportService } from './betcar-report.service';
 import { BetcarReportRepository } from './betcar-report.repository';
 import { SellerDetailsModule } from '../betcar-documents/seller-details/seller-details.module';
+import { CarDataModule } from '../betcar-documents/car-data/car-data.module';
 
 @Module({
-  imports: [SellerDetailsModule],
+  imports: [
+    SellerDetailsModule, 
+    CarDataModule,
+  ],
   controllers: [BetcarReportController],
   providers: [
     BetcarReportService, 

@@ -22,6 +22,12 @@ export class CreateReportDto {
   public sellerDetails: number[];
 
   @ApiProperty({
+    description: 'Массив объектов с данными об автомобиле',
+    example: ''
+  })
+  public carData: number[];
+
+  @ApiProperty({
     description: 'Дата создания',
     example: ''
   })

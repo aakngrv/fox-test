@@ -33,6 +33,16 @@ export class CarDataRepository implements CRUDRepository<CarDataEntity, number, 
     });
   }
 
+  public find(ids: number[] = []): Promise<CarData[]> {
+    return this.prisma.carData.findMany({
+      where: {
+        carDataId: {
+          in: ids.length > 0 ? ids : undefined
+        }
+      }
+    });
+  }
+
   public update(carDataId: number, item: CarDataEntity): Promise<CarData> {
     return this.prisma.carData.update({
       where: {

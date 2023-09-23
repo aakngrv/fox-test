@@ -15,7 +15,7 @@ model Report {
   createdAt     DateTime        @default(now()) @map("created_at")
   publishAt     DateTime        @updatedAt @map("publish_at")
   sellerDetails SellerDetails[] 
-  carData CarData[]
+  carData       CarData[]
 
   @@map("reports")
 }

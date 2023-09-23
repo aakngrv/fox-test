@@ -1,5 +1,5 @@
 import { Entity } from '@backend/util/util-types';
-import { Report, SellerDetails } from '@backend/shared/shared-types';
+import { CarData, Report, SellerDetails } from '@backend/shared/shared-types';
 
 export class BetcarReportEntity implements Entity<BetcarReportEntity>, Report {
 
@@ -7,6 +7,7 @@ export class BetcarReportEntity implements Entity<BetcarReportEntity>, Report {
   public executorId: string;
   public title: string;
   public sellerDetails: SellerDetails[];
+  public carData: CarData[];
   public createdAt: Date;
   public publishAt: Date;
 
@@ -19,6 +20,7 @@ export class BetcarReportEntity implements Entity<BetcarReportEntity>, Report {
     this.executorId = entity.executorId;
     this.title = entity.title;
     this.sellerDetails = [];
+    this.carData = [];
     this.createdAt = new Date();
     this.publishAt = new Date();
   }
@@ -26,7 +28,8 @@ export class BetcarReportEntity implements Entity<BetcarReportEntity>, Report {
   public toObject(): BetcarReportEntity {
     return { 
       ...this,
-      sellerDetails: this.sellerDetails.map(({ sellerDetailsId }) => ({ sellerDetailsId }))
+      sellerDetails: this.sellerDetails.map(({ sellerDetailsId }) => ({ sellerDetailsId })),
+      carData: this.carData.map(({ carDataId }) => ({ carDataId }))
     };
   }
 }
