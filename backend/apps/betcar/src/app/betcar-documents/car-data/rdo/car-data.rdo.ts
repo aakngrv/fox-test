@@ -1,4 +1,5 @@
 import { ApiProperty } from '@nestjs/swagger';
+import { Expose } from 'class-transformer';
 
 export class CarDataRdo {
   
@@ -6,48 +7,56 @@ export class CarDataRdo {
     description: 'ID данных об автомобиле',
     example: '1'
   })
-  public  carDataId?: number;
+  @Expose()
+  public  carDataId: number;
 
   @ApiProperty({
     description: 'ID отчета',
     example: '1'
   })
+  @Expose()
   public reportId: number;
   
   @ApiProperty({
     description: 'VIN номер',
     example: 'string'
   })
+  @Expose()
   public vin: string;
   
   @ApiProperty({
     description: 'Номер рамы',
     example: 'string'
   })
+  @Expose()
   public frameNumber: string;
   
   @ApiProperty({
     description: 'Комментарий',
     example: 'string'
   })
+  @Expose()
   public comment: string;
   
   @ApiProperty({
     description: 'Наличие сервисной книжки',
     example: false
   })
+  @Expose()
   public haveAServiceBook: boolean;
   
   @ApiProperty({
     description: 'Дополнительные документы',
     example: 'string'
   })
+  @Expose()
   public additionalDocuments: string;
   
   @ApiProperty({
     description: 'CTC',
     example: 'string'
   })
+  @Expose()
   public sts: string;
   
     
@@ -55,6 +64,7 @@ export class CarDataRdo {
     description: 'ПТС',
     example: 'string'
   })
+  @Expose()
   public tcp: string;
   
     
@@ -62,6 +72,7 @@ export class CarDataRdo {
     description: 'Гос номер',
     example: 'string'
   })
+  @Expose()
   public stateNumber: string;
   
     
@@ -69,6 +80,7 @@ export class CarDataRdo {
     description: 'Тип TC',
     example: 'string'
   })
+  @Expose()
   public carType: string;
   
     
@@ -76,6 +88,7 @@ export class CarDataRdo {
     description: 'Марка автомобиля',
     example: 'string'
   })
+  @Expose()
   public carBrand: string;
   
     
@@ -83,6 +96,7 @@ export class CarDataRdo {
     description: 'Модель автомобиля',
     example: 'string'
   })
+  @Expose()
   public carModel: string;
   
     
@@ -90,6 +104,7 @@ export class CarDataRdo {
     description: 'Год выпуска',
     example: 'string'
   })
+  @Expose()
   public manufactureYear: string;
   
     
@@ -97,6 +112,7 @@ export class CarDataRdo {
     description: 'Тип кузова',
     example: 'string'
   })
+  @Expose()
   public bodyType: string;
   
     
@@ -104,6 +120,7 @@ export class CarDataRdo {
     description: 'Поколение',
     example: 'string'
   })
+  @Expose()
   public generation: string;
   
     
@@ -111,6 +128,7 @@ export class CarDataRdo {
     description: 'Тип двигателя',
     example: 'string'
   })
+  @Expose()
   public enginesType: string;
   
     
@@ -118,6 +136,7 @@ export class CarDataRdo {
     description: 'Модификация двигателя',
     example: 'string'
   })
+  @Expose()
   public enginesModification: string;
   
     
@@ -125,6 +144,7 @@ export class CarDataRdo {
     description: 'Номер двигателя',
     example: 'string'
   })
+  @Expose()
   public enginesNumber: string;
   
     
@@ -132,6 +152,7 @@ export class CarDataRdo {
     description: 'Привод',
     example: 'string'
   })
+  @Expose()
   public driveUnit: string;
   
     
@@ -139,6 +160,7 @@ export class CarDataRdo {
     description: 'Тип КПП',
     example: 'string'
   })
+  @Expose()
   public gearboxType: string;
   
     
@@ -146,6 +168,7 @@ export class CarDataRdo {
     description: 'Модификация',
     example: 'string'
   })
+  @Expose()
   public modification: string;
   
     
@@ -153,6 +176,7 @@ export class CarDataRdo {
     description: 'Объем двигателя',
     example: 'string'
   })
+  @Expose()
   public engineCapacity: string;
   
     
@@ -160,6 +184,7 @@ export class CarDataRdo {
     description: 'Мощность',
     example: 'string'
   })
+  @Expose()
   public power: string;
   
     
@@ -167,6 +192,7 @@ export class CarDataRdo {
     description: 'Цвет',
     example: 'string'
   })
+  @Expose()
   public color: string;
   
     
@@ -174,40 +200,48 @@ export class CarDataRdo {
     description: 'CTC',
     example: false
   })
+  @Expose()
   public isMetallic: boolean;
+
   @ApiProperty({
     description: 'Пробег',
     example: false
   })
+  @Expose()
   public mileage: string;
   
   @ApiProperty({
     description: 'Не установлен',
     example: false
   })
+  @Expose()
   public isNotInstalled: boolean;
   
   @ApiProperty({
     description: 'Новый автомобиль?',
     example: false
   })
+  @Expose()
   public isNewCar: boolean;
   
   @ApiProperty({
     description: 'Аварийный?',
     example: false
   })
+  @Expose()
   public isEmergency: boolean;
   
   @ApiProperty({
     description: 'Не на ходу?',
     example: false
   })
+  @Expose()
   public isNotOnTrack: boolean;
   
   @ApiProperty({
     description: 'Общий комментрий',
     example: 'string'
   })
+  @Expose()
   public totalComment: string;
 }
