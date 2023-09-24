@@ -3,6 +3,12 @@ import { ApiProperty } from '@nestjs/swagger';
 export class UpdateCarDataDto {
   
   @ApiProperty({
+    description: 'ID отчета',
+    example: '1'
+  })
+  public reportId: number;
+  
+  @ApiProperty({
     description: 'VIM номер',
     example: 'string'
   })

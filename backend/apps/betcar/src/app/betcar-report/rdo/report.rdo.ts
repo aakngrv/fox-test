@@ -1,5 +1,10 @@
 import { ApiProperty } from '@nestjs/swagger';
-import { CarData, SellerDetails } from '@prisma/client';
+import { 
+  AdditionalDocuments, 
+  CarData, 
+  SellerDetails,
+} from '@prisma/client';
+
 import { Expose } from 'class-transformer';
 
 export class ReportRdo {
@@ -38,6 +43,13 @@ export class ReportRdo {
   })
   @Expose()
   public carData: CarData[];
+
+  @ApiProperty({
+    description: 'Дополнительные документы',
+    example: ''
+  })
+  @Expose()
+  public additionalDocuments: AdditionalDocuments[];
 
   @ApiProperty({
     description: 'Дата создания',

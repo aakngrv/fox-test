@@ -21,11 +21,15 @@ export class BetcarReportRepository implements CRUDRepository<BetcarReportEntity
         },
         carData: {
           connect: []
+        },
+        additionalDocuments: {
+          connect: []
         }
       }, 
       include: {
         sellerDetails: true,
         carData: true,
+        additionalDocuments: true,
       }
     });
   }
@@ -46,6 +50,7 @@ export class BetcarReportRepository implements CRUDRepository<BetcarReportEntity
       include: {
         sellerDetails: true,
         carData: true,
+        additionalDocuments: true,
       }
     });
   }
@@ -55,6 +60,7 @@ export class BetcarReportRepository implements CRUDRepository<BetcarReportEntity
       include: {
         sellerDetails: true,
         carData: true,
+        additionalDocuments: true,
       }
     });
   }

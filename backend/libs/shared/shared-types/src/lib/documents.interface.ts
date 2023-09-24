@@ -45,10 +45,11 @@ export interface CarData {
 
 export interface AdditionalDocuments {
   additionalDocumentsId?: number;
+  reportId?: number;
   comment: string;
   video: string;
   photo: string;
-  fail: string;
+  file: string;
 }
 
 export interface TCP {
