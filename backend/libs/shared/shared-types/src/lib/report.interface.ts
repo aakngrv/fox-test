@@ -4,6 +4,7 @@ import {
   STS, 
   SellerDetails, 
   TCP,
+  Location,
 } from "./documents.interface";
 
 export interface Report {
@@ -15,6 +16,7 @@ export interface Report {
   additionalDocuments: AdditionalDocuments[];
   tcp: TCP[];
   sts: STS[];
+  location: Location[];
   createdAt: Date;
   publishAt: Date;
 }

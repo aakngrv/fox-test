@@ -6,6 +6,7 @@ import {
   SellerDetails, 
   STS, 
   TCP,
+  Location,
  } from '@backend/shared/shared-types';
 
 export class BetcarReportEntity implements Entity<BetcarReportEntity>, Report {
@@ -18,6 +19,7 @@ export class BetcarReportEntity implements Entity<BetcarReportEntity>, Report {
   public additionalDocuments: AdditionalDocuments[];
   public tcp: TCP[];
   public sts: STS[];
+  public location: Location[];
   public createdAt: Date;
   public publishAt: Date;
 
@@ -34,6 +36,7 @@ export class BetcarReportEntity implements Entity<BetcarReportEntity>, Report {
     this.additionalDocuments = [];
     this.tcp = [];
     this.sts = [];
+    this.location = [];
     this.createdAt = new Date();
     this.publishAt = new Date();
   }
@@ -46,6 +49,7 @@ export class BetcarReportEntity implements Entity<BetcarReportEntity>, Report {
       additionalDocuments: this.additionalDocuments.map(({ additionalDocumentsId }) => ({ additionalDocumentsId })),
       tcp: this.tcp.map(({ tcpId }) => ({ tcpId })),
       sts: this.sts.map(({ stsId }) => ({ stsId })),
+      location: this.location.map(({ locationId }) => ({ locationId })),
     };
   }
 }

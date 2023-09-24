@@ -5,6 +5,7 @@ import {
   STS, 
   SellerDetails,
   TCP,
+  Location,
 } from '@prisma/client';
 
 import { Expose } from 'class-transformer';
@@ -66,6 +67,13 @@ export class ReportRdo {
   })
   @Expose()
   public sts: STS[];
+
+  @ApiProperty({
+    description: 'Массив объектов c информацией о местоположении',
+    example: ''
+  })
+  @Expose()
+  public location: Location[];
 
   @ApiProperty({
     description: 'Дата создания',

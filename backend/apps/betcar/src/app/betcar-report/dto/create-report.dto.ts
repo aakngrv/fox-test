@@ -46,6 +46,12 @@ export class CreateReportDto {
   public sts: number[];
 
   @ApiProperty({
+    description: 'Массив объектов c информацией о местоположении',
+    example: ''
+  })
+  public location: number[];
+
+  @ApiProperty({
     description: 'Дата создания',
     example: ''
   })

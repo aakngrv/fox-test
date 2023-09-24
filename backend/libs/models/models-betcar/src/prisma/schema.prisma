@@ -19,6 +19,7 @@ model Report {
   additionalDocuments AdditionalDocuments[]
   tcp                 TCP[]
   sts                 STS[]
+  location            Location[]
 
   @@map("reports")
 }
@@ -122,12 +123,14 @@ model STS {
 }
 
 model Location {
-  locationId Int    @id @default(autoincrement()) @map("location_id")
-  country    String @default("")
-  region     String @default("")
-  city       String @default("")
-  address    String @default("")
-  comment    String @default("")
+  locationId      Int     @id @default(autoincrement()) @map("location_id")
+  reportId        Int     @map("report_id")
+  report          Report  @relation(fields: [reportId], references: [reportId], onDelete: Cascade, onUpdate: Cascade)
+  country         String  @default("")
+  region          String  @default("")
+  city            String  @default("")
+  address         String  @default("")
+  comment         String  @default("")
 
   @@map("locations")
 }

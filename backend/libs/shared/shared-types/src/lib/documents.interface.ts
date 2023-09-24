@@ -81,6 +81,7 @@ export interface STS {
 
 export interface Location {
   locationId?: number;
+  reportId?: number;
   country: string;
   region: string;
   city: string;
