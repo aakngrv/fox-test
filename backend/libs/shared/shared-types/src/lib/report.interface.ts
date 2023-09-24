@@ -1,6 +1,7 @@
 import { 
   AdditionalDocuments, 
   CarData, 
+  STS, 
   SellerDetails, 
   TCP,
 } from "./documents.interface";
@@ -13,6 +14,7 @@ export interface Report {
   carData: CarData[];
   additionalDocuments: AdditionalDocuments[];
   tcp: TCP[];
+  sts: STS[];
   createdAt: Date;
   publishAt: Date;
 }

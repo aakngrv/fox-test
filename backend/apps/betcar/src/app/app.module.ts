@@ -5,6 +5,7 @@ import { BetcarReportModule } from './betcar-report/betcar-report.module';
 import { CarDataModule } from './betcar-documents/car-data/car-data.module';
 import { AdditionalDocumentsModule } from './betcar-documents/additional-documents/additional-documents.module';
 import { TcpModule } from './betcar-documents/tcp/tcp.module';
+import { StsModule } from './betcar-documents/sts/sts.module';
 
 
 @Module({
@@ -15,6 +16,7 @@ import { TcpModule } from './betcar-documents/tcp/tcp.module';
     CarDataModule,
     AdditionalDocumentsModule,
     TcpModule,
+    StsModule,
   ],
   controllers: [],
   providers: [],

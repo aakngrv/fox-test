@@ -18,6 +18,7 @@ model Report {
   carData             CarData[]
   additionalDocuments AdditionalDocuments[]
   tcp                 TCP[]
+  sts                 STS[]
 
   @@map("reports")
 }
@@ -105,15 +106,17 @@ model TCP {
 }
 
 model STS {
-  stsId       Int     @id @default(autoincrement()) @map("sts_id")
-  isAbsent    Boolean @default(false) @map("is_absent")
-  series      String  @default("")
-  number      String  @default("")
-  dateOfIssue String  @default("") @map("date_of_issue")
-  issuedBy    String  @default("") @map("issued_by")
-  video       String  @default("")
-  photo       String  @default("")
-  file        String  @default("")
+  stsId                 Int     @id @default(autoincrement()) @map("sts_id")
+  reportId              Int     @map("report_id")
+  report                Report  @relation(fields: [reportId], references: [reportId], onDelete: Cascade, onUpdate: Cascade)
+  isAbsent              Boolean @default(false) @map("is_absent")
+  series                String  @default("")
+  number                String  @default("")
+  dateOfIssue           String  @default("") @map("date_of_issue")
+  issuedBy              String  @default("") @map("issued_by")
+  video                 String  @default("")
+  photo                 String  @default("")
+  file                  String  @default("")
 
   @@map("sts")
 }
@@ -128,8 +131,6 @@ model Location {
 
   @@map("locations")
 }
-
-// Добавить карты
 
 // *********** End of table "Documents" ************ //
 // =================================================================================================

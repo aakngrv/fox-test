@@ -68,7 +68,8 @@ export interface TCP {
 
 export interface STS {
   stsId?: number;
-  absent: boolean;
+  reportId?: number;
+  isAbsent: boolean;
   series: string;
   number: string;
   dateOfIssue: string;

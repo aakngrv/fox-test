@@ -1,5 +1,4 @@
 import { ApiProperty } from '@nestjs/swagger';
-import { SellerDetails } from '@backend/shared/shared-types';
 
 export class CreateReportDto {
    
@@ -38,6 +37,13 @@ export class CreateReportDto {
     example: ''
   })
   public tcp: number[];
+
+  
+  @ApiProperty({
+    description: 'Массив объектов с СТС',
+    example: ''
+  })
+  public sts: number[];
 
   @ApiProperty({
     description: 'Дата создания',

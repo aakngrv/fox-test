@@ -2,6 +2,7 @@ import { ApiProperty } from '@nestjs/swagger';
 import { 
   AdditionalDocuments, 
   CarData, 
+  STS, 
   SellerDetails,
   TCP,
 } from '@prisma/client';
@@ -9,6 +10,13 @@ import {
 import { Expose } from 'class-transformer';
 
 export class ReportRdo {
+
+  @ApiProperty({
+    description: 'ID подборщика',
+    example: '1'
+  })
+  @Expose()
+  public  executorId: string;
   
   @ApiProperty({
     description: 'ID отчета',
@@ -16,13 +24,6 @@ export class ReportRdo {
   })
   @Expose()
   public reportId: string
-  
-  @ApiProperty({
-    description: 'ID подборщика',
-    example: '1'
-  })
-  @Expose()
-  public  executorId: string;
   
   @ApiProperty({
     description: 'Название отчета',
@@ -60,12 +61,19 @@ export class ReportRdo {
   public tcp: TCP[];
 
   @ApiProperty({
+    description: 'СТС',
+    example: ''
+  })
+  @Expose()
+  public sts: STS[];
+
+  @ApiProperty({
     description: 'Дата создания',
     example: ''
   })
   @Expose()
   public  createdAt: string;
-  
+
   @ApiProperty({
     description: 'Дата публикации отчета',
     example: '1'
