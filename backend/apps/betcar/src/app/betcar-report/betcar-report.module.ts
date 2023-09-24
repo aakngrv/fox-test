@@ -5,12 +5,14 @@ import { BetcarReportRepository } from './betcar-report.repository';
 import { SellerDetailsModule } from '../betcar-documents/seller-details/seller-details.module';
 import { CarDataModule } from '../betcar-documents/car-data/car-data.module';
 import { AdditionalDocumentsModule } from '../betcar-documents/additional-documents/additional-documents.module';
+import { TcpModule } from '../betcar-documents/tcp/tcp.module';
 
 @Module({
   imports: [
     SellerDetailsModule, 
     CarDataModule,
     AdditionalDocumentsModule,
+    TcpModule,
   ],
   controllers: [BetcarReportController],
   providers: [

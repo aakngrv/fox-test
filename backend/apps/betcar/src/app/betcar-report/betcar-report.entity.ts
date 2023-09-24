@@ -1,5 +1,6 @@
 import { Entity } from '@backend/util/util-types';
 import { AdditionalDocuments, CarData, Report, SellerDetails } from '@backend/shared/shared-types';
+import { TCP } from '@prisma/client';
 
 export class BetcarReportEntity implements Entity<BetcarReportEntity>, Report {
 
@@ -9,6 +10,7 @@ export class BetcarReportEntity implements Entity<BetcarReportEntity>, Report {
   public sellerDetails: SellerDetails[];
   public carData: CarData[];
   public additionalDocuments: AdditionalDocuments[];
+  public tcp: TCP[];
   public createdAt: Date;
   public publishAt: Date;
 
@@ -23,6 +25,7 @@ export class BetcarReportEntity implements Entity<BetcarReportEntity>, Report {
     this.sellerDetails = [];
     this.carData = [];
     this.additionalDocuments = [];
+    this.tcp = [];
     this.createdAt = new Date();
     this.publishAt = new Date();
   }
@@ -33,6 +36,7 @@ export class BetcarReportEntity implements Entity<BetcarReportEntity>, Report {
       sellerDetails: this.sellerDetails.map(({ sellerDetailsId }) => ({ sellerDetailsId })),
       carData: this.carData.map(({ carDataId }) => ({ carDataId })),
       additionalDocuments: this.additionalDocuments.map(({ additionalDocumentsId }) => ({ additionalDocumentsId })),
+      tcp: this.tcp.map(({ tcpId }) => ({ tcpId })),
     };
   }
 }

@@ -3,6 +3,7 @@ import {
   AdditionalDocuments, 
   CarData, 
   SellerDetails,
+  TCP,
 } from '@prisma/client';
 
 import { Expose } from 'class-transformer';
@@ -52,11 +53,19 @@ export class ReportRdo {
   public additionalDocuments: AdditionalDocuments[];
 
   @ApiProperty({
+    description: 'ПТС',
+    example: ''
+  })
+  @Expose()
+  public tcp: TCP[];
+
+  @ApiProperty({
     description: 'Дата создания',
     example: ''
   })
   @Expose()
   public  createdAt: string;
+  
   @ApiProperty({
     description: 'Дата публикации отчета',
     example: '1'

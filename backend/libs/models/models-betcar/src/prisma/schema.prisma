@@ -17,6 +17,7 @@ model Report {
   sellerDetails       SellerDetails[] 
   carData             CarData[]
   additionalDocuments AdditionalDocuments[]
+  tcp                 TCP[]
 
   @@map("reports")
 }
@@ -87,18 +88,20 @@ model AdditionalDocuments {
 }
 
 model TCP {
-  tcpId           Int    @id @default(autoincrement()) @map("tcp_id")
-  availabilityTCP String @default("") @map("availability_tcp")
-  chassis         String @default("")
-  series          String @default("")
-  number          String @default("")
-  dateOfIssue     String @default("") @map("date_of_issue")
-  numberOfOwners  String @default("") @map("number_of_owners")
-  video           String @default("")
-  photo           String @default("")
-  file            String @default("")
+  tcpId                 Int     @id @default(autoincrement()) @map("tcp_id")
+  reportId              Int     @map("report_id")
+  report                Report  @relation(fields: [reportId], references: [reportId], onDelete: Cascade, onUpdate: Cascade)
+  availabilityTCP       String  @default("") @map("availability_tcp")
+  chassis               String  @default("")
+  series                String  @default("")
+  number                String  @default("")
+  dateOfIssue           String  @default("") @map("date_of_issue")
+  numberOfOwners        String  @default("") @map("number_of_owners")
+  video                 String  @default("")
+  photo                 String  @default("")
+  file                  String  @default("")
 
-  @@map("tcp")
+  @@map("tcps")
 }
 
 model STS {

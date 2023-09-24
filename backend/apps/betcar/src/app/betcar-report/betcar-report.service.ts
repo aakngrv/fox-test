@@ -7,6 +7,7 @@ import { Report } from '@backend/shared/shared-types';
 import { UpdateReportDto } from './dto/update-report.dto';
 import { BetcarReportEntity } from './betcar-report.entity';
 import { AdditionalDocumentsRepository } from '../betcar-documents/additional-documents/additional-documents.repository';
+import { TcpRepository } from '../betcar-documents/tcp/tcp.repository';
 
 @Injectable()
 export class BetcarReportService {
@@ -15,13 +16,15 @@ export class BetcarReportService {
     private readonly sellerDetailsRepository: SellerDetailsRepository,
     private readonly carDataRepository: CarDataRepository,
     private readonly additionalDocumentsRepository: AdditionalDocumentsRepository,
+    private readonly tcpRepository: TcpRepository,
   ) {}
 
   async createReport(dto: CreateReportDto): Promise<Report> {
     const sellerDetails = await this.sellerDetailsRepository.find(dto.sellerDetails);
     const carData = await this.carDataRepository.find(dto.carData);
-    const additionalDocuments = await this.additionalDocumentsRepository.find(dto.additionalDocuments)
-    const reportEntity = new BetcarReportEntity({ ...dto, sellerDetails, carData, additionalDocuments});
+    const additionalDocuments = await this.additionalDocumentsRepository.find(dto.additionalDocuments);
+    const tcp = await this.tcpRepository.find(dto.tcp);
+    const reportEntity = new BetcarReportEntity({ ...dto, sellerDetails, carData, additionalDocuments, tcp});
     return this.betcarReportRepository.create(reportEntity);
   }
 

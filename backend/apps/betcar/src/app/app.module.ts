@@ -4,6 +4,7 @@ import { SellerDetailsModule } from './betcar-documents/seller-details/seller-de
 import { BetcarReportModule } from './betcar-report/betcar-report.module';
 import { CarDataModule } from './betcar-documents/car-data/car-data.module';
 import { AdditionalDocumentsModule } from './betcar-documents/additional-documents/additional-documents.module';
+import { TcpModule } from './betcar-documents/tcp/tcp.module';
 
 
 @Module({
@@ -13,7 +14,7 @@ import { AdditionalDocumentsModule } from './betcar-documents/additional-documen
     SellerDetailsModule,
     CarDataModule,
     AdditionalDocumentsModule,
-
+    TcpModule,
   ],
   controllers: [],
   providers: [],

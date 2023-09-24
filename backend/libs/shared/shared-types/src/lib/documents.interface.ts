@@ -54,6 +54,7 @@ export interface AdditionalDocuments {
 
 export interface TCP {
   tcpId?: number;
+  reportId?: number;
   availabilityTCP: string;
   chassis: string;
   series: string;
@@ -62,11 +63,11 @@ export interface TCP {
   numberOfOwners: string;
   video: string;
   photo: string;
-  fail: string;
+  file: string;
 }
 
 export interface STS {
-  id?: number;
+  stsId?: number;
   absent: boolean;
   series: string;
   number: string;
@@ -74,11 +75,11 @@ export interface STS {
   issuedBy: string;
   video: string;
   photo: string;
-  fail: string;
+  file: string;
 }
 
 export interface Location {
-  id?: number;
+  locationId?: number;
   country: string;
   region: string;
   city: string;

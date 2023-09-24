@@ -1,4 +1,9 @@
-import { AdditionalDocuments, CarData, SellerDetails } from "./documents.interface";
+import { 
+  AdditionalDocuments, 
+  CarData, 
+  SellerDetails, 
+  TCP,
+} from "./documents.interface";
 
 export interface Report {
   reportId?: number;
@@ -7,6 +12,7 @@ export interface Report {
   sellerDetails: SellerDetails[];
   carData: CarData[];
   additionalDocuments: AdditionalDocuments[];
+  tcp: TCP[];
   createdAt: Date;
   publishAt: Date;
 }
