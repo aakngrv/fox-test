@@ -18,10 +18,30 @@ export class BetcarReportRepository implements CRUDRepository<BetcarReportEntity
         ...entityData,
         sellerDetails: {
           connect: []
+        },
+        carData: {
+          connect: []
+        },
+        additionalDocuments: {
+          connect: []
+        },
+        tcp: {
+          connect: []
+        },
+        sts: {
+          connect: []
+        },
+        location: {
+          connect: []
         }
       }, 
       include: {
-        sellerDetails: true
+        sellerDetails: true,
+        carData: true,
+        additionalDocuments: true,
+        tcp: true,
+        sts: true,
+        location: true,
       }
     });
   }
@@ -40,7 +60,12 @@ export class BetcarReportRepository implements CRUDRepository<BetcarReportEntity
         reportId
       },
       include: {
-        sellerDetails: true
+        sellerDetails: true,
+        carData: true,
+        additionalDocuments: true,
+        tcp: true,
+        sts: true,
+        location: true,
       }
     });
   }
@@ -48,7 +73,12 @@ export class BetcarReportRepository implements CRUDRepository<BetcarReportEntity
   public find(): Promise<Report[]> {
     return this.prisma.report.findMany({
       include: {
-        sellerDetails: true
+        sellerDetails: true,
+        carData: true,
+        additionalDocuments: true,
+        tcp: true,
+        sts: true,
+        location: true,
       }
     });
   }

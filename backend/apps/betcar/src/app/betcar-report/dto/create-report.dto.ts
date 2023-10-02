@@ -1,35 +1,65 @@
 import { ApiProperty } from '@nestjs/swagger';
-import { SellerDetails } from '@backend/shared/shared-types';
 
 export class CreateReportDto {
    
   @ApiProperty({
     description: 'ID подборщика',
-    example: '13'
+    example: '1'
   })
   public  executorId: string;
   
   @ApiProperty({
     description: 'Заголовок отчета',
-    example: 'Осмтор автомобиля BMW X6'
+    example: 'Осмотр автомобиля BMW X6'
   })
   public title: string;
   
   @ApiProperty({
     description: 'Массив объектов с данными о продавце',
-    example: '[]'
+    example: ''
   })
   public sellerDetails: number[];
 
   @ApiProperty({
-    description: 'ID подборщика',
-    example: '13'
+    description: 'Массив объектов с данными об автомобиле',
+    example: ''
+  })
+  public carData: number[];
+
+  @ApiProperty({
+    description: 'Массив объектов с дополнительными документами',
+    example: ''
+  })
+  public additionalDocuments: number[];
+
+  @ApiProperty({
+    description: 'Массив объектов с ПТС',
+    example: ''
+  })
+  public tcp: number[];
+
+  
+  @ApiProperty({
+    description: 'Массив объектов с СТС',
+    example: ''
+  })
+  public sts: number[];
+
+  @ApiProperty({
+    description: 'Массив объектов c информацией о местоположении',
+    example: ''
+  })
+  public location: number[];
+
+  @ApiProperty({
+    description: 'Дата создания',
+    example: ''
   })
   public  createdAt: Date;
 
   @ApiProperty({
-    description: 'ID подборщика',
-    example: '13'
+    description: 'Дата публикации',
+    example: ''
   })
   public  publishAt: Date;
 }

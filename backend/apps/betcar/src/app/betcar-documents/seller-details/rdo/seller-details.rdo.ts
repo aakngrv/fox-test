@@ -5,14 +5,14 @@ export class SellerDetailsRdo {
   
   @ApiProperty({
     description: 'ID данных продавца',
-    example: '21'
+    example: '1'
   })
   @Expose()
   public sellerDetailsId: string;
 
   @ApiProperty({
     description: 'ID отчета',
-    example: '21'
+    example: '1'
   })
   @Expose()
   public reportId: string;
@@ -26,7 +26,7 @@ export class SellerDetailsRdo {
   
   @ApiProperty({
     description: 'Номер телефона',
-    example: '25'
+    example: '89004561234'
   })
   @Expose()
   public phone: string;
@@ -40,7 +40,7 @@ export class SellerDetailsRdo {
 
   @ApiProperty({
     description: 'Собственник или дилер',
-    example: 'true или false'
+    example: false
   })
   @Expose()
   public role: boolean;

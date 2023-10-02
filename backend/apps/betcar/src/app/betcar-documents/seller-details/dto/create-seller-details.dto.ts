@@ -4,7 +4,7 @@ export class CreateSellerDetailsDto {
   
   @ApiProperty({
     description: 'ID отчета',
-    example: '2'
+    example: '1'
   })
   public reportId: number;
 

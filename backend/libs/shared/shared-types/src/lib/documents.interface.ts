@@ -9,7 +9,8 @@ export interface SellerDetails {
 }
 
 export interface CarData {
-  id?: number;
+  carDataId?: number;
+  reportId?: number;
   vin: string;
   frameNumber: string;
   comment: string;
@@ -43,15 +44,17 @@ export interface CarData {
 }
 
 export interface AdditionalDocuments {
-  id?: number;
+  additionalDocumentsId?: number;
+  reportId?: number;
   comment: string;
   video: string;
   photo: string;
-  fail: string;
+  file: string;
 }
 
 export interface TCP {
-  id?: number;
+  tcpId?: number;
+  reportId?: number;
   availabilityTCP: string;
   chassis: string;
   series: string;
@@ -60,23 +63,25 @@ export interface TCP {
   numberOfOwners: string;
   video: string;
   photo: string;
-  fail: string;
+  file: string;
 }
 
 export interface STS {
-  id?: number;
-  absent: boolean;
+  stsId?: number;
+  reportId?: number;
+  isAbsent: boolean;
   series: string;
   number: string;
   dateOfIssue: string;
   issuedBy: string;
   video: string;
   photo: string;
-  fail: string;
+  file: string;
 }
 
 export interface Location {
-  id?: number;
+  locationId?: number;
+  reportId?: number;
   country: string;
   region: string;
   city: string;

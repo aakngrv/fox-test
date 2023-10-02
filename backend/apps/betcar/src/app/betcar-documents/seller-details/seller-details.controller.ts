@@ -15,6 +15,16 @@ export class SellerDetailsController {
   ) {}
   
   @ApiResponse({
+    status: HttpStatus.CREATED,
+    description: 'Данные продавца успешно созданы.'
+  })
+  @Post('/')
+  async create(@Body() dto: CreateSellerDetailsDto) {
+    const newSellerDetails = await this.sellerDetailsService.createSellerDetails(dto);
+    return fillObject(SellerDetailsRdo, newSellerDetails);
+  }
+
+  @ApiResponse({
     type: SellerDetailsRdo,
     status: HttpStatus.OK,
     description: 'Данные продавца найдены'
@@ -25,23 +35,13 @@ export class SellerDetailsController {
     const existSellerDetails = await this.sellerDetailsService.getSellerDetails(sellerDetailsId);
     return fillObject(SellerDetailsRdo, existSellerDetails);
   }
-  
-  @ApiResponse({
-    status: HttpStatus.CREATED,
-    description: 'Данные продавца успешно созданы.'
-  })
-  @Post('/')
-  async create(@Body() dto: CreateSellerDetailsDto) {
-    const newSellerDetails = await this.sellerDetailsService.createSellerDetails(dto);
-    return fillObject(SellerDetailsRdo, newSellerDetails);
-  }
 
-  @Delete('/:id')
   @ApiResponse({
     status: HttpStatus.NO_CONTENT,
     description: 'Данные продавца успешно удалены.'
   })
   @HttpCode(HttpStatus.NO_CONTENT)
+  @Delete('/:id')
   async destroy(@Param('id') id: string) {
     const sellerDetailsId = parseInt(id, 10);
     this.sellerDetailsService.deleteSellerDetails(sellerDetailsId);
