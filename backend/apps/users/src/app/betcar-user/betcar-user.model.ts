@@ -41,6 +41,11 @@ export class BetcarUserModel extends Document implements User {
     required: true,
   })
   phone: string;
+
+  @Prop({
+    required: true,
+  })
+  city: string;
 }
 
 export const BetcarUserSchema = SchemaFactory.createForClass(BetcarUserModel);

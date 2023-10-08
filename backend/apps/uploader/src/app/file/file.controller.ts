@@ -23,6 +23,7 @@ export class FileController {
   public async uploadFile(@UploadedFile() file: Express.Multer.File) {
     const newFile = await this.fileService.saveFile(file);
     const path = `${this.applicationConfig.serveRoot}${newFile.path}`;
+
     return fillObject(UploadedFileRdo, Object.assign(newFile, { path }));
   }
 
@@ -30,6 +31,7 @@ export class FileController {
   public async show(@Param('fileId') fileId: string) {
     const existFile = await this.fileService.getFile(fileId);
     const path = `${this.applicationConfig.serveRoot}${existFile.path}`;
+    
     return fillObject(UploadedFileRdo, Object.assign(existFile, { path }));
   }
 }

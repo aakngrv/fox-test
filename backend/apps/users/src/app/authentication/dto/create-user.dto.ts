@@ -4,31 +4,37 @@ import { ApiProperty } from '@nestjs/swagger';
 export class CreateUserDto {
 
   @ApiProperty({
-    description: 'Executor unique address',
+    description: 'Почта пользователя',
     example: 'executor@mail.ru'
   })
   public email: string;
 
   @ApiProperty({
-    description: 'Executor phone number',
+    description: 'Номер телефона пользователя',
     example: '89094445599'
   })
   public phone: string;
 
   @ApiProperty({
-    description: 'Executor first name',
+    description: 'Город пользователя',
+    example: '89094445599'
+  })
+  public city: string;
+
+  @ApiProperty({
+    description: 'Имя пользователя',
     example: 'Max',
   })
   public firstname: string;
 
   @ApiProperty({
-    description: 'Executor last name',
+    description: 'Фамилия пользователя',
     example: 'Ivanov'
   })
   public lastname: string;
 
   @ApiProperty({
-    description: 'Executor password',
+    description: 'Пароль пользователя',
     example: 'Password123456'
   })
   public password: string;

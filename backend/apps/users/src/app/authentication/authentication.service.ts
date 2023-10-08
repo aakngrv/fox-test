@@ -13,13 +13,14 @@ export class AuthenticationService {
   ) {}
 
   public async register(dto: CreateUserDto) {
-    const {email, firstname, lastname, password, phone} = dto;
+    const {email, firstname, lastname, password, phone, city} = dto;
 
     const betcarUser = {
       email,
       firstname,
       lastname,
       phone,
+      city,
       role: UserRole.Executor,
       passwordHash: ''
     };
