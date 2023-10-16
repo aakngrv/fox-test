@@ -30,7 +30,17 @@ export class BetcarReportService {
     const tcp = await this.tcpRepository.find(dto.tcp);
     const sts = await this.stsRepository.find(dto.sts);
     const location = await this.locationRepository.find(dto.location);
-    const reportEntity = new BetcarReportEntity({ ...dto, sellerDetails, carData, additionalDocuments, tcp, sts, location});
+
+    const reportEntity = new BetcarReportEntity({ 
+      ...dto, 
+      sellerDetails, 
+      carData, 
+      additionalDocuments, 
+      tcp, 
+      sts, 
+      location
+    });
+    
     return this.betcarReportRepository.create(reportEntity);
   }
 

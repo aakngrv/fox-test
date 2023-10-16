@@ -30,10 +30,9 @@ export class BetcarReportController {
     description: 'Данные отчета найдены'
   })
   @Get('/:id')
-  async show(@Param('id') id: string) {
-    const reportId = parseInt(id, 10);
-    const report = await this.betcarReportService.getReport(reportId);
-    return fillObject(ReportRdo, report);
+  async show(@Param('id') id: number) {
+    const existReport = await this.betcarReportService.getReport(id);
+    return fillObject(ReportRdo, existReport);
   }
   
   @ApiResponse({
@@ -53,9 +52,8 @@ export class BetcarReportController {
   })
   @Delete('/:id')
   @HttpCode(HttpStatus.NO_CONTENT)
-  async destroy(@Param('id') id: string) {
-    const reportId = parseInt(id, 10);
-    this.betcarReportService.deleteReport(reportId);
+  async destroy(@Param('id') id: number) {
+    this.betcarReportService.deleteReport(id);
   }
   
   @ApiResponse({
@@ -64,9 +62,8 @@ export class BetcarReportController {
   })
   @HttpCode(HttpStatus.OK)
   @Patch('/:id')
-  async update(@Param('id') id: string, @Body() dto: UpdateReportDto) {
-    const reportId = parseInt(id, 10);
-    const updatedReport = await this.betcarReportService.updateReport(reportId, dto);
+  async update(@Param('id') id: number, @Body() dto: UpdateReportDto) {
+    const updatedReport = await this.betcarReportService.updateReport(id, dto)
     return fillObject(ReportRdo, updatedReport)
   }
 }

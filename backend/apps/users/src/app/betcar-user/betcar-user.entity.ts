@@ -11,6 +11,7 @@ export class BetcarUserEntity implements User {
   public passwordHash: string;
   public phone: string;
   public role: UserRole;
+  public city: string;
 
   constructor(betcarUser: {
     firstname: string;
@@ -19,6 +20,7 @@ export class BetcarUserEntity implements User {
     passwordHash: string;
     lastname: string;
     phone: string;
+    city: string;
   }) {
     this.fillEntity(betcarUser);
   }
@@ -35,6 +37,7 @@ export class BetcarUserEntity implements User {
     this.passwordHash = betcarUser.passwordHash;
     this.role = betcarUser.role;
     this.phone = betcarUser.phone;
+    this.city = betcarUser.city;
   }
 
   public async setPassword(password: string): Promise<BetcarUserEntity> {

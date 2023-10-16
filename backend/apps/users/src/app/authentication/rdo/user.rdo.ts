@@ -4,7 +4,7 @@ import { ApiProperty } from '@nestjs/swagger';
 export class UserRdo {
 
   @ApiProperty({
-    description: 'The uniq executor ID',
+    description: 'ID пользователя',
     example: '25'
   })
   @Expose({ name: '_id'})
@@ -12,30 +12,37 @@ export class UserRdo {
   public id: string;
 
   @ApiProperty({
-    description: 'Executor phone number',
+    description: 'Номер телефона пользователя',
     example: '89222334545'
   })
   @Expose()
   public phone: string;
 
   @ApiProperty({
-    description: 'Executor email',
+    description: 'Электронная почта пользователя',
     example: 'executor@mail.ru'
   })
   @Expose()
   public email: string;
 
   @ApiProperty({
-    description: 'Executor first name',
+    description: 'Имя пользователя',
     example: 'Max',
   })
   @Expose()
   public firstname: string;
 
   @ApiProperty({
-    description: 'Executor last name',
+    description: 'Фамилия пользователя',
     example: 'Ivanov'
   })
   @Expose()
   public lastname: string;
+
+  @ApiProperty({
+    description: 'Город пользователя',
+    example: 'Москва',
+  })
+  @Expose()
+  public city: string;
 }
