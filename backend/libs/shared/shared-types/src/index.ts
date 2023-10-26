@@ -1,3 +1,4 @@
+export * from './lib/rabbit-routing.enum';
 export * from './lib/user.interface';
 export * from './lib/user-role.enum';
 export * from './lib/documents.interface';
@@ -8,3 +9,4 @@ export * from './lib/expert-opinion.interface';
 export * from './lib/report.interface';
 export * from './lib/file.interface';
 export * from './lib/token-payload.interface';
+export * from './lib/subscriber.interface';
