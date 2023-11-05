@@ -1,4 +1,5 @@
-import { Logger } from '@nestjs/common';
+
+import { Logger, ValidationPipe } from '@nestjs/common';
 import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app/app.module';
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
@@ -19,8 +20,10 @@ async function bootstrap() {
   const configService = app.get(ConfigService);
 
   const document = SwaggerModule.createDocument(app, config);
-  SwaggerModule.setup('spec', app, document);
-
+  SwaggerModule.setup('users-spec', app, document);
+  
+  app.useGlobalPipes(new ValidationPipe());
+  
   const port = configService.get('application.port');
   await app.listen(port);
   Logger.log(
@@ -29,7 +32,7 @@ async function bootstrap() {
 
   Logger.log(
     `🎯  Current mode: ${configService.get('application.environment')}`
-  )
+  );
 }
 
 bootstrap();

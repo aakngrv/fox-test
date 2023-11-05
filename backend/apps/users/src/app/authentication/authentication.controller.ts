@@ -1,17 +1,23 @@
-import { Body, Controller, Get, Param, Post, HttpCode, HttpStatus } from '@nestjs/common';
+import { Body, Controller, Get, HttpCode, HttpStatus, Param, Post, Req, UseGuards } from '@nestjs/common';
 import { AuthenticationService } from "./authentication.service";
 import { CreateUserDto } from './dto/create-user.dto';
 import { fillObject} from "@backend/util/util-core";
 import { UserRdo } from './rdo/user.rdo';
 import { LoggedUserRdo } from './rdo/logged-user.rdo';
-import { LoginUserDto } from './dto/login-user.dto';
 import { ApiResponse, ApiTags } from '@nestjs/swagger';
+import { MongoidValidationPipe } from '@backend/shared/shared-pipes';
+import { JwtAuthGuard } from './guards/jwt-auth.guard';
+import { NotifyService } from '../notify/notify.service';
+import { LocalAuthGuard } from './guards/local-auth-guard';
+import { RequestWithUser} from '@backend/shared/shared-types';
+import { JwtRefreshGuard } from './guards/jwt-refresh.guard';
 
 @ApiTags('authentication')
 @Controller('auth')
 export class AuthenticationController {
   constructor(
-    private readonly authService: AuthenticationService
+    private readonly authService: AuthenticationService,
+    private readonly notifyService: NotifyService,
   ) {}
 
   @ApiResponse({
@@ -21,9 +27,12 @@ export class AuthenticationController {
   @Post('register')
   public async create(@Body() dto: CreateUserDto) {
     const newUser = await this.authService.register(dto);
+    const { email, firstname, lastname } = newUser;
+    await this.notifyService.registerSubscriber({ email, firstname, lastname })
     return fillObject(UserRdo, newUser);
   }
-
+  
+  @UseGuards(LocalAuthGuard)
   @ApiResponse({
     type: LoggedUserRdo,
     status: HttpStatus.OK,
@@ -35,9 +44,8 @@ export class AuthenticationController {
   })
   @Post('login')
   @HttpCode(HttpStatus.OK)
-  public async login(@Body() dto: LoginUserDto) {
-    const verifiedUser = await this.authService.verifyUser(dto);
-    return fillObject(LoggedUserRdo, verifiedUser);
+  public async login(@Req() { user }: RequestWithUser) {
+    return this.authService.createUserToken(user);
   }
 
   @ApiResponse({
@@ -45,9 +53,21 @@ export class AuthenticationController {
     status: HttpStatus.OK,
     description: 'User found'
   })
+  @UseGuards(JwtAuthGuard)
   @Get(':id')
-  public async show(@Param('id') id: string) {
+  public async show(@Param('id', MongoidValidationPipe) id: string) {
     const existUser = await this.authService.getUser(id);
     return fillObject(UserRdo, existUser);
+  }
+
+  @UseGuards(JwtRefreshGuard)
+  @Post('refresh')
+  @HttpCode(HttpStatus.OK)
+  @ApiResponse({
+    status: HttpStatus.OK,
+    description: 'Get a new access/refresh tokens'
+  })
+  public async refreshToken(@Req() { user }: RequestWithUser) {
+    return this.authService.createUserToken(user);
   }
 }

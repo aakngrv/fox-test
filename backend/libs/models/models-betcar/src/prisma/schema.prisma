@@ -8,31 +8,41 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model CarModel {
-  carId      Int     @id @default(autoincrement()) @map("car_id")
-  carModel   String  @default("") @map("car_model")
-  executorId String? @map("executor_id")
+model Report {
+  reportId            Int             @id @default(autoincrement()) @map("report_id")
+  executorId          String?         @map("executor_id")
+  title               String          @default("") 
+  createdAt           DateTime        @default(now()) @map("created_at")
+  publishAt           DateTime        @updatedAt @map("publish_at")
+  sellerDetails       SellerDetails[] 
+  carData             CarData[]
+  additionalDocuments AdditionalDocuments[]
+  tcp                 TCP[]
+  sts                 STS[]
+  location            Location[]
 
-  @@map("cars_models")
+  @@map("reports")
 }
 
 // ** Модели сервиса "Документы" ** //
 
 model SellerDetails {
-  sellerDetailsId Int      @id @default(autoincrement()) @map("seller_details_id")
-  name            String   @default("")
-  phone           String   @default("")
-  carCost         String   @default("") @map("car_cost")
-  role            Boolean  @default(false)
-  comment         String   @default("")
-  createdAt       DateTime @default(now()) @map("created_at")
-  publishAt       DateTime @updatedAt @map("publish_at")
+  sellerDetailsId Int     @id @default(autoincrement()) @map("seller_details_id")
+  reportId        Int     @map("report_id")
+  report          Report  @relation(fields: [reportId], references: [reportId], onDelete: Cascade, onUpdate: Cascade)
+  name            String  @default("")
+  phone           String  @default("")
+  carCost         String  @default("") @map("car_cost")
+  role            Boolean @default(false)
+  comment         String  @default("")
 
   @@map("sellers_details")
 }
 
 model CarData {
   carDataId           Int     @id @default(autoincrement()) @map("car_data_id")
+  reportId            Int     @map("report_id")
+  report              Report  @relation(fields: [reportId], references: [reportId], onDelete: Cascade, onUpdate: Cascade)
   vin                 String  @default("")
   frameNumber         String  @default("") @map("frame_number")
   comment             String  @default("")
@@ -52,9 +62,9 @@ model CarData {
   enginesNumber       String  @default("") @map("engines_number")
   driveUnit           String  @default("") @map("drive_unit")
   gearboxType         String  @default("") @map("gearbox_type")
-  modification        String  @default("") @map("modification")
+  modification        String  @default("")
   engineCapacity      String  @default("") @map("engine_capacity")
-  power               String  @default("") @map("power")
+  power               String  @default("")
   color               String  @default("")
   isMetallic          Boolean @default(false) @map("is_metallic")
   mileage             String  @default("")
@@ -68,56 +78,62 @@ model CarData {
 }
 
 model AdditionalDocuments {
-  additionalDocumentsId Int    @id @default(autoincrement()) @map("additional_documents_id")
-  comment               String @default("")
-  video                 String @default("")
-  photo                 String @default("")
-  fail                  String @default("")
+  additionalDocumentsId Int     @id @default(autoincrement()) @map("additional_documents_id")
+  reportId              Int     @map("report_id")
+  report                Report  @relation(fields: [reportId], references: [reportId], onDelete: Cascade, onUpdate: Cascade)
+  comment               String  @default("")
+  video                 String  @default("")
+  photo                 String  @default("")
+  file                  String  @default("")
 
   @@map("additional_documents")
 }
 
 model TCP {
-  tcpId           Int    @id @default(autoincrement()) @map("tcp_id")
-  availabilityTCP String @default("") @map("availability_tcp")
-  chassis         String @default("")
-  series          String @default("")
-  number          String @default("")
-  dateOfIssue     String @default("") @map("date_of_issue")
-  numberOfOwners  String @default("") @map("number_of_owners")
-  video           String @default("")
-  photo           String @default("")
-  fail            String @default("")
+  tcpId                 Int     @id @default(autoincrement()) @map("tcp_id")
+  reportId              Int     @map("report_id")
+  report                Report  @relation(fields: [reportId], references: [reportId], onDelete: Cascade, onUpdate: Cascade)
+  availabilityTCP       String  @default("") @map("availability_tcp")
+  chassis               String  @default("")
+  series                String  @default("")
+  number                String  @default("")
+  dateOfIssue           String  @default("") @map("date_of_issue")
+  numberOfOwners        String  @default("") @map("number_of_owners")
+  video                 String  @default("")
+  photo                 String  @default("")
+  file                  String  @default("")
 
-  @@map("tcp")
+  @@map("tcps")
 }
 
 model STS {
-  stsId       Int     @id @default(autoincrement()) @map("sts_id")
-  isAbsent    Boolean @default(false) @map("is_absent")
-  series      String  @default("")
-  number      String  @default("")
-  dateOfIssue String  @default("") @map("date_of_issue")
-  issuedBy    String  @default("") @map("issued_by")
-  video       String  @default("")
-  photo       String  @default("")
-  fail        String  @default("")
+  stsId                 Int     @id @default(autoincrement()) @map("sts_id")
+  reportId              Int     @map("report_id")
+  report                Report  @relation(fields: [reportId], references: [reportId], onDelete: Cascade, onUpdate: Cascade)
+  isAbsent              Boolean @default(false) @map("is_absent")
+  series                String  @default("")
+  number                String  @default("")
+  dateOfIssue           String  @default("") @map("date_of_issue")
+  issuedBy              String  @default("") @map("issued_by")
+  video                 String  @default("")
+  photo                 String  @default("")
+  file                  String  @default("")
 
   @@map("sts")
 }
 
 model Location {
-  locationId Int    @id @default(autoincrement()) @map("location_id")
-  country    String @default("")
-  region     String @default("")
-  city       String @default("")
-  address    String @default("")
-  comment    String @default("")
+  locationId      Int     @id @default(autoincrement()) @map("location_id")
+  reportId        Int     @map("report_id")
+  report          Report  @relation(fields: [reportId], references: [reportId], onDelete: Cascade, onUpdate: Cascade)
+  country         String  @default("")
+  region          String  @default("")
+  city            String  @default("")
+  address         String  @default("")
+  comment         String  @default("")
 
   @@map("locations")
 }
-
-// Добавить карты
 
 // *********** End of table "Documents" ************ //
 // =================================================================================================
@@ -138,7 +154,7 @@ model ComplectationReview {
   electricalHeating              String  @default("") @map("electrical_heating")
   comment                        String  @default("")
 
-  @@map("complectation-reviews")
+  @@map("complectation_reviews")
 }
 
 model ComplectationBody {
@@ -149,7 +165,7 @@ model ComplectationBody {
   bodyKit             Boolean @default(false) @map("body_kit")
   discType            String  @default("") @map("disc_type")
 
-  @@map("complectation-bodies")
+  @@map("complectation_bodies")
 }
 
 model ComplectationProtection {
