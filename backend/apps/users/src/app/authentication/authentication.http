@@ -1,0 +1,16 @@
+# login user
+
+POST http://localhost:3000/api/auth/login
+Content-Type: application/json
+
+{
+  "email": "executor3@mail.ru",
+  "password": "Password123456"
+}
+
+### 
+
+# get jwt
+
+POST http://localhost:3000/api/auth/refresh HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NTQ3N2M1OGVhZTZhZDcxYzFlMzQ4ZGEiLCJlbWFpbCI6ImV4ZWN1dG9yM0BtYWlsLnJ1Iiwicm9sZSI6ImV4ZWN1dG9yIiwibGFzdG5hbWUiOiJJdmFub3YiLCJmaXJzdG5hbWUiOiJNYXgiLCJ0b2tlbklkIjoiMWUwODU0MDItM2Q3My00YTExLWEyMjItYmNkMTY1MGQzOWQ1IiwiaWF0IjoxNjk5MTk2MjE4LCJleHAiOjE3MDE3ODgyMTh9.ITHNe3n4PTLz3D27xXrdSOvXq_V0ttmZt6ZTErIQCiI
