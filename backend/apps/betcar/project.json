@@ -16,7 +16,8 @@
         "tsConfig": "apps/betcar/tsconfig.app.json",
         "assets": ["apps/betcar/src/assets"],
         "isolatedConfig": true,
-        "webpackConfig": "apps/betcar/webpack.config.js"
+        "webpackConfig": "apps/betcar/webpack.config.js",
+        "generatePackageJson": true
       },
       "configurations": {
         "development": {},
