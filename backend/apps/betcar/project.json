@@ -60,6 +60,15 @@
         }
       }
     },
+    "buildImage": {
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": [
+          "nx run betcar:build",
+          "docker build --file ./apps/betcar/Dockerfile --tag betcar:latest ."
+        ]
+      }
+    },
     "db:lint": {
       "executor": "nx:run-commands",
       "options": {

@@ -59,6 +59,15 @@
           "codeCoverage": true
         }
       }
+    },
+    "buildImage": {
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": [
+          "nx run bff:build",
+          "docker build --file ./apps/bff/Dockerfile --tag bff:latest ."
+        ]
+      }
     }
   },
   "tags": []
