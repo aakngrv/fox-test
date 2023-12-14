@@ -1,0 +1,37 @@
+version: '3'
+
+services:
+
+  betcar.users.mongodb:
+    image: mongo:latest
+    restart: always
+    container_name: betcar.users.mongodb
+    env_file:
+      - .betcar.users.mongodb.env
+    volumes: 
+      - betcar.users.volume:/data/db
+    networks: 
+      - betcar.users.network
+
+  betcar.users:
+    container_name: betcar.users
+    depends_on:
+      - betcar.users.mongodb
+    restart: always
+    image: betcar.users:latest
+    env_file:
+      - .betcar.users.env
+    ports: 
+      - 3333:3333
+    networks: 
+      - betcar.users.network
+
+networks:
+  betcar.users.network:
+    driver: bridge
+
+volumes:
+  betcar.users.volume:
+
+
+    
