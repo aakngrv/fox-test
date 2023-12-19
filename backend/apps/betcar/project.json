@@ -16,7 +16,8 @@
         "tsConfig": "apps/betcar/tsconfig.app.json",
         "assets": ["apps/betcar/src/assets"],
         "isolatedConfig": true,
-        "webpackConfig": "apps/betcar/webpack.config.js"
+        "webpackConfig": "apps/betcar/webpack.config.js",
+        "generatePackageJson": true
       },
       "configurations": {
         "development": {},
@@ -57,6 +58,15 @@
           "ci": true,
           "codeCoverage": true
         }
+      }
+    },
+    "buildImage": {
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": [
+          "nx run betcar:build",
+          "docker build --file ./apps/betcar/Dockerfile --tag betcar:latest ."
+        ]
       }
     },
     "db:lint": {
