@@ -65,7 +65,7 @@
       "options": {
         "commands": [
           "nx run bff:build",
-          "docker build --file ./apps/bff/Dockerfile --tag bff:latest ."
+          "docker build --file ./apps/bff/Dockerfile_prod --tag bff:latest ."
         ]
       }
     }

@@ -1,0 +1,50 @@
+###################
+# BUILD FOR LOCAL DEVELOPMENT
+###################
+
+FROM node:18-slim As development
+
+RUN apt-get update && apt-get install -y openssl libssl-dev
+
+USER node
+
+WORKDIR /proj
+
+COPY --chown=node:node --from=main_dir . .
+
+RUN npm ci
+
+RUN npx prisma generate --schema ./apps/betcar/src/assets/prisma/schema.prisma
+
+###################
+# BUILD FOR PRODUCTION
+###################
+
+FROM development As build
+
+USER node
+
+WORKDIR /proj
+
+RUN npm run build:betcar
+
+ENV NODE_ENV=production
+
+RUN npm ci --omit=dev && npm cache clean --force
+
+RUN npx prisma generate --schema ./apps/betcar/src/assets/prisma/schema.prisma
+
+###################
+# PRODUCTION
+###################
+
+FROM node:18-slim As production
+
+RUN apt-get update -y && apt-get install -y openssl
+
+USER node
+
+COPY --chown=node:node --from=build /proj/node_modules ./node_modules
+COPY --chown=node:node --from=build /proj/dist/apps/betcar ./dist/apps/betcar
+
+CMD [ "node", "/dist/apps/betcar/main.js" ]

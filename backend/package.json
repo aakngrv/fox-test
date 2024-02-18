@@ -2,7 +2,18 @@
   "name": "@backend/source",
   "version": "0.0.0",
   "license": "MIT",
-  "scripts": {},
+  "scripts": {
+    "build:users": "nx build users",
+    "serve:users": "nx serve users", 
+    "build:notify": "nx build notify",
+    "serve:notify": "nx serve notify",
+    "build:betcar": "nx build betcar",
+    "serve:betcar": "nx serve betcar",
+    "build:bff": "nx build bff",
+    "serve:bff": "nx serve bff",
+    "build:uploader": "nx build uploader",
+    "serve:uploader": "nx serve uploader"
+  },
   "private": true,
   "dependencies": {
     "@golevelup/nestjs-rabbitmq": "4.0.0",

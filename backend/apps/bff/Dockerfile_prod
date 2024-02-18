@@ -1,0 +1,38 @@
+###################
+# BUILD FOR LOCAL DEVELOPMENT
+###################
+
+FROM node:18-alpine As development
+
+USER node
+
+WORKDIR /proj
+
+COPY --chown=node:node --from=main_dir . .
+
+RUN npm ci
+
+###################
+# BUILD FOR PRODUCTION
+###################
+
+FROM development As build
+
+WORKDIR /proj
+
+RUN npm run build:bff
+
+ENV NODE_ENV=production
+
+RUN npm ci --omit=dev && npm cache clean --force
+
+###################
+# PRODUCTION
+###################
+
+FROM node:18-alpine As production
+
+COPY --chown=node:node --from=build /proj/node_modules ./node_modules
+COPY --chown=node:node --from=build /proj/dist/apps/bff ./dist/apps/bff
+
+CMD [ "node", "/dist/apps/bff/main.js" ]

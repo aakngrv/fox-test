@@ -65,7 +65,7 @@
       "options": {
         "commands": [
           "nx run uploader:build",
-          "docker build --file ./apps/uploader/Dockerfile --tag uploader:latest ."
+          "docker build --file ./apps/uploader/Dockerfile_prod --tag uploader:latest ."
         ]
       }
     }

@@ -12,11 +12,11 @@ async function bootstrap() {
   .setVersion('1.0')
   .build();
 
-  const globalPrefix = 'api';
+  const globalPrefix = '';
   app.setGlobalPrefix(globalPrefix);
 
   const document = SwaggerModule.createDocument(app, config);
-  SwaggerModule.setup('betcar-spec', app, document);
+  SwaggerModule.setup('docs', app, document);
   
   app.useGlobalPipes(new ValidationPipe({
     transform: true,

@@ -65,7 +65,7 @@
       "options": {
         "commands": [
           "nx run users:build",
-          "docker build --file ./apps/users/Dockerfile --tag betcar.users:latest ."
+          "docker build --file ./apps/users/Dockerfile_prod --tag betcar.users:latest ."
         ]
       }
     }
