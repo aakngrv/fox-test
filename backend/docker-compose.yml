@@ -73,7 +73,7 @@ services:
       - .env
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.users.rule=Host(`api.user.betcar.ru`)"
+      - "traefik.http.routers.users.rule=Host(`api.users.betcar.ru`)"
       - "traefik.http.routers.users.entrypoints=websecure"
       - "traefik.http.routers.users.tls.certresolver=myresolver"
       - "traefik.http.routers.users.service=users-service"
