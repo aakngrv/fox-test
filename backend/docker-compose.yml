@@ -147,6 +147,8 @@ services:
     restart: always
     env_file:
       - .env
+    volumes:
+      - ~/upload_files:/proj/upload_files
     labels:
       - "traefik.enable=true"
       - "traefik.http.routers.uploader.rule=Host(`api.uploader.betcar.ru`)"
