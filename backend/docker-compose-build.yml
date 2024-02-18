@@ -46,7 +46,12 @@ services:
 
   betcar:
     container_name: betcar
-    image: agatinet/betcar_service:v1
+    build:      
+      target: production
+      context: ./apps/betcar/
+      dockerfile: Dockerfile_prod
+      additional_contexts:
+        main_dir: .
     depends_on:
       - postgres	
       - mongodb
@@ -64,7 +69,12 @@ services:
 
   users:
     container_name: users
-    image: agatinet/betcar_users:v1
+    build:      
+      target: production
+      context: ./apps/users/
+      dockerfile: Dockerfile_prod
+      additional_contexts:
+        main_dir: .
     depends_on:
       - mongodb
       - rabbitmq
@@ -81,7 +91,12 @@ services:
 
   notify:
     container_name: notify
-    image: agatinet/betcar_notify:v1
+    build:      
+      target: production
+      context: ./apps/notify/
+      dockerfile: Dockerfile_prod
+      additional_contexts:
+        main_dir: .
     depends_on:
       - mongodb
       - rabbitmq
@@ -98,7 +113,12 @@ services:
 
   bff:
     container_name: bff
-    image: agatinet/betcar_bff:v1
+    build:      
+      target: production
+      context: ./apps/bff/
+      dockerfile: Dockerfile_prod
+      additional_contexts:
+        main_dir: .
     depends_on:
       - mongodb
       - rabbitmq
@@ -115,7 +135,12 @@ services:
 
   uploader:
     container_name: uploader
-    image: agatinet/betcar_uploader:v1
+    build:      
+      target: production
+      context: ./apps/uploader/
+      dockerfile: Dockerfile_prod
+      additional_contexts:
+        main_dir: .
     depends_on:
       - mongodb
       - rabbitmq
