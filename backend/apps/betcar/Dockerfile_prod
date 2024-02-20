@@ -46,5 +46,7 @@ USER node
 
 COPY --chown=node:node --from=build /proj/node_modules ./node_modules
 COPY --chown=node:node --from=build /proj/dist/apps/betcar ./dist/apps/betcar
+COPY --chown=node:node --from=build /proj/package*.json ./
+COPY --chown=node:node --from=build /proj/dist/apps/betcar/assets/prisma ./prisma
 
-CMD [ "node", "/dist/apps/betcar/main.js" ]
+CMD [  "npm", "run", "start:betcar:migrate:prod" ]
