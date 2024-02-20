@@ -8,7 +8,7 @@ USER node
 
 WORKDIR /proj
 
-COPY --chown=node:node --from=main_dir . .
+COPY --chown=node:node . .
 
 RUN npm ci
 

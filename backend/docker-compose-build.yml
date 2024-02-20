@@ -48,10 +48,7 @@ services:
     container_name: betcar
     build:      
       target: production
-      context: ./apps/betcar/
-      dockerfile: Dockerfile_prod
-      additional_contexts:
-        main_dir: .
+      dockerfile: ./apps/betcar/Dockerfile_prod
     depends_on:
       - postgres	
       - mongodb
@@ -71,10 +68,7 @@ services:
     container_name: users
     build:      
       target: production
-      context: ./apps/users/
-      dockerfile: Dockerfile_prod
-      additional_contexts:
-        main_dir: .
+      dockerfile: ./apps/users/Dockerfile_prod
     depends_on:
       - mongodb
       - rabbitmq
@@ -93,10 +87,7 @@ services:
     container_name: notify
     build:      
       target: production
-      context: ./apps/notify/
-      dockerfile: Dockerfile_prod
-      additional_contexts:
-        main_dir: .
+      dockerfile: ./apps/notify/Dockerfile_prod
     depends_on:
       - mongodb
       - rabbitmq
@@ -115,10 +106,7 @@ services:
     container_name: bff
     build:      
       target: production
-      context: ./apps/bff/
-      dockerfile: Dockerfile_prod
-      additional_contexts:
-        main_dir: .
+      dockerfile: ./apps/bff/Dockerfile_prod
     depends_on:
       - mongodb
       - rabbitmq
@@ -137,10 +125,7 @@ services:
     container_name: uploader
     build:      
       target: production
-      context: ./apps/uploader/
-      dockerfile: Dockerfile_prod
-      additional_contexts:
-        main_dir: .
+      dockerfile: ./apps/uploader/Dockerfile_prod
     depends_on:
       - mongodb
       - rabbitmq
