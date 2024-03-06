@@ -20,6 +20,7 @@ model Report {
   tcp                 TCP[]
   sts                 STS[]
   location            Location[]
+  complectationBody   ComplectationBody[]
 
   @@map("reports")
 }
@@ -138,7 +139,7 @@ model Location {
 // *********** End of table "Documents" ************ //
 // =================================================================================================
 
-// ** Модели сервиса "Комплектация" ** //
+// ** Модели сервиса "Оснащение" ** //
 
 model ComplectationReview {
   complectationReviewId          Int     @id @default(autoincrement()) @map("complectation_review_id")
@@ -159,11 +160,13 @@ model ComplectationReview {
 
 model ComplectationBody {
   complectationBodyId Int     @id @default(autoincrement()) @map("complectation_body_id")
+  reportId            Int     @map("report_id")
+  report              Report  @relation(fields: [reportId], references: [reportId], onDelete: Cascade, onUpdate: Cascade)
   roofRails           Boolean @default(false) @map("roof_rails")
   bodyStickers        Boolean @default(false) @map("body_stickers")
   airbrushing         Boolean @default(false)
-  bodyKit             Boolean @default(false) @map("body_kit")
-  discType            String  @default("") @map("disc_type")
+  bodyInFilm          Boolean @default(false) @map("body_in_film")
+  bodyTuning          Boolean @default(false) @map("body_tuning")
 
   @@map("complectation_bodies")
 }
