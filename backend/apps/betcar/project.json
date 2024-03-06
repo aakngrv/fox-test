@@ -65,7 +65,7 @@
       "options": {
         "commands": [
           "nx run betcar:build",
-          "docker build --file ./apps/betcar/Dockerfile --tag betcar:latest ."
+          "docker build --file ./apps/betcar/Dockerfile_prod --tag betcar:latest ."
         ]
       }
     },

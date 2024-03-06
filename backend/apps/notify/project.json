@@ -65,7 +65,7 @@
       "options": {
         "commands": [
           "nx run notify:build",
-          "docker build --file ./apps/notify/Dockerfile --tag notify:latest ."
+          "docker build --file ./apps/notify/Dockerfile_prod --tag notify:latest ."
         ]
       }
     }

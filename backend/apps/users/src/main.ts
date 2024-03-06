@@ -9,18 +9,18 @@ async function bootstrap() {
   const app = await NestFactory.create(AppModule);
 
   const config = new DocumentBuilder()
-    .setTitle('The «Executors» service')
-    .setDescription('Executors service API')
+    .setTitle('Users')
+    .setDescription('Users betcar')
     .setVersion('1.0')
     .build();
 
-  const globalPrefix = 'api';
+  const globalPrefix = '';
   app.setGlobalPrefix(globalPrefix);
 
   const configService = app.get(ConfigService);
 
   const document = SwaggerModule.createDocument(app, config);
-  SwaggerModule.setup('users-spec', app, document);
+  SwaggerModule.setup('docs', app, document);
   
   app.useGlobalPipes(new ValidationPipe());
   
