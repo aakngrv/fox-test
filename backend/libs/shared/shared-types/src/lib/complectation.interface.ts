@@ -14,12 +14,13 @@ export interface ComplectationReview  {
 }
 
 export interface ComplectationBody {
-  id?: number;
+  complectationBodyId?: number;
+  reportId?: number;
   roofRails: boolean;
   bodyStickers: boolean;
   airbrushing: boolean;
-  bodyKit: boolean;
-  discType: string;
+  bodyTuning: boolean;
+  bodyInFilm: boolean;
 }
 
 export interface ComplectationProtection {

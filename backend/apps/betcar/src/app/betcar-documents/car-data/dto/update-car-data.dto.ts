@@ -9,7 +9,7 @@ export class UpdateCarDataDto {
   public reportId: number;
   
   @ApiProperty({
-    description: 'VIM номер',
+    description: 'VIN номер',
     example: 'string'
   })
   public vin: string;

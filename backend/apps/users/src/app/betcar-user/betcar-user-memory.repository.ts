@@ -10,7 +10,7 @@ export class BetcarUserMemoryRepository implements CRUDRepository<BetcarUserEnti
   private repository: {[key: string]: User} = {};
 
   public async create(item: BetcarUserEntity): Promise<User> {
-    const entry = { ...item.toObject(), _id: crypto.randomUUID()};
+    const entry = { ...item.toObject() };
     this.repository[entry._id] = entry;
 
     return entry;
