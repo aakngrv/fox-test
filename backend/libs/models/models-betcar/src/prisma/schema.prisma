@@ -9,20 +9,21 @@ datasource db {
 }
 
 model Report {
-  reportId            Int             @id @default(autoincrement()) @map("report_id")
-  executorId          String?         @map("executor_id")
-  title               String          @default("") 
-  createdAt           DateTime        @default(now()) @map("created_at")
-  publishAt           DateTime        @updatedAt @map("publish_at")
-  sellerDetails       SellerDetails[] 
-  carData             CarData[]
-  additionalDocuments AdditionalDocuments[]
-  tcp                 TCP[]
-  sts                 STS[]
-  location            Location[]
-  complectationBody   ComplectationBody[]
-  complectationWheels ComplectationWheels[]
-  complectationSalon  ComplectationSalon[]
+  reportId                Int             @id @default(autoincrement()) @map("report_id")
+  executorId              String?         @map("executor_id")
+  title                   String          @default("") 
+  createdAt               DateTime        @default(now()) @map("created_at")
+  publishAt               DateTime        @updatedAt @map("publish_at")
+  sellerDetails           SellerDetails[] 
+  carData                 CarData[]
+  additionalDocuments     AdditionalDocuments[]
+  tcp                     TCP[]
+  sts                     STS[]
+  location                Location[]
+  complectationBody       ComplectationBody[]
+  complectationWheels     ComplectationWheels[]
+  complectationSalon      ComplectationSalon[]
+  complectationHeadlights ComplectationHeadlights[]
 
   @@map("reports")
 }
@@ -143,23 +144,6 @@ model Location {
 
 // ** Модели сервиса "Оснащение" ** //
 
-model ComplectationReview {
-  complectationReviewId          Int     @id @default(autoincrement()) @map("complectation_review_id")
-  complectationName              String  @default("") @map("complectation_name")
-  highBeamControlSystem          Boolean @default(false) @map("high_beam_control_system")
-  adaptiveLightingSystem         Boolean @default(false) @map("adaptive_lighting_system")
-  automaticHeadlightRangeControl Boolean @default(false) @map("automatic_headlight_range_control")
-  fogLights                      Boolean @default(false) @map("fog_lights")
-  headlightWasher                Boolean @default(false) @map("headlight_washer")
-  lights                         String  @default("")
-  rainSensor                     Boolean @default(false) @map("rain_sensor")
-  lightSensor                    Boolean @default(false) @map("light_sensor")
-  electricalHeating              String  @default("") @map("electrical_heating")
-  comment                        String  @default("")
-
-  @@map("complectation_reviews")
-}
-
 model ComplectationBody {
   complectationBodyId Int     @id @default(autoincrement()) @map("complectation_body_id")
   reportId            Int     @map("report_id")
@@ -207,35 +191,6 @@ model ComplectationWheels {
   @@map("complectation_wheels")
 }
 
-model ComplectationProtection {
-  complectationProtectionId Int     @id @default(autoincrement()) @map("complectation_protection_id")
-  interiorIntrusionSensor   Boolean @default(false) @map("interior_intrusion_sensor")
-  centralLocking            Boolean @default(false) @map("central_locking")
-  immobilizer               Boolean @default(false)
-  signaling                 String  @default("")
-
-  @@map("complectation_protections")
-}
-
-model ComplectationMultimedia {
-  complectationMultimediaId         Int     @id @default(autoincrement()) @map("complectation_multimedia_id")
-  bluetooth                         Boolean @default(false)
-  cd                                Boolean @default(false)
-  usb                               Boolean @default(false)
-  aux                               Boolean @default(false)
-  dvd                               Boolean @default(false)
-  tv                                Boolean @default(false)
-  subwoofer                         Boolean @default(false)
-  audioSystem                       String  @default("") @map("audio_system")
-  multimediaSystemForRearPassengers Boolean @default(false) @map("multimedia_system_for_rear_passengers")
-  voiceControl                      Boolean @default(false) @map("voice_control")
-  navigationSystem                  Boolean @default(false) @map("navigation_system")
-  socket220V                        Boolean @default(false) @map("socket_220_v")
-  socket12V                         Boolean @default(false) @map("socket_12_v")
-
-  @@map("complectation_multimedias")
-}
-
 model ComplectationSalon {
   complectationSalonId         Int      @id @default(autoincrement()) @map("complectation_salon_id")
   reportId                     Int      @map("report_id")
@@ -260,6 +215,52 @@ model ComplectationSalon {
   seatMassage                  String[] @default([""]) @map("seat_massage")
 
   @@map("complectation_salons")
+}
+
+model ComplectationHeadlights {
+  complectationHeadlightsId  Int     @id @default(autoincrement()) @map("complectation_headlights_id")
+  reportId                           Int     @map("report_id")
+  report                             Report  @relation(fields: [reportId], references: [reportId], onDelete: Cascade, onUpdate: Cascade)
+  lightSensor                        Boolean @default(false) @map("light_sensor")
+  rainSensor                         Boolean @default(false) @map("rain_sensor")
+  headlightWasher                    Boolean @default(false) @map("headlight_washer")
+  fogLights                          Boolean @default(false) @map("fog_lights")
+  automaticHeadlightLeveling         Boolean @default(false) @map("automatic_headlight_leveling")
+  adaptivLlightingSystem             Boolean @default(false) @map("adaptive_lighting_system")
+  highBeamControlSystem              Boolean @default(false) @map("high_beam_control_system")
+  headlights                         String  @default("")
+  
+  @@map("complectation_headlights")
+}
+
+model ComplectationProtection {
+  complectationProtectionId Int     @id @default(autoincrement()) @map("complectation_protection_id")
+  interiorIntrusionSensor   Boolean @default(false) @map("interior_intrusion_sensor")
+  centralLocking            Boolean @default(false) @map("central_locking")
+  immobilizer               Boolean @default(false)
+  signaling                 String  @default("")
+
+  @@map("complectation_protections")
+}
+
+
+model ComplectationMultimedia {
+  complectationMultimediaId         Int     @id @default(autoincrement()) @map("complectation_multimedia_id")
+  bluetooth                         Boolean @default(false)
+  cd                                Boolean @default(false)
+  usb                               Boolean @default(false)
+  aux                               Boolean @default(false)
+  dvd                               Boolean @default(false)
+  tv                                Boolean @default(false)
+  subwoofer                         Boolean @default(false)
+  audioSystem                       String  @default("") @map("audio_system")
+  multimediaSystemForRearPassengers Boolean @default(false) @map("multimedia_system_for_rear_passengers")
+  voiceControl                      Boolean @default(false) @map("voice_control")
+  navigationSystem                  Boolean @default(false) @map("navigation_system")
+  socket220V                        Boolean @default(false) @map("socket_220_v")
+  socket12V                         Boolean @default(false) @map("socket_12_v")
+
+  @@map("complectation_multimedias")
 }
 
 model ComplectationComfort {

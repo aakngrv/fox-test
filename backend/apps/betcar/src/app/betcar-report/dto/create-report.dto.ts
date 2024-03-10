@@ -70,6 +70,12 @@ export class CreateReportDto {
   public complectationSalon: number[];
 
   @ApiProperty({
+    description: 'Массив объектов c информацией о фарах',
+    example: ''
+  })
+  public complectationHeadlights: number[];
+
+  @ApiProperty({
     description: 'Дата создания',
     example: ''
   })

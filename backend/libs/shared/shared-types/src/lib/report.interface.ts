@@ -11,6 +11,7 @@ import {
   ComplectationBody,
   ComplectationWheels,
   ComplectationSalon,
+  ComplectationHeadlights,
 } from "./complectation.interface";
 
 export interface Report {
@@ -26,6 +27,7 @@ export interface Report {
   complectationBody: ComplectationBody[];
   complectationWheels: ComplectationWheels[];
   complectationSalon: ComplectationSalon[];
+  complectationHeadlights: ComplectationHeadlights[];
   createdAt: Date;
   publishAt: Date;
 }

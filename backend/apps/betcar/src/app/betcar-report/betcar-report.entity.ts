@@ -10,6 +10,7 @@ import {
   ComplectationBody,
   ComplectationWheels,
   ComplectationSalon,
+  ComplectationHeadlights,
  } from '@backend/shared/shared-types';
 
 export class BetcarReportEntity implements Entity<BetcarReportEntity>, Report {
@@ -26,6 +27,7 @@ export class BetcarReportEntity implements Entity<BetcarReportEntity>, Report {
   public complectationBody: ComplectationBody[];
   public complectationWheels: ComplectationWheels[];
   public complectationSalon: ComplectationSalon[];
+  public complectationHeadlights: ComplectationHeadlights[];
   public createdAt: Date;
   public publishAt: Date;
 
@@ -46,6 +48,7 @@ export class BetcarReportEntity implements Entity<BetcarReportEntity>, Report {
     this.complectationBody = [];
     this.complectationWheels = [];
     this.complectationSalon = [];
+    this.complectationHeadlights = [];
     this.createdAt = new Date();
     this.publishAt = new Date();
   }
@@ -62,6 +65,7 @@ export class BetcarReportEntity implements Entity<BetcarReportEntity>, Report {
       complectationBody: this.complectationBody.map(({ complectationBodyId }) => ({ complectationBodyId })),
       complectationWheels: this.complectationWheels.map(({ complectationWheelsId }) => ({ complectationWheelsId })),
       complectationSalon: this.complectationSalon.map(({ complectationSalonId }) => ({ complectationSalonId })),
+      complectationHeadlights: this.complectationHeadlights.map(({ complectationHeadlightsId }) => ({ complectationHeadlightsId })),
     };
   }
 }

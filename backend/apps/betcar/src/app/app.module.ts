@@ -10,6 +10,7 @@ import { LocationModule } from './betcar-documents/location/location.module';
 import { CarBodyModule } from './betcar-equipment/car-body/car-body.module';
 import { ComplectationWheelsModule } from './betcar-equipment/complectation-wheels/complectation-wheels.module';
 import { ComplectationSalonModule } from './betcar-equipment/complectation-salon/complectation-salon.module';
+import { ComplectationHeadlightsModule } from './betcar-equipment/complectation-headlights/complectation-headlights.module';
 
 
 @Module({
@@ -25,6 +26,7 @@ import { ComplectationSalonModule } from './betcar-equipment/complectation-salon
     CarBodyModule,
     ComplectationWheelsModule,
     ComplectationSalonModule,
+    ComplectationHeadlightsModule,
   ],
   controllers: [],
   providers: [],

@@ -1,18 +1,3 @@
-export interface ComplectationReview  {
-  id?: number;
-  complectationName: string;
-  highBeamControlSystem: boolean;
-  adaptiveLightingSystem: boolean;
-  automaticHeadlightRangeControl: boolean;
-  fogLights: boolean;
-  headlightWasher: boolean;
-  lights: string;
-  rainSensor: boolean;
-  lightSensor: boolean;
-  electricalHeating: string;
-  comment: string;
-}
-
 export interface ComplectationBody {
   complectationBodyId?: number;
   reportId?: number;
@@ -53,6 +38,42 @@ export interface ComplectationWheels {
   backRightWear: string;
 }
 
+export interface ComplectationSalon {
+  complectationSalonId?: number;
+  reportId: number;
+  luke: boolean;
+  seatCovers: boolean;
+  panoramicView: boolean;
+  thirdRowOfSeats: boolean;
+  tintedGlass: boolean;
+  steeringWheelHeating: boolean;
+  leatherTrimmedGearshiftLever: boolean;
+  sportsFrontSeats: boolean;
+  steeringWheelLeatherTrim: boolean;
+  foldingRearSeat: boolean;
+  frontCenterArmrest: boolean;
+  interiorMaterial: string;
+  heatedSeats: string[];
+  seatHeightAdjustment: string;
+  electricallyAdjustableSeats: string[];
+  seatPositionMemory: string;
+  seatVentilation: string[];
+  seatMassage: string[];
+}
+
+export interface ComplectationHeadlights {
+  complectationHeadlightsId?: number;
+  reportId: number;
+  lightSensor: boolean;
+  rainSensor: boolean;
+  headlightWasher: boolean;
+  fogLights: boolean;
+  automaticHeadlightLeveling: boolean;
+  adaptivLlightingSystem: boolean;
+  highBeamControlSystem: boolean;
+  headlights: string;
+}
+
 export interface ComplectationProtection {
   id?: number;
   interiorIntrusionSensor: boolean;
@@ -78,28 +99,6 @@ export interface ComplectationMultimedia {
   socket12V: boolean;
 }
 
-export interface ComplectationSalon {
-  complectationSalonId?: number;
-  reportId: number;
-  luke: boolean;
-  seatCovers: boolean;
-  panoramicView: boolean;
-  thirdRowOfSeats: boolean;
-  tintedGlass: boolean;
-  steeringWheelHeating: boolean;
-  leatherTrimmedGearshiftLever: boolean;
-  sportsFrontSeats: boolean;
-  steeringWheelLeatherTrim: boolean;
-  foldingRearSeat: boolean;
-  frontCenterArmrest: boolean;
-  interiorMaterial: string;
-  heatedSeats: string[];
-  seatHeightAdjustment: string;
-  electricallyAdjustableSeats: string[];
-  seatPositionMemory: string;
-  seatVentilation: string[];
-  seatMassage: string[];
-}
 
 export interface ComplectationComfort {
   id?: number;
