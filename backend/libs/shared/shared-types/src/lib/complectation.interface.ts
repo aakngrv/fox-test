@@ -23,6 +23,36 @@ export interface ComplectationBody {
   bodyInFilm: boolean;
 }
 
+export interface ComplectationWheels {
+  complectationWheelsId?: number;
+  reportId: number;
+  isTiresIdentical: boolean;
+  additionalTireSets: boolean;
+  additionalSetsOfDisks: boolean;
+  typeOfDisks: string;
+  seasonality: string[];
+  frontLeftBrand: string;
+  backLeftBrand: string;
+  frontRightBrand: string;
+  backRightBrand: string;
+  frontLeftModel: string;
+  backLeftModel: string;
+  frontRightModel: string;
+  backRightModel: string;
+  frontLeftIssueDate: string;
+  backLeftIssueDate: string;
+  frontRightIssueDate: string;
+  backRightIssueDate: string;
+  frontLeftOptions: string;
+  backLeftOptions: string;
+  frontRightOptions: string;
+  backRightOptions: string;
+  frontLeftWear: string;
+  backLeftWear: string;
+  frontRightWear: string;
+  backRightWear: string;
+}
+
 export interface ComplectationProtection {
   id?: number;
   interiorIntrusionSensor: boolean;
@@ -122,9 +152,3 @@ export interface ComplectationOther {
   hitch: boolean;
 }
 
-export interface ComplectationTires {
-  id?: number;
-  tireUniformity: boolean;
-  additionalSetOfWheels: boolean;
-  seasonality: string;
-}

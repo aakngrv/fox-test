@@ -21,6 +21,7 @@ model Report {
   sts                 STS[]
   location            Location[]
   complectationBody   ComplectationBody[]
+  complectationWheels ComplectationWheels[]
 
   @@map("reports")
 }
@@ -171,6 +172,40 @@ model ComplectationBody {
   @@map("complectation_bodies")
 }
 
+model ComplectationWheels {
+  complectationWheelsId Int      @id @default(autoincrement()) @map("complectation_wheels_id")
+  reportId              Int      @map("report_id")
+  report                Report   @relation(fields: [reportId], references: [reportId], onDelete: Cascade, onUpdate: Cascade)
+  isTiresIdentical      Boolean  @default(false) @map("is_tires_identical")
+  additionalTireSets    Boolean  @default(false) @map("additional_tire_sets")
+  additionalSetsOfDisks Boolean  @default(false) @map("additional_sets_of_disks")
+  typeOfDisks           String   @default("") @map("type_of_disks")
+  seasonality           String[] @default([""])
+  frontLeftBrand        String   @default("")  @map("front_left_brand")
+  backLeftBrand         String   @default("")  @map("back_left_brand")
+  frontRightBrand       String   @default("") @map("front_right_brand")
+  backRightBrand        String   @default("") @map("back_right_brand")
+  frontLeftModel        String   @default("")  @map("front_left_model")
+  backLeftModel         String   @default("")  @map("back_left_model")
+  frontRightModel       String   @default("") @map("front_right_model")
+  backRightModel        String   @default("") @map("back_right_model")
+  frontLeftIssueDate    String   @default("")  @map("front_left_issue_date")
+  backLeftIssueDate     String   @default("")  @map("back_left_issue_date")
+  frontRightIssueDate   String   @default("") @map("front_right_issue_date")
+  backRightIssueDate    String   @default("") @map("back_right_issue_date")
+  frontLeftOptions      String   @default("")  @map("front_left_options")
+  backLeftOptions       String   @default("")  @map("back_left_options")
+  frontRightOptions     String   @default("") @map("front_right_options")
+  backRightOptions      String   @default("") @map("back_right_options")
+  frontLeftWear         String   @default("")  @map("front_left_wear")
+  backLeftWear          String   @default("")  @map("back_left_wear")
+  frontRightWear        String   @default("") @map("front_right_wear")
+  backRightWear         String   @default("") @map("back_right_wear")
+  
+
+  @@map("complectation_wheels")
+}
+
 model ComplectationProtection {
   complectationProtectionId Int     @id @default(autoincrement()) @map("complectation_protection_id")
   interiorIntrusionSensor   Boolean @default(false) @map("interior_intrusion_sensor")
@@ -280,15 +315,6 @@ model ComplectationOther {
   hitch                Boolean @default(false)
 
   @@map("complectation_others")
-}
-
-model ComplectationTires {
-  complectationTiresId  Int     @id @default(autoincrement()) @map("complectatin_tires_id")
-  tireUniformity        Boolean @default(false) @map("tire_uniformity")
-  additionalSetOfWheels Boolean @default(false) @map("additional_set_of_wheels")
-  seasonality           String  @default("")
-
-  @@map("complectation_tires")
 }
 
 // Что-то еще, схема машины

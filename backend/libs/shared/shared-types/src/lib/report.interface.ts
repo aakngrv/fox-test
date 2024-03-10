@@ -7,7 +7,10 @@ import {
   Location,
 } from "./documents.interface";
 
-import { ComplectationBody } from "./complectation.interface";
+import { 
+  ComplectationBody,
+  ComplectationWheels
+} from "./complectation.interface";
 
 export interface Report {
   reportId?: number;
@@ -20,6 +23,7 @@ export interface Report {
   sts: STS[];
   location: Location[];
   complectationBody: ComplectationBody[];
+  complectationWheels: ComplectationWheels[];
   createdAt: Date;
   publishAt: Date;
 }
