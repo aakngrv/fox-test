@@ -11,6 +11,7 @@ import { TcpRepository } from '../betcar-documents/tcp/tcp.repository';
 import { StsRepository } from '../betcar-documents/sts/sts.repository';
 import { LocationRepository } from '../betcar-documents/location/location.repository';
 import { CarBodyRepository } from '../betcar-equipment/car-body/car-body.repository';
+import { ComplectationWheelsRepository } from '../betcar-equipment/complectation-wheels/complectation-wheels.repository';
 
 @Injectable()
 export class BetcarReportService {
@@ -23,6 +24,7 @@ export class BetcarReportService {
     private readonly stsRepository: StsRepository,
     private readonly locationRepository: LocationRepository,
     private readonly carBodyRepository: CarBodyRepository,
+    private readonly complectationWheelsRepository: ComplectationWheelsRepository,
   ) {}
 
   async createReport(dto: CreateReportDto): Promise<Report> {
@@ -33,6 +35,7 @@ export class BetcarReportService {
     const sts = await this.stsRepository.find(dto.sts);
     const location = await this.locationRepository.find(dto.location);
     const complectationBody = await this.carBodyRepository.find(dto.complectationBody);
+    const complectationWheels = await this.complectationWheelsRepository.find(dto.complectationWheels)
 
     const reportEntity = new BetcarReportEntity({ 
       ...dto, 
@@ -43,6 +46,7 @@ export class BetcarReportService {
       sts, 
       location,
       complectationBody,
+      complectationWheels,
     });
     
     return this.betcarReportRepository.create(reportEntity);

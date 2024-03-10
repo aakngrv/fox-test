@@ -58,6 +58,12 @@ export class CreateReportDto {
   public complectationBody: number[];
 
   @ApiProperty({
+    description: 'Массив объектов c информацией о шинах',
+    example: ''
+  })
+  public complectationWheels: number[];
+
+  @ApiProperty({
     description: 'Дата создания',
     example: ''
   })

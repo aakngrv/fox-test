@@ -7,6 +7,7 @@ import {
   TCP,
   Location,
   ComplectationBody,
+  ComplectationWheels,
 } from '@prisma/client';
 
 import { Expose } from 'class-transformer';
@@ -83,6 +84,13 @@ export class ReportRdo {
   })
   @Expose()
   public complectationBody: ComplectationBody[];
+
+  @ApiProperty({
+    description: 'Массив объектов c информацией о шинах',
+    example: ''
+  })
+  @Expose()
+  public complectationWheels: ComplectationWheels[];
 
   @ApiProperty({
     description: 'Дата создания',

@@ -9,6 +9,7 @@ import { TcpModule } from '../betcar-documents/tcp/tcp.module';
 import { StsModule } from '../betcar-documents/sts/sts.module';
 import { LocationModule } from '../betcar-documents/location/location.module';
 import { CarBodyModule } from '../betcar-equipment/car-body/car-body.module';
+import { ComplectationWheelsModule } from '../betcar-equipment/complectation-wheels/complectation-wheels.module';
 
 @Module({
   imports: [
@@ -19,6 +20,7 @@ import { CarBodyModule } from '../betcar-equipment/car-body/car-body.module';
     StsModule,
     LocationModule,
     CarBodyModule,
+    ComplectationWheelsModule,
   ],
   controllers: [BetcarReportController],
   providers: [

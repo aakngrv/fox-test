@@ -8,6 +8,7 @@ import {
   TCP,
   Location,
   ComplectationBody,
+  ComplectationWheels,
  } from '@backend/shared/shared-types';
 
 export class BetcarReportEntity implements Entity<BetcarReportEntity>, Report {
@@ -22,6 +23,7 @@ export class BetcarReportEntity implements Entity<BetcarReportEntity>, Report {
   public sts: STS[];
   public location: Location[];
   public complectationBody: ComplectationBody[];
+  public complectationWheels: ComplectationWheels[];
   public createdAt: Date;
   public publishAt: Date;
 
@@ -40,6 +42,7 @@ export class BetcarReportEntity implements Entity<BetcarReportEntity>, Report {
     this.sts = [];
     this.location = [];
     this.complectationBody = [];
+    this.complectationWheels = [];
     this.createdAt = new Date();
     this.publishAt = new Date();
   }
@@ -54,6 +57,7 @@ export class BetcarReportEntity implements Entity<BetcarReportEntity>, Report {
       sts: this.sts.map(({ stsId }) => ({ stsId })),
       location: this.location.map(({ locationId }) => ({ locationId })),
       complectationBody: this.complectationBody.map(({ complectationBodyId }) => ({ complectationBodyId })),
+      complectationWheels: this.complectationWheels.map(({ complectationWheelsId }) => ({ complectationWheelsId })),
     };
   }
 }
