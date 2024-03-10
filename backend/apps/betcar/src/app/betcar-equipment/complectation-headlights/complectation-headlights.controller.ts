@@ -25,7 +25,7 @@ export class ComplectationHeadlightsController {
   }
 
   @ApiResponse({
-    type: UpdateComplectationHeadlightsDto,
+    type: ComplectationHeadlightsRdo,
     status: HttpStatus.OK,
     description: 'Данные о фарах найдены'
   })

@@ -76,6 +76,18 @@ export class CreateReportDto {
   public complectationHeadlights: number[];
 
   @ApiProperty({
+    description: 'Массив объектов c информацией о мультимедиа',
+    example: ''
+  })
+  public complectationMultimedia: number[];
+
+  @ApiProperty({
+    description: 'Массив объектов c информацией о комфорте',
+    example: ''
+  })
+  public complectationComfort: number[];
+
+  @ApiProperty({
     description: 'Дата создания',
     example: ''
   })

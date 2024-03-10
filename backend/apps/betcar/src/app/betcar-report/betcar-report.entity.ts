@@ -11,6 +11,8 @@ import {
   ComplectationWheels,
   ComplectationSalon,
   ComplectationHeadlights,
+  ComplectationMultimedia,
+  ComplectationComfort,
  } from '@backend/shared/shared-types';
 
 export class BetcarReportEntity implements Entity<BetcarReportEntity>, Report {
@@ -28,6 +30,8 @@ export class BetcarReportEntity implements Entity<BetcarReportEntity>, Report {
   public complectationWheels: ComplectationWheels[];
   public complectationSalon: ComplectationSalon[];
   public complectationHeadlights: ComplectationHeadlights[];
+  public complectationMultimedia: ComplectationMultimedia[];
+  public complectationComfort: ComplectationComfort[];
   public createdAt: Date;
   public publishAt: Date;
 
@@ -49,6 +53,8 @@ export class BetcarReportEntity implements Entity<BetcarReportEntity>, Report {
     this.complectationWheels = [];
     this.complectationSalon = [];
     this.complectationHeadlights = [];
+    this.complectationMultimedia = [];
+    this.complectationComfort = [];
     this.createdAt = new Date();
     this.publishAt = new Date();
   }
@@ -66,6 +72,8 @@ export class BetcarReportEntity implements Entity<BetcarReportEntity>, Report {
       complectationWheels: this.complectationWheels.map(({ complectationWheelsId }) => ({ complectationWheelsId })),
       complectationSalon: this.complectationSalon.map(({ complectationSalonId }) => ({ complectationSalonId })),
       complectationHeadlights: this.complectationHeadlights.map(({ complectationHeadlightsId }) => ({ complectationHeadlightsId })),
+      complectationMultimedia: this.complectationMultimedia.map(({ complectationMultimediaId }) => ({ complectationMultimediaId })),
+      complectationComfort: this.complectationComfort.map(({ complectationComfortId }) => ({ complectationComfortId })),
     };
   }
 }
