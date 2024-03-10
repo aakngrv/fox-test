@@ -79,25 +79,26 @@ export interface ComplectationMultimedia {
 }
 
 export interface ComplectationSalon {
-  id?: number;
-  interiorMaterial: string;
-  interiorColor: string;
-  steeringWheelLeatherTrim: boolean;
-  leatherTrimmedGearshiftLever: boolean;
-  numberOfSeats: string;
-  heatedSeats: string;
-  seatHeightAdjustment: string;
-  powerSeats: string;
-  seatPositionMemory: string;
-  seatVentilation: string;
-  frontCenterArmrest: boolean;
-  panoramicView: boolean;
-  foldingRearSeat: boolean;
-  sportsFrontSeats: boolean;
-  steeringWheelHeating: boolean;
-  tintedGlass: boolean;
-  thirdRowOfSeats: boolean;
+  complectationSalonId?: number;
+  reportId: number;
   luke: boolean;
+  seatCovers: boolean;
+  panoramicView: boolean;
+  thirdRowOfSeats: boolean;
+  tintedGlass: boolean;
+  steeringWheelHeating: boolean;
+  leatherTrimmedGearshiftLever: boolean;
+  sportsFrontSeats: boolean;
+  steeringWheelLeatherTrim: boolean;
+  foldingRearSeat: boolean;
+  frontCenterArmrest: boolean;
+  interiorMaterial: string;
+  heatedSeats: string[];
+  seatHeightAdjustment: string;
+  electricallyAdjustableSeats: string[];
+  seatPositionMemory: string;
+  seatVentilation: string[];
+  seatMassage: string[];
 }
 
 export interface ComplectationComfort {

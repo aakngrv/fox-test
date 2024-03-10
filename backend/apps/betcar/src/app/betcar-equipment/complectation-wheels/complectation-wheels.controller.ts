@@ -6,7 +6,7 @@ import { CreateComplectationWheelsDto } from './dto/create-complectation-wheels.
 import { UpdateComplectationWheelsDto } from './dto/update-complectation-wheels.dto';
 import { ApiResponse, ApiTags } from '@nestjs/swagger';
 
-@ApiTags('Оснащение - колеса')
+@ApiTags('Оснащение - Колеса')
 @Controller('complectation-wheels')
 export class ComplectationWheelsController {
   

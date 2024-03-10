@@ -9,7 +9,8 @@ import {
 
 import { 
   ComplectationBody,
-  ComplectationWheels
+  ComplectationWheels,
+  ComplectationSalon,
 } from "./complectation.interface";
 
 export interface Report {
@@ -24,6 +25,7 @@ export interface Report {
   location: Location[];
   complectationBody: ComplectationBody[];
   complectationWheels: ComplectationWheels[];
+  complectationSalon: ComplectationSalon[];
   createdAt: Date;
   publishAt: Date;
 }

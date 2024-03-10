@@ -8,6 +8,7 @@ import {
   Location,
   ComplectationBody,
   ComplectationWheels,
+  ComplectationSalon,
 } from '@prisma/client';
 
 import { Expose } from 'class-transformer';
@@ -91,6 +92,14 @@ export class ReportRdo {
   })
   @Expose()
   public complectationWheels: ComplectationWheels[];
+
+
+  @ApiProperty({
+    description: 'Массив объектов c информацией о салоне',
+    example: ''
+  })
+  @Expose()
+  public complectationSalon: ComplectationSalon[];
 
   @ApiProperty({
     description: 'Дата создания',

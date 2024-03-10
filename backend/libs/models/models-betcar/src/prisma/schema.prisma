@@ -22,6 +22,7 @@ model Report {
   location            Location[]
   complectationBody   ComplectationBody[]
   complectationWheels ComplectationWheels[]
+  complectationSalon  ComplectationSalon[]
 
   @@map("reports")
 }
@@ -236,25 +237,27 @@ model ComplectationMultimedia {
 }
 
 model ComplectationSalon {
-  complectationSalonId         Int     @id @default(autoincrement()) @map("complectation_salon_id")
-  interiorMaterial             String  @default("") @map("interior_material")
-  interiorColor                String  @default("") @map("interior_color")
-  steeringWheelLeatherTrim     Boolean @default(false) @map("steering_wheel_leather_trim")
-  leatherTrimmedGearshiftLever Boolean @default(false) @map("leather_trimmed_gearshift_lever")
-  numberOfSeats                String  @default("") @map("number_of_seats")
-  heatedSeats                  String  @default("") @map("heated_seats")
-  seatHeightAdjustment         String  @default("") @map("seat_height_adjustment")
-  powerSeats                   String  @default("") @map("power_seats")
-  seatPositionMemory           String  @default("") @map("seat_position_memory")
-  seatVentilation              String  @default("") @map("seat_ventilation")
-  frontCenterArmrest           Boolean @default(false) @map("front_center_armrest")
-  panoramicView                Boolean @default(false) @map("panoramic_view")
-  foldingRearSeat              Boolean @default(false) @map("folding_rear_seat")
-  sportsFrontSeats             Boolean @default(false) @map("sports_front_seats")
-  steeringWheelHeating         Boolean @default(false) @map("steering_wheel_heating")
-  tintedGlass                  Boolean @default(false) @map("tinted_glass")
-  thirdRowOfSeats              Boolean @default(false) @map("third_row_of_seats")
-  luke                         Boolean @default(false)
+  complectationSalonId         Int      @id @default(autoincrement()) @map("complectation_salon_id")
+  reportId                     Int      @map("report_id")
+  report                       Report   @relation(fields: [reportId], references: [reportId], onDelete: Cascade, onUpdate: Cascade)
+  luke                         Boolean  @default(false)
+  seatCovers                   Boolean  @default(false) @map("seat_covers")
+  panoramicView                Boolean  @default(false) @map("panoramic_view")
+  thirdRowOfSeats              Boolean  @default(false) @map("third_row_of_seats")
+  tintedGlass                  Boolean  @default(false) @map("tinted_glass")
+  steeringWheelHeating         Boolean  @default(false) @map("steering_wheel_heating")
+  leatherTrimmedGearshiftLever Boolean  @default(false) @map("leather_trimmed_gearshift_lever")
+  sportsFrontSeats             Boolean  @default(false) @map("sports_front_seats")
+  steeringWheelLeatherTrim     Boolean  @default(false) @map("steering_wheel_leather_trim")
+  foldingRearSeat              Boolean  @default(false) @map("folding_rear_seat")
+  frontCenterArmrest           Boolean  @default(false) @map("front_center_armrest")
+  interiorMaterial             String   @default("") @map("interior_material")
+  heatedSeats                  String[] @default([""]) @map("heated_seats")
+  seatHeightAdjustment         String   @default("") @map("seat_height_adjustment")
+  electricallyAdjustableSeats  String[] @default([""]) @map("electrically_adjustable_seats")
+  seatPositionMemory           String   @default("") @map("seat_position_memory")
+  seatVentilation              String[] @default([""]) @map("seat_ventilation")
+  seatMassage                  String[] @default([""]) @map("seat_massage")
 
   @@map("complectation_salons")
 }
