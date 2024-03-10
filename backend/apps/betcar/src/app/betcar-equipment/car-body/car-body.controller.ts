@@ -6,7 +6,7 @@ import { CreateCarBodyDto } from './dto/create-car-body.dto';
 import { UpdateCarBodyDto } from './dto/update-car-body.dto';
 import { ApiResponse, ApiTags } from '@nestjs/swagger';
 
-@ApiTags('Оснащение - кузов автомобиля')
+@ApiTags('Оснащение - Kузов автомобиля')
 @Controller('car-body')
 export class CarBodyController {
   

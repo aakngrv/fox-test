@@ -1,18 +1,3 @@
-export interface ComplectationReview  {
-  id?: number;
-  complectationName: string;
-  highBeamControlSystem: boolean;
-  adaptiveLightingSystem: boolean;
-  automaticHeadlightRangeControl: boolean;
-  fogLights: boolean;
-  headlightWasher: boolean;
-  lights: string;
-  rainSensor: boolean;
-  lightSensor: boolean;
-  electricalHeating: string;
-  comment: string;
-}
-
 export interface ComplectationBody {
   complectationBodyId?: number;
   reportId?: number;
@@ -53,76 +38,94 @@ export interface ComplectationWheels {
   backRightWear: string;
 }
 
+export interface ComplectationSalon {
+  complectationSalonId?: number;
+  reportId: number;
+  luke: boolean;
+  seatCovers: boolean;
+  panoramicView: boolean;
+  thirdRowOfSeats: boolean;
+  tintedGlass: boolean;
+  steeringWheelHeating: boolean;
+  leatherTrimmedGearshiftLever: boolean;
+  sportsFrontSeats: boolean;
+  steeringWheelLeatherTrim: boolean;
+  foldingRearSeat: boolean;
+  frontCenterArmrest: boolean;
+  interiorMaterial: string;
+  heatedSeats: string[];
+  seatHeightAdjustment: string;
+  electricallyAdjustableSeats: string[];
+  seatPositionMemory: string;
+  seatVentilation: string[];
+  seatMassage: string[];
+}
+
+export interface ComplectationHeadlights {
+  complectationHeadlightsId?: number;
+  reportId: number;
+  lightSensor: boolean;
+  rainSensor: boolean;
+  headlightWasher: boolean;
+  fogLights: boolean;
+  automaticHeadlightLeveling: boolean;
+  adaptivLlightingSystem: boolean;
+  highBeamControlSystem: boolean;
+  headlights: string;
+}
+
+export interface ComplectationMultimedia {
+  complectationMultimediaId?: number;
+  reportId: number;
+  cd: boolean;
+  tv: boolean;
+  usb: boolean;
+  aux: boolean;
+  dvd: boolean;
+  cassette: boolean;
+  carPlay: boolean;
+  bluetooth: boolean;
+  subwoofer: boolean;
+  voiceControl: boolean;
+  navigationSystem: boolean;
+  multimediaSystemForRearPassengers: boolean;
+}
+
+export interface ComplectationComfort {
+  complectationComfortId?: number;
+  reportId: number;
+  startStopSystem: boolean;
+  onBoardComputer: boolean;
+  electricMirrors: boolean;
+  preheater: boolean;
+  engineStartButton: boolean;
+  keylessEntrySystem: boolean;
+  handsFreeTrunkOpening: boolean;
+  electrofoldingOfMirrors: boolean;
+  multifunctionSteeringWheel: boolean;
+  touchControlPanel: boolean;
+  gearshiftPaddles: boolean;
+  adjustablePedalAssembly: boolean;
+  electronicDashboard: boolean;
+  remoteEngineStart: boolean;
+  electricTrunkLid: boolean;
+  camera: string[];
+  suspension: string[];
+  airConditioner: string;
+  powerSteering: string;
+  cruiseControl: string;
+  electricHeating: string[];
+  steeringWheelAdjustment: string[];
+  parkingAssistanceSystem: string[];
+  electricLifts: string[];
+}
+
 export interface ComplectationProtection {
   id?: number;
   interiorIntrusionSensor: boolean;
   centralLocking: boolean;
   immobilizer: boolean;
   signaling: string;
-}
-
-export interface ComplectationMultimedia {
-  id?: number;
-  bluetooth: boolean;
-  cd: boolean;
-  usb: boolean;
-  aux: boolean;
-  dvd: boolean;
-  tv: boolean;
-  subwoofer: boolean;
-  audioSystem: string;
-  multimediaSystemForRearPassengers: boolean;
-  voiceControl: boolean;
-  navigationSystem: boolean;
-  socket220V: boolean;
-  socket12V: boolean;
-}
-
-export interface ComplectationSalon {
-  id?: number;
-  interiorMaterial: string;
-  interiorColor: string;
-  steeringWheelLeatherTrim: boolean;
-  leatherTrimmedGearshiftLever: boolean;
-  numberOfSeats: string;
-  heatedSeats: string;
-  seatHeightAdjustment: string;
-  powerSeats: string;
-  seatPositionMemory: string;
-  seatVentilation: string;
-  frontCenterArmrest: boolean;
-  panoramicView: boolean;
-  foldingRearSeat: boolean;
-  sportsFrontSeats: boolean;
-  steeringWheelHeating: boolean;
-  tintedGlass: boolean;
-  thirdRowOfSeats: boolean;
-  luke: boolean;
-}
-
-export interface ComplectationComfort {
-  id?: number;
-  remoteEngineStart: boolean;
-  engineStartButton: boolean;
-  onBoardComputer: boolean;
-  camera: string;
-  airConditioner: string;
-  cruiseControl: string;
-  steeringWheelAdjustment: string;
-  parkingAssistanceSystem: string;
-  powerSteering: string;
-  electricLifts: string;
-  programmableStartingHeater : boolean;
-  gearshiftPaddles: boolean;
-  handsFreeTrunkOpening: boolean;
-  electricTrunkLid: boolean;
-  electronicDashboard: boolean;
-  adjustablePedalAssembly: boolean;
-  multifunctionSteeringWheel: boolean;
-  keylessEntrySystem: boolean;
-  electrofoldingOfMirrors: boolean;
-  powerMirrors: boolean;
-  startStopSystem: boolean;
 }
 
 export interface ComplectationSafety {

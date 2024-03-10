@@ -10,6 +10,10 @@ import { StsModule } from '../betcar-documents/sts/sts.module';
 import { LocationModule } from '../betcar-documents/location/location.module';
 import { CarBodyModule } from '../betcar-equipment/car-body/car-body.module';
 import { ComplectationWheelsModule } from '../betcar-equipment/complectation-wheels/complectation-wheels.module';
+import { ComplectationSalonModule } from '../betcar-equipment/complectation-salon/complectation-salon.module';
+import { ComplectationHeadlightsModule } from '../betcar-equipment/complectation-headlights/complectation-headlights.module';
+import { ComplectationMultimediaModule } from '../betcar-equipment/complectation-multimedia/complectation-multimedia.module';
+import { ComplectationComfortModule } from '../betcar-equipment/complectation-comfort/complectation-comfort.module';
 
 @Module({
   imports: [
@@ -21,6 +25,10 @@ import { ComplectationWheelsModule } from '../betcar-equipment/complectation-whe
     LocationModule,
     CarBodyModule,
     ComplectationWheelsModule,
+    ComplectationSalonModule,
+    ComplectationHeadlightsModule,
+    ComplectationMultimediaModule,
+    ComplectationComfortModule,
   ],
   controllers: [BetcarReportController],
   providers: [

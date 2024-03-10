@@ -64,6 +64,30 @@ export class CreateReportDto {
   public complectationWheels: number[];
 
   @ApiProperty({
+    description: 'Массив объектов c информацией о салоне',
+    example: ''
+  })
+  public complectationSalon: number[];
+
+  @ApiProperty({
+    description: 'Массив объектов c информацией о фарах',
+    example: ''
+  })
+  public complectationHeadlights: number[];
+
+  @ApiProperty({
+    description: 'Массив объектов c информацией о мультимедиа',
+    example: ''
+  })
+  public complectationMultimedia: number[];
+
+  @ApiProperty({
+    description: 'Массив объектов c информацией о комфорте',
+    example: ''
+  })
+  public complectationComfort: number[];
+
+  @ApiProperty({
     description: 'Дата создания',
     example: ''
   })

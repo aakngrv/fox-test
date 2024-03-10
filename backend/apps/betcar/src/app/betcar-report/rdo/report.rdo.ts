@@ -8,6 +8,10 @@ import {
   Location,
   ComplectationBody,
   ComplectationWheels,
+  ComplectationSalon,
+  ComplectationHeadlights,
+  ComplectationMultimedia,
+  ComplectationComfort,
 } from '@prisma/client';
 
 import { Expose } from 'class-transformer';
@@ -91,6 +95,35 @@ export class ReportRdo {
   })
   @Expose()
   public complectationWheels: ComplectationWheels[];
+
+
+  @ApiProperty({
+    description: 'Массив объектов c информацией о салоне',
+    example: ''
+  })
+  @Expose()
+  public complectationSalon: ComplectationSalon[];
+
+  @ApiProperty({
+    description: 'Массив объектов c информацией о фарах',
+    example: ''
+  })
+  @Expose()
+  public complectationHeadlights: ComplectationHeadlights[];
+
+  @ApiProperty({
+    description: 'Массив объектов c информацией о мультимедиа',
+    example: ''
+  })
+  @Expose()
+  public complectationMultimedia: ComplectationMultimedia[];
+
+  @ApiProperty({
+    description: 'Массив объектов c информацией о комфорте',
+    example: ''
+  })
+  @Expose()
+  public complectationComfort: ComplectationComfort[];
 
   @ApiProperty({
     description: 'Дата создания',
