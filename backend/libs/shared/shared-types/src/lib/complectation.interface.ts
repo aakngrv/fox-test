@@ -120,14 +120,6 @@ export interface ComplectationComfort {
   electricLifts: string[];
 }
 
-export interface ComplectationProtection {
-  id?: number;
-  interiorIntrusionSensor: boolean;
-  centralLocking: boolean;
-  immobilizer: boolean;
-  signaling: string;
-}
-
 export interface ComplectationSafety {
   complectationSafetyId?: number;
   reportId: number;
@@ -137,6 +129,17 @@ export interface ComplectationSafety {
   airbags: string[];
   isofix: string[];
   auxiliarySystems: string[];
+}
+
+export interface ComplectationProtection {
+  complectationProtectionId?: number;
+  reportId: number;
+  label: boolean;
+  immobilizer: boolean;
+  centralLocking: boolean;
+  authorsSecuritySystem: boolean;
+  interiorIntrusionSensor: boolean;
+  signaling: string;
 }
 
 export interface ComplectationOther {

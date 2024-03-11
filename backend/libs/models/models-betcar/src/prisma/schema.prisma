@@ -27,6 +27,7 @@ model Report {
   complectationMultimedia ComplectationMultimedia[]
   complectationComfort    ComplectationComfort[]
   complectationSafety     ComplectationSafety[]
+  complectationProtection ComplectationProtection[]
 
   @@map("reports")
 }
@@ -302,12 +303,15 @@ model ComplectationSafety {
   @@map("complectation_safeties")
 }
 
-
 model ComplectationProtection {
   complectationProtectionId Int     @id @default(autoincrement()) @map("complectation_protection_id")
-  interiorIntrusionSensor   Boolean @default(false) @map("interior_intrusion_sensor")
-  centralLocking            Boolean @default(false) @map("central_locking")
+  reportId                  Int     @map("report_id")
+  report                    Report  @relation(fields: [reportId], references: [reportId], onDelete: Cascade, onUpdate: Cascade)
+  label                     Boolean @default(false)
   immobilizer               Boolean @default(false)
+  centralLocking            Boolean @default(false) @map("central_locking")
+  authorsSecuritySystem     Boolean @default(false) @map("authors_security_system")
+  interiorIntrusionSensor   Boolean @default(false) @map("interior_intrusion_sensor")
   signaling                 String  @default("")
 
   @@map("complectation_protections")
