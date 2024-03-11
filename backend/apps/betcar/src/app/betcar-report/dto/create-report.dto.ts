@@ -100,6 +100,12 @@ export class CreateReportDto {
   public complectationProtection: number[];
 
   @ApiProperty({
+    description: 'Массив объектов c информацией о разном',
+    example: ''
+  })
+  public complectationOther: number[];
+
+  @ApiProperty({
     description: 'Дата создания',
     example: ''
   })

@@ -15,6 +15,7 @@ import { ComplectationMultimediaModule } from './betcar-equipment/complectation-
 import { ComplectationComfortModule } from './betcar-equipment/complectation-comfort/complectation-comfort.module';
 import { ComplectationSafetyModule } from './betcar-equipment/complectation-safety/complectation-safety.module';
 import { ComplectationProtectionModule } from './betcar-equipment/complectation-protection/complectation-protection.module';
+import { ComplectationOtherModule } from './betcar-equipment/complectation-other/complectation-other.module';
 
 
 @Module({
@@ -35,6 +36,7 @@ import { ComplectationProtectionModule } from './betcar-equipment/complectation-
     ComplectationComfortModule,
     ComplectationSafetyModule,
     ComplectationProtectionModule,
+    ComplectationOtherModule,
   ],
   controllers: [],
   providers: [],

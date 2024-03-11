@@ -16,6 +16,7 @@ import {
   ComplectationComfort,
   ComplectationSafety,
   ComplectationProtection,
+  ComplectationOther
 } from "./complectation.interface";
 
 export interface Report {
@@ -36,6 +37,7 @@ export interface Report {
   complectationComfort: ComplectationComfort[]; 
   complectationSafety: ComplectationSafety[];
   complectationProtection: ComplectationProtection[];
+  complectationOther: ComplectationOther[];
   createdAt: Date;
   publishAt: Date;
 }

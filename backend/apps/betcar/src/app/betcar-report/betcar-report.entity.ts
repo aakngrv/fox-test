@@ -15,6 +15,7 @@ import {
   ComplectationComfort,
   ComplectationSafety,
   ComplectationProtection,
+  ComplectationOther,
  } from '@backend/shared/shared-types';
 
 export class BetcarReportEntity implements Entity<BetcarReportEntity>, Report {
@@ -36,6 +37,7 @@ export class BetcarReportEntity implements Entity<BetcarReportEntity>, Report {
   public complectationComfort: ComplectationComfort[];
   public complectationSafety: ComplectationSafety[];
   public complectationProtection: ComplectationProtection[];
+  public complectationOther: ComplectationOther[];
   public createdAt: Date;
   public publishAt: Date;
 
@@ -61,6 +63,7 @@ export class BetcarReportEntity implements Entity<BetcarReportEntity>, Report {
     this.complectationComfort = [];
     this.complectationSafety = [];
     this.complectationProtection = [];
+    this.complectationOther = [];
     this.createdAt = new Date();
     this.publishAt = new Date();
   }
@@ -82,6 +85,7 @@ export class BetcarReportEntity implements Entity<BetcarReportEntity>, Report {
       complectationComfort: this.complectationComfort.map(({ complectationComfortId }) => ({ complectationComfortId })),
       complectationSafety: this.complectationSafety.map(({ complectationSafetyId }) => ({ complectationSafetyId })),
       complectationProtection: this.complectationProtection.map(({ complectationProtectionId }) => ({ complectationProtectionId })),
+      complectationOther: this.complectationOther.map(({ complectationOtherId }) => ({ complectationOtherId })),
     };
   }
 }

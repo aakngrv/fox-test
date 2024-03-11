@@ -143,16 +143,18 @@ export interface ComplectationProtection {
 }
 
 export interface ComplectationOther {
-  id?: number;
-  suspension: string;
-  numberOfKeys: string;
-  gasEquipment: boolean;
-  motoristSet: boolean;
-  spareWheel: boolean;
-  airSuspension: boolean;
+  complectationOtherId?: number;
+  reportId: number;
+  towBar: boolean;
+  winch: boolean;
+  airbox: boolean;
+  socket12v: boolean;
+  socket220v: boolean;
   crankcaseProtection: boolean;
-  tool: boolean;
-  autorun: boolean;
-  hitch: boolean;
+  transverseArches: boolean;
+  gasEquipment: boolean;
+  numberOfKeys: string;
+  spareWheel: string;
+  motoristSet: string[];
 }
 

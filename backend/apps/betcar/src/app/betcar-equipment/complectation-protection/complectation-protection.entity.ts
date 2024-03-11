@@ -18,9 +18,7 @@ export class ComplectationProtectionEntity implements Entity<ComplectationProtec
     this.fillEntity(complectationProtection);
   } 
 
-
-
- 
+  
   public fillEntity(entity: ComplectationProtection): void {
     this.complectationProtectionId = entity.complectationProtectionId;
     this.reportId = entity.reportId;

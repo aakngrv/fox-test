@@ -14,6 +14,7 @@ import {
   ComplectationComfort,
   ComplectationSafety,
   ComplectationProtection,
+  ComplectationOther,
 } from '@prisma/client';
 
 import { Expose } from 'class-transformer';
@@ -140,6 +141,13 @@ export class ReportRdo {
   })
   @Expose()
   public complectationProtection: ComplectationProtection[];
+
+  @ApiProperty({
+    description: 'Массив объектов c информацией о разном',
+    example: ''
+  })
+  @Expose()
+  public complectationOther: ComplectationOther[];
 
   @ApiProperty({
     description: 'Дата создания',
