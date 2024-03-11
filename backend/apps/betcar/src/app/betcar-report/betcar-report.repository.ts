@@ -52,6 +52,9 @@ export class BetcarReportRepository implements CRUDRepository<BetcarReportEntity
         complectationComfort: {
           connect: []
         },
+        complectationSafety: {
+          connect: []
+        },
       }, 
       include: {
         sellerDetails: true,
@@ -66,6 +69,7 @@ export class BetcarReportRepository implements CRUDRepository<BetcarReportEntity
         complectationHeadlights: true,
         complectationMultimedia: true,
         complectationComfort: true,
+        complectationSafety: true,
       }
     });
   }
@@ -96,6 +100,7 @@ export class BetcarReportRepository implements CRUDRepository<BetcarReportEntity
         complectationHeadlights: true,
         complectationMultimedia: true,
         complectationComfort: true,
+        complectationSafety: true,
       }
     });
   }
@@ -115,6 +120,7 @@ export class BetcarReportRepository implements CRUDRepository<BetcarReportEntity
         complectationHeadlights: true,
         complectationMultimedia: true,
         complectationComfort: true,
+        complectationSafety: true,
       }
     });
   }

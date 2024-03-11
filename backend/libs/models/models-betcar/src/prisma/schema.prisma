@@ -25,7 +25,8 @@ model Report {
   complectationSalon      ComplectationSalon[]
   complectationHeadlights ComplectationHeadlights[]
   complectationMultimedia ComplectationMultimedia[]
-  complectationComfort     ComplectationComfort[]
+  complectationComfort    ComplectationComfort[]
+  complectationSafety     ComplectationSafety[]
 
   @@map("reports")
 }
@@ -284,8 +285,23 @@ model ComplectationComfort {
   parkingAssistanceSystem    String[]@default([""]) @map("parking_assistance_system")
   electricLifts              String[]@default([""]) @map("electric_lifts")
 
-  @@map("complectation_comforts")
+  @@map("complectation_comforts") 
 }
+
+model ComplectationSafety {
+  complectationSafetyId Int     @id @default(autoincrement()) @map("complectation_safety_id")
+  reportId              Int     @map("report_id")
+  report                Report  @relation(fields: [reportId], references: [reportId], onDelete: Cascade, onUpdate: Cascade)
+  eraGlonass            Boolean @default(false) @map("era-glonass")
+  locking               Boolean @default(false)
+  armoredBody           Boolean @default(false) @map("armored_body")
+  airbags               String[]@default([""])
+  isofix                String[]@default([""])
+  auxiliarySystems      String[]@default([""]) @map("auxiliary_systems")
+
+  @@map("complectation_safeties")
+}
+
 
 model ComplectationProtection {
   complectationProtectionId Int     @id @default(autoincrement()) @map("complectation_protection_id")
@@ -295,21 +311,6 @@ model ComplectationProtection {
   signaling                 String  @default("")
 
   @@map("complectation_protections")
-}
-
-model ComplectationSafety {
-  complectationSafetyId Int     @id @default(autoincrement()) @map("complectation_safety_id")
-  abs                   Boolean @default(false)
-  esp                   Boolean @default(false)
-  auxiliarySystems      String  @default("") @map("auxiliary_systems")
-  airbags               String  @default("")
-  isofix                String  @default("")
-  rearDoorLock          Boolean @default(false) @map("rear_door_lock")
-  tirePressureSensor    Boolean @default(false) @map("tire_pressure_sensor")
-  armoredBody           Boolean @default(false) @map("armored_body")
-  eraGlonass            Boolean @default(false) @map("era-glonass")
-
-  @@map("complectation_safeties")
 }
 
 model ComplectationOther {

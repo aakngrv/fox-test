@@ -129,16 +129,14 @@ export interface ComplectationProtection {
 }
 
 export interface ComplectationSafety {
-  id?: number;
-  abs: boolean;
-  esp: boolean;
-  auxiliarySystems: string;
-  airbags: string;
-  isofix: string;
-  rearDoorLock: boolean;
-  tirePressureSensor: boolean;
-  armoredBody: boolean;
+  complectationSafetyId?: number;
+  reportId: number;
   eraGlonass: boolean;
+  locking: boolean;
+  armoredBody: boolean;
+  airbags: string[];
+  isofix: string[];
+  auxiliarySystems: string[];
 }
 
 export interface ComplectationOther {
