@@ -106,6 +106,12 @@ export class CreateReportDto {
   public complectationOther: number[];
 
   @ApiProperty({
+    description: 'Массив объектов c информацией о проверке ЛКП',
+    example: ''
+  })
+  public paintworkInspection: number[];
+
+  @ApiProperty({
     description: 'Дата создания',
     example: ''
   })

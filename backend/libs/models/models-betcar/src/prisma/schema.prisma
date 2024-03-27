@@ -29,6 +29,7 @@ model Report {
   complectationSafety     ComplectationSafety[]
   complectationProtection ComplectationProtection[]
   complectationOther      ComplectationOther[]
+  paintworkInspection     PaintworkInspection[]
 
   @@map("reports")
 }
@@ -343,38 +344,35 @@ model ComplectationOther {
 
 // ** Модели сервиса "Кузов и салон" ** //
 
-model PaintworkInspectionDisplay {
-  paintworkInspectionDisplayId Int    @id @default(autoincrement()) @map("paintwork_inspection_display_id")
-  maximumThickness             String @default("") @map("maximum_thickness")
-  condition                    String @default("")
-  comment                      String @default("")
-
-  @@map("paintwork_inspection_displays")
-}
-
 model PaintworkInspection {
-  paintworkInspectionId Int     @id @default(autoincrement()) @map("paintwork_inspection_id")
-  factoryColor          Boolean @default(false) @map("factory_color")
-  hood                  Boolean @default(false)
-  roof                  Boolean @default(false)
-  leftFrontFender       Boolean @default(false) @map("left_front_fender")
-  leftFrontPillar       Boolean @default(false) @map("left_front_pillar")
-  leftFrontDoor         Boolean @default(false) @map("left_front_door")
-  leftThreshold         Boolean @default(false) @map("left_threshold")
-  leftCenterPillar      Boolean @default(false) @map("left_center_pillar")
-  leftRearDoor          Boolean @default(false) @map("left_rear_door")
-  leftRearPillar        Boolean @default(false) @map("left_rear_pillar")
-  leftRearFender        Boolean @default(false) @map("left_rear_fender")
-  trunkLid              Boolean @default(false) @map("trunk_lid")
-  rightFrontFender      Boolean @default(false) @map("right_front_fender")
-  rightFrontPillar      Boolean @default(false) @map("right_front_pillar")
-  rightFrontDoor        Boolean @default(false) @map("right_front_door")
-  rightThreshold        Boolean @default(false) @map("right_threshold")
-  rightCenterPillar     Boolean @default(false) @map("right_center_pillar")
-  rightRearDoor         Boolean @default(false) @map("right_rear_door")
-  rightRearPillar       Boolean @default(false) @map("right_rear_pillar")
-  rightRearFender       Boolean @default(false) @map("right_rear_fender")
-  comment               String  @default("")
+  paintworkInspectionId Int       @id @default(autoincrement()) @map("paintwork_inspection_id")
+  reportId              Int       @map("report_id")
+  report                Report    @relation(fields: [reportId], references: [reportId], onDelete: Cascade, onUpdate: Cascade)
+  factoryColor          Boolean   @default(false) @map("factory_color")
+  bodyInFilm            Boolean   @default(false) @map("body_in_film")
+  roof                  String[]  @default([""])
+  trunkLid              String[]  @default([""]) @map("trunk_lid")
+  rightRearFender       String[]  @default([""]) @map("right_rear_fender")
+  rightRearPillar       String[]  @default([""]) @map("right_rear_pillar")
+  rightRearDoor         String[]  @default([""]) @map("right_rear_door")
+  rightRearDoorOpening  String[]  @default([""]) @map("right_rear_door_opening")
+  rightCenterPillar     String[]  @default([""]) @map("right_center_pillar")
+  rightThreshold        String[]  @default([""]) @map("right_threshold")
+  rightFrontDoor        String[]  @default([""]) @map("right_front_door")
+  rightFrontDoorOpening String[]  @default([""]) @map("right_front_door_opening")
+  rightFrontPillar      String[]  @default([""]) @map("right_front_pillar")
+  rightFrontFender      String[]  @default([""]) @map("right_front_fender")
+  hood                  String[]  @default([""])
+  leftFrontFender       String[]  @default([""]) @map("left_front_fender")
+  leftFrontPillar       String[]  @default([""]) @map("left_front_pillar")
+  leftFrontDoor         String[]  @default([""]) @map("left_front_door")
+  leftFrontDoorOpening  String[]  @default([""]) @map("left_front_door_opening")
+  leftCenterPillar      String[]  @default([""]) @map("left_center_pillar")
+  leftThreshold         String[]  @default([""]) @map("left_threshold")
+  leftRearDoor          String[]  @default([""]) @map("left_rear_door")
+  leftRearDoorOpening   String[]  @default([""]) @map("left_rear_door_opening")
+  leftRearPillar        String[]  @default([""]) @map("left_rear_pillar")
+  leftRearFender        String[]  @default([""]) @map("left_rear_fender")
 
   @@map("paintwork_inspections")
 }

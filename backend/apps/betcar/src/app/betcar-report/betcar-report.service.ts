@@ -19,6 +19,7 @@ import { ComplectationComfortRepository } from '../betcar-equipment/complectatio
 import { ComplectationSafetyRepository } from '../betcar-equipment/complectation-safety/complectation-safety.repository';
 import { ComplectationProtectionRepository } from '../betcar-equipment/complectation-protection/complectation-protection.repository';
 import { ComplectationOtherRepository } from '../betcar-equipment/complectation-other/complectation-other.repository';
+import { PaintworkInspectionRepository } from '../betcar-body-and-interior/paintwork-inspection/paintwork-inspection.repository';
 
 @Injectable()
 export class BetcarReportService {
@@ -39,6 +40,7 @@ export class BetcarReportService {
     private readonly complectationSafetyRepository: ComplectationSafetyRepository,
     private readonly complectationProtectionRepository: ComplectationProtectionRepository,
     private readonly complectationOtherRepository: ComplectationOtherRepository,
+    private readonly paintworkInspectionRepository: PaintworkInspectionRepository,
   ) {}
 
   async createReport(dto: CreateReportDto): Promise<Report> {
@@ -57,6 +59,7 @@ export class BetcarReportService {
     const complectationSafety = await this.complectationSafetyRepository.find(dto.complectationSafety);
     const complectationProtection = await this.complectationProtectionRepository.find(dto.complectationProtection);
     const complectationOther = await this.complectationOtherRepository.find(dto.complectationOther);
+    const paintworkInspection = await this.paintworkInspectionRepository.find(dto.paintworkInspection);
 
     const reportEntity = new BetcarReportEntity({ 
       ...dto, 
@@ -75,6 +78,7 @@ export class BetcarReportService {
       complectationSafety,
       complectationProtection,
       complectationOther,
+      paintworkInspection,
     });
     
     return this.betcarReportRepository.create(reportEntity);

@@ -19,6 +19,10 @@ import {
   ComplectationOther
 } from "./complectation.interface";
 
+import { 
+  PaintworkInspection,
+} from "./body-and-interior.interface";
+
 export interface Report {
   reportId?: number;
   executorId: string;
@@ -38,6 +42,7 @@ export interface Report {
   complectationSafety: ComplectationSafety[];
   complectationProtection: ComplectationProtection[];
   complectationOther: ComplectationOther[];
+  paintworkInspection: PaintworkInspection[];
   createdAt: Date;
   publishAt: Date;
 }
