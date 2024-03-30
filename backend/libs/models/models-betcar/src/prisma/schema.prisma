@@ -396,26 +396,26 @@ model EngineCompartmentDamage {
 }
 
 model AddElement {
-  addElementId                     Int      @id @default(autoincrement()) @map("add_element_id")
-  engineCompartmentDamageId        Int      @map("engine_compartment_damage_id")
-  engineCompartmentDamage          EngineCompartmentDamage? @relation(fields: [engineCompartmentDamageId], references: [engineCompartmentDamageId], onDelete: Cascade, onUpdate: Cascade)
-  name                             String   @default("")
-  info                             String[] @default([""])
+  addElementId              Int      @id @default(autoincrement()) @map("add_element_id")
+  engineCompartmentDamageId Int      @map("engine_compartment_damage_id")
+  engineCompartmentDamage   EngineCompartmentDamage? @relation(fields: [engineCompartmentDamageId], references: [engineCompartmentDamageId], onDelete: Cascade, onUpdate: Cascade)
+  name                      String   @default("")
+  info                      String[] @default([""])
 
   @@map("add_elements")
 }
 
 model FrontSideDamage {
-  frontSideDamageId Int     @id @default(autoincrement()) @map("front_side_damage_id")
-  reportId          Int     @map("report_id")
-  report            Report  @relation(fields: [reportId], references: [reportId], onDelete: Cascade, onUpdate: Cascade)
-  withoutDamage     Boolean @default(false) @map("without_damage")
-  fogLights         String[]  @default([""]) @map("fog_lights")  
-  radiatorGrille    String[]  @default([""]) @map("radiator_grille") 
-  frontBumper       String[]  @default([""]) @map("front_bumper")
-  rightHeadlight    String[]  @default([""]) @map("right_headlight")
-  leftHeadlight     String[]  @default([""]) @map("left_headlight")
-  hood              String[]  @default([""])
+  frontSideDamageId Int      @id @default(autoincrement()) @map("front_side_damage_id")
+  reportId          Int      @map("report_id")
+  report            Report   @relation(fields: [reportId], references: [reportId], onDelete: Cascade, onUpdate: Cascade)
+  withoutDamage     Boolean  @default(false) @map("without_damage")
+  fogLights         String[] @default([""]) @map("fog_lights")  
+  radiatorGrille    String[] @default([""]) @map("radiator_grille") 
+  frontBumper       String[] @default([""]) @map("front_bumper")
+  rightHeadlight    String[] @default([""]) @map("right_headlight")
+  leftHeadlight     String[] @default([""]) @map("left_headlight")
+  hood              String[] @default([""])
   addElementFront   AddElementFront[]
 
   @@map("front_side_damages")

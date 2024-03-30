@@ -45,3 +45,4 @@ export class FrontSideDamageEntity implements Entity<FrontSideDamageEntity>, Fro
      }
   }
 }
+
