@@ -31,6 +31,7 @@ model Report {
   complectationOther      ComplectationOther[]
   paintworkInspection     PaintworkInspection[]
   engineCompartmentDamage EngineCompartmentDamage[]
+  frontSideDamage         FrontSideDamage[]
 
   @@map("reports")
 }
@@ -406,16 +407,28 @@ model AddElement {
 
 model FrontSideDamage {
   frontSideDamageId Int     @id @default(autoincrement()) @map("front_side_damage_id")
-  fogLights         Boolean @default(false) @map("fog_lights")
-  radiatorGrille    Boolean @default(false) @map("radiator_grille")
-  frontBumper       Boolean @default(false) @map("front_bumper")
+  reportId          Int     @map("report_id")
+  report            Report  @relation(fields: [reportId], references: [reportId], onDelete: Cascade, onUpdate: Cascade)
   withoutDamage     Boolean @default(false) @map("without_damage")
-  rightHeadlight    Boolean @default(false) @map("right_headlight")
-  leftHeadlight     Boolean @default(false) @map("left_headlight")
-  hood              Boolean @default(false)
-  addElement        String  @default("") @map("add_element")
+  fogLights         String[]  @default([""]) @map("fog_lights")  
+  radiatorGrille    String[]  @default([""]) @map("radiator_grille") 
+  frontBumper       String[]  @default([""]) @map("front_bumper")
+  rightHeadlight    String[]  @default([""]) @map("right_headlight")
+  leftHeadlight     String[]  @default([""]) @map("left_headlight")
+  hood              String[]  @default([""])
+  addElementFront   AddElementFront[]
 
   @@map("front_side_damages")
+}
+
+model AddElementFront {
+  addElementFrontId Int      @id @default(autoincrement()) @map("add_element_front_id")
+  frontSideDamageId Int      @map("front_side_damage_id")
+  frontSideDamage   FrontSideDamage? @relation(fields: [frontSideDamageId], references: [frontSideDamageId], onDelete: Cascade, onUpdate: Cascade)
+  name              String   @default("")
+  info              String[] @default([""])
+
+  @@map("add_front_elements")
 }
 
 model LeftSideDamage {

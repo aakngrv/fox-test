@@ -112,10 +112,16 @@ export class CreateReportDto {
   public paintworkInspection: number[];
 
   @ApiProperty({
-    description: 'Массив объектов c информацией о проверке ЛКП',
+    description: 'Массив объектов c информацией о повреждениях мотора',
     example: ''
   })
   public engineCompartmentDamage: number[];
+
+  @ApiProperty({
+    description: 'Массив объектов c информацией о повреждениях передней части',
+    example: ''
+  })
+  public frontSideDamage: number[];
 
   @ApiProperty({
     description: 'Дата создания',

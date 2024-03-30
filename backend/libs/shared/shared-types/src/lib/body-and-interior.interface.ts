@@ -40,16 +40,31 @@ export interface EngineCompartmentDamage {
   addElement?: AddElement[];
 }
 
+export interface AddElement {
+  addElementId?: number;
+  engineCompartmentDamageId: number;
+  name: string;
+  info: string[];
+}
+
 export interface FrontSideDamage {
-  id?: number;
-  fogLights: boolean;
-  radiatorGrille: boolean;
-  frontBumper: boolean;
+  frontSideDamageId?: number;
+  reportId: number;
   withoutDamage: boolean;
-  rightHeadlight: boolean;
-  leftHeadlight: boolean;
-  hood: boolean;
-  addElement: string;
+  fogLights: string[]; 
+  radiatorGrille: string[]; 
+  frontBumper: string[]; 
+  rightHeadlight: string[]; 
+  leftHeadlight: string[]; 
+  hood: string[]; 
+  addElementFront?: AddElementFront[];
+  }
+
+  export interface AddElementFront {
+    addElementFrontId?: number;
+    frontSideDamageId: number;
+    name: string;
+    info: string[];
   }
 
 export interface LeftSideDamage {
@@ -180,11 +195,4 @@ export interface RoundViewVideo {
   photo: string;
   fail: string;
   comment: string;
-}
-
-export interface AddElement {
-  addElementId?: number;
-  engineCompartmentDamageId: number;
-  name: string;
-  info: string[];
 }

@@ -22,6 +22,7 @@ import {
 import { 
   PaintworkInspection,
   EngineCompartmentDamage,
+  FrontSideDamage,
 } from "./body-and-interior.interface";
 
 export interface Report {
@@ -45,6 +46,7 @@ export interface Report {
   complectationOther: ComplectationOther[];
   paintworkInspection: PaintworkInspection[];
   engineCompartmentDamage: EngineCompartmentDamage[];
+  frontSideDamage: FrontSideDamage[]; 
   createdAt: Date;
   publishAt: Date;
 }

@@ -17,7 +17,8 @@ import {
   ComplectationProtection,
   ComplectationOther,
   PaintworkInspection,
-  EngineCompartmentDamage
+  EngineCompartmentDamage,
+  FrontSideDamage,
  } from '@backend/shared/shared-types';
 
 export class BetcarReportEntity implements Entity<BetcarReportEntity>, Report {
@@ -42,6 +43,7 @@ export class BetcarReportEntity implements Entity<BetcarReportEntity>, Report {
   public complectationOther: ComplectationOther[];
   public paintworkInspection: PaintworkInspection[];
   public engineCompartmentDamage: EngineCompartmentDamage[];
+  public frontSideDamage: FrontSideDamage[];
   public createdAt: Date;
   public publishAt: Date;
 
@@ -70,6 +72,7 @@ export class BetcarReportEntity implements Entity<BetcarReportEntity>, Report {
     this.complectationOther = [];
     this.paintworkInspection = [];
     this.engineCompartmentDamage = [];
+    this.frontSideDamage = [];
     this.createdAt = new Date();
     this.publishAt = new Date();
   }
@@ -94,6 +97,7 @@ export class BetcarReportEntity implements Entity<BetcarReportEntity>, Report {
       complectationOther: this.complectationOther.map(({ complectationOtherId }) => ({ complectationOtherId })),
       paintworkInspection: this.paintworkInspection.map(({ paintworkInspectionId }) => ({ paintworkInspectionId })),
       engineCompartmentDamage: this.engineCompartmentDamage.map(({ engineCompartmentDamageId }) => ({ engineCompartmentDamageId })),
+      frontSideDamage: this.frontSideDamage.map(({ frontSideDamageId }) => ({ frontSideDamageId })),
     };
   }
 }

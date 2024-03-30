@@ -21,6 +21,7 @@ import { ComplectationProtectionRepository } from '../betcar-equipment/complecta
 import { ComplectationOtherRepository } from '../betcar-equipment/complectation-other/complectation-other.repository';
 import { PaintworkInspectionRepository } from '../betcar-body-and-interior/paintwork-inspection/paintwork-inspection.repository';
 import { EngineCompartmentDamageRepository } from '../betcar-body-and-interior/engine-compartment-damage/engine-compartment-damage.repository';
+import { FrontSideDamageRepository } from '../betcar-body-and-interior/front-side-damage/front-side-damage.repository';
 
 @Injectable()
 export class BetcarReportService {
@@ -43,6 +44,7 @@ export class BetcarReportService {
     private readonly complectationOtherRepository: ComplectationOtherRepository,
     private readonly paintworkInspectionRepository: PaintworkInspectionRepository,
     private readonly engineCompartmentDamageRepository: EngineCompartmentDamageRepository,
+    private readonly frontSideDamageRepository: FrontSideDamageRepository,
   ) {}
 
   async createReport(dto: CreateReportDto): Promise<Report> {
@@ -63,6 +65,7 @@ export class BetcarReportService {
     const complectationOther = await this.complectationOtherRepository.find(dto.complectationOther);
     const paintworkInspection = await this.paintworkInspectionRepository.find(dto.paintworkInspection);
     const engineCompartmentDamage = await this.engineCompartmentDamageRepository.find(dto.engineCompartmentDamage);
+    const frontSideDamage = await this.frontSideDamageRepository.find(dto.frontSideDamage);
 
     const reportEntity = new BetcarReportEntity({ 
       ...dto, 
@@ -83,6 +86,7 @@ export class BetcarReportService {
       complectationOther,
       paintworkInspection,
       engineCompartmentDamage,
+      frontSideDamage,
     });
     
     return this.betcarReportRepository.create(reportEntity);
