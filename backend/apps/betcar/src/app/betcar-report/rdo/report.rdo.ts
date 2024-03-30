@@ -16,6 +16,7 @@ import {
   ComplectationProtection,
   ComplectationOther,
   PaintworkInspection,
+  EngineCompartmentDamage,
 } from '@prisma/client';
 
 import { Expose } from 'class-transformer';
@@ -156,6 +157,13 @@ export class ReportRdo {
   })
   @Expose()
   public paintworkInspection: PaintworkInspection[];
+  
+  @ApiProperty({
+    description: 'Массив объектов c информацией о повреждениях моторного отсека',
+    example: ''
+  })
+  @Expose()
+  public engineCompartmentDamage: EngineCompartmentDamage[];
 
   @ApiProperty({
     description: 'Дата создания',

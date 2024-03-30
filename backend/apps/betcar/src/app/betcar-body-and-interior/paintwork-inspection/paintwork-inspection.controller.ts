@@ -16,7 +16,7 @@ export class PaintworkInspectionController {
   
   @ApiResponse({
     status: HttpStatus.CREATED,
-    description: 'Данные о проврке ЛКП успешно созданы.'
+    description: 'Данные о проверке ЛКП успешно созданы.'
   })
   @Post('/')
   async create(@Body() dto: CreatePaintworkInspectionDto) {
@@ -27,7 +27,7 @@ export class PaintworkInspectionController {
   @ApiResponse({
     type: PaintworkInspectionRdo,
     status: HttpStatus.OK,
-    description: 'Данные о проврке ЛКП найдены'
+    description: 'Данные о проверке ЛКП найдены'
   })
   @Get('/:id')
   async show(@Param('id') id: string) {
@@ -38,7 +38,7 @@ export class PaintworkInspectionController {
 
   @ApiResponse({
     status: HttpStatus.NO_CONTENT,
-    description: 'Данные о проврке ЛКП успешно удалены.'
+    description: 'Данные о проверке ЛКП успешно удалены.'
   })
   @HttpCode(HttpStatus.NO_CONTENT)
   @Delete('/:id')
@@ -49,7 +49,7 @@ export class PaintworkInspectionController {
   
   @ApiResponse({
     status: HttpStatus.OK,
-    description: 'Данные о проврке ЛКП спешно обновлены.'
+    description: 'Данные о проверке ЛКП спешно обновлены.'
   })
   @HttpCode(HttpStatus.OK)
   @Patch('/:id')

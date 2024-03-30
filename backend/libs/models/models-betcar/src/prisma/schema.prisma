@@ -30,6 +30,7 @@ model Report {
   complectationProtection ComplectationProtection[]
   complectationOther      ComplectationOther[]
   paintworkInspection     PaintworkInspection[]
+  engineCompartmentDamage EngineCompartmentDamage[]
 
   @@map("reports")
 }
@@ -375,6 +376,32 @@ model PaintworkInspection {
   leftRearFender        String[]  @default([""]) @map("left_rear_fender")
 
   @@map("paintwork_inspections")
+}
+
+model EngineCompartmentDamage {
+  engineCompartmentDamageId Int       @id @default(autoincrement()) @map("engine_compartment_damage_id")
+  reportId                  Int       @map("report_id")
+  report                    Report    @relation(fields: [reportId], references: [reportId], onDelete: Cascade, onUpdate: Cascade)
+  withoutDamage             Boolean   @default(false)  @map("without_damage")
+  leftSideMember            String[]  @default([""])  @map("left_side_member")
+  leftGlass                 String[]  @default([""]) @map("left_glass")
+  rightSideMember           String[]  @default([""])  @map("right_side_member")
+  rightGlass                String[]  @default([""]) @map("right_glass")
+  hoodHinges                String[]  @default([""]) @map("hood_hinges")   
+  televisor                 String[]  @default([""]) 
+  addElement                AddElement[]
+
+  @@map("engine_compartments_damage")
+}
+
+model AddElement {
+  addElementId                     Int      @id @default(autoincrement()) @map("add_element_id")
+  engineCompartmentDamageId        Int      @map("engine_compartment_damage_id")
+  engineCompartmentDamage          EngineCompartmentDamage? @relation(fields: [engineCompartmentDamageId], references: [engineCompartmentDamageId], onDelete: Cascade, onUpdate: Cascade)
+  name                             String   @default("")
+  info                             String[] @default([""])
+
+  @@map("add_elements")
 }
 
 model FrontSideDamage {
