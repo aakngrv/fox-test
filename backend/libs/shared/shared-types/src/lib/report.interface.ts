@@ -14,7 +14,15 @@ import {
   ComplectationHeadlights,
   ComplectationMultimedia,
   ComplectationComfort,
+  ComplectationSafety,
+  ComplectationProtection,
+  ComplectationOther
 } from "./complectation.interface";
+
+import { 
+  PaintworkInspection,
+  EngineCompartmentDamage,
+} from "./body-and-interior.interface";
 
 export interface Report {
   reportId?: number;
@@ -32,6 +40,11 @@ export interface Report {
   complectationHeadlights: ComplectationHeadlights[];
   complectationMultimedia: ComplectationMultimedia[];
   complectationComfort: ComplectationComfort[]; 
+  complectationSafety: ComplectationSafety[];
+  complectationProtection: ComplectationProtection[];
+  complectationOther: ComplectationOther[];
+  paintworkInspection: PaintworkInspection[];
+  engineCompartmentDamage: EngineCompartmentDamage[];
   createdAt: Date;
   publishAt: Date;
 }

@@ -120,38 +120,41 @@ export interface ComplectationComfort {
   electricLifts: string[];
 }
 
+export interface ComplectationSafety {
+  complectationSafetyId?: number;
+  reportId: number;
+  eraGlonass: boolean;
+  locking: boolean;
+  armoredBody: boolean;
+  airbags: string[];
+  isofix: string[];
+  auxiliarySystems: string[];
+}
+
 export interface ComplectationProtection {
-  id?: number;
-  interiorIntrusionSensor: boolean;
-  centralLocking: boolean;
+  complectationProtectionId?: number;
+  reportId: number;
+  label: boolean;
   immobilizer: boolean;
+  centralLocking: boolean;
+  authorsSecuritySystem: boolean;
+  interiorIntrusionSensor: boolean;
   signaling: string;
 }
 
-export interface ComplectationSafety {
-  id?: number;
-  abs: boolean;
-  esp: boolean;
-  auxiliarySystems: string;
-  airbags: string;
-  isofix: string;
-  rearDoorLock: boolean;
-  tirePressureSensor: boolean;
-  armoredBody: boolean;
-  eraGlonass: boolean;
-}
-
 export interface ComplectationOther {
-  id?: number;
-  suspension: string;
-  numberOfKeys: string;
-  gasEquipment: boolean;
-  motoristSet: boolean;
-  spareWheel: boolean;
-  airSuspension: boolean;
+  complectationOtherId?: number;
+  reportId: number;
+  towBar: boolean;
+  winch: boolean;
+  airbox: boolean;
+  socket12v: boolean;
+  socket220v: boolean;
   crankcaseProtection: boolean;
-  tool: boolean;
-  autorun: boolean;
-  hitch: boolean;
+  transverseArches: boolean;
+  gasEquipment: boolean;
+  numberOfKeys: string;
+  spareWheel: string;
+  motoristSet: string[];
 }
 

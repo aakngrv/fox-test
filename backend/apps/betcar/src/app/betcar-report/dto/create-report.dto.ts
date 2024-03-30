@@ -88,6 +88,36 @@ export class CreateReportDto {
   public complectationComfort: number[];
 
   @ApiProperty({
+    description: 'Массив объектов c информацией о безопасности',
+    example: ''
+  })
+  public complectationSafety: number[];
+
+  @ApiProperty({
+    description: 'Массив объектов c информацией о защите',
+    example: ''
+  })
+  public complectationProtection: number[];
+
+  @ApiProperty({
+    description: 'Массив объектов c информацией о разном',
+    example: ''
+  })
+  public complectationOther: number[];
+
+  @ApiProperty({
+    description: 'Массив объектов c информацией о проверке ЛКП',
+    example: ''
+  })
+  public paintworkInspection: number[];
+
+  @ApiProperty({
+    description: 'Массив объектов c информацией о проверке ЛКП',
+    example: ''
+  })
+  public engineCompartmentDamage: number[];
+
+  @ApiProperty({
     description: 'Дата создания',
     example: ''
   })

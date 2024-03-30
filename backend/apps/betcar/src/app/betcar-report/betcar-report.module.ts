@@ -14,6 +14,11 @@ import { ComplectationSalonModule } from '../betcar-equipment/complectation-salo
 import { ComplectationHeadlightsModule } from '../betcar-equipment/complectation-headlights/complectation-headlights.module';
 import { ComplectationMultimediaModule } from '../betcar-equipment/complectation-multimedia/complectation-multimedia.module';
 import { ComplectationComfortModule } from '../betcar-equipment/complectation-comfort/complectation-comfort.module';
+import { ComplectationSafetyModule } from '../betcar-equipment/complectation-safety/complectation-safety.module';
+import { ComplectationProtectionModule } from '../betcar-equipment/complectation-protection/complectation-protection.module';
+import { ComplectationOtherModule } from '../betcar-equipment/complectation-other/complectation-other.module';
+import { PaintworkInspectionModule } from '../betcar-body-and-interior/paintwork-inspection/paintwork-inspection.module';
+import { EngineCompartmentDamageModule } from '../betcar-body-and-interior/engine-compartment-damage/engine-compartment-damage.module';
 
 @Module({
   imports: [
@@ -29,6 +34,11 @@ import { ComplectationComfortModule } from '../betcar-equipment/complectation-co
     ComplectationHeadlightsModule,
     ComplectationMultimediaModule,
     ComplectationComfortModule,
+    ComplectationSafetyModule,
+    ComplectationProtectionModule,
+    ComplectationOtherModule,
+    PaintworkInspectionModule,
+    EngineCompartmentDamageModule,
   ],
   controllers: [BetcarReportController],
   providers: [

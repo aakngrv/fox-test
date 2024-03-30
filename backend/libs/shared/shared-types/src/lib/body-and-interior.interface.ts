@@ -1,33 +1,43 @@
-export interface PaintworkInspectionDisplay {
-  id?: number;
-  maximumThickness: string;
-  condition: string;
-  comment: string;
+export interface PaintworkInspection {
+  paintworkInspectionId?: number;
+  reportId: number;
+  factoryColor: boolean;
+  bodyInFilm: boolean;
+  roof: string[];
+  trunkLid: string[];
+  rightRearFender: string[];
+  rightRearPillar: string[];
+  rightRearDoor: string[];
+  rightRearDoorOpening: string[];
+  rightCenterPillar: string[];
+  rightThreshold: string[];
+  rightFrontDoor: string[];
+  rightFrontDoorOpening: string[];
+  rightFrontPillar: string[];
+  rightFrontFender: string[];
+  hood: string[];
+  leftFrontPillar: string[];
+  leftFrontDoor: string[];
+  leftFrontDoorOpening: string[];
+  leftCenterPillar: string[];
+  leftThreshold: string[];
+  leftRearDoor: string[];
+  leftRearDoorOpening: string[];
+  leftRearPillar: string[];
+  leftRearFender: string[];
 }
 
-export interface PaintworkInspection {
-  id?: number;
-  factoryColor: boolean;
-  hood: boolean;
-  roof: boolean;
-  leftFrontFender: boolean;
-  leftFrontPillar: boolean;
-  leftFrontDoor: boolean;
-  leftThreshold: boolean;
-  leftCenterPillar: boolean;
-  leftRearDoor: boolean;
-  leftRearPillar: boolean;
-  leftRearFender: boolean;
-  trunkLid: boolean;
-  rightFrontFender: boolean;
-  rightFrontPillar: boolean;
-  rightFrontDoor: boolean;
-  rightThreshold: boolean;
-  rightCenterPillar: boolean;
-  rightRearDoor: boolean;
-  rightRearPillar: boolean;
-  rightRearFender: boolean;
-  comment: string;
+export interface EngineCompartmentDamage {
+  engineCompartmentDamageId?: number;
+  reportId: number;
+  withoutDamage: boolean;
+  leftSideMember: string[];
+  leftGlass: string[];
+  rightSideMember: string[];
+  rightGlass: string[];
+  hoodHinges: string[]; 
+  televisor: string[];
+  addElement?: AddElement[];
 }
 
 export interface FrontSideDamage {
@@ -171,4 +181,10 @@ export interface RoundViewVideo {
   fail: string;
   comment: string;
 }
-  
+
+export interface AddElement {
+  addElementId?: number;
+  engineCompartmentDamageId: number;
+  name: string;
+  info: string[];
+}

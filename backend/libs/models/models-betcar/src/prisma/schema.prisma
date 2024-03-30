@@ -25,7 +25,12 @@ model Report {
   complectationSalon      ComplectationSalon[]
   complectationHeadlights ComplectationHeadlights[]
   complectationMultimedia ComplectationMultimedia[]
-  complectationComfort     ComplectationComfort[]
+  complectationComfort    ComplectationComfort[]
+  complectationSafety     ComplectationSafety[]
+  complectationProtection ComplectationProtection[]
+  complectationOther      ComplectationOther[]
+  paintworkInspection     PaintworkInspection[]
+  engineCompartmentDamage EngineCompartmentDamage[]
 
   @@map("reports")
 }
@@ -284,91 +289,119 @@ model ComplectationComfort {
   parkingAssistanceSystem    String[]@default([""]) @map("parking_assistance_system")
   electricLifts              String[]@default([""]) @map("electric_lifts")
 
-  @@map("complectation_comforts")
+  @@map("complectation_comforts") 
+}
+
+model ComplectationSafety {
+  complectationSafetyId Int     @id @default(autoincrement()) @map("complectation_safety_id")
+  reportId              Int     @map("report_id")
+  report                Report  @relation(fields: [reportId], references: [reportId], onDelete: Cascade, onUpdate: Cascade)
+  eraGlonass            Boolean @default(false) @map("era-glonass")
+  locking               Boolean @default(false)
+  armoredBody           Boolean @default(false) @map("armored_body")
+  airbags               String[]@default([""])
+  isofix                String[]@default([""])
+  auxiliarySystems      String[]@default([""]) @map("auxiliary_systems")
+
+  @@map("complectation_safeties")
 }
 
 model ComplectationProtection {
   complectationProtectionId Int     @id @default(autoincrement()) @map("complectation_protection_id")
-  interiorIntrusionSensor   Boolean @default(false) @map("interior_intrusion_sensor")
-  centralLocking            Boolean @default(false) @map("central_locking")
+  reportId                  Int     @map("report_id")
+  report                    Report  @relation(fields: [reportId], references: [reportId], onDelete: Cascade, onUpdate: Cascade)
+  label                     Boolean @default(false)
   immobilizer               Boolean @default(false)
+  centralLocking            Boolean @default(false) @map("central_locking")
+  authorsSecuritySystem     Boolean @default(false) @map("authors_security_system")
+  interiorIntrusionSensor   Boolean @default(false) @map("interior_intrusion_sensor")
   signaling                 String  @default("")
 
   @@map("complectation_protections")
 }
 
-model ComplectationSafety {
-  complectationSafetyId Int     @id @default(autoincrement()) @map("complectation_safety_id")
-  abs                   Boolean @default(false)
-  esp                   Boolean @default(false)
-  auxiliarySystems      String  @default("") @map("auxiliary_systems")
-  airbags               String  @default("")
-  isofix                String  @default("")
-  rearDoorLock          Boolean @default(false) @map("rear_door_lock")
-  tirePressureSensor    Boolean @default(false) @map("tire_pressure_sensor")
-  armoredBody           Boolean @default(false) @map("armored_body")
-  eraGlonass            Boolean @default(false) @map("era-glonass")
-
-  @@map("complectation_safeties")
-}
-
 model ComplectationOther {
   complectationOtherId Int     @id @default(autoincrement()) @map("complectation_other_id")
-  suspension           String  @default("")
-  numberOfKeys         String  @default("") @map("number_of_keys")
-  gasEquipment         Boolean @default(false) @map("gas_equipment")
-  motoristSet          Boolean @default(false) @map("motorist_set")
-  spareWheel           Boolean @default(false) @map("spare_wheel")
-  airSuspension        Boolean @default(false) @map("air_suspension")
+  reportId             Int     @map("report_id")
+  report               Report  @relation(fields: [reportId], references: [reportId], onDelete: Cascade, onUpdate: Cascade)
+  towBar               Boolean @default(false) @map("tow_bar")
+  winch                Boolean @default(false)
+  airbox               Boolean @default(false)
+  socket12v            Boolean @default(false) @map("socket_12v")
+  socket220v           Boolean @default(false) @map("socket_220v")
   crankcaseProtection  Boolean @default(false) @map("crankcase_protection")
-  tool                 Boolean @default(false)
-  autorun              Boolean @default(false)
-  hitch                Boolean @default(false)
+  transverseArches     Boolean @default(false) @map("transverse_arches")
+  gasEquipment         Boolean @default(false) @map("gas_equipment")
+  numberOfKeys         String  @default("") @map("number_of_keys")
+  spareWheel           String  @default("") @map("spare_wheel")
+  motoristSet          String[]@default([""]) @map("motorist_set")
 
   @@map("complectation_others")
 }
 
-// Что-то еще, схема машины
-
 // *********** End of table "Complectation" ************ //
+
 // =================================================================================================
 
 // ** Модели сервиса "Кузов и салон" ** //
 
-model PaintworkInspectionDisplay {
-  paintworkInspectionDisplayId Int    @id @default(autoincrement()) @map("paintwork_inspection_display_id")
-  maximumThickness             String @default("") @map("maximum_thickness")
-  condition                    String @default("")
-  comment                      String @default("")
-
-  @@map("paintwork_inspection_displays")
-}
-
 model PaintworkInspection {
-  paintworkInspectionId Int     @id @default(autoincrement()) @map("paintwork_inspection_id")
-  factoryColor          Boolean @default(false) @map("factory_color")
-  hood                  Boolean @default(false)
-  roof                  Boolean @default(false)
-  leftFrontFender       Boolean @default(false) @map("left_front_fender")
-  leftFrontPillar       Boolean @default(false) @map("left_front_pillar")
-  leftFrontDoor         Boolean @default(false) @map("left_front_door")
-  leftThreshold         Boolean @default(false) @map("left_threshold")
-  leftCenterPillar      Boolean @default(false) @map("left_center_pillar")
-  leftRearDoor          Boolean @default(false) @map("left_rear_door")
-  leftRearPillar        Boolean @default(false) @map("left_rear_pillar")
-  leftRearFender        Boolean @default(false) @map("left_rear_fender")
-  trunkLid              Boolean @default(false) @map("trunk_lid")
-  rightFrontFender      Boolean @default(false) @map("right_front_fender")
-  rightFrontPillar      Boolean @default(false) @map("right_front_pillar")
-  rightFrontDoor        Boolean @default(false) @map("right_front_door")
-  rightThreshold        Boolean @default(false) @map("right_threshold")
-  rightCenterPillar     Boolean @default(false) @map("right_center_pillar")
-  rightRearDoor         Boolean @default(false) @map("right_rear_door")
-  rightRearPillar       Boolean @default(false) @map("right_rear_pillar")
-  rightRearFender       Boolean @default(false) @map("right_rear_fender")
-  comment               String  @default("")
+  paintworkInspectionId Int       @id @default(autoincrement()) @map("paintwork_inspection_id")
+  reportId              Int       @map("report_id")
+  report                Report    @relation(fields: [reportId], references: [reportId], onDelete: Cascade, onUpdate: Cascade)
+  factoryColor          Boolean   @default(false) @map("factory_color")
+  bodyInFilm            Boolean   @default(false) @map("body_in_film")
+  roof                  String[]  @default([""])
+  trunkLid              String[]  @default([""]) @map("trunk_lid")
+  rightRearFender       String[]  @default([""]) @map("right_rear_fender")
+  rightRearPillar       String[]  @default([""]) @map("right_rear_pillar")
+  rightRearDoor         String[]  @default([""]) @map("right_rear_door")
+  rightRearDoorOpening  String[]  @default([""]) @map("right_rear_door_opening")
+  rightCenterPillar     String[]  @default([""]) @map("right_center_pillar")
+  rightThreshold        String[]  @default([""]) @map("right_threshold")
+  rightFrontDoor        String[]  @default([""]) @map("right_front_door")
+  rightFrontDoorOpening String[]  @default([""]) @map("right_front_door_opening")
+  rightFrontPillar      String[]  @default([""]) @map("right_front_pillar")
+  rightFrontFender      String[]  @default([""]) @map("right_front_fender")
+  hood                  String[]  @default([""])
+  leftFrontFender       String[]  @default([""]) @map("left_front_fender")
+  leftFrontPillar       String[]  @default([""]) @map("left_front_pillar")
+  leftFrontDoor         String[]  @default([""]) @map("left_front_door")
+  leftFrontDoorOpening  String[]  @default([""]) @map("left_front_door_opening")
+  leftCenterPillar      String[]  @default([""]) @map("left_center_pillar")
+  leftThreshold         String[]  @default([""]) @map("left_threshold")
+  leftRearDoor          String[]  @default([""]) @map("left_rear_door")
+  leftRearDoorOpening   String[]  @default([""]) @map("left_rear_door_opening")
+  leftRearPillar        String[]  @default([""]) @map("left_rear_pillar")
+  leftRearFender        String[]  @default([""]) @map("left_rear_fender")
 
   @@map("paintwork_inspections")
+}
+
+model EngineCompartmentDamage {
+  engineCompartmentDamageId Int       @id @default(autoincrement()) @map("engine_compartment_damage_id")
+  reportId                  Int       @map("report_id")
+  report                    Report    @relation(fields: [reportId], references: [reportId], onDelete: Cascade, onUpdate: Cascade)
+  withoutDamage             Boolean   @default(false)  @map("without_damage")
+  leftSideMember            String[]  @default([""])  @map("left_side_member")
+  leftGlass                 String[]  @default([""]) @map("left_glass")
+  rightSideMember           String[]  @default([""])  @map("right_side_member")
+  rightGlass                String[]  @default([""]) @map("right_glass")
+  hoodHinges                String[]  @default([""]) @map("hood_hinges")   
+  televisor                 String[]  @default([""]) 
+  addElement                AddElement[]
+
+  @@map("engine_compartments_damage")
+}
+
+model AddElement {
+  addElementId                     Int      @id @default(autoincrement()) @map("add_element_id")
+  engineCompartmentDamageId        Int      @map("engine_compartment_damage_id")
+  engineCompartmentDamage          EngineCompartmentDamage? @relation(fields: [engineCompartmentDamageId], references: [engineCompartmentDamageId], onDelete: Cascade, onUpdate: Cascade)
+  name                             String   @default("")
+  info                             String[] @default([""])
+
+  @@map("add_elements")
 }
 
 model FrontSideDamage {

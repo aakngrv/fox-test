@@ -12,6 +12,11 @@ import {
   ComplectationHeadlights,
   ComplectationMultimedia,
   ComplectationComfort,
+  ComplectationSafety,
+  ComplectationProtection,
+  ComplectationOther,
+  PaintworkInspection,
+  EngineCompartmentDamage,
 } from '@prisma/client';
 
 import { Expose } from 'class-transformer';
@@ -124,6 +129,41 @@ export class ReportRdo {
   })
   @Expose()
   public complectationComfort: ComplectationComfort[];
+
+  @ApiProperty({
+    description: 'Массив объектов c информацией о безопасности',
+    example: ''
+  })
+  @Expose()
+  public complectationSafety: ComplectationSafety[];
+
+  @ApiProperty({
+    description: 'Массив объектов c информацией о защите',
+    example: ''
+  })
+  @Expose()
+  public complectationProtection: ComplectationProtection[];
+
+  @ApiProperty({
+    description: 'Массив объектов c информацией о разном',
+    example: ''
+  })
+  @Expose()
+  public complectationOther: ComplectationOther[];
+
+  @ApiProperty({
+    description: 'Массив объектов c информацией о проверке ЛКП',
+    example: ''
+  })
+  @Expose()
+  public paintworkInspection: PaintworkInspection[];
+  
+  @ApiProperty({
+    description: 'Массив объектов c информацией о повреждениях моторного отсека',
+    example: ''
+  })
+  @Expose()
+  public engineCompartmentDamage: EngineCompartmentDamage[];
 
   @ApiProperty({
     description: 'Дата создания',
