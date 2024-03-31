@@ -36,6 +36,7 @@ model Report {
   backSideDamage          BackSideDamage[]
   trunkDamage             TrunkDamage[]
   rightSideDamage         RightSideDamage[]
+  roofDamage              RoofDamage[]
 
   @@map("reports")
 }
@@ -548,14 +549,27 @@ model AddElementRight {
 }
 
 model RoofDamage {
-  roofDamageId  Int     @id @default(autoincrement()) @map("roof_damage_id")
-  withoutDamage Boolean @default(false) @map("without_damage")
-  roofRails     Boolean @default(false) @map("roof_rails")
-  roof          Boolean @default(false)
-  luke          Boolean @default(false)
-  addElement    String  @default("") @map("add_element")
+  roofDamageId   Int     @id @default(autoincrement()) @map("roof_damage_id")
+  reportId       Int     @map("report_id")
+  report         Report  @relation(fields: [reportId], references: [reportId], onDelete: Cascade, onUpdate: Cascade)
+  withoutDamage  Boolean @default(false) @map("without_damage")
+  luke           String[] @default([""])
+  roof           String[] @default([""])
+  roofRails      String[] @default([""]) @map("roof_rails")
+  panorama       String[] @default([""])
+  addElementRoof AddElementRoof[]
 
   @@map("roof_damages")
+}
+
+model AddElementRoof {
+  addElementRoofId Int      @id @default(autoincrement()) @map("add_element_roof_id")
+  roofDamageId     Int      @map("roof_damage_id")
+  roofDamage       RoofDamage? @relation(fields: [roofDamageId], references: [roofDamageId], onDelete: Cascade, onUpdate: Cascade)
+  name             String   @default("")
+  info             String[] @default([""])
+
+  @@map("add_roof_elements")
 }
 
 model GlassDamage {

@@ -141,12 +141,17 @@ export class CreateReportDto {
   })
   public trunkDamage: number[];
 
-
   @ApiProperty({
     description: 'Массив объектов c информацией о повреждениях правой части',
     example: ''
   })
   public rightSideDamage: number[];
+
+  @ApiProperty({
+    description: 'Массив объектов c информацией о повреждениях крыши',
+    example: ''
+  })
+  public roofDamage: number[];
 
   @ApiProperty({
     description: 'Дата создания',

@@ -154,12 +154,21 @@ export interface AddElementRight {
 }
 
 export interface RoofDamage {
-  id?: number;
+  roofDamageId?: number;
+  reportId: number;
   withoutDamage: boolean;
-  roofRails: boolean;
-  roof: boolean;
-  luke: boolean;
-  addElement: string;
+  roofRails: string[];
+  roof: string[];
+  luke: string[];
+  panorama: string[];
+  addElementRoof?: AddElementRoof[];
+}
+
+export interface AddElementRoof {
+  addElementRoofId?: number;
+  roofDamageId: number;
+  name: string;
+  info: string[];
 }
 
 export interface GlassDamage {

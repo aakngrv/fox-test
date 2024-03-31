@@ -88,6 +88,10 @@ export class BetcarReportRepository implements CRUDRepository<BetcarReportEntity
           create: [{ addElementRight: true }, { removeElement: true}],
           connect: []
         },
+        roofDamage: {
+          create: [{ addElementRoof: true }, { removeElement: true}],
+          connect: []
+        },
       }, 
       include: {
         sellerDetails: true,
@@ -112,6 +116,7 @@ export class BetcarReportRepository implements CRUDRepository<BetcarReportEntity
         backSideDamage: true,
         trunkDamage: true,
         rightSideDamage: true,
+        roofDamage: true,
       }
     });
   }
@@ -152,6 +157,7 @@ export class BetcarReportRepository implements CRUDRepository<BetcarReportEntity
         backSideDamage: true,
         trunkDamage: true,
         rightSideDamage: true,
+        roofDamage: true,
       }
     });
   }
@@ -181,6 +187,7 @@ export class BetcarReportRepository implements CRUDRepository<BetcarReportEntity
         backSideDamage: true,
         trunkDamage: true,
         rightSideDamage: true,
+        roofDamage: true,
       }
     });
   }
