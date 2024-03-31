@@ -21,6 +21,7 @@ import { PaintworkInspectionModule } from '../betcar-body-and-interior/paintwork
 import { EngineCompartmentDamageModule } from '../betcar-body-and-interior/engine-compartment-damage/engine-compartment-damage.module';
 import { FrontSideDamageModule } from '../betcar-body-and-interior/front-side-damage/front-side-damage.module';
 import { LeftSideDamageModule } from '../betcar-body-and-interior/left-side-damage/left-side-damage.module';
+import { BackSideDamageModule } from '../betcar-body-and-interior/back-side-damage/back-side-damage.module';
 
 @Module({
   imports: [
@@ -43,6 +44,7 @@ import { LeftSideDamageModule } from '../betcar-body-and-interior/left-side-dama
     EngineCompartmentDamageModule,
     FrontSideDamageModule,
     LeftSideDamageModule,
+    BackSideDamageModule,
   ],
   controllers: [BetcarReportController],
   providers: [

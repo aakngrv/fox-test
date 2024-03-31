@@ -130,6 +130,12 @@ export class CreateReportDto {
   public leftSideDamage: number[];
 
   @ApiProperty({
+    description: 'Массив объектов c информацией о повреждениях задней части',
+    example: ''
+  })
+  public backSideDamage: number[];
+
+  @ApiProperty({
     description: 'Дата создания',
     example: ''
   })

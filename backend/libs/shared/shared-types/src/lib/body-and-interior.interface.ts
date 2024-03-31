@@ -91,15 +91,22 @@ export interface AddElementLeft {
 }
 
 export interface BackSideDamage {
-  id?: number;
+  backSideDamageId?: number;
+  reportId: number;
   withoutDamage: boolean;
-  tailgate: boolean;
-  rearBumper: boolean;
-  leftLamp: boolean;
-  rightLamp: boolean;
-  addElement: string;
+  tailgate: string[]; 
+  rearBumper: string[]; 
+  leftLamp: string[]; 
+  rightLamp: string[]; 
+  addElementBack?: AddElementBack[];
 }
 
+export interface AddElementBack {
+  addElementBackId?: number;
+  backSideDamageId: number;
+  name: string;
+  info: string[];
+}
 export interface RightSideDamage {
   id?: number;
   withoutDamage: boolean;

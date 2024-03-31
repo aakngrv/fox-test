@@ -3,7 +3,7 @@ import { AddElementLeft } from '@backend/shared/shared-types';
 import { AddElementLeftRepository } from './add-element-left.repository';
 import { Injectable } from '@nestjs/common';
 import { AddElementLeftEntity } from './add-element-left.entity';
-import { UpdateAddElementLeftDto } from './dto/update-add-element-left';
+import { UpdateAddElementLeftDto } from './dto/update-add-element-left.dto';
 
 @Injectable()
 export class AddElementLeftService {

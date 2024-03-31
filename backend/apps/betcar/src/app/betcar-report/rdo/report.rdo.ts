@@ -19,6 +19,7 @@ import {
   EngineCompartmentDamage,
   FrontSideDamage,
   LeftSideDamage,
+  BackSideDamage,
 } from '@prisma/client';
 
 import { Expose } from 'class-transformer';
@@ -180,6 +181,13 @@ export class ReportRdo {
   })
   @Expose()
   public leftSideDamage: LeftSideDamage[];
+
+  @ApiProperty({
+    description: 'Массив объектов c информацией о повреждениях задней части',
+    example: ''
+  })
+  @Expose()
+  public backSideDamage: BackSideDamage[];
 
   @ApiProperty({
     description: 'Дата создания',

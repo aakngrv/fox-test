@@ -1,6 +1,6 @@
 import { ApiProperty } from '@nestjs/swagger';
 
-export class CreateAddElementLeftDto {
+export class UpdateAddElementLeftDto {
   
   @ApiProperty({
     description: 'ID доп элемента',

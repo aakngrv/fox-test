@@ -33,6 +33,7 @@ model Report {
   engineCompartmentDamage EngineCompartmentDamage[]
   frontSideDamage         FrontSideDamage[]
   leftSideDamage          LeftSideDamage[]
+  backSideDamage          BackSideDamage[]
 
   @@map("reports")
 }
@@ -463,14 +464,26 @@ model AddElementLeft {
 
 model BackSideDamage {
   backSideDamageId Int     @id @default(autoincrement()) @map("back_side_damage_id")
+  reportId         Int     @map("report_id")
+  report           Report  @relation(fields: [reportId], references: [reportId], onDelete: Cascade, onUpdate: Cascade)
   withoutDamage    Boolean @default(false) @map("without_damage")
-  tailgate         Boolean @default(false)
-  rearBumper       Boolean @default(false) @map("rear_bumper")
-  leftLamp         Boolean @default(false) @map("left_lamp")
-  rightLamp        Boolean @default(false) @map("right_lamp")
-  addElement       String  @default("") @map("add_element")
+  tailgate         String[] @default([""])
+  rearBumper       String[] @default([""]) @map("rear_bumper")
+  leftLamp         String[] @default([""]) @map("left_lamp")
+  rightLamp        String[] @default([""]) @map("right_lamp")
+  addElementBack   AddElementBack[]
 
   @@map("back_side_damages")
+}
+
+model AddElementBack {
+  addElementBackId Int      @id @default(autoincrement()) @map("add_element_back_id")
+  backSideDamageId Int      @map("back_side_damage_id")
+  backSideDamage   BackSideDamage? @relation(fields: [backSideDamageId], references: [backSideDamageId], onDelete: Cascade, onUpdate: Cascade)
+  name             String   @default("")
+  info             String[] @default([""])
+
+  @@map("add_back_elements")
 }
 
 model RightSideDamage {
