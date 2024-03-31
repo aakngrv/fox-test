@@ -34,6 +34,7 @@ model Report {
   frontSideDamage         FrontSideDamage[]
   leftSideDamage          LeftSideDamage[]
   backSideDamage          BackSideDamage[]
+  trunkDamage             TrunkDamage[]
 
   @@map("reports")
 }
@@ -485,6 +486,36 @@ model AddElementBack {
 
   @@map("add_back_elements")
 }
+
+model TrunkDamage {
+  trunkDamageId   Int @id @default(autoincrement()) @map("trunk_damage")
+  reportId        Int     @map("report_id")
+  report          Report  @relation(fields: [reportId], references: [reportId], onDelete: Cascade, onUpdate: Cascade)
+  withoutDamage    Boolean @default(false) @map("without_damage")
+  coverTrim        String[] @default([""]) @map("cover_trim")
+  carpetFloor      String[] @default([""]) @map("carpet_floor")
+  rightTrim        String[] @default([""]) @map("right_trim")
+  rightGlass       String[] @default([""]) @map("right_glass")
+  leftTrim         String[] @default([""]) @map("left_trim")
+  leftGlass        String[] @default([""]) @map("left_glass")
+  seatBackTrim     String[] @default([""]) @map("seat_back_trim")
+  spareWheelWell   String[] @default([""]) @map("spare_wheel_well")
+  addElementTrunk    AddElementTrunk[]
+
+  @@map("trunks_damage")
+}
+
+model AddElementTrunk {
+  addElementTrunkId Int      @id @default(autoincrement()) @map("add_element_back_id")
+  trunkDamageId     Int      @map("trunk_damage_id")
+  trunkDamage       TrunkDamage? @relation(fields: [trunkDamageId], references: [trunkDamageId], onDelete: Cascade, onUpdate: Cascade)
+  name              String   @default("")
+  info              String[] @default([""])
+
+  @@map("add_trunk_elements")
+}
+
+
 
 model RightSideDamage {
   rightSideDamageId Int     @id @default(autoincrement()) @map("right_side_damage_id")

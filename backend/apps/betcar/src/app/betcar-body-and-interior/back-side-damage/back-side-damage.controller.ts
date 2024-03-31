@@ -54,8 +54,8 @@ export class BackSideDamageController {
   @HttpCode(HttpStatus.OK)
   @Patch('/:id')
   async update(@Param('id') id: string, @Body() dto: UpdateBackSideDamageDto) {
-    const backSideamageId = parseInt(id, 10);
-    const updatedBackSideDamage = this.backSideDamageService.updateBackSideDamage(backSideamageId, dto)
+    const backSideDamageId = parseInt(id, 10);
+    const updatedBackSideDamage = this.backSideDamageService.updateBackSideDamage(backSideDamageId, dto)
     return fillObject(BackSideDamageRdo, updatedBackSideDamage);
   }
 }

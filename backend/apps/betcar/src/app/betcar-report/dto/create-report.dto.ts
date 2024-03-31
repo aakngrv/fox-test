@@ -136,6 +136,12 @@ export class CreateReportDto {
   public backSideDamage: number[];
 
   @ApiProperty({
+    description: 'Массив объектов c информацией о повреждениях багажника',
+    example: ''
+  })
+  public trunkDamage: number[];
+
+  @ApiProperty({
     description: 'Дата создания',
     example: ''
   })

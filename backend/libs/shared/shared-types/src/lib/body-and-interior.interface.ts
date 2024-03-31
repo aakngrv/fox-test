@@ -107,6 +107,29 @@ export interface AddElementBack {
   name: string;
   info: string[];
 }
+
+export interface TrunkDamage {
+  trunkDamageId?: number;
+  reportId: number;
+  withoutDamage: boolean;
+  coverTrim: string[]; 
+  carpetFloor: string[]; 
+  rightTrim: string[]; 
+  rightGlass: string[]; 
+  leftTrim: string[]; 
+  leftGlass: string[]; 
+  seatBackTrim: string[]; 
+  spareWheelWell: string[]; 
+  addElementTrunk?: AddElementTrunk[];
+}
+
+export interface AddElementTrunk {
+  addElementTrunkId?: number;
+  trunkDamageId: number;
+  name: string;
+  info: string[];
+}
+
 export interface RightSideDamage {
   id?: number;
   withoutDamage: boolean;
