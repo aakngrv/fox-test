@@ -68,18 +68,26 @@ export interface FrontSideDamage {
   }
 
 export interface LeftSideDamage {
-  id?: number;
+  leftSideDamageId?: number;
+  reportId: number;
   withoutDamage: boolean;
-  leftFrontFender: boolean;
-  leftFrontPillar: boolean;
-  leftFrontDoor: boolean;
-  leftCenterPillar: boolean;
-  leftRearDoor: boolean;
-  leftRearPillar: boolean;
-  leftRearFender: boolean;
-  leftMirror: boolean;
-  leftThreshold: boolean;
-  addElement: string;
+  leftFrontFender: string[]; 
+  leftFrontPillar: string[]; 
+  leftFrontDoor: string[]; 
+  leftCenterPillar: string[]; 
+  leftRearDoor: string[]; 
+  leftRearPillar: string[]; 
+  leftRearFender: string[]; 
+  leftMirror: string[]; 
+  leftThreshold: string[]; 
+  addElementLeft?: AddElementLeft[];
+}
+
+export interface AddElementLeft {
+  addElementLeftId?: number;
+  leftSideDamageId: number;
+  name: string;
+  info: string[];
 }
 
 export interface BackSideDamage {

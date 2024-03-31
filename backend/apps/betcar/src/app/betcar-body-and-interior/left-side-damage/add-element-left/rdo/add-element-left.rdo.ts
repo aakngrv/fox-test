@@ -1,21 +1,21 @@
 import { ApiProperty } from '@nestjs/swagger';
 import { Expose } from 'class-transformer';
 
-export class AddElementFrontRdo {
+export class AddElementLeftRdo {
   
   @ApiProperty({
     description: 'ID дополнительно элемента',
     example: 1
   })
   @Expose()
-  public addElementFrontId: number;
+  public addElementLeftId: number;
 
   @ApiProperty({
     description: 'ID повреждений передней части',
     example: 1
   })
   @Expose()
-  public frontSideDamageId: number;
+  public leftSideDamageId: number;
   
   @ApiProperty({
     description: 'Название элемента',

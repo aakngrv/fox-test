@@ -32,6 +32,7 @@ model Report {
   paintworkInspection     PaintworkInspection[]
   engineCompartmentDamage EngineCompartmentDamage[]
   frontSideDamage         FrontSideDamage[]
+  leftSideDamage          LeftSideDamage[]
 
   @@map("reports")
 }
@@ -433,19 +434,31 @@ model AddElementFront {
 
 model LeftSideDamage {
   leftSideDamageId Int     @id @default(autoincrement()) @map("left_side_damage_id")
+  reportId         Int     @map("report_id")
+  report           Report  @relation(fields: [reportId], references: [reportId], onDelete: Cascade, onUpdate: Cascade)
   withoutDamage    Boolean @default(false) @map("without_damage")
-  leftFrontFender  Boolean @default(false) @map("left_front_fender")
-  leftFrontPillar  Boolean @default(false) @map("left_front_pillar")
-  leftFrontDoor    Boolean @default(false) @map("left_front_door")
-  leftCenterPillar Boolean @default(false) @map("left_center_pillar")
-  leftRearDoor     Boolean @default(false) @map("left_rear_door")
-  leftRearPillar   Boolean @default(false) @map("left_rear_pillar")
-  leftRearFender   Boolean @default(false) @map("left_rear_fender")
-  leftMirror       Boolean @default(false) @map("left_mirror")
-  leftThreshold    Boolean @default(false) @map("left_threshold")
-  addElement       String  @default("") @map("add_element")
+  leftFrontFender  String[] @default([""]) @map("left_front_fender")
+  leftFrontPillar  String[] @default([""]) @map("left_front_pillar")
+  leftFrontDoor    String[] @default([""]) @map("left_front_door")
+  leftCenterPillar String[] @default([""]) @map("left_center_pillar")
+  leftRearDoor     String[] @default([""]) @map("left_rear_door")
+  leftRearPillar   String[] @default([""]) @map("left_rear_pillar")
+  leftRearFender   String[] @default([""]) @map("left_rear_fender")
+  leftMirror       String[] @default([""]) @map("left_mirror")
+  leftThreshold    String[] @default([""]) @map("left_threshold")
+  addElementLeft   AddElementLeft[]
 
   @@map("left_side_damages")
+}
+
+model AddElementLeft {
+  addElementLeftId Int      @id @default(autoincrement()) @map("add_element_left_id")
+  leftSideDamageId Int      @map("left_side_damage_id")
+  leftSideDamage   LeftSideDamage? @relation(fields: [leftSideDamageId], references: [leftSideDamageId], onDelete: Cascade, onUpdate: Cascade)
+  name             String   @default("")
+  info             String[] @default([""])
+
+  @@map("add_left_elements")
 }
 
 model BackSideDamage {
