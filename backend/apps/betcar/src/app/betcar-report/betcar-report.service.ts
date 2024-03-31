@@ -25,6 +25,7 @@ import { FrontSideDamageRepository } from '../betcar-body-and-interior/front-sid
 import { LeftSideDamageRepository } from '../betcar-body-and-interior/left-side-damage/left-side-damage.repository';
 import { BackSideDamageRepository } from '../betcar-body-and-interior/back-side-damage/back-side-damage.repository';
 import { TrunkDamageRepository } from '../betcar-body-and-interior/trunk-damage/trunk-damage.repository';
+import { RightSideDamageRepository } from '../betcar-body-and-interior/right-side-damage/right-side-damage.repository';
 
 @Injectable()
 export class BetcarReportService {
@@ -51,6 +52,7 @@ export class BetcarReportService {
     private readonly leftSideDamageRepository: LeftSideDamageRepository,
     private readonly backSideDamageRepository: BackSideDamageRepository,
     private readonly trunkDamageRepository: TrunkDamageRepository,
+    private readonly rightSideDamageRepository: RightSideDamageRepository,
   ) {}
 
   async createReport(dto: CreateReportDto): Promise<Report> {
@@ -75,6 +77,7 @@ export class BetcarReportService {
     const leftSideDamage = await this.leftSideDamageRepository.find(dto.leftSideDamage);
     const backSideDamage = await this.backSideDamageRepository.find(dto.backSideDamage);
     const trunkDamage = await this.trunkDamageRepository.find(dto.trunkDamage);
+    const rightSideDamage = await this.rightSideDamageRepository.find(dto.rightSideDamage);
 
     const reportEntity = new BetcarReportEntity({ 
       ...dto, 
@@ -99,6 +102,7 @@ export class BetcarReportService {
       leftSideDamage,
       backSideDamage,
       trunkDamage,
+      rightSideDamage,
     });
     
     return this.betcarReportRepository.create(reportEntity);

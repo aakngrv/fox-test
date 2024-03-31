@@ -26,6 +26,7 @@ import {
   LeftSideDamage,
   BackSideDamage,
   TrunkDamage,
+  RightSideDamage,
 } from "./body-and-interior.interface";
 
 export interface Report {
@@ -53,6 +54,7 @@ export interface Report {
   leftSideDamage: LeftSideDamage[];
   backSideDamage: BackSideDamage[];
   trunkDamage: TrunkDamage[];
+  rightSideDamage: RightSideDamage[];
   createdAt: Date;
   publishAt: Date;
 }

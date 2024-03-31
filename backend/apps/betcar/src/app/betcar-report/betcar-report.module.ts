@@ -23,6 +23,7 @@ import { FrontSideDamageModule } from '../betcar-body-and-interior/front-side-da
 import { LeftSideDamageModule } from '../betcar-body-and-interior/left-side-damage/left-side-damage.module';
 import { BackSideDamageModule } from '../betcar-body-and-interior/back-side-damage/back-side-damage.module';
 import { TrunkDamageModule } from '../betcar-body-and-interior/trunk-damage/trunk-damage.module';
+import { RightSideDamageModule } from '../betcar-body-and-interior/right-side-damage/right-side-damage.module';
 
 @Module({
   imports: [
@@ -47,6 +48,7 @@ import { TrunkDamageModule } from '../betcar-body-and-interior/trunk-damage/trun
     LeftSideDamageModule,
     BackSideDamageModule,
     TrunkDamageModule,
+    RightSideDamageModule,
   ],
   controllers: [BetcarReportController],
   providers: [

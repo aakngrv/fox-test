@@ -22,6 +22,7 @@ import {
   LeftSideDamage,
   BackSideDamage,
   TrunkDamage,
+  RightSideDamage,
  } from '@backend/shared/shared-types';
 
 
@@ -51,6 +52,7 @@ export class BetcarReportEntity implements Entity<BetcarReportEntity>, Report {
   public leftSideDamage: LeftSideDamage[];
   public backSideDamage: BackSideDamage[];
   public trunkDamage: TrunkDamage[];
+  public rightSideDamage: RightSideDamage[];
   public createdAt: Date;
   public publishAt: Date;
 
@@ -83,6 +85,7 @@ export class BetcarReportEntity implements Entity<BetcarReportEntity>, Report {
     this.leftSideDamage = [];
     this.backSideDamage = [];
     this.trunkDamage = [];
+    this.rightSideDamage = [];
     this.createdAt = new Date();
     this.publishAt = new Date();
   }
@@ -111,6 +114,7 @@ export class BetcarReportEntity implements Entity<BetcarReportEntity>, Report {
       leftSideDamage: this.leftSideDamage.map(({ leftSideDamageId }) => ({ leftSideDamageId })),
       backSideDamage: this.backSideDamage.map(({ backSideDamageId }) => ({ backSideDamageId })),
       trunkDamage: this.trunkDamage.map(({ trunkDamageId }) => ({ trunkDamageId })),
+      rightSideDamage: this.rightSideDamage.map(({ rightSideDamageId }) => ({ rightSideDamageId })),
     };
   }
 }

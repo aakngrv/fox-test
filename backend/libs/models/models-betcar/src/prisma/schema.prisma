@@ -35,6 +35,7 @@ model Report {
   leftSideDamage          LeftSideDamage[]
   backSideDamage          BackSideDamage[]
   trunkDamage             TrunkDamage[]
+  rightSideDamage         RightSideDamage[]
 
   @@map("reports")
 }
@@ -518,20 +519,32 @@ model AddElementTrunk {
 
 
 model RightSideDamage {
-  rightSideDamageId Int     @id @default(autoincrement()) @map("right_side_damage_id")
-  withoutDamage     Boolean @default(false) @map("without_damage")
-  rightFrontFender  Boolean @default(false) @map("right_front_fender")
-  rightFrontPillar  Boolean @default(false) @map("right_front_pillar")
-  rightFrontDoor    Boolean @default(false) @map("right_front_door")
-  rightCenterPillar Boolean @default(false) @map("right_center_pillar")
-  rightRearDoor     Boolean @default(false) @map("right_rear_door")
-  rightRearPillar   Boolean @default(false) @map("right_rear_pillar")
-  rightRearFender   Boolean @default(false) @map("right_rear_fender")
-  rightMirror       Boolean @default(false) @map("right_mirror")
-  rightThreshold    Boolean @default(false) @map("right_threshold")
-  addElement        String  @default("") @map("add_element")
+  rightSideDamageId  Int     @id @default(autoincrement()) @map("right_side_damage_id")
+  reportId           Int     @map("report_id")
+  report             Report  @relation(fields: [reportId], references: [reportId], onDelete: Cascade, onUpdate: Cascade)
+  withoutDamage      Boolean @default(false) @map("without_damage")
+  rightFrontFender   String[] @default([""]) @map("right_front_fender")
+  rightFrontPillar   String[] @default([""]) @map("right_front_pillar")
+  rightFrontDoor     String[] @default([""]) @map("right_front_door")
+  rightCenterPillar  String[] @default([""]) @map("right_center_pillar")
+  rightRearDoor      String[] @default([""]) @map("right_rear_door")
+  rightRearPillar    String[] @default([""]) @map("right_rear_pillar")
+  rightRearFender    String[] @default([""]) @map("right_rear_fender")
+  rightMirror        String[] @default([""]) @map("right_mirror")
+  rightThreshold     String[] @default([""]) @map("right_threshold")
+  addElementRight    AddElementRight[]
 
   @@map("right_side_damages")
+}
+
+model AddElementRight {
+  addElementRightId Int      @id @default(autoincrement()) @map("add_element_right_id")
+  rightSideDamageId Int      @map("right_side_damage_id")
+  rightSideDamage   RightSideDamage? @relation(fields: [rightSideDamageId], references: [rightSideDamageId], onDelete: Cascade, onUpdate: Cascade)
+  name              String   @default("")
+  info              String[] @default([""])
+
+  @@map("add_right_elements")
 }
 
 model RoofDamage {

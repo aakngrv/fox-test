@@ -131,18 +131,26 @@ export interface AddElementTrunk {
 }
 
 export interface RightSideDamage {
-  id?: number;
+  rightSideDamageId?: number;
+  reportId: number;
   withoutDamage: boolean;
-  rightFrontFender: boolean;
-  rightFrontPillar: boolean;
-  rightFrontDoor: boolean;
-  rightCenterPillar: boolean;
-  rightRearDoor: boolean;
-  rightRearPillar: boolean;
-  rightRearFender: boolean;
-  rightMirror: boolean;
-  rightThreshold: boolean;
-  addElement: string;
+  rightFrontFender: string[]; 
+  rightFrontPillar: string[]; 
+  rightFrontDoor: string[]; 
+  rightCenterPillar: string[]; 
+  rightRearDoor: string[]; 
+  rightRearPillar: string[]; 
+  rightRearFender: string[]; 
+  rightMirror: string[]; 
+  rightThreshold: string[]; 
+  addElementRight?: AddElementRight[];
+}
+
+export interface AddElementRight {
+  addElementRightId?: number;
+  rightSideDamageId: number;
+  name: string;
+  info: string[];
 }
 
 export interface RoofDamage {
