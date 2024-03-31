@@ -24,6 +24,7 @@ import {
   TrunkDamage,
   RightSideDamage,
   RoofDamage,
+  GlassDamage,
  } from '@backend/shared/shared-types';
 
 
@@ -55,6 +56,7 @@ export class BetcarReportEntity implements Entity<BetcarReportEntity>, Report {
   public trunkDamage: TrunkDamage[];
   public rightSideDamage: RightSideDamage[];
   public roofDamage: RoofDamage[];
+  public glassDamage: GlassDamage[];
   public createdAt: Date;
   public publishAt: Date;
 
@@ -89,6 +91,7 @@ export class BetcarReportEntity implements Entity<BetcarReportEntity>, Report {
     this.trunkDamage = [];
     this.rightSideDamage = [];
     this.roofDamage = [];
+    this.glassDamage = [];
     this.createdAt = new Date();
     this.publishAt = new Date();
   }
@@ -119,6 +122,7 @@ export class BetcarReportEntity implements Entity<BetcarReportEntity>, Report {
       trunkDamage: this.trunkDamage.map(({ trunkDamageId }) => ({ trunkDamageId })),
       rightSideDamage: this.rightSideDamage.map(({ rightSideDamageId }) => ({ rightSideDamageId })),
       roofDamage: this.roofDamage.map(({ roofDamageId }) => ({ roofDamageId })),
+      glassDamage: this.glassDamage.map(({ glassDamageId }) => ({ glassDamageId })),
     };
   }
 }

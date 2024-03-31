@@ -37,6 +37,7 @@ model Report {
   trunkDamage             TrunkDamage[]
   rightSideDamage         RightSideDamage[]
   roofDamage              RoofDamage[]
+  glassDamage             GlassDamage[]
 
   @@map("reports")
 }
@@ -518,7 +519,6 @@ model AddElementTrunk {
 }
 
 
-
 model RightSideDamage {
   rightSideDamageId  Int     @id @default(autoincrement()) @map("right_side_damage_id")
   reportId           Int     @map("report_id")
@@ -573,17 +573,29 @@ model AddElementRoof {
 }
 
 model GlassDamage {
-  glassDamageId   Int     @id @default(autoincrement()) @map("glass_damage_id")
-  withoutDamage   Boolean @default(false) @map("without_damage")
-  windshield      Boolean @default(false)
-  leftFrontGlass  Boolean @default(false) @map("left_front_glass")
-  leftRearGlass   Boolean @default(false) @map("left_rear_glass")
-  rearGlass       Boolean @default(false) @map("rear_glass")
-  rightFrontGlass Boolean @default(false) @map("right_front_glass")
-  rightRearGlass  Boolean @default(false) @map("right_rear_glass")
-  addElement      String  @default("") @map("add_element")
+  glassDamageId   Int      @id @default(autoincrement()) @map("glass_damage_id")
+  reportId        Int      @map("report_id")
+  report          Report   @relation(fields: [reportId], references: [reportId], onDelete: Cascade, onUpdate: Cascade)
+  withoutDamage   Boolean  @default(false) @map("without_damage")
+  windshield      String[] @default([""])
+  leftFrontGlass  String[] @default([""]) @map("left_front_glass")
+  leftRearGlass   String[] @default([""]) @map("left_rear_glass")
+  rearGlass       String[] @default([""]) @map("rear_glass")
+  rightFrontGlass String[] @default([""]) @map("right_front_glass")
+  rightRearGlass  String[] @default([""]) @map("right_rear_glass")
+  addElementGlass AddElementGlass[]
 
   @@map("glass_damages")
+}
+
+model AddElementGlass {
+  addElementGlassId Int      @id @default(autoincrement()) @map("add_element_glass_id")
+  glassDamageId     Int      @map("glass_damage_id")
+  glassDamage       GlassDamage? @relation(fields: [glassDamageId], references: [glassDamageId], onDelete: Cascade, onUpdate: Cascade)
+  name              String   @default("")
+  info              String[] @default([""])
+
+  @@map("add_glass_elements")
 }
 
 model DiscDamage {

@@ -172,15 +172,23 @@ export interface AddElementRoof {
 }
 
 export interface GlassDamage {
-  id?: number;
+  glassDamageId?: number;
+  reportId: number;
   withoutDamage: boolean;
-  windshield: boolean;
-  leftFrontGlass: boolean;
-  leftRearGlass: boolean;
-  rearGlass: boolean;
-  rightFrontGlass: boolean;
-  rightRearGlass: boolean;
-  addElement: string;
+  windshield: string[];
+  leftFrontGlass: string[];
+  leftRearGlass: string[];
+  rearGlass: string[];
+  rightFrontGlass: string[];
+  rightRearGlass: string[];
+  addElementGlass?: AddElementGlass[];
+}
+
+export interface AddElementGlass {
+  addElementGlassId?: number;
+  glassDamageId: number;
+  name: string;
+  info: string[];
 }
 
 export interface DiscDamage {

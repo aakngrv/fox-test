@@ -154,6 +154,12 @@ export class CreateReportDto {
   public roofDamage: number[];
 
   @ApiProperty({
+    description: 'Массив объектов c информацией о повреждениях стекол',
+    example: ''
+  })
+  public glassDamage: number[];
+
+  @ApiProperty({
     description: 'Дата создания',
     example: ''
   })

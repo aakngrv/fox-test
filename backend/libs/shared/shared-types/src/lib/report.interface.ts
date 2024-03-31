@@ -28,6 +28,7 @@ import {
   TrunkDamage,
   RightSideDamage,
   RoofDamage,
+  GlassDamage,
 } from "./body-and-interior.interface";
 
 export interface Report {
@@ -57,6 +58,7 @@ export interface Report {
   trunkDamage: TrunkDamage[];
   rightSideDamage: RightSideDamage[];
   roofDamage: RoofDamage[];
+  glassDamage: GlassDamage[];
   createdAt: Date;
   publishAt: Date;
 }
