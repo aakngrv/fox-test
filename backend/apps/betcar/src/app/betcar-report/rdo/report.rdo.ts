@@ -24,6 +24,7 @@ import {
   RightSideDamage,
   RoofDamage,
   GlassDamage,
+  DiscDamage,
 } from '@prisma/client';
 
 import { Expose } from 'class-transformer';
@@ -92,7 +93,6 @@ export class ReportRdo {
   })
   @Expose()
   public location: Location[];
-
 
   @ApiProperty({
     description: 'Массив объектов c информацией о кузове',
@@ -220,6 +220,13 @@ export class ReportRdo {
   })
   @Expose()
   public glassDamage: GlassDamage[];
+
+  @ApiProperty({
+    description: 'Массив объектов c информацией о повреждениях колес',
+    example: ''
+  })
+  @Expose()
+  public discDamage: DiscDamage[];
 
   @ApiProperty({
     description: 'Дата создания',

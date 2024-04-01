@@ -160,6 +160,12 @@ export class CreateReportDto {
   public glassDamage: number[];
 
   @ApiProperty({
+    description: 'Массив объектов c информацией о повреждениях колес',
+    example: ''
+  })
+  public discDamage: number[];
+
+  @ApiProperty({
     description: 'Дата создания',
     example: ''
   })

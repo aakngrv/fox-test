@@ -38,6 +38,7 @@ model Report {
   rightSideDamage         RightSideDamage[]
   roofDamage              RoofDamage[]
   glassDamage             GlassDamage[]
+  discDamage              DiscDamage[]
 
   @@map("reports")
 }
@@ -518,7 +519,6 @@ model AddElementTrunk {
   @@map("add_trunk_elements")
 }
 
-
 model RightSideDamage {
   rightSideDamageId  Int     @id @default(autoincrement()) @map("right_side_damage_id")
   reportId           Int     @map("report_id")
@@ -600,14 +600,26 @@ model AddElementGlass {
 
 model DiscDamage {
   discDamageId   Int     @id @default(autoincrement()) @map("disc_damage_id")
+  reportId       Int     @map("report_id")
+  report         Report  @relation(fields: [reportId], references: [reportId], onDelete: Cascade, onUpdate: Cascade)
   withoutDamage  Boolean @default(false) @map("without_damage")
-  leftFrontDisc  Boolean @default(false) @map("left_front_disc")
-  leftRearDisc   Boolean @default(false) @map("left_rear_disc")
-  rightFrontDisc Boolean @default(false) @map("right_front_disc")
-  rightRearDisc  Boolean @default(false) @map("right_rear_disc")
-  addElement     String  @default("") @map("add_element")
+  leftFrontDisc  String[] @default([""]) @map("left_front_disc")
+  leftRearDisc   String[] @default([""]) @map("left_rear_disc")
+  rightFrontDisc String[] @default([""]) @map("right_front_disc")
+  rightRearDisc  String[] @default([""]) @map("right_rear_disc")
+  addElementDisc AddElementDisc[]
 
   @@map("disc_damages")
+}
+
+model AddElementDisc {
+  addElementDiscId Int      @id @default(autoincrement()) @map("add_element_disc_id")
+  discDamageId     Int      @map("glass_damage_id")
+  discDamage       DiscDamage? @relation(fields: [discDamageId], references: [discDamageId], onDelete: Cascade, onUpdate: Cascade)
+  name             String   @default("")
+  info             String[] @default([""])
+
+  @@map("add_disc_elements")
 }
 
 model InteriorDamage {

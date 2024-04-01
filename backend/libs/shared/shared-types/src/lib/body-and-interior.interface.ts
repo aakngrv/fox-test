@@ -192,13 +192,21 @@ export interface AddElementGlass {
 }
 
 export interface DiscDamage {
-  id?: number;
+  discDamageId?: number;
+  reportId: number;
   withoutDamage: boolean;
-  leftFrontDisc: boolean;
-  leftRearDisc: boolean;
-  rightFrontDisc: boolean;
-  rightRearDisc: boolean;
-  addElement: string;
+  leftFrontDisc: string[];
+  leftRearDisc: string[];
+  rightFrontDisc: string[];
+  rightRearDisc: string[];
+  addElementDisc?: AddElementDisc[];
+}
+
+export interface AddElementDisc {
+  addElementDiscId?: number;
+  discDamageId: number;
+  name: string;
+  info: string[];
 }
 
 export interface InteriorDamage {
