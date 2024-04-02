@@ -1,7 +1,6 @@
 import { Entity } from '@backend/util/util-types';
 import { ExteriorPhoto } from '@backend/shared/shared-types';
 
-
 export class ExteriorPhotoEntity implements Entity<ExteriorPhotoEntity>, ExteriorPhoto {
 
   public exteriorPhotoId?: number;
@@ -17,8 +16,7 @@ export class ExteriorPhotoEntity implements Entity<ExteriorPhotoEntity>, Exterio
   public hoodOpen: string;
   public trunkOpen: string;
 
-
-
+  
   constructor(exteriorPhoto: ExteriorPhoto) {
     this.fillEntity(exteriorPhoto);
   }

@@ -8,7 +8,7 @@ export class ExteriorPhotoRdo {
     example: 1
   })
   @Expose()
-  public exteriorDamageId: number;
+  public exteriorPhotoId: number;
   
   @ApiProperty({
     description: 'ID отчета',

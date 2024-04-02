@@ -26,8 +26,9 @@ import { RightSideDamageModule } from './betcar-body-and-interior/right-side-dam
 import { RoofDamageModule } from './betcar-body-and-interior/roof-damage/roof-damage.module';
 import { GlassDamageModule } from './betcar-body-and-interior/glass-damage/glass-damage.module';
 import { DiscDamageModule } from './betcar-body-and-interior/disc-damage/disc-damage.module';
-import {InteriorDamageModule } from "./betcar-body-and-interior/interior-damage/interior-damage.module";
+import { InteriorDamageModule } from "./betcar-body-and-interior/interior-damage/interior-damage.module";
 import { ExteriorPhotoModule } from "./betcar-body-and-interior/exterior-photo/exterior-photo.module";
+import { InteriorPhotoModule } from "./betcar-body-and-interior/interior-photo/interior-photo.module";
 
 
 @Module({
@@ -61,6 +62,7 @@ import { ExteriorPhotoModule } from "./betcar-body-and-interior/exterior-photo/e
     DiscDamageModule,
     InteriorDamageModule,
     ExteriorPhotoModule,
+    InteriorPhotoModule,
   ],
   controllers: [],
   providers: [],

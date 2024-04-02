@@ -178,6 +178,12 @@ export class CreateReportDto {
   public exteriorPhoto: number[];
 
   @ApiProperty({
+    description: 'Массив объектов c фото салона',
+    example: ''
+  })
+  public interiorPhoto: number[];
+
+  @ApiProperty({
     description: 'Дата создания',
     example: ''
   })

@@ -32,6 +32,7 @@ import {
   DiscDamage,
   InteriorDamage,
   ExteriorPhoto,
+  InteriorPhoto,
 } from "./body-and-interior.interface";
 
 export interface Report {
@@ -65,6 +66,7 @@ export interface Report {
   discDamage: DiscDamage[];
   interiorDamage: InteriorDamage[];
   exteriorPhoto: ExteriorPhoto[];
+  interiorPhoto: InteriorPhoto[];
   createdAt: Date;
   publishAt: Date;
 }

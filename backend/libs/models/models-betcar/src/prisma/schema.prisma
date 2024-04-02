@@ -41,6 +41,7 @@ model Report {
   discDamage              DiscDamage[]
   interiorDamage          InteriorDamage[]
   exteriorPhoto           ExteriorPhoto[]
+  interiorPhoto           InteriorPhoto[]
 
   @@map("reports")
 }
@@ -674,6 +675,8 @@ model ExteriorPhoto {
 
 model InteriorPhoto {
   interiorPhotoId     Int    @id @default(autoincrement()) @map("interior_photo_id")
+  reportId            Int    @map("report_id")
+  report              Report @relation(fields: [reportId], references: [reportId], onDelete: Cascade, onUpdate: Cascade)
   leftFrontDoor       String @default("") @map("left_front_door")
   driverSeatPhoto     String @default("") @map("driver_seat_photo")
   steeringWheelPhoto  String @default("") @map("steering_wheel_photo")

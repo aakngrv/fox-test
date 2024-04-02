@@ -250,21 +250,19 @@ export interface ExteriorPhoto {
 }
   
 export interface InteriorPhoto {
-  id?: number;
-  frontSeatsPhoto: string;
-  frontSeatsVideo: string;
-  transmissionPhoto: string;
-  transmissionVideo: string;
-  dashboardPhoto: string;
-  dashboardVideo: string;
+  interiorPhotoId?: number;    
+  reportId: number;
+  leftFrontDoor: string;
   driverSeatPhoto: string;
-  driverSeatVideo: string;
-  backSeatsPhoto: string;
-  backSeatsVideo: string;
-  trunkPhoto: string;
-  trunkVideo: string;
-  enginePhoto: string;
-  engineVideo: string;
+  steeringWheelPhoto: string;
+  dashboardPhoto: string;
+  leftBackDoor: string;
+  backLeftSeatsPhoto: string;
+  frontSeatsPhoto: string;
+  rightBackDoor: string;
+  backRightSeatsPhoto: string;
+  rightFrontDoor: string;
+  passengerSeatPhoto: string;
 }
 
 export interface RoundViewVideo {
