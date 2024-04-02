@@ -210,16 +210,28 @@ export interface AddElementDisc {
 }
 
 export interface InteriorDamage {
-  id?: number;
+  interiorDamageId?: number;
+  reportId: number;
   withoutDamage: boolean;
-  torpedo: boolean;
-  driversSeat: boolean;
-  passengerSeat: boolean;
-  rearSear: boolean;
-  salonCarpet: boolean;
-  ceiling: boolean;
-  trunk: boolean;
-  addElement: string;
+  frontLeftDoorCard: string[];
+  driversSeat: string[];
+  salonCarpet: string[];
+  torpedo: string[];
+  ceiling: string[];
+  backLeftDoorCard: string[];
+  backSeat: string[];
+  backRightDoorCard: string[];
+  frontRightDoorCard: string[];
+  passengerSeat: string[];
+  sleepingCompartment: string[];
+  addElementInterior?: AddElementInterior[]
+}
+
+export interface AddElementInterior {
+  addElementInteriorId?: number;
+  interiorDamageId: number;
+  name: string;
+  info: string[];
 }
 
 export interface ExteriorPhoto {

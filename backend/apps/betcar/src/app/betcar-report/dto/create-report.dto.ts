@@ -166,6 +166,12 @@ export class CreateReportDto {
   public discDamage: number[];
 
   @ApiProperty({
+    description: 'Массив объектов c информацией о повреждениях салона',
+    example: ''
+  })
+  public interiorDamage: number[];
+
+  @ApiProperty({
     description: 'Дата создания',
     example: ''
   })

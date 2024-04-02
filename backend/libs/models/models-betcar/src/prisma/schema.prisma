@@ -39,6 +39,7 @@ model Report {
   roofDamage              RoofDamage[]
   glassDamage             GlassDamage[]
   discDamage              DiscDamage[]
+  interiorDamage          InteriorDamage[]
 
   @@map("reports")
 }
@@ -495,16 +496,16 @@ model TrunkDamage {
   trunkDamageId   Int @id @default(autoincrement()) @map("trunk_damage")
   reportId        Int     @map("report_id")
   report          Report  @relation(fields: [reportId], references: [reportId], onDelete: Cascade, onUpdate: Cascade)
-  withoutDamage    Boolean @default(false) @map("without_damage")
-  coverTrim        String[] @default([""]) @map("cover_trim")
-  carpetFloor      String[] @default([""]) @map("carpet_floor")
-  rightTrim        String[] @default([""]) @map("right_trim")
-  rightGlass       String[] @default([""]) @map("right_glass")
-  leftTrim         String[] @default([""]) @map("left_trim")
-  leftGlass        String[] @default([""]) @map("left_glass")
-  seatBackTrim     String[] @default([""]) @map("seat_back_trim")
-  spareWheelWell   String[] @default([""]) @map("spare_wheel_well")
-  addElementTrunk    AddElementTrunk[]
+  withoutDamage   Boolean @default(false) @map("without_damage")
+  coverTrim       String[] @default([""]) @map("cover_trim")
+  carpetFloor     String[] @default([""]) @map("carpet_floor")
+  rightTrim       String[] @default([""]) @map("right_trim")
+  rightGlass      String[] @default([""]) @map("right_glass")
+  leftTrim        String[] @default([""]) @map("left_trim")
+  leftGlass       String[] @default([""]) @map("left_glass")
+  seatBackTrim    String[] @default([""]) @map("seat_back_trim")
+  spareWheelWell  String[] @default([""]) @map("spare_wheel_well")
+  addElementTrunk AddElementTrunk[]
 
   @@map("trunks_damage")
 }
@@ -549,10 +550,10 @@ model AddElementRight {
 }
 
 model RoofDamage {
-  roofDamageId   Int     @id @default(autoincrement()) @map("roof_damage_id")
-  reportId       Int     @map("report_id")
-  report         Report  @relation(fields: [reportId], references: [reportId], onDelete: Cascade, onUpdate: Cascade)
-  withoutDamage  Boolean @default(false) @map("without_damage")
+  roofDamageId   Int      @id @default(autoincrement()) @map("roof_damage_id")
+  reportId       Int      @map("report_id")
+  report         Report   @relation(fields: [reportId], references: [reportId], onDelete: Cascade, onUpdate: Cascade)
+  withoutDamage  Boolean  @default(false) @map("without_damage")
   luke           String[] @default([""])
   roof           String[] @default([""])
   roofRails      String[] @default([""]) @map("roof_rails")
@@ -599,10 +600,10 @@ model AddElementGlass {
 }
 
 model DiscDamage {
-  discDamageId   Int     @id @default(autoincrement()) @map("disc_damage_id")
-  reportId       Int     @map("report_id")
-  report         Report  @relation(fields: [reportId], references: [reportId], onDelete: Cascade, onUpdate: Cascade)
-  withoutDamage  Boolean @default(false) @map("without_damage")
+  discDamageId   Int      @id @default(autoincrement()) @map("disc_damage_id")
+  reportId       Int      @map("report_id")
+  report         Report   @relation(fields: [reportId], references: [reportId], onDelete: Cascade, onUpdate: Cascade)
+  withoutDamage  Boolean  @default(false) @map("without_damage")
   leftFrontDisc  String[] @default([""]) @map("left_front_disc")
   leftRearDisc   String[] @default([""]) @map("left_rear_disc")
   rightFrontDisc String[] @default([""]) @map("right_front_disc")
@@ -614,7 +615,7 @@ model DiscDamage {
 
 model AddElementDisc {
   addElementDiscId Int      @id @default(autoincrement()) @map("add_element_disc_id")
-  discDamageId     Int      @map("glass_damage_id")
+  discDamageId     Int      @map("disc_damage_id")
   discDamage       DiscDamage? @relation(fields: [discDamageId], references: [discDamageId], onDelete: Cascade, onUpdate: Cascade)
   name             String   @default("")
   info             String[] @default([""])
@@ -623,18 +624,34 @@ model AddElementDisc {
 }
 
 model InteriorDamage {
-  interiorDamageId Int     @id @default(autoincrement()) @map("interior_damage_id")
-  withoutDamage    Boolean @default(false) @map("without_damage")
-  torpedo          Boolean @default(false)
-  driversSeat      Boolean @default(false) @map("drivers_seat")
-  passengerSeat    Boolean @default(false) @map("passenger_seat")
-  rearSear         Boolean @default(false) @map("rear_seat")
-  salonCarpet      Boolean @default(false) @map("salon_arpet")
-  ceiling          Boolean @default(false)
-  trunk            Boolean @default(false)
-  addElement       String  @default("") @map("add_element")
+  interiorDamageId      Int     @id @default(autoincrement()) @map("interior_damage_id")
+  reportId              Int     @map("report_id")
+  report                Report  @relation(fields: [reportId], references: [reportId], onDelete: Cascade, onUpdate: Cascade)
+  withoutDamage         Boolean @default(false) @map("without_damage")
+  frontLeftDoorCard     String[] @default([""]) @map("front_left_door_card")
+  driversSeat           String[] @default([""]) @map("drivers_seat")
+  salonCarpet           String[] @default([""]) @map("salon_carpet")
+  torpedo               String[] @default([""])
+  ceiling               String[] @default([""])
+  backLeftDoorCard      String[] @default([""]) @map("back_left_door_card")
+  backSeat              String[] @default([""]) @map("back_seat")
+  backRightDoorCard     String[] @default([""]) @map("back_right_door_card")
+  frontRightDoorCard    String[] @default([""]) @map("front_right_door_card")
+  passengerSeat         String[] @default([""]) @map("passenger_seat")
+  sleepingCompartment   String[] @default([""]) @map("sleeping_compartment")
+  addElementInterior    AddElementInterior[]
 
   @@map("interior_damages")
+}
+
+model AddElementInterior {
+  addElementInteriorId Int      @id @default(autoincrement()) @map("add_element_interior_id")
+  interiorDamageId     Int      @map("interior_damage_id")
+  interiorDamage       InteriorDamage? @relation(fields: [interiorDamageId], references: [interiorDamageId], onDelete: Cascade, onUpdate: Cascade)
+  name                 String   @default("")
+  info                 String[] @default([""])
+
+  @@map("add_interior_elements")
 }
 
 model ExteriorPhoto {
