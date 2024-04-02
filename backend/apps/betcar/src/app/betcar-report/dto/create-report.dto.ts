@@ -172,6 +172,12 @@ export class CreateReportDto {
   public interiorDamage: number[];
 
   @ApiProperty({
+    description: 'Массив объектов c фото кузова',
+    example: ''
+  })
+  public exteriorPhoto: number[];
+
+  @ApiProperty({
     description: 'Дата создания',
     example: ''
   })

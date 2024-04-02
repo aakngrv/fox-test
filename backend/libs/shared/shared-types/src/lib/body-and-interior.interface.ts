@@ -235,23 +235,18 @@ export interface AddElementInterior {
 }
 
 export interface ExteriorPhoto {
-  id?: number;
+  exteriorPhotoId?: number;
+  reportId: number;
   rightFrontPhoto: string;
-  rightFrontVideo: string;
   frontPhoto: string;
-  frontVideo: string;
   leftFrontPhoto: string;
-  leftFrontVideo: string;
   rightBackPhoto: string;
-  rightBackVideo: string;
   backPhoto: string;
-  backVideo: string;
   leftBackPhoto: string;
-  leftBackVideo: string;
   leftPhoto: string;
-  leftVideo: string;
   rightPhoto: string;
-  rightVideo: string;
+  hoodOpen: string;
+  trunkOpen: string;
 }
   
 export interface InteriorPhoto {

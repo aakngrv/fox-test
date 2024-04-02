@@ -29,7 +29,8 @@ import { RightSideDamageRepository } from '../betcar-body-and-interior/right-sid
 import { RoofDamageRepository } from '../betcar-body-and-interior/roof-damage/roof-damage.repository';
 import { GlassDamageRepository } from '../betcar-body-and-interior/glass-damage/glass-damage.repository';
 import { DiscDamageRepository } from '../betcar-body-and-interior/disc-damage/disc-damage.repository';
-import { InteriorDamageRepository} from "../betcar-body-and-interior/interior-damage/interior-damage.repository";
+import { InteriorDamageRepository } from "../betcar-body-and-interior/interior-damage/interior-damage.repository";
+import { ExteriorPhotoRepository } from "../betcar-body-and-interior/exterior-photo/exterior-photo.repository";
 
 @Injectable()
 export class BetcarReportService {
@@ -61,6 +62,7 @@ export class BetcarReportService {
     private readonly glassDamageRepository: GlassDamageRepository,
     private readonly discDamageRepository: DiscDamageRepository,
     private readonly interiorDamageRepository: InteriorDamageRepository,
+    private readonly exteriorPhotoRepository: ExteriorPhotoRepository,
   ) {}
 
   async createReport(dto: CreateReportDto): Promise<Report> {
@@ -90,6 +92,7 @@ export class BetcarReportService {
     const glassDamage = await this.glassDamageRepository.find(dto.glassDamage);
     const discDamage = await this.discDamageRepository.find(dto.discDamage);
     const interiorDamage = await this.interiorDamageRepository.find(dto.interiorDamage);
+    const exteriorPhoto = await this.exteriorPhotoRepository.find(dto.exteriorPhoto);
 
     const reportEntity = new BetcarReportEntity({ 
       ...dto, 
@@ -119,6 +122,7 @@ export class BetcarReportService {
       glassDamage,
       discDamage,
       interiorDamage,
+      exteriorPhoto,
     });
     
     return this.betcarReportRepository.create(reportEntity);

@@ -27,6 +27,7 @@ import {
   GlassDamage,
   DiscDamage,
   InteriorDamage,
+  ExteriorPhoto,
  } from '@backend/shared/shared-types';
 
 
@@ -61,6 +62,7 @@ export class BetcarReportEntity implements Entity<BetcarReportEntity>, Report {
   public glassDamage: GlassDamage[];
   public discDamage: DiscDamage[];
   public interiorDamage: InteriorDamage[];
+  public exteriorPhoto: ExteriorPhoto[];
   public createdAt: Date;
   public publishAt: Date;
 
@@ -98,6 +100,7 @@ export class BetcarReportEntity implements Entity<BetcarReportEntity>, Report {
     this.glassDamage = [];
     this.discDamage = [];
     this.interiorDamage = [];
+    this.exteriorPhoto = [];
     this.createdAt = new Date();
     this.publishAt = new Date();
   }
@@ -131,6 +134,7 @@ export class BetcarReportEntity implements Entity<BetcarReportEntity>, Report {
       glassDamage: this.glassDamage.map(({ glassDamageId }) => ({ glassDamageId })),
       discDamage: this.discDamage.map(({ discDamageId }) => ({ discDamageId })),
       interiorDamage: this.interiorDamage.map(({ interiorDamageId }) => ({ interiorDamageId })),
+      exteriorPhoto: this.exteriorPhoto.map(({ exteriorPhotoId }) => ({ exteriorPhotoId })),
     };
   }
 }
