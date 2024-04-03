@@ -44,6 +44,7 @@ model Report {
   interiorPhoto           InteriorPhoto[]
   roundViewVideo          RoundViewVideo[]
   stoppedEngine           StoppedEngine[]
+  runningEngine           RunningEngine[]
 
   @@map("reports")
 }
@@ -732,22 +733,35 @@ model StoppedEngine {
 }
 
 model RunningEngine {
-  runningEngineId     Int     @id @default(autoincrement()) @map("running_engine_id")
-  dvsWontStart        Boolean @default(false) @map("dvs_wont_start")
-  totalComment        String  @default("") @map("total_comment")
-  engineVideo         String  @default("") @map("engine_video")
-  enginePhoto         String  @default("") @map("engine_photo")
-  engineFile          String  @default("") @map("engine_file")
-  seatHeating         Boolean @default(false) @map("seat_heating")
-  audioSystem         Boolean @default(false) @map("audio_system")
-  battery             Boolean @default(false)
-  lightingEngineering Boolean @default(false) @map("lighting_engineering")
-  steering            Boolean @default(false)
-  gearshift           Boolean @default(false)
-  engineOperation     Boolean @default(false) @map("engine_operation")
-  powerSteering       Boolean @default(false) @map("power_steering")
-  airConditioner      Boolean @default(false) @map("air_conditioner")
-  comment             String  @default("")
+  runningEngineId         Int     @id @default(autoincrement()) @map("running_engine_id")
+  reportId                Int     @map("report_id")
+  report                  Report  @relation(fields: [reportId], references: [reportId], onDelete: Cascade, onUpdate: Cascade)
+  engineNotStart          Boolean @default(false) @map("engine_not_start")
+  comment                 String  @default("")
+  engineVideo             String  @default("") @map("engine_video")
+  battery                 Boolean @default(false)
+  lightingEngineering     Boolean @default(false) @map("lighting_engineering")
+  audioSystem             Boolean @default(false) @map("audio_system")
+  heatedSteeringWheel     Boolean @default(false) @map("heated_steering_wheel")
+  soundSignal             Boolean @default(false) @map("sound_signal")
+  seatMassage             Boolean @default(false) @map("seat_massage")
+  windshieldWashers       Boolean @default(false) @map("windshield_washers")
+  seatHeating             Boolean @default(false) @map("seat_heating")
+  windscreenWipers        Boolean @default(false) @map("windscreen_wipers")
+  windowLifters           Boolean @default(false) @map("window_lifters")
+  electricSunroof         Boolean @default(false) @map("electric_sunroof")
+  electricSteeringWheel   Boolean @default(false) @map("electric_steering_wheel")
+  electricSeats           Boolean @default(false) @map("electric_seats")
+  electricPanorama        Boolean @default(false) @map("electric_panorama")
+  heatedWindshield        Boolean @default(false) @map("heated_windshield")
+  electricTrunkDrive      Boolean @default(false) @map("electric_trunk_drive")
+  electricSystemComment   String  @default("") @map("electric_system_comment")
+  gearboxSwitching        Boolean @default(false) @map("gearbox_switching")
+  engineOperation         Boolean @default(false) @map("engine_operation")
+  interiorHeater          Boolean @default(false) @map("interior_heater")
+  powerSteering           Boolean @default(false) @map("power_steering")
+  airConditioner          Boolean @default(false) @map("air_conditioner")
+  mechanicalSystemComment String  @default("") @map("mechanical_system_comment")
 
   @@map("running_engines")
 }

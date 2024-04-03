@@ -37,7 +37,8 @@ import {
 } from "./body-and-interior.interface";
 
 import  { 
-  StoppedEngine ,
+  StoppedEngine,
+  RunningEngine,
 } from "./technical-inspection.interface";
 
 export interface Report {
@@ -74,6 +75,7 @@ export interface Report {
   interiorPhoto: InteriorPhoto[];
   roundViewVideo: RoundViewVideo[];
   stoppedEngine: StoppedEngine[];
+  runningEngine: RunningEngine[];
   createdAt: Date;
   publishAt: Date;
 }

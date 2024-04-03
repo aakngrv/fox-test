@@ -6,7 +6,7 @@ import { CreateStoppedEngineDto} from "./dto/create-stopped-engine.dto";
 import { UpdateStoppedEngineDto} from "./dto/update-stopped-engine.dto";
 import { ApiResponse, ApiTags } from '@nestjs/swagger';
 
-@ApiTags('Технический осмотр - заглушенный двигатель')
+@ApiTags('Технический осмотр - Заглушенный двигатель')
 @Controller('stopped-engine')
 export class StoppedEngineController {
 
@@ -16,7 +16,7 @@ export class StoppedEngineController {
 
   @ApiResponse({
     status: HttpStatus.CREATED,
-    description: 'Осмотр на загрушенном двигателе создан.'
+    description: 'Осмотр на заглушенном двигателе создан.'
   })
   @Post('/')
   async create(@Body() dto: CreateStoppedEngineDto) {
@@ -27,7 +27,7 @@ export class StoppedEngineController {
   @ApiResponse({
     type: StoppedEngineRdo,
     status: HttpStatus.OK,
-    description: 'Осмотр на загрушенном двигателе найден'
+    description: 'Осмотр на заглушенном двигателе найден'
   })
   @Get('/:id')
   async show(@Param('id') id: string) {
@@ -38,7 +38,7 @@ export class StoppedEngineController {
 
   @ApiResponse({
     status: HttpStatus.NO_CONTENT,
-    description: 'Осмотр на загрушенном двигателе удален'
+    description: 'Осмотр на заглушенном двигателе удален'
   })
   @HttpCode(HttpStatus.NO_CONTENT)
   @Delete('/:id')
@@ -49,7 +49,7 @@ export class StoppedEngineController {
 
   @ApiResponse({
     status: HttpStatus.OK,
-    description: 'Осмотр на загрушенном двигателе обновлен'
+    description: 'Осмотр на заглушенном двигателе обновлен'
   })
   @HttpCode(HttpStatus.OK)
   @Patch('/:id')

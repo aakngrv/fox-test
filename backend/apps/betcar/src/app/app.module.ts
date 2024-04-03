@@ -31,6 +31,7 @@ import { ExteriorPhotoModule } from "./betcar-body-and-interior/exterior-photo/e
 import { InteriorPhotoModule } from "./betcar-body-and-interior/interior-photo/interior-photo.module";
 import { RoundViewVideoModule } from "./betcar-body-and-interior/round-view-video/round-view-video.module";
 import { StoppedEngineModule } from "./betcar-technical-inspection/stopped-engine/stopped-engine.module";
+import { RunningEngineModule } from "./betcar-technical-inspection/running-engine/running-engine.module";
 
 
 @Module({
@@ -67,6 +68,7 @@ import { StoppedEngineModule } from "./betcar-technical-inspection/stopped-engin
     InteriorPhotoModule,
     RoundViewVideoModule,
     StoppedEngineModule,
+    RunningEngineModule,
   ],
   controllers: [],
   providers: [],

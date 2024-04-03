@@ -196,6 +196,12 @@ export class CreateReportDto {
   public stoppedEngine: number[];
 
   @ApiProperty({
+    description: 'Массив объектов c запущенным двигателем',
+    example: ''
+  })
+  public runningEngine: number[];
+
+  @ApiProperty({
     description: 'Дата создания',
     example: ''
   })

@@ -18,22 +18,34 @@ export interface StoppedEngine {
 }
 
 export interface RunningEngine {
-  id?: number;
-  dvsWontStart: boolean;
-  totalComment: string;
+  runningEngineId?: number;
+  reportId: number;
+  engineNotStart: boolean;
+  comment: string;
   engineVideo: string;
-  enginePhoto: string;
-  engineFile: string;
-  seatHeating: boolean;
-  audioSystem: boolean;
   battery: boolean;
   lightingEngineering: boolean;
-  steering: boolean;
-  gearshift: boolean;
+  audioSystem: boolean;
+  heatedSteeringWheel: boolean;
+  soundSignal: boolean;
+  seatMassage: boolean;
+  windshieldWashers: boolean;
+  seatHeating: boolean;
+  windscreenWipers: boolean;
+  windowLifters: boolean;
+  electricSunroof: boolean;
+  electricSteeringWheel: boolean;
+  electricSeats: boolean;
+  electricPanorama: boolean;
+  heatedWindshield: boolean;
+  electricTrunkDrive: boolean;
+  electricSystemComment: string;
+  gearboxSwitching: boolean;
   engineOperation: boolean;
+  interiorHeater: boolean;
   powerSteering: boolean;
   airConditioner: boolean;
-  comment: string;
+  mechanicalSystemComment: string;
 }
 
 export interface Dashboard {

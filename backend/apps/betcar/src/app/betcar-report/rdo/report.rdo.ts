@@ -30,6 +30,7 @@ import {
   InteriorPhoto,
   RoundViewVideo,
   StoppedEngine,
+  RunningEngine,
 } from '@prisma/client';
 
 import { Expose } from 'class-transformer';
@@ -267,6 +268,13 @@ export class ReportRdo {
   })
   @Expose()
   public stoppedEngine: StoppedEngine[];
+
+  @ApiProperty({
+    description: 'Массив объектов c запущенным двигателем',
+    example: ''
+  })
+  @Expose()
+  public runningEngine: RunningEngine[];
 
   @ApiProperty({
     description: 'Дата создания',
