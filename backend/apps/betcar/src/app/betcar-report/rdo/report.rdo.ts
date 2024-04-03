@@ -32,6 +32,7 @@ import {
   StoppedEngine,
   RunningEngine,
   Dashboard,
+  TestDrive,
 } from '@prisma/client';
 
 import { Expose } from 'class-transformer';
@@ -283,6 +284,13 @@ export class ReportRdo {
   })
   @Expose()
   public dashboard: Dashboard[];
+
+  @ApiProperty({
+    description: 'Массив объектов c тест драйвом',
+    example: ''
+  })
+  @Expose()
+  public testDrive: TestDrive[];
 
   @ApiProperty({
     description: 'Дата создания',

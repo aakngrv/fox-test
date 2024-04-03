@@ -46,6 +46,7 @@ model Report {
   stoppedEngine           StoppedEngine[]
   runningEngine           RunningEngine[]
   dashboard               Dashboard[]
+  testDrive               TestDrive[]
 
   @@map("reports")
 }
@@ -792,17 +793,18 @@ model Dashboard {
 }
 
 model TestDrive {
-  testDriveId           Int     @id @default(autoincrement()) @map("test_drive_id")
-  testDrive             Boolean @default(false) @map("tes_drive")
-  engine                Boolean @default(false)
-  transmission          Boolean @default(false)
-  suspension            Boolean @default(false)
-  brakeSystem           Boolean @default(false) @map("brake_system")
-  parkingBrake          Boolean @default(false) @map("parking_brake")
-  electronicDiagnostics Boolean @default(false) @map("electronic_diagnostics")
-  diagnosticsFile       String  @default("") @map("diagnostics_file")
-  diagnosticResults     String  @default("") @map("diagnostic_results")
-  comment               String  @default("")
+  testDriveId   Int     @id @default(autoincrement()) @map("test_drive_id")
+  reportId      Int     @map("report_id")
+  report        Report  @relation(fields: [reportId], references: [reportId], onDelete: Cascade, onUpdate: Cascade)
+  testDrive     Boolean @default(false) @map("tes_drive")
+  suspension    Boolean @default(false)
+  engine        Boolean @default(false)
+  transmission  Boolean @default(false)
+  steering      Boolean @default(false)
+  brakeSystem   Boolean @default(false) @map("brake_system")
+  parkingBrake  Boolean @default(false) @map("parking_brake")
+  exhaustSystem Boolean @default(false) @map("exhaust_system")
+  comment       String  @default("")
 
   @@map("tests_drive")
 }

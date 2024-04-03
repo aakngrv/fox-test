@@ -208,6 +208,12 @@ export class CreateReportDto {
   public dashboard: number[];
 
   @ApiProperty({
+    description: 'Массив объектов c тест драйвом',
+    example: ''
+  })
+  public testDrive: number[];
+
+  @ApiProperty({
     description: 'Дата создания',
     example: ''
   })

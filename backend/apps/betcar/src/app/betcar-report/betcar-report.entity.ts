@@ -33,6 +33,7 @@ import {
   StoppedEngine,
   RunningEngine,
   Dashboard,
+  TestDrive,
  } from '@backend/shared/shared-types';
 
 
@@ -73,6 +74,7 @@ export class BetcarReportEntity implements Entity<BetcarReportEntity>, Report {
   public stoppedEngine: StoppedEngine[];
   public runningEngine: RunningEngine[];
   public dashboard: Dashboard[];
+  public testDrive: TestDrive[];
   public createdAt: Date;
   public publishAt: Date;
 
@@ -116,6 +118,7 @@ export class BetcarReportEntity implements Entity<BetcarReportEntity>, Report {
     this.stoppedEngine = [];
     this.runningEngine = [];
     this.dashboard = [];
+    this.testDrive = [];
     this.createdAt = new Date();
     this.publishAt = new Date();
   }
@@ -155,6 +158,7 @@ export class BetcarReportEntity implements Entity<BetcarReportEntity>, Report {
       stoppedEngine: this.stoppedEngine.map(({ stoppedEngineId }) => ({ stoppedEngineId })),
       runningEngine: this.runningEngine.map(({ runningEngineId }) => ({ runningEngineId })),
       dashboard: this.dashboard.map(({ dashboardId }) => ({ dashboardId })),
+      testDrive: this.testDrive.map(({ testDriveId }) => ({ testDriveId })),
     };
   }
 }

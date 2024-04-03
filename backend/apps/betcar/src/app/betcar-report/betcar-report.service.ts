@@ -36,6 +36,7 @@ import { RoundViewVideoRepository } from "../betcar-body-and-interior/round-view
 import { StoppedEngineRepository } from "../betcar-technical-inspection/stopped-engine/stopped-engine.repository";
 import { RunningEngineRepository } from "../betcar-technical-inspection/running-engine/running-engine.repository";
 import { DashboardRepository} from "../betcar-technical-inspection/dashboard/dashboard.repository";
+import { TestDriveRepository} from "../betcar-technical-inspection/test-drive/test-drive.repository";
 
 @Injectable()
 export class BetcarReportService {
@@ -73,6 +74,7 @@ export class BetcarReportService {
     private readonly stoppedEngineRepository: StoppedEngineRepository,
     private readonly runningEngineRepository: RunningEngineRepository,
     private readonly dashboardRepository: DashboardRepository,
+    private readonly testDriveReposity: TestDriveRepository,
   ) {}
 
   async createReport(dto: CreateReportDto): Promise<Report> {
@@ -106,8 +108,9 @@ export class BetcarReportService {
     const interiorPhoto = await this.interiorPhotoRepository.find(dto.interiorPhoto);
     const roundViewVideo  = await this.roundViewVideoRepository.find(dto.roundViewVideo);
     const stoppedEngine  = await this.stoppedEngineRepository.find(dto.stoppedEngine);
-    const runningEngine  = await this.runningEngineRepository.find(dto.runningEngine)
-    const dashboard  = await this.dashboardRepository.find(dto.dashboard)
+    const runningEngine  = await this.runningEngineRepository.find(dto.runningEngine);
+    const dashboard  = await this.dashboardRepository.find(dto.dashboard);
+    const testDrive  = await this.testDriveReposity.find(dto.testDrive)
 
     const reportEntity = new BetcarReportEntity({ 
       ...dto, 
@@ -143,6 +146,7 @@ export class BetcarReportService {
       stoppedEngine,
       runningEngine,
       dashboard,
+      testDrive,
     });
     
     return this.betcarReportRepository.create(reportEntity);

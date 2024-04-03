@@ -40,6 +40,7 @@ import  {
   StoppedEngine,
   RunningEngine,
   Dashboard,
+  TestDrive,
 } from "./technical-inspection.interface";
 
 export interface Report {
@@ -78,6 +79,7 @@ export interface Report {
   stoppedEngine: StoppedEngine[];
   runningEngine: RunningEngine[];
   dashboard: Dashboard[];
+  testDrive: TestDrive[];
   createdAt: Date;
   publishAt: Date;
 }

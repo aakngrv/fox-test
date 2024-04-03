@@ -70,15 +70,15 @@ export interface Dashboard {
 }
 
 export interface TestDrive {
-  id?: number;
+  testDriveId?: number;
+  reportId: number;
   testDrive: boolean;
+  suspension: boolean;
   engine: boolean;
   transmission: boolean;
-  suspension: boolean;
+  steering: boolean;
   brakeSystem: boolean;
   parkingBrake: boolean;
-  electronicDiagnostics: boolean;
-  diagnosticsFile: string;
-  diagnosticResults: string;
+  exhaustSystem: boolean;
   comment: string;
 }
