@@ -37,6 +37,7 @@ import { StoppedEngineRepository } from "../betcar-technical-inspection/stopped-
 import { RunningEngineRepository } from "../betcar-technical-inspection/running-engine/running-engine.repository";
 import { DashboardRepository} from "../betcar-technical-inspection/dashboard/dashboard.repository";
 import { TestDriveRepository} from "../betcar-technical-inspection/test-drive/test-drive.repository";
+import { ExpertOpinionRepository} from "../betcar-expert-opinion/expert-opinion/expert-opinion.repository";
 
 @Injectable()
 export class BetcarReportService {
@@ -75,6 +76,7 @@ export class BetcarReportService {
     private readonly runningEngineRepository: RunningEngineRepository,
     private readonly dashboardRepository: DashboardRepository,
     private readonly testDriveReposity: TestDriveRepository,
+    private readonly expertOpinionRepository: ExpertOpinionRepository,
   ) {}
 
   async createReport(dto: CreateReportDto): Promise<Report> {
@@ -111,6 +113,7 @@ export class BetcarReportService {
     const runningEngine  = await this.runningEngineRepository.find(dto.runningEngine);
     const dashboard  = await this.dashboardRepository.find(dto.dashboard);
     const testDrive  = await this.testDriveReposity.find(dto.testDrive)
+    const expertOpinion  = await this.expertOpinionRepository.find(dto.expertOpinion)
 
     const reportEntity = new BetcarReportEntity({ 
       ...dto, 
@@ -147,6 +150,7 @@ export class BetcarReportService {
       runningEngine,
       dashboard,
       testDrive,
+      expertOpinion,
     });
     
     return this.betcarReportRepository.create(reportEntity);

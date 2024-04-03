@@ -214,6 +214,12 @@ export class CreateReportDto {
   public testDrive: number[];
 
   @ApiProperty({
+    description: 'Массив объектов c заключением эксперта',
+    example: ''
+  })
+  public expertOpinion: number[];
+
+  @ApiProperty({
     description: 'Дата создания',
     example: ''
   })

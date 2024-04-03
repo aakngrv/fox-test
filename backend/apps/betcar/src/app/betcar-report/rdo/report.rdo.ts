@@ -33,6 +33,7 @@ import {
   RunningEngine,
   Dashboard,
   TestDrive,
+  ExpertOpinion,
 } from '@prisma/client';
 
 import { Expose } from 'class-transformer';
@@ -291,6 +292,13 @@ export class ReportRdo {
   })
   @Expose()
   public testDrive: TestDrive[];
+
+  @ApiProperty({
+    description: 'Массив объектов c заключением эксперта',
+    example: ''
+  })
+  @Expose()
+  public expertOpinion: ExpertOpinion[];
 
   @ApiProperty({
     description: 'Дата создания',

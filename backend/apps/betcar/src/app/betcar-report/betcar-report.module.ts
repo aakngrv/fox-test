@@ -35,6 +35,8 @@ import { StoppedEngineModule } from "../betcar-technical-inspection/stopped-engi
 import { RunningEngineModule } from "../betcar-technical-inspection/running-engine/running-engine.module";
 import { DashboardModule } from "../betcar-technical-inspection/dashboard/dashboard.module";
 import { TestDriveModule } from "../betcar-technical-inspection/test-drive/test-drive.module";
+import { ExpertOpinionModule } from "../betcar-expert-opinion/expert-opinion/expert-opinion.module";
+
 
 @Module({
   imports: [
@@ -71,6 +73,7 @@ import { TestDriveModule } from "../betcar-technical-inspection/test-drive/test-
     RunningEngineModule,
     DashboardModule,
     TestDriveModule,
+    ExpertOpinionModule,
   ],
   controllers: [BetcarReportController],
   providers: [

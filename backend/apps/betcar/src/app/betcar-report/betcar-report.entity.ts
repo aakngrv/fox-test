@@ -34,6 +34,7 @@ import {
   RunningEngine,
   Dashboard,
   TestDrive,
+  ExpertOpinion,
  } from '@backend/shared/shared-types';
 
 
@@ -75,6 +76,7 @@ export class BetcarReportEntity implements Entity<BetcarReportEntity>, Report {
   public runningEngine: RunningEngine[];
   public dashboard: Dashboard[];
   public testDrive: TestDrive[];
+  public expertOpinion: ExpertOpinion[];
   public createdAt: Date;
   public publishAt: Date;
 
@@ -119,6 +121,7 @@ export class BetcarReportEntity implements Entity<BetcarReportEntity>, Report {
     this.runningEngine = [];
     this.dashboard = [];
     this.testDrive = [];
+    this.expertOpinion = [];
     this.createdAt = new Date();
     this.publishAt = new Date();
   }
@@ -159,6 +162,7 @@ export class BetcarReportEntity implements Entity<BetcarReportEntity>, Report {
       runningEngine: this.runningEngine.map(({ runningEngineId }) => ({ runningEngineId })),
       dashboard: this.dashboard.map(({ dashboardId }) => ({ dashboardId })),
       testDrive: this.testDrive.map(({ testDriveId }) => ({ testDriveId })),
+      expertOpinion: this.expertOpinion.map(({ expertOpinionId }) => ({ expertOpinionId })),
     };
   }
 }

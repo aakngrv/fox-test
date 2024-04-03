@@ -47,6 +47,7 @@ model Report {
   runningEngine           RunningEngine[]
   dashboard               Dashboard[]
   testDrive               TestDrive[]
+  expertOpinion           ExpertOpinion[]
 
   @@map("reports")
 }
@@ -816,6 +817,8 @@ model TestDrive {
 
 model ExpertOpinion {
   expertOpinionId Int    @id @default(autoincrement()) @map("expert_opinion")
+  reportId        Int    @map("report_id")
+  report          Report @relation(fields: [reportId], references: [reportId], onDelete: Cascade, onUpdate: Cascade)
   plusComment     String @default("") @map("plus_comment")
   minusComment    String @default("") @map("minus_comment")
   totalComment    String @default("") @map("total_comment")
