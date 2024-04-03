@@ -42,6 +42,7 @@ model Report {
   interiorDamage          InteriorDamage[]
   exteriorPhoto           ExteriorPhoto[]
   interiorPhoto           InteriorPhoto[]
+  roundViewVideo          RoundViewVideo[]
 
   @@map("reports")
 }
@@ -694,9 +695,9 @@ model InteriorPhoto {
 
 model RoundViewVideo {
   roundViewVideoId Int    @id @default(autoincrement()) @map("round_view_video_id")
+  reportId         Int    @map("report_id")
+  report           Report @relation(fields: [reportId], references: [reportId], onDelete: Cascade, onUpdate: Cascade)
   video            String @default("")
-  photo            String @default("")
-  fail             String @default("")
   comment          String @default("")
 
   @@map("round_view_videous")

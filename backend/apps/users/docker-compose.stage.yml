@@ -22,7 +22,7 @@ services:
     container_name: betcar.users.app
     restart: 'always'
     ports:
-      - 3333:3333
+      - 3000:3000
     environment:
       - NODE_ENV=production
     env_file:
