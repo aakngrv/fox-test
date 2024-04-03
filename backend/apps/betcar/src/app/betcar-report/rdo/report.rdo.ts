@@ -28,7 +28,8 @@ import {
   InteriorDamage,
   ExteriorPhoto,
   InteriorPhoto,
-  RoundViewVideo
+  RoundViewVideo,
+  StoppedEngine,
 } from '@prisma/client';
 
 import { Expose } from 'class-transformer';
@@ -259,6 +260,13 @@ export class ReportRdo {
   })
   @Expose()
   public roundViewVideo: RoundViewVideo[];
+
+  @ApiProperty({
+    description: 'Массив объектов c заглушенным двигателем',
+    example: ''
+  })
+  @Expose()
+  public stoppedEngine: StoppedEngine[];
 
   @ApiProperty({
     description: 'Дата создания',

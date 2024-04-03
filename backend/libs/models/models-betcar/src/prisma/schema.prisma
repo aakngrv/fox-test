@@ -43,6 +43,7 @@ model Report {
   exteriorPhoto           ExteriorPhoto[]
   interiorPhoto           InteriorPhoto[]
   roundViewVideo          RoundViewVideo[]
+  stoppedEngine           StoppedEngine[]
 
   @@map("reports")
 }
@@ -709,21 +710,23 @@ model RoundViewVideo {
 // ** Модели сервиса "Технический осмотр" ** //
 
 model StoppedEngine {
-  stoppedEngineId     Int     @id @default(autoincrement()) @map("stopped_engine_id")
-  carDismantled       Boolean @default(false) @map("car_dismantled")
-  engineOilLevel      Boolean @default(false) @map("engine_oil_level")
-  gearboxOilLevel     Boolean @default(false) @map("gearbox_oil_level")
-  gurLiquidLevel      Boolean @default(false) @map("gur_liquid_level")
-  coolantLevel        Boolean @default(false) @map("coolant_level")
-  condition           Boolean @default(false)
-  dvs                 Boolean @default(false)
-  kpp                 Boolean @default(false)
-  gur                 Boolean @default(false)
-  dispensingMechanism Boolean @default(false) @map("dispensing_mechanism")
-  shockAbsorbers      Boolean @default(false) @map("shock_absorbers")
-  frontAxle           Boolean @default(false) @map("front_axle")
-  rearAxle            Boolean @default(false) @map("rear_axle")
-  comment             String  @default("")
+  stoppedEngineId        Int     @id @default(autoincrement()) @map("stopped_engine_id")
+  reportId               Int     @map("report_id")
+  report                 Report  @relation(fields: [reportId], references: [reportId], onDelete: Cascade, onUpdate: Cascade)
+  isNew                  Boolean @default(false) @map("is_new")
+  isNotGo                Boolean @default(false) @map("is_not_go")
+  isEmergency            Boolean @default(false) @map("is_emergency")
+  isUnderstaffed         Boolean @default(false) @map("is_understaffed")
+  comment                String  @default("")
+  engineOilLevel         String  @default("") @map("engine_oil_level")
+  gearboxOilLevel        String  @default("") @map("gearbox_oil_level")
+  gurLiquidLevel         String  @default("") @map("gur_liquid_level")
+  brakeFluidLevel        String  @default("") @map("brake_fluid_level")
+  coolantLevel           String  @default("") @map("coolant_level")
+  technicalFluidsComment String  @default("") @map("technical_fluid_comment")
+  driveBelts             String  @default("") @map("drive_belts")
+  brakeDiscs             String  @default("") @map("brake_discs")
+  wearComment            String  @default("") @map("wear_comment")
 
   @@map("stopped_engines")
 }

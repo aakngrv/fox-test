@@ -190,6 +190,12 @@ export class CreateReportDto {
   public roundViewVideo: number[];
 
   @ApiProperty({
+    description: 'Массив объектов c заглушенным двигателем',
+    example: ''
+  })
+  public stoppedEngine: number[];
+
+  @ApiProperty({
     description: 'Дата создания',
     example: ''
   })

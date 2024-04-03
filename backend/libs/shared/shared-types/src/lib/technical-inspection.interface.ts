@@ -1,19 +1,20 @@
 export interface StoppedEngine {
-  id?: number;
-  carDismantled: boolean;
-  engineOilLevel: boolean;
-  gearboxOilLevel: boolean;
-  gurLiquidLevel: boolean;
-  coolantLevel: boolean;
-  condition: boolean;
-  dvs: boolean;
-  kpp: boolean;
-  gur: boolean;
-  dispensingMechanism: boolean;
-  shockAbsorbers: boolean;
-  frontAxle: boolean;
-  rearAxle: boolean;
+  stoppedEngineId?: number;
+  reportId: number;
+  isNew: boolean;
+  isNotGo: boolean;
+  isEmergency: boolean;
+  isUnderstaffed: boolean;
   comment: string;
+  engineOilLevel: string;
+  gearboxOilLevel: string;
+  gurLiquidLevel: string;
+  brakeFluidLevel: string;
+  coolantLevel: string;
+  technicalFluidsComment: string;
+  driveBelts: string;
+  brakeDiscs: string;
+  wearComment: string;
 }
 
 export interface RunningEngine {

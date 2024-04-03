@@ -36,6 +36,10 @@ import {
   RoundViewVideo
 } from "./body-and-interior.interface";
 
+import  { 
+  StoppedEngine ,
+} from "./technical-inspection.interface";
+
 export interface Report {
   reportId?: number;
   executorId: string;
@@ -69,6 +73,7 @@ export interface Report {
   exteriorPhoto: ExteriorPhoto[];
   interiorPhoto: InteriorPhoto[];
   roundViewVideo: RoundViewVideo[];
+  stoppedEngine: StoppedEngine[];
   createdAt: Date;
   publishAt: Date;
 }
