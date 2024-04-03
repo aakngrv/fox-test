@@ -21,6 +21,17 @@ import { ComplectationProtectionRepository } from '../betcar-equipment/complecta
 import { ComplectationOtherRepository } from '../betcar-equipment/complectation-other/complectation-other.repository';
 import { PaintworkInspectionRepository } from '../betcar-body-and-interior/paintwork-inspection/paintwork-inspection.repository';
 import { EngineCompartmentDamageRepository } from '../betcar-body-and-interior/engine-compartment-damage/engine-compartment-damage.repository';
+import { FrontSideDamageRepository } from '../betcar-body-and-interior/front-side-damage/front-side-damage.repository';
+import { LeftSideDamageRepository } from '../betcar-body-and-interior/left-side-damage/left-side-damage.repository';
+import { BackSideDamageRepository } from '../betcar-body-and-interior/back-side-damage/back-side-damage.repository';
+import { TrunkDamageRepository } from '../betcar-body-and-interior/trunk-damage/trunk-damage.repository';
+import { RightSideDamageRepository } from '../betcar-body-and-interior/right-side-damage/right-side-damage.repository';
+import { RoofDamageRepository } from '../betcar-body-and-interior/roof-damage/roof-damage.repository';
+import { GlassDamageRepository } from '../betcar-body-and-interior/glass-damage/glass-damage.repository';
+import { DiscDamageRepository } from '../betcar-body-and-interior/disc-damage/disc-damage.repository';
+import { InteriorDamageRepository } from "../betcar-body-and-interior/interior-damage/interior-damage.repository";
+import { ExteriorPhotoRepository } from "../betcar-body-and-interior/exterior-photo/exterior-photo.repository";
+import { InteriorPhotoRepository} from "../betcar-body-and-interior/interior-photo/interior-photo.repository";
 
 @Injectable()
 export class BetcarReportService {
@@ -43,6 +54,17 @@ export class BetcarReportService {
     private readonly complectationOtherRepository: ComplectationOtherRepository,
     private readonly paintworkInspectionRepository: PaintworkInspectionRepository,
     private readonly engineCompartmentDamageRepository: EngineCompartmentDamageRepository,
+    private readonly frontSideDamageRepository: FrontSideDamageRepository,
+    private readonly leftSideDamageRepository: LeftSideDamageRepository,
+    private readonly backSideDamageRepository: BackSideDamageRepository,
+    private readonly trunkDamageRepository: TrunkDamageRepository,
+    private readonly rightSideDamageRepository: RightSideDamageRepository,
+    private readonly roofDamageRepository: RoofDamageRepository,
+    private readonly glassDamageRepository: GlassDamageRepository,
+    private readonly discDamageRepository: DiscDamageRepository,
+    private readonly interiorDamageRepository: InteriorDamageRepository,
+    private readonly exteriorPhotoRepository: ExteriorPhotoRepository,
+    private readonly interiorPhotoRepository: InteriorPhotoRepository,
   ) {}
 
   async createReport(dto: CreateReportDto): Promise<Report> {
@@ -63,6 +85,17 @@ export class BetcarReportService {
     const complectationOther = await this.complectationOtherRepository.find(dto.complectationOther);
     const paintworkInspection = await this.paintworkInspectionRepository.find(dto.paintworkInspection);
     const engineCompartmentDamage = await this.engineCompartmentDamageRepository.find(dto.engineCompartmentDamage);
+    const frontSideDamage = await this.frontSideDamageRepository.find(dto.frontSideDamage);
+    const leftSideDamage = await this.leftSideDamageRepository.find(dto.leftSideDamage);
+    const backSideDamage = await this.backSideDamageRepository.find(dto.backSideDamage);
+    const trunkDamage = await this.trunkDamageRepository.find(dto.trunkDamage);
+    const rightSideDamage = await this.rightSideDamageRepository.find(dto.rightSideDamage);
+    const roofDamage = await this.roofDamageRepository.find(dto.roofDamage);
+    const glassDamage = await this.glassDamageRepository.find(dto.glassDamage);
+    const discDamage = await this.discDamageRepository.find(dto.discDamage);
+    const interiorDamage = await this.interiorDamageRepository.find(dto.interiorDamage);
+    const exteriorPhoto = await this.exteriorPhotoRepository.find(dto.exteriorPhoto);
+    const interiorPhoto = await this.interiorPhotoRepository.find(dto.interiorPhoto);
 
     const reportEntity = new BetcarReportEntity({ 
       ...dto, 
@@ -83,6 +116,17 @@ export class BetcarReportService {
       complectationOther,
       paintworkInspection,
       engineCompartmentDamage,
+      frontSideDamage,
+      leftSideDamage,
+      backSideDamage,
+      trunkDamage,
+      rightSideDamage,
+      roofDamage,
+      glassDamage,
+      discDamage,
+      interiorDamage,
+      exteriorPhoto,
+      interiorPhoto,
     });
     
     return this.betcarReportRepository.create(reportEntity);

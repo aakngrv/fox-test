@@ -19,6 +19,17 @@ import { ComplectationProtectionModule } from '../betcar-equipment/complectation
 import { ComplectationOtherModule } from '../betcar-equipment/complectation-other/complectation-other.module';
 import { PaintworkInspectionModule } from '../betcar-body-and-interior/paintwork-inspection/paintwork-inspection.module';
 import { EngineCompartmentDamageModule } from '../betcar-body-and-interior/engine-compartment-damage/engine-compartment-damage.module';
+import { FrontSideDamageModule } from '../betcar-body-and-interior/front-side-damage/front-side-damage.module';
+import { LeftSideDamageModule } from '../betcar-body-and-interior/left-side-damage/left-side-damage.module';
+import { BackSideDamageModule } from '../betcar-body-and-interior/back-side-damage/back-side-damage.module';
+import { TrunkDamageModule } from '../betcar-body-and-interior/trunk-damage/trunk-damage.module';
+import { RightSideDamageModule } from '../betcar-body-and-interior/right-side-damage/right-side-damage.module';
+import { RoofDamageModule } from '../betcar-body-and-interior/roof-damage/roof-damage.module';
+import { GlassDamageModule } from '../betcar-body-and-interior/glass-damage/glass-damage.module';
+import { DiscDamageModule } from '../betcar-body-and-interior/disc-damage/disc-damage.module';
+import { InteriorDamageModule } from '../betcar-body-and-interior/interior-damage/interior-damage.module';
+import { ExteriorPhotoModule } from "../betcar-body-and-interior/exterior-photo/exterior-photo.module";
+import { InteriorPhotoModule } from "../betcar-body-and-interior/interior-photo/interior-photo.module";
 
 @Module({
   imports: [
@@ -39,6 +50,17 @@ import { EngineCompartmentDamageModule } from '../betcar-body-and-interior/engin
     ComplectationOtherModule,
     PaintworkInspectionModule,
     EngineCompartmentDamageModule,
+    FrontSideDamageModule,
+    LeftSideDamageModule,
+    BackSideDamageModule,
+    TrunkDamageModule,
+    RightSideDamageModule,
+    RoofDamageModule,
+    GlassDamageModule,
+    DiscDamageModule,
+    InteriorDamageModule,
+    ExteriorPhotoModule,
+    InteriorPhotoModule,
   ],
   controllers: [BetcarReportController],
   providers: [

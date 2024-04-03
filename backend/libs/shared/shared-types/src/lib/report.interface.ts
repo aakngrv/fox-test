@@ -22,6 +22,17 @@ import {
 import { 
   PaintworkInspection,
   EngineCompartmentDamage,
+  FrontSideDamage,
+  LeftSideDamage,
+  BackSideDamage,
+  TrunkDamage,
+  RightSideDamage,
+  RoofDamage,
+  GlassDamage,
+  DiscDamage,
+  InteriorDamage,
+  ExteriorPhoto,
+  InteriorPhoto,
 } from "./body-and-interior.interface";
 
 export interface Report {
@@ -45,6 +56,17 @@ export interface Report {
   complectationOther: ComplectationOther[];
   paintworkInspection: PaintworkInspection[];
   engineCompartmentDamage: EngineCompartmentDamage[];
+  frontSideDamage: FrontSideDamage[]; 
+  leftSideDamage: LeftSideDamage[];
+  backSideDamage: BackSideDamage[];
+  trunkDamage: TrunkDamage[];
+  rightSideDamage: RightSideDamage[];
+  roofDamage: RoofDamage[];
+  glassDamage: GlassDamage[];
+  discDamage: DiscDamage[];
+  interiorDamage: InteriorDamage[];
+  exteriorPhoto: ExteriorPhoto[];
+  interiorPhoto: InteriorPhoto[];
   createdAt: Date;
   publishAt: Date;
 }

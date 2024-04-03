@@ -112,10 +112,76 @@ export class CreateReportDto {
   public paintworkInspection: number[];
 
   @ApiProperty({
-    description: 'Массив объектов c информацией о проверке ЛКП',
+    description: 'Массив объектов c информацией о повреждениях мотора',
     example: ''
   })
   public engineCompartmentDamage: number[];
+
+  @ApiProperty({
+    description: 'Массив объектов c информацией о повреждениях передней части',
+    example: ''
+  })
+  public frontSideDamage: number[];
+
+  @ApiProperty({
+    description: 'Массив объектов c информацией о повреждениях левой части',
+    example: ''
+  })
+  public leftSideDamage: number[];
+
+  @ApiProperty({
+    description: 'Массив объектов c информацией о повреждениях задней части',
+    example: ''
+  })
+  public backSideDamage: number[];
+
+  @ApiProperty({
+    description: 'Массив объектов c информацией о повреждениях багажника',
+    example: ''
+  })
+  public trunkDamage: number[];
+
+  @ApiProperty({
+    description: 'Массив объектов c информацией о повреждениях правой части',
+    example: ''
+  })
+  public rightSideDamage: number[];
+
+  @ApiProperty({
+    description: 'Массив объектов c информацией о повреждениях крыши',
+    example: ''
+  })
+  public roofDamage: number[];
+
+  @ApiProperty({
+    description: 'Массив объектов c информацией о повреждениях стекол',
+    example: ''
+  })
+  public glassDamage: number[];
+
+  @ApiProperty({
+    description: 'Массив объектов c информацией о повреждениях колес',
+    example: ''
+  })
+  public discDamage: number[];
+
+  @ApiProperty({
+    description: 'Массив объектов c информацией о повреждениях салона',
+    example: ''
+  })
+  public interiorDamage: number[];
+
+  @ApiProperty({
+    description: 'Массив объектов c фото кузова',
+    example: ''
+  })
+  public exteriorPhoto: number[];
+
+  @ApiProperty({
+    description: 'Массив объектов c фото салона',
+    example: ''
+  })
+  public interiorPhoto: number[];
 
   @ApiProperty({
     description: 'Дата создания',

@@ -16,7 +16,7 @@ export class EngineCompartmentDamageController {
   
   @ApiResponse({
     status: HttpStatus.CREATED,
-    description: 'Повреждения мотора успешно созданы.'
+    description: 'Данные о повреждении мотора успешно созданы.'
   })
   @Post('/')
   async create(@Body() dto: CreateEngineCompartmentDamageDto) {

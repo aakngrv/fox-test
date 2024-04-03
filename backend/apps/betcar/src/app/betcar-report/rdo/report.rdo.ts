@@ -17,6 +17,17 @@ import {
   ComplectationOther,
   PaintworkInspection,
   EngineCompartmentDamage,
+  FrontSideDamage,
+  LeftSideDamage,
+  BackSideDamage,
+  TrunkDamage,
+  RightSideDamage,
+  RoofDamage,
+  GlassDamage,
+  DiscDamage,
+  InteriorDamage,
+  ExteriorPhoto,
+  InteriorPhoto,
 } from '@prisma/client';
 
 import { Expose } from 'class-transformer';
@@ -85,7 +96,6 @@ export class ReportRdo {
   })
   @Expose()
   public location: Location[];
-
 
   @ApiProperty({
     description: 'Массив объектов c информацией о кузове',
@@ -164,6 +174,83 @@ export class ReportRdo {
   })
   @Expose()
   public engineCompartmentDamage: EngineCompartmentDamage[];
+
+  @ApiProperty({
+    description: 'Массив объектов c информацией о повреждениях передней части',
+    example: ''
+  })
+  @Expose()
+  public frontSideDamage: FrontSideDamage[];
+
+  @ApiProperty({
+    description: 'Массив объектов c информацией о повреждениях левой части',
+    example: ''
+  })
+  @Expose()
+  public leftSideDamage: LeftSideDamage[];
+
+  @ApiProperty({
+    description: 'Массив объектов c информацией о повреждениях задней части',
+    example: ''
+  })
+  @Expose()
+  public backSideDamage: BackSideDamage[];
+
+  @ApiProperty({
+    description: 'Массив объектов c информацией о повреждениях багажника',
+    example: ''
+  })
+  @Expose()
+  public trunkDamage: TrunkDamage[];
+
+  @ApiProperty({
+    description: 'Массив объектов c информацией о повреждениях правой части',
+    example: ''
+  })
+  @Expose()
+  public rightSideDamage: RightSideDamage[];
+
+  @ApiProperty({
+    description: 'Массив объектов c информацией о повреждениях крыши',
+    example: ''
+  })
+  @Expose()
+  public roofDamage: RoofDamage[];
+
+  @ApiProperty({
+    description: 'Массив объектов c информацией о повреждениях стекол',
+    example: ''
+  })
+  @Expose()
+  public glassDamage: GlassDamage[];
+
+  @ApiProperty({
+    description: 'Массив объектов c информацией о повреждениях колес',
+    example: ''
+  })
+  @Expose()
+  public discDamage: DiscDamage[];
+
+  @ApiProperty({
+    description: 'Массив объектов c информацией о повреждениях салона',
+    example: ''
+  })
+  @Expose()
+  public interiorDamage: InteriorDamage[];
+
+  @ApiProperty({
+    description: 'Массив объектов c фото кузова',
+    example: ''
+  })
+  @Expose()
+  public exteriorPhoto: ExteriorPhoto[];
+
+  @ApiProperty({
+    description: 'Массив объектов c фото салона',
+    example: ''
+  })
+  @Expose()
+  public interiorPhoto: InteriorPhoto[];
 
   @ApiProperty({
     description: 'Дата создания',

@@ -17,8 +17,20 @@ import {
   ComplectationProtection,
   ComplectationOther,
   PaintworkInspection,
-  EngineCompartmentDamage
+  EngineCompartmentDamage,
+  FrontSideDamage,
+  LeftSideDamage,
+  BackSideDamage,
+  TrunkDamage,
+  RightSideDamage,
+  RoofDamage,
+  GlassDamage,
+  DiscDamage,
+  InteriorDamage,
+  ExteriorPhoto,
+  InteriorPhoto,
  } from '@backend/shared/shared-types';
+
 
 export class BetcarReportEntity implements Entity<BetcarReportEntity>, Report {
 
@@ -42,6 +54,17 @@ export class BetcarReportEntity implements Entity<BetcarReportEntity>, Report {
   public complectationOther: ComplectationOther[];
   public paintworkInspection: PaintworkInspection[];
   public engineCompartmentDamage: EngineCompartmentDamage[];
+  public frontSideDamage: FrontSideDamage[];
+  public leftSideDamage: LeftSideDamage[];
+  public backSideDamage: BackSideDamage[];
+  public trunkDamage: TrunkDamage[];
+  public rightSideDamage: RightSideDamage[];
+  public roofDamage: RoofDamage[];
+  public glassDamage: GlassDamage[];
+  public discDamage: DiscDamage[];
+  public interiorDamage: InteriorDamage[];
+  public exteriorPhoto: ExteriorPhoto[];
+  public interiorPhoto: InteriorPhoto[];
   public createdAt: Date;
   public publishAt: Date;
 
@@ -70,6 +93,17 @@ export class BetcarReportEntity implements Entity<BetcarReportEntity>, Report {
     this.complectationOther = [];
     this.paintworkInspection = [];
     this.engineCompartmentDamage = [];
+    this.frontSideDamage = [];
+    this.leftSideDamage = [];
+    this.backSideDamage = [];
+    this.trunkDamage = [];
+    this.rightSideDamage = [];
+    this.roofDamage = [];
+    this.glassDamage = [];
+    this.discDamage = [];
+    this.interiorDamage = [];
+    this.exteriorPhoto = [];
+    this.interiorPhoto = [];
     this.createdAt = new Date();
     this.publishAt = new Date();
   }
@@ -94,6 +128,17 @@ export class BetcarReportEntity implements Entity<BetcarReportEntity>, Report {
       complectationOther: this.complectationOther.map(({ complectationOtherId }) => ({ complectationOtherId })),
       paintworkInspection: this.paintworkInspection.map(({ paintworkInspectionId }) => ({ paintworkInspectionId })),
       engineCompartmentDamage: this.engineCompartmentDamage.map(({ engineCompartmentDamageId }) => ({ engineCompartmentDamageId })),
+      frontSideDamage: this.frontSideDamage.map(({ frontSideDamageId }) => ({ frontSideDamageId })),
+      leftSideDamage: this.leftSideDamage.map(({ leftSideDamageId }) => ({ leftSideDamageId })),
+      backSideDamage: this.backSideDamage.map(({ backSideDamageId }) => ({ backSideDamageId })),
+      trunkDamage: this.trunkDamage.map(({ trunkDamageId }) => ({ trunkDamageId })),
+      rightSideDamage: this.rightSideDamage.map(({ rightSideDamageId }) => ({ rightSideDamageId })),
+      roofDamage: this.roofDamage.map(({ roofDamageId }) => ({ roofDamageId })),
+      glassDamage: this.glassDamage.map(({ glassDamageId }) => ({ glassDamageId })),
+      discDamage: this.discDamage.map(({ discDamageId }) => ({ discDamageId })),
+      interiorDamage: this.interiorDamage.map(({ interiorDamageId }) => ({ interiorDamageId })),
+      exteriorPhoto: this.exteriorPhoto.map(({ exteriorPhotoId }) => ({ exteriorPhotoId })),
+      interiorPhoto: this.interiorPhoto.map(({ interiorPhotoId }) => ({ interiorPhotoId })),
     };
   }
 }
