@@ -31,7 +31,13 @@ import { GlassDamageRepository } from '../betcar-body-and-interior/glass-damage/
 import { DiscDamageRepository } from '../betcar-body-and-interior/disc-damage/disc-damage.repository';
 import { InteriorDamageRepository } from "../betcar-body-and-interior/interior-damage/interior-damage.repository";
 import { ExteriorPhotoRepository } from "../betcar-body-and-interior/exterior-photo/exterior-photo.repository";
-import { InteriorPhotoRepository} from "../betcar-body-and-interior/interior-photo/interior-photo.repository";
+import { InteriorPhotoRepository } from "../betcar-body-and-interior/interior-photo/interior-photo.repository";
+import { RoundViewVideoRepository } from "../betcar-body-and-interior/round-view-video/round-view-video.repository";
+import { StoppedEngineRepository } from "../betcar-technical-inspection/stopped-engine/stopped-engine.repository";
+import { RunningEngineRepository } from "../betcar-technical-inspection/running-engine/running-engine.repository";
+import { DashboardRepository} from "../betcar-technical-inspection/dashboard/dashboard.repository";
+import { TestDriveRepository} from "../betcar-technical-inspection/test-drive/test-drive.repository";
+import { ExpertOpinionRepository} from "../betcar-expert-opinion/expert-opinion/expert-opinion.repository";
 
 @Injectable()
 export class BetcarReportService {
@@ -65,6 +71,12 @@ export class BetcarReportService {
     private readonly interiorDamageRepository: InteriorDamageRepository,
     private readonly exteriorPhotoRepository: ExteriorPhotoRepository,
     private readonly interiorPhotoRepository: InteriorPhotoRepository,
+    private readonly roundViewVideoRepository: RoundViewVideoRepository,
+    private readonly stoppedEngineRepository: StoppedEngineRepository,
+    private readonly runningEngineRepository: RunningEngineRepository,
+    private readonly dashboardRepository: DashboardRepository,
+    private readonly testDriveReposity: TestDriveRepository,
+    private readonly expertOpinionRepository: ExpertOpinionRepository,
   ) {}
 
   async createReport(dto: CreateReportDto): Promise<Report> {
@@ -96,6 +108,12 @@ export class BetcarReportService {
     const interiorDamage = await this.interiorDamageRepository.find(dto.interiorDamage);
     const exteriorPhoto = await this.exteriorPhotoRepository.find(dto.exteriorPhoto);
     const interiorPhoto = await this.interiorPhotoRepository.find(dto.interiorPhoto);
+    const roundViewVideo  = await this.roundViewVideoRepository.find(dto.roundViewVideo);
+    const stoppedEngine  = await this.stoppedEngineRepository.find(dto.stoppedEngine);
+    const runningEngine  = await this.runningEngineRepository.find(dto.runningEngine);
+    const dashboard  = await this.dashboardRepository.find(dto.dashboard);
+    const testDrive  = await this.testDriveReposity.find(dto.testDrive)
+    const expertOpinion  = await this.expertOpinionRepository.find(dto.expertOpinion)
 
     const reportEntity = new BetcarReportEntity({ 
       ...dto, 
@@ -127,6 +145,12 @@ export class BetcarReportService {
       interiorDamage,
       exteriorPhoto,
       interiorPhoto,
+      roundViewVideo,
+      stoppedEngine,
+      runningEngine,
+      dashboard,
+      testDrive,
+      expertOpinion,
     });
     
     return this.betcarReportRepository.create(reportEntity);

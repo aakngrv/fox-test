@@ -112,6 +112,24 @@ export class BetcarReportRepository implements CRUDRepository<BetcarReportEntity
           // create: [{ addElementInterior: true }, { removeElement: true}],
           connect: []
         },
+        roundViewVideo: {
+          connect: []
+        },
+        stoppedEngine: {
+          connect: []
+        },
+        runningEngine: {
+          connect: []
+        },
+        dashboard: {
+          connect: []
+        },
+        testDrive: {
+          connect: []
+        },
+        expertOpinion: {
+          connect: []
+        },
       }, 
       include: {
         sellerDetails: true,
@@ -142,6 +160,12 @@ export class BetcarReportRepository implements CRUDRepository<BetcarReportEntity
         interiorDamage: true,
         exteriorPhoto: true,
         interiorPhoto: true,
+        roundViewVideo: true,
+        stoppedEngine: true,
+        runningEngine: true,
+        dashboard: true,
+        testDrive: true,
+        expertOpinion: true,
       }
     });
   }
@@ -188,6 +212,12 @@ export class BetcarReportRepository implements CRUDRepository<BetcarReportEntity
         interiorDamage: true,
         exteriorPhoto: true,
         interiorPhoto: true,
+        roundViewVideo: true,
+        stoppedEngine: true,
+        runningEngine: true,
+        dashboard: true,
+        testDrive: true,
+        expertOpinion: true,
       }
     });
   }
@@ -223,6 +253,12 @@ export class BetcarReportRepository implements CRUDRepository<BetcarReportEntity
         interiorDamage: true,
         exteriorPhoto: true,
         interiorPhoto: true,
+        roundViewVideo: true,
+        stoppedEngine: true,
+        runningEngine: true,
+        dashboard: true,
+        testDrive: true,
+        expertOpinion: true,
       }
     });
   }

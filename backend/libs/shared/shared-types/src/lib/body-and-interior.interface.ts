@@ -266,9 +266,8 @@ export interface InteriorPhoto {
 }
 
 export interface RoundViewVideo {
-  id?: number;
+  roundViewVideoId?: number;
+  reportId: number;
   video: string;
-  photo: string;
-  fail: string;
   comment: string;
 }

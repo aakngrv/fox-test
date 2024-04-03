@@ -184,6 +184,42 @@ export class CreateReportDto {
   public interiorPhoto: number[];
 
   @ApiProperty({
+    description: 'Массив объектов c круговым обзором',
+    example: ''
+  })
+  public roundViewVideo: number[];
+
+  @ApiProperty({
+    description: 'Массив объектов c заглушенным двигателем',
+    example: ''
+  })
+  public stoppedEngine: number[];
+
+  @ApiProperty({
+    description: 'Массив объектов c запущенным двигателем',
+    example: ''
+  })
+  public runningEngine: number[];
+
+  @ApiProperty({
+    description: 'Массив объектов c приборной панелью',
+    example: ''
+  })
+  public dashboard: number[];
+
+  @ApiProperty({
+    description: 'Массив объектов c тест драйвом',
+    example: ''
+  })
+  public testDrive: number[];
+
+  @ApiProperty({
+    description: 'Массив объектов c заключением эксперта',
+    example: ''
+  })
+  public expertOpinion: number[];
+
+  @ApiProperty({
     description: 'Дата создания',
     example: ''
   })

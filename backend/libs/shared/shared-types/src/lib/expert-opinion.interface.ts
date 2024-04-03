@@ -1,5 +1,6 @@
 export interface ExpertOpinion {
-  id?: number;
+  expertOpinionId?: number;
+  reportId: number;
   plusComment: string;
   minusComment: string;
   totalComment: string;

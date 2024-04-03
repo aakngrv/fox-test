@@ -28,6 +28,12 @@ import {
   InteriorDamage,
   ExteriorPhoto,
   InteriorPhoto,
+  RoundViewVideo,
+  StoppedEngine,
+  RunningEngine,
+  Dashboard,
+  TestDrive,
+  ExpertOpinion,
 } from '@prisma/client';
 
 import { Expose } from 'class-transformer';
@@ -251,6 +257,48 @@ export class ReportRdo {
   })
   @Expose()
   public interiorPhoto: InteriorPhoto[];
+
+  @ApiProperty({
+    description: 'Массив объектов c круговым обзором',
+    example: ''
+  })
+  @Expose()
+  public roundViewVideo: RoundViewVideo[];
+
+  @ApiProperty({
+    description: 'Массив объектов c заглушенным двигателем',
+    example: ''
+  })
+  @Expose()
+  public stoppedEngine: StoppedEngine[];
+
+  @ApiProperty({
+    description: 'Массив объектов c запущенным двигателем',
+    example: ''
+  })
+  @Expose()
+  public runningEngine: RunningEngine[];
+
+  @ApiProperty({
+    description: 'Массив объектов c приборной панелью',
+    example: ''
+  })
+  @Expose()
+  public dashboard: Dashboard[];
+
+  @ApiProperty({
+    description: 'Массив объектов c тест драйвом',
+    example: ''
+  })
+  @Expose()
+  public testDrive: TestDrive[];
+
+  @ApiProperty({
+    description: 'Массив объектов c заключением эксперта',
+    example: ''
+  })
+  @Expose()
+  public expertOpinion: ExpertOpinion[];
 
   @ApiProperty({
     description: 'Дата создания',

@@ -33,7 +33,19 @@ import {
   InteriorDamage,
   ExteriorPhoto,
   InteriorPhoto,
+  RoundViewVideo
 } from "./body-and-interior.interface";
+
+import  { 
+  StoppedEngine,
+  RunningEngine,
+  Dashboard,
+  TestDrive,
+} from "./technical-inspection.interface";
+
+import {
+  ExpertOpinion,
+} from "./expert-opinion.interface";
 
 export interface Report {
   reportId?: number;
@@ -67,6 +79,12 @@ export interface Report {
   interiorDamage: InteriorDamage[];
   exteriorPhoto: ExteriorPhoto[];
   interiorPhoto: InteriorPhoto[];
+  roundViewVideo: RoundViewVideo[];
+  stoppedEngine: StoppedEngine[];
+  runningEngine: RunningEngine[];
+  dashboard: Dashboard[];
+  testDrive: TestDrive[];
+  expertOpinion: ExpertOpinion[];
   createdAt: Date;
   publishAt: Date;
 }
