@@ -33,6 +33,7 @@ import {
   InteriorDamage,
   ExteriorPhoto,
   InteriorPhoto,
+  RoundViewVideo
 } from "./body-and-interior.interface";
 
 export interface Report {
@@ -67,6 +68,7 @@ export interface Report {
   interiorDamage: InteriorDamage[];
   exteriorPhoto: ExteriorPhoto[];
   interiorPhoto: InteriorPhoto[];
+  roundViewVideo: RoundViewVideo[];
   createdAt: Date;
   publishAt: Date;
 }

@@ -32,6 +32,7 @@ import { DiscDamageRepository } from '../betcar-body-and-interior/disc-damage/di
 import { InteriorDamageRepository } from "../betcar-body-and-interior/interior-damage/interior-damage.repository";
 import { ExteriorPhotoRepository } from "../betcar-body-and-interior/exterior-photo/exterior-photo.repository";
 import { InteriorPhotoRepository} from "../betcar-body-and-interior/interior-photo/interior-photo.repository";
+import { RoundViewVideoRepository} from "../betcar-body-and-interior/round-view-video/round-view-video.repository";
 
 @Injectable()
 export class BetcarReportService {
@@ -65,6 +66,7 @@ export class BetcarReportService {
     private readonly interiorDamageRepository: InteriorDamageRepository,
     private readonly exteriorPhotoRepository: ExteriorPhotoRepository,
     private readonly interiorPhotoRepository: InteriorPhotoRepository,
+    private readonly roundViewVideoRepository: RoundViewVideoRepository,
   ) {}
 
   async createReport(dto: CreateReportDto): Promise<Report> {
@@ -96,6 +98,7 @@ export class BetcarReportService {
     const interiorDamage = await this.interiorDamageRepository.find(dto.interiorDamage);
     const exteriorPhoto = await this.exteriorPhotoRepository.find(dto.exteriorPhoto);
     const interiorPhoto = await this.interiorPhotoRepository.find(dto.interiorPhoto);
+    const roundViewVideo  = await this.roundViewVideoRepository.find(dto.roundViewVideo)
 
     const reportEntity = new BetcarReportEntity({ 
       ...dto, 
@@ -127,6 +130,7 @@ export class BetcarReportService {
       interiorDamage,
       exteriorPhoto,
       interiorPhoto,
+      roundViewVideo,
     });
     
     return this.betcarReportRepository.create(reportEntity);

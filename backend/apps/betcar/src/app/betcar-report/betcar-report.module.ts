@@ -30,6 +30,7 @@ import { DiscDamageModule } from '../betcar-body-and-interior/disc-damage/disc-d
 import { InteriorDamageModule } from '../betcar-body-and-interior/interior-damage/interior-damage.module';
 import { ExteriorPhotoModule } from "../betcar-body-and-interior/exterior-photo/exterior-photo.module";
 import { InteriorPhotoModule } from "../betcar-body-and-interior/interior-photo/interior-photo.module";
+import { RoundViewVideoModule } from "../betcar-body-and-interior/round-view-video/round-view-video.module";
 
 @Module({
   imports: [
@@ -61,6 +62,7 @@ import { InteriorPhotoModule } from "../betcar-body-and-interior/interior-photo/
     InteriorDamageModule,
     ExteriorPhotoModule,
     InteriorPhotoModule,
+    RoundViewVideoModule
   ],
   controllers: [BetcarReportController],
   providers: [

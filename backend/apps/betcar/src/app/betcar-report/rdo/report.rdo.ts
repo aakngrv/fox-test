@@ -28,6 +28,7 @@ import {
   InteriorDamage,
   ExteriorPhoto,
   InteriorPhoto,
+  RoundViewVideo
 } from '@prisma/client';
 
 import { Expose } from 'class-transformer';
@@ -251,6 +252,13 @@ export class ReportRdo {
   })
   @Expose()
   public interiorPhoto: InteriorPhoto[];
+
+  @ApiProperty({
+    description: 'Массив объектов c круговым обзором',
+    example: ''
+  })
+  @Expose()
+  public roundViewVideo: RoundViewVideo[];
 
   @ApiProperty({
     description: 'Дата создания',

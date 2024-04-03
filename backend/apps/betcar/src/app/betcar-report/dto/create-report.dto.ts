@@ -184,6 +184,12 @@ export class CreateReportDto {
   public interiorPhoto: number[];
 
   @ApiProperty({
+    description: 'Массив объектов c круговым обзором',
+    example: ''
+  })
+  public roundViewVideo: number[];
+
+  @ApiProperty({
     description: 'Дата создания',
     example: ''
   })
