@@ -49,15 +49,24 @@ export interface RunningEngine {
 }
 
 export interface Dashboard {
-  id?: number;
-  checkEngine: boolean;
-  oilPressure: boolean;
+  dashboardId?: number;
+  reportId: number;
+  abs: boolean;
   airbag: boolean;
-  mileageOnDashboard: string;
-  mileageInTheEngineBlock: string;
-  mileageInTheGearbox: string;
-  mileageInAdditionalBlocks: string;
-  comment: string;
+  checkEngine: boolean;
+  battery: boolean;
+  tirePressure: boolean;
+  oilPressure: boolean;
+  controlLightComment: string;
+  electronicDiagnostics: boolean;
+  diagnosticsResult: string;
+  diagnosticsFile?: string;
+  mileageOnDashboard?: string;
+  mileageInTheEngineBlock?: string;
+  mileageInTheGearbox?: string;
+  mileageInAdditionalBlocks?: string;
+  isNoMileage?: boolean;
+  totalComment: string;
 }
 
 export interface TestDrive {

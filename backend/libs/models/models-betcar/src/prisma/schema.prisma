@@ -45,6 +45,7 @@ model Report {
   roundViewVideo          RoundViewVideo[]
   stoppedEngine           StoppedEngine[]
   runningEngine           RunningEngine[]
+  dashboard               Dashboard[]
 
   @@map("reports")
 }
@@ -767,15 +768,25 @@ model RunningEngine {
 }
 
 model Dashboard {
-  dashboardId               Int     @id @default(autoincrement()) @map("dashboard_id")
-  checkEngine               Boolean @default(false) @map("check_engine")
-  oilPressure               Boolean @default(false) @map("oil_pressure")
-  airbag                    Boolean @default(false)
-  mileageOnDashboard        String  @default("") @map("mileage_on_dashboard")
-  mileageInTheEngineBlock   String  @default("") @map("mileage_in_the_engine_block")
-  mileageInTheGearbox       String  @default("") @map("mileage_in_the_gearbox")
-  mileageInAdditionalBlocks String  @default("") @map("mileage_in_additional_blocks")
-  comment                   String  @default("")
+  dashboardId               Int      @id @default(autoincrement()) @map("dashboard_id")
+  reportId                  Int      @map("report_id")
+  report                    Report   @relation(fields: [reportId], references: [reportId], onDelete: Cascade, onUpdate: Cascade)
+  abs                       Boolean  @default(false)
+  airbag                    Boolean  @default(false)
+  checkEngine               Boolean  @default(false) @map("check_engine")
+  battery                   Boolean  @default(false)
+  tirePressure              Boolean  @default(false) @map("tire_pressure")
+  oilPressure               Boolean  @default(false) @map("oil_pressure")
+  controlLightComment       String   @default("") @map("control_light_comment")
+  electronicDiagnostics     Boolean  @default(false) @map("electronic_diagnostics")
+  diagnosticsFile           String?  @default("") @map("diagnostics_file")
+  diagnosticsResult         String   @default("") @map("diagnostics_result")
+  mileageOnDashboard        String?  @default("") @map("mileage_on_dashboard")
+  mileageInTheEngineBlock   String?  @default("") @map("mileage_in_the_engine_block")
+  mileageInTheGearbox       String?  @default("") @map("mileage_in_the_gearbox")
+  mileageInAdditionalBlocks String?  @default("") @map("mileage_in_additional_blocks")
+  isNoMileage               Boolean? @default(false) @map("is_no_mileage")
+  totalComment              String   @default("") @map("total_comment")
 
   @@map("dashboards")
 }

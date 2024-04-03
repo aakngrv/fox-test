@@ -202,6 +202,12 @@ export class CreateReportDto {
   public runningEngine: number[];
 
   @ApiProperty({
+    description: 'Массив объектов c приборной панелью',
+    example: ''
+  })
+  public dashboard: number[];
+
+  @ApiProperty({
     description: 'Дата создания',
     example: ''
   })

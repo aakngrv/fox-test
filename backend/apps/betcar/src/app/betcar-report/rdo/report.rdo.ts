@@ -31,6 +31,7 @@ import {
   RoundViewVideo,
   StoppedEngine,
   RunningEngine,
+  Dashboard,
 } from '@prisma/client';
 
 import { Expose } from 'class-transformer';
@@ -275,6 +276,13 @@ export class ReportRdo {
   })
   @Expose()
   public runningEngine: RunningEngine[];
+
+  @ApiProperty({
+    description: 'Массив объектов c приборной панелью',
+    example: ''
+  })
+  @Expose()
+  public dashboard: Dashboard[];
 
   @ApiProperty({
     description: 'Дата создания',

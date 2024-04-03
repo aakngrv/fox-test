@@ -39,6 +39,7 @@ import {
 import  { 
   StoppedEngine,
   RunningEngine,
+  Dashboard,
 } from "./technical-inspection.interface";
 
 export interface Report {
@@ -76,6 +77,7 @@ export interface Report {
   roundViewVideo: RoundViewVideo[];
   stoppedEngine: StoppedEngine[];
   runningEngine: RunningEngine[];
+  dashboard: Dashboard[];
   createdAt: Date;
   publishAt: Date;
 }

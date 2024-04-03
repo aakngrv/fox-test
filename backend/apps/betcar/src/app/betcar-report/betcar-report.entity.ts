@@ -32,6 +32,7 @@ import {
   RoundViewVideo,
   StoppedEngine,
   RunningEngine,
+  Dashboard,
  } from '@backend/shared/shared-types';
 
 
@@ -71,6 +72,7 @@ export class BetcarReportEntity implements Entity<BetcarReportEntity>, Report {
   public roundViewVideo: RoundViewVideo[];
   public stoppedEngine: StoppedEngine[];
   public runningEngine: RunningEngine[];
+  public dashboard: Dashboard[];
   public createdAt: Date;
   public publishAt: Date;
 
@@ -113,6 +115,7 @@ export class BetcarReportEntity implements Entity<BetcarReportEntity>, Report {
     this.roundViewVideo = [];
     this.stoppedEngine = [];
     this.runningEngine = [];
+    this.dashboard = [];
     this.createdAt = new Date();
     this.publishAt = new Date();
   }
@@ -151,6 +154,7 @@ export class BetcarReportEntity implements Entity<BetcarReportEntity>, Report {
       roundViewVideo: this.roundViewVideo.map(({ roundViewVideoId }) => ({ roundViewVideoId })),
       stoppedEngine: this.stoppedEngine.map(({ stoppedEngineId }) => ({ stoppedEngineId })),
       runningEngine: this.runningEngine.map(({ runningEngineId }) => ({ runningEngineId })),
+      dashboard: this.dashboard.map(({ dashboardId }) => ({ dashboardId })),
     };
   }
 }
