@@ -117,7 +117,7 @@ export class DashboardRdo {
 
   @ApiProperty({
     description: 'Пробег в блоках не выявлен',
-    example: 'string'
+    example: false
   })
   @Expose()
   public isNoMileage?: boolean;
