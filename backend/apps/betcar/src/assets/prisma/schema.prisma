@@ -843,4 +843,6 @@ model ServiceInspection {
   frontAxleInspection     String[] @default([""]) @map("front_axle_ispection")
   steeringRackInspection  String[] @default([""]) @map("steering_rack_ispection")
   chassisInspection       String[] @default([""]) @map("chassis_inspection")
+
+  @@map("service_inspections")
 }
