@@ -9,7 +9,7 @@ services:
     env_file:
       - .env
     healthcheck:
-      test: echo 'db.runCommand("ping").ok' | mongosh mongodb:27017//${MONGO_DB} --quiet 
+      test: echo 'db.runCommand("ping").ok' | mongosh mongodb:27017/${MONGO_DB} --quiet 
       interval: 10s
       timeout: 10s
       retries: 5
