@@ -3,7 +3,7 @@ import { AddElementFront } from '@backend/shared/shared-types';
 import { AddElementFrontRepository } from './add-element-front.repository';
 import { Injectable } from '@nestjs/common';
 import { AddElementFrontEntity } from './add-element-front.entity';
-import { UpdateAddElementFrontDto } from './dto/update-add-element-front';
+import { UpdateAddElementFrontDto } from './dto/update-add-element-front.dto';
 
 @Injectable()
 export class AddElementFrontService {

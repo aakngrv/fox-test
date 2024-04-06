@@ -44,7 +44,7 @@ export class CarBodyController {
   @Delete('/:id')
   async destroy(@Param('id') id: string) {
     const complectationBodyId = parseInt(id, 10);
-    this.carBodyService.deleteCarBody(complectationBodyId);
+    await this.carBodyService.deleteCarBody(complectationBodyId);
   }
   
   @ApiResponse({

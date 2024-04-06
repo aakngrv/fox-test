@@ -44,7 +44,7 @@ export class ComplectationProtectionController {
   @Delete('/:id')
   async destroy(@Param('id') id: string) {
     const complectationProtectionId = parseInt(id, 10);
-    this.complectationProtectionService.deleteComplectationProtection(complectationProtectionId);
+    await this.complectationProtectionService.deleteComplectationProtection(complectationProtectionId);
   }
   
   @ApiResponse({
@@ -55,7 +55,7 @@ export class ComplectationProtectionController {
   @Patch('/:id')
   async update(@Param('id') id: string, @Body() dto: UpdateComplectationProtectionDto) {
     const complectationProtectionId = parseInt(id, 10);
-    const updatedComplecrationProtection = this.complectationProtectionService.updateComplectationProtection(complectationProtectionId, dto)
-    return fillObject(ComplectationProtectionRdo, updatedComplecrationProtection);
+    const updatedComplectationProtection = this.complectationProtectionService.updateComplectationProtection(complectationProtectionId, dto)
+    return fillObject(ComplectationProtectionRdo, updatedComplectationProtection);
   }
 }
