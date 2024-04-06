@@ -6,7 +6,7 @@ import { CreateSellerDetailsDto } from './dto/create-seller-details.dto';
 import { UpdateSellerDetailsDto } from './dto/update-seller-details.dto';
 import { ApiResponse, ApiTags } from '@nestjs/swagger';
 
-@ApiTags('Данные продавца')
+@ApiTags('Документы - Данные продавца')
 @Controller('seller-details')
 export class SellerDetailsController {
   

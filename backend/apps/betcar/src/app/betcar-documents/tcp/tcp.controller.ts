@@ -6,7 +6,7 @@ import { CreateTcpDto } from './dto/create-tcp.dto';
 import { UpdateTcpDto } from './dto/update-tcp.dto';
 import { ApiResponse, ApiTags } from '@nestjs/swagger';
 
-@ApiTags('ПТС')
+@ApiTags('Документы - ПТС')
 @Controller('tcp')
 export class TcpController {
   

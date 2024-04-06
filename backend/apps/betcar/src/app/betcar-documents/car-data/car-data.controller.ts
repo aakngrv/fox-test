@@ -6,7 +6,7 @@ import { CreateCarDataDto } from './dto/create-car-data.dto';
 import { UpdateCarDataDto } from './dto/update-car-data.dto';
 import { ApiResponse, ApiTags } from '@nestjs/swagger';
 
-@ApiTags('Данные автомобиля')
+@ApiTags('Документы - Данные автомобиля')
 @Controller('car-data')
 export class CarDataController {
   

@@ -6,7 +6,7 @@ import { CreateLocationDto } from './dto/create-location.dto';
 import { UpdateLocationDto } from './dto/update-location.dto';
 import { ApiResponse, ApiTags } from '@nestjs/swagger';
 
-@ApiTags('Местоположение')
+@ApiTags('Документы - Местоположение')
 @Controller('location')
 export class LocationController {
   

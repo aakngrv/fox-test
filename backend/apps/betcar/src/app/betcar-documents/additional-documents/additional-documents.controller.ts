@@ -6,7 +6,7 @@ import { CreateAdditionalDocumentsDto } from './dto/create-additional-documents.
 import { UpdateAdditionalDocumentsDto } from './dto/update-additional-documents.dto';
 import { ApiResponse, ApiTags } from '@nestjs/swagger';
 
-@ApiTags('Дополнительные документы')
+@ApiTags('Документы - Дополнительные документы')
 @Controller('additional-documents')
 export class AdditionalDocumentsController {
   
