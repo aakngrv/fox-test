@@ -100,7 +100,7 @@ export class UpdateComplectationComfortDto {
 
   @ApiProperty({
     description: 'Камера',
-    example: "string"
+    example: ["string"]
   })
   public camera: string[];
 

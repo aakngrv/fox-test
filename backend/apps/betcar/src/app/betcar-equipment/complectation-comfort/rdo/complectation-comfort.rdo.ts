@@ -124,7 +124,7 @@ export class ComplectationComfortRdo {
 
   @ApiProperty({
     description: 'Камера',
-    example: "string"
+    example: ["string"]
   })
   @Expose()
   public camera: string[];

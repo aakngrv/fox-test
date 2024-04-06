@@ -5,14 +5,14 @@ export class CarBodyRdo {
   
   @ApiProperty({
     description: 'ID кузова автомобиля',
-    example: '1'
+    example: 1
   })
   @Expose()
   public complectationBodyId: number;
   
   @ApiProperty({
     description: 'ID отчета',
-    example: '1'
+    example: 1
   })
   @Expose()
   public reportId: number;
