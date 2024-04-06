@@ -7,8 +7,8 @@ async function fillDb() {
     where: { dashboardId: 1 },
     update: {},
     create: {
-          dashboardId: 0,
-          reportId: 0,
+          dashboardId: 1,
+          reportId: 1,
           abs: true,
           airbag: true,
           checkEngine: true,

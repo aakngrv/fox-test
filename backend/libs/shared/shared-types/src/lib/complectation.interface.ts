@@ -1,6 +1,6 @@
 export interface ComplectationBody {
   complectationBodyId?: number;
-  reportId?: number;
+  reportId: number;
   roofRails: boolean;
   bodyStickers: boolean;
   airbrushing: boolean;

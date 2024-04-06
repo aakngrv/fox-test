@@ -4,7 +4,7 @@ export class UpdateCarBodyDto {
   
   @ApiProperty({
     description: 'ID отчета',
-    example: '1'
+    example: 1
   })
   public reportId: number;
   
