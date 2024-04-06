@@ -44,7 +44,7 @@ export class FrontSideDamageController {
   @Delete('/:id')
   async destroy(@Param('id') id: string) {
     const frontSideDamageId = parseInt(id, 10);
-    this.frontSideDamageService.deleteFrontSideDamage(frontSideDamageId);
+    await this.frontSideDamageService.deleteFrontSideDamage(frontSideDamageId);
   }
   
   @ApiResponse({
@@ -54,8 +54,8 @@ export class FrontSideDamageController {
   @HttpCode(HttpStatus.OK)
   @Patch('/:id')
   async update(@Param('id') id: string, @Body() dto: UpdateFrontSideDamageDto) {
-    const frontSideamageId = parseInt(id, 10);
-    const updatedFrontSideDamage = this.frontSideDamageService.updateFrontSideDamage(frontSideamageId, dto)
+    const frontSideDamageId = parseInt(id, 10);
+    const updatedFrontSideDamage = this.frontSideDamageService.updateFrontSideDamage(frontSideDamageId, dto)
     return fillObject(FrontSideDamageRdo, updatedFrontSideDamage);
   }
 }

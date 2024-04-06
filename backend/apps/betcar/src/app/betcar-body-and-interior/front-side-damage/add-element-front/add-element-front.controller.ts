@@ -3,7 +3,7 @@ import { Body, Controller, Delete, Get, HttpCode, HttpStatus, Param, Patch, Post
 import { fillObject } from '@backend/util/util-core';
 import { AddElementFrontRdo } from './rdo/add-element-front.rdo';
 import { CreateAddElementFrontDto } from './dto/create-add-element-front.dto';
-import { UpdateAddElementFrontDto } from './dto/update-add-element-front';
+import { UpdateAddElementFrontDto } from './dto/update-add-element-front.dto';
 import { ApiResponse, ApiTags } from '@nestjs/swagger';
 
 @ApiTags('Кузов и салон - Доп элемент к повреждениям передней части')

@@ -16,7 +16,7 @@ export class FrontSideDamageEntity implements Entity<FrontSideDamageEntity>, Fro
   public rightHeadlight: string[];
   public leftHeadlight: string[];
   public hood: string[];
-  public addElementFront: AddElementFront[];
+  public addElementFront?: AddElementFront[];
 
 
   constructor(frontSideDamage: FrontSideDamage) {
@@ -35,7 +35,6 @@ export class FrontSideDamageEntity implements Entity<FrontSideDamageEntity>, Fro
     this.leftHeadlight = entity.leftHeadlight;
     this.hood = entity.hood;
     this.addElementFront = [];
-
   }
 
   public toObject(): FrontSideDamageEntity {
