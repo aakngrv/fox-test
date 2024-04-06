@@ -40,7 +40,7 @@ import {
 
 export class BetcarReportEntity implements Entity<BetcarReportEntity>, Report {
 
-  public reportId: number;
+  public reportId?: number;
   public executorId: string;
   public title: string;
   public sellerDetails: SellerDetails[];

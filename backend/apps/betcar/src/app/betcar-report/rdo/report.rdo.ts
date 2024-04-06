@@ -49,10 +49,10 @@ export class ReportRdo {
   
   @ApiProperty({
     description: 'ID отчета',
-    example: '1'
+    example: 1
   })
   @Expose()
-  public reportId: string
+  public reportId: number
   
   @ApiProperty({
     description: 'Название отчета',
@@ -63,56 +63,56 @@ export class ReportRdo {
   
   @ApiProperty({
     description: 'Данные продавца',
-    example: ''
+    example: [0]
   })
   @Expose()
   public sellerDetails: SellerDetails[];
 
   @ApiProperty({
     description: 'Данные автомобиля',
-    example: ''
+    example: [0]
   })
   @Expose()
   public carData: CarData[];
 
   @ApiProperty({
     description: 'Дополнительные документы',
-    example: ''
+    example: [0]
   })
   @Expose()
   public additionalDocuments: AdditionalDocuments[];
 
   @ApiProperty({
     description: 'ПТС',
-    example: ''
+    example: [0]
   })
   @Expose()
   public tcp: TCP[];
 
   @ApiProperty({
     description: 'СТС',
-    example: ''
+    example: [0]
   })
   @Expose()
   public sts: STS[];
 
   @ApiProperty({
     description: 'Массив объектов c информацией о местоположении',
-    example: ''
+    example: [0]
   })
   @Expose()
   public location: Location[];
 
   @ApiProperty({
     description: 'Массив объектов c информацией о кузове',
-    example: ''
+    example: [0]
   })
   @Expose()
   public complectationBody: ComplectationBody[];
 
   @ApiProperty({
     description: 'Массив объектов c информацией о шинах',
-    example: ''
+    example: [0]
   })
   @Expose()
   public complectationWheels: ComplectationWheels[];
@@ -120,182 +120,182 @@ export class ReportRdo {
 
   @ApiProperty({
     description: 'Массив объектов c информацией о салоне',
-    example: ''
+    example: [0]
   })
   @Expose()
   public complectationSalon: ComplectationSalon[];
 
   @ApiProperty({
     description: 'Массив объектов c информацией о фарах',
-    example: ''
+    example: [0]
   })
   @Expose()
   public complectationHeadlights: ComplectationHeadlights[];
 
   @ApiProperty({
     description: 'Массив объектов c информацией о мультимедиа',
-    example: ''
+    example: [0]
   })
   @Expose()
   public complectationMultimedia: ComplectationMultimedia[];
 
   @ApiProperty({
     description: 'Массив объектов c информацией о комфорте',
-    example: ''
+    example: [0]
   })
   @Expose()
   public complectationComfort: ComplectationComfort[];
 
   @ApiProperty({
     description: 'Массив объектов c информацией о безопасности',
-    example: ''
+    example: [0]
   })
   @Expose()
   public complectationSafety: ComplectationSafety[];
 
   @ApiProperty({
     description: 'Массив объектов c информацией о защите',
-    example: ''
+    example: [0]
   })
   @Expose()
   public complectationProtection: ComplectationProtection[];
 
   @ApiProperty({
     description: 'Массив объектов c информацией о разном',
-    example: ''
+    example: [0]
   })
   @Expose()
   public complectationOther: ComplectationOther[];
 
   @ApiProperty({
     description: 'Массив объектов c информацией о проверке ЛКП',
-    example: ''
+    example: [0]
   })
   @Expose()
   public paintworkInspection: PaintworkInspection[];
   
   @ApiProperty({
     description: 'Массив объектов c информацией о повреждениях моторного отсека',
-    example: ''
+    example: [0]
   })
   @Expose()
   public engineCompartmentDamage: EngineCompartmentDamage[];
 
   @ApiProperty({
     description: 'Массив объектов c информацией о повреждениях передней части',
-    example: ''
+    example: [0]
   })
   @Expose()
   public frontSideDamage: FrontSideDamage[];
 
   @ApiProperty({
     description: 'Массив объектов c информацией о повреждениях левой части',
-    example: ''
+    example: [0]
   })
   @Expose()
   public leftSideDamage: LeftSideDamage[];
 
   @ApiProperty({
     description: 'Массив объектов c информацией о повреждениях задней части',
-    example: ''
+    example: [0]
   })
   @Expose()
   public backSideDamage: BackSideDamage[];
 
   @ApiProperty({
     description: 'Массив объектов c информацией о повреждениях багажника',
-    example: ''
+    example: [0]
   })
   @Expose()
   public trunkDamage: TrunkDamage[];
 
   @ApiProperty({
     description: 'Массив объектов c информацией о повреждениях правой части',
-    example: ''
+    example: [0]
   })
   @Expose()
   public rightSideDamage: RightSideDamage[];
 
   @ApiProperty({
     description: 'Массив объектов c информацией о повреждениях крыши',
-    example: ''
+    example: [0]
   })
   @Expose()
   public roofDamage: RoofDamage[];
 
   @ApiProperty({
     description: 'Массив объектов c информацией о повреждениях стекол',
-    example: ''
+    example: [0]
   })
   @Expose()
   public glassDamage: GlassDamage[];
 
   @ApiProperty({
     description: 'Массив объектов c информацией о повреждениях колес',
-    example: ''
+    example: [0]
   })
   @Expose()
   public discDamage: DiscDamage[];
 
   @ApiProperty({
     description: 'Массив объектов c информацией о повреждениях салона',
-    example: ''
+    example: [0]
   })
   @Expose()
   public interiorDamage: InteriorDamage[];
 
   @ApiProperty({
     description: 'Массив объектов c фото кузова',
-    example: ''
+    example: [0]
   })
   @Expose()
   public exteriorPhoto: ExteriorPhoto[];
 
   @ApiProperty({
     description: 'Массив объектов c фото салона',
-    example: ''
+    example: [0]
   })
   @Expose()
   public interiorPhoto: InteriorPhoto[];
 
   @ApiProperty({
     description: 'Массив объектов c круговым обзором',
-    example: ''
+    example: [0]
   })
   @Expose()
   public roundViewVideo: RoundViewVideo[];
 
   @ApiProperty({
     description: 'Массив объектов c заглушенным двигателем',
-    example: ''
+    example: [0]
   })
   @Expose()
   public stoppedEngine: StoppedEngine[];
 
   @ApiProperty({
     description: 'Массив объектов c запущенным двигателем',
-    example: ''
+    example: [0]
   })
   @Expose()
   public runningEngine: RunningEngine[];
 
   @ApiProperty({
     description: 'Массив объектов c приборной панелью',
-    example: ''
+    example: [0]
   })
   @Expose()
   public dashboard: Dashboard[];
 
   @ApiProperty({
     description: 'Массив объектов c тест драйвом',
-    example: ''
+    example: [0]
   })
   @Expose()
   public testDrive: TestDrive[];
 
   @ApiProperty({
     description: 'Массив объектов c заключением эксперта',
-    example: ''
+    example: [0]
   })
   @Expose()
   public expertOpinion: ExpertOpinion[];
