@@ -94,7 +94,7 @@ export class CreateDashboardDto {
 
   @ApiProperty({
     description: 'Пробег в блоках не выявлен',
-    example: 'string'
+    example: false
   })
   public isNoMileage?: boolean;
 
