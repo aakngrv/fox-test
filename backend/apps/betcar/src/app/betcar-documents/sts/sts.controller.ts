@@ -6,7 +6,7 @@ import { CreateStsDto } from './dto/create-sts.dto';
 import { UpdateStsDto } from './dto/update-sts.dto';
 import { ApiResponse, ApiTags } from '@nestjs/swagger';
 
-@ApiTags('СТС')
+@ApiTags('Документы - СТС')
 @Controller('sts')
 export class StsController {
   
