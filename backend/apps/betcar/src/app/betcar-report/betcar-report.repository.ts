@@ -65,43 +65,43 @@ export class BetcarReportRepository implements CRUDRepository<BetcarReportEntity
           connect: []
         },
         engineCompartmentDamage: {
-          create: [{ addElement: true }, { removeElement: true}],
+          // create: [{ addElement: true }, { removeElement: true}],
           connect: []
         },
         frontSideDamage: {
-          create: [{ addElementFront: true }, { removeElement: true}],
+          // create: [{ addElementFront: true }, { removeElement: true}],
           connect: []
         },
         leftSideDamage: {
-          create: [{ addElementLeft: true }, { removeElement: true}],
+          // create: [{ addElementLeft: true }, { removeElement: true}],
           connect: []
         },
         backSideDamage: {
-          create: [{ addElementBack: true }, { removeElement: true}],
+          // create: [{ addElementBack: true }, { removeElement: true}],
           connect: []
         },
         trunkDamage: {
-          create: [{ addElementTrunk: true }, { removeElement: true}],
+          // create: [{ addElementTrunk: true }, { removeElement: true}],
           connect: []
         },
         rightSideDamage: {
-          create: [{ addElementRight: true }, { removeElement: true}],
+          // create: [{ addElementRight: true }, { removeElement: true}],
           connect: []
         },
         roofDamage: {
-          create: [{ addElementRoof: true }, { removeElement: true}],
+          // create: [{ addElementRoof: true }, { removeElement: true}],
           connect: []
         },
         glassDamage: {
-          create: [{ addElementGlass: true }, { removeElement: true}],
+          // create: [{ addElementGlass: true }, { removeElement: true}],
           connect: []
         },
         discDamage: {
-          create: [{ addElementDisc: true }, { removeElement: true}],
+          // create: [{ addElementDisc: true }, { removeElement: true}],
           connect: []
         },
         interiorDamage: {
-          create: [{ addElementInterior: true }, { removeElement: true}],
+          // create: [{ addElementInterior: true }, { removeElement: true}],
           connect: []
         },
         exteriorPhoto: {
