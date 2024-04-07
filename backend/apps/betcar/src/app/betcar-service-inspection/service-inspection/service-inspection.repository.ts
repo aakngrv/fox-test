@@ -2,7 +2,7 @@ import { ServiceInspectionEntity} from "./service-inspection.entity";
 import { ServiceInspection } from '@backend/shared/shared-types';
 import { Injectable } from '@nestjs/common';
 import { CRUDRepository } from '@backend/util/util-types';
-import { PrismaService } from '../prisma/prisma.service';
+import { PrismaService } from '../../prisma/prisma.service';
 
 @Injectable()
 export class ServiceInspectionRepository implements CRUDRepository<ServiceInspectionEntity, number, ServiceInspection> {

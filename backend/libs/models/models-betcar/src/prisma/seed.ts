@@ -3,30 +3,32 @@ import { PrismaClient } from '@prisma/client';
 const prisma = new PrismaClient();
 
 async function fillDb() {
-  await prisma.dashboard.upsert({
-    where: { dashboardId: 1 },
+  await prisma.report.upsert({
+    where: { reportId: 1 },
     update: {},
     create: {
-          dashboardId: 1,
-          reportId: 1,
-          abs: true,
-          airbag: true,
-          checkEngine: true,
-          battery: true,
-          tirePressure: true,
-          oilPressure: true,
-          controlLightComment: "5774",
-          electronicDiagnostics: true,
-          diagnosticsResult: "5774",
-          diagnosticsFile: "5774",
-          mileageOnDashboard: "5774",
-          mileageInTheEngineBlock: "5774",
-          mileageInTheGearbox: "5774",
-          mileageInAdditionalBlocks: "5774",
-          isNoMileage: true,
-          totalComment: "5774",
+      reportId: 1,
+      executorId: "string",
+      title: "string",
     }
   });
+  // await prisma.serviceInspection.upsert({
+  //   where: { serviceInspectionId: 1 },
+  //   update: {},
+  //   create: {
+  //     serviceInspectionId: 1,
+  //     compressionCheck: ["rrr", "tttt"],
+  //     endoscopeCheck: ["rrr", "tttt"],
+  //     engineInspection: ["rrr", "tttt"],
+  //     checkpointInspection: ["rrr", "tttt"],
+  //     powerSteeringInspection: ["rrr", "tttt"],
+  //     transferCaseInspection: ["rrr", "tttt"],
+  //     rearAxleInspection: ["rrr", "tttt"],
+  //     frontAxleInspection: ["rrr", "tttt"],
+  //     steeringRackInspection: ["rrr", "tttt"],
+  //     chassisInspection: ["rrr", "tttt"],
+  //   }
+  // });
   console.info('🤘️ Database was filled')
 }
 
