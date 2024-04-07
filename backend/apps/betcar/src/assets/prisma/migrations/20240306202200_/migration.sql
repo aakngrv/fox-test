@@ -139,11 +139,12 @@ CREATE TABLE "complectation_reviews" (
 -- CreateTable
 CREATE TABLE "complectation_bodies" (
     "complectation_body_id" SERIAL NOT NULL,
+    "report_id" INTEGER NOT NULL,
     "roof_rails" BOOLEAN NOT NULL DEFAULT false,
     "body_stickers" BOOLEAN NOT NULL DEFAULT false,
     "airbrushing" BOOLEAN NOT NULL DEFAULT false,
-    "body_kit" BOOLEAN NOT NULL DEFAULT false,
-    "disc_type" TEXT NOT NULL DEFAULT '',
+    "body_in_film" BOOLEAN NOT NULL DEFAULT false,
+    "disc_tuning" BOOLEAN NOT NULL DEFAULT false,
 
     CONSTRAINT "complectation_bodies_pkey" PRIMARY KEY ("complectation_body_id")
 );
@@ -590,3 +591,6 @@ ALTER TABLE "sts" ADD CONSTRAINT "sts_report_id_fkey" FOREIGN KEY ("report_id") 
 
 -- AddForeignKey
 ALTER TABLE "locations" ADD CONSTRAINT "locations_report_id_fkey" FOREIGN KEY ("report_id") REFERENCES "reports"("report_id") ON DELETE CASCADE ON UPDATE CASCADE;
+
+-- AddForeignKey
+ALTER TABLE "complectation_bodies" ADD CONSTRAINT "complectation_bodies_report_id_fkey" FOREIGN KEY ("report_id") REFERENCES "reports"("report_id") ON DELETE CASCADE ON UPDATE CASCADE;
