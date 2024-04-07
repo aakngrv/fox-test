@@ -52,14 +52,14 @@ export class ReportRdo {
     example: 1
   })
   @Expose()
-  public reportId: number
+  public reportId: number;
   
   @ApiProperty({
     description: 'Название отчета',
     example: 'Осмотр автомобиля BMW X6'
   })
   @Expose()
-  public title: string
+  public title: string;
   
   @ApiProperty({
     description: 'Данные продавца',

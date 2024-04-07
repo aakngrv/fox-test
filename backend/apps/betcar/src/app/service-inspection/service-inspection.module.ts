@@ -6,7 +6,10 @@ import { Module } from '@nestjs/common';
 @Module({
   imports: [],
   controllers: [ServiceInspectionController],
-  providers: [ServiceInspectionService, ServiceInspectionRepository],
-  exports: [ServiceInspectionRepository]
+  providers: [
+    ServiceInspectionService, 
+    ServiceInspectionRepository
+  ],
+  exports: []
 })
 export class ServiceInspectionModule {}
