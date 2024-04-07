@@ -35,7 +35,7 @@ import { RunningEngineModule } from "./betcar-technical-inspection/running-engin
 import { DashboardModule } from "./betcar-technical-inspection/dashboard/dashboard.module";
 import { TestDriveModule } from "./betcar-technical-inspection/test-drive/test-drive.module";
 import { ExpertOpinionModule } from "./betcar-expert-opinion/expert-opinion/expert-opinion.module";
-import { ServiceInspectionModule } from "./service-inspection/service-inspection.module";
+import { ServiceInspectionModule } from "./betcar-service-inspection/service-inspection/service-inspection.module";
 
 
 @Module({
