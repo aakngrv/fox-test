@@ -15,10 +15,10 @@ export class CreateCarDataDto {
   public vinBodyNumber: number[];
   
   @ApiProperty({
-    description: 'Номер рамы',
-    example: 'string'
+    description: 'Массив с номером рамы',
+    example: [1]
   })
-  public frameNumber: string;
+  public frameNumber: number[];
   
   @ApiProperty({
     description: 'Комментрарий',

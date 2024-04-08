@@ -74,7 +74,7 @@ model CarData {
   reportId            Int             @map("report_id")
   report              Report          @relation(fields: [reportId], references: [reportId], onDelete: Cascade, onUpdate: Cascade)
   vinBodyNumber       VinBodyNumber[]
-  frameNumber         String          @default("") @map("frame_number")
+  frameNumber         FrameNumber[]
   comment             String          @default("")
   haveAServiceBook    Boolean         @default(false) @map("have_a_service_book")
   additionalDocuments String          @default("")
@@ -108,7 +108,7 @@ model CarData {
 }
 
 model VinBodyNumber {
-  vinBodyNumberId Int      @id @default(autoincrement()) @map("vin_body_number")
+  vinBodyNumberId Int      @id @default(autoincrement()) @map("vin_body_number_id")
   carDataId       Int      @map("car_data_id")
   carData         CarData? @relation(fields: [carDataId], references: [carDataId], onDelete: Cascade, onUpdate: Cascade)
   vinNumber       String   @default("") @map("vin_number")
@@ -117,6 +117,18 @@ model VinBodyNumber {
   photo           String[] @default([""])
 
   @@map("vin_body_numbers")
+}
+
+model FrameNumber {
+  frameNumberId Int      @id @default(autoincrement()) @map("frame_number_id")
+  carDataId     Int      @map("car_data_id")
+  carData       CarData? @relation(fields: [carDataId], references: [carDataId], onDelete: Cascade, onUpdate: Cascade)
+  frameNumber   String   @default("") @map("frame_number")
+  expertConfirm Boolean  @default(false) @map("expert_confirm")
+  numberState   String[] @default([""]) @map("number_state")
+  photo         String[] @default([""])
+
+  @@map("frame_numbers")
 }
 
 model AdditionalDocuments {

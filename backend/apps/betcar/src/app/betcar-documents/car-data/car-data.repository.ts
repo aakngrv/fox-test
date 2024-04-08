@@ -19,9 +19,13 @@ export class CarDataRepository implements CRUDRepository<CarDataEntity, number, 
         vinBodyNumber: {
           connect: []
         },
+        frameNumber: {
+          connect: []
+        },
       },
       include: {
         vinBodyNumber: true,
+        frameNumber: true,
       }
     });
   }
@@ -41,6 +45,7 @@ export class CarDataRepository implements CRUDRepository<CarDataEntity, number, 
       },
       include: {
         vinBodyNumber: true,
+        frameNumber: true,
       }
     });
   }
@@ -54,6 +59,7 @@ export class CarDataRepository implements CRUDRepository<CarDataEntity, number, 
       },
       include: {
         vinBodyNumber: true,
+        frameNumber: true,
       }
     });
   }
@@ -68,10 +74,14 @@ export class CarDataRepository implements CRUDRepository<CarDataEntity, number, 
         carDataId,
         vinBodyNumber: {
           connect: []
+        },
+        frameNumber: {
+          connect: []
         }
       },
       include: {
         vinBodyNumber: true,
+        frameNumber: true,
       }
     });
   }

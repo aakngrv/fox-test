@@ -3,10 +3,12 @@ import { CarDataService } from './car-data.service';
 import { CarDataRepository } from './car-data.repository';
 import { Module } from '@nestjs/common';
 import { VinBodyNumberModule} from "./vin-body-number/vin-body-number.module";
+import { FrameNumberModule } from "./frame-number/frame-number.module";
 
 @Module({
   imports: [
     VinBodyNumberModule,
+    FrameNumberModule,
   ],
   controllers: [CarDataController],
   providers: [CarDataService, CarDataRepository],

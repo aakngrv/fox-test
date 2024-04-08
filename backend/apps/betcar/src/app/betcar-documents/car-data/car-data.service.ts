@@ -5,20 +5,24 @@ import { Injectable } from '@nestjs/common';
 import { CarDataEntity } from './car-data.entity';
 import { UpdateCarDataDto } from './dto/update-car-data.dto';
 import { VinBodyNumberRepository} from "./vin-body-number/vin-body-number.repository";
+import { FrameNumberRepository} from "./frame-number/frame-number.repository";
 
 @Injectable()
 export class CarDataService {
 
   constructor(
     private readonly carDataRepository: CarDataRepository,
-    private readonly vinBodyNumberRepository: VinBodyNumberRepository
+    private readonly vinBodyNumberRepository: VinBodyNumberRepository,
+    private readonly frameNumberRepository: FrameNumberRepository,
   ) {}
 
   async createCarData(dto: CreateCarDataDto): Promise<CarData> {
     const vinBodyNumber = await this.vinBodyNumberRepository.find(dto.vinBodyNumber);
+    const frameNumber = await this.frameNumberRepository.find(dto.frameNumber);
     const carDataEntity = new CarDataEntity({
       ...dto,
-      vinBodyNumber
+      vinBodyNumber,
+      frameNumber,
 
     });
     return this.carDataRepository.create(carDataEntity);
@@ -34,9 +38,11 @@ export class CarDataService {
 
   async updateCarData(id: number, dto: UpdateCarDataDto): Promise<CarData> {
     const vinBodyNumber = await this.vinBodyNumberRepository.find(dto.vinBodyNumber);
+    const frameNumber = await this.frameNumberRepository.find(dto.frameNumber);
     return this.carDataRepository.update(id, new CarDataEntity({
       ...dto,
-      vinBodyNumber
+      vinBodyNumber,
+      frameNumber,
     }));
   }
 }

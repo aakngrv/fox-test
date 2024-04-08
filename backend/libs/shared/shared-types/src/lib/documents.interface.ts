@@ -14,7 +14,7 @@ export interface CarData {
   carDataId?: number;
   reportId: number;
   vinBodyNumber?: VinBodyNumber[];
-  frameNumber: string;
+  frameNumber?: FrameNumber[];
   comment: string;
   haveAServiceBook: boolean;
   additionalDocuments: string;
@@ -49,6 +49,15 @@ export interface VinBodyNumber {
   vinBodyNumberId?: number;
   carDataId: number;
   vinNumber: string;
+  expertConfirm: boolean;
+  numberState: string[];
+  photo: string[];
+}
+
+export interface FrameNumber {
+  frameNumberId?: number;
+  carDataId: number;
+  frameNumber: string;
   expertConfirm: boolean;
   numberState: string[];
   photo: string[];
