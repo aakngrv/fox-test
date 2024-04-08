@@ -6,14 +6,14 @@ export class ComplectationWheelsRdo {
 
   @ApiProperty({
     description: 'ID шин автомобиля',
-    example: '1'
+    example: 1
   })
   @Expose()
   public complectationWheelsId: number;
   
   @ApiProperty({
     description: 'ID отчета',
-    example: '1'
+    example: 1
   })
   @Expose()
   public reportId: number;
@@ -139,31 +139,31 @@ export class ComplectationWheelsRdo {
 
   @ApiProperty({
     description: 'Параметры шин переднего левого колеса',
-    example: 'string'
+    example: ['string']
   })
   @Expose()
-  public frontLeftOptions: string;
+  public frontLeftOptions: string[];
 
   @ApiProperty({
     description: 'Параметры шин заднего левого колеса',
-    example: 'string'
+    example: ['string']
   })
   @Expose()
-  public backLeftOptions: string;
+  public backLeftOptions: string[];
 
   @ApiProperty({
     description: 'Параметры шин переднего правого колеса',
-    example: 'string'
+    example: ['string']
   })
   @Expose()
-  public frontRightOptions: string;
+  public frontRightOptions: string[];
 
   @ApiProperty({
     description: 'Параметры шин заднего правого колеса',
-    example: 'string'
+    example: ['string']
   })
   @Expose()
-  public backRightOptions: string;
+  public backRightOptions: string[];
 
   @ApiProperty({
     description: 'Износ шин переднего левого колеса',

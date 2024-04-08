@@ -31,13 +31,6 @@ export class CreateReportDto {
     example: [0]
   })
   public additionalDocuments: number[];
-
-  @ApiProperty({
-    description: 'Массив объектов с ПТС',
-    example: [0]
-  })
-  public tcp: number[];
-
   
   @ApiProperty({
     description: 'Массив объектов с СТС',

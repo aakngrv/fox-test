@@ -4,9 +4,6 @@ import { BetcarReportService } from './betcar-report.service';
 import { BetcarReportRepository } from './betcar-report.repository';
 import { SellerDetailsModule } from '../betcar-documents/seller-details/seller-details.module';
 import { CarDataModule } from '../betcar-documents/car-data/car-data.module';
-import { AdditionalDocumentsModule } from '../betcar-documents/additional-documents/additional-documents.module';
-import { TcpModule } from '../betcar-documents/tcp/tcp.module';
-import { StsModule } from '../betcar-documents/sts/sts.module';
 import { LocationModule } from '../betcar-documents/location/location.module';
 import { CarBodyModule } from '../betcar-equipment/car-body/car-body.module';
 import { ComplectationWheelsModule } from '../betcar-equipment/complectation-wheels/complectation-wheels.module';
@@ -36,15 +33,14 @@ import { RunningEngineModule } from "../betcar-technical-inspection/running-engi
 import { DashboardModule } from "../betcar-technical-inspection/dashboard/dashboard.module";
 import { TestDriveModule } from "../betcar-technical-inspection/test-drive/test-drive.module";
 import { ExpertOpinionModule } from "../betcar-expert-opinion/expert-opinion/expert-opinion.module";
+import { TCPModule} from "../betcar-documents/car-data/tcp/tcp.module";
+import {AdditionalDocumentsModule} from "../betcar-documents/car-data/additional-documents/additional-documents.module";
 
 
 @Module({
   imports: [
     SellerDetailsModule, 
     CarDataModule,
-    AdditionalDocumentsModule,
-    TcpModule,
-    StsModule,
     LocationModule,
     CarBodyModule,
     ComplectationWheelsModule,
@@ -74,6 +70,7 @@ import { ExpertOpinionModule } from "../betcar-expert-opinion/expert-opinion/exp
     DashboardModule,
     TestDriveModule,
     ExpertOpinionModule,
+    AdditionalDocumentsModule,
   ],
   controllers: [BetcarReportController],
   providers: [

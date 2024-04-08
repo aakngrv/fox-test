@@ -44,7 +44,7 @@ export class CarDataController {
   @Delete('/:id')
   async destroy(@Param('id') id: string) {
     const carDataId = parseInt(id, 10);
-    this.carDataService.deleteCarData(carDataId);
+    await this.carDataService.deleteCarData(carDataId);
   }
   
   @ApiResponse({

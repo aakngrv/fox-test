@@ -4,9 +4,21 @@ export class UpdateSellerDetailsDto {
   
   @ApiProperty({
     description: 'ID отчета',
-    example: '1'
+    example: 1
   })
   public reportId: number;
+
+  @ApiProperty({
+    description: 'Отказа от осмотра',
+    example: false
+  })
+  public refusalOfInspection: boolean;
+
+  @ApiProperty({
+    description: 'Ссылка на объявление',
+    example: ["string"]
+  })
+  public linkToAd: string[];
   
   @ApiProperty({
     description: 'Имя продавца',

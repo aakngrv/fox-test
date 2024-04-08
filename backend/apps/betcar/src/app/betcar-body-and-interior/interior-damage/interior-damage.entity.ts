@@ -1,5 +1,5 @@
-import {Entity} from "@backend/util/util-types";
-import {AddElementInterior, InteriorDamage} from "@backend/shared/shared-types";
+import { Entity } from "@backend/util/util-types";
+import { AddElementInterior, InteriorDamage } from "@backend/shared/shared-types";
 
 export class InteriorDamageEntity implements Entity<InteriorDamageEntity>, InteriorDamage {
 

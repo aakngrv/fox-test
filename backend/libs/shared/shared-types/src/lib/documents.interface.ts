@@ -1,6 +1,8 @@
 export interface SellerDetails {
   sellerDetailsId?: number;
-  reportId?: number;
+  reportId: number;
+  refusalOfInspection: boolean;
+  linkToAd: string[];
   name: string;
   phone: string;
   carCost: string;
@@ -10,78 +12,89 @@ export interface SellerDetails {
 
 export interface CarData {
   carDataId?: number;
-  reportId?: number;
-  vin: string;
-  frameNumber: string;
-  comment: string;
-  haveAServiceBook: boolean;
-  additionalDocuments: string;
-  sts: string;
-  tcp: string;
-  stateNumber: string;
-  carType: string;
+  reportId: number;
+  vinBodyNumber?: VinBodyNumber[];
+  frameNumber?: FrameNumber[];
+  stateNumber?: StateNumber[];
+  tCP?: TCP[];
+  sTS?: STS[];
   carBrand: string;
   carModel: string;
   manufactureYear: string;
+  color: string;
   bodyType: string;
-  generation: string;
   enginesType: string;
-  enginesModification: string;
-  enginesNumber: string;
-  driveUnit: string;
   gearboxType: string;
+  driveUnit: string;
+  steeringWheelLocation: string;
   modification: string;
+  engineNumber?: EngineNumber[];
   engineCapacity: string;
   power: string;
-  color: string;
-  isMetallic: boolean;
-  mileage: string;
-  isNotInstalled: boolean;
-  isNewCar: boolean;
-  isEmergency: boolean;
-  isNotOnTrack: boolean;
-  totalComment: string;
+  serviceBook: string;
+  additionalDocuments?: AdditionalDocuments[];
+}
+
+export interface VinBodyNumber {
+  vinBodyNumberId?: number;
+  carDataId: number;
+  vinNumber: string;
+  expertConfirm: boolean;
+  numberState: string[];
+  photo: string[];
+}
+
+export interface FrameNumber {
+  frameNumberId?: number;
+  carDataId: number;
+  frameNumber: string;
+  expertConfirm: boolean;
+  numberState: string[];
+  photo: string[];
+}
+
+export interface StateNumber {
+  stateNumberId?: number;
+  carDataId: number;
+  absent: boolean;
+  foreign: boolean;
+  stateNumber: string;
 }
 
 export interface AdditionalDocuments {
   additionalDocumentsId?: number;
-  reportId?: number;
+  carDataId: number;
   comment: string;
-  video: string;
-  photo: string;
-  file: string;
+  photo: string[];
 }
 
 export interface TCP {
-  tcpId?: number;
-  reportId?: number;
-  availabilityTCP: string;
-  chassis: string;
-  series: string;
-  number: string;
-  dateOfIssue: string;
-  numberOfOwners: string;
-  video: string;
-  photo: string;
-  file: string;
+  tCPId?: number;
+  carDataId: number;
+  absent: boolean;
+  tCPType: string;
+  photo: string[];
+  comment: string;
+}
+
+export interface EngineNumber {
+  engineNumberId?: number;
+  carDataId: number;
+  expertConfirm: boolean;
+  numberState: string[];
+  photo: string[];
 }
 
 export interface STS {
-  stsId?: number;
-  reportId?: number;
-  isAbsent: boolean;
-  series: string;
-  number: string;
-  dateOfIssue: string;
-  issuedBy: string;
-  video: string;
+  sTSId?: number;
+  carDataId: number;
+  absent: boolean;
   photo: string;
-  file: string;
 }
 
 export interface Location {
   locationId?: number;
-  reportId?: number;
+  reportId: number;
   country: string;
   region: string;
   city: string;

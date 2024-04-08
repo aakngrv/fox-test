@@ -12,8 +12,41 @@ export class CarDataRepository implements CRUDRepository<CarDataEntity, number, 
   ) {}
 
   public async create(item: CarDataEntity): Promise<CarData> {
+    const entityData = item.toObject();
     return this.prisma.carData.create({
-      data: { ...item.toObject() }
+      data: { 
+        ...entityData,
+        vinBodyNumber: {
+          connect: []
+        },
+        frameNumber: {
+          connect: []
+        },
+        stateNumber: {
+          connect: []
+        },
+        tCP: {
+          connect: []
+        },
+        sTS: {
+          connect: []
+        },
+        engineNumber: {
+          connect: []
+        },
+        additionalDocuments: {
+          connect: []
+        },
+      },
+      include: {
+        vinBodyNumber: true,
+        frameNumber: true,
+        stateNumber: true,
+        tCP: true,
+        sTS: true,
+        engineNumber: true,
+        additionalDocuments: true,
+      }
     });
   }
 
@@ -29,6 +62,15 @@ export class CarDataRepository implements CRUDRepository<CarDataEntity, number, 
     return this.prisma.carData.findFirst({
       where: {
         carDataId
+      },
+      include: {
+        vinBodyNumber: true,
+        frameNumber: true,
+        stateNumber: true,
+        tCP: true,
+        sTS: true,
+        engineNumber: true,
+        additionalDocuments: true,
       }
     });
   }
@@ -39,6 +81,15 @@ export class CarDataRepository implements CRUDRepository<CarDataEntity, number, 
         carDataId: {
           in: ids.length > 0 ? ids : undefined
         }
+      },
+      include: {
+        vinBodyNumber: true,
+        frameNumber: true,
+        stateNumber: true,
+        tCP: true,
+        sTS: true,
+        engineNumber: true,
+        additionalDocuments: true,
       }
     });
   }
@@ -48,7 +99,40 @@ export class CarDataRepository implements CRUDRepository<CarDataEntity, number, 
       where: {
         carDataId
       },
-      data: { ...item.toObject(), carDataId}
+      data: { 
+        ...item.toObject(), 
+        carDataId,
+        vinBodyNumber: {
+          connect: []
+        },
+        frameNumber: {
+          connect: []
+        },
+        stateNumber: {
+          connect: []
+        },
+        tCP: {
+          connect: []
+        },
+        sTS: {
+          connect: []
+        },
+        engineNumber: {
+          connect: []
+        },
+        additionalDocuments: {
+          connect: []
+        }
+      },
+      include: {
+        vinBodyNumber: true,
+        frameNumber: true,
+        stateNumber: true,
+        tCP: true,
+        sTS: true,
+        engineNumber: true,
+        additionalDocuments: true,
+      }
     });
   }
 }

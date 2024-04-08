@@ -5,6 +5,8 @@ export class SellerDetailsEntity implements Entity<SellerDetailsEntity>, SellerD
 
     public sellerDetailsId?: number;
     public reportId: number;
+    public linkToAd: string[];
+    public refusalOfInspection: boolean;
     public name: string;
     public phone: string;
     public carCost: string;
@@ -18,6 +20,8 @@ export class SellerDetailsEntity implements Entity<SellerDetailsEntity>, SellerD
   public fillEntity(entity: SellerDetails): void {
     this.sellerDetailsId = entity.sellerDetailsId;
     this.reportId = entity.reportId;
+    this.linkToAd = entity.linkToAd;
+    this.refusalOfInspection = entity.refusalOfInspection;
     this.name = entity.name;
     this.phone = entity.phone;
     this.carCost = entity.carCost;

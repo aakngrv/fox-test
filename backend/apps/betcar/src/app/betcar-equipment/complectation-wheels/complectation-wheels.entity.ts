@@ -23,10 +23,10 @@ export class ComplectationWheelsEntity implements Entity<ComplectationWheelsEnti
   public backLeftIssueDate: string;
   public frontRightIssueDate: string;
   public backRightIssueDate: string;
-  public frontLeftOptions: string;
-  public backLeftOptions: string;
-  public frontRightOptions: string;
-  public backRightOptions: string;
+  public frontLeftOptions: string[];
+  public backLeftOptions: string[];
+  public frontRightOptions: string[];
+  public backRightOptions: string[];
   public frontLeftWear: string;
   public backLeftWear: string;
   public frontRightWear: string;

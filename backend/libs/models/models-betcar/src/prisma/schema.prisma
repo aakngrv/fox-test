@@ -16,9 +16,6 @@ model Report {
   publishAt               DateTime                  @updatedAt @map("publish_at")
   sellerDetails           SellerDetails[]
   carData                 CarData[]
-  additionalDocuments     AdditionalDocuments[]
-  tcp                     TCP[]
-  sts                     STS[]
   location                Location[]
   complectationBody       ComplectationBody[]
   complectationWheels     ComplectationWheels[]
@@ -55,97 +52,122 @@ model Report {
 // ** Модели сервиса "Документы" ** //
 
 model SellerDetails {
-  sellerDetailsId Int     @id @default(autoincrement()) @map("seller_details_id")
-  reportId        Int     @map("report_id")
-  report          Report  @relation(fields: [reportId], references: [reportId], onDelete: Cascade, onUpdate: Cascade)
-  name            String  @default("")
-  phone           String  @default("")
-  carCost         String  @default("") @map("car_cost")
-  role            Boolean @default(false)
-  comment         String  @default("")
+  sellerDetailsId     Int      @id @default(autoincrement()) @map("seller_details_id")
+  reportId            Int      @map("report_id")
+  report              Report   @relation(fields: [reportId], references: [reportId], onDelete: Cascade, onUpdate: Cascade)
+  refusalOfInspection Boolean  @default(false) @map("refusal_of_inspection")
+  linkToAd            String[] @default([""]) @map("link_to_ad")
+  name                String   @default("")
+  phone               String   @default("")
+  carCost             String   @default("") @map("car_cost")
+  role                Boolean  @default(false)
+  comment             String   @default("")
 
   @@map("sellers_details")
 }
 
 model CarData {
-  carDataId           Int     @id @default(autoincrement()) @map("car_data_id")
-  reportId            Int     @map("report_id")
-  report              Report  @relation(fields: [reportId], references: [reportId], onDelete: Cascade, onUpdate: Cascade)
-  vin                 String  @default("")
-  frameNumber         String  @default("") @map("frame_number")
-  comment             String  @default("")
-  haveAServiceBook    Boolean @default(false) @map("have_a_service_book")
-  additionalDocuments String  @default("")
-  sts                 String  @default("")
-  tcp                 String  @default("")
-  stateNumber         String  @default("") @map("state_number")
-  carType             String  @default("") @map("car_type")
-  carBrand            String  @default("") @map("car_brand")
-  carModel            String  @default("") @map("car_model")
-  manufactureYear     String  @default("") @map("manufacture_year")
-  bodyType            String  @default("") @map("body_type")
-  generation          String  @default("")
-  enginesType         String  @default("") @map("engines_type")
-  enginesModification String  @default("") @map("engines_modification")
-  enginesNumber       String  @default("") @map("engines_number")
-  driveUnit           String  @default("") @map("drive_unit")
-  gearboxType         String  @default("") @map("gearbox_type")
-  modification        String  @default("")
-  engineCapacity      String  @default("") @map("engine_capacity")
-  power               String  @default("")
-  color               String  @default("")
-  isMetallic          Boolean @default(false) @map("is_metallic")
-  mileage             String  @default("")
-  isNotInstalled      Boolean @default(false) @map("is_not_installed")
-  isNewCar            Boolean @default(false) @map("is_new_car")
-  isEmergency         Boolean @default(false) @map("is_emergency")
-  isNotOnTrack        Boolean @default(false) @map("is_not_on_track")
-  totalComment        String  @default("") @map("total_comment")
+  carDataId             Int                   @id @default(autoincrement()) @map("car_data_id")
+  reportId              Int                   @map("report_id")
+  report                Report                @relation(fields: [reportId], references: [reportId], onDelete: Cascade, onUpdate: Cascade)
+  vinBodyNumber         VinBodyNumber[]
+  frameNumber           FrameNumber[]
+  stateNumber           StateNumber[]
+  tCP                   TCP[]
+  sTS                   STS[]
+  carBrand              String                @default("") @map("car_brand")
+  carModel              String                @default("") @map("car_model")
+  manufactureYear       String                @default("") @map("manufacture_year")
+  color                 String                @default("")
+  bodyType              String                @default("") @map("body_type")
+  enginesType           String                @default("") @map("engines_type")
+  gearboxType           String                @default("") @map("gearbox_type")
+  driveUnit             String                @default("") @map("drive_unit")
+  steeringWheelLocation String                @default("") @map("steerint_wheel_location")
+  modification          String                @default("")
+  engineNumber          EngineNumber[]
+  engineCapacity        String                @default("") @map("engine_capacity")
+  power                 String                @default("")
+  serviceBook           String                @default("") @map("service_book")
+  additionalDocuments   AdditionalDocuments[]
 
   @@map("cars_datas")
 }
 
-model AdditionalDocuments {
-  additionalDocumentsId Int    @id @default(autoincrement()) @map("additional_documents_id")
-  reportId              Int    @map("report_id")
-  report                Report @relation(fields: [reportId], references: [reportId], onDelete: Cascade, onUpdate: Cascade)
-  comment               String @default("")
-  video                 String @default("")
-  photo                 String @default("")
-  file                  String @default("")
+model VinBodyNumber {
+  vinBodyNumberId Int      @id @default(autoincrement()) @map("vin_body_number_id")
+  carDataId       Int      @map("car_data_id")
+  carData         CarData? @relation(fields: [carDataId], references: [carDataId], onDelete: Cascade, onUpdate: Cascade)
+  vinNumber       String   @default("") @map("vin_number")
+  expertConfirm   Boolean  @default(false) @map("expert_confirm")
+  numberState     String[] @default([""]) @map("number_state")
+  photo           String[] @default([""])
 
-  @@map("additional_documents")
+  @@map("vin_body_numbers")
+}
+
+model FrameNumber {
+  frameNumberId Int      @id @default(autoincrement()) @map("frame_number_id")
+  carDataId     Int      @map("car_data_id")
+  carData       CarData? @relation(fields: [carDataId], references: [carDataId], onDelete: Cascade, onUpdate: Cascade)
+  frameNumber   String   @default("") @map("frame_number")
+  expertConfirm Boolean  @default(false) @map("expert_confirm")
+  numberState   String[] @default([""]) @map("number_state")
+  photo         String[] @default([""])
+
+  @@map("frame_numbers")
+}
+
+model StateNumber {
+  stateNumberId Int      @id @default(autoincrement()) @map("state_number_id")
+  carDataId     Int      @map("car_data_id")
+  carData       CarData? @relation(fields: [carDataId], references: [carDataId], onDelete: Cascade, onUpdate: Cascade)
+  absent        Boolean  @default(false)
+  foreign       Boolean  @default(false)
+  stateNumber   String   @default("") @map("state_number")
+
+  @@map("state_numbers")
 }
 
 model TCP {
-  tcpId           Int    @id @default(autoincrement()) @map("tcp_id")
-  reportId        Int    @map("report_id")
-  report          Report @relation(fields: [reportId], references: [reportId], onDelete: Cascade, onUpdate: Cascade)
-  availabilityTCP String @default("") @map("availability_tcp")
-  chassis         String @default("")
-  series          String @default("")
-  number          String @default("")
-  dateOfIssue     String @default("") @map("date_of_issue")
-  numberOfOwners  String @default("") @map("number_of_owners")
-  video           String @default("")
-  photo           String @default("")
-  file            String @default("")
+  tCPId     Int      @id @default(autoincrement()) @map("tcp_id")
+  carDataId Int      @map("report_id")
+  carData   CarData? @relation(fields: [carDataId], references: [carDataId], onDelete: Cascade, onUpdate: Cascade)
+  absent    Boolean  @default(false)
+  tCPType   String   @default("") @map("tcp_type")
+  photo     String[] @default([""])
+  comment   String   @default("")
 
   @@map("tcps")
 }
 
+model EngineNumber {
+  engineNumberId Int      @id @default(autoincrement()) @map("engine_number_id")
+  carDataId      Int      @map("car_data_id")
+  carData        CarData? @relation(fields: [carDataId], references: [carDataId], onDelete: Cascade, onUpdate: Cascade)
+  expertConfirm  Boolean  @default(false) @map("expert_confirm")
+  numberState    String[] @default([""]) @map("number_state")
+  photo          String[] @default([""])
+
+  @@map("engine_numbers")
+}
+
+model AdditionalDocuments {
+  additionalDocumentsId Int      @id @default(autoincrement()) @map("additional_documents_id")
+  carDataId             Int      @map("car_data_id")
+  carData               CarData? @relation(fields: [carDataId], references: [carDataId], onDelete: Cascade, onUpdate: Cascade)
+  comment               String   @default("")
+  photo                 String[] @default([""])
+
+  @@map("additional_documents")
+}
+
 model STS {
-  stsId       Int     @id @default(autoincrement()) @map("sts_id")
-  reportId    Int     @map("report_id")
-  report      Report  @relation(fields: [reportId], references: [reportId], onDelete: Cascade, onUpdate: Cascade)
-  isAbsent    Boolean @default(false) @map("is_absent")
-  series      String  @default("")
-  number      String  @default("")
-  dateOfIssue String  @default("") @map("date_of_issue")
-  issuedBy    String  @default("") @map("issued_by")
-  video       String  @default("")
-  photo       String  @default("")
-  file        String  @default("")
+  sTSId     Int      @id @default(autoincrement()) @map("sts_id")
+  carDataId Int      @map("report_id")
+  carData   CarData? @relation(fields: [carDataId], references: [carDataId], onDelete: Cascade, onUpdate: Cascade)
+  absent    Boolean  @default(false)
+  photo     String   @default("")
 
   @@map("sts")
 }
@@ -202,10 +224,10 @@ model ComplectationWheels {
   backLeftIssueDate     String   @default("") @map("back_left_issue_date")
   frontRightIssueDate   String   @default("") @map("front_right_issue_date")
   backRightIssueDate    String   @default("") @map("back_right_issue_date")
-  frontLeftOptions      String   @default("") @map("front_left_options")
-  backLeftOptions       String   @default("") @map("back_left_options")
-  frontRightOptions     String   @default("") @map("front_right_options")
-  backRightOptions      String   @default("") @map("back_right_options")
+  frontLeftOptions      String[] @default([""]) @map("front_left_options")
+  backLeftOptions       String[] @default([""]) @map("back_left_options")
+  frontRightOptions     String[] @default([""]) @map("front_right_options")
+  backRightOptions      String[] @default([""]) @map("back_right_options")
   frontLeftWear         String   @default("") @map("front_left_wear")
   backLeftWear          String   @default("") @map("back_left_wear")
   frontRightWear        String   @default("") @map("front_right_wear")
@@ -836,9 +858,9 @@ model ServiceInspection {
   compressionCheck        String[] @default([""]) @map("compression_heck")
   endoscopeCheck          String[] @default([""]) @map("endoscope_check")
   engineInspection        String[] @default([""]) @map("engine_inspection")
-  checkpointInspection    String[] @default([""]) @map("checkpoint_")
+  checkpointInspection    String[] @default([""]) @map("checkpoint_inspection")
   powerSteeringInspection String[] @default([""]) @map("power_steering_ispection")
-  transferCaseInspection  String[] @default([""]) @map("transfer_case_")
+  transferCaseInspection  String[] @default([""]) @map("transfer_case_inspection")
   rearAxleInspection      String[] @default([""]) @map("rear_axle_ispection")
   frontAxleInspection     String[] @default([""]) @map("front_axle_ispection")
   steeringRackInspection  String[] @default([""]) @map("steering_rack_ispection")
