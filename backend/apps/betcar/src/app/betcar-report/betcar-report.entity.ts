@@ -1,11 +1,8 @@
 import { Entity } from '@backend/util/util-types';
-import { 
-  AdditionalDocuments, 
+import {
   CarData, 
   Report, 
-  SellerDetails, 
-  STS, 
-  TCP,
+  SellerDetails,
   Location,
   ComplectationBody,
   ComplectationWheels,
@@ -45,9 +42,6 @@ export class BetcarReportEntity implements Entity<BetcarReportEntity>, Report {
   public title: string;
   public sellerDetails: SellerDetails[];
   public carData: CarData[];
-  public additionalDocuments: AdditionalDocuments[];
-  public tcp: TCP[];
-  public sts: STS[];
   public location: Location[];
   public complectationBody: ComplectationBody[];
   public complectationWheels: ComplectationWheels[];
@@ -90,9 +84,6 @@ export class BetcarReportEntity implements Entity<BetcarReportEntity>, Report {
     this.title = entity.title;
     this.sellerDetails = [];
     this.carData = [];
-    this.additionalDocuments = [];
-    this.tcp = [];
-    this.sts = [];
     this.location = [];
     this.complectationBody = [];
     this.complectationWheels = [];
@@ -131,9 +122,6 @@ export class BetcarReportEntity implements Entity<BetcarReportEntity>, Report {
       ...this,
       sellerDetails: this.sellerDetails.map(({ sellerDetailsId }) => ({ sellerDetailsId })),
       carData: this.carData.map(({ carDataId }) => ({ carDataId })),
-      additionalDocuments: this.additionalDocuments.map(({ additionalDocumentsId }) => ({ additionalDocumentsId })),
-      tcp: this.tcp.map(({ tcpId }) => ({ tcpId })),
-      sts: this.sts.map(({ stsId }) => ({ stsId })),
       location: this.location.map(({ locationId }) => ({ locationId })),
       complectationBody: this.complectationBody.map(({ complectationBodyId }) => ({ complectationBodyId })),
       complectationWheels: this.complectationWheels.map(({ complectationWheelsId }) => ({ complectationWheelsId })),

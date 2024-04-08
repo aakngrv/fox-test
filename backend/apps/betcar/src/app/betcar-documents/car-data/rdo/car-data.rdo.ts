@@ -4,6 +4,10 @@ import {
   VinBodyNumber,
   FrameNumber,
   StateNumber,
+  TCP,
+  STS,
+  EngineNumber,
+  AdditionalDocuments,
 } from '@backend/shared/shared-types';
 
 export class CarDataRdo {
@@ -42,209 +46,123 @@ export class CarDataRdo {
   })
   @Expose()
   public stateNumber: StateNumber[];
-  
+
   @ApiProperty({
-    description: 'Комментарий',
-    example: 'string'
+    description: 'Массив с ПТС',
+    example: [1]
   })
   @Expose()
-  public comment: string;
-  
+  public tCP: TCP[];
+
   @ApiProperty({
-    description: 'Наличие сервисной книжки',
-    example: false
+    description: 'Массив с СТС',
+    example: [1]
   })
   @Expose()
-  public haveAServiceBook: boolean;
-  
+  public sTS: STS[];
+
   @ApiProperty({
-    description: 'Дополнительные документы',
-    example: 'string'
-  })
-  @Expose()
-  public additionalDocuments: string;
-  
-  @ApiProperty({
-    description: 'CTC',
-    example: 'string'
-  })
-  @Expose()
-  public sts: string;
-  
-    
-  @ApiProperty({
-    description: 'ПТС',
-    example: 'string'
-  })
-  @Expose()
-  public tcp: string;
-    
-  @ApiProperty({
-    description: 'Тип TC',
-    example: 'string'
-  })
-  @Expose()
-  public carType: string;
-  
-    
-  @ApiProperty({
-    description: 'Марка автомобиля',
-    example: 'string'
+    description: 'Марка',
+    example: "string"
   })
   @Expose()
   public carBrand: string;
-  
-    
+
   @ApiProperty({
-    description: 'Модель автомобиля',
-    example: 'string'
+    description: 'Модель',
+    example: "string"
   })
   @Expose()
   public carModel: string;
-  
-    
+
   @ApiProperty({
-    description: 'Год выпуска',
-    example: 'string'
+    description: 'Год',
+    example: "string"
   })
   @Expose()
   public manufactureYear: string;
-  
-    
-  @ApiProperty({
-    description: 'Тип кузова',
-    example: 'string'
-  })
-  @Expose()
-  public bodyType: string;
-  
-    
-  @ApiProperty({
-    description: 'Поколение',
-    example: 'string'
-  })
-  @Expose()
-  public generation: string;
-  
-    
-  @ApiProperty({
-    description: 'Тип двигателя',
-    example: 'string'
-  })
-  @Expose()
-  public enginesType: string;
-  
-    
-  @ApiProperty({
-    description: 'Модификация двигателя',
-    example: 'string'
-  })
-  @Expose()
-  public enginesModification: string;
-  
-    
-  @ApiProperty({
-    description: 'Номер двигателя',
-    example: 'string'
-  })
-  @Expose()
-  public enginesNumber: string;
-  
-    
-  @ApiProperty({
-    description: 'Привод',
-    example: 'string'
-  })
-  @Expose()
-  public driveUnit: string;
-  
-    
-  @ApiProperty({
-    description: 'Тип КПП',
-    example: 'string'
-  })
-  @Expose()
-  public gearboxType: string;
-  
-    
-  @ApiProperty({
-    description: 'Модификация',
-    example: 'string'
-  })
-  @Expose()
-  public modification: string;
-  
-    
-  @ApiProperty({
-    description: 'Объем двигателя',
-    example: 'string'
-  })
-  @Expose()
-  public engineCapacity: string;
-  
-    
-  @ApiProperty({
-    description: 'Мощность',
-    example: 'string'
-  })
-  @Expose()
-  public power: string;
-  
-    
+
   @ApiProperty({
     description: 'Цвет',
-    example: 'string'
+    example: "string"
   })
   @Expose()
   public color: string;
-  
-    
-  @ApiProperty({
-    description: 'CTC',
-    example: false
-  })
-  @Expose()
-  public isMetallic: boolean;
 
   @ApiProperty({
-    description: 'Пробег',
-    example: false
+    description: 'Тип кузова',
+    example: "string"
   })
   @Expose()
-  public mileage: string;
-  
+  public bodyType: string;
+
   @ApiProperty({
-    description: 'Не установлен',
-    example: false
+    description: 'Тип двигателя',
+    example: "string"
   })
   @Expose()
-  public isNotInstalled: boolean;
-  
+  public enginesType: string;
+
   @ApiProperty({
-    description: 'Новый автомобиль?',
-    example: false
+    description: 'Тип КПП',
+    example: "string"
   })
   @Expose()
-  public isNewCar: boolean;
-  
+  public gearboxType: string;
+
   @ApiProperty({
-    description: 'Аварийный?',
-    example: false
+    description: 'Привод',
+    example: "string"
   })
   @Expose()
-  public isEmergency: boolean;
-  
+  public driveUnit: string;
+
   @ApiProperty({
-    description: 'Не на ходу?',
-    example: false
+    description: 'Расположение руля',
+    example: "string"
   })
   @Expose()
-  public isNotOnTrack: boolean;
-  
+  public steeringWheelLocation: string;
+
   @ApiProperty({
-    description: 'Общий комментрий',
-    example: 'string'
+    description: 'Модификация',
+    example: "string"
   })
   @Expose()
-  public totalComment: string;
+  public modification: string;
+
+  @ApiProperty({
+    description: 'Массив с номером двигателя',
+    example: [1]
+  })
+  @Expose()
+  public engineNumber: EngineNumber[];
+
+  @ApiProperty({
+    description: 'Объем двигателя',
+    example: "string"
+  })
+  @Expose()
+  public engineCapacity: string;
+
+  @ApiProperty({
+    description: 'Мощность',
+    example: "string"
+  })
+  @Expose()
+  public power: string;
+
+  @ApiProperty({
+    description: 'Сервисная книжка',
+    example: "string"
+  })
+  @Expose()
+  public serviceBook: string;
+
+  @ApiProperty({
+    description: 'Массив с доп документами',
+    example: [1]
+  })
+  @Expose()
+  public additionalDocuments: AdditionalDocuments[];
 }

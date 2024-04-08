@@ -4,6 +4,10 @@ import {
   VinBodyNumber,
   FrameNumber,
   StateNumber,
+  TCP,
+  STS,
+  EngineNumber,
+  AdditionalDocuments,
 } from '@backend/shared/shared-types';
 
 
@@ -13,35 +17,26 @@ export class CarDataEntity implements Entity<CarDataEntity>, CarData {
   public reportId: number;
   public vinBodyNumber?: VinBodyNumber[];
   public frameNumber?: FrameNumber[];
-  public stateNumber: StateNumber[];
-  public comment: string;
-  public haveAServiceBook: boolean;
-  public additionalDocuments: string;
-  public sts: string;
-  public tcp: string;
-  public carType: string;
+  public stateNumber?: StateNumber[];
+  public tCP?: TCP[];
+  public sTS?: STS[];
   public carBrand: string;
   public carModel: string;
   public manufactureYear: string;
+  public color: string;
   public bodyType: string;
-  public generation: string;
   public enginesType: string;
-  public enginesModification: string;
-  public enginesNumber: string;
-  public driveUnit: string;
   public gearboxType: string;
+  public driveUnit: string;
+  public steeringWheelLocation: string;
   public modification: string;
+  public engineNumber?: EngineNumber[];
   public engineCapacity: string;
   public power: string;
-  public color: string;
-  public isMetallic: boolean;
-  public mileage: string;
-  public isNotInstalled: boolean;
-  public isNewCar: boolean;
-  public isEmergency: boolean;
-  public isNotOnTrack: boolean;
-  public totalComment: string;
-
+  public serviceBook: string;
+  public additionalDocuments?: AdditionalDocuments[];
+  
+  
   constructor(carData: CarData) {
     this.fillEntity(carData);
   } 
@@ -53,35 +48,23 @@ export class CarDataEntity implements Entity<CarDataEntity>, CarData {
     this.vinBodyNumber = [];
     this.frameNumber = [];
     this.stateNumber = [];
-    this.comment = entity.comment;
-    this.haveAServiceBook = entity.haveAServiceBook;
-    this.additionalDocuments = entity.additionalDocuments;
-    this.sts = entity.sts;
-    this.tcp = entity.tcp;
-    this.carType = entity.carType;
+    this.tCP = [];
+    this.sTS = [];
     this.carBrand = entity.carBrand;
     this.carModel = entity.carModel;
     this.manufactureYear = entity.manufactureYear;
+    this.color = entity.color;
     this.bodyType = entity.bodyType;
-    this.reportId = entity.reportId;
-    this.generation = entity.generation;
     this.enginesType = entity.enginesType;
-    this.enginesModification = entity.enginesModification;
-    this.enginesNumber = entity.enginesNumber;
-    this.driveUnit = entity.driveUnit;
     this.gearboxType = entity.gearboxType;
-    this.reportId = entity.reportId;
+    this.driveUnit = entity.driveUnit;
+    this.steeringWheelLocation = entity.steeringWheelLocation;
     this.modification = entity.modification;
+    this.engineNumber = [];
     this.engineCapacity = entity.engineCapacity;
     this.power = entity.power;
-    this.color = entity.color;
-    this.isMetallic = entity.isMetallic;
-    this.mileage = entity.mileage;
-    this.isNotInstalled = entity.isNotInstalled;
-    this.isNewCar = entity.isNewCar;
-    this.isEmergency = entity.isEmergency;
-    this.isNotOnTrack = entity.isNotOnTrack;
-    this.totalComment = entity.totalComment;
+    this.serviceBook = entity.serviceBook;
+    this.additionalDocuments = [];
   }
 
   public toObject(): CarDataEntity {

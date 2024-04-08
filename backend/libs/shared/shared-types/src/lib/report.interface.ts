@@ -1,9 +1,6 @@
-import { 
-  AdditionalDocuments, 
-  CarData, 
-  STS, 
-  SellerDetails, 
-  TCP,
+import {
+  CarData,
+  SellerDetails,
   Location,
 } from "./documents.interface";
 
@@ -53,9 +50,6 @@ export interface Report {
   title: string;
   sellerDetails: SellerDetails[];
   carData: CarData[];
-  additionalDocuments: AdditionalDocuments[];
-  tcp: TCP[];
-  sts: STS[];
   location: Location[];
   complectationBody: ComplectationBody[];
   complectationWheels: ComplectationWheels[];

@@ -3,9 +3,6 @@ import { PrismaModule } from './prisma/prisma.module';
 import { SellerDetailsModule } from './betcar-documents/seller-details/seller-details.module';
 import { BetcarReportModule } from './betcar-report/betcar-report.module';
 import { CarDataModule } from './betcar-documents/car-data/car-data.module';
-import { AdditionalDocumentsModule } from './betcar-documents/additional-documents/additional-documents.module';
-import { TcpModule } from './betcar-documents/tcp/tcp.module';
-import { StsModule } from './betcar-documents/sts/sts.module';
 import { LocationModule } from './betcar-documents/location/location.module';
 import { CarBodyModule } from './betcar-equipment/car-body/car-body.module';
 import { ComplectationWheelsModule } from './betcar-equipment/complectation-wheels/complectation-wheels.module';
@@ -36,6 +33,7 @@ import { DashboardModule } from "./betcar-technical-inspection/dashboard/dashboa
 import { TestDriveModule } from "./betcar-technical-inspection/test-drive/test-drive.module";
 import { ExpertOpinionModule } from "./betcar-expert-opinion/expert-opinion/expert-opinion.module";
 import { ServiceInspectionModule } from "./betcar-service-inspection/service-inspection/service-inspection.module";
+import {AdditionalDocumentsModule} from "./betcar-documents/car-data/additional-documents/additional-documents.module";
 
 
 @Module({
@@ -44,9 +42,6 @@ import { ServiceInspectionModule } from "./betcar-service-inspection/service-ins
     BetcarReportModule,
     SellerDetailsModule,
     CarDataModule,
-    AdditionalDocumentsModule,
-    TcpModule,
-    StsModule,
     LocationModule,
     CarBodyModule,
     ComplectationWheelsModule,
@@ -77,6 +72,7 @@ import { ServiceInspectionModule } from "./betcar-service-inspection/service-ins
     TestDriveModule,
     ExpertOpinionModule,
     ServiceInspectionModule,
+    AdditionalDocumentsModule,
   ],
   controllers: [],
   providers: [],

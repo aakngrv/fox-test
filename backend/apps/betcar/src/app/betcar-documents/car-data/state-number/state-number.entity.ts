@@ -1,5 +1,5 @@
 import { Entity } from '@backend/util/util-types';
-import {StateNumber } from '@backend/shared/shared-types';
+import { StateNumber } from '@backend/shared/shared-types';
 
 
 export class StateNumberEntity implements Entity<StateNumberEntity>, StateNumber {

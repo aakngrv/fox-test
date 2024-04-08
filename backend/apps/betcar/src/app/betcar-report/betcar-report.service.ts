@@ -6,9 +6,6 @@ import { CreateReportDto } from './dto/create-report.dto';
 import { Report } from '@backend/shared/shared-types';
 import { UpdateReportDto } from './dto/update-report.dto';
 import { BetcarReportEntity } from './betcar-report.entity';
-import { AdditionalDocumentsRepository } from '../betcar-documents/additional-documents/additional-documents.repository';
-import { TcpRepository } from '../betcar-documents/tcp/tcp.repository';
-import { StsRepository } from '../betcar-documents/sts/sts.repository';
 import { LocationRepository } from '../betcar-documents/location/location.repository';
 import { CarBodyRepository } from '../betcar-equipment/car-body/car-body.repository';
 import { ComplectationWheelsRepository } from '../betcar-equipment/complectation-wheels/complectation-wheels.repository';
@@ -45,9 +42,6 @@ export class BetcarReportService {
     private readonly betcarReportRepository: BetcarReportRepository,
     private readonly sellerDetailsRepository: SellerDetailsRepository,
     private readonly carDataRepository: CarDataRepository,
-    private readonly additionalDocumentsRepository: AdditionalDocumentsRepository,
-    private readonly tcpRepository: TcpRepository,
-    private readonly stsRepository: StsRepository,
     private readonly locationRepository: LocationRepository,
     private readonly carBodyRepository: CarBodyRepository,
     private readonly complectationWheelsRepository: ComplectationWheelsRepository,
@@ -82,9 +76,6 @@ export class BetcarReportService {
   async createReport(dto: CreateReportDto): Promise<Report> {
     const sellerDetails = await this.sellerDetailsRepository.find(dto.sellerDetails);
     const carData = await this.carDataRepository.find(dto.carData);
-    const additionalDocuments = await this.additionalDocumentsRepository.find(dto.additionalDocuments);
-    const tcp = await this.tcpRepository.find(dto.tcp);
-    const sts = await this.stsRepository.find(dto.sts);
     const location = await this.locationRepository.find(dto.location);
     const complectationBody = await this.carBodyRepository.find(dto.complectationBody);
     const complectationWheels = await this.complectationWheelsRepository.find(dto.complectationWheels);
@@ -118,10 +109,7 @@ export class BetcarReportService {
     const reportEntity = new BetcarReportEntity({ 
       ...dto, 
       sellerDetails, 
-      carData, 
-      additionalDocuments, 
-      tcp, 
-      sts, 
+      carData,
       location,
       complectationBody,
       complectationWheels,
