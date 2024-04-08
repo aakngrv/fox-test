@@ -53,11 +53,18 @@ export class SellerDetailsRdo {
   public carCost: string;
 
   @ApiProperty({
-    description: 'Собственник или дилер',
+    description: 'Торг',
     example: false
   })
   @Expose()
-  public role: boolean;
+  public isBargain: boolean;
+
+  @ApiProperty({
+    description: 'Собственник или дилер',
+    example: "string"
+  })
+  @Expose()
+  public role: string;
   
   @ApiProperty({
     description: 'Общий комментарий',

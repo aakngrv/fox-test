@@ -60,7 +60,8 @@ model SellerDetails {
   name                String   @default("")
   phone               String   @default("")
   carCost             String   @default("") @map("car_cost")
-  role                Boolean  @default(false)
+  isBargain           Boolean  @default(false) @map("is_bargain")
+  role                String   @default("")
   comment             String   @default("")
 
   @@map("sellers_details")
