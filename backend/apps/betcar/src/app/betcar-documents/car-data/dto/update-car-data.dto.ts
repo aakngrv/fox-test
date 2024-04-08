@@ -7,12 +7,12 @@ export class UpdateCarDataDto {
     example: '1'
   })
   public reportId: number;
-  
+
   @ApiProperty({
-    description: 'VIN номер',
-    example: 'string'
+    description: 'Массив с VIN',
+    example: [1]
   })
-  public vin: string;
+  public vinBodyNumber: number[];
   
   @ApiProperty({
     description: 'Номер рамы',

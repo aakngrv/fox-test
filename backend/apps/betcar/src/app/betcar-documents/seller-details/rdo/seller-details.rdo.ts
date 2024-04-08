@@ -5,17 +5,31 @@ export class SellerDetailsRdo {
   
   @ApiProperty({
     description: 'ID данных продавца',
-    example: '1'
+    example: 1
   })
   @Expose()
-  public sellerDetailsId: string;
+  public sellerDetailsId: number;
 
   @ApiProperty({
     description: 'ID отчета',
-    example: '1'
+    example: 1
   })
   @Expose()
-  public reportId: string;
+  public reportId: number;
+
+  @ApiProperty({
+    description: 'Отказа от осмотра',
+    example: false
+  })
+  @Expose()
+  public refusalOfInspection: boolean;
+
+  @ApiProperty({
+    description: 'Ссылка на объявление',
+    example: ["string"]
+  })
+  @Expose()
+  public linkToAd: string[];
   
   @ApiProperty({
     description: 'Имя продавца',

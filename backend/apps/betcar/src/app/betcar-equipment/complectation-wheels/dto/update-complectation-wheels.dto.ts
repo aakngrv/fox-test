@@ -4,7 +4,7 @@ export class UpdateComplectationWheelsDto {
   
   @ApiProperty({
     description: 'ID отчета',
-    example: '1'
+    example: 1
   })
   public reportId: number;
   
@@ -112,27 +112,27 @@ export class UpdateComplectationWheelsDto {
 
   @ApiProperty({
     description: 'Параметры шин переднего левого колеса',
-    example: 'string'
+    example: ['string']
   })
-  public frontLeftOptions: string;
+  public frontLeftOptions: string[];
 
   @ApiProperty({
     description: 'Параметры шин заднего левого колеса',
-    example: 'string'
+    example: ['string']
   })
-  public backLeftOptions: string;
+  public backLeftOptions: string[];
 
   @ApiProperty({
     description: 'Параметры шин переднего правого колеса',
-    example: 'string'
+    example: ['string']
   })
-  public frontRightOptions: string;
+  public frontRightOptions: string[];
 
   @ApiProperty({
     description: 'Параметры шин заднего правого колеса',
-    example: 'string'
+    example: ['string']
   })
-  public backRightOptions: string;
+  public backRightOptions: string[];
 
   @ApiProperty({
     description: 'Износ шин переднего левого колеса',

@@ -28,10 +28,10 @@ export interface ComplectationWheels {
   backLeftIssueDate: string;
   frontRightIssueDate: string;
   backRightIssueDate: string;
-  frontLeftOptions: string;
-  backLeftOptions: string;
-  frontRightOptions: string;
-  backRightOptions: string;
+  frontLeftOptions: string[];
+  backLeftOptions: string[];
+  frontRightOptions: string[];
+  backRightOptions: string[];
   frontLeftWear: string;
   backLeftWear: string;
   frontRightWear: string;

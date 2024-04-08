@@ -1,6 +1,8 @@
 export interface SellerDetails {
   sellerDetailsId?: number;
-  reportId?: number;
+  reportId: number;
+  refusalOfInspection: boolean;
+  linkToAd: string[];
   name: string;
   phone: string;
   carCost: string;
@@ -10,8 +12,8 @@ export interface SellerDetails {
 
 export interface CarData {
   carDataId?: number;
-  reportId?: number;
-  vin: string;
+  reportId: number;
+  vinBodyNumber?: VinBodyNumber[];
   frameNumber: string;
   comment: string;
   haveAServiceBook: boolean;
@@ -43,9 +45,18 @@ export interface CarData {
   totalComment: string;
 }
 
+export interface VinBodyNumber {
+  vinBodyNumberId?: number;
+  carDataId: number;
+  vinNumber: string;
+  expertConfirm: boolean;
+  numberState: string[];
+  photo: string[];
+}
+
 export interface AdditionalDocuments {
   additionalDocumentsId?: number;
-  reportId?: number;
+  reportId: number;
   comment: string;
   video: string;
   photo: string;
@@ -54,7 +65,7 @@ export interface AdditionalDocuments {
 
 export interface TCP {
   tcpId?: number;
-  reportId?: number;
+  reportId: number;
   availabilityTCP: string;
   chassis: string;
   series: string;
@@ -68,7 +79,7 @@ export interface TCP {
 
 export interface STS {
   stsId?: number;
-  reportId?: number;
+  reportId: number;
   isAbsent: boolean;
   series: string;
   number: string;
@@ -81,7 +92,7 @@ export interface STS {
 
 export interface Location {
   locationId?: number;
-  reportId?: number;
+  reportId: number;
   country: string;
   region: string;
   city: string;

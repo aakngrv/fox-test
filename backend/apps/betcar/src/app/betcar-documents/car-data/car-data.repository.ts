@@ -12,8 +12,17 @@ export class CarDataRepository implements CRUDRepository<CarDataEntity, number, 
   ) {}
 
   public async create(item: CarDataEntity): Promise<CarData> {
+    const entityData = item.toObject();
     return this.prisma.carData.create({
-      data: { ...item.toObject() }
+      data: { 
+        ...entityData,
+        vinBodyNumber: {
+          connect: []
+        },
+      },
+      include: {
+        vinBodyNumber: true,
+      }
     });
   }
 
@@ -29,6 +38,9 @@ export class CarDataRepository implements CRUDRepository<CarDataEntity, number, 
     return this.prisma.carData.findFirst({
       where: {
         carDataId
+      },
+      include: {
+        vinBodyNumber: true,
       }
     });
   }
@@ -39,6 +51,9 @@ export class CarDataRepository implements CRUDRepository<CarDataEntity, number, 
         carDataId: {
           in: ids.length > 0 ? ids : undefined
         }
+      },
+      include: {
+        vinBodyNumber: true,
       }
     });
   }
@@ -48,7 +63,16 @@ export class CarDataRepository implements CRUDRepository<CarDataEntity, number, 
       where: {
         carDataId
       },
-      data: { ...item.toObject(), carDataId}
+      data: { 
+        ...item.toObject(), 
+        carDataId,
+        vinBodyNumber: {
+          connect: []
+        }
+      },
+      include: {
+        vinBodyNumber: true,
+      }
     });
   }
 }

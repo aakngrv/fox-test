@@ -1,5 +1,6 @@
 import { ApiProperty } from '@nestjs/swagger';
 import { Expose } from 'class-transformer';
+import { VinBodyNumber } from '@backend/shared/shared-types';
 
 export class CarDataRdo {
   
@@ -16,13 +17,13 @@ export class CarDataRdo {
   })
   @Expose()
   public reportId: number;
-  
+
   @ApiProperty({
-    description: 'VIN номер',
-    example: 'string'
+    description: 'Массив с VIN',
+    example: [1]
   })
   @Expose()
-  public vin: string;
+  public vinBodyNumber: VinBodyNumber[];
   
   @ApiProperty({
     description: 'Номер рамы',

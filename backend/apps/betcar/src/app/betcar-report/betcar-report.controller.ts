@@ -53,7 +53,7 @@ export class BetcarReportController {
   @Delete('/:id')
   @HttpCode(HttpStatus.NO_CONTENT)
   async destroy(@Param('id') id: number) {
-    this.betcarReportService.deleteReport(id);
+    await this.betcarReportService.deleteReport(id);
   }
   
   @ApiResponse({

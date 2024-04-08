@@ -1,12 +1,12 @@
 import { Entity } from '@backend/util/util-types';
-import { CarData } from '@backend/shared/shared-types';
+import { CarData, VinBodyNumber } from '@backend/shared/shared-types';
 
 
 export class CarDataEntity implements Entity<CarDataEntity>, CarData {
 
   public carDataId?: number;
   public reportId: number;
-  public vin: string;
+  public vinBodyNumber: VinBodyNumber[];
   public frameNumber: string;
   public comment: string;
   public haveAServiceBook: boolean;
@@ -45,7 +45,7 @@ export class CarDataEntity implements Entity<CarDataEntity>, CarData {
   public fillEntity(entity: CarData): void {
     this.carDataId = entity.carDataId;
     this.reportId = entity.reportId;
-    this.vin = entity.vin;
+    this.vinBodyNumber = [];
     this.frameNumber = entity.frameNumber;
     this.comment = entity.comment;
     this.haveAServiceBook = entity.haveAServiceBook;
