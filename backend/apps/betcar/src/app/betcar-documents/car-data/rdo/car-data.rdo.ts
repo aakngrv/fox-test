@@ -3,6 +3,7 @@ import { Expose } from 'class-transformer';
 import { 
   VinBodyNumber,
   FrameNumber,
+  StateNumber,
 } from '@backend/shared/shared-types';
 
 export class CarDataRdo {
@@ -34,6 +35,13 @@ export class CarDataRdo {
   })
   @Expose()
   public frameNumber: FrameNumber[];
+
+  @ApiProperty({
+    description: 'Массив с гос номером',
+    example: [1]
+  })
+  @Expose()
+  public stateNumber: StateNumber[];
   
   @ApiProperty({
     description: 'Комментарий',
@@ -70,15 +78,6 @@ export class CarDataRdo {
   })
   @Expose()
   public tcp: string;
-  
-    
-  @ApiProperty({
-    description: 'Гос номер',
-    example: 'string'
-  })
-  @Expose()
-  public stateNumber: string;
-  
     
   @ApiProperty({
     description: 'Тип TC',

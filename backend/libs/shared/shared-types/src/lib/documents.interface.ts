@@ -15,12 +15,12 @@ export interface CarData {
   reportId: number;
   vinBodyNumber?: VinBodyNumber[];
   frameNumber?: FrameNumber[];
+  stateNumber?: StateNumber[];
   comment: string;
   haveAServiceBook: boolean;
   additionalDocuments: string;
   sts: string;
   tcp: string;
-  stateNumber: string;
   carType: string;
   carBrand: string;
   carModel: string;
@@ -61,6 +61,14 @@ export interface FrameNumber {
   expertConfirm: boolean;
   numberState: string[];
   photo: string[];
+}
+
+export interface StateNumber {
+  stateNumberId?: number;
+  carDataId: number;
+  absent: boolean;
+  foreign: boolean;
+  stateNumber: string;
 }
 
 export interface AdditionalDocuments {

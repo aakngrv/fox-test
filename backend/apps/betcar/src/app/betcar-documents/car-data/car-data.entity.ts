@@ -3,6 +3,7 @@ import {
   CarData, 
   VinBodyNumber,
   FrameNumber,
+  StateNumber,
 } from '@backend/shared/shared-types';
 
 
@@ -12,12 +13,12 @@ export class CarDataEntity implements Entity<CarDataEntity>, CarData {
   public reportId: number;
   public vinBodyNumber?: VinBodyNumber[];
   public frameNumber?: FrameNumber[];
+  public stateNumber: StateNumber[];
   public comment: string;
   public haveAServiceBook: boolean;
   public additionalDocuments: string;
   public sts: string;
   public tcp: string;
-  public stateNumber: string;
   public carType: string;
   public carBrand: string;
   public carModel: string;
@@ -51,13 +52,12 @@ export class CarDataEntity implements Entity<CarDataEntity>, CarData {
     this.reportId = entity.reportId;
     this.vinBodyNumber = [];
     this.frameNumber = [];
+    this.stateNumber = [];
     this.comment = entity.comment;
     this.haveAServiceBook = entity.haveAServiceBook;
     this.additionalDocuments = entity.additionalDocuments;
     this.sts = entity.sts;
     this.tcp = entity.tcp;
-    this.reportId = entity.reportId;
-    this.stateNumber = entity.stateNumber;
     this.carType = entity.carType;
     this.carBrand = entity.carBrand;
     this.carModel = entity.carModel;

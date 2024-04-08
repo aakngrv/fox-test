@@ -19,6 +19,12 @@ export class UpdateCarDataDto {
     example: [1]
   })
   public frameNumber: number[];
+
+  @ApiProperty({
+    description: 'Массив с гос номером',
+    example: [1]
+  })
+  public stateNumber: number[];
   
   @ApiProperty({
     description: 'Комментрарий',
@@ -51,14 +57,6 @@ export class UpdateCarDataDto {
   })
   public tcp: string;
   
-    
-  @ApiProperty({
-    description: 'Гос номер',
-    example: 'string'
-  })
-  public stateNumber: string;
-  
-    
   @ApiProperty({
     description: 'Тип TC',
     example: 'string'
