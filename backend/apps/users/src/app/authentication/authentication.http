@@ -1,29 +1,30 @@
-# Create a new user
+# login user
+
+POST http://localhost/3333/api/auth/login HTTP/1.1
+Content-Type: application/json
+
+{
+  "email": "executor333@mail.ru",
+  "password": "Password123456"
+}
+
+###
+
 POST http://localhost:3333/api/auth/register HTTP/1.1
 Content-Type: application/json
 
 {
-  "email": "user2@notfound.local",
-  "phone": "55555555",
-  "firstname": "Keks",
-  "lastname": "Smith",
-  "password": "1234d56"
+  "email": "66@mail.ru",
+  "firstname": "jdshfasd",
+  "lastname": "sadfasd",
+  "password": "Password123456",
+  "phone": "234234234",
+  "city": "afsdfasdf"
 }
 
-###
+### 
 
-# Get user by ID
-GET http://localhost:3333/api/auth/b5374ef4-ffa6-4d56-8a56-9bcf2329512f HTTP/1.1
+# get jwt
 
-###
-
-# Login user by email and password
-POST http://localhost:3333/api/auth/login HTTP/1.1
-Content-Type: application/json
-
-{
-  "email": "user2@notfound.local",
-  "password": "123456"
-}
-
-###
+POST http://localhost:3333/api/auth/refresh HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NTQ3N2M1OGVhZTZhZDcxYzFlMzQ4ZGEiLCJlbWFpbCI6ImV4ZWN1dG9yM0BtYWlsLnJ1Iiwicm9sZSI6ImV4ZWN1dG9yIiwibGFzdG5hbWUiOiJJdmFub3YiLCJmaXJzdG5hbWUiOiJNYXgiLCJ0b2tlbklkIjoiMWUwODU0MDItM2Q3My00YTExLWEyMjItYmNkMTY1MGQzOWQ1IiwiaWF0IjoxNjk5MTk2MjE4LCJleHAiOjE3MDE3ODgyMTh9.ITHNe3n4PTLz3D27xXrdSOvXq_V0ttmZt6ZTErIQCiI

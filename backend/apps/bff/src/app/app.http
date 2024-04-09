@@ -1,0 +1,16 @@
+# Login user by email and password
+POST http://localhost:7000/api/users/login HTTP/1.1
+Content-Type: application/json
+
+{
+  "email": "executor333@mail.ru",
+  "password": "Password123456"
+}
+
+###
+
+# Get new JWT pair
+POST http://localhost:7000/api/users/refresh HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NTVlY2JhMDgxZmFjZmE1Y2M2MTEwYTAiLCJlbWFpbCI6InJAbWFpbC5ydSIsInJvbGUiOiJleGVjdXRvciIsImxhc3RuYW1lIjoiSXZhbm92IiwiZmlyc3RuYW1lIjoiTWF4IiwidG9rZW5JZCI6ImNiYzkxMGM5LTkyZDctNDU4YS05ZjM2LTcwOWI4ZmY3YWU1MiIsImlhdCI6MTcwMDcxMTM1MiwiZXhwIjoxNzAzMzAzMzUyfQ.FaqjVvLTAS9CDAEdxccvn5soIxPS2P0XxwxXYt_boUA
+
+###

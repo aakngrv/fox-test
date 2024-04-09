@@ -1,0 +1,163 @@
+version: '3.9'
+services:
+  mongodb:
+    image: mongo:latest
+    container_name: mongodb
+    restart: unless-stopped
+    volumes:
+      - mongo_db:/data/db
+    env_file:
+      - .env
+    healthcheck:
+      test: echo 'db.runCommand("ping").ok' | mongosh mongodb:27017/${MONGO_DB} --quiet 
+      interval: 10s
+      timeout: 10s
+      retries: 5
+
+  postgres:
+    image: postgres:14.0-alpine
+    container_name: postgres
+    restart: unless-stopped
+    volumes:
+      - postgresql_db:/var/lib/postgresql/data/
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB}
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U $$POSTGRES_USER -d $$POSTGRES_DB"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 3s
+
+  pgadmin4:
+    image: dpage/pgadmin4:7.5
+    container_name: pgadmin4
+    depends_on:
+      - postgres
+    volumes:
+      - pgadmin-data:/var/lib/pgadmin
+    env_file:
+      - .env
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.pgadmin.rule=Host(`pgadmin.betcar.ru`)"
+      - "traefik.http.routers.pgadmin.entrypoints=websecure"
+      - "traefik.http.routers.pgadmin.tls.certresolver=myresolver"
+      - "traefik.http.routers.pgadmin.service=pgadmin-service"
+      - "traefik.http.services.pgadmin-service.loadbalancer.server.port=80"
+
+  rabbitmq:
+    image: rabbitmq:3.11-management
+    container_name: rabbitmq
+    environment:
+      RABBITMQ_DEFAULT_USER: ${RABBIT_USER}
+      RABBITMQ_DEFAULT_PASS: ${RABBIT_PASSWORD}
+    restart: always
+    healthcheck:
+      test: rabbitmq-diagnostics -q ping
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  betcar:
+    container_name: betcar
+    build:      
+      target: production
+      dockerfile: ./apps/betcar/Dockerfile_prod
+    depends_on:
+      - postgres	
+      - mongodb
+      - rabbitmq
+    restart: always
+    env_file:
+      - .env
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.betcar.rule=Host(`api.service.betcar.ru`)"
+      - "traefik.http.routers.betcar.entrypoints=websecure"
+      - "traefik.http.routers.betcar.tls.certresolver=myresolver"
+      - "traefik.http.routers.betcar.service=betcar-service"
+      - "traefik.http.services.betcar-service.loadbalancer.server.port=4000"
+
+  users:
+    container_name: users
+    build:      
+      target: production
+      dockerfile: ./apps/users/Dockerfile_prod
+    depends_on:
+      - mongodb
+      - rabbitmq
+    restart: always
+    env_file:
+      - .env
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.users.rule=Host(`api.users.betcar.ru`)"
+      - "traefik.http.routers.users.entrypoints=websecure"
+      - "traefik.http.routers.users.tls.certresolver=myresolver"
+      - "traefik.http.routers.users.service=users-service"
+      - "traefik.http.services.users-service.loadbalancer.server.port=3000"
+
+  notify:
+    container_name: notify
+    build:      
+      target: production
+      dockerfile: ./apps/notify/Dockerfile_prod
+    depends_on:
+      - mongodb
+      - rabbitmq
+    restart: always
+    env_file:
+      - .env
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.notify.rule=Host(`api.notify.betcar.ru`)"
+      - "traefik.http.routers.notify.entrypoints=websecure"
+      - "traefik.http.routers.notify.tls.certresolver=myresolver"
+      - "traefik.http.routers.notify.service=notify-service"
+      - "traefik.http.services.notify-service.loadbalancer.server.port=5000"
+
+  bff:
+    container_name: bff
+    build:      
+      target: production
+      dockerfile: ./apps/bff/Dockerfile_prod
+    depends_on:
+      - mongodb
+      - rabbitmq
+    restart: always
+    env_file:
+      - .env
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.bff.rule=Host(`api.bff.betcar.ru`)"
+      - "traefik.http.routers.bff.entrypoints=websecure"
+      - "traefik.http.routers.bff.tls.certresolver=myresolver"
+      - "traefik.http.routers.bff.service=bff-service"
+      - "traefik.http.services.bff-service.loadbalancer.server.port=7000"
+
+  traefik:
+    image: traefik:v3.0
+    container_name: traefik
+    command:
+      - "--providers.docker=true"
+      - "--providers.docker.exposedbydefault=false"
+      - "--certificatesresolvers.myresolver.acme.httpchallenge=web"
+      - "--certificatesresolvers.myresolver.acme.httpchallenge=true"
+      - "--certificatesresolvers.myresolver.acme.email=info@betcar.ru"
+    ports:
+      - 80:80
+      - 443:443
+    labels:
+      - "traefik.enable=true"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+      - ~/letsencrypt:/letsencrypt
+      - ~/traefik_config/:/etc/traefik
+
+volumes:
+  mongo_db:
+  postgresql_db:
+  pgadmin-data:

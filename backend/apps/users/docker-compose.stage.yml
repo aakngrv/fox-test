@@ -1,0 +1,38 @@
+version: '3.9'
+services:
+  mongodb:
+    container_name: betcar.users.db
+    restart: 'always'
+    volumes:
+      - betcar.users.mongo.volume:/data/db
+    env_file:
+      - .betcar.users.mongodb.env
+    healthcheck:
+      test: echo 'db.runCommand("ping").ok' | mongosh mongodb:27017//betcar-users --quiet 
+      interval: 10s
+      timeout: 10s
+      retries: 5
+    networks:
+      - betcar.users.network
+
+  application:
+    image: betcar.users:latest
+    depends_on:
+      - mongodb
+    container_name: betcar.users.app
+    restart: 'always'
+    ports:
+      - 3000:3000
+    environment:
+      - NODE_ENV=production
+    env_file:
+      - .betcar.users.env
+    networks:
+      - betcar.users.network
+
+networks:
+  betcar.users.network:
+    driver: bridge
+
+volumes:
+  betcar.users.mongo.volume:
