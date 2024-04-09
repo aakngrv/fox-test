@@ -869,3 +869,4 @@ model ServiceInspection {
 
   @@map("service_inspections")
 }
+
