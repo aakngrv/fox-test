@@ -72,7 +72,6 @@ import {AdditionalDocumentsModule} from "./betcar-documents/car-data/additional-
     TestDriveModule,
     ExpertOpinionModule,
     ServiceInspectionModule,
-    AdditionalDocumentsModule,
   ],
   controllers: [],
   providers: [],
