@@ -9,6 +9,7 @@ export class TCPEntity implements Entity<TCPEntity>, TCP {
   public absent: boolean;
   public photo: string[];
   public tCPType: string;
+  public comment: string;
 
   constructor(tcp: TCP) {
     this.fillEntity(tcp);
@@ -20,6 +21,7 @@ export class TCPEntity implements Entity<TCPEntity>, TCP {
     this.absent = entity.absent;
     this.photo = entity.photo;
     this.tCPType = entity.tCPType;
+    this.comment = entity.comment;
   }
 
   public toObject():TCPEntity {
