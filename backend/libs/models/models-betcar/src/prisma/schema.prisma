@@ -137,7 +137,6 @@ model TCP {
   absent    Boolean  @default(false)
   tCPType   String   @default("") @map("tcp_type")
   photo     String[] @default([""])
-  comment   String   @default("")
 
   @@map("tcps")
 }

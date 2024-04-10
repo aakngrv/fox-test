@@ -37,11 +37,4 @@ export class TCPRdo {
   })
   @Expose()
   public photo: string[];
-
-  @ApiProperty({
-    description: 'Комментрарий',
-    example: 'string'
-  })
-  @Expose()
-  public comment: string;
 }
