@@ -75,7 +75,6 @@ export interface TCP {
   absent: boolean;
   tCPType: string;
   photo: string[];
-  comment: string;
 }
 
 export interface EngineNumber {

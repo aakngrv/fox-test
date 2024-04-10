@@ -25,10 +25,4 @@ export class CreateTCPDto {
     example: ["string"]
   })
   public photo: string[];
-
-  @ApiProperty({
-    description: 'Комментрарий',
-    example: 'string'
-  })
-  public comment: string;
 }

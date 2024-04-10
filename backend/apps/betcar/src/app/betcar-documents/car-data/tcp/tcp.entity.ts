@@ -7,7 +7,6 @@ export class TCPEntity implements Entity<TCPEntity>, TCP {
   public tCPId?: number;
   public carDataId: number;
   public absent: boolean;
-  public comment: string;
   public photo: string[];
   public tCPType: string;
 
@@ -19,7 +18,6 @@ export class TCPEntity implements Entity<TCPEntity>, TCP {
     this.tCPId = entity.tCPId;
     this.carDataId = entity.carDataId;
     this.absent = entity.absent;
-    this.comment = entity.comment;
     this.photo = entity.photo;
     this.tCPType = entity.tCPType;
   }
