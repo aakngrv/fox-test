@@ -8,7 +8,7 @@ export class FrameNumberEntity implements Entity<FrameNumberEntity>, FrameNumber
   public carDataId: number;
   public frameNumber: string;
   public expertConfirm: boolean;
-  public numberState: string[];
+  public numberState: boolean[];
   public photo: string[];
 
 

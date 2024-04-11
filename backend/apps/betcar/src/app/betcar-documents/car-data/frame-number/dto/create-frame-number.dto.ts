@@ -22,9 +22,9 @@ export class CreateFrameNumberDto {
 
   @ApiProperty({
     description: 'Состояние номера',
-    example: ["string"]
+    example: [false]
   })
-  public numberState: string[];
+  public numberState: boolean[];
 
   @ApiProperty({
     description: 'Фото номера рамы',

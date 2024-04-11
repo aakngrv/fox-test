@@ -7,7 +7,7 @@ export class EngineNumberEntity implements Entity<EngineNumberEntity>, EngineNum
   public engineNumberId?: number;
   public carDataId: number;
   public expertConfirm: boolean;
-  public numberState: string[];
+  public numberState: boolean[];
   public photo: string[];
 
 
