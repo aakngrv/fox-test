@@ -44,7 +44,7 @@ export class SellerDetailsController {
   @Delete('/:id')
   async destroy(@Param('id') id: string) {
     const sellerDetailsId = parseInt(id, 10);
-    this.sellerDetailsService.deleteSellerDetails(sellerDetailsId);
+    await this.sellerDetailsService.deleteSellerDetails(sellerDetailsId);
   }
   
   @ApiResponse({
