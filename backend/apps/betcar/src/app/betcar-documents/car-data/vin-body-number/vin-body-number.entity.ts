@@ -8,7 +8,7 @@ export class VinBodyNumberEntity implements Entity<VinBodyNumberEntity>, VinBody
   public carDataId: number;
   public vinNumber: string;
   public expertConfirm: boolean;
-  public numberState: string[];
+  public numberState: boolean[];
   public photo: string[];
 
 

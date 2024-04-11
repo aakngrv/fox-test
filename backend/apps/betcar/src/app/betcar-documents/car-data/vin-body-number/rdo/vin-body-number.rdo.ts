@@ -33,10 +33,10 @@ export class VinBodyNumberRdo {
 
   @ApiProperty({
     description: 'Состояние номера',
-    example: ["string"]
+    example: [false]
   })
   @Expose()
-  public numberState: string[];
+  public numberState: boolean[];
 
   @ApiProperty({
     description: 'Фото VIN',

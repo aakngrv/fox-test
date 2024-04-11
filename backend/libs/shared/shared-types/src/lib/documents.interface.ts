@@ -41,7 +41,7 @@ export interface VinBodyNumber {
   carDataId: number;
   vinNumber: string;
   expertConfirm: boolean;
-  numberState: string[];
+  numberState: boolean[];
   photo: string[];
 }
 
@@ -50,7 +50,7 @@ export interface FrameNumber {
   carDataId: number;
   frameNumber: string;
   expertConfirm: boolean;
-  numberState: string[];
+  numberState: boolean[];
   photo: string[];
 }
 
@@ -82,7 +82,7 @@ export interface EngineNumber {
   engineNumberId?: number;
   carDataId: number;
   expertConfirm: boolean;
-  numberState: string[];
+  numberState: boolean[];
   photo: string[];
 }
 
