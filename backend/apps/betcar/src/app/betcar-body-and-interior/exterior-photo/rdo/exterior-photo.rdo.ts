@@ -86,4 +86,11 @@ export class ExteriorPhotoRdo {
   })
   @Expose()
   public trunkOpen: string;
+
+  @ApiProperty({
+    description: 'Дополнительное фото',
+    example: ['string']
+  })
+  @Expose()
+  public addPhoto: string[];
 }

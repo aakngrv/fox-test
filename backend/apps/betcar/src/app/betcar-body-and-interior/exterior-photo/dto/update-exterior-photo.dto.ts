@@ -67,4 +67,10 @@ export class UpdateExteriorPhotoDto {
     example: 'string'
   })
   public trunkOpen: string;
+
+  @ApiProperty({
+    description: 'Дополнительное фото',
+    example: ['string']
+  })
+  public addPhoto: string[];
 }

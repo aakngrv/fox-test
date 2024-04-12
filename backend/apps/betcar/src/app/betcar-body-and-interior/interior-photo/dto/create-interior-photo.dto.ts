@@ -73,4 +73,10 @@ export class CreateInteriorPhotoDto {
     example: 'string'
   })
   public passengerSeatPhoto: string;
+
+  @ApiProperty({
+    description: 'Дополнительное фото',
+    example: ['string']
+  })
+  public addPhoto: string[];
 }
