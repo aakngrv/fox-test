@@ -15,6 +15,7 @@ export class ExteriorPhotoEntity implements Entity<ExteriorPhotoEntity>, Exterio
   public rightPhoto: string;
   public hoodOpen: string;
   public trunkOpen: string;
+  public addPhoto: string[];
 
   
   constructor(exteriorPhoto: ExteriorPhoto) {
@@ -34,6 +35,7 @@ export class ExteriorPhotoEntity implements Entity<ExteriorPhotoEntity>, Exterio
     this.rightPhoto = entity.rightPhoto;
     this.hoodOpen = entity.hoodOpen;
     this.trunkOpen = entity.trunkOpen;
+    this.addPhoto = entity.addPhoto;
   }
 
   public toObject(): ExteriorPhotoEntity {

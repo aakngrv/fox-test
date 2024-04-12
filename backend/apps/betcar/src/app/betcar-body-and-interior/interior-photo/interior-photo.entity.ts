@@ -16,6 +16,7 @@ export class InteriorPhotoEntity implements Entity<InteriorPhotoEntity>, Interio
   public backRightSeatsPhoto: string;
   public rightFrontDoor: string;
   public passengerSeatPhoto: string;
+  public addPhoto: string[];
   
   constructor(interiorPhoto: InteriorPhoto) {
     this.fillEntity(interiorPhoto);
@@ -35,6 +36,7 @@ export class InteriorPhotoEntity implements Entity<InteriorPhotoEntity>, Interio
     this.backRightSeatsPhoto = entity.backRightSeatsPhoto;
     this.rightFrontDoor = entity.rightFrontDoor;
     this.passengerSeatPhoto = entity.passengerSeatPhoto;
+    this.addPhoto = entity.addPhoto;
   }
 
   public toObject(): InteriorPhotoEntity {

@@ -247,6 +247,7 @@ export interface ExteriorPhoto {
   rightPhoto: string;
   hoodOpen: string;
   trunkOpen: string;
+  addPhoto: string[];
 }
   
 export interface InteriorPhoto {
@@ -263,6 +264,7 @@ export interface InteriorPhoto {
   backRightSeatsPhoto: string;
   rightFrontDoor: string;
   passengerSeatPhoto: string;
+  addPhoto: string[];
 }
 
 export interface RoundViewVideo {

@@ -93,4 +93,11 @@ export class InteriorPhotoRdo {
   })
   @Expose()
   public passengerSeatPhoto: string;
+
+  @ApiProperty({
+    description: 'Дополнительное фото',
+    example: ['string']
+  })
+  @Expose()
+  public addPhoto: string[];
 }
