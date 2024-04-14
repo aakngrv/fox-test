@@ -13,17 +13,20 @@ export class RoundViewVideoRdo {
     description: 'ID отчета',
     example: 1
   })
+  @Expose()
   public reportId: number;
 
   @ApiProperty({
     description: 'Круговое видео',
     example: 'string'
   })
+  @Expose()
   public video: string;
 
   @ApiProperty({
     description: 'Комментарий',
     example: 'string'
   })
+  @Expose()
   public comment: string;
 }
