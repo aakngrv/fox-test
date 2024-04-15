@@ -46,7 +46,7 @@ import {
 
 export interface Report {
   reportId?: number;
-  executorId: string;
+  userId: number;
   title: string;
   sellerDetails: SellerDetails[];
   carData: CarData[];

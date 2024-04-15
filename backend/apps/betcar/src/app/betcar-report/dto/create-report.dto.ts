@@ -3,10 +3,10 @@ import { ApiProperty } from '@nestjs/swagger';
 export class CreateReportDto {
    
   @ApiProperty({
-    description: 'ID подборщика',
-    example: '1'
+    description: 'ID пользователя',
+    example: 1
   })
-  public  executorId: string;
+  public  userId: number;
   
   @ApiProperty({
     description: 'Заголовок отчета',

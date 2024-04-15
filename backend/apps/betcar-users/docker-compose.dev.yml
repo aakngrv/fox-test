@@ -1,0 +1,41 @@
+services:
+  betcar.users.postgres:
+    image: postgres:14-alpine
+    container_name: betcar.users.postgres
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: test
+      POSTGRES_DB: betcar-users
+    ports:
+      - 5433:5432
+    volumes:
+      - betcar.postgres.users:/var/lib/postgresql/data
+
+    healthcheck:
+      test: [ "CMD-SHELL", "pg_isready -U admin -d test" ]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 10s
+
+    networks:
+      - betcar.users
+
+  betcar.users.pgadmin:
+    image: dpage/pgadmin4
+    container_name: betcar.users.pgadmin
+    environment:
+      PGADMIN_DEFAULT_EMAIL: "betcar@list.ru"
+      PGADMIN_DEFAULT_PASSWORD: "test"
+      PGADMIN_CONFIG_SERVER_MODE: "False"
+    ports:
+      - 8083:80
+    networks:
+      - betcar.users
+
+volumes:
+  betcar.postgres.users:
+
+networks:
+  betcar.users:
+    driver: bridge
