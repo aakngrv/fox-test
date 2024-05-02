@@ -40,7 +40,7 @@ export class ComplectationWheelsEntity implements Entity<ComplectationWheelsEnti
  
   public fillEntity(entity: ComplectationWheels): void {
     this.complectationWheelsId = entity.complectationWheelsId;
-    this.reportId = entity.complectationWheelsId;
+    this.reportId = entity.reportId;
     this.isTiresIdentical = entity.isTiresIdentical;
     this.additionalTireSets = entity.additionalTireSets;
     this.additionalSetsOfDisks = entity.additionalSetsOfDisks;
