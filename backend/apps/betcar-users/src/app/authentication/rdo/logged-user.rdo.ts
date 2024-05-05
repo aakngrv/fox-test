@@ -8,7 +8,7 @@ export class LoggedUserRdo {
     example: 1
   })
   @Expose()
-  public id: number;
+  public userId: number;
 
   @ApiProperty({
     description: 'Электронная почта пользователя',

@@ -1,6 +1,6 @@
 import { Expose, Transform } from 'class-transformer';
 import { ApiProperty } from '@nestjs/swagger';
-import { IsBoolean } from "class-validator";
+
 
 export class UserRdo {
 
@@ -9,7 +9,7 @@ export class UserRdo {
     example: 1
   })
   @Expose()
-  public id: number;
+  public userId: number;
 
   @ApiProperty({
     description: 'Номер телефона пользователя',

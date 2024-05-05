@@ -21,10 +21,6 @@ export class BetcarUserEntity implements User {
     this.fillEntity(betcarUser);
   }
 
-  public toObject() {
-    return {...this};
-  }
-
   public fillEntity(betcarUser: User) {
     this.userId = betcarUser.userId;
     this.email = betcarUser.email;
@@ -48,5 +44,9 @@ export class BetcarUserEntity implements User {
 
   public async comparePassword(password: string): Promise<boolean> {
     return compare(password, this.passwordHash);
+  }
+
+  public toObject(): BetcarUserEntity {
+    return {...this};
   }
 }

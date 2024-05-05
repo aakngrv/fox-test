@@ -4,6 +4,8 @@ import { CreateUserDto } from './dto/create-user.dto';
 import { AUTH_USER_EXISTS, AUTH_USER_NOT_FOUND, AUTH_USER_PASSWORD_WRONG } from './authentication.constants';
 import { BetcarUserEntity } from '../betcar-user/betcar-user.entity';
 import { LoginUserDto } from './dto/login-user.dto';
+import { User } from "@backend/shared/shared-types";
+
 
 @Injectable()
 export class AuthenticationService {
@@ -12,23 +14,30 @@ export class AuthenticationService {
   ) {}
 
   public async register(dto: CreateUserDto) {
-    const { 
-      email, 
-      phone, 
-      city,  
-      firstname, 
-      lastname, 
-      password, 
+    const {
+      firstname,
+      lastname,
+      email,
+      city,
+      phone,
+      customer,
+      executor,
+      admin,
+      password,
+      createdAt,
     } = dto;
 
     const betcarUser = {
-      email, 
-      firstname, 
-      lastname, 
-      city, 
+      firstname,
+      lastname,
+      email,
+      city,
       phone,
-      avatar: '',
-      passwordHash: ''
+      customer: true,
+      executor: false,
+      admin: false,
+      passwordHash: '',
+      createdAt: new Date(),
     };
 
     const existUser = await this.betcarUserRepository
@@ -46,7 +55,7 @@ export class AuthenticationService {
   }
 
   public async verifyUser(dto: LoginUserDto) {
-    const {email, password} = dto;
+    const { email, password} = dto;
     const existUser = await this.betcarUserRepository.findByEmail(email);
 
     if (!existUser) {
@@ -61,7 +70,7 @@ export class AuthenticationService {
     return betcarUserEntity.toObject();
   }
 
-  public async getUser(id: string) {
+  public async getUser(id: number): Promise<User> {
     return this.betcarUserRepository.findById(id);
   }
 

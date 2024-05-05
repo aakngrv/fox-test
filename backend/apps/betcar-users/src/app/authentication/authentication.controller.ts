@@ -6,6 +6,8 @@ import { UserRdo } from './rdo/user.rdo';
 import { LoggedUserRdo } from './rdo/logged-user.rdo';
 import { LoginUserDto } from './dto/login-user.dto';
 import { ApiResponse, ApiTags } from '@nestjs/swagger';
+
+
 @ApiTags('authentication')
 @Controller('auth')
 export class AuthenticationController {
@@ -46,7 +48,8 @@ export class AuthenticationController {
   })
   @Get(':id')
   public async show(@Param('id') id: string) {
-    const existUser = await this.authService.getUser(id);
+    const userId = parseInt(id, 10);
+    const existUser = await this.authService.getUser(userId);
     return fillObject(UserRdo, existUser);
   }
 }
