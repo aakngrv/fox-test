@@ -44,7 +44,7 @@ export class LocationController {
   @Delete('/:id')
   async destroy(@Param('id') id: string) {
     const locationId = parseInt(id, 10);
-    this.locationService.deleteLocation(locationId);
+    await this.locationService.deleteLocation(locationId);
   }
   
   @ApiResponse({

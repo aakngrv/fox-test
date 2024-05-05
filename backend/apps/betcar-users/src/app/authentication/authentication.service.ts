@@ -4,7 +4,8 @@ import { CreateUserDto } from './dto/create-user.dto';
 import { AUTH_USER_EXISTS, AUTH_USER_NOT_FOUND, AUTH_USER_PASSWORD_WRONG } from './authentication.constants';
 import { BetcarUserEntity } from '../betcar-user/betcar-user.entity';
 import { LoginUserDto } from './dto/login-user.dto';
-import { User } from "@backend/shared/shared-types";
+import {Location, User} from "@backend/shared/shared-types";
+import { UpdateUserDto } from "./dto/update-user.dto";
 
 
 @Injectable()
@@ -14,6 +15,7 @@ export class AuthenticationService {
   ) {}
 
   public async register(dto: CreateUserDto) {
+    
     const {
       firstname,
       lastname,
@@ -74,4 +76,47 @@ export class AuthenticationService {
     return this.betcarUserRepository.findById(id);
   }
 
+  public async deleteUser(id: number): Promise<void> {
+    await this.betcarUserRepository.destroy(id);
+  }
+
+  async updateUser(id: number, dto: UpdateUserDto): Promise<User> {
+    const {
+      firstname,
+      lastname,
+      email,
+      city,
+      phone,
+      customer,
+      executor,
+      admin,
+      passwordHash,
+      createdAt,
+    } = dto;
+
+    const betcarUser = {
+      firstname,
+      lastname,
+      email,
+      city,
+      phone,
+      customer: true,
+      executor: false,
+      admin: false,
+      passwordHash: '',
+      createdAt: new Date(),
+    };
+
+    const existUser = await this.betcarUserRepository
+      .findByEmail(email);
+
+    if (existUser) {
+      throw new ConflictException(AUTH_USER_EXISTS);
+    }
+
+    const userEntity = await new BetcarUserEntity(betcarUser)
+      .setPassword(passwordHash)
+    
+    return this.betcarUserRepository.update(id, new BetcarUserEntity(dto));
+  }
 }

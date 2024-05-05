@@ -1,4 +1,4 @@
-import { Body, Controller, Get, HttpCode, HttpStatus, Param, Post } from '@nestjs/common';
+import {Body, Controller, Delete, Get, HttpCode, HttpStatus, Param, Patch, Post} from '@nestjs/common';
 import { AuthenticationService } from './authentication.service';
 import { CreateUserDto } from './dto/create-user.dto';
 import { fillObject } from '@backend/util/util-core';
@@ -6,6 +6,7 @@ import { UserRdo } from './rdo/user.rdo';
 import { LoggedUserRdo } from './rdo/logged-user.rdo';
 import { LoginUserDto } from './dto/login-user.dto';
 import { ApiResponse, ApiTags } from '@nestjs/swagger';
+import { UpdateUserDto } from "./dto/update-user.dto";
 
 
 @ApiTags('authentication')
@@ -51,5 +52,28 @@ export class AuthenticationController {
     const userId = parseInt(id, 10);
     const existUser = await this.authService.getUser(userId);
     return fillObject(UserRdo, existUser);
+  }
+
+  @ApiResponse({
+    status: HttpStatus.NO_CONTENT,
+    description: 'Информация о пользователе успешно удалена.'
+  })
+  @HttpCode(HttpStatus.NO_CONTENT)
+  @Delete('/:id')
+  async destroy(@Param('id') id: string) {
+    const userId = parseInt(id, 10);
+    await this.authService.deleteUser(userId);
+  }
+
+  @ApiResponse({
+    status: HttpStatus.OK,
+    description: 'Информация о пользователе успешно обновлена.'
+  })
+  @HttpCode(HttpStatus.OK)
+  @Patch('/:id')
+  async update(@Param('id') id: string, @Body() dto: UpdateUserDto) {
+    const userId = parseInt(id, 10);
+    const updatedUser = this.authService.updateUser(userId, dto)
+    return fillObject(UserRdo, updatedUser);
   }
 }

@@ -3,7 +3,7 @@ import { IsBoolean, IsEmail, IsString } from 'class-validator';
 import { AUTH_USER_EMAIL_NOT_VALID } from '../authentication.constants';
 
 
-export class CreateUserDto {
+export class UpdateUserDto {
 
   @ApiProperty({
     description: 'Почта пользователя',
@@ -43,7 +43,7 @@ export class CreateUserDto {
     example: 'Password123456'
   })
   @IsString()
-  public password: string;
+  public passwordHash: string;
 
   @ApiProperty({
     description: 'Роль - осмотрщик',

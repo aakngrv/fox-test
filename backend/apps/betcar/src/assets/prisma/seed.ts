@@ -8,7 +8,7 @@ async function fillDb() {
     update: {},
     create: {
       reportId: 1,
-      executorId: "string",
+      userId: 1,
       title: "string",
     }
   });

@@ -7,6 +7,7 @@ import { PrismaService } from '../prisma/prisma.service';
 
 @Injectable()
 export class BetcarUserRepository implements CRUDRepository<BetcarUserEntity, number, User> {
+  
   constructor(private readonly prisma: PrismaService) {}
 
   public async create(item: BetcarUserEntity): Promise<User> {
