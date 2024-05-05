@@ -76,13 +76,6 @@ export class ReportRdo {
   public carData: CarData[];
 
   @ApiProperty({
-    description: 'Дополнительные документы',
-    example: [0]
-  })
-  @Expose()
-  public additionalDocuments: AdditionalDocuments[];
-
-  @ApiProperty({
     description: 'ПТС',
     example: [0]
   })

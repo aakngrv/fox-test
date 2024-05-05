@@ -4,14 +4,18 @@ import { CreateUserDto } from './dto/create-user.dto';
 import { AUTH_USER_EXISTS, AUTH_USER_NOT_FOUND, AUTH_USER_PASSWORD_WRONG } from './authentication.constants';
 import { BetcarUserEntity } from '../betcar-user/betcar-user.entity';
 import { LoginUserDto } from './dto/login-user.dto';
-import {Location, User} from "@backend/shared/shared-types";
+import { User, TokenPayload } from "@backend/shared/shared-types";
 import { UpdateUserDto } from "./dto/update-user.dto";
+import { JwtService } from '@nestjs/jwt';
+import { ConfigService } from '@nestjs/config';
 
 
 @Injectable()
 export class AuthenticationService {
   constructor(
-    private readonly betcarUserRepository: BetcarUserRepository
+    private readonly betcarUserRepository: BetcarUserRepository,
+    private readonly configService: ConfigService,
+    private readonly jwtService: JwtService,
   ) {}
 
   public async register(dto: CreateUserDto) {
@@ -107,16 +111,32 @@ export class AuthenticationService {
       createdAt: new Date(),
     };
 
-    const existUser = await this.betcarUserRepository
-      .findByEmail(email);
+    // const existUser = await this.betcarUserRepository
+    //   .findByEmail(email);
+    //
+    // if (existUser) {
+    //   throw new ConflictException(AUTH_USER_EXISTS);
+    // }
 
-    if (existUser) {
-      throw new ConflictException(AUTH_USER_EXISTS);
-    }
-
-    const userEntity = await new BetcarUserEntity(betcarUser)
+    const userUpdateEntity = await new BetcarUserEntity(betcarUser)
       .setPassword(passwordHash)
     
-    return this.betcarUserRepository.update(id, new BetcarUserEntity(dto));
+    return this.betcarUserRepository.update(id, userUpdateEntity);
+  }
+
+  public async createUserToken(user: User) {
+    const payload: TokenPayload = {
+      sub: user.userId,
+      email: user.email,
+      customer: user.customer,
+      executor: user.executor,
+      admin: user.admin,
+      lastname: user.lastname,
+      firstname: user.firstname,
+    };
+
+    return {
+      accessToken: await this.jwtService.signAsync(payload),
+    }
   }
 }

@@ -6,3 +6,4 @@ export * from './lib/technical-inspection.interface';
 export * from './lib/expert-opinion.interface';
 export * from './lib/report.interface';
 export * from './lib/service-inspection.interface';
+export * from './lib/token-payload.interface';

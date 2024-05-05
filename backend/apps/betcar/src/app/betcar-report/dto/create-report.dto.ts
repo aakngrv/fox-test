@@ -25,12 +25,6 @@ export class CreateReportDto {
     example: [0]
   })
   public carData: number[];
-
-  @ApiProperty({
-    description: 'Массив объектов с дополнительными документами',
-    example: [0]
-  })
-  public additionalDocuments: number[];
   
   @ApiProperty({
     description: 'Массив объектов с СТС',
