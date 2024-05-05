@@ -1,4 +1,4 @@
-import { ConflictException, Injectable, NotFoundException, UnauthorizedException } from '@nestjs/common';
+import { ConflictException, Injectable, NotFoundException, UnauthorizedException, Inject } from '@nestjs/common';
 import { BetcarUserRepository } from '../betcar-user/betcar-user.repository';
 import { CreateUserDto } from './dto/create-user.dto';
 import { AUTH_USER_EXISTS, AUTH_USER_NOT_FOUND, AUTH_USER_PASSWORD_WRONG } from './authentication.constants';
@@ -7,7 +7,8 @@ import { LoginUserDto } from './dto/login-user.dto';
 import { User, TokenPayload } from "@backend/shared/shared-types";
 import { UpdateUserDto } from "./dto/update-user.dto";
 import { JwtService } from '@nestjs/jwt';
-import { ConfigService } from '@nestjs/config';
+import { ConfigService, ConfigType } from '@nestjs/config';
+import { jwtConfig } from '@backend/config/config-users';
 
 
 @Injectable()
@@ -16,6 +17,7 @@ export class AuthenticationService {
     private readonly betcarUserRepository: BetcarUserRepository,
     private readonly configService: ConfigService,
     private readonly jwtService: JwtService,
+    @Inject (jwtConfig.KEY) private readonly jwtOptions: ConfigType<typeof jwtConfig>,
   ) {}
 
   public async register(dto: CreateUserDto) {
@@ -137,6 +139,10 @@ export class AuthenticationService {
 
     return {
       accessToken: await this.jwtService.signAsync(payload),
+      refreshToken: await this.jwtService.signAsync(payload, {
+        secret: this.jwtOptions.refreshTokenSecret,
+        expiresIn: this.jwtOptions.refreshTokenExpiresIn
+      })
     }
   }
 }

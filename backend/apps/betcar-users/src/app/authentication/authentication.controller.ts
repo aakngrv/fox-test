@@ -1,4 +1,4 @@
-import {Body, Controller, Delete, Get, HttpCode, HttpStatus, Param, Patch, Post, UseGuards } from '@nestjs/common';
+import {Body, Controller, Delete, Get, HttpCode, HttpStatus, Param, Patch, Post, UseGuards, Req } from '@nestjs/common';
 import { AuthenticationService } from './authentication.service';
 import { CreateUserDto } from './dto/create-user.dto';
 import { fillObject } from '@backend/util/util-core';
@@ -8,6 +8,8 @@ import { LoginUserDto } from './dto/login-user.dto';
 import { ApiResponse, ApiTags } from '@nestjs/swagger';
 import { UpdateUserDto } from "./dto/update-user.dto";
 import { JwtAuthGuard } from './guards/jwt-auth.guard';
+import { JwtRefreshGuard } from './guards/jwt-refresh.guard';
+import { RequestWithUser } from '@backend/shared/shared-types';
 
 
 @ApiTags('authentication')
@@ -27,6 +29,7 @@ export class AuthenticationController {
     return fillObject(UserRdo, newUser);
   }
 
+  // @UseGuards(LocalAuthGuard)
   @ApiResponse({
     type: LoggedUserRdo,
     status: HttpStatus.OK,
@@ -50,7 +53,7 @@ export class AuthenticationController {
     status: HttpStatus.OK,
     description: 'User found'
   })
-  @UseGuards(JwtAuthGuard)
+  // @UseGuards(JwtAuthGuard)
   @Get(':id')
   public async show(@Param('id') id: string) {
     const userId = parseInt(id, 10);
@@ -79,5 +82,16 @@ export class AuthenticationController {
     const userId = parseInt(id, 10);
     const updatedUser = this.authService.updateUser(userId, dto)
     return fillObject(UserRdo, updatedUser);
+  }
+
+  @UseGuards(JwtRefreshGuard)
+  @Post('refresh')
+  @HttpCode(HttpStatus.OK)
+  @ApiResponse({
+    status: HttpStatus.OK,
+    description: 'Get a new access/refresh tokens'
+  })
+  public async refreshToken(@Req() { user }: RequestWithUser) {
+    return this.authService.createUserToken(user);
   }
 }
