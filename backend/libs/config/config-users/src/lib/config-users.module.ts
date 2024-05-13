@@ -1,18 +1,16 @@
 import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
-import appConfig from './config/app.config';
-import dbConfig from './config/db.config';
-import jwtConfig from './config/jwt.config';
-import rabbitConfig from './config/rabbit.config';
+import appConfig from './app.config';
+import jwtConfig from './jwt.config';
 
-const ENV_USERS_FILE_PATH = 'apps/users/.env.dev';
+const ENV_USERS_FILE_PATH = 'apps/betcar-users/.users.env';
 
 @Module({
   imports: [
     ConfigModule.forRoot({
       isGlobal: true,
       cache: true,
-      load: [ appConfig, dbConfig, jwtConfig, rabbitConfig ],
+      load: [appConfig, jwtConfig],
       envFilePath: ENV_USERS_FILE_PATH
     }),
   ]

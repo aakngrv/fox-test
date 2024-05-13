@@ -8,9 +8,41 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+// ** Модель сервиса "betcar-users" ** //
+
+model User {
+  userId       Int      @id @default(autoincrement()) @map("user_id")
+  firstname    String   @default("")
+  lastname     String   @default("")
+  email        String   @unique @default("")
+  city         String   @default("")
+  phone        String   @default("")
+  passwordHash String   @default("")
+  executor     Boolean  @default(false)
+  customer     Boolean  @default(false)
+  admin        Boolean  @default(false)
+  createdAt    DateTime @default(now()) @map("created_at")
+
+  @@map("users")
+}
+
+model RefreshToken {
+  refreshTokenId Int      @id @default(autoincrement()) @map("refresh_token_id")
+  userId         Int      @map("user_id")
+  tokenId        Int      @map("token_id")
+  createdAt      DateTime @default(now()) @map("created_at")
+  expiresIn      DateTime @default(now()) @map("expires_in")
+
+  @@map("refresh_tokens")
+}
+
+// ************************************************************************************************ //
+
+// ** Модели сервиса "betcar" ** //
+
 model Report {
   reportId                Int                       @id @default(autoincrement()) @map("report_id")
-  executorId              String?                   @map("executor_id")
+  userId                  Int                       @map("user_id")
   title                   String                    @default("")
   createdAt               DateTime                  @default(now()) @map("created_at")
   publishAt               DateTime                  @updatedAt @map("publish_at")
@@ -48,6 +80,8 @@ model Report {
 
   @@map("reports")
 }
+
+// ************************************************************************************ //
 
 // ** Модели сервиса "Документы" ** //
 
