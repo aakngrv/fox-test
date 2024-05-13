@@ -33,7 +33,6 @@ import { DashboardModule } from "./betcar-technical-inspection/dashboard/dashboa
 import { TestDriveModule } from "./betcar-technical-inspection/test-drive/test-drive.module";
 import { ExpertOpinionModule } from "./betcar-expert-opinion/expert-opinion/expert-opinion.module";
 import { ServiceInspectionModule } from "./betcar-service-inspection/service-inspection/service-inspection.module";
-import {AdditionalDocumentsModule} from "./betcar-documents/car-data/additional-documents/additional-documents.module";
 
 
 @Module({

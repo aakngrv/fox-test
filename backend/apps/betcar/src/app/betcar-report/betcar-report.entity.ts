@@ -38,7 +38,7 @@ import {
 export class BetcarReportEntity implements Entity<BetcarReportEntity>, Report {
 
   public reportId?: number;
-  public executorId: string;
+  public userId: number;
   public title: string;
   public sellerDetails: SellerDetails[];
   public carData: CarData[];
@@ -80,7 +80,7 @@ export class BetcarReportEntity implements Entity<BetcarReportEntity>, Report {
 
   public fillEntity(entity: Report): void {
     this.reportId = entity.reportId;
-    this.executorId = entity.executorId;
+    this.userId = entity.userId;
     this.title = entity.title;
     this.sellerDetails = [];
     this.carData = [];

@@ -1,13 +1,15 @@
-import { UserRole } from "./user-role.enum";
-
+import { Report } from "./report.interface";
 
 export interface User {
-  _id?: string;
+  userId?: number;
   firstname: string;
   lastname: string;
   email: string;
   city: string;
   phone: string;
+  customer: boolean;
+  executor: boolean;
+  admin: boolean;
   passwordHash: string;
-  role: UserRole;
+  createdAt: Date;
 }

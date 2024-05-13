@@ -2,9 +2,11 @@ import { TokenPayload, User } from '@backend/shared/shared-types';
 
 export function createJWTPayload(user: User): TokenPayload {
   return {
-    sub: user._id,
+    sub: user.userId,
     email: user.email,
-    role: user.role,
+    customer: user.customer,
+    executor: user.executor,
+    admin: user.admin,
     lastname: user.lastname,
     firstname: user.firstname,
   };

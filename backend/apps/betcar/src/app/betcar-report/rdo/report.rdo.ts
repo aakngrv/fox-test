@@ -41,11 +41,11 @@ import { Expose } from 'class-transformer';
 export class ReportRdo {
 
   @ApiProperty({
-    description: 'ID подборщика',
-    example: '1'
+    description: 'ID пользователя',
+    example: 1
   })
   @Expose()
-  public  executorId: string;
+  public  userId: number;
   
   @ApiProperty({
     description: 'ID отчета',
@@ -74,13 +74,6 @@ export class ReportRdo {
   })
   @Expose()
   public carData: CarData[];
-
-  @ApiProperty({
-    description: 'Дополнительные документы',
-    example: [0]
-  })
-  @Expose()
-  public additionalDocuments: AdditionalDocuments[];
 
   @ApiProperty({
     description: 'ПТС',

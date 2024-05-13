@@ -1,0 +1,33 @@
+# Create a new user
+POST http://localhost:2000/api/auth/register HTTP/1.1
+Content-Type: application/json
+
+{
+  "email": "aakngrv55@mail.ru",
+  "firstname": "Keks",
+  "lastname": "Smith",
+  "password": "123456",
+  "city": "Holland",
+  "phone": "89923457584"
+}
+
+###
+
+# Get user by ID
+GET http://localhost:3000/api/auth/2 HTTP/1.1
+
+###
+
+# Login user by email and password
+POST http://localhost:3000/api/auth/login HTTP/1.1
+Content-Type: application/json
+
+{
+  "email": "d@mail.ru",
+  "password": "Password123456"
+}
+
+###
+
+POST http://localhost:3000/api/auth/refresh HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjQsImVtYWlsIjoiZGZAbWFpbC5ydSIsImN1c3RvbWVyIjp0cnVlLCJleGVjdXRvciI6ZmFsc2UsImFkbWluIjpmYWxzZSwibGFzdG5hbWUiOiJJdmFub3YiLCJmaXJzdG5hbWUiOiJNYXgiLCJpYXQiOjE3MTQ5MzQxMjIsImV4cCI6MTcxNzUyNjEyMn0.yxJ-HLS0z_V3cDEiPv11tnPJZfmdhsS7zgfeCjgZK74
