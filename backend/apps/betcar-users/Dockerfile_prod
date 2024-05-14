@@ -2,7 +2,9 @@
 # BUILD FOR LOCAL DEVELOPMENT
 ###################
 
-FROM node:18-alpine As development
+FROM node:18-slim As development
+
+RUN apt-get update && apt-get install -y openssl libssl-dev
 
 USER node
 
@@ -12,11 +14,15 @@ COPY --chown=node:node . .
 
 RUN npm ci
 
+RUN npx prisma generate --schema ./apps/betcar/src/assets/prisma/schema.prisma
+
 ###################
 # BUILD FOR PRODUCTION
 ###################
 
 FROM development As build
+
+USER node
 
 WORKDIR /proj
 
@@ -26,13 +32,21 @@ ENV NODE_ENV=production
 
 RUN npm ci --omit=dev && npm cache clean --force
 
+RUN npx prisma generate --schema ./apps/betcar/src/assets/prisma/schema.prisma
+
 ###################
 # PRODUCTION
 ###################
 
-FROM node:18-alpine As production
+FROM node:18-slim As production
+
+RUN apt-get update -y && apt-get install -y openssl
+
+USER node
 
 COPY --chown=node:node --from=build /proj/node_modules ./node_modules
 COPY --chown=node:node --from=build /proj/dist/apps/betcar-users ./dist/apps/betcar-users
+COPY --chown=node:node --from=build /proj/package*.json ./
+COPY --chown=node:node --from=build /proj/dist/apps/betcar/assets/prisma ./prisma
 
 CMD [ "node", "/dist/apps/betcar-users/main.js" ]
