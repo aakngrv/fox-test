@@ -20,7 +20,7 @@ FROM development As build
 
 WORKDIR /proj
 
-RUN npm run betcar-users:build:production
+RUN npm run build:users
 
 ENV NODE_ENV=production
 
