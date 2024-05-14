@@ -1,19 +1,5 @@
 version: '3.9'
 services:
-  mongodb:
-    image: mongo:latest
-    container_name: mongodb
-    restart: unless-stopped
-    volumes:
-      - mongo_db:/data/db
-    env_file:
-      - .env
-    healthcheck:
-      test: echo 'db.runCommand("ping").ok' | mongosh mongodb:27017/${MONGO_DB} --quiet 
-      interval: 10s
-      timeout: 10s
-      retries: 5
-
   postgres:
     image: postgres:14.0-alpine
     container_name: postgres
@@ -68,7 +54,6 @@ services:
       dockerfile: ./apps/betcar/Dockerfile_prod
     depends_on:
       - postgres	
-      - mongodb
       - rabbitmq
     restart: always
     env_file:
@@ -85,10 +70,11 @@ services:
     container_name: users
     build:      
       target: production
-      dockerfile: ./apps/users/Dockerfile_prod
-    depends_on:
-      - mongodb
+      dockerfile: ./apps/betcar-users/Dockerfile_prod
+    depends_on:   
+      - postgres
       - rabbitmq
+      - betcar
     restart: always
     env_file:
       - .env
@@ -99,44 +85,6 @@ services:
       - "traefik.http.routers.users.tls.certresolver=myresolver"
       - "traefik.http.routers.users.service=users-service"
       - "traefik.http.services.users-service.loadbalancer.server.port=3000"
-
-  notify:
-    container_name: notify
-    build:      
-      target: production
-      dockerfile: ./apps/notify/Dockerfile_prod
-    depends_on:
-      - mongodb
-      - rabbitmq
-    restart: always
-    env_file:
-      - .env
-    labels:
-      - "traefik.enable=true"
-      - "traefik.http.routers.notify.rule=Host(`api.notify.betcar.ru`)"
-      - "traefik.http.routers.notify.entrypoints=websecure"
-      - "traefik.http.routers.notify.tls.certresolver=myresolver"
-      - "traefik.http.routers.notify.service=notify-service"
-      - "traefik.http.services.notify-service.loadbalancer.server.port=5000"
-
-  bff:
-    container_name: bff
-    build:      
-      target: production
-      dockerfile: ./apps/bff/Dockerfile_prod
-    depends_on:
-      - mongodb
-      - rabbitmq
-    restart: always
-    env_file:
-      - .env
-    labels:
-      - "traefik.enable=true"
-      - "traefik.http.routers.bff.rule=Host(`api.bff.betcar.ru`)"
-      - "traefik.http.routers.bff.entrypoints=websecure"
-      - "traefik.http.routers.bff.tls.certresolver=myresolver"
-      - "traefik.http.routers.bff.service=bff-service"
-      - "traefik.http.services.bff-service.loadbalancer.server.port=7000"
 
   traefik:
     image: traefik:v3.0
@@ -158,6 +106,5 @@ services:
       - ~/traefik_config/:/etc/traefik
 
 volumes:
-  mongo_db:
   postgresql_db:
   pgadmin-data:

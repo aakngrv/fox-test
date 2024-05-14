@@ -3,16 +3,10 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
-    "build:users": "nx build users",
-    "serve:users": "nx serve users", 
-    "build:notify": "nx build notify",
-    "serve:notify": "nx serve notify",
+    "build:users": "nx build betcar-users",
+    "serve:users": "nx serve betcar-users", 
     "build:betcar": "nx build betcar",
     "serve:betcar": "nx serve betcar",
-    "build:bff": "nx build bff",
-    "serve:bff": "nx serve bff",
-    "build:uploader": "nx build uploader",
-    "serve:uploader": "nx serve uploader",
     "start:betcar:prod": "node /dist/apps/betcar/main",
     "start:betcar:migrate:prod": "prisma migrate deploy && npm run start:betcar:prod"
   },
