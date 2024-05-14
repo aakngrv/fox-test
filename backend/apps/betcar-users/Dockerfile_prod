@@ -14,8 +14,6 @@ COPY --chown=node:node . .
 
 RUN npm ci
 
-RUN npx prisma generate --schema ./apps/betcar-users/src/assets/prisma/schema.prisma
-
 ###################
 # BUILD FOR PRODUCTION
 ###################
@@ -32,8 +30,6 @@ ENV NODE_ENV=production
 
 RUN npm ci --omit=dev && npm cache clean --force
 
-RUN npx prisma generate --schema ./apps/betcar-users/src/assets/prisma/schema.prisma
-
 ###################
 # PRODUCTION
 ###################
@@ -47,6 +43,5 @@ USER node
 COPY --chown=node:node --from=build /proj/node_modules ./node_modules
 COPY --chown=node:node --from=build /proj/dist/apps/betcar-users ./dist/apps/betcar-users
 COPY --chown=node:node --from=build /proj/package*.json ./
-COPY --chown=node:node --from=build /proj/dist/apps/betcar-users/assets/prisma ./prisma
 
 CMD [ "node", "/dist/apps/betcar-users/main.js" ]
