@@ -56,51 +56,39 @@ export class BetcarReportRepository implements CRUDRepository<BetcarReportEntity
           connect: []
         },
         engineCompartmentDamage: {
-          // create: [{ addElement: true }, { removeElement: true}],
           connect: []
         },
         frontSideDamage: {
-          // create: [{ addElementFront: true }, { removeElement: true}],
           connect: []
         },
         leftSideDamage: {
-          // create: [{ addElementLeft: true }, { removeElement: true}],
           connect: []
         },
         backSideDamage: {
-          // create: [{ addElementBack: true }, { removeElement: true}],
           connect: []
         },
         trunkDamage: {
-          // create: [{ addElementTrunk: true }, { removeElement: true}],
           connect: []
         },
         rightSideDamage: {
-          // create: [{ addElementRight: true }, { removeElement: true}],
           connect: []
         },
         roofDamage: {
-          // create: [{ addElementRoof: true }, { removeElement: true}],
           connect: []
         },
         glassDamage: {
-          // create: [{ addElementGlass: true }, { removeElement: true}],
           connect: []
         },
         discDamage: {
-          // create: [{ addElementDisc: true }, { removeElement: true}],
           connect: []
         },
         interiorDamage: {
-          // create: [{ addElementInterior: true }, { removeElement: true}],
           connect: []
         },
         exteriorPhoto: {
-          // create: [{ addElementInterior: true }, { removeElement: true}],
           connect: []
         },
         interiorPhoto: {
-          // create: [{ addElementInterior: true }, { removeElement: true}],
           connect: []
         },
         roundViewVideo: {
@@ -124,7 +112,17 @@ export class BetcarReportRepository implements CRUDRepository<BetcarReportEntity
       }, 
       include: {
         sellerDetails: true,
-        carData: true,
+        carData: {
+          include: {
+            vinBodyNumber: true,
+            frameNumber: true,
+            stateNumber: true,
+            tCP: true,
+            sTS: true,
+            engineNumber: true,
+            additionalDocuments: true,
+          }
+        },
         location: true,
         complectationBody: true,
         complectationWheels: true,
@@ -136,16 +134,56 @@ export class BetcarReportRepository implements CRUDRepository<BetcarReportEntity
         complectationProtection: true,
         complectationOther: true,
         paintworkInspection: true,
-        engineCompartmentDamage: true,
-        frontSideDamage: true,
-        leftSideDamage: true,
-        backSideDamage: true,
-        trunkDamage: true,
-        rightSideDamage: true,
-        roofDamage: true,
-        glassDamage: true,
-        discDamage: true,
-        interiorDamage: true,
+        engineCompartmentDamage: {
+          include: {
+            addElement: true,
+          }
+        },
+        frontSideDamage: {
+          include: {
+            addElementFront: true
+          }
+        },
+        leftSideDamage: {
+          include: {
+            addElementLeft: true
+          }
+        },
+        backSideDamage: {
+          include: {
+            addElementBack: true
+          }
+        },
+        trunkDamage: {
+          include: {
+            addElementTrunk: true
+          }
+        },
+        rightSideDamage: {
+          include: {
+            addElementRight: true
+          }
+        },
+        roofDamage: {
+          include: {
+            addElementRoof: true
+          }
+        },
+        glassDamage: {
+          include: {
+            addElementGlass: true
+          }
+        },
+        discDamage: {
+          include: {
+            addElementDisc: true
+          }
+        },
+        interiorDamage: {
+          include: {
+            addElementInterior: true
+          }
+        },
         exteriorPhoto: true,
         interiorPhoto: true,
         roundViewVideo: true,
@@ -173,7 +211,17 @@ export class BetcarReportRepository implements CRUDRepository<BetcarReportEntity
       },
       include: {
         sellerDetails: true,
-        carData: true,
+        carData: {
+          include: {
+            vinBodyNumber: true,
+            frameNumber: true,
+            stateNumber: true,
+            tCP: true,
+            sTS: true,
+            engineNumber: true,
+            additionalDocuments: true,
+          }
+        },
         location: true,
         complectationBody: true,
         complectationWheels: true,
@@ -185,16 +233,56 @@ export class BetcarReportRepository implements CRUDRepository<BetcarReportEntity
         complectationProtection: true,
         complectationOther: true,
         paintworkInspection: true,
-        engineCompartmentDamage: true,
-        frontSideDamage: true,
-        leftSideDamage: true,
-        backSideDamage: true,
-        trunkDamage: true,
-        rightSideDamage: true,
-        roofDamage: true,
-        glassDamage: true,
-        discDamage: true,
-        interiorDamage: true,
+        engineCompartmentDamage: {
+          include: {
+            addElement: true,
+          }
+        },
+        frontSideDamage: {
+          include: {
+            addElementFront: true
+          }
+        },
+        leftSideDamage: {
+          include: {
+            addElementLeft: true
+          }
+        },
+        backSideDamage: {
+          include: {
+            addElementBack: true
+          }
+        },
+        trunkDamage: {
+          include: {
+            addElementTrunk: true
+          }
+        },
+        rightSideDamage: {
+          include: {
+            addElementRight: true
+          }
+        },
+        roofDamage: {
+          include: {
+            addElementRoof: true
+          }
+        },
+        glassDamage: {
+          include: {
+            addElementGlass: true
+          }
+        },
+        discDamage: {
+          include: {
+            addElementDisc: true
+          }
+        },
+        interiorDamage: {
+          include: {
+            addElementInterior: true
+          }
+        },
         exteriorPhoto: true,
         interiorPhoto: true,
         roundViewVideo: true,
@@ -211,7 +299,17 @@ export class BetcarReportRepository implements CRUDRepository<BetcarReportEntity
     return this.prisma.report.findMany({
       include: {
         sellerDetails: true,
-        carData: true,
+        carData: {
+          include: {
+            vinBodyNumber: true,
+            frameNumber: true,
+            stateNumber: true,
+            tCP: true,
+            sTS: true,
+            engineNumber: true,
+            additionalDocuments: true,
+          }
+        },
         location: true,
         complectationBody: true,
         complectationWheels: true,
@@ -223,16 +321,56 @@ export class BetcarReportRepository implements CRUDRepository<BetcarReportEntity
         complectationProtection: true,
         complectationOther: true,
         paintworkInspection: true,
-        engineCompartmentDamage: true,
-        frontSideDamage: true,
-        leftSideDamage: true,
-        backSideDamage: true,
-        trunkDamage: true,
-        rightSideDamage: true,
-        roofDamage: true,
-        glassDamage: true,
-        discDamage: true,
-        interiorDamage: true,
+        engineCompartmentDamage: {
+          include: {
+            addElement: true,
+          }
+        },
+        frontSideDamage: {
+          include: {
+            addElementFront: true
+          }
+        },
+        leftSideDamage: {
+          include: {
+            addElementLeft: true
+          }
+        },
+        backSideDamage: {
+          include: {
+            addElementBack: true
+          }
+        },
+        trunkDamage: {
+          include: {
+            addElementTrunk: true
+          }
+        },
+        rightSideDamage: {
+          include: {
+            addElementRight: true
+          }
+        },
+        roofDamage: {
+          include: {
+            addElementRoof: true
+          }
+        },
+        glassDamage: {
+          include: {
+            addElementGlass: true
+          }
+        },
+        discDamage: {
+          include: {
+            addElementDisc: true
+          }
+        },
+        interiorDamage: {
+          include: {
+            addElementInterior: true
+          }
+        },
         exteriorPhoto: true,
         interiorPhoto: true,
         roundViewVideo: true,
