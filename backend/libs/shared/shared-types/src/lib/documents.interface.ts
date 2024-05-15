@@ -28,7 +28,6 @@ export interface CarData {
   gearboxType: string;
   driveUnit: string;
   steeringWheelLocation: string;
-  modification: string;
   engineNumber?: EngineNumber[];
   engineCapacity: string;
   power: string;
@@ -80,6 +79,7 @@ export interface TCP {
 
 export interface EngineNumber {
   engineNumberId?: number;
+  engineNumber: string;
   carDataId: number;
   expertConfirm: boolean;
   numberState: boolean[];
@@ -91,6 +91,7 @@ export interface STS {
   carDataId: number;
   absent: boolean;
   photo: string;
+  comment: string;
 }
 
 export interface Location {

@@ -93,12 +93,6 @@ export class CreateCarDataDto {
   public steeringWheelLocation: string;
 
   @ApiProperty({
-    description: 'Модификация',
-    example: "string"
-  })
-  public modification: string;
-
-  @ApiProperty({
     description: 'Массив с номером двигателя',
     example: [1]
   })

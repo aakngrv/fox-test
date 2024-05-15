@@ -18,11 +18,11 @@ export class TestDriveRdo {
   public reportId: number;
 
   @ApiProperty({
-    description: 'Tест драйв',
+    description: 'Все системы работают исправно',
     example: false
   })
   @Expose()
-  public testDrive: boolean;
+  public allSystemOk: boolean;
 
   @ApiProperty({
     description: 'Подвеска',

@@ -9,6 +9,7 @@ export class EngineNumberEntity implements Entity<EngineNumberEntity>, EngineNum
   public expertConfirm: boolean;
   public numberState: boolean[];
   public photo: string[];
+  public engineNumber: string;
 
 
   constructor(engineNumber: EngineNumber) {
@@ -21,7 +22,7 @@ export class EngineNumberEntity implements Entity<EngineNumberEntity>, EngineNum
     this.expertConfirm = entity.expertConfirm;
     this.numberState = entity.numberState;
     this.photo = entity.photo;
-
+    this.engineNumber = entity.engineNumber;
   }
 
   public toObject():EngineNumberEntity {

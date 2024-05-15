@@ -119,7 +119,6 @@ model CarData {
   gearboxType           String                @default("") @map("gearbox_type")
   driveUnit             String                @default("") @map("drive_unit")
   steeringWheelLocation String                @default("") @map("steerint_wheel_location")
-  modification          String                @default("")
   engineNumber          EngineNumber[]
   engineCapacity        String                @default("") @map("engine_capacity")
   power                 String                @default("")
@@ -180,6 +179,7 @@ model EngineNumber {
   engineNumberId Int       @id @default(autoincrement()) @map("engine_number_id")
   carDataId      Int       @map("car_data_id")
   carData        CarData?  @relation(fields: [carDataId], references: [carDataId], onDelete: Cascade, onUpdate: Cascade)
+  engineNumber   String    @default("") @map("engine_number")
   expertConfirm  Boolean   @default(false) @map("expert_confirm")
   numberState    Boolean[] @default([]) @map("number_state")
   photo          String[]  @default([""])
@@ -203,6 +203,7 @@ model STS {
   carData   CarData? @relation(fields: [carDataId], references: [carDataId], onDelete: Cascade, onUpdate: Cascade)
   absent    Boolean  @default(false)
   photo     String   @default("")
+  comment   String   @default("")
 
   @@map("sts")
 }
@@ -638,17 +639,18 @@ model AddElementRoof {
 }
 
 model GlassDamage {
-  glassDamageId   Int               @id @default(autoincrement()) @map("glass_damage_id")
-  reportId        Int               @map("report_id")
-  report          Report            @relation(fields: [reportId], references: [reportId], onDelete: Cascade, onUpdate: Cascade)
-  withoutDamage   Boolean           @default(false) @map("without_damage")
-  windshield      String[]          @default([""])
-  leftFrontGlass  String[]          @default([""]) @map("left_front_glass")
-  leftRearGlass   String[]          @default([""]) @map("left_rear_glass")
-  rearGlass       String[]          @default([""]) @map("rear_glass")
-  rightFrontGlass String[]          @default([""]) @map("right_front_glass")
-  rightRearGlass  String[]          @default([""]) @map("right_rear_glass")
-  addElementGlass AddElementGlass[]
+  glassDamageId     Int               @id @default(autoincrement()) @map("glass_damage_id")
+  reportId          Int               @map("report_id")
+  report            Report            @relation(fields: [reportId], references: [reportId], onDelete: Cascade, onUpdate: Cascade)
+  withoutDamage     Boolean           @default(false) @map("without_damage")
+  allGlassIsFactory Boolean           @default(false) @map("all_glass_is_factory")
+  windshield        String[]          @default([""])
+  leftFrontGlass    String[]          @default([""]) @map("left_front_glass")
+  leftRearGlass     String[]          @default([""]) @map("left_rear_glass")
+  rearGlass         String[]          @default([""]) @map("rear_glass")
+  rightFrontGlass   String[]          @default([""]) @map("right_front_glass")
+  rightRearGlass    String[]          @default([""]) @map("right_rear_glass")
+  addElementGlass   AddElementGlass[]
 
   @@map("glass_damages")
 }
@@ -789,6 +791,7 @@ model StoppedEngine {
   technicalFluidsComment String  @default("") @map("technical_fluid_comment")
   driveBelts             String  @default("") @map("drive_belts")
   brakeDiscs             String  @default("") @map("brake_discs")
+  brakePads              String  @default("") @map("brake_pads")
   wearComment            String  @default("") @map("wear_comment")
 
   @@map("stopped_engines")
@@ -856,7 +859,7 @@ model TestDrive {
   testDriveId   Int     @id @default(autoincrement()) @map("test_drive_id")
   reportId      Int     @map("report_id")
   report        Report  @relation(fields: [reportId], references: [reportId], onDelete: Cascade, onUpdate: Cascade)
-  testDrive     Boolean @default(false) @map("tes_drive")
+  allSystemOk   Boolean @default(false) @map("all_system_ok")
   suspension    Boolean @default(false)
   engine        Boolean @default(false)
   transmission  Boolean @default(false)

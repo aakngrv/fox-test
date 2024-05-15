@@ -37,4 +37,11 @@ export class EngineNumberRdo {
   })
   @Expose()
   public photo: string[];
+
+  @ApiProperty({
+    description: 'Номер двигателя',
+    example: "string"
+  })
+  @Expose()
+  public engineNumber: string;
 }

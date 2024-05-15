@@ -9,10 +9,10 @@ export class CreateTestDriveDto {
   public reportId: number;
 
   @ApiProperty({
-    description: 'Tест драйв',
+    description: 'Все системы работают исправно',
     example: false
   })
-  public testDrive: boolean;
+  public allSystemOk: boolean;
 
   @ApiProperty({
     description: 'Подвеска',

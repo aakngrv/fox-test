@@ -29,7 +29,6 @@ export class CarDataEntity implements Entity<CarDataEntity>, CarData {
   public gearboxType: string;
   public driveUnit: string;
   public steeringWheelLocation: string;
-  public modification: string;
   public engineNumber?: EngineNumber[];
   public engineCapacity: string;
   public power: string;
@@ -59,7 +58,6 @@ export class CarDataEntity implements Entity<CarDataEntity>, CarData {
     this.gearboxType = entity.gearboxType;
     this.driveUnit = entity.driveUnit;
     this.steeringWheelLocation = entity.steeringWheelLocation;
-    this.modification = entity.modification;
     this.engineNumber = [];
     this.engineCapacity = entity.engineCapacity;
     this.power = entity.power;

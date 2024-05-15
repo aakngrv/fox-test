@@ -74,4 +74,11 @@ export class GlassDamageRdo {
   })
   @Expose()
   public addElementGlass: AddElementGlass[];
+
+  @ApiProperty({
+    description: 'Все стекла заводские',
+    example: false
+  })
+  @Expose()
+  public allGlassIsFactory: boolean;
 }
