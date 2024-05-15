@@ -14,6 +14,7 @@ export interface StoppedEngine {
   technicalFluidsComment: string;
   driveBelts: string;
   brakeDiscs: string;
+  brakePads: string;
   wearComment: string;
 }
 
@@ -72,7 +73,7 @@ export interface Dashboard {
 export interface TestDrive {
   testDriveId?: number;
   reportId: number;
-  testDrive: boolean;
+  allSystemOk: boolean;
   suspension: boolean;
   engine: boolean;
   transmission: boolean;

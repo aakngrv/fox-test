@@ -55,4 +55,10 @@ export class CreateGlassDamageDto {
     example: [1]
   })
   public addElementGlass: number[];
+  
+  @ApiProperty({
+    description: 'Все стекла заводские',
+    example: false
+  })
+  public allGlassIsFactory: boolean;
 }

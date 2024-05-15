@@ -17,6 +17,7 @@ export class GlassDamageEntity implements Entity<GlassDamageEntity>, GlassDamage
   public rightFrontGlass: string[];
   public rightRearGlass: string[];
   public addElementGlass?: AddElementGlass[];
+  public allGlassIsFactory: boolean;
 
 
   constructor(glassDamage: GlassDamage) {
@@ -34,6 +35,7 @@ export class GlassDamageEntity implements Entity<GlassDamageEntity>, GlassDamage
     this.rearGlass = entity.rearGlass;
     this.rightFrontGlass = entity.rightFrontGlass;
     this.rightRearGlass = entity.rightRearGlass;
+    this.allGlassIsFactory = entity.allGlassIsFactory;
     this.addElementGlass = [];
   }
 

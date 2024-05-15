@@ -87,6 +87,12 @@ export class CreateStoppedEngineDto {
   public brakeDiscs: string;
 
   @ApiProperty({
+    description: 'Тормозные колодки',
+    example: 'string'
+  })
+  public brakePads: string;
+
+  @ApiProperty({
     description: 'Комментарий износа',
     example: 'string'
   })

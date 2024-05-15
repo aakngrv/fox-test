@@ -25,4 +25,11 @@ export class CreateEngineNumberDto {
     example: ["string"]
   })
   public photo: string[];
+
+  @ApiProperty({
+    description: 'Номер двигателя',
+    example: "string"
+  })
+  public engineNumber: string;
+  
 }

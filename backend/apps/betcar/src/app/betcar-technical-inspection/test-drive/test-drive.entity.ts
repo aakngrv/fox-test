@@ -12,7 +12,7 @@ export class TestDriveEntity implements Entity<TestDriveEntity>, TestDrive {
   public parkingBrake: boolean;
   public steering: boolean;
   public suspension: boolean;
-  public testDrive: boolean;
+  public allSystemOk: boolean;
   public transmission: boolean;
   public comment: string;
 
@@ -30,7 +30,7 @@ export class TestDriveEntity implements Entity<TestDriveEntity>, TestDrive {
     this.parkingBrake = entity.parkingBrake;
     this.steering = entity.steering;
     this.suspension = entity.suspension;
-    this.testDrive = entity.testDrive;
+    this.allSystemOk = entity.allSystemOk;
     this.transmission = entity.transmission;
     this.comment = entity.comment;
 

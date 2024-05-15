@@ -8,6 +8,7 @@ export class STSEntity implements Entity<STSEntity>, STS {
   public carDataId: number;
   public absent: boolean;
   public photo: string;
+  public comment: string;
 
 
   constructor(sTS: STS) {
@@ -19,6 +20,7 @@ export class STSEntity implements Entity<STSEntity>, STS {
     this.carDataId = entity.carDataId;
     this.absent = entity.absent;
     this.photo = entity.photo;
+    this.comment = entity.comment;
   }
 
   public toObject():STSEntity {

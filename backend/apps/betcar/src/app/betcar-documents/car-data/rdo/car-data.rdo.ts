@@ -125,13 +125,6 @@ export class CarDataRdo {
   public steeringWheelLocation: string;
 
   @ApiProperty({
-    description: 'Модификация',
-    example: "string"
-  })
-  @Expose()
-  public modification: string;
-
-  @ApiProperty({
     description: 'Массив с номером двигателя',
     example: [1]
   })

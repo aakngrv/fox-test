@@ -175,6 +175,7 @@ export interface GlassDamage {
   glassDamageId?: number;
   reportId: number;
   withoutDamage: boolean;
+  allGlassIsFactory: boolean;
   windshield: string[];
   leftFrontGlass: string[];
   leftRearGlass: string[];
