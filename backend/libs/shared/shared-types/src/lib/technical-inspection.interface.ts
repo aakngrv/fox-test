@@ -68,6 +68,7 @@ export interface Dashboard {
   mileageInAdditionalBlocks?: string;
   isNoMileage?: boolean;
   totalComment: string;
+  noErrors: boolean;
 }
 
 export interface TestDrive {

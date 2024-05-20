@@ -22,6 +22,7 @@ export class DashboardEntity implements Entity<DashboardEntity>, Dashboard {
   public mileageInAdditionalBlocks?: string;
   public isNoMileage?: boolean;
   public totalComment: string;
+  public noErrors: boolean;
 
 
   constructor(dashboard: Dashboard) {
@@ -47,6 +48,7 @@ export class DashboardEntity implements Entity<DashboardEntity>, Dashboard {
     this.mileageInAdditionalBlocks = entity.mileageInAdditionalBlocks;
     this.isNoMileage = entity.isNoMileage;
     this.totalComment = entity.totalComment;
+    this.noErrors = entity.noErrors;
   }
 
   public toObject(): DashboardEntity {

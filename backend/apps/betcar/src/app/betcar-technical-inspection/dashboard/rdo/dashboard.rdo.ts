@@ -128,4 +128,11 @@ export class DashboardRdo {
   })
   @Expose()
   public totalComment: string;
+
+  @ApiProperty({
+    description: 'Без ошибок',
+    example: false
+  })
+  @Expose()
+  public noErrors: boolean;
 }
