@@ -851,6 +851,7 @@ model Dashboard {
   mileageInAdditionalBlocks String?  @default("") @map("mileage_in_additional_blocks")
   isNoMileage               Boolean? @default(false) @map("is_no_mileage")
   totalComment              String   @default("") @map("total_comment")
+  noErrors                  Boolean  @default(false) @map("no_errors")
 
   @@map("dashboards")
 }

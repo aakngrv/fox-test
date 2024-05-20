@@ -103,4 +103,10 @@ export class CreateDashboardDto {
     example: 'string'
   })
   public totalComment: string;
+  
+  @ApiProperty({
+    description: 'Без ошибок',
+    example: false
+  })
+  public noErrors: boolean;
 }
