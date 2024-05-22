@@ -16,6 +16,7 @@ export interface PaintworkInspection {
   rightFrontPillar: string[];
   rightFrontFender: string[];
   hood: string[];
+  leftFrontFender: string[];
   leftFrontPillar: string[];
   leftFrontDoor: string[];
   leftFrontDoorOpening: string[];

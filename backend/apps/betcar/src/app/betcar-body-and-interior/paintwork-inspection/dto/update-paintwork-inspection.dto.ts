@@ -99,6 +99,12 @@ export class UpdatePaintworkInspectionDto {
   public hood: string[];
 
   @ApiProperty({
+    description: 'Левое переднее крыло',
+    example: ["string"]
+  })
+  public leftFrontFender: string[];
+
+  @ApiProperty({
     description: 'Левая передняя стойка',
     example: ["string"]
   })

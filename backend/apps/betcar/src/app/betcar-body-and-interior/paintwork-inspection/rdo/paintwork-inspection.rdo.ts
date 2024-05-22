@@ -123,6 +123,13 @@ export class PaintworkInspectionRdo {
   public hood: string[];
 
   @ApiProperty({
+    description: 'Левое переднее крыло',
+    example: ["string"]
+  })
+  @Expose()
+  public leftFrontFender: string[];
+
+  @ApiProperty({
     description: 'Левая передняя стойка',
     example: ["string"]
   })
