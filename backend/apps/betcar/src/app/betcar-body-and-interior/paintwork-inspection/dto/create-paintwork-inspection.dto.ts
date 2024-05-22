@@ -97,6 +97,12 @@ export class CreatePaintworkInspectionDto {
     example: ["string"]
   })
   public hood: string[];
+  
+  @ApiProperty({
+    description: 'Левое переднее крыло',
+    example: ["string"]
+  })
+  public leftFrontFender: string[];
 
   @ApiProperty({
     description: 'Левая передняя стойка',
