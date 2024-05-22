@@ -21,6 +21,7 @@ export class PaintworkInspectionEntity implements Entity<PaintworkInspectionEnti
   public rightFrontPillar: string[];
   public rightFrontFender: string[];
   public hood: string[];
+  public leftFrontFender: string[];
   public leftFrontPillar: string[];
   public leftFrontDoor: string[];
   public leftFrontDoorOpening: string[];
@@ -55,6 +56,7 @@ export class PaintworkInspectionEntity implements Entity<PaintworkInspectionEnti
     this.rightFrontPillar = entity.rightFrontPillar;
     this.rightFrontFender = entity.rightFrontFender;
     this.hood = entity.hood;
+    this.leftFrontFender = entity.leftFrontFender;
     this.leftFrontPillar = entity.leftFrontPillar;
     this.leftFrontDoor = entity.leftFrontDoor;
     this.leftFrontDoorOpening = entity.leftFrontDoorOpening;
