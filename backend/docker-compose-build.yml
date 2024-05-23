@@ -86,6 +86,26 @@ services:
       - "traefik.http.routers.users.service=users-service"
       - "traefik.http.services.users-service.loadbalancer.server.port=3000"
 
+  uploader:
+    container_name: uploader
+    build:      
+      target: production
+      dockerfile: ./apps/uploader/Dockerfile_prod
+    depends_on:   
+      - postgres
+      - rabbitmq
+      - betcar
+    restart: always
+    env_file:
+      - .env
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.uploader.rule=Host(`api.uploader.betcar.ru`)"
+      - "traefik.http.routers.uploader.entrypoints=websecure"
+      - "traefik.http.routers.uploader.tls.certresolver=myresolver"
+      - "traefik.http.routers.uploader.service=uploader-service"
+      - "traefik.http.services.uploader-service.loadbalancer.server.port=6000"
+
   traefik:
     image: traefik:v3.0
     container_name: traefik
