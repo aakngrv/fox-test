@@ -99,8 +99,8 @@ services:
     env_file:
       - .env
     volumes:
-      - ~/cdn/static/:~/static/
-      - ~/cdn/uploads/:~/uploads/
+      - ~/cdn/static/:/dist/apps/uploader/static/
+      - ~/cdn/uploads/:/dist/apps/uploader/uploads/
     labels:
       - "traefik.enable=true"
       - "traefik.http.routers.uploader.rule=Host(`api.uploader.betcar.ru`)"
