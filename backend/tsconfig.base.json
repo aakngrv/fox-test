@@ -18,6 +18,9 @@
       "@backend/config/config-betcar": [
         "libs/config/config-betcar/src/index.ts"
       ],
+      "@backend/config/config-uploader": [
+        "libs/config/config-uploader/src/index.ts"
+      ],
       "@backend/config/config-users": ["libs/config/config-users/src/index.ts"],
       "@backend/models/models-betcar": [
         "libs/models/models-betcar/src/index.ts"
