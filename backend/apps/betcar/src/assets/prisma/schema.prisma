@@ -8,6 +8,19 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+// ** Модель сервиса "Files"** //
+
+model File {
+  fileId           Int    @id @default(autoincrement()) @map("file_id")
+  originalFilename String @default("") @map("original_filename")
+  hashName         String @default("") @map("hash_name")
+  mimetype         String @default("") @map("mimetype")
+  path             String @default("")
+  size             Int 
+
+@@map("files")
+}
+
 // ** Модель сервиса "betcar-users" ** //
 
 model User {
