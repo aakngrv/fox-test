@@ -12,8 +12,17 @@ export class PaintworkInspectionRepository implements CRUDRepository<PaintworkIn
   ) {}
 
   public async create(item: PaintworkInspectionEntity): Promise<PaintworkInspection> {
+    const entityData = item.toObject();
     return this.prisma.paintworkInspection.create({
-      data: { ...item.toObject() }
+      data: { 
+        ...entityData,
+        addElementPaintwork: {
+          connect: []
+        },
+      },
+      include: {
+        addElementPaintwork: true,
+      }
     });
   }
 
@@ -29,6 +38,9 @@ export class PaintworkInspectionRepository implements CRUDRepository<PaintworkIn
     return this.prisma.paintworkInspection.findFirst({
       where: {
         paintworkInspectionId
+      },
+      include: {
+        addElementPaintwork: true,
       }
     });
   }
@@ -39,6 +51,9 @@ export class PaintworkInspectionRepository implements CRUDRepository<PaintworkIn
         paintworkInspectionId: {
           in: ids.length > 0 ? ids : undefined
         }
+      },
+      include: {
+        addElementPaintwork: true,
       }
     });
   }
@@ -48,7 +63,16 @@ export class PaintworkInspectionRepository implements CRUDRepository<PaintworkIn
       where: {
         paintworkInspectionId
       },
-      data: { ...item.toObject(), paintworkInspectionId}
+      data: { 
+        ...item.toObject(), 
+        paintworkInspectionId, 
+        addElementPaintwork: {
+          connect: []
+        },
+      },
+      include: {
+        addElementPaintwork: true,
+      }
     });
   }
 }

@@ -1,5 +1,8 @@
 import { Entity } from '@backend/util/util-types';
-import { PaintworkInspection} from '@backend/shared/shared-types';
+import { 
+  AddElementPaintwork, 
+  PaintworkInspection
+} from '@backend/shared/shared-types';
 
 
 export class PaintworkInspectionEntity implements Entity<PaintworkInspectionEntity>, PaintworkInspection {
@@ -31,6 +34,7 @@ export class PaintworkInspectionEntity implements Entity<PaintworkInspectionEnti
   public leftRearDoorOpening: string[];
   public leftRearPillar: string[];
   public leftRearFender: string[];
+  public addElementPaintwork?: AddElementPaintwork[];
 
 
   constructor(paintworkInspection: PaintworkInspection) {
@@ -66,9 +70,13 @@ export class PaintworkInspectionEntity implements Entity<PaintworkInspectionEnti
     this.leftRearDoorOpening = entity.leftRearDoorOpening;
     this.leftRearPillar = entity.leftRearPillar;
     this.leftRearFender = entity.leftRearFender;
+    this.addElementPaintwork = [];
   }
 
   public toObject(): PaintworkInspectionEntity {
-    return { ...this }
+    return { 
+      ...this,
+      addElementPaintwork: this.addElementPaintwork.map(({ addElementPaintworkId }) => ({ addElementPaintworkId })),
+    }
   }
 }

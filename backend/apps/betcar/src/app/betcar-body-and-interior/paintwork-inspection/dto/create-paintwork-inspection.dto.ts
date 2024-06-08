@@ -157,4 +157,10 @@ export class CreatePaintworkInspectionDto {
     example: ["string"]
   })
   public leftRearFender: string[];
+
+  @ApiProperty({
+    description: 'Новый элемент',
+    example: [1]
+  })
+  public addElementPaintwork: number[];
 }

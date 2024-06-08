@@ -1,3 +1,4 @@
+import { AddElementPaintwork } from '@backend/shared/shared-types';
 import { ApiProperty } from '@nestjs/swagger';
 import { Expose } from 'class-transformer';
 
@@ -191,4 +192,11 @@ export class PaintworkInspectionRdo {
   })
   @Expose()
   public leftRearFender: string[];
+
+  @ApiProperty({
+    description: 'Новый элемент',
+    example: [1]
+  })
+  @Expose()
+  public addElementPaintwork: AddElementPaintwork[];
 }
