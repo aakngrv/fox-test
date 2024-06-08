@@ -39,6 +39,13 @@ export class TCPRdo {
   public photo: string[];
 
   @ApiProperty({
+    description: 'Количество владельцев',
+    example: "string"
+  })
+  @Expose()
+  public numberOfOwners: string;
+
+  @ApiProperty({
     description: 'Комментарий',
     example: 'string'
   })

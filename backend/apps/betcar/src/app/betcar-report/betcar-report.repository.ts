@@ -133,7 +133,11 @@ export class BetcarReportRepository implements CRUDRepository<BetcarReportEntity
         complectationSafety: true,
         complectationProtection: true,
         complectationOther: true,
-        paintworkInspection: true,
+        paintworkInspection:{
+          include: {
+            addElementPaintwork: true,
+          }
+        },
         engineCompartmentDamage: {
           include: {
             addElement: true,
@@ -232,7 +236,11 @@ export class BetcarReportRepository implements CRUDRepository<BetcarReportEntity
         complectationSafety: true,
         complectationProtection: true,
         complectationOther: true,
-        paintworkInspection: true,
+        paintworkInspection:{
+          include: {
+            addElementPaintwork: true,
+          }
+        },
         engineCompartmentDamage: {
           include: {
             addElement: true,
@@ -320,7 +328,11 @@ export class BetcarReportRepository implements CRUDRepository<BetcarReportEntity
         complectationSafety: true,
         complectationProtection: true,
         complectationOther: true,
-        paintworkInspection: true,
+        paintworkInspection:{
+          include: {
+            addElementPaintwork: true,
+          }
+        },
         engineCompartmentDamage: {
           include: {
             addElement: true,

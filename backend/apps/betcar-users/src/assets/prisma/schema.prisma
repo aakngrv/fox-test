@@ -177,13 +177,14 @@ model StateNumber {
 }
 
 model TCP {
-  tCPId     Int      @id @default(autoincrement()) @map("tcp_id")
-  carDataId Int      @map("report_id")
-  carData   CarData? @relation(fields: [carDataId], references: [carDataId], onDelete: Cascade, onUpdate: Cascade)
-  absent    Boolean  @default(false)
-  tCPType   String   @default("") @map("tcp_type")
-  photo     String[] @default([""])
-  comment   String   @default("")
+  tCPId          Int      @id @default(autoincrement()) @map("tcp_id")
+  carDataId      Int      @map("report_id")
+  carData        CarData? @relation(fields: [carDataId], references: [carDataId], onDelete: Cascade, onUpdate: Cascade)
+  absent         Boolean  @default(false)
+  tCPType        String   @default("") @map("tcp_type")
+  photo          String[] @default([""])
+  numberOfOwners String   @default("") @map("number_of_owners")
+  comment        String   @default("")
 
   @@map("tcps")
 }
@@ -461,8 +462,20 @@ model PaintworkInspection {
   leftRearDoorOpening   String[] @default([""]) @map("left_rear_door_opening")
   leftRearPillar        String[] @default([""]) @map("left_rear_pillar")
   leftRearFender        String[] @default([""]) @map("left_rear_fender")
+  addElementPaintwork   AddElementPaintwork[]
+
 
   @@map("paintwork_inspections")
+}
+
+  model AddElementPaintwork {
+  addElementPaintworkId Int                  @id @default(autoincrement()) @map("add_element_paintwork_id")
+  paintworkInspectionId Int                  @map("paintwork_inspection_id")
+  paintworkInspection   PaintworkInspection? @relation(fields: [paintworkInspectionId], references: [paintworkInspectionId], onDelete: Cascade, onUpdate: Cascade)
+  name                  String               @default("")
+  info                  String[]             @default([""])
+
+  @@map("add_paintwork_elements")
 }
 
 model EngineCompartmentDamage {
@@ -870,18 +883,19 @@ model Dashboard {
 }
 
 model TestDrive {
-  testDriveId   Int     @id @default(autoincrement()) @map("test_drive_id")
-  reportId      Int     @map("report_id")
-  report        Report  @relation(fields: [reportId], references: [reportId], onDelete: Cascade, onUpdate: Cascade)
-  allSystemOk   Boolean @default(false) @map("all_system_ok")
-  suspension    Boolean @default(false)
-  engine        Boolean @default(false)
-  transmission  Boolean @default(false)
-  steering      Boolean @default(false)
-  brakeSystem   Boolean @default(false) @map("brake_system")
-  parkingBrake  Boolean @default(false) @map("parking_brake")
-  exhaustSystem Boolean @default(false) @map("exhaust_system")
-  comment       String  @default("")
+  testDriveId     Int     @id @default(autoincrement()) @map("test_drive_id")
+  reportId        Int     @map("report_id")
+  report          Report  @relation(fields: [reportId], references: [reportId], onDelete: Cascade, onUpdate: Cascade)
+  allSystemOk     Boolean @default(false) @map("all_system_ok")
+  suspension      Boolean @default(false)
+  engine          Boolean @default(false)
+  transmission    Boolean @default(false)
+  steering        Boolean @default(false)
+  brakeSystem     Boolean @default(false) @map("brake_system")
+  parkingBrake    Boolean @default(false) @map("parking_brake")
+  exhaustSystem   Boolean @default(false) @map("exhaust_system")
+  electricMirrors Boolean @default(false) @map("electric_mirrors")
+  comment         String  @default("")
 
   @@map("tests_drive")
 }

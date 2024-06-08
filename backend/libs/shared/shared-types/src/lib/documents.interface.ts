@@ -74,6 +74,7 @@ export interface TCP {
   absent: boolean;
   tCPType: string;
   photo: string[];
+  numberOfOwners: string;
   comment: string;
 }
 

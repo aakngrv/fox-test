@@ -83,4 +83,5 @@ export interface TestDrive {
   parkingBrake: boolean;
   exhaustSystem: boolean;
   comment: string;
+  electricMirrors: boolean;
 }

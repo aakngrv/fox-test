@@ -36,6 +36,6 @@ export class DiscDamageEntity implements Entity<DiscDamageEntity>, DiscDamage {
     return { 
       ...this,
       addElementDisc: this.addElementDisc.map(({ addElementDiscId }) => ({ addElementDiscId })),
-     }
+    }
   }
 }

@@ -74,6 +74,13 @@ export class TestDriveRdo {
   public exhaustSystem: boolean;
 
   @ApiProperty({
+    description: 'Электропривод зеркал',
+    example: false
+  })
+  @Expose()
+  public electricMirrors: boolean;
+
+  @ApiProperty({
     description: 'Комментарий',
     example: 'string'
   })
