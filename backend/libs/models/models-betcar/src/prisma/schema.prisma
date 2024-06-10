@@ -488,6 +488,7 @@ model EngineCompartmentDamage {
   rightSideMember           String[]     @default([""]) @map("right_side_member")
   rightGlass                String[]     @default([""]) @map("right_glass")
   hoodHinges                String[]     @default([""]) @map("hood_hinges")
+  motorShield               String[]     @default([""]) @map("motor_shield")
   televisor                 String[]     @default([""])
   addElement                AddElement[]
 

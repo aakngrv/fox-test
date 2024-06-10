@@ -51,6 +51,12 @@ export class UpdateEngineCompartmentDamageDto {
   public televisor: string[];
 
   @ApiProperty({
+    description: 'Моторный щит',
+    example: ['string']
+  })
+  public motorShield: string[];
+
+  @ApiProperty({
     description: 'Новый элемент',
     example: [1]
   })

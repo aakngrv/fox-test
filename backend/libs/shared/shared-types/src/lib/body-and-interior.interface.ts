@@ -46,6 +46,7 @@ export interface EngineCompartmentDamage {
   rightGlass: string[];
   hoodHinges: string[]; 
   televisor: string[];
+  motorShield: string[];
   addElement?: AddElement[];
 }
 
