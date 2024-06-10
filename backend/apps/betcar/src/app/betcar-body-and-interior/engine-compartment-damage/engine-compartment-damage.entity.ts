@@ -16,6 +16,7 @@ export class EngineCompartmentDamageEntity implements Entity<EngineCompartmentDa
   public rightGlass: string[];
   public hoodHinges: string[];
   public televisor: string[];
+  public motorShield: string[];
   public addElement: AddElement[];
 
 
@@ -34,6 +35,7 @@ export class EngineCompartmentDamageEntity implements Entity<EngineCompartmentDa
     this.rightGlass = entity.rightGlass;
     this.hoodHinges = entity.hoodHinges;
     this.televisor = entity.televisor;
+    this.motorShield = entity.motorShield;
     this.addElement = [];
 
   }
