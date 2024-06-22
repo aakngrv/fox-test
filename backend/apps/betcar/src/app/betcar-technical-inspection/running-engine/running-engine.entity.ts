@@ -32,6 +32,7 @@ export class RunningEngineEntity implements Entity<RunningEngineEntity>, Running
   public windowLifters: boolean;
   public windscreenWipers: boolean;
   public windshieldWashers: boolean;
+  public electricMirrors: boolean;
 
 
   constructor(runningEngine: RunningEngine) {
@@ -67,6 +68,7 @@ export class RunningEngineEntity implements Entity<RunningEngineEntity>, Running
     this.windowLifters = entity.windowLifters;
     this.windscreenWipers = entity.windscreenWipers;
     this.windshieldWashers = entity.windshieldWashers;
+    this.electricMirrors = entity.electricMirrors;
   }
 
   public toObject(): RunningEngineEntity {

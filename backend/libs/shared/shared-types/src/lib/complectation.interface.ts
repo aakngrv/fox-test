@@ -148,13 +148,10 @@ export interface ComplectationOther {
   towBar: boolean;
   winch: boolean;
   airbox: boolean;
-  socket12v: boolean;
-  socket220v: boolean;
   crankcaseProtection: boolean;
   transverseArches: boolean;
   gasEquipment: boolean;
   numberOfKeys: string;
   spareWheel: string;
-  motoristSet: string[];
 }
 

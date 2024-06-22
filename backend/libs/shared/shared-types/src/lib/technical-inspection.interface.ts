@@ -16,6 +16,8 @@ export interface StoppedEngine {
   brakeDiscs: string;
   brakePads: string;
   wearComment: string;
+  fogging: string[];
+  photo: string[];
 }
 
 export interface RunningEngine {
@@ -47,12 +49,14 @@ export interface RunningEngine {
   powerSteering: boolean;
   airConditioner: boolean;
   mechanicalSystemComment: string;
+  electricMirrors: boolean;
 }
 
 export interface Dashboard {
   dashboardId?: number;
   reportId: number;
   abs: boolean;
+  esp: boolean;
   airbag: boolean;
   checkEngine: boolean;
   battery: boolean;
@@ -61,7 +65,7 @@ export interface Dashboard {
   controlLightComment: string;
   electronicDiagnostics: boolean;
   diagnosticsResult: string;
-  diagnosticsFile?: string;
+  diagnosticsFile?: string[];
   mileageOnDashboard?: string;
   mileageInTheEngineBlock?: string;
   mileageInTheGearbox?: string;
@@ -83,5 +87,4 @@ export interface TestDrive {
   parkingBrake: boolean;
   exhaustSystem: boolean;
   comment: string;
-  electricMirrors: boolean;
 }

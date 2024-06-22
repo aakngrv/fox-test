@@ -121,4 +121,18 @@ export class StoppedEngineRdo {
   })
   @Expose()
   public wearComment: string;
+
+  @ApiProperty({
+    description: 'Запотевание',
+    example: ['string']
+  })
+  @Expose()
+  public fogging: string[];
+
+  @ApiProperty({
+    description: 'Фото',
+    example: ['string']
+  })
+  @Expose()
+  public photo: string[];
 }
