@@ -13,7 +13,15 @@ export class StoppedEngineRepository implements CRUDRepository<StoppedEngineEnti
 
   public async create(item: StoppedEngineEntity): Promise<StoppedEngine> {
     return this.prisma.stoppedEngine.create({
-      data: { ...item.toObject() }
+      data: { 
+        ...item.toObject(),
+        addElementStop: {
+          connect: []
+        },
+      },
+      include: {
+        addElementStop: true,
+      }
     });
   }
 
@@ -29,6 +37,9 @@ export class StoppedEngineRepository implements CRUDRepository<StoppedEngineEnti
     return this.prisma.stoppedEngine.findFirst({
       where: {
         stoppedEngineId
+      },
+      include: {
+        addElementStop: true,
       }
     });
   }
@@ -39,6 +50,9 @@ export class StoppedEngineRepository implements CRUDRepository<StoppedEngineEnti
         stoppedEngineId: {
           in: ids.length > 0 ? ids : undefined
         }
+      },
+      include: {
+        addElementStop: true,
       }
     });
   }
@@ -48,7 +62,16 @@ export class StoppedEngineRepository implements CRUDRepository<StoppedEngineEnti
       where: {
         stoppedEngineId
       },
-      data: { ...item.toObject(), stoppedEngineId }
+      data: { 
+        ...item.toObject(),
+        stoppedEngineId,
+        addElementStop: {
+          connect: []
+        },
+      },
+      include: {
+        addElementStop: true,
+      }
     });
   }
 }

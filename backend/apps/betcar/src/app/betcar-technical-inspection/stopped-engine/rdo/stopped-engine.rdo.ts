@@ -1,4 +1,5 @@
 import { ApiProperty } from '@nestjs/swagger';
+import { AddElementStop } from '@backend/shared/shared-types';
 import { Expose } from "class-transformer";
 
 export class StoppedEngineRdo {
@@ -121,18 +122,11 @@ export class StoppedEngineRdo {
   })
   @Expose()
   public wearComment: string;
-
+  
   @ApiProperty({
-    description: 'Запотевание',
-    example: ['string']
+    description: 'Новый элемент',
+    example: [1]
   })
   @Expose()
-  public fogging: string[];
-
-  @ApiProperty({
-    description: 'Фото',
-    example: ['string']
-  })
-  @Expose()
-  public photo: string[];
+  public addElementStop: AddElementStop[];
 }

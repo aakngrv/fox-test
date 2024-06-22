@@ -817,10 +817,22 @@ model StoppedEngine {
   brakeDiscs             String   @default("") @map("brake_discs")
   brakePads              String   @default("") @map("brake_pads")
   wearComment            String   @default("") @map("wear_comment")
-  fogging                String[] @default([""])
-  photo                  String[] @default([""])
+  addElementStop         AddElementStop[]
 
   @@map("stopped_engines")
+}
+
+model AddElementStop {
+
+  addElementStopId Int            @id @default(autoincrement()) @map("add_element_stop_id")
+  stoppedEngineId  Int
+  stoppedEngine    StoppedEngine? @relation(fields: [stoppedEngineId], references: [stoppedEngineId], onDelete: Cascade, onUpdate: Cascade)
+  name             String         @default("")
+  fogging          String[]       @default([""])
+  photo            String[]       @default([""])
+  comment          String         @default("")
+
+  @@map("add_element_stop")
 }
 
 model RunningEngine {
