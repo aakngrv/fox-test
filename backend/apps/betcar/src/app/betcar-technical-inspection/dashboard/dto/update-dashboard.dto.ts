@@ -58,9 +58,9 @@ export class UpdateDashboardDto {
 
   @ApiProperty({
     description: 'Файл диагностики',
-    example: 'string'
+    example: ['string']
   })
-  public diagnosticsFile?: string;
+  public diagnosticsFile?: string[];
 
   @ApiProperty({
     description: 'Результаты диагностики',
@@ -109,4 +109,10 @@ export class UpdateDashboardDto {
     example: false
   })
   public noErrors: boolean;
+
+  @ApiProperty({
+    description: 'ESP',
+    example: false
+  })
+  public esp: boolean;
 }

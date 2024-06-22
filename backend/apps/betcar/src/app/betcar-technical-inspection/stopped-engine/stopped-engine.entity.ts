@@ -21,6 +21,8 @@ export class StoppedEngineEntity implements Entity<StoppedEngineEntity>, Stopped
   public technicalFluidsComment: string;
   public wearComment: string;
   public brakePads: string;
+  public fogging: string[];
+  public photo: string[];
 
 
   constructor(stoppedEngine: StoppedEngine) {
@@ -45,6 +47,8 @@ export class StoppedEngineEntity implements Entity<StoppedEngineEntity>, Stopped
     this.wearComment = entity.wearComment;
     this.comment = entity.comment;
     this.brakePads = entity.brakePads;
+    this.fogging = entity.fogging;
+    this.photo = entity.photo;
 
 
   }

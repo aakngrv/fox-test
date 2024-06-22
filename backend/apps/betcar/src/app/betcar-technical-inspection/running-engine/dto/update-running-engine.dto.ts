@@ -163,4 +163,10 @@ export class UpdateRunningEngineDto {
     example: 'string'
   })
   public mechanicalSystemComment: string;
+
+  @ApiProperty({
+    description: 'Электропривод зеркал',
+    example: false
+  })
+  public electricMirrors: boolean;
 }

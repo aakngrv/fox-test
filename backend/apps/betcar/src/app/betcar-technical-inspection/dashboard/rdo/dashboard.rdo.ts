@@ -75,10 +75,10 @@ export class DashboardRdo {
 
   @ApiProperty({
     description: 'Файл диагностики',
-    example: 'string'
+    example: ['string']
   })
   @Expose()
-  public diagnosticsFile?: string;
+  public diagnosticsFile?: string[];
 
   @ApiProperty({
     description: 'Результаты диагностики',
@@ -135,4 +135,11 @@ export class DashboardRdo {
   })
   @Expose()
   public noErrors: boolean;
+
+  @ApiProperty({
+    description: 'ESP',
+    example: false
+  })
+  @Expose()
+  public esp: boolean;
 }

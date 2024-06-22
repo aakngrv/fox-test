@@ -97,4 +97,16 @@ export class CreateStoppedEngineDto {
     example: 'string'
   })
   public wearComment: string;
+  
+  @ApiProperty({
+    description: 'Запотевание',
+    example: ['string']
+  })
+  public fogging: string[];
+  
+  @ApiProperty({
+    description: 'Фото',
+    example: ['string']
+  })
+  public photo: string[];
 }

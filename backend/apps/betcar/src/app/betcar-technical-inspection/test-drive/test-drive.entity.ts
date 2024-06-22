@@ -14,7 +14,6 @@ export class TestDriveEntity implements Entity<TestDriveEntity>, TestDrive {
   public suspension: boolean;
   public allSystemOk: boolean;
   public transmission: boolean;
-  public electricMirrors: boolean;
   public comment: string;
 
 
@@ -33,7 +32,6 @@ export class TestDriveEntity implements Entity<TestDriveEntity>, TestDrive {
     this.suspension = entity.suspension;
     this.allSystemOk = entity.allSystemOk;
     this.transmission = entity.transmission;
-    this.electricMirrors = entity.electricMirrors;
     this.comment = entity.comment;
 
   }

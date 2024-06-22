@@ -198,4 +198,11 @@ export class RunningEngineRdo {
   })
   @Expose()
   public mechanicalSystemComment: string;
+
+  @ApiProperty({
+    description: 'Электропривод зеркал',
+    example: false
+  })
+  @Expose()
+  public electricMirrors: boolean;
 }
