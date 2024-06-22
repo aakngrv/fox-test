@@ -191,7 +191,11 @@ export class BetcarReportRepository implements CRUDRepository<BetcarReportEntity
         exteriorPhoto: true,
         interiorPhoto: true,
         roundViewVideo: true,
-        stoppedEngine: true,
+        stoppedEngine: {
+          include: {
+            addElementStop: true
+          }
+        },
         runningEngine: true,
         dashboard: true,
         testDrive: true,
@@ -294,7 +298,11 @@ export class BetcarReportRepository implements CRUDRepository<BetcarReportEntity
         exteriorPhoto: true,
         interiorPhoto: true,
         roundViewVideo: true,
-        stoppedEngine: true,
+        stoppedEngine: {
+          include: {
+            addElementStop: true
+          }
+        },
         runningEngine: true,
         dashboard: true,
         testDrive: true,
@@ -386,7 +394,11 @@ export class BetcarReportRepository implements CRUDRepository<BetcarReportEntity
         exteriorPhoto: true,
         interiorPhoto: true,
         roundViewVideo: true,
-        stoppedEngine: true,
+        stoppedEngine: {
+          include: {
+            addElementStop: true
+          }
+        },
         runningEngine: true,
         dashboard: true,
         testDrive: true,

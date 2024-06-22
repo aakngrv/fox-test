@@ -1,5 +1,8 @@
 import { Entity } from '@backend/util/util-types';
-import { StoppedEngine } from '@backend/shared/shared-types';
+import { 
+  StoppedEngine,
+  AddElementStop
+} from '@backend/shared/shared-types';
 
 
 export class StoppedEngineEntity implements Entity<StoppedEngineEntity>, StoppedEngine {
@@ -23,6 +26,7 @@ export class StoppedEngineEntity implements Entity<StoppedEngineEntity>, Stopped
   public brakePads: string;
   public fogging: string[];
   public photo: string[];
+  public addElementStop?: AddElementStop[];
 
 
   constructor(stoppedEngine: StoppedEngine) {
@@ -47,13 +51,13 @@ export class StoppedEngineEntity implements Entity<StoppedEngineEntity>, Stopped
     this.wearComment = entity.wearComment;
     this.comment = entity.comment;
     this.brakePads = entity.brakePads;
-    this.fogging = entity.fogging;
-    this.photo = entity.photo;
-
-
+    this.addElementStop = [];
   }
 
   public toObject(): StoppedEngineEntity {
-    return { ...this }
+    return { 
+      ...this,
+      addElementStop: this.addElementStop.map(({ addElementStopId }) => ({ addElementStopId })),
+    }
   }
 }

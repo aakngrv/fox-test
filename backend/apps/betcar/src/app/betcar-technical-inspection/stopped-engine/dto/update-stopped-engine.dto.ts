@@ -97,16 +97,10 @@ export class UpdateStoppedEngineDto {
     example: 'string'
   })
   public wearComment: string;
-
+  
   @ApiProperty({
-    description: 'Запотевание',
-    example: ['string']
+    description: 'Новый элемент',
+    example: [1]
   })
-  public fogging: string[];
-
-  @ApiProperty({
-    description: 'Фото',
-    example: ['string']
-  })
-  public photo: string[];
+  public addElementStop: number[];
 }

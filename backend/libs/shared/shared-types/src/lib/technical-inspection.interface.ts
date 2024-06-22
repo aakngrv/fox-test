@@ -16,8 +16,16 @@ export interface StoppedEngine {
   brakeDiscs: string;
   brakePads: string;
   wearComment: string;
+  addElementStop?: AddElementStop[];
+}
+
+export interface AddElementStop {
+  addElementStopId?: number;
+  stoppedEngineId: number;
+  name: string;
   fogging: string[];
   photo: string[];
+  comment: string;
 }
 
 export interface RunningEngine {
