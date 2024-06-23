@@ -122,6 +122,13 @@ export class StoppedEngineRdo {
   })
   @Expose()
   public wearComment: string;
+
+  @ApiProperty({
+    description: 'Запотевание есть или нет',
+    example: false
+  })
+  @Expose()
+  public isFogging: boolean;
   
   @ApiProperty({
     description: 'Новый элемент',

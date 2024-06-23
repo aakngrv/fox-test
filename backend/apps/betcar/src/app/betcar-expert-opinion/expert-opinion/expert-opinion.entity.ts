@@ -20,6 +20,7 @@ export class ExpertOpinionEntity implements Entity<ExpertOpinionEntity>, ExpertO
     this.reportId = entity.reportId;
     this.plusComment = entity.plusComment;
     this.totalComment = entity.totalComment;
+    this.minusComment = entity.minusComment;
 
   }
 

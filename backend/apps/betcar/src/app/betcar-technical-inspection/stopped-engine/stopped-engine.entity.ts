@@ -24,8 +24,7 @@ export class StoppedEngineEntity implements Entity<StoppedEngineEntity>, Stopped
   public technicalFluidsComment: string;
   public wearComment: string;
   public brakePads: string;
-  public fogging: string[];
-  public photo: string[];
+  public isFogging: boolean;
   public addElementStop?: AddElementStop[];
 
 
@@ -51,6 +50,7 @@ export class StoppedEngineEntity implements Entity<StoppedEngineEntity>, Stopped
     this.wearComment = entity.wearComment;
     this.comment = entity.comment;
     this.brakePads = entity.brakePads;
+    this.isFogging = entity.isFogging;
     this.addElementStop = [];
   }
 
