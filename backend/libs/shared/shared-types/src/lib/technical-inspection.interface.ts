@@ -16,6 +16,7 @@ export interface StoppedEngine {
   brakeDiscs: string;
   brakePads: string;
   wearComment: string;
+  isFogging: boolean;
   addElementStop?: AddElementStop[];
 }
 

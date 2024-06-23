@@ -97,6 +97,12 @@ export class UpdateStoppedEngineDto {
     example: 'string'
   })
   public wearComment: string;
+
+  @ApiProperty({
+    description: 'Запотевание есть или нет',
+    example: false
+  })
+  public isFogging: boolean;
   
   @ApiProperty({
     description: 'Новый элемент',

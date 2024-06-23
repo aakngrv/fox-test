@@ -817,6 +817,7 @@ model StoppedEngine {
   brakeDiscs             String   @default("") @map("brake_discs")
   brakePads              String   @default("") @map("brake_pads")
   wearComment            String   @default("") @map("wear_comment")
+  isFogging              Boolean  @default(false) @map("is_fogging")
   addElementStop         AddElementStop[]
 
   @@map("stopped_engines")
@@ -832,7 +833,7 @@ model AddElementStop {
   photo            String[]       @default([""])
   comment          String         @default("")
 
-  @@map("add_element_stop")
+  @@map("add_elements_stop")
 }
 
 model RunningEngine {
