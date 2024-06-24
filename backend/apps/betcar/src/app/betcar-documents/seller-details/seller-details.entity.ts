@@ -10,7 +10,6 @@ export class SellerDetailsEntity implements Entity<SellerDetailsEntity>, SellerD
     public name: string;
     public phone: string;
     public carCost: string;
-    public isBargain: boolean;
     public role: string;
     public comment: string;
 
@@ -26,7 +25,6 @@ export class SellerDetailsEntity implements Entity<SellerDetailsEntity>, SellerD
     this.name = entity.name;
     this.phone = entity.phone;
     this.carCost = entity.carCost;
-    this.isBargain = entity.isBargain;
     this.role = entity.role;
     this.comment = entity.comment;
   }

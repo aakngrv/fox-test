@@ -6,7 +6,6 @@ export interface SellerDetails {
   name: string;
   phone: string;
   carCost: string;
-  isBargain: boolean;
   role: string;
   comment: string;
 }
