@@ -37,12 +37,6 @@ export class CreateSellerDetailsDto {
     example: '100000'
   })
   public carCost: string;
-
-  @ApiProperty({
-    description: 'Торг',
-    example: false
-  })
-  public isBargain: boolean;
   
   @ApiProperty({
     description: 'Собственник или дилер',
