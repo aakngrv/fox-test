@@ -31,6 +31,8 @@ export class ComplectationWheelsEntity implements Entity<ComplectationWheelsEnti
   public backLeftWear: string;
   public frontRightWear: string;
   public backRightWear: string;
+  public additionalTiresSeasonality: string[];
+  public additionalDisksType: string;
   
 
   constructor(complectationWheels: ComplectationWheels) {
@@ -66,6 +68,8 @@ export class ComplectationWheelsEntity implements Entity<ComplectationWheelsEnti
     this.backLeftWear = entity.backLeftWear;
     this.frontRightWear = entity.frontRightWear;
     this.backRightWear = entity.backRightWear;
+    this.additionalTiresSeasonality = entity.additionalTiresSeasonality;
+    this.additionalDisksType = entity.additionalDisksType;
   }
 
   public toObject(): ComplectationWheelsEntity {

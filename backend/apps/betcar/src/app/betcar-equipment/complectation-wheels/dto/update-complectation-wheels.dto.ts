@@ -157,4 +157,16 @@ export class UpdateComplectationWheelsDto {
     example: 'string'
   })
   public backRightWear: string;
+
+  @ApiProperty({
+    description: 'Дополнительные шины - сезонность',
+    example: ['string']
+  })
+  public additionalTiresSeasonality: string[];
+
+  @ApiProperty({
+    description: 'Дополнительные диски - тип',
+    example: 'string'
+  })
+  public additionalDisksType: string;
 }

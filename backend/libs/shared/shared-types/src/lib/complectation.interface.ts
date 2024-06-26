@@ -36,6 +36,8 @@ export interface ComplectationWheels {
   backLeftWear: string;
   frontRightWear: string;
   backRightWear: string;
+  additionalTiresSeasonality: string[];
+  additionalDisksType: string;
 }
 
 export interface ComplectationSalon {
