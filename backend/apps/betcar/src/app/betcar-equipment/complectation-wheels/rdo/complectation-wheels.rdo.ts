@@ -192,4 +192,18 @@ export class ComplectationWheelsRdo {
   })
   @Expose()
   public backRightWear: string;
+
+  @ApiProperty({
+    description: 'Дополнительные шины - сезонность',
+    example: ['string']
+  })
+  @Expose()
+  public additionalTiresSeasonality: string[];
+    
+  @ApiProperty({
+    description: 'Дополнительные диски - тип',
+    example: 'string'
+  })
+  @Expose()
+  public additionalDisksType: string;
 }
