@@ -13,7 +13,15 @@ export class TestDriveRepository implements CRUDRepository<TestDriveEntity, numb
 
   public async create(item: TestDriveEntity): Promise<TestDrive> {
     return this.prisma.testDrive.create({
-      data: { ...item.toObject() }
+      data: { 
+        ...item.toObject(),
+        addElementTest: {
+          connect: []
+        },
+      },
+      include: {
+        addElementTest: true,
+      }
     });
   }
 
@@ -29,6 +37,9 @@ export class TestDriveRepository implements CRUDRepository<TestDriveEntity, numb
     return this.prisma.testDrive.findFirst({
       where: {
         testDriveId
+      },
+      include: {
+        addElementTest: true,
       }
     });
   }
@@ -39,6 +50,9 @@ export class TestDriveRepository implements CRUDRepository<TestDriveEntity, numb
         testDriveId: {
           in: ids.length > 0 ? ids : undefined
         }
+      },
+      include: {
+        addElementTest: true,
       }
     });
   }
@@ -48,7 +62,16 @@ export class TestDriveRepository implements CRUDRepository<TestDriveEntity, numb
       where: {
         testDriveId
       },
-      data: { ...item.toObject(), testDriveId }
+      data: { 
+        ...item.toObject(),
+        testDriveId,
+        addElementTest: {
+          connect: []
+        },
+      },
+      include: {
+        addElementTest: true,
+      }
     });
   }
 }

@@ -15,7 +15,7 @@ export interface ComplectationWheels {
   additionalTireSets: boolean;
   additionalSetsOfDisks: boolean;
   typeOfDisks: string;
-  seasonality: string[];
+  seasonality: string;
   frontLeftBrand: string;
   backLeftBrand: string;
   frontRightBrand: string;

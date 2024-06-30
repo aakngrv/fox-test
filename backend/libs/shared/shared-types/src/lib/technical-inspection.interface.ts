@@ -64,36 +64,35 @@ export interface RunningEngine {
 export interface Dashboard {
   dashboardId?: number;
   reportId: number;
-  abs: boolean;
-  esp: boolean;
-  airbag: boolean;
-  checkEngine: boolean;
-  battery: boolean;
-  tirePressure: boolean;
-  oilPressure: boolean;
-  controlLightComment: string;
-  electronicDiagnostics: boolean;
-  diagnosticsResult: string;
+  noErrors: boolean;
+  selectError: string[];
   diagnosticsFile?: string[];
+  diagnosticsResult: string;
   mileageOnDashboard?: string;
   mileageInTheEngineBlock?: string;
   mileageInTheGearbox?: string;
   mileageInAdditionalBlocks?: string;
   isNoMileage?: boolean;
   totalComment: string;
-  noErrors: boolean;
+  addElementDash?: AddElementDash[];
+}
+
+export interface AddElementDash {
+  addElementDashId?: number;
+  dashboardId: number;
+  name: string;
 }
 
 export interface TestDrive {
   testDriveId?: number;
   reportId: number;
   allSystemOk: boolean;
-  suspension: boolean;
-  engine: boolean;
-  transmission: boolean;
-  steering: boolean;
-  brakeSystem: boolean;
-  parkingBrake: boolean;
-  exhaustSystem: boolean;
-  comment: string;
+  malfunctions: string[];
+  addElementTest?: AddElementTest[];
+}
+
+export interface AddElementTest {
+  addElementTestId?: number;
+  testDriveId: number;
+  name: string;
 }

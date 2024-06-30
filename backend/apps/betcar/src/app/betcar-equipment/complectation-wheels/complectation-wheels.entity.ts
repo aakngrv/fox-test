@@ -10,7 +10,7 @@ export class ComplectationWheelsEntity implements Entity<ComplectationWheelsEnti
   public additionalTireSets: boolean;
   public additionalSetsOfDisks: boolean;
   public typeOfDisks: string;
-  public seasonality: string[];
+  public seasonality: string;
   public frontLeftBrand: string;
   public backLeftBrand: string;
   public frontRightBrand: string;

@@ -260,7 +260,7 @@ model ComplectationWheels {
   additionalTireSets         Boolean  @default(false) @map("additional_tire_sets")
   additionalSetsOfDisks      Boolean  @default(false) @map("additional_sets_of_disks")
   typeOfDisks                String   @default("") @map("type_of_disks")
-  seasonality                String[] @default([""])
+  seasonality                String   @default("")
   frontLeftBrand             String   @default("") @map("front_left_brand")
   backLeftBrand              String   @default("") @map("back_left_brand")
   frontRightBrand            String   @default("") @map("front_right_brand")
@@ -877,16 +877,8 @@ model Dashboard {
   dashboardId               Int      @id @default(autoincrement()) @map("dashboard_id")
   reportId                  Int      @map("report_id")
   report                    Report   @relation(fields: [reportId], references: [reportId], onDelete: Cascade, onUpdate: Cascade)
-  abs                       Boolean  @default(false)
-  esp                       Boolean  @default(false)
-  airbag                    Boolean  @default(false)
-  checkEngine               Boolean  @default(false) @map("check_engine")
-  battery                   Boolean  @default(false)
-  tirePressure              Boolean  @default(false) @map("tire_pressure")
-  oilPressure               Boolean  @default(false) @map("oil_pressure")
-  controlLightComment       String   @default("") @map("control_light_comment")
-  electronicDiagnostics     Boolean  @default(false) @map("electronic_diagnostics")
   diagnosticsFile           String[] @default([""]) @map("diagnostics_file")
+  selectError               String[] @default([""]) @map("select_error")
   diagnosticsResult         String   @default("") @map("diagnostics_result")
   mileageOnDashboard        String?  @default("") @map("mileage_on_dashboard")
   mileageInTheEngineBlock   String?  @default("") @map("mileage_in_the_engine_block")
@@ -895,25 +887,38 @@ model Dashboard {
   isNoMileage               Boolean? @default(false) @map("is_no_mileage")
   totalComment              String   @default("") @map("total_comment")
   noErrors                  Boolean  @default(false) @map("no_errors")
+  addElementDash            AddElementDash[]
 
   @@map("dashboards")
 }
 
+model AddElementDash {
+  addElementDashId Int        @id @default(autoincrement()) @map("add_element_dash_id")
+  dashboardId      Int
+  dashboard        Dashboard? @relation(fields: [dashboardId], references: [dashboardId], onDelete: Cascade, onUpdate: Cascade)
+  name             String     @default("")
+
+  @@map("add_elements_dash")
+}
+
 model TestDrive {
-  testDriveId     Int     @id @default(autoincrement()) @map("test_drive_id")
-  reportId        Int     @map("report_id")
-  report          Report  @relation(fields: [reportId], references: [reportId], onDelete: Cascade, onUpdate: Cascade)
-  allSystemOk     Boolean @default(false) @map("all_system_ok")
-  suspension      Boolean @default(false)
-  engine          Boolean @default(false)
-  transmission    Boolean @default(false)
-  steering        Boolean @default(false)
-  brakeSystem     Boolean @default(false) @map("brake_system")
-  parkingBrake    Boolean @default(false) @map("parking_brake")
-  exhaustSystem   Boolean @default(false) @map("exhaust_system")
-  comment         String  @default("")
+  testDriveId     Int      @id @default(autoincrement()) @map("test_drive_id")
+  reportId        Int      @map("report_id")
+  report          Report   @relation(fields: [reportId], references: [reportId], onDelete: Cascade, onUpdate: Cascade)
+  allSystemOk     Boolean  @default(false) @map("all_system_ok")
+  malfunctions    String[] @default([""])
+  addElementTest  AddElementTest[]
 
   @@map("tests_drive")
+}
+
+model AddElementTest {
+  addElementTestId Int        @id @default(autoincrement()) @map("add_element_test_id")
+  testDriveId      Int
+  testDrive        TestDrive? @relation(fields: [testDriveId], references: [testDriveId], onDelete: Cascade, onUpdate: Cascade)
+  name             String     @default("")
+
+  @@map("add_elements_test")
 }
 
 // *********** End of table "Технический осмотр" ************ //
