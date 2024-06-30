@@ -48,10 +48,10 @@ export class ComplectationWheelsRdo {
 
   @ApiProperty({
     description: 'Сезонность',
-    example: ["string"]
+    example: "string"
   })
   @Expose()
-  public seasonality: string[];
+  public seasonality: string;
 
   @ApiProperty({
     description: 'Марка шин переднего левого колеса',

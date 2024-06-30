@@ -197,8 +197,16 @@ export class BetcarReportRepository implements CRUDRepository<BetcarReportEntity
           }
         },
         runningEngine: true,
-        dashboard: true,
-        testDrive: true,
+        dashboard: {
+          include: {
+            addElementDash: true
+          }
+        },
+        testDrive: {
+          include: {
+            addElementTest: true
+          }
+        },
         expertOpinion: true,
       }
     });
@@ -304,8 +312,16 @@ export class BetcarReportRepository implements CRUDRepository<BetcarReportEntity
           }
         },
         runningEngine: true,
-        dashboard: true,
-        testDrive: true,
+        dashboard: {
+          include: {
+            addElementDash: true
+          }
+        },
+        testDrive: {
+          include: {
+            addElementTest: true
+          }
+        },
         expertOpinion: true,
       }
     });
@@ -400,8 +416,16 @@ export class BetcarReportRepository implements CRUDRepository<BetcarReportEntity
           }
         },
         runningEngine: true,
-        dashboard: true,
-        testDrive: true,
+        dashboard: {
+          include: {
+            addElementDash: true
+          }
+        },
+        testDrive: {
+          include: {
+            addElementTest: true
+          }
+        },
         expertOpinion: true,
       }
     });
