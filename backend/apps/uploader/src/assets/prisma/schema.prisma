@@ -931,14 +931,14 @@ model AddElementTest {
 // ** Модели сервиса "Заключение эксперта" ** //
 
 model ExpertOpinion {
-  expertOpinionId Int    @id @default(autoincrement()) @map("expert_opinion")
-  reportId        Int    @map("report_id")
-  report          Report @relation(fields: [reportId], references: [reportId], onDelete: Cascade, onUpdate: Cascade)
-  plusComment     String @default("") @map("plus_comment")
-  minusComment    String @default("") @map("minus_comment")
-  totalComment    String @default("") @map("total_comment")
-  historyFile     String @default("") @map("history_file")
-  historyComment  String @default("") @map("history_comment")
+  expertOpinionId Int      @id @default(autoincrement()) @map("expert_opinion")
+  reportId        Int      @map("report_id")
+  report          Report   @relation(fields: [reportId], references: [reportId], onDelete: Cascade, onUpdate: Cascade)
+  plusComment     String   @default("") @map("plus_comment")
+  minusComment    String   @default("") @map("minus_comment")
+  totalComment    String   @default("") @map("total_comment")
+  historyFile     String[] @default([""]) @map("history_file")
+  historyComment  String   @default("") @map("history_comment")
 
   @@map("experts_opinions")
 }

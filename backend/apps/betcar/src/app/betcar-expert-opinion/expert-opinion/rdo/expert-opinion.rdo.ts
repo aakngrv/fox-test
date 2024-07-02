@@ -41,10 +41,10 @@ export class ExpertOpinionRdo {
     
   @ApiProperty({
     description: 'Файл истории',
-    example: 'string'
+    example: ['string']
   })
   @Expose()
-  public historyFile: string;
+  public historyFile: string[];
 
   @ApiProperty({
     description: 'Комментарий истории автомобиля',
