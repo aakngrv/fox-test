@@ -10,9 +10,8 @@ export class DashboardEntity implements Entity<DashboardEntity>, Dashboard {
   public dashboardId?: number;
   public reportId: number;
   public noErrors: boolean;
-  public selectError: string[];
   public diagnosticsFile?: string[];
-  public diagnosticsResult: string;
+  public diagnosticsComment: string;
   public mileageOnDashboard?: string;
   public mileageInTheEngineBlock?: string;
   public mileageInTheGearbox?: string;
@@ -29,8 +28,7 @@ export class DashboardEntity implements Entity<DashboardEntity>, Dashboard {
   public fillEntity(entity: Dashboard): void {
     this.dashboardId = entity.dashboardId;
     this.reportId = entity.reportId;
-    this.selectError = entity.selectError;
-    this.diagnosticsResult = entity.diagnosticsResult;
+    this.diagnosticsComment = entity.diagnosticsComment;
     this.diagnosticsFile = entity.diagnosticsFile;
     this.mileageOnDashboard = entity.mileageOnDashboard;
     this.mileageInTheEngineBlock = entity.mileageInTheEngineBlock;

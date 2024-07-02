@@ -14,9 +14,7 @@ export class RunningEngineEntity implements Entity<RunningEngineEntity>, Running
   public comment: string;
   public engineVideo: string;
   public allSystemOkElectric: boolean;
-  public electricalMalfunction: string[];
   public allSystemOkMechanical: boolean;
-  public mechanicalMalfunction: string[];  
   public addElementElectrical?: AddElementElectrical[];
   public addElementMechanical?: AddElementMechanical[];
 
@@ -32,9 +30,7 @@ export class RunningEngineEntity implements Entity<RunningEngineEntity>, Running
     this.comment = entity.comment;
     this.engineVideo = entity.engineVideo;
     this.allSystemOkElectric = entity.allSystemOkElectric;
-    this.electricalMalfunction = entity.electricalMalfunction;
     this.allSystemOkMechanical = entity.allSystemOkMechanical;
-    this.mechanicalMalfunction = entity.mechanicalMalfunction;
     this.addElementElectrical = [];
     this.addElementMechanical = [];
   }

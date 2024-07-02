@@ -13,12 +13,6 @@ export class UpdateDashboardDto {
     example: false
   })
   public noErrors: boolean;
-
-  @ApiProperty({
-    description: 'Выбрать ошибку',
-    example: ["string"]
-  })
-  public selectError: string[];
   
   @ApiProperty({
     description: 'Файл диагностики',
@@ -30,7 +24,7 @@ export class UpdateDashboardDto {
     description: 'Комментарий эксперта',
     example: "string"
   })
-  public diagnosticsResult: string;
+  public diagnosticsComment: string;
 
   @ApiProperty({
     description: 'Пробег на приборной панели',

@@ -826,7 +826,6 @@ model StoppedEngine {
 }
 
 model AddElementStop {
-
   addElementStopId Int            @id @default(autoincrement()) @map("add_element_stop_id")
   stoppedEngineId  Int
   stoppedEngine    StoppedEngine? @relation(fields: [stoppedEngineId], references: [stoppedEngineId], onDelete: Cascade, onUpdate: Cascade)
@@ -846,9 +845,7 @@ model RunningEngine {
   comment                 String   @default("")
   engineVideo             String   @default("") @map("engine_video")
   allSystemOkElectric     Boolean  @default(false) @map("all_system_ok_electric")
-  electricalMalfunction   String[] @default([""]) @map("electrical_malfunction")
   allSystemOkMechanical   Boolean  @default(false) @map("all_system_ok_mechanical")
-  mechanicalMalfunction   String[] @default([""]) @map("mechanical_malfunction")
   addElementElectrical    AddElementElectrical[]
   addElementMechanical    AddElementMechanical[]
 
@@ -882,8 +879,7 @@ model Dashboard {
   reportId                  Int      @map("report_id")
   report                    Report   @relation(fields: [reportId], references: [reportId], onDelete: Cascade, onUpdate: Cascade)
   diagnosticsFile           String[] @default([""]) @map("diagnostics_file")
-  selectError               String[] @default([""]) @map("select_error")
-  diagnosticsResult         String   @default("") @map("diagnostics_result")
+  diagnosticsComment        String   @default("") @map("diagnostics_comment")
   mileageOnDashboard        String?  @default("") @map("mileage_on_dashboard")
   mileageInTheEngineBlock   String?  @default("") @map("mileage_in_the_engine_block")
   mileageInTheGearbox       String?  @default("") @map("mileage_in_the_gearbox")
@@ -923,6 +919,8 @@ model AddElementTest {
   testDriveId      Int
   testDrive        TestDrive? @relation(fields: [testDriveId], references: [testDriveId], onDelete: Cascade, onUpdate: Cascade)
   name             String     @default("")
+  isCheck          Boolean        @default(false) @map("is_check")
+  comment          String         @default("")
 
   @@map("add_elements_test")
 }
@@ -939,6 +937,8 @@ model ExpertOpinion {
   plusComment     String @default("") @map("plus_comment")
   minusComment    String @default("") @map("minus_comment")
   totalComment    String @default("") @map("total_comment")
+  historyFile     String @default("") @map("history_file")
+  historyComment  String @default("") @map("history_comment")
 
   @@map("experts_opinions")
 }

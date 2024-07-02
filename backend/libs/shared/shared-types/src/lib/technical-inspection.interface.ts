@@ -36,9 +36,7 @@ export interface RunningEngine {
   comment: string;
   engineVideo: string;
   allSystemOkElectric: boolean;
-  electricalMalfunction: string[];
   allSystemOkMechanical: boolean;
-  mechanicalMalfunction: string[];
   addElementElectrical?: AddElementElectrical[];
   addElementMechanical?: AddElementMechanical[];
 }
@@ -63,9 +61,8 @@ export interface Dashboard {
   dashboardId?: number;
   reportId: number;
   noErrors: boolean;
-  selectError: string[];
   diagnosticsFile?: string[];
-  diagnosticsResult: string;
+  diagnosticsComment: string;
   mileageOnDashboard?: string;
   mileageInTheEngineBlock?: string;
   mileageInTheGearbox?: string;
@@ -87,7 +84,6 @@ export interface TestDrive {
   testDriveId?: number;
   reportId: number;
   allSystemOk: boolean;
-  malfunctions: string[];
   addElementTest?: AddElementTest[];
 }
 
@@ -95,4 +91,6 @@ export interface AddElementTest {
   addElementTestId?: number;
   testDriveId: number;
   name: string;
+  isCheck: boolean;
+  comment: string;
 }

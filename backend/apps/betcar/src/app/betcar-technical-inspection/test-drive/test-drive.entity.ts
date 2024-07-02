@@ -10,7 +10,6 @@ export class TestDriveEntity implements Entity<TestDriveEntity>, TestDrive {
   public testDriveId?: number;
   public reportId: number;
   public allSystemOk: boolean;
-  public malfunctions: string[];
   public addElementTest?: AddElementTest[];
 
 
@@ -22,7 +21,6 @@ export class TestDriveEntity implements Entity<TestDriveEntity>, TestDrive {
     this.testDriveId = entity.testDriveId;
     this.reportId = entity.reportId;
     this.allSystemOk = entity.allSystemOk;
-    this.malfunctions = entity.malfunctions;
     this.addElementTest = [];
   }
 
