@@ -196,7 +196,12 @@ export class BetcarReportRepository implements CRUDRepository<BetcarReportEntity
             addElementStop: true
           }
         },
-        runningEngine: true,
+        runningEngine: {
+          include: {
+            addElementElectrical: true,
+            addElementMechanical: true
+          }
+        },
         dashboard: {
           include: {
             addElementDash: true
@@ -311,7 +316,12 @@ export class BetcarReportRepository implements CRUDRepository<BetcarReportEntity
             addElementStop: true
           }
         },
-        runningEngine: true,
+        runningEngine: {
+          include: {
+            addElementElectrical: true,
+            addElementMechanical: true
+          }
+        },
         dashboard: {
           include: {
             addElementDash: true
@@ -415,7 +425,12 @@ export class BetcarReportRepository implements CRUDRepository<BetcarReportEntity
             addElementStop: true
           }
         },
-        runningEngine: true,
+        runningEngine: {
+          include: {
+            addElementElectrical: true,
+            addElementMechanical: true
+          }
+        },
         dashboard: {
           include: {
             addElementDash: true

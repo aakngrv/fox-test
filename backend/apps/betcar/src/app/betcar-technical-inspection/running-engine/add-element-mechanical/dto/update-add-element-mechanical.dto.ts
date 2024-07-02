@@ -1,19 +1,19 @@
 import { ApiProperty } from '@nestjs/swagger';
 
-export class UpdateAddElementDashDto {
+export class UpdateAddElementMechanicalDto {
   
   @ApiProperty({
-    description: 'ID дашборда',
+    description: 'ID запущенного двигателя',
     example: 1
   })
-  public dashboardId: number;
+  public runningEngineId: number;
 
   @ApiProperty({
     description: 'Название элемента',
     example: 'string'
   })
   public name: string;
-
+  
   @ApiProperty({
     description: 'Выбрано',
     example: false

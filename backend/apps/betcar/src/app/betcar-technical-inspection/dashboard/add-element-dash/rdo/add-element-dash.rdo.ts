@@ -23,4 +23,18 @@ export class AddElementDashRdo {
   })
   @Expose()
   public name: string;
+
+  @ApiProperty({
+    description: 'Выбрано',
+    example: false
+  })
+  @Expose()
+  public isCheck: boolean;
+
+  @ApiProperty({
+    description: 'Комментрарий',
+    example: 'string'
+  })
+  @Expose()
+  public comment: string;
 }

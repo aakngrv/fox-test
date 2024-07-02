@@ -35,30 +35,28 @@ export interface RunningEngine {
   engineNotStart: boolean;
   comment: string;
   engineVideo: string;
-  battery: boolean;
-  lightingEngineering: boolean;
-  audioSystem: boolean;
-  heatedSteeringWheel: boolean;
-  soundSignal: boolean;
-  seatMassage: boolean;
-  windshieldWashers: boolean;
-  seatHeating: boolean;
-  windscreenWipers: boolean;
-  windowLifters: boolean;
-  electricSunroof: boolean;
-  electricSteeringWheel: boolean;
-  electricSeats: boolean;
-  electricPanorama: boolean;
-  heatedWindshield: boolean;
-  electricTrunkDrive: boolean;
-  electricSystemComment: string;
-  gearboxSwitching: boolean;
-  engineOperation: boolean;
-  interiorHeater: boolean;
-  powerSteering: boolean;
-  airConditioner: boolean;
-  mechanicalSystemComment: string;
-  electricMirrors: boolean;
+  allSystemOkElectric: boolean;
+  electricalMalfunction: string[];
+  allSystemOkMechanical: boolean;
+  mechanicalMalfunction: string[];
+  addElementElectrical?: AddElementElectrical[];
+  addElementMechanical?: AddElementMechanical[];
+}
+
+export interface AddElementElectrical {
+  addElementElectricalId?: number;
+  runningEngineId: number;
+  name: string;
+  isCheck: boolean;
+  comment: string;
+}
+
+export interface AddElementMechanical {
+  addElementMechanicalId?: number;
+  runningEngineId: number;
+  name: string;
+  isCheck: boolean;
+  comment: string;
 }
 
 export interface Dashboard {
@@ -81,6 +79,8 @@ export interface AddElementDash {
   addElementDashId?: number;
   dashboardId: number;
   name: string;
+  isCheck: boolean;
+  comment: string;
 }
 
 export interface TestDrive {
