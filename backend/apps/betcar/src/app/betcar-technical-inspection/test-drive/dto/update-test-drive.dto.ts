@@ -15,12 +15,6 @@ export class UpdateTestDriveDto {
   public allSystemOk: boolean;
 
   @ApiProperty({
-    description: 'Неисправности',
-    example: ["string"]
-  })
-  public malfunctions: string[];
-
-  @ApiProperty({
     description: 'Новый элемент',
     example: [1]
   })

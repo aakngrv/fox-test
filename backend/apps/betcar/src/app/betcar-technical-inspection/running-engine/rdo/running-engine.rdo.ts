@@ -47,27 +47,12 @@ export class RunningEngineRdo {
   public allSystemOkElectric: boolean;
 
   @ApiProperty({
-    description: 'Выбрать несправность',
-    example: ['string']
-  })
-  @Expose()
-  public electricalMalfunction: string[];
-
-  @ApiProperty({
     description: 'Все системы в порядке',
     example: false
   })
   @Expose()
   public allSystemOkMechanical: boolean;
-
-  @ApiProperty({
-    description: 'Выбрать несправность',
-    example: ['string']
-  })
-  @Expose()
-  public mechanicalMalfunction: string[];
-
-    
+ 
   @ApiProperty({
     description: 'Новый элемент эл систем',
     example: [1]

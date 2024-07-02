@@ -4,4 +4,6 @@ export interface ExpertOpinion {
   plusComment: string;
   minusComment: string;
   totalComment: string;
+  historyFile: string;
+  historyComment: string;
 }

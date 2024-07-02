@@ -33,22 +33,10 @@ export class UpdateRunningEngineDto {
   public allSystemOkElectric: boolean;
 
   @ApiProperty({
-    description: 'Выбрать несправность',
-    example: ['string']
-  })
-  public electricalMalfunction: string[];
-
-  @ApiProperty({
     description: 'Все системы в порядке',
     example: false
   })
   public allSystemOkMechanical: boolean;
-
-  @ApiProperty({
-    description: 'Выбрать несправность',
-    example: ['string']
-  })
-  public mechanicalMalfunction: string[];
 
   @ApiProperty({
     description: 'Новый элемент эл систем',

@@ -7,6 +7,8 @@ export class AddElementTestEntity implements Entity<AddElementTest>, AddElementT
   public addElementTestId?: number;
   public testDriveId: number;
   public name: string;
+  public isCheck: boolean;
+  public comment: string;
 
   constructor(addElementTest: AddElementTest) {
     this.fillEntity(addElementTest);
@@ -18,6 +20,8 @@ export class AddElementTestEntity implements Entity<AddElementTest>, AddElementT
     this.addElementTestId = entity.addElementTestId;
     this.testDriveId = entity.testDriveId;
     this.name = entity.name;
+    this.isCheck = entity.isCheck;
+    this.comment = entity.comment;
   }
 
   public toObject(): AddElementTestEntity {

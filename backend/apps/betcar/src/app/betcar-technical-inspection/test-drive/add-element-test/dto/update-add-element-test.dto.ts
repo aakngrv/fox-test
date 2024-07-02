@@ -13,4 +13,16 @@ export class UpdateAddElementTestDto {
     example: 'string'
   })
   public name: string;
+
+  @ApiProperty({
+    description: 'Выбрано',
+    example: false
+  })
+  public isCheck: boolean;
+
+  @ApiProperty({
+    description: 'Комментрарий',
+    example: 'string'
+  })
+  public comment: string;
 }

@@ -24,13 +24,6 @@ export class DashboardRdo {
   })
   @Expose()
   public noErrors: boolean;
-
-  @ApiProperty({
-    description: 'Выбрать ошибку',
-    example: ["string"]
-  })
-  @Expose()
-  public selectError: string[];
   
   @ApiProperty({
     description: 'Файл диагностики',
@@ -44,7 +37,7 @@ export class DashboardRdo {
     example: "string"
   })
   @Expose()
-  public diagnosticsResult: string;
+  public diagnosticsComment: string;
 
   @ApiProperty({
     description: 'Пробег на приборной панели',
