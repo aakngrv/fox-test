@@ -1,3 +1,4 @@
+import { AddElementElectrical, AddElementMechanical } from '@backend/shared/shared-types';
 import { ApiProperty } from '@nestjs/swagger';
 import { Expose } from "class-transformer";
 
@@ -37,172 +38,47 @@ export class RunningEngineRdo {
   })
   @Expose()
   public engineVideo: string;
-
+  
   @ApiProperty({
-    description: 'Аккумулятор',
+    description: 'Все системы в порядке',
     example: false
   })
   @Expose()
-  public battery: boolean;
+  public allSystemOkElectric: boolean;
 
   @ApiProperty({
-    description: 'Светотехника',
+    description: 'Выбрать несправность',
+    example: ['string']
+  })
+  @Expose()
+  public electricalMalfunction: string[];
+
+  @ApiProperty({
+    description: 'Все системы в порядке',
     example: false
   })
   @Expose()
-  public lightingEngineering: boolean;
+  public allSystemOkMechanical: boolean;
 
   @ApiProperty({
-    description: 'Аудиосистема',
-    example: false
+    description: 'Выбрать несправность',
+    example: ['string']
   })
   @Expose()
-  public audioSystem: boolean;
+  public mechanicalMalfunction: string[];
+
+    
+  @ApiProperty({
+    description: 'Новый элемент эл систем',
+    example: [1]
+  })
+  @Expose()
+  public addElementElectrical: AddElementElectrical[];
 
   @ApiProperty({
-    description: 'Подогрев руля',
-    example: false
+    description: 'Новый элемент мех систем',
+    example: [1]
   })
   @Expose()
-  public heatedSteeringWheel: boolean;
-
-  @ApiProperty({
-    description: 'Звуковой сигнал',
-    example: false
-  })
-  @Expose()
-  public soundSignal: boolean;
-
-  @ApiProperty({
-    description: 'Массаж сидений',
-    example: false
-  })
-  @Expose()
-  public seatMassage: boolean;
-
-  @ApiProperty({
-    description: 'Стеклоомыватели',
-    example: false
-  })
-  @Expose()
-  public windshieldWashers: boolean;
-
-  @ApiProperty({
-    description: 'Подогрев сидений',
-    example: false
-  })
-  @Expose()
-  public seatHeating: boolean;
-
-  @ApiProperty({
-    description: 'Стеклоочистители',
-    example: false
-  })
-  @Expose()
-  public windscreenWipers: boolean;
-
-  @ApiProperty({
-    description: 'Стеклоподъемники',
-    example: false
-  })
-  @Expose()
-  public windowLifters: boolean;
-
-  @ApiProperty({
-    description: 'Электрический люк',
-    example: false
-  })
-  @Expose()
-  public electricSunroof: boolean;
-
-  @ApiProperty({
-    description: 'Электропривод руля',
-    example: false
-  })
-  @Expose()
-  public electricSteeringWheel: boolean;
-
-  @ApiProperty({
-    description: 'Электропривод сидений',
-    example: false
-  })
-  @Expose()
-  public electricSeats: boolean;
-
-  @ApiProperty({
-    description: 'Электрическая панорама',
-    example: false
-  })
-  @Expose()
-  public electricPanorama: boolean;
-
-  @ApiProperty({
-    description: 'Подогрев лобового стекла',
-    example: false
-  })
-  @Expose()
-  public heatedWindshield: boolean;
-
-  @ApiProperty({
-    description: 'Электропривод багажника',
-    example: false
-  })
-  @Expose()
-  public electricTrunkDrive: boolean;
-
-  @ApiProperty({
-    description: 'Комментарий эл систем',
-    example: 'string'
-  })
-  @Expose()
-  public electricSystemComment: string;
-
-  @ApiProperty({
-    description: 'Переключение КПП',
-    example: false
-  })
-  @Expose()
-  public gearboxSwitching: boolean;
-
-  @ApiProperty({
-    description: 'Работа двигателя',
-    example: false
-  })
-  @Expose()
-  public engineOperation: boolean;
-
-  @ApiProperty({
-    description: 'Отопитель салона',
-    example: false
-  })
-  @Expose()
-  public interiorHeater: boolean;
-
-  @ApiProperty({
-    description: 'Усилитель руля',
-    example: false
-  })
-  @Expose()
-  public powerSteering: boolean;
-
-  @ApiProperty({
-    description: 'Кондиционер',
-    example: false
-  })
-  @Expose()
-  public airConditioner: boolean;
-
-  @ApiProperty({
-    description: 'Комментарий мех систем',
-    example: 'string'
-  })
-  @Expose()
-  public mechanicalSystemComment: string;
-
-  @ApiProperty({
-    description: 'Электропривод зеркал',
-    example: false
-  })
-  @Expose()
-  public electricMirrors: boolean;
+  public addElementMechanical: AddElementMechanical[];
 }
