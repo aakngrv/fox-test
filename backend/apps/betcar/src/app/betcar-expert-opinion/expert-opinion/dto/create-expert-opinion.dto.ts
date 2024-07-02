@@ -28,9 +28,9 @@ export class CreateExpertOpinionDto {
   
   @ApiProperty({
     description: 'Файл истории',
-    example: 'string'
+    example: ['string']
   })
-  public historyFile: string;
+  public historyFile: string[];
 
   @ApiProperty({
     description: 'Комментарий истории автомобиля',

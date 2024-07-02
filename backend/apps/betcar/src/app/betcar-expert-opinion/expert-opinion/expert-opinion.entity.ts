@@ -9,7 +9,7 @@ export class ExpertOpinionEntity implements Entity<ExpertOpinionEntity>, ExpertO
   public minusComment: string;
   public plusComment: string;
   public totalComment: string;
-  public historyFile: string;
+  public historyFile: string[];
   public historyComment: string;
 
 
