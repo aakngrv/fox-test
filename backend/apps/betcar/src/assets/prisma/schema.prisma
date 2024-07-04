@@ -199,6 +199,7 @@ model EngineNumber {
   expertConfirm  Boolean   @default(false) @map("expert_confirm")
   numberState    Boolean[] @default([]) @map("number_state")
   photo          String[]  @default([""])
+  comment        String    @default("") 
 
   @@map("engine_numbers")
 }
