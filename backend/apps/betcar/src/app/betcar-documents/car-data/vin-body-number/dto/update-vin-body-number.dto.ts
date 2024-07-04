@@ -31,4 +31,10 @@ export class UpdateVinBodyNumberDto {
     example: ["string"]
   })
   public photo: string[];
+
+  @ApiProperty({
+    description: 'Комментарий',
+    example: "string"
+  })
+  public comment: string;
 }

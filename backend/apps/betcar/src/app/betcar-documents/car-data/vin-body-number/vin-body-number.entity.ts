@@ -10,6 +10,7 @@ export class VinBodyNumberEntity implements Entity<VinBodyNumberEntity>, VinBody
   public expertConfirm: boolean;
   public numberState: boolean[];
   public photo: string[];
+  public  comment: string;
 
 
   constructor(vinBodyNumber: VinBodyNumber) {
@@ -23,7 +24,7 @@ export class VinBodyNumberEntity implements Entity<VinBodyNumberEntity>, VinBody
     this.expertConfirm = entity.expertConfirm;
     this.numberState = entity.numberState;
     this.photo = entity.photo;
-
+    this.comment = entity.comment;
   }
 
   public toObject(): VinBodyNumberEntity {
