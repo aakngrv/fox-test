@@ -10,6 +10,7 @@ export class FrameNumberEntity implements Entity<FrameNumberEntity>, FrameNumber
   public expertConfirm: boolean;
   public numberState: boolean[];
   public photo: string[];
+  public comment: string;
 
 
   constructor(frameNumber: FrameNumber) {
@@ -23,6 +24,7 @@ export class FrameNumberEntity implements Entity<FrameNumberEntity>, FrameNumber
     this.expertConfirm = entity.expertConfirm;
     this.numberState = entity.numberState;
     this.photo = entity.photo;
+    this.comment = entity.comment;
 
   }
 

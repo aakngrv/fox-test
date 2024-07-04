@@ -37,4 +37,11 @@ export class StateNumberRdo {
   })
   @Expose()
   public stateNumber: string;
+
+  @ApiProperty({
+    description: 'Комментарий',
+    example: "string"
+  })
+  @Expose()
+  public comment: string;
 }

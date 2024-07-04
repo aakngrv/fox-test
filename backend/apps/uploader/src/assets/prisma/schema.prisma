@@ -148,6 +148,7 @@ model VinBodyNumber {
   expertConfirm   Boolean   @default(false) @map("expert_confirm")
   numberState     Boolean[] @default([]) @map("number_state")
   photo           String[]  @default([""])
+  comment         String    @default("") 
 
   @@map("vin_body_numbers")
 }
@@ -160,6 +161,7 @@ model FrameNumber {
   expertConfirm Boolean   @default(false) @map("expert_confirm")
   numberState   Boolean[] @default([]) @map("number_state")
   photo         String[]  @default([""])
+  comment       String    @default("") 
 
   @@map("frame_numbers")
 }
@@ -171,6 +173,7 @@ model StateNumber {
   absent        Boolean  @default(false)
   foreign       Boolean  @default(false)
   stateNumber   String   @default("") @map("state_number")
+  comment       String   @default("") 
 
   @@map("state_numbers")
 }

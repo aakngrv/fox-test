@@ -41,6 +41,7 @@ export interface VinBodyNumber {
   expertConfirm: boolean;
   numberState: boolean[];
   photo: string[];
+  comment: string;
 }
 
 export interface FrameNumber {
@@ -50,6 +51,7 @@ export interface FrameNumber {
   expertConfirm: boolean;
   numberState: boolean[];
   photo: string[];
+  comment: string;
 }
 
 export interface StateNumber {
@@ -58,6 +60,7 @@ export interface StateNumber {
   absent: boolean;
   foreign: boolean;
   stateNumber: string;
+  comment: string;
 }
 
 export interface AdditionalDocuments {
