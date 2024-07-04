@@ -87,6 +87,7 @@ export interface EngineNumber {
   expertConfirm: boolean;
   numberState: boolean[];
   photo: string[];
+  comment: string;
 }
 
 export interface STS {
