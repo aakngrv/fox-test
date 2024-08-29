@@ -15,7 +15,7 @@ export interface ComplectationWheels {
   additionalTireSets: boolean;
   additionalSetsOfDisks: boolean;
   typeOfDisks: string;
-  seasonality: string[];
+  seasonality: string;
   frontLeftBrand: string;
   backLeftBrand: string;
   frontRightBrand: string;
@@ -36,6 +36,8 @@ export interface ComplectationWheels {
   backLeftWear: string;
   frontRightWear: string;
   backRightWear: string;
+  additionalTiresSeasonality: string[];
+  additionalDisksType: string;
 }
 
 export interface ComplectationSalon {
@@ -148,13 +150,10 @@ export interface ComplectationOther {
   towBar: boolean;
   winch: boolean;
   airbox: boolean;
-  socket12v: boolean;
-  socket220v: boolean;
   crankcaseProtection: boolean;
   transverseArches: boolean;
   gasEquipment: boolean;
   numberOfKeys: string;
   spareWheel: string;
-  motoristSet: string[];
 }
 

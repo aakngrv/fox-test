@@ -40,20 +40,6 @@ export class ComplectationOtherRdo {
   public airbox: boolean;
 
   @ApiProperty({
-    description: 'Розетка 12В',
-    example: false
-  })
-  @Expose()
-  public socket12v: boolean;
-
-  @ApiProperty({
-    description: 'Розетка 220В',
-    example: false
-  })
-  @Expose()
-  public socket220v: boolean;
-
-  @ApiProperty({
     description: 'Защита картера',
     example: false
   })
@@ -87,11 +73,4 @@ export class ComplectationOtherRdo {
   })
   @Expose()
   public spareWheel: string;
-
-  @ApiProperty({
-    description: 'Набор автомобилиста',
-    example: ["string"]
-  })
-  @Expose()
-  public motoristSet: string[];
 }

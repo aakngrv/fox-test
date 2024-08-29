@@ -49,6 +49,12 @@ export class CreateEngineCompartmentDamageDto {
     example: ['string']
   })
   public televisor: string[];
+  
+  @ApiProperty({
+    description: 'Моторный щит',
+    example: ['string']
+  })
+  public motorShield: string[];
 
   @ApiProperty({
     description: 'Новый элемент',

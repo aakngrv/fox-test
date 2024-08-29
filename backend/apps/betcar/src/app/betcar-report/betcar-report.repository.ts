@@ -133,7 +133,11 @@ export class BetcarReportRepository implements CRUDRepository<BetcarReportEntity
         complectationSafety: true,
         complectationProtection: true,
         complectationOther: true,
-        paintworkInspection: true,
+        paintworkInspection:{
+          include: {
+            addElementPaintwork: true,
+          }
+        },
         engineCompartmentDamage: {
           include: {
             addElement: true,
@@ -187,10 +191,27 @@ export class BetcarReportRepository implements CRUDRepository<BetcarReportEntity
         exteriorPhoto: true,
         interiorPhoto: true,
         roundViewVideo: true,
-        stoppedEngine: true,
-        runningEngine: true,
-        dashboard: true,
-        testDrive: true,
+        stoppedEngine: {
+          include: {
+            addElementStop: true
+          }
+        },
+        runningEngine: {
+          include: {
+            addElementElectrical: true,
+            addElementMechanical: true
+          }
+        },
+        dashboard: {
+          include: {
+            addElementDash: true
+          }
+        },
+        testDrive: {
+          include: {
+            addElementTest: true
+          }
+        },
         expertOpinion: true,
       }
     });
@@ -232,7 +253,11 @@ export class BetcarReportRepository implements CRUDRepository<BetcarReportEntity
         complectationSafety: true,
         complectationProtection: true,
         complectationOther: true,
-        paintworkInspection: true,
+        paintworkInspection:{
+          include: {
+            addElementPaintwork: true,
+          }
+        },
         engineCompartmentDamage: {
           include: {
             addElement: true,
@@ -286,10 +311,27 @@ export class BetcarReportRepository implements CRUDRepository<BetcarReportEntity
         exteriorPhoto: true,
         interiorPhoto: true,
         roundViewVideo: true,
-        stoppedEngine: true,
-        runningEngine: true,
-        dashboard: true,
-        testDrive: true,
+        stoppedEngine: {
+          include: {
+            addElementStop: true
+          }
+        },
+        runningEngine: {
+          include: {
+            addElementElectrical: true,
+            addElementMechanical: true
+          }
+        },
+        dashboard: {
+          include: {
+            addElementDash: true
+          }
+        },
+        testDrive: {
+          include: {
+            addElementTest: true
+          }
+        },
         expertOpinion: true,
       }
     });
@@ -320,7 +362,11 @@ export class BetcarReportRepository implements CRUDRepository<BetcarReportEntity
         complectationSafety: true,
         complectationProtection: true,
         complectationOther: true,
-        paintworkInspection: true,
+        paintworkInspection:{
+          include: {
+            addElementPaintwork: true,
+          }
+        },
         engineCompartmentDamage: {
           include: {
             addElement: true,
@@ -374,10 +420,27 @@ export class BetcarReportRepository implements CRUDRepository<BetcarReportEntity
         exteriorPhoto: true,
         interiorPhoto: true,
         roundViewVideo: true,
-        stoppedEngine: true,
-        runningEngine: true,
-        dashboard: true,
-        testDrive: true,
+        stoppedEngine: {
+          include: {
+            addElementStop: true
+          }
+        },
+        runningEngine: {
+          include: {
+            addElementElectrical: true,
+            addElementMechanical: true
+          }
+        },
+        dashboard: {
+          include: {
+            addElementDash: true
+          }
+        },
+        testDrive: {
+          include: {
+            addElementTest: true
+          }
+        },
         expertOpinion: true,
       }
     });

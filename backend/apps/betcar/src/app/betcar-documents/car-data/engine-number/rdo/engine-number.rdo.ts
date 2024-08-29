@@ -44,4 +44,11 @@ export class EngineNumberRdo {
   })
   @Expose()
   public engineNumber: string;
+
+  @ApiProperty({
+    description: 'Комментарий',
+    example: "string"
+  })
+  @Expose()
+  public comment: string;
 }

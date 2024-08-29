@@ -27,6 +27,12 @@ export class CreateTCPDto {
   public photo: string[];
 
   @ApiProperty({
+    description: 'Количество владельцев',
+    example: "string"
+  })
+  public numberOfOwners: string;
+
+  @ApiProperty({
     description: 'Комментарий',
     example: 'string'
   })

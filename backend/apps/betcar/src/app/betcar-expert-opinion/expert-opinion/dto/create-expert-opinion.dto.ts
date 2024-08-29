@@ -25,4 +25,16 @@ export class CreateExpertOpinionDto {
     example: 'string'
   })
   public totalComment: string;
+  
+  @ApiProperty({
+    description: 'Файл истории',
+    example: ['string']
+  })
+  public historyFile: string[];
+
+  @ApiProperty({
+    description: 'Комментарий истории автомобиля',
+    example: 'string'
+  })
+  public historyComment: string;
 }

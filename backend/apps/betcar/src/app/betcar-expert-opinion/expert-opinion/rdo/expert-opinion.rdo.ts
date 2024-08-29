@@ -37,4 +37,19 @@ export class ExpertOpinionRdo {
   })
   @Expose()
   public totalComment: string;
+
+    
+  @ApiProperty({
+    description: 'Файл истории',
+    example: ['string']
+  })
+  @Expose()
+  public historyFile: string[];
+
+  @ApiProperty({
+    description: 'Комментарий истории автомобиля',
+    example: 'string'
+  })
+  @Expose()
+  public historyComment: string;
 }

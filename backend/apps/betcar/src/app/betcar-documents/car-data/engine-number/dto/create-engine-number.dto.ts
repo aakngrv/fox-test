@@ -31,5 +31,11 @@ export class CreateEngineNumberDto {
     example: "string"
   })
   public engineNumber: string;
+
+  @ApiProperty({
+    description: 'Комментарий',
+    example: "string"
+  })
+  public comment: string;
   
 }

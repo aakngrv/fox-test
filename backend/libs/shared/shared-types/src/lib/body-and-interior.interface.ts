@@ -26,6 +26,14 @@ export interface PaintworkInspection {
   leftRearDoorOpening: string[];
   leftRearPillar: string[];
   leftRearFender: string[];
+  addElementPaintwork?: AddElementPaintwork[];
+}
+
+export interface AddElementPaintwork {
+  addElementPaintworkId?: number;
+  paintworkInspectionId: number;
+  name: string;
+  info: string[];
 }
 
 export interface EngineCompartmentDamage {
@@ -38,6 +46,7 @@ export interface EngineCompartmentDamage {
   rightGlass: string[];
   hoodHinges: string[]; 
   televisor: string[];
+  motorShield: string[];
   addElement?: AddElement[];
 }
 

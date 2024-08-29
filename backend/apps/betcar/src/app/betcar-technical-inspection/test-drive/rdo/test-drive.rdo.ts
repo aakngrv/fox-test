@@ -1,10 +1,11 @@
+import { AddElementTest } from '@backend/shared/shared-types';
 import { ApiProperty } from '@nestjs/swagger';
 import { Expose } from "class-transformer";
 
 export class TestDriveRdo {
 
   @ApiProperty({
-    description: 'ID видео обзора',
+    description: 'ID тест драйва',
     example: 1
   })
   @Expose()
@@ -25,58 +26,9 @@ export class TestDriveRdo {
   public allSystemOk: boolean;
 
   @ApiProperty({
-    description: 'Подвеска',
-    example: false
+    description: 'Новый элемент',
+    example: [1]
   })
   @Expose()
-  public suspension: boolean;
-
-  @ApiProperty({
-    description: 'Двигатель',
-    example: false
-  })
-  @Expose()
-  public engine: boolean;
-
-  @ApiProperty({
-    description: 'Коробка передач',
-    example: false
-  })
-  @Expose()
-  public transmission: boolean;
-
-  @ApiProperty({
-    description: 'Рулевое управление',
-    example: false
-  })
-  @Expose()
-  public steering: boolean;
-
-  @ApiProperty({
-    description: 'Тормазная система',
-    example: false
-  })
-  @Expose()
-  public brakeSystem: boolean;
-
-  @ApiProperty({
-    description: 'Стояночный тормоз',
-    example: false
-  })
-  @Expose()
-  public parkingBrake: boolean;
-
-  @ApiProperty({
-    description: 'Выхлопная система',
-    example: false
-  })
-  @Expose()
-  public exhaustSystem: boolean;
-
-  @ApiProperty({
-    description: 'Комментарий',
-    example: 'string'
-  })
-  @Expose()
-  public comment: string;
+  public addElementTest: AddElementTest[];
 }

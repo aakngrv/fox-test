@@ -9,6 +9,8 @@ export class ExpertOpinionEntity implements Entity<ExpertOpinionEntity>, ExpertO
   public minusComment: string;
   public plusComment: string;
   public totalComment: string;
+  public historyFile: string[];
+  public historyComment: string;
 
 
   constructor(expertOpinion: ExpertOpinion) {
@@ -20,6 +22,9 @@ export class ExpertOpinionEntity implements Entity<ExpertOpinionEntity>, ExpertO
     this.reportId = entity.reportId;
     this.plusComment = entity.plusComment;
     this.totalComment = entity.totalComment;
+    this.minusComment = entity.minusComment;
+    this.historyFile = entity.historyFile;
+    this.historyComment = entity.historyComment;
 
   }
 

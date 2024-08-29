@@ -4,16 +4,22 @@ import { DashboardRepository} from "./dashboard.repository";
 import { Injectable } from '@nestjs/common';
 import { DashboardEntity} from "./dashboard.entity";
 import { UpdateDashboardDto} from "./dto/update-dashboard.dto";
+import { AddElementDashRepository } from "./add-element-dash/add-element-dash.repository";
 
 @Injectable()
 export class DashboardService {
 
   constructor(
-    private readonly dashboardRepository: DashboardRepository
+    private readonly dashboardRepository: DashboardRepository,
+    private readonly addElementDashRepository: AddElementDashRepository
   ) {}
 
   async createDashboard(dto: CreateDashboardDto): Promise<Dashboard> {
-    const dashboardEntity = new DashboardEntity(dto);
+    const addElementDash = await this.addElementDashRepository.find(dto.addElementDash);
+    const dashboardEntity = new DashboardEntity({
+      ...dto,
+      addElementDash
+    });
     return this.dashboardRepository.create(dashboardEntity);
   }
 
@@ -26,6 +32,10 @@ export class DashboardService {
   }
 
   async updateDashboard(id: number, dto: UpdateDashboardDto): Promise<Dashboard> {
-    return this.dashboardRepository.update(id, new DashboardEntity(dto));
+    const addElementDash = await this.addElementDashRepository.find(dto.addElementDash);
+    return this.dashboardRepository.update(id, new DashboardEntity({
+      ...dto,
+      addElementDash
+    }));
   }
 }

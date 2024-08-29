@@ -27,18 +27,6 @@ export class CreateComplectationOtherDto {
   public airbox: boolean;
 
   @ApiProperty({
-    description: 'Розетка 12В',
-    example: false
-  })
-  public socket12v: boolean;
-
-  @ApiProperty({
-    description: 'Розетка 220В',
-    example: false
-  })
-  public socket220v: boolean;
-
-  @ApiProperty({
     description: 'Защита картера',
     example: false
   })
@@ -67,10 +55,4 @@ export class CreateComplectationOtherDto {
     example: "string"
   })
   public spareWheel: string;
-
-  @ApiProperty({
-    description: 'Набор автомобилиста',
-    example: ["string"]
-  })
-  public motoristSet: string[];
 }

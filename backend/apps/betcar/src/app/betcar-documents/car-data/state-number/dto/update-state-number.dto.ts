@@ -25,4 +25,10 @@ export class UpdateStateNumberDto {
     example: "string"
   })
   public stateNumber: string;
+
+  @ApiProperty({
+    description: 'Комментарий',
+    example: "string"
+  })
+  public comment: string;
 }

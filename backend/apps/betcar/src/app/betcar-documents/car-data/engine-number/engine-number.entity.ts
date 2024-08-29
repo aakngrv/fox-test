@@ -10,7 +10,7 @@ export class EngineNumberEntity implements Entity<EngineNumberEntity>, EngineNum
   public numberState: boolean[];
   public photo: string[];
   public engineNumber: string;
-
+  public comment: string;
 
   constructor(engineNumber: EngineNumber) {
     this.fillEntity(engineNumber);
@@ -23,6 +23,7 @@ export class EngineNumberEntity implements Entity<EngineNumberEntity>, EngineNum
     this.numberState = entity.numberState;
     this.photo = entity.photo;
     this.engineNumber = entity.engineNumber;
+    this.comment = entity.comment;
   }
 
   public toObject():EngineNumberEntity {

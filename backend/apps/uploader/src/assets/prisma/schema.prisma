@@ -107,7 +107,6 @@ model SellerDetails {
   name                String   @default("")
   phone               String   @default("")
   carCost             String   @default("") @map("car_cost")
-  isBargain           Boolean  @default(false) @map("is_bargain")
   role                String   @default("")
   comment             String   @default("")
 
@@ -149,6 +148,7 @@ model VinBodyNumber {
   expertConfirm   Boolean   @default(false) @map("expert_confirm")
   numberState     Boolean[] @default([]) @map("number_state")
   photo           String[]  @default([""])
+  comment         String    @default("") 
 
   @@map("vin_body_numbers")
 }
@@ -161,6 +161,7 @@ model FrameNumber {
   expertConfirm Boolean   @default(false) @map("expert_confirm")
   numberState   Boolean[] @default([]) @map("number_state")
   photo         String[]  @default([""])
+  comment       String    @default("") 
 
   @@map("frame_numbers")
 }
@@ -172,18 +173,20 @@ model StateNumber {
   absent        Boolean  @default(false)
   foreign       Boolean  @default(false)
   stateNumber   String   @default("") @map("state_number")
+  comment       String   @default("") 
 
   @@map("state_numbers")
 }
 
 model TCP {
-  tCPId     Int      @id @default(autoincrement()) @map("tcp_id")
-  carDataId Int      @map("report_id")
-  carData   CarData? @relation(fields: [carDataId], references: [carDataId], onDelete: Cascade, onUpdate: Cascade)
-  absent    Boolean  @default(false)
-  tCPType   String   @default("") @map("tcp_type")
-  photo     String[] @default([""])
-  comment   String   @default("")
+  tCPId          Int      @id @default(autoincrement()) @map("tcp_id")
+  carDataId      Int      @map("report_id")
+  carData        CarData? @relation(fields: [carDataId], references: [carDataId], onDelete: Cascade, onUpdate: Cascade)
+  absent         Boolean  @default(false)
+  tCPType        String   @default("") @map("tcp_type")
+  photo          String[] @default([""])
+  numberOfOwners String   @default("") @map("number_of_owners")
+  comment        String   @default("")
 
   @@map("tcps")
 }
@@ -196,6 +199,7 @@ model EngineNumber {
   expertConfirm  Boolean   @default(false) @map("expert_confirm")
   numberState    Boolean[] @default([]) @map("number_state")
   photo          String[]  @default([""])
+  comment        String    @default("") 
 
   @@map("engine_numbers")
 }
@@ -253,34 +257,37 @@ model ComplectationBody {
 }
 
 model ComplectationWheels {
-  complectationWheelsId Int      @id @default(autoincrement()) @map("complectation_wheels_id")
-  reportId              Int      @map("report_id")
-  report                Report   @relation(fields: [reportId], references: [reportId], onDelete: Cascade, onUpdate: Cascade)
-  isTiresIdentical      Boolean  @default(false) @map("is_tires_identical")
-  additionalTireSets    Boolean  @default(false) @map("additional_tire_sets")
-  additionalSetsOfDisks Boolean  @default(false) @map("additional_sets_of_disks")
-  typeOfDisks           String   @default("") @map("type_of_disks")
-  seasonality           String[] @default([""])
-  frontLeftBrand        String   @default("") @map("front_left_brand")
-  backLeftBrand         String   @default("") @map("back_left_brand")
-  frontRightBrand       String   @default("") @map("front_right_brand")
-  backRightBrand        String   @default("") @map("back_right_brand")
-  frontLeftModel        String   @default("") @map("front_left_model")
-  backLeftModel         String   @default("") @map("back_left_model")
-  frontRightModel       String   @default("") @map("front_right_model")
-  backRightModel        String   @default("") @map("back_right_model")
-  frontLeftIssueDate    String   @default("") @map("front_left_issue_date")
-  backLeftIssueDate     String   @default("") @map("back_left_issue_date")
-  frontRightIssueDate   String   @default("") @map("front_right_issue_date")
-  backRightIssueDate    String   @default("") @map("back_right_issue_date")
-  frontLeftOptions      String[] @default([""]) @map("front_left_options")
-  backLeftOptions       String[] @default([""]) @map("back_left_options")
-  frontRightOptions     String[] @default([""]) @map("front_right_options")
-  backRightOptions      String[] @default([""]) @map("back_right_options")
-  frontLeftWear         String   @default("") @map("front_left_wear")
-  backLeftWear          String   @default("") @map("back_left_wear")
-  frontRightWear        String   @default("") @map("front_right_wear")
-  backRightWear         String   @default("") @map("back_right_wear")
+  complectationWheelsId      Int      @id @default(autoincrement()) @map("complectation_wheels_id")
+  reportId                   Int      @map("report_id")
+  report                     Report   @relation(fields: [reportId], references: [reportId], onDelete: Cascade, onUpdate: Cascade)
+  isTiresIdentical           Boolean  @default(false) @map("is_tires_identical")
+  additionalTireSets         Boolean  @default(false) @map("additional_tire_sets")
+  additionalSetsOfDisks      Boolean  @default(false) @map("additional_sets_of_disks")
+  typeOfDisks                String   @default("") @map("type_of_disks")
+  seasonality                String   @default("")
+  frontLeftBrand             String   @default("") @map("front_left_brand")
+  backLeftBrand              String   @default("") @map("back_left_brand")
+  frontRightBrand            String   @default("") @map("front_right_brand")
+  backRightBrand             String   @default("") @map("back_right_brand")
+  frontLeftModel             String   @default("") @map("front_left_model")
+  backLeftModel              String   @default("") @map("back_left_model")
+  frontRightModel            String   @default("") @map("front_right_model")
+  backRightModel             String   @default("") @map("back_right_model")
+  frontLeftIssueDate         String   @default("") @map("front_left_issue_date")
+  backLeftIssueDate          String   @default("") @map("back_left_issue_date")
+  frontRightIssueDate        String   @default("") @map("front_right_issue_date")
+  backRightIssueDate         String   @default("") @map("back_right_issue_date")
+  frontLeftOptions           String[] @default([""]) @map("front_left_options")
+  backLeftOptions            String[] @default([""]) @map("back_left_options")
+  frontRightOptions          String[] @default([""]) @map("front_right_options")
+  backRightOptions           String[] @default([""]) @map("back_right_options")
+  frontLeftWear              String   @default("") @map("front_left_wear")
+  backLeftWear               String   @default("") @map("back_left_wear")
+  frontRightWear             String   @default("") @map("front_right_wear")
+  backRightWear              String   @default("") @map("back_right_wear")
+  additionalTiresSeasonality String[] @default([""]) @map("additional_tires_seasonality")
+  additionalDisksType        String   @default("") @map("additional_disks_type")
+
 
   @@map("complectation_wheels")
 }
@@ -414,14 +421,11 @@ model ComplectationOther {
   towBar               Boolean  @default(false) @map("tow_bar")
   winch                Boolean  @default(false)
   airbox               Boolean  @default(false)
-  socket12v            Boolean  @default(false) @map("socket_12v")
-  socket220v           Boolean  @default(false) @map("socket_220v")
   crankcaseProtection  Boolean  @default(false) @map("crankcase_protection")
   transverseArches     Boolean  @default(false) @map("transverse_arches")
   gasEquipment         Boolean  @default(false) @map("gas_equipment")
   numberOfKeys         String   @default("") @map("number_of_keys")
   spareWheel           String   @default("") @map("spare_wheel")
-  motoristSet          String[] @default([""]) @map("motorist_set")
 
   @@map("complectation_others")
 }
@@ -461,8 +465,20 @@ model PaintworkInspection {
   leftRearDoorOpening   String[] @default([""]) @map("left_rear_door_opening")
   leftRearPillar        String[] @default([""]) @map("left_rear_pillar")
   leftRearFender        String[] @default([""]) @map("left_rear_fender")
+  addElementPaintwork   AddElementPaintwork[]
+
 
   @@map("paintwork_inspections")
+}
+
+  model AddElementPaintwork {
+  addElementPaintworkId Int                  @id @default(autoincrement()) @map("add_element_paintwork_id")
+  paintworkInspectionId Int                  @map("paintwork_inspection_id")
+  paintworkInspection   PaintworkInspection? @relation(fields: [paintworkInspectionId], references: [paintworkInspectionId], onDelete: Cascade, onUpdate: Cascade)
+  name                  String               @default("")
+  info                  String[]             @default([""])
+
+  @@map("add_paintwork_elements")
 }
 
 model EngineCompartmentDamage {
@@ -475,6 +491,7 @@ model EngineCompartmentDamage {
   rightSideMember           String[]     @default([""]) @map("right_side_member")
   rightGlass                String[]     @default([""]) @map("right_glass")
   hoodHinges                String[]     @default([""]) @map("hood_hinges")
+  motorShield               String[]     @default([""]) @map("motor_shield")
   televisor                 String[]     @default([""])
   addElement                AddElement[]
 
@@ -788,76 +805,85 @@ model RoundViewVideo {
 // ** Модели сервиса "Технический осмотр" ** //
 
 model StoppedEngine {
-  stoppedEngineId        Int     @id @default(autoincrement()) @map("stopped_engine_id")
-  reportId               Int     @map("report_id")
-  report                 Report  @relation(fields: [reportId], references: [reportId], onDelete: Cascade, onUpdate: Cascade)
-  isNew                  Boolean @default(false) @map("is_new")
-  isNotGo                Boolean @default(false) @map("is_not_go")
-  isEmergency            Boolean @default(false) @map("is_emergency")
-  isUnderstaffed         Boolean @default(false) @map("is_understaffed")
-  comment                String  @default("")
-  engineOilLevel         String  @default("") @map("engine_oil_level")
-  gearboxOilLevel        String  @default("") @map("gearbox_oil_level")
-  gurLiquidLevel         String  @default("") @map("gur_liquid_level")
-  brakeFluidLevel        String  @default("") @map("brake_fluid_level")
-  coolantLevel           String  @default("") @map("coolant_level")
-  technicalFluidsComment String  @default("") @map("technical_fluid_comment")
-  driveBelts             String  @default("") @map("drive_belts")
-  brakeDiscs             String  @default("") @map("brake_discs")
-  brakePads              String  @default("") @map("brake_pads")
-  wearComment            String  @default("") @map("wear_comment")
+  stoppedEngineId        Int      @id @default(autoincrement()) @map("stopped_engine_id")
+  reportId               Int      @map("report_id")
+  report                 Report   @relation(fields: [reportId], references: [reportId], onDelete: Cascade, onUpdate: Cascade)
+  isNew                  Boolean  @default(false) @map("is_new")
+  isNotGo                Boolean  @default(false) @map("is_not_go")
+  isEmergency            Boolean  @default(false) @map("is_emergency")
+  isUnderstaffed         Boolean  @default(false) @map("is_understaffed")
+  comment                String   @default("")
+  engineOilLevel         String   @default("") @map("engine_oil_level")
+  gearboxOilLevel        String   @default("") @map("gearbox_oil_level")
+  gurLiquidLevel         String   @default("") @map("gur_liquid_level")
+  brakeFluidLevel        String   @default("") @map("brake_fluid_level")
+  coolantLevel           String   @default("") @map("coolant_level")
+  technicalFluidsComment String   @default("") @map("technical_fluid_comment")
+  driveBelts             String   @default("") @map("drive_belts")
+  brakeDiscs             String   @default("") @map("brake_discs")
+  brakePads              String   @default("") @map("brake_pads")
+  wearComment            String   @default("") @map("wear_comment")
+  isFogging              Boolean  @default(false) @map("is_fogging")
+  addElementStop         AddElementStop[]
 
   @@map("stopped_engines")
 }
 
+model AddElementStop {
+  addElementStopId Int            @id @default(autoincrement()) @map("add_element_stop_id")
+  stoppedEngineId  Int
+  stoppedEngine    StoppedEngine? @relation(fields: [stoppedEngineId], references: [stoppedEngineId], onDelete: Cascade, onUpdate: Cascade)
+  name             String         @default("")
+  fogging          String[]       @default([""])
+  photo            String[]       @default([""])
+  comment          String         @default("")
+
+  @@map("add_elements_stop")
+}
+
 model RunningEngine {
-  runningEngineId         Int     @id @default(autoincrement()) @map("running_engine_id")
-  reportId                Int     @map("report_id")
-  report                  Report  @relation(fields: [reportId], references: [reportId], onDelete: Cascade, onUpdate: Cascade)
-  engineNotStart          Boolean @default(false) @map("engine_not_start")
-  comment                 String  @default("")
-  engineVideo             String  @default("") @map("engine_video")
-  battery                 Boolean @default(false)
-  lightingEngineering     Boolean @default(false) @map("lighting_engineering")
-  audioSystem             Boolean @default(false) @map("audio_system")
-  heatedSteeringWheel     Boolean @default(false) @map("heated_steering_wheel")
-  soundSignal             Boolean @default(false) @map("sound_signal")
-  seatMassage             Boolean @default(false) @map("seat_massage")
-  windshieldWashers       Boolean @default(false) @map("windshield_washers")
-  seatHeating             Boolean @default(false) @map("seat_heating")
-  windscreenWipers        Boolean @default(false) @map("windscreen_wipers")
-  windowLifters           Boolean @default(false) @map("window_lifters")
-  electricSunroof         Boolean @default(false) @map("electric_sunroof")
-  electricSteeringWheel   Boolean @default(false) @map("electric_steering_wheel")
-  electricSeats           Boolean @default(false) @map("electric_seats")
-  electricPanorama        Boolean @default(false) @map("electric_panorama")
-  heatedWindshield        Boolean @default(false) @map("heated_windshield")
-  electricTrunkDrive      Boolean @default(false) @map("electric_trunk_drive")
-  electricSystemComment   String  @default("") @map("electric_system_comment")
-  gearboxSwitching        Boolean @default(false) @map("gearbox_switching")
-  engineOperation         Boolean @default(false) @map("engine_operation")
-  interiorHeater          Boolean @default(false) @map("interior_heater")
-  powerSteering           Boolean @default(false) @map("power_steering")
-  airConditioner          Boolean @default(false) @map("air_conditioner")
-  mechanicalSystemComment String  @default("") @map("mechanical_system_comment")
+  runningEngineId         Int      @id @default(autoincrement()) @map("running_engine_id")
+  reportId                Int      @map("report_id")
+  report                  Report   @relation(fields: [reportId], references: [reportId], onDelete: Cascade, onUpdate: Cascade)
+  engineNotStart          Boolean  @default(false) @map("engine_not_start")
+  comment                 String   @default("")
+  engineVideo             String   @default("") @map("engine_video")
+  allSystemOkElectric     Boolean  @default(false) @map("all_system_ok_electric")
+  allSystemOkMechanical   Boolean  @default(false) @map("all_system_ok_mechanical")
+  addElementElectrical    AddElementElectrical[]
+  addElementMechanical    AddElementMechanical[]
 
   @@map("running_engines")
+}
+
+model AddElementElectrical {
+  addElementElectricalId Int            @id @default(autoincrement()) @map("add_element_electrical_id")
+  runningEngineId        Int
+  runningEngine          RunningEngine? @relation(fields: [runningEngineId], references: [runningEngineId], onDelete: Cascade, onUpdate: Cascade)
+  name                   String         @default("")
+  isCheck                Boolean        @default(false) @map("is_check")
+  comment                String         @default("")
+
+  @@map("add_elements_electrical")
+}
+
+model AddElementMechanical {
+  addElementMechanicalId Int            @id @default(autoincrement()) @map("add_element_mechanical_id")
+  runningEngineId        Int
+  runningEngine          RunningEngine? @relation(fields: [runningEngineId], references: [runningEngineId], onDelete: Cascade, onUpdate: Cascade)
+  name                   String         @default("")
+  isCheck                Boolean        @default(false) @map("is_check")
+  comment                String         @default("")
+
+  @@map("add_elements_mechanical")
 }
 
 model Dashboard {
   dashboardId               Int      @id @default(autoincrement()) @map("dashboard_id")
   reportId                  Int      @map("report_id")
   report                    Report   @relation(fields: [reportId], references: [reportId], onDelete: Cascade, onUpdate: Cascade)
-  abs                       Boolean  @default(false)
-  airbag                    Boolean  @default(false)
-  checkEngine               Boolean  @default(false) @map("check_engine")
-  battery                   Boolean  @default(false)
-  tirePressure              Boolean  @default(false) @map("tire_pressure")
-  oilPressure               Boolean  @default(false) @map("oil_pressure")
-  controlLightComment       String   @default("") @map("control_light_comment")
-  electronicDiagnostics     Boolean  @default(false) @map("electronic_diagnostics")
-  diagnosticsFile           String?  @default("") @map("diagnostics_file")
-  diagnosticsResult         String   @default("") @map("diagnostics_result")
+  diagnosticsFile           String[] @default([""]) @map("diagnostics_file")
+  diagnosticsComment        String   @default("") @map("diagnostics_comment")
   mileageOnDashboard        String?  @default("") @map("mileage_on_dashboard")
   mileageInTheEngineBlock   String?  @default("") @map("mileage_in_the_engine_block")
   mileageInTheGearbox       String?  @default("") @map("mileage_in_the_gearbox")
@@ -865,25 +891,42 @@ model Dashboard {
   isNoMileage               Boolean? @default(false) @map("is_no_mileage")
   totalComment              String   @default("") @map("total_comment")
   noErrors                  Boolean  @default(false) @map("no_errors")
+  addElementDash            AddElementDash[]
 
   @@map("dashboards")
 }
 
+model AddElementDash {
+  addElementDashId Int        @id @default(autoincrement()) @map("add_element_dash_id")
+  dashboardId      Int
+  dashboard        Dashboard? @relation(fields: [dashboardId], references: [dashboardId], onDelete: Cascade, onUpdate: Cascade)
+  name             String     @default("")
+  isCheck          Boolean    @default(false) @map("is_check")
+  comment          String     @default("")
+
+  @@map("add_elements_dash")
+}
+
 model TestDrive {
-  testDriveId   Int     @id @default(autoincrement()) @map("test_drive_id")
-  reportId      Int     @map("report_id")
-  report        Report  @relation(fields: [reportId], references: [reportId], onDelete: Cascade, onUpdate: Cascade)
-  allSystemOk   Boolean @default(false) @map("all_system_ok")
-  suspension    Boolean @default(false)
-  engine        Boolean @default(false)
-  transmission  Boolean @default(false)
-  steering      Boolean @default(false)
-  brakeSystem   Boolean @default(false) @map("brake_system")
-  parkingBrake  Boolean @default(false) @map("parking_brake")
-  exhaustSystem Boolean @default(false) @map("exhaust_system")
-  comment       String  @default("")
+  testDriveId     Int      @id @default(autoincrement()) @map("test_drive_id")
+  reportId        Int      @map("report_id")
+  report          Report   @relation(fields: [reportId], references: [reportId], onDelete: Cascade, onUpdate: Cascade)
+  allSystemOk     Boolean  @default(false) @map("all_system_ok")
+  malfunctions    String[] @default([""])
+  addElementTest  AddElementTest[]
 
   @@map("tests_drive")
+}
+
+model AddElementTest {
+  addElementTestId Int        @id @default(autoincrement()) @map("add_element_test_id")
+  testDriveId      Int
+  testDrive        TestDrive? @relation(fields: [testDriveId], references: [testDriveId], onDelete: Cascade, onUpdate: Cascade)
+  name             String     @default("")
+  isCheck          Boolean        @default(false) @map("is_check")
+  comment          String         @default("")
+
+  @@map("add_elements_test")
 }
 
 // *********** End of table "Технический осмотр" ************ //
@@ -892,12 +935,14 @@ model TestDrive {
 // ** Модели сервиса "Заключение эксперта" ** //
 
 model ExpertOpinion {
-  expertOpinionId Int    @id @default(autoincrement()) @map("expert_opinion")
-  reportId        Int    @map("report_id")
-  report          Report @relation(fields: [reportId], references: [reportId], onDelete: Cascade, onUpdate: Cascade)
-  plusComment     String @default("") @map("plus_comment")
-  minusComment    String @default("") @map("minus_comment")
-  totalComment    String @default("") @map("total_comment")
+  expertOpinionId Int      @id @default(autoincrement()) @map("expert_opinion")
+  reportId        Int      @map("report_id")
+  report          Report   @relation(fields: [reportId], references: [reportId], onDelete: Cascade, onUpdate: Cascade)
+  plusComment     String   @default("") @map("plus_comment")
+  minusComment    String   @default("") @map("minus_comment")
+  totalComment    String   @default("") @map("total_comment")
+  historyFile     String[] @default([""]) @map("history_file")
+  historyComment  String   @default("") @map("history_comment")
 
   @@map("experts_opinions")
 }

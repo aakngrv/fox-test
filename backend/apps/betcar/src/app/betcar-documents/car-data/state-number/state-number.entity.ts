@@ -9,6 +9,7 @@ export class StateNumberEntity implements Entity<StateNumberEntity>, StateNumber
   public absent: boolean;
   public foreign: boolean;
   public stateNumber: string;
+  public comment: string;
 
   constructor(stateNumber: StateNumber) {
     this.fillEntity(stateNumber);
@@ -20,6 +21,7 @@ export class StateNumberEntity implements Entity<StateNumberEntity>, StateNumber
     this.absent = entity.absent;
     this.foreign = entity.foreign;
     this.stateNumber = entity.stateNumber;
+    this.comment = entity.comment;
   }
 
   public toObject():StateNumberEntity {

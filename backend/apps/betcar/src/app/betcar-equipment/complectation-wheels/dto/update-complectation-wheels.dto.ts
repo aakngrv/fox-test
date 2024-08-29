@@ -34,9 +34,9 @@ export class UpdateComplectationWheelsDto {
 
   @ApiProperty({
     description: 'Сезонность',
-    example: ["string"]
+    example: "string"
   })
-  public seasonality: string[];
+  public seasonality: string;
 
   @ApiProperty({
     description: 'Марка шин переднего левого колеса',
@@ -157,4 +157,16 @@ export class UpdateComplectationWheelsDto {
     example: 'string'
   })
   public backRightWear: string;
+
+  @ApiProperty({
+    description: 'Дополнительные шины - сезонность',
+    example: ['string']
+  })
+  public additionalTiresSeasonality: string[];
+
+  @ApiProperty({
+    description: 'Дополнительные диски - тип',
+    example: 'string'
+  })
+  public additionalDisksType: string;
 }

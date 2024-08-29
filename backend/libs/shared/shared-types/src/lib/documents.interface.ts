@@ -6,7 +6,6 @@ export interface SellerDetails {
   name: string;
   phone: string;
   carCost: string;
-  isBargain: boolean;
   role: string;
   comment: string;
 }
@@ -42,6 +41,7 @@ export interface VinBodyNumber {
   expertConfirm: boolean;
   numberState: boolean[];
   photo: string[];
+  comment: string;
 }
 
 export interface FrameNumber {
@@ -51,6 +51,7 @@ export interface FrameNumber {
   expertConfirm: boolean;
   numberState: boolean[];
   photo: string[];
+  comment: string;
 }
 
 export interface StateNumber {
@@ -59,6 +60,7 @@ export interface StateNumber {
   absent: boolean;
   foreign: boolean;
   stateNumber: string;
+  comment: string;
 }
 
 export interface AdditionalDocuments {
@@ -74,6 +76,7 @@ export interface TCP {
   absent: boolean;
   tCPType: string;
   photo: string[];
+  numberOfOwners: string;
   comment: string;
 }
 
@@ -84,6 +87,7 @@ export interface EngineNumber {
   expertConfirm: boolean;
   numberState: boolean[];
   photo: string[];
+  comment: string;
 }
 
 export interface STS {

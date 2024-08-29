@@ -7,106 +7,64 @@ export class CreateDashboardDto {
     example: 1
   })
   public reportId: number;
-
+  
   @ApiProperty({
-    description: 'ABS',
+    description: 'Ошибки отсутствуют',
     example: false
   })
-  public abs: boolean;
-
-  @ApiProperty({
-    description: 'Подушка безопасности',
-    example: false
-  })
-  public airbag: boolean;
-
-  @ApiProperty({
-    description: 'checkEngine',
-    example: false
-  })
-  public checkEngine: boolean;
-
-  @ApiProperty({
-    description: 'Аккумулятор',
-    example: false
-  })
-  public battery: boolean;
-
-  @ApiProperty({
-    description: 'Давление шин',
-    example: false
-  })
-  public tirePressure: boolean;
-
-  @ApiProperty({
-    description: 'Давление масла',
-    example: false
-  })
-  public oilPressure: boolean;
-
-  @ApiProperty({
-    description: 'Комментарий контр ламп',
-    example: 'string'
-  })
-  public controlLightComment: string;
-
-  @ApiProperty({
-    description: 'Электронная диагностика',
-    example: false
-  })
-  public electronicDiagnostics: boolean;
-
+  public noErrors: boolean;
+  
   @ApiProperty({
     description: 'Файл диагностики',
-    example: 'string'
+    example: ["string"]
   })
-  public diagnosticsFile?: string;
+  public diagnosticsFile?: string[];
 
   @ApiProperty({
-    description: 'Результаты диагностики',
-    example: 'string'
+    description: 'Комментарий эксперта',
+    example: "string"
   })
-  public diagnosticsResult: string;
+  public diagnosticsComment: string;
 
   @ApiProperty({
     description: 'Пробег на приборной панели',
-    example: 'string'
+    example: "string"
   })
   public mileageOnDashboard?: string;
 
   @ApiProperty({
-    description: 'Пробег в блоке ДВС',
-    example: 'string'
+    description: 'Пробег в блоках ДВС',
+    example: "string"
   })
   public mileageInTheEngineBlock?: string;
 
   @ApiProperty({
     description: 'Пробег в блоке КПП',
-    example: 'string'
+    example: "string"
   })
   public mileageInTheGearbox?: string;
 
   @ApiProperty({
     description: 'Пробег в доп блоке',
-    example: 'string'
+    example: "string"
   })
   public mileageInAdditionalBlocks?: string;
 
   @ApiProperty({
-    description: 'Пробег в блоках не выявлен',
+    description: 'Без пробега',
     example: false
   })
   public isNoMileage?: boolean;
 
   @ApiProperty({
-    description: 'Общий комментарий',
-    example: 'string'
+    description: 'Комментарий',
+    example: "string"
   })
   public totalComment: string;
-  
+
   @ApiProperty({
-    description: 'Без ошибок',
-    example: false
+    description: 'Доп ошибки',
+    example:[1]
   })
-  public noErrors: boolean;
+  public addElementDash: number[];
 }

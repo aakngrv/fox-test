@@ -69,6 +69,13 @@ export class EngineCompartmentDamageRdo {
   public televisor: string[];
 
   @ApiProperty({
+    description: 'Моторный щит',
+    example: ['string']
+  })
+  @Expose()
+  public motorShield: string[];
+
+  @ApiProperty({
     description: 'Новый элемент',
     example: [1]
   })

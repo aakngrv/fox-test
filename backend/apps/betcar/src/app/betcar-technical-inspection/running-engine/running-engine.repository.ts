@@ -13,7 +13,19 @@ export class RunningEngineRepository implements CRUDRepository<RunningEngineEnti
 
   public async create(item: RunningEngineEntity): Promise<RunningEngine> {
     return this.prisma.runningEngine.create({
-      data: { ...item.toObject() }
+      data: { 
+        ...item.toObject(),
+        addElementElectrical: {
+          connect: []
+        },
+        addElementMechanical: {
+          connect: []
+        },
+      },
+      include: {
+        addElementElectrical: true,
+        addElementMechanical: true,
+      }
     });
   }
 
@@ -29,6 +41,10 @@ export class RunningEngineRepository implements CRUDRepository<RunningEngineEnti
     return this.prisma.runningEngine.findFirst({
       where: {
         runningEngineId
+      },
+      include: {
+        addElementElectrical: true,
+        addElementMechanical: true,
       }
     });
   }
@@ -39,6 +55,10 @@ export class RunningEngineRepository implements CRUDRepository<RunningEngineEnti
         runningEngineId: {
           in: ids.length > 0 ? ids : undefined
         }
+      },
+      include: {
+        addElementElectrical: true,
+        addElementMechanical: true,
       }
     });
   }
@@ -48,7 +68,20 @@ export class RunningEngineRepository implements CRUDRepository<RunningEngineEnti
       where: {
         runningEngineId
       },
-      data: { ...item.toObject(), runningEngineId }
+      data: { 
+        ...item.toObject(),
+        runningEngineId,
+        addElementElectrical: {
+          connect: []
+        },
+        addElementMechanical: {
+          connect: []
+        },
+      },
+      include: {
+        addElementElectrical: true,
+        addElementMechanical: true,
+      }
     });
   }
 }

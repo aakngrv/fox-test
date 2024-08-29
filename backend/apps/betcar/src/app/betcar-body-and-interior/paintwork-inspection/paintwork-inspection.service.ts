@@ -4,16 +4,22 @@ import { PaintworkInspectionRepository } from './paintwork-inspection.repository
 import { Injectable } from '@nestjs/common';
 import { PaintworkInspectionEntity } from './paintwork-inspection.entity';
 import { UpdatePaintworkInspectionDto } from './dto/update-paintwork-inspection.dto';
+import { AddElementPaintworkRepository } from './add-element-paintwork/add-element-paintwork.repository';
 
 @Injectable()
 export class PaintworkInspectionService {
 
   constructor(
-    private readonly paintworkInspectionRepository: PaintworkInspectionRepository
+    private readonly paintworkInspectionRepository: PaintworkInspectionRepository,
+    private readonly addElementPaintworkRepository: AddElementPaintworkRepository
   ) {}
 
   async createPaintworkInspection(dto: CreatePaintworkInspectionDto): Promise<PaintworkInspection> {
-    const paintworkInspectionEntity = new PaintworkInspectionEntity(dto);
+    const addElementPaintwork = await this.addElementPaintworkRepository.find(dto.addElementPaintwork);
+    const paintworkInspectionEntity = new PaintworkInspectionEntity({
+      ...dto,
+      addElementPaintwork
+    });
     return this.paintworkInspectionRepository.create(paintworkInspectionEntity);
   }
 
@@ -26,6 +32,10 @@ export class PaintworkInspectionService {
   }
 
   async updatePaintworkInspection(id: number, dto: UpdatePaintworkInspectionDto): Promise<PaintworkInspection> {
-    return this.paintworkInspectionRepository.update(id, new PaintworkInspectionEntity(dto));
+    const addElementPaintwork = await this.addElementPaintworkRepository.find(dto.addElementPaintwork);
+    return this.paintworkInspectionRepository.update(id, new PaintworkInspectionEntity({
+      ...dto,
+      addElementPaintwork
+    }));
   }
 }

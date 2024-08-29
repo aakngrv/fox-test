@@ -1,3 +1,4 @@
+import { AddElementDash } from '@backend/shared/shared-types';
 import { ApiProperty } from '@nestjs/swagger';
 import { Expose } from "class-transformer";
 
@@ -16,123 +17,74 @@ export class DashboardRdo {
   })
   @Expose()
   public reportId: number;
-
+  
   @ApiProperty({
-    description: 'ABS',
+    description: 'Ошибки отсутствуют',
     example: false
   })
   @Expose()
-  public abs: boolean;
-
-  @ApiProperty({
-    description: 'Подушка безопасности',
-    example: false
-  })
-  @Expose()
-  public airbag: boolean;
-
-  @ApiProperty({
-    description: 'checkEngine',
-    example: false
-  })
-  @Expose()
-  public checkEngine: boolean;
-
-  @ApiProperty({
-    description: 'Аккумулятор',
-    example: false
-  })
-  @Expose()
-  public battery: boolean;
-
-  @ApiProperty({
-    description: 'Давление шин',
-    example: false
-  })
-  @Expose()
-  public tirePressure: boolean;
-
-  @ApiProperty({
-    description: 'Давление масла',
-    example: false
-  })
-  @Expose()
-  public oilPressure: boolean;
-
-  @ApiProperty({
-    description: 'Комментарий контр ламп',
-    example: 'string'
-  })
-  @Expose()
-  public controlLightComment: string;
-
-  @ApiProperty({
-    description: 'Электронная диагностика',
-    example: false
-  })
-  @Expose()
-  public electronicDiagnostics: boolean;
-
+  public noErrors: boolean;
+  
   @ApiProperty({
     description: 'Файл диагностики',
-    example: 'string'
+    example: ["string"]
   })
   @Expose()
-  public diagnosticsFile?: string;
+  public diagnosticsFile?: string[];
 
   @ApiProperty({
-    description: 'Результаты диагностики',
-    example: 'string'
+    description: 'Комментарий эксперта',
+    example: "string"
   })
   @Expose()
-  public diagnosticsResult: string;
+  public diagnosticsComment: string;
 
   @ApiProperty({
     description: 'Пробег на приборной панели',
-    example: 'string'
+    example: "string"
   })
   @Expose()
   public mileageOnDashboard?: string;
 
   @ApiProperty({
-    description: 'Пробег в блоке ДВС',
-    example: 'string'
+    description: 'Пробег в блоках ДВС',
+    example: "string"
   })
   @Expose()
   public mileageInTheEngineBlock?: string;
 
   @ApiProperty({
     description: 'Пробег в блоке КПП',
-    example: 'string'
+    example: "string"
   })
   @Expose()
   public mileageInTheGearbox?: string;
 
   @ApiProperty({
     description: 'Пробег в доп блоке',
-    example: 'string'
+    example: "string"
   })
   @Expose()
   public mileageInAdditionalBlocks?: string;
 
   @ApiProperty({
-    description: 'Пробег в блоках не выявлен',
+    description: 'Без пробега',
     example: false
   })
   @Expose()
   public isNoMileage?: boolean;
 
   @ApiProperty({
-    description: 'Общий комментарий',
-    example: 'string'
+    description: 'Комментарий',
+    example: "string"
   })
   @Expose()
   public totalComment: string;
 
   @ApiProperty({
-    description: 'Без ошибок',
-    example: false
+    description: 'Доп ошибки',
+    example: [1]
   })
   @Expose()
-  public noErrors: boolean;
+  public addElementDash: AddElementDash[];
 }

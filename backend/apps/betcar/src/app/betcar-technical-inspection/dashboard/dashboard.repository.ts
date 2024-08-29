@@ -13,7 +13,15 @@ export class DashboardRepository implements CRUDRepository<DashboardEntity, numb
 
   public async create(item: DashboardEntity): Promise<Dashboard> {
     return this.prisma.dashboard.create({
-      data: { ...item.toObject() }
+      data: { 
+        ...item.toObject(),
+        addElementDash: {
+          connect: []
+        },
+      },
+      include: {
+        addElementDash: true,
+      }
     });
   }
 
@@ -29,6 +37,9 @@ export class DashboardRepository implements CRUDRepository<DashboardEntity, numb
     return this.prisma.dashboard.findFirst({
       where: {
         dashboardId
+      },
+      include: {
+        addElementDash: true,
       }
     });
   }
@@ -39,6 +50,9 @@ export class DashboardRepository implements CRUDRepository<DashboardEntity, numb
         dashboardId: {
           in: ids.length > 0 ? ids : undefined
         }
+      },
+      include: {
+        addElementDash: true,
       }
     });
   }
@@ -48,7 +62,16 @@ export class DashboardRepository implements CRUDRepository<DashboardEntity, numb
       where: {
         dashboardId
       },
-      data: { ...item.toObject(), dashboardId }
+      data: { 
+        ...item.toObject(),
+        dashboardId,
+        addElementDash: {
+          connect: []
+        },
+      },
+      include: {
+        addElementDash: true,
+      }
     });
   }
 }

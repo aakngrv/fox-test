@@ -25,142 +25,28 @@ export class CreateRunningEngineDto {
     example: 'string'
   })
   public engineVideo: string;
-
+  
   @ApiProperty({
-    description: 'Аккумулятор',
+    description: 'Все системы в порядке',
     example: false
   })
-  public battery: boolean;
+  public allSystemOkElectric: boolean;
 
   @ApiProperty({
-    description: 'Светотехника',
+    description: 'Все системы в порядке',
     example: false
   })
-  public lightingEngineering: boolean;
+  public allSystemOkMechanical: boolean;
+  
+  @ApiProperty({
+    description: 'Новый элемент эл систем',
+    example: [1]
+  })
+  public addElementElectrical: number[];
 
   @ApiProperty({
-    description: 'Аудиосистема',
-    example: false
+    description: 'Новый элемент мех систем',
+    example: [1]
   })
-  public audioSystem: boolean;
-
-  @ApiProperty({
-    description: 'Подогрев руля',
-    example: false
-  })
-  public heatedSteeringWheel: boolean;
-
-  @ApiProperty({
-    description: 'Звуковой сигнал',
-    example: false
-  })
-  public soundSignal: boolean;
-
-  @ApiProperty({
-    description: 'Массаж сидений',
-    example: false
-  })
-  public seatMassage: boolean;
-
-  @ApiProperty({
-    description: 'Стеклоомыватели',
-    example: false
-  })
-  public windshieldWashers: boolean;
-
-  @ApiProperty({
-    description: 'Подогрев сидений',
-    example: false
-  })
-  public seatHeating: boolean;
-
-  @ApiProperty({
-    description: 'Стеклоочистители',
-    example: false
-  })
-  public windscreenWipers: boolean;
-
-  @ApiProperty({
-    description: 'Стеклоподъемники',
-    example: false
-  })
-  public windowLifters: boolean;
-
-  @ApiProperty({
-    description: 'Электрический люк',
-    example: false
-  })
-  public electricSunroof: boolean;
-
-  @ApiProperty({
-    description: 'Электропривод руля',
-    example: false
-  })
-  public electricSteeringWheel: boolean;
-
-  @ApiProperty({
-    description: 'Электропривод сидений',
-    example: false
-  })
-  public electricSeats: boolean;
-
-  @ApiProperty({
-    description: 'Электрическая панорама',
-    example: false
-  })
-  public electricPanorama: boolean;
-
-  @ApiProperty({
-    description: 'Подогрев лобового стекла',
-    example: false
-  })
-  public heatedWindshield: boolean;
-
-  @ApiProperty({
-    description: 'Электропривод багажника',
-    example: false
-  })
-  public electricTrunkDrive: boolean;
-
-  @ApiProperty({
-    description: 'Комментарий эл систем',
-    example: 'string'
-  })
-  public electricSystemComment: string;
-
-  @ApiProperty({
-    description: 'Переключение КПП',
-    example: false
-  })
-  public gearboxSwitching: boolean;
-
-  @ApiProperty({
-    description: 'Работа двигателя',
-    example: false
-  })
-  public engineOperation: boolean;
-
-  @ApiProperty({
-    description: 'Отопитель салона',
-    example: false
-  })
-  public interiorHeater: boolean;
-
-  @ApiProperty({
-    description: 'Усилитель руля',
-    example: false
-  })
-  public powerSteering: boolean;
-
-  @ApiProperty({
-    description: 'Кондиционер',
-    example: false
-  })
-  public airConditioner: boolean;
-
-  @ApiProperty({
-    description: 'Комментарий мех систем',
-    example: 'string'
-  })
-  public mechanicalSystemComment: string;
+  public addElementMechanical: number[];
 }
