@@ -51,6 +51,7 @@ services:
     container_name: betcar
     build:      
       target: production
+      context: ./backend
       dockerfile: ./apps/betcar/Dockerfile_prod
     depends_on:
       - postgres	
@@ -70,6 +71,7 @@ services:
     container_name: users
     build:      
       target: production
+      context: ./backend
       dockerfile: ./apps/betcar-users/Dockerfile_prod
     depends_on:   
       - postgres
@@ -90,6 +92,7 @@ services:
     container_name: uploader
     build:      
       target: production
+      context: ./backend
       dockerfile: ./apps/uploader/Dockerfile_prod
     depends_on:   
       - postgres
@@ -108,6 +111,23 @@ services:
       - "traefik.http.routers.uploader.tls.certresolver=myresolver"
       - "traefik.http.routers.uploader.service=uploader-service"
       - "traefik.http.services.uploader-service.loadbalancer.server.port=6000"
+
+  frontend:
+    build:      
+      target: production
+      context: ./betcar-front/site
+      dockerfile: Dockerfile_prod
+    container_name: frontend
+    depends_on:
+      - betcar
+    restart: always
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.front.rule=Host(`betcar.ru`)"
+      - "traefik.http.routers.front.entrypoints=websecure"
+      - "traefik.http.routers.front.tls.certresolver=myresolver"
+      - "traefik.http.routers.front.service=front-service"
+      - "traefik.http.services.front-service.loadbalancer.server.port=8080"
 
   traefik:
     image: traefik:v3.0
