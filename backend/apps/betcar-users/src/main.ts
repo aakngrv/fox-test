@@ -7,6 +7,12 @@ import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
+  app.enableCors({
+    origin: true,
+    methods: 'GET, POST, PUT, DELETE, HEAD, OPTIONS, PATCH',
+    credentials: true
+  });
+ 
 
   const config = new DocumentBuilder()
     .setTitle('The «Betcar Users» service')
