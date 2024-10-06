@@ -8,6 +8,11 @@ async function bootstrap() {
   const app = await NestFactory.create(AppModule);
   app.use(bodyParser.json({ limit: '500mb' }));
   app.use(bodyParser.urlencoded({ extended: true, limit: '500mb' }));
+  app.enableCors({
+    origin: true,
+    methods: 'GET, POST, PUT, DELETE, HEAD, OPTIONS, PATCH',
+    credentials: true
+  });
 
   const config = new DocumentBuilder()
   .setTitle('The «Betcar» service')
