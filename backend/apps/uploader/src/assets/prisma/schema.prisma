@@ -219,7 +219,7 @@ model STS {
   carDataId Int      @map("report_id")
   carData   CarData? @relation(fields: [carDataId], references: [carDataId], onDelete: Cascade, onUpdate: Cascade)
   absent    Boolean  @default(false)
-  photo     String   @default("")
+  photo      String[] @default([""])
   comment   String   @default("")
 
   @@map("sts")

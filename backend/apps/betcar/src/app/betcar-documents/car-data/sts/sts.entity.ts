@@ -7,7 +7,7 @@ export class STSEntity implements Entity<STSEntity>, STS {
   public sTSId?: number;
   public carDataId: number;
   public absent: boolean;
-  public photo: string;
+  public photo: string[];
   public comment: string;
 
 

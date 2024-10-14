@@ -94,7 +94,7 @@ export interface STS {
   sTSId?: number;
   carDataId: number;
   absent: boolean;
-  photo: string;
+  photo: string[];
   comment: string;
 }
 
