@@ -16,9 +16,9 @@ export class UpdateSTSDto {
 
   @ApiProperty({
     description: 'Фото',
-    example: "string"
+    example: ["string"]
   })
-  public photo: string;
+  public photo: string[];
 
   @ApiProperty({
     description: 'Комментарий',

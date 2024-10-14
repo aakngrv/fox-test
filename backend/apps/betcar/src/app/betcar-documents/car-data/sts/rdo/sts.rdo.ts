@@ -26,10 +26,10 @@ export class STSRdo {
 
   @ApiProperty({
     description: 'Фото',
-    example: "string"
+    example: ["string"]
   })
   @Expose()
-  public photo: string;
+  public photo: string[];
 
   @ApiProperty({
     description: 'Комментарий',
