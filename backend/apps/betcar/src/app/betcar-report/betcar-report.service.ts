@@ -152,9 +152,17 @@ export class BetcarReportService {
     return this.betcarReportRepository.findById(id);
   }
 
+  async getReportByVIN(vin: string): Promise<Report> {
+    return await this.betcarReportRepository.findByVIN(vin);
+  }
+
   async getReports(): Promise<Report[]> {
     return this.betcarReportRepository.find();
   }
+
+  // async getReportsByEmail(email: string): Promise<Report> {
+  //   return this.betcarReportRepository.findByEmail(email);
+  // }
 
   async updateReport(_id: number, _dto: UpdateReportDto): Promise<Report> {
     throw new Error('Not implemented…');

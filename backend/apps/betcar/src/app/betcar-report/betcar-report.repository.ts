@@ -4,6 +4,7 @@ import { BetcarReportEntity } from './betcar-report.entity';
 import { Report } from '@backend/shared/shared-types';
 import { PrismaService } from '../prisma/prisma.service';
 
+
 @Injectable()
 export class BetcarReportRepository implements CRUDRepository<BetcarReportEntity, number, Report> {
 
@@ -336,6 +337,230 @@ export class BetcarReportRepository implements CRUDRepository<BetcarReportEntity
       }
     });
   }
+
+  public async findByVIN(vinNumber: string): Promise<Report | null> {
+    return this.prisma.report.findFirst({
+      where: {
+        vinNumber
+      },
+      include: {
+        sellerDetails: true,
+        carData: {
+          include: {
+            vinBodyNumber: true,
+            frameNumber: true,
+            stateNumber: true,
+            tCP: true,
+            sTS: true,
+            engineNumber: true,
+            additionalDocuments: true,
+          }
+        },
+        location: true,
+        complectationBody: true,
+        complectationWheels: true,
+        complectationSalon: true,
+        complectationHeadlights: true,
+        complectationMultimedia: true,
+        complectationComfort: true,
+        complectationSafety: true,
+        complectationProtection: true,
+        complectationOther: true,
+        paintworkInspection:{
+          include: {
+            addElementPaintwork: true,
+          }
+        },
+        engineCompartmentDamage: {
+          include: {
+            addElement: true,
+          }
+        },
+        frontSideDamage: {
+          include: {
+            addElementFront: true
+          }
+        },
+        leftSideDamage: {
+          include: {
+            addElementLeft: true
+          }
+        },
+        backSideDamage: {
+          include: {
+            addElementBack: true
+          }
+        },
+        trunkDamage: {
+          include: {
+            addElementTrunk: true
+          }
+        },
+        rightSideDamage: {
+          include: {
+            addElementRight: true
+          }
+        },
+        roofDamage: {
+          include: {
+            addElementRoof: true
+          }
+        },
+        glassDamage: {
+          include: {
+            addElementGlass: true
+          }
+        },
+        discDamage: {
+          include: {
+            addElementDisc: true
+          }
+        },
+        interiorDamage: {
+          include: {
+            addElementInterior: true
+          }
+        },
+        exteriorPhoto: true,
+        interiorPhoto: true,
+        roundViewVideo: true,
+        stoppedEngine: {
+          include: {
+            addElementStop: true
+          }
+        },
+        runningEngine: {
+          include: {
+            addElementElectrical: true,
+            addElementMechanical: true
+          }
+        },
+        dashboard: {
+          include: {
+            addElementDash: true
+          }
+        },
+        testDrive: {
+          include: {
+            addElementTest: true
+          }
+        },
+        expertOpinion: true,
+      }
+    });
+  }
+
+  // public async findByEmail(userEmail: string): Promise<Report | null> {
+  //   return this.prisma.report.findFirst({
+  //     where: {
+  //       userEmail  
+  //     },
+  //     include: {
+  //       sellerDetails: true,
+  //       carData: {
+  //         include: {
+  //           vinBodyNumber: true,
+  //           frameNumber: true,
+  //           stateNumber: true,
+  //           tCP: true,
+  //           sTS: true,
+  //           engineNumber: true,
+  //           additionalDocuments: true,
+  //         }
+  //       },
+  //       location: true,
+  //       complectationBody: true,
+  //       complectationWheels: true,
+  //       complectationSalon: true,
+  //       complectationHeadlights: true,
+  //       complectationMultimedia: true,
+  //       complectationComfort: true,
+  //       complectationSafety: true,
+  //       complectationProtection: true,
+  //       complectationOther: true,
+  //       paintworkInspection:{
+  //         include: {
+  //           addElementPaintwork: true,
+  //         }
+  //       },
+  //       engineCompartmentDamage: {
+  //         include: {
+  //           addElement: true,
+  //         }
+  //       },
+  //       frontSideDamage: {
+  //         include: {
+  //           addElementFront: true
+  //         }
+  //       },
+  //       leftSideDamage: {
+  //         include: {
+  //           addElementLeft: true
+  //         }
+  //       },
+  //       backSideDamage: {
+  //         include: {
+  //           addElementBack: true
+  //         }
+  //       },
+  //       trunkDamage: {
+  //         include: {
+  //           addElementTrunk: true
+  //         }
+  //       },
+  //       rightSideDamage: {
+  //         include: {
+  //           addElementRight: true
+  //         }
+  //       },
+  //       roofDamage: {
+  //         include: {
+  //           addElementRoof: true
+  //         }
+  //       },
+  //       glassDamage: {
+  //         include: {
+  //           addElementGlass: true
+  //         }
+  //       },
+  //       discDamage: {
+  //         include: {
+  //           addElementDisc: true
+  //         }
+  //       },
+  //       interiorDamage: {
+  //         include: {
+  //           addElementInterior: true
+  //         }
+  //       },
+  //       exteriorPhoto: true,
+  //       interiorPhoto: true,
+  //       roundViewVideo: true,
+  //       stoppedEngine: {
+  //         include: {
+  //           addElementStop: true
+  //         }
+  //       },
+  //       runningEngine: {
+  //         include: {
+  //           addElementElectrical: true,
+  //           addElementMechanical: true
+  //         }
+  //       },
+  //       dashboard: {
+  //         include: {
+  //           addElementDash: true
+  //         }
+  //       },
+  //       testDrive: {
+  //         include: {
+  //           addElementTest: true
+  //         }
+  //       },
+  //       expertOpinion: true,
+  //     }
+  //   });
+  // }
 
   public find(): Promise<Report[]> {
     return this.prisma.report.findMany({

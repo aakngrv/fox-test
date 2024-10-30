@@ -60,6 +60,20 @@ export class ReportRdo {
   })
   @Expose()
   public title: string;
+
+  @ApiProperty({
+    description: 'Email заказчика осмотра',
+    example: 'string@email.com'
+  })
+  @Expose()
+  public userEmail: string;
+
+  @ApiProperty({
+    description: 'VIN автомобиля',
+    example: 'VXX33SDFSDFfff10'
+  })
+  @Expose()
+  public vinNumber: string;
   
   @ApiProperty({
     description: 'Данные продавца',

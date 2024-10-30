@@ -40,6 +40,8 @@ export class BetcarReportEntity implements Entity<BetcarReportEntity>, Report {
   public reportId?: number;
   public userId: number;
   public title: string;
+  public userEmail: string;
+  public vinNumber: string;
   public sellerDetails: SellerDetails[];
   public carData: CarData[];
   public location: Location[];
@@ -82,6 +84,8 @@ export class BetcarReportEntity implements Entity<BetcarReportEntity>, Report {
     this.reportId = entity.reportId;
     this.userId = entity.userId;
     this.title = entity.title;
+    this.userEmail = entity.userEmail;
+    this.vinNumber = entity.vinNumber;
     this.sellerDetails = [];
     this.carData = [];
     this.location = [];

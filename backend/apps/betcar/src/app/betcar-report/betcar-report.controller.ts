@@ -34,6 +34,17 @@ export class BetcarReportController {
     const existReport = await this.betcarReportService.getReport(id);
     return fillObject(ReportRdo, existReport);
   }
+
+  @ApiResponse({
+    type: ReportRdo,
+    status: HttpStatus.OK,
+    description: 'Данные отчета найдены'
+  })
+  @Get('vin')
+  async showVIN(@Param('vinNumber') vin: string) {
+    const existReportVIN = await this.betcarReportService.getReportByVIN(vin);
+    return fillObject(ReportRdo, existReportVIN);
+  }
   
   @ApiResponse({
     type: ReportRdo,
@@ -45,6 +56,17 @@ export class BetcarReportController {
     const reports = await this.betcarReportService.getReports();
     return fillObject(ReportRdo, reports);
   }
+
+  // @ApiResponse({
+  //   type: ReportRdo,
+  //   status: HttpStatus.OK,
+  //   description: 'Данные отчетов найдены'
+  // })
+  // @Get('email')
+  // async email(@Param('userEmail') email: string) {
+  //   const reports = await this.betcarReportService.getReportsByEmail(email);
+  //   return fillObject(ReportRdo, reports);
+  // }
   
   @ApiResponse({
     status: HttpStatus.NO_CONTENT,
