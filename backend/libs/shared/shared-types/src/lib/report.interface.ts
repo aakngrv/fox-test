@@ -47,6 +47,8 @@ import {
 export interface Report {
   reportId?: number;
   userId: number;
+  userEmail: string;
+  vinNumber: string;
   title: string;
   sellerDetails: SellerDetails[];
   carData: CarData[];

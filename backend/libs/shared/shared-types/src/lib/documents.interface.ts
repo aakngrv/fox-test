@@ -37,7 +37,7 @@ export interface CarData {
 export interface VinBodyNumber {
   vinBodyNumberId?: number;
   carDataId: number;
-  vinNumber: string;
+  vinNumber?: string;
   expertConfirm: boolean;
   numberState: boolean[];
   photo: string[];

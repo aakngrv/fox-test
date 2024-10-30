@@ -13,6 +13,18 @@ export class CreateReportDto {
     example: 'Осмотр автомобиля BMW X6'
   })
   public title: string;
+
+  @ApiProperty({
+    description: 'Email заказчика осмотра',
+    example: 'string@email.com'
+  })
+  public userEmail: string;
+
+  @ApiProperty({
+    description: 'VIN автомобиля',
+    example: 'VXX33SDFSDFfff10'
+  })
+  public vinNumber: string;
   
   @ApiProperty({
     description: 'Массив объектов с данными о продавце',
