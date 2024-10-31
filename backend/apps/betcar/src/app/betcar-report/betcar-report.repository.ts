@@ -341,7 +341,7 @@ export class BetcarReportRepository implements CRUDRepository<BetcarReportEntity
   public async findByVIN(vinNumber: string): Promise<Report | null> {
     return this.prisma.report.findFirst({
       where: {
-        vinNumber
+        vinNumber: vinNumber
       },
       include: {
         sellerDetails: true,

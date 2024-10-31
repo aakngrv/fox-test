@@ -58,7 +58,7 @@ model Report {
   userId                  Int                       @map("user_id")
   title                   String                    @default("")
   userEmail               String                    @default("") @map("user_email")
-  vinNumber               String                    @unique @default("") @map("vin_number")
+  vinNumber               String                    @default("") @map("vin_number")
   createdAt               DateTime                  @default(now()) @map("created_at")
   publishAt               DateTime                  @updatedAt @map("publish_at")
   sellerDetails           SellerDetails[]
@@ -146,7 +146,7 @@ model VinBodyNumber {
   vinBodyNumberId Int       @id @default(autoincrement()) @map("vin_body_number_id")
   carDataId       Int       @map("car_data_id")
   carData         CarData?  @relation(fields: [carDataId], references: [carDataId], onDelete: Cascade, onUpdate: Cascade)
-  vinNumber       String?   @default("") @map("vin_number")
+  vinNumber       String   @default("") @map("vin_number")
   expertConfirm   Boolean   @default(false) @map("expert_confirm")
   numberState     Boolean[] @default([]) @map("number_state")
   photo           String[]  @default([""])
