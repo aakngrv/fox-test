@@ -17,51 +17,6 @@ export class BetcarReportRepository implements CRUDRepository<BetcarReportEntity
     return this.prisma.report.create({
       data: {
         ...entityData,
-        sellerDetails: {
-          connect: []
-        },
-        carData: {
-          connect: []
-        },
-        location: {
-          connect: []
-        },
-        complectationBody: {
-          connect: []
-        },
-        complectationWheels: {
-          connect: []
-        },
-        complectationSalon: {
-          connect: []
-        },
-        complectationHeadlights: {
-          connect: []
-        },
-        complectationMultimedia: {
-          connect: []
-        },
-        complectationComfort: {
-          connect: []
-        },
-        complectationSafety: {
-          connect: []
-        },
-        complectationProtection: {
-          connect: []
-        },
-        complectationOther: {
-          connect: []
-        },
-        paintworkInspection: {
-          connect: []
-        },
-        engineCompartmentDamage: {
-          connect: []
-        },
-        frontSideDamage: {
-          connect: []
-        },
         leftSideDamage: {
           connect: []
         },
@@ -112,43 +67,6 @@ export class BetcarReportRepository implements CRUDRepository<BetcarReportEntity
         },
       }, 
       include: {
-        sellerDetails: true,
-        carData: {
-          include: {
-            vinBodyNumber: true,
-            frameNumber: true,
-            stateNumber: true,
-            tCP: true,
-            sTS: true,
-            engineNumber: true,
-            additionalDocuments: true,
-          }
-        },
-        location: true,
-        complectationBody: true,
-        complectationWheels: true,
-        complectationSalon: true,
-        complectationHeadlights: true,
-        complectationMultimedia: true,
-        complectationComfort: true,
-        complectationSafety: true,
-        complectationProtection: true,
-        complectationOther: true,
-        paintworkInspection:{
-          include: {
-            addElementPaintwork: true,
-          }
-        },
-        engineCompartmentDamage: {
-          include: {
-            addElement: true,
-          }
-        },
-        frontSideDamage: {
-          include: {
-            addElementFront: true
-          }
-        },
         leftSideDamage: {
           include: {
             addElementLeft: true
@@ -232,43 +150,6 @@ export class BetcarReportRepository implements CRUDRepository<BetcarReportEntity
         reportId
       },
       include: {
-        sellerDetails: true,
-        carData: {
-          include: {
-            vinBodyNumber: true,
-            frameNumber: true,
-            stateNumber: true,
-            tCP: true,
-            sTS: true,
-            engineNumber: true,
-            additionalDocuments: true,
-          }
-        },
-        location: true,
-        complectationBody: true,
-        complectationWheels: true,
-        complectationSalon: true,
-        complectationHeadlights: true,
-        complectationMultimedia: true,
-        complectationComfort: true,
-        complectationSafety: true,
-        complectationProtection: true,
-        complectationOther: true,
-        paintworkInspection:{
-          include: {
-            addElementPaintwork: true,
-          }
-        },
-        engineCompartmentDamage: {
-          include: {
-            addElement: true,
-          }
-        },
-        frontSideDamage: {
-          include: {
-            addElementFront: true
-          }
-        },
         leftSideDamage: {
           include: {
             addElementLeft: true
@@ -338,117 +219,104 @@ export class BetcarReportRepository implements CRUDRepository<BetcarReportEntity
     });
   }
 
-  public async findByVIN(vinNumber: string): Promise<Report | null> {
-    return this.prisma.report.findFirst({
-      where: {
-        vinNumber: vinNumber
-      },
-      include: {
-        sellerDetails: true,
-        carData: {
-          include: {
-            vinBodyNumber: true,
-            frameNumber: true,
-            stateNumber: true,
-            tCP: true,
-            sTS: true,
-            engineNumber: true,
-            additionalDocuments: true,
-          }
-        },
-        location: true,
-        complectationBody: true,
-        complectationWheels: true,
-        complectationSalon: true,
-        complectationHeadlights: true,
-        complectationMultimedia: true,
-        complectationComfort: true,
-        complectationSafety: true,
-        complectationProtection: true,
-        complectationOther: true,
-        paintworkInspection:{
-          include: {
-            addElementPaintwork: true,
-          }
-        },
-        engineCompartmentDamage: {
-          include: {
-            addElement: true,
-          }
-        },
-        frontSideDamage: {
-          include: {
-            addElementFront: true
-          }
-        },
-        leftSideDamage: {
-          include: {
-            addElementLeft: true
-          }
-        },
-        backSideDamage: {
-          include: {
-            addElementBack: true
-          }
-        },
-        trunkDamage: {
-          include: {
-            addElementTrunk: true
-          }
-        },
-        rightSideDamage: {
-          include: {
-            addElementRight: true
-          }
-        },
-        roofDamage: {
-          include: {
-            addElementRoof: true
-          }
-        },
-        glassDamage: {
-          include: {
-            addElementGlass: true
-          }
-        },
-        discDamage: {
-          include: {
-            addElementDisc: true
-          }
-        },
-        interiorDamage: {
-          include: {
-            addElementInterior: true
-          }
-        },
-        exteriorPhoto: true,
-        interiorPhoto: true,
-        roundViewVideo: true,
-        stoppedEngine: {
-          include: {
-            addElementStop: true
-          }
-        },
-        runningEngine: {
-          include: {
-            addElementElectrical: true,
-            addElementMechanical: true
-          }
-        },
-        dashboard: {
-          include: {
-            addElementDash: true
-          }
-        },
-        testDrive: {
-          include: {
-            addElementTest: true
-          }
-        },
-        expertOpinion: true,
-      }
-    });
-  }
+  // public async findByVIN(vinNumber: string): Promise<Report | null> {
+  //   return this.prisma.report.findFirst({
+  //     where: {
+  //       vinNumber: vinNumber
+  //     },
+  //     include: {
+  //       complectationBody: true,
+  //       complectationWheels: true,
+  //       complectationSalon: true,
+  //       complectationHeadlights: true,
+  //       complectationMultimedia: true,
+  //       complectationComfort: true,
+  //       complectationSafety: true,
+  //       complectationProtection: true,
+  //       complectationOther: true,
+  //       paintworkInspection:{
+  //         include: {
+  //           addElementPaintwork: true,
+  //         }
+  //       },
+  //       engineCompartmentDamage: {
+  //         include: {
+  //           addElement: true,
+  //         }
+  //       },
+  //       frontSideDamage: {
+  //         include: {
+  //           addElementFront: true
+  //         }
+  //       },
+  //       leftSideDamage: {
+  //         include: {
+  //           addElementLeft: true
+  //         }
+  //       },
+  //       backSideDamage: {
+  //         include: {
+  //           addElementBack: true
+  //         }
+  //       },
+  //       trunkDamage: {
+  //         include: {
+  //           addElementTrunk: true
+  //         }
+  //       },
+  //       rightSideDamage: {
+  //         include: {
+  //           addElementRight: true
+  //         }
+  //       },
+  //       roofDamage: {
+  //         include: {
+  //           addElementRoof: true
+  //         }
+  //       },
+  //       glassDamage: {
+  //         include: {
+  //           addElementGlass: true
+  //         }
+  //       },
+  //       discDamage: {
+  //         include: {
+  //           addElementDisc: true
+  //         }
+  //       },
+  //       interiorDamage: {
+  //         include: {
+  //           addElementInterior: true
+  //         }
+  //       },
+  //       exteriorPhoto: true,
+  //       interiorPhoto: true,
+  //       roundViewVideo: true,
+  //       stoppedEngine: {
+  //         include: {
+  //           addElementStop: true
+  //         }
+  //       },
+  //       runningEngine: {
+  //         include: {
+  //           addElementElectrical: true,
+  //           addElementMechanical: true
+  //         }
+  //       },
+  //       dashboard: {
+  //         include: {
+  //           addElementDash: true
+  //         }
+  //       },
+  //       testDrive: {
+  //         include: {
+  //           addElementTest: true
+  //         }
+  //       },
+  //       expertOpinion: true,
+  //     }
+  //   });
+  // }
 
   // public async findByEmail(userEmail: string): Promise<Report | null> {
   //   return this.prisma.report.findFirst({
@@ -565,43 +433,6 @@ export class BetcarReportRepository implements CRUDRepository<BetcarReportEntity
   public find(): Promise<Report[]> {
     return this.prisma.report.findMany({
       include: {
-        sellerDetails: true,
-        carData: {
-          include: {
-            vinBodyNumber: true,
-            frameNumber: true,
-            stateNumber: true,
-            tCP: true,
-            sTS: true,
-            engineNumber: true,
-            additionalDocuments: true,
-          }
-        },
-        location: true,
-        complectationBody: true,
-        complectationWheels: true,
-        complectationSalon: true,
-        complectationHeadlights: true,
-        complectationMultimedia: true,
-        complectationComfort: true,
-        complectationSafety: true,
-        complectationProtection: true,
-        complectationOther: true,
-        paintworkInspection:{
-          include: {
-            addElementPaintwork: true,
-          }
-        },
-        engineCompartmentDamage: {
-          include: {
-            addElement: true,
-          }
-        },
-        frontSideDamage: {
-          include: {
-            addElementFront: true
-          }
-        },
         leftSideDamage: {
           include: {
             addElementLeft: true
