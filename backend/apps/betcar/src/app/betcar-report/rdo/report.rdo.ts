@@ -1,23 +1,4 @@
 import { ApiProperty } from '@nestjs/swagger';
-import { 
-  LeftSideDamage,
-  BackSideDamage,
-  TrunkDamage,
-  RightSideDamage,
-  RoofDamage,
-  GlassDamage,
-  DiscDamage,
-  InteriorDamage,
-  ExteriorPhoto,
-  InteriorPhoto,
-  RoundViewVideo,
-  StoppedEngine,
-  RunningEngine,
-  Dashboard,
-  TestDrive,
-  ExpertOpinion,
-} from '@prisma/client';
-
 import { Expose } from 'class-transformer';
 
 export class ReportRdo {
@@ -1634,118 +1615,1630 @@ public frontSideDamageAddNameThree: string;
 @Expose()
 public frontSideDamageAddInfoThree: string[];
 ///////////////////////////////////////////////////////////////////////////////////////////////////////
+@ApiProperty({
+  description: 'Без повреждений',
+  example: false
+})
+@Expose()
+public leftSideDamageWithoutDamage: boolean;
 
-  @ApiProperty({
-    description: 'Массив объектов c информацией о повреждениях левой части',
-    example: [0]
-  })
-  @Expose()
-  public leftSideDamage: LeftSideDamage[];
+@ApiProperty({
+  description: 'Переднее крыло',
+  example: ['string']
+})
+@Expose()
+public leftSideDamageLeftFrontFender: string[]; 
 
-  @ApiProperty({
-    description: 'Массив объектов c информацией о повреждениях задней части',
-    example: [0]
-  })
-  @Expose()
-  public backSideDamage: BackSideDamage[];
+@ApiProperty({
+  description: 'Передняя стойка',
+  example: ['string']
+})
+@Expose()
+public leftSideDamageLeftFrontPillar: string[]; 
 
-  @ApiProperty({
-    description: 'Массив объектов c информацией о повреждениях багажника',
-    example: [0]
-  })
-  @Expose()
-  public trunkDamage: TrunkDamage[];
+@ApiProperty({
+  description: 'Передняя дверь',
+  example: ['string']
+})
+@Expose()
+public leftSideDamageLeftFrontDoor: string[]; 
 
-  @ApiProperty({
-    description: 'Массив объектов c информацией о повреждениях правой части',
-    example: [0]
-  })
-  @Expose()
-  public rightSideDamage: RightSideDamage[];
+@ApiProperty({
+  description: 'Центральная стойка',
+  example: ['string']
+})
+@Expose()
+public leftSideDamageLeftCenterPillar: string[];
 
-  @ApiProperty({
-    description: 'Массив объектов c информацией о повреждениях крыши',
-    example: [0]
-  })
-  @Expose()
-  public roofDamage: RoofDamage[];
+@ApiProperty({
+  description: 'Задняя дверь',
+  example: ['string']
+})
+@Expose()
+public leftSideDamageLeftRearDoor: string[]; 
 
-  @ApiProperty({
-    description: 'Массив объектов c информацией о повреждениях стекол',
-    example: [0]
-  })
-  @Expose()
-  public glassDamage: GlassDamage[];
+@ApiProperty({
+  description: 'Задняя стойка',
+  example: ['string']
+})
+@Expose()
+public leftSideDamageLeftRearPillar: string[]; 
 
-  @ApiProperty({
-    description: 'Массив объектов c информацией о повреждениях колес',
-    example: [0]
-  })
-  @Expose()
-  public discDamage: DiscDamage[];
+@ApiProperty({
+  description: 'Заднее крыло',
+  example: ['string']
+})
+@Expose()
+public leftSideDamageLeftRearFender: string[]; 
 
-  @ApiProperty({
-    description: 'Массив объектов c информацией о повреждениях салона',
-    example: [0]
-  })
-  @Expose()
-  public interiorDamage: InteriorDamage[];
+@ApiProperty({
+  description: 'Левое зеркало',
+  example: ['string']
+})
+@Expose()
+public leftSideDamageLeftMirror: string[]; 
 
-  @ApiProperty({
-    description: 'Массив объектов c фото кузова',
-    example: [0]
-  })
-  @Expose()
-  public exteriorPhoto: ExteriorPhoto[];
+@ApiProperty({
+  description: 'Порог',
+  example: ['string']
+})
+@Expose()
+public leftSideDamageLeftThreshold: string[]; 
 
-  @ApiProperty({
-    description: 'Массив объектов c фото салона',
-    example: [0]
-  })
-  @Expose()
-  public interiorPhoto: InteriorPhoto[];
+@ApiProperty({
+  description: 'Имя элемента',
+  example: "string"
+})
+@Expose()
+public leftSideDamageAddNameOne: string;
 
-  @ApiProperty({
-    description: 'Массив объектов c круговым обзором',
-    example: [0]
-  })
-  @Expose()
-  public roundViewVideo: RoundViewVideo[];
+@ApiProperty({
+  description: 'Инфо элемента',
+  example: ["string"]
+})
+@Expose()
+public leftSideDamageAddInfoOne: string[];
 
-  @ApiProperty({
-    description: 'Массив объектов c заглушенным двигателем',
-    example: [0]
-  })
-  @Expose()
-  public stoppedEngine: StoppedEngine[];
+@ApiProperty({
+  description: 'Имя элемента',
+  example: "string"
+})
+@Expose()
+public leftSideDamageAddNameTwo: string;
 
-  @ApiProperty({
-    description: 'Массив объектов c запущенным двигателем',
-    example: [0]
-  })
-  @Expose()
-  public runningEngine: RunningEngine[];
+@ApiProperty({
+  description: 'Инфо элемента',
+  example: ["string"]
+})
+@Expose()
+public leftSideDamageAddInfTwo: string[];
 
-  @ApiProperty({
-    description: 'Массив объектов c приборной панелью',
-    example: [0]
-  })
-  @Expose()
-  public dashboard: Dashboard[];
+@ApiProperty({
+  description: 'Имя элемента',
+  example: "string"
+})
+@Expose()
+public leftSideDamageAddNameThree: string;
 
-  @ApiProperty({
-    description: 'Массив объектов c тест драйвом',
-    example: [0]
-  })
-  @Expose()
-  public testDrive: TestDrive[];
+@ApiProperty({
+  description: 'Инфо элемента',
+  example: ["string"]
+})
+@Expose()
+public leftSideDamageAddInfoThree: string[];
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+@ApiProperty({
+  description: 'Без повреждений',
+  example: false
+})
+@Expose()
+public backSideDamageWithoutDamage: boolean;
 
-  @ApiProperty({
-    description: 'Массив объектов c заключением эксперта',
-    example: [0]
-  })
-  @Expose()
-  public expertOpinion: ExpertOpinion[];
+@ApiProperty({
+  description: 'Крышка багажника',
+  example: ['string']
+})
+@Expose()
+public backSideDamageTailgate: string[]; 
+
+@ApiProperty({
+  description: 'Задний бампер',
+  example: ['string']
+})
+@Expose()
+public backSideDamageRearBumper: string[]; 
+
+@ApiProperty({
+  description: 'Левый фонарь',
+  example: ['string']
+})
+@Expose()
+public backSideDamageLeftLamp: string[]; 
+
+@ApiProperty({
+  description: 'Правый фонарь',
+  example: ['string']
+})
+@Expose()
+public backSideDamageRightLamp: string[]; 
+
+@ApiProperty({
+  description: 'Имя элемента',
+  example: "string"
+})
+@Expose()
+public backSideDamageAddNameOne: string;
+
+@ApiProperty({
+  description: 'Инфо элемента',
+  example: ["string"]
+})
+@Expose()
+public backSideDamageAddInfoOne: string[];
+
+@ApiProperty({
+  description: 'Имя элемента',
+  example: "string"
+})
+@Expose()
+public backSideDamageAddNameTwo: string;
+
+@ApiProperty({
+  description: 'Инфо элемента',
+  example: ["string"]
+})
+@Expose()
+public backSideDamageAddInfTwo: string[];
+
+@ApiProperty({
+  description: 'Имя элемента',
+  example: "string"
+})
+@Expose()
+public backSideDamageAddNameThree: string;
+
+@ApiProperty({
+  description: 'Инфо элемента',
+  example: ["string"]
+})
+@Expose()
+public backSideDamageAddInfoThree: string[];
+//////////////////////////////////////////////////////////////////////////////////////////////////
+@ApiProperty({
+  description: 'Без повреждений',
+  example: false
+})
+@Expose()
+public trunkDamageWithoutDamage: boolean;
+
+@ApiProperty({
+  description: 'Обшивка крышки',
+  example: ['string']
+})
+@Expose()
+public trunkDamageCoverTrim: string[]; 
+
+@ApiProperty({
+  description: 'Ковролин пола',
+  example: ['string']
+})
+@Expose()
+public trunkDamageCarpetFloor: string[]; 
+
+@ApiProperty({
+  description: 'Обшивка правая',
+  example: ['string']
+})
+@Expose()
+public trunkDamageRightTrim: string[]; 
+
+@ApiProperty({
+  description: 'Правый стакан',
+  example: ['string']
+})
+@Expose()
+public trunkDamageRightGlass: string[]; 
+
+@ApiProperty({
+  description: 'Обшивка левая',
+  example: ['string']
+})
+@Expose()
+public trunkDamageLeftTrim: string[]; 
+
+@ApiProperty({
+  description: 'Левый стакан',
+  example: ['string']
+})
+@Expose()
+public trunkDamageLeftGlass: string[]; 
+
+@ApiProperty({
+  description: 'Обшивка спинки сиденья',
+  example: ['string']
+})
+@Expose()
+public trunkDamageSeatBackTrim: string[]; 
+
+@ApiProperty({
+  description: 'Ниша запасного колеса',
+  example: ['string']
+})
+@Expose()
+public trunkDamageSpareWheelWell: string[]; 
+
+@ApiProperty({
+  description: 'Имя элемента',
+  example: "string"
+})
+@Expose()
+public trunkDamageAddNameOne: string;
+
+@ApiProperty({
+  description: 'Инфо элемента',
+  example: ["string"]
+})
+@Expose()
+public trunkDamageAddInfoOne: string[];
+
+@ApiProperty({
+  description: 'Имя элемента',
+  example: "string"
+})
+@Expose()
+public trunkDamageAddNameTwo: string;
+
+@ApiProperty({
+  description: 'Инфо элемента',
+  example: ["string"]
+})
+@Expose()
+public trunkDamageAddInfTwo: string[];
+
+@ApiProperty({
+  description: 'Имя элемента',
+  example: "string"
+})
+@Expose()
+public trunkDamageAddNameThree: string;
+
+@ApiProperty({
+  description: 'Инфо элемента',
+  example: ["string"]
+})
+@Expose()
+public trunkDamageAddInfoThree: string[];
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+@ApiProperty({
+  description: 'Без повреждений',
+  example: false
+})
+@Expose()
+public rightSideDamageWithoutDamage: boolean;
+
+@ApiProperty({
+  description: 'Переднее крыло',
+  example: ['string']
+})
+@Expose()
+public rightSideDamageRightFrontFender: string[]; 
+
+@ApiProperty({
+  description: 'Передняя стойка',
+  example: ['string']
+})
+@Expose()
+public rightSideDamageRightFrontPillar: string[]; 
+
+@ApiProperty({
+  description: 'Передняя дверь',
+  example: ['string']
+})
+@Expose()
+public rightSideDamageRightFrontDoor: string[]; 
+
+@ApiProperty({
+  description: 'Центральная стойка',
+  example: ['string']
+})
+@Expose()
+public rightSideDamageRightCenterPillar: string[];
+
+@ApiProperty({
+  description: 'Задняя дверь',
+  example: ['string']
+})
+@Expose()
+public rightSideDamageRightRearDoor: string[]; 
+
+@ApiProperty({
+  description: 'Задняя стойка',
+  example: ['string']
+})
+@Expose()
+public rightSideDamageRightRearPillar: string[]; 
+
+@ApiProperty({
+  description: 'Заднее крыло',
+  example: ['string']
+})
+@Expose()
+public rightSideDamageRightRearFender: string[]; 
+
+@ApiProperty({
+  description: 'Левое зеркало',
+  example: ['string']
+})
+@Expose()
+public rightSideDamageRightMirror: string[]; 
+
+@ApiProperty({
+  description: 'Порог',
+  example: ['string']
+})
+@Expose()
+public rightSideDamageRightThreshold: string[]; 
+
+@ApiProperty({
+  description: 'Имя элемента',
+  example: "string"
+})
+@Expose()
+public rightSideDamageAddNameOne: string;
+
+@ApiProperty({
+  description: 'Инфо элемента',
+  example: ["string"]
+})
+@Expose()
+public rightSideDamageAddInfoOne: string[];
+
+@ApiProperty({
+  description: 'Имя элемента',
+  example: "string"
+})
+@Expose()
+public rightSideDamageAddNameTwo: string;
+
+@ApiProperty({
+  description: 'Инфо элемента',
+  example: ["string"]
+})
+@Expose()
+public rightSideDamageAddInfTwo: string[];
+
+@ApiProperty({
+  description: 'Имя элемента',
+  example: "string"
+})
+@Expose()
+public rightSideDamageAddNameThree: string;
+
+@ApiProperty({
+  description: 'Инфо элемента',
+  example: ["string"]
+})
+@Expose()
+public rightSideDamageAddInfoThree: string[];
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+@ApiProperty({
+  description: 'Без повреждений',
+  example: false
+})
+@Expose()
+public roofDamageWithoutDamage: boolean;
+
+@ApiProperty({
+  description: 'Рейлинги',
+  example: ['string']
+})
+@Expose()
+public roofDamageRoofRails: string[];
+
+@ApiProperty({
+  description: 'Крыша',
+  example: ['string']
+})
+@Expose()
+public roofDamageRoof: string[];
+
+@ApiProperty({
+  description: 'Люк',
+  example: ['string']
+})
+@Expose()
+public roofDamageLuke: string[];
+
+@ApiProperty({
+  description: 'Панорама',
+  example: ['string']
+})
+@Expose()
+public roofDamagePanorama: string[];
+
+@ApiProperty({
+  description: 'Имя элемента',
+  example: "string"
+})
+@Expose()
+public roofDamageAddNameOne: string;
+
+@ApiProperty({
+  description: 'Инфо элемента',
+  example: ["string"]
+})
+@Expose()
+public roofDamageAddInfoOne: string[];
+
+@ApiProperty({
+  description: 'Имя элемента',
+  example: "string"
+})
+@Expose()
+public roofDamageAddNameTwo: string;
+
+@ApiProperty({
+  description: 'Инфо элемента',
+  example: ["string"]
+})
+@Expose()
+public roofDamageAddInfTwo: string[];
+
+@ApiProperty({
+  description: 'Имя элемента',
+  example: "string"
+})
+@Expose()
+public roofDamageAddNameThree: string;
+
+@ApiProperty({
+  description: 'Инфо элемента',
+  example: ["string"]
+})
+@Expose()
+public roofDamageAddInfoThree: string[];
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+@ApiProperty({
+  description: 'Без повреждений',
+  example: false
+})
+@Expose()
+public glassDamageWithoutDamage: boolean;
+
+@ApiProperty({
+  description: 'Лобовое стекло',
+  example: ['string']
+})
+@Expose()
+public glassDamageWindshield: string[];
+
+@ApiProperty({
+  description: 'Левое переднее',
+  example: ['string']
+})
+@Expose()
+public glassDamageLeftFrontGlass: string[];
+
+@ApiProperty({
+  description: 'Левое заднее',
+  example: ['string']
+})
+@Expose()
+public glassDamageLeftRearGlass: string[];
+
+@ApiProperty({
+  description: 'Заднее стекло',
+  example: ['string']
+})
+@Expose()
+public glassDamageRearGlass: string[];
+
+@ApiProperty({
+  description: 'Правое переднее',
+  example: ['string']
+})
+@Expose()
+public glassDamageRightFrontGlass: string[];
+
+@ApiProperty({
+  description: 'Правое заднее',
+  example: ['string']
+})
+@Expose()
+public glassDamageRightRearGlass: string[];
+
+@ApiProperty({
+  description: 'Все стекла заводские',
+  example: false
+})
+@Expose()
+public glassDamageAllGlassIsFactory: boolean;
+
+@ApiProperty({
+  description: 'Имя элемента',
+  example: "string"
+})
+@Expose()
+public glassDamageAddNameOne: string;
+
+@ApiProperty({
+  description: 'Инфо элемента',
+  example: ["string"]
+})
+@Expose()
+public glassDamageAddInfoOne: string[];
+
+@ApiProperty({
+  description: 'Имя элемента',
+  example: "string"
+})
+@Expose()
+public glassDamageAddNameTwo: string;
+
+@ApiProperty({
+  description: 'Инфо элемента',
+  example: ["string"]
+})
+@Expose()
+public glassDamageAddInfTwo: string[];
+
+@ApiProperty({
+  description: 'Имя элемента',
+  example: "string"
+})
+@Expose()
+public glassDamageAddNameThree: string;
+
+@ApiProperty({
+  description: 'Инфо элемента',
+  example: ["string"]
+})
+@Expose()
+public glassDamageAddInfoThree: string[];
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+@ApiProperty({
+  description: 'Без повреждений',
+  example: false
+})
+@Expose()
+public discDamageWithoutDamage: boolean;
+
+@ApiProperty({
+  description: 'Левое переднее',
+  example: ['string']
+})
+@Expose()
+public discDamageLeftFrontDisc: string[];
+
+@ApiProperty({
+  description: 'Левое заднее',
+  example: ['string']
+})
+@Expose()
+public discDamageLeftRearDisc: string[];
+
+@ApiProperty({
+  description: 'Правое переднее',
+  example: ['string']
+})
+@Expose()
+public discDamageRightFrontDisc: string[];
+
+@ApiProperty({
+  description: 'Правое заднее',
+  example: ['string']
+})
+@Expose()
+public discDamageRightRearDisc: string[];
+
+@ApiProperty({
+  description: 'Имя элемента',
+  example: "string"
+})
+@Expose()
+public discDamageAddNameOne: string;
+
+@ApiProperty({
+  description: 'Инфо элемента',
+  example: ["string"]
+})
+@Expose()
+public discDamageAddInfoOne: string[];
+
+@ApiProperty({
+  description: 'Имя элемента',
+  example: "string"
+})
+@Expose()
+public discDamageAddNameTwo: string;
+
+@ApiProperty({
+  description: 'Инфо элемента',
+  example: ["string"]
+})
+@Expose()
+public discDamageAddInfTwo: string[];
+
+@ApiProperty({
+  description: 'Имя элемента',
+  example: "string"
+})
+@Expose()
+public discDamageAddNameThree: string;
+
+@ApiProperty({
+  description: 'Инфо элемента',
+  example: ["string"]
+})
+@Expose()
+public discDamageAddInfoThree: string[];
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+@ApiProperty({
+  description: 'Без повреждений',
+  example: false
+})
+@Expose()
+public interiorDamageWithoutDamage: boolean;
+
+@ApiProperty({
+  description: 'Передняя левая карта двери',
+  example: ['string']
+})
+@Expose()
+public interiorDamageFrontLeftDoorCard: string[];
+
+@ApiProperty({
+  description: 'Водительское сиденье',
+  example: ['string']
+})
+@Expose()
+public interiorDamageDriversSeat: string[];
+
+@ApiProperty({
+  description: 'Ковер салона',
+  example: ['string']
+})
+@Expose()
+public interiorDamageSalonCarpet: string[];
+
+@ApiProperty({
+  description: 'Торпеда',
+  example: ['string']
+})
+@Expose()
+public interiorDamageTorpedo: string[];
+
+@ApiProperty({
+  description: 'Потолок',
+  example: ['string']
+})
+@Expose()
+public interiorDamageCeiling: string[];
+
+@ApiProperty({
+  description: 'Задняя левая карта двери',
+  example: ['string']
+})
+@Expose()
+public interiorDamageBackLeftDoorCard: string[];
+
+@ApiProperty({
+  description: 'Заднее сиденье',
+  example: ['string']
+})
+@Expose()
+public interiorDamageBackSeat: string[];
+
+@ApiProperty({
+  description: 'Задняя правая карта двери',
+  example: ['string']
+})
+@Expose()
+public interiorDamageBackRightDoorCard: string[];
+
+@ApiProperty({
+  description: 'Передняя правая карта двери',
+  example: ['string']
+})
+@Expose()
+public interiorDamageFrontRightDoorCard: string[];
+
+@ApiProperty({
+  description: 'Пассажирское сиденье',
+  example: ['string']
+})
+@Expose()
+public interiorDamagePassengerSeat: string[];
+
+@ApiProperty({
+  description: 'Спальное отделение',
+  example: ['string']
+})
+@Expose()
+public interiorDamageSleepingCompartment: string[];
+
+@ApiProperty({
+  description: 'Имя элемента',
+  example: "string"
+})
+@Expose()
+public interiorDamageAddNameOne: string;
+
+@ApiProperty({
+  description: 'Инфо элемента',
+  example: ["string"]
+})
+@Expose()
+public interiorDamageAddInfoOne: string[];
+
+@ApiProperty({
+  description: 'Имя элемента',
+  example: "string"
+})
+@Expose()
+public interiorDamageAddNameTwo: string;
+
+@ApiProperty({
+  description: 'Инфо элемента',
+  example: ["string"]
+})
+@Expose()
+public interiorDamageAddInfTwo: string[];
+
+@ApiProperty({
+  description: 'Имя элемента',
+  example: "string"
+})
+@Expose()
+public interiorDamageAddNameThree: string;
+
+@ApiProperty({
+  description: 'Инфо элемента',
+  example: ["string"]
+})
+@Expose()
+public interiorDamageAddInfoThree: string[];
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+@ApiProperty({
+  description: 'Перед справа',
+  example: 'string'
+})
+@Expose()
+public exteriorPhotoRightFrontPhoto: string;
+
+@ApiProperty({
+  description: 'Перед',
+  example: 'string'
+})
+@Expose()
+public exteriorPhotoFrontPhoto: string;
+
+@ApiProperty({
+  description: 'Перед слева',
+  example: 'string'
+})
+@Expose()
+public exteriorPhotoLeftFrontPhoto: string;
+
+@ApiProperty({
+  description: 'Справа сзади',
+  example: 'string'
+})
+@Expose()
+public exteriorPhotoRightBackPhoto: string;
+
+@ApiProperty({
+  description: 'Сзади',
+  example: 'string'
+})
+@Expose()
+public exteriorPhotoBackPhoto: string;
+
+@ApiProperty({
+  description: 'Слева сзади',
+  example: 'string'
+})
+@Expose()
+public exteriorPhotoLeftBackPhoto: string;
+
+@ApiProperty({
+  description: 'Слева',
+  example: 'string'
+})
+@Expose()
+public exteriorPhotoLeftPhoto: string;
+
+@ApiProperty({
+  description: 'Справа',
+  example: 'string'
+})
+@Expose()
+public exteriorPhotoRightPhoto: string;
+
+@ApiProperty({
+  description: 'Открытй капот',
+  example: 'string'
+})
+@Expose()
+public exteriorPhotoHoodOpen: string;
+
+@ApiProperty({
+  description: 'Открытый багажник',
+  example: 'string'
+})
+@Expose()
+public exteriorPhotoTrunkOpen: string;
+
+@ApiProperty({
+  description: 'Дополнительное фото',
+  example: ['string']
+})
+@Expose()
+public exteriorPhotoAddPhoto: string[];
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+@ApiProperty({
+  description: 'Левая передняя дверь',
+  example: 'string'
+})
+@Expose()
+public interiorPhotoLeftFrontDoor: string;
+
+@ApiProperty({
+  description: 'Сиденье водителя',
+  example: 'string'
+})
+@Expose()
+public interiorPhotoDriverSeatPhoto: string;
+
+@ApiProperty({
+  description: 'Фото руля',
+  example: 'string'
+})
+@Expose()
+public interiorPhotoSteeringWheelPhoto: string;
+
+@ApiProperty({
+  description: 'Приборная панель',
+  example: 'string'
+})
+@Expose()
+public interiorPhotoDashboardPhoto: string;
+
+@ApiProperty({
+  description: 'Левая задняя дверь',
+  example: 'string'
+})
+@Expose()
+public interiorPhotoLeftBackDoor: string;
+
+@ApiProperty({
+  description: 'Заднее сидень слева',
+  example: 'string'
+})
+@Expose()
+public interiorPhotoBackLeftSeatsPhoto: string;
+
+@ApiProperty({
+  description: 'Передние сиденья',
+  example: 'string'
+})
+@Expose()
+public interiorPhotoFrontSeatsPhoto: string;
+
+@ApiProperty({
+  description: 'Правая задняя дверь',
+  example: 'string'
+})
+@Expose()
+public interiorPhotoRightBackDoor: string;
+
+@ApiProperty({
+  description: 'Заднее сидень справа',
+  example: 'string'
+})
+@Expose()
+public interiorPhotoBackRightSeatsPhoto: string;
+
+@ApiProperty({
+  description: 'Правая передняя дверь',
+  example: 'string'
+})
+@Expose()
+public interiorPhotoRightFrontDoor: string;
+
+@ApiProperty({
+  description: 'Пассажирское сиденье',
+  example: 'string'
+})
+@Expose()
+public interiorPhotoPassengerSeatPhoto: string;
+
+@ApiProperty({
+  description: 'Дополнительное фото',
+  example: ['string']
+})
+@Expose()
+public interiorPhotoAddPhoto: string[];
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+@ApiProperty({
+  description: 'Круговое видео',
+  example: 'string'
+})
+@Expose()
+public roundViewVideoVideo: string;
+
+@ApiProperty({
+  description: 'Комментарий',
+  example: 'string'
+})
+@Expose()
+public roundViewVideoComment: string;
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+@ApiProperty({
+  description: 'Новый',
+  example: false
+})
+@Expose()
+public stoppedEngineIsNew: boolean;
+
+@ApiProperty({
+  description: 'Не на ходу',
+  example: false
+})
+@Expose()
+public stoppedEngineIsNotGo: boolean;
+
+@ApiProperty({
+  description: 'Аварийный',
+  example: false
+})
+@Expose()
+public stoppedEngineIsEmergency: boolean;
+
+@ApiProperty({
+  description: 'Разукомплектован',
+  example: false
+})
+@Expose()
+public stoppedEngineIsUnderstaffed: boolean;
+
+@ApiProperty({
+  description: 'Комментарий',
+  example: 'string'
+})
+@Expose()
+public stoppedEngineComment: string;
+
+@ApiProperty({
+  description: 'Уровень масла ДВС',
+  example: 'string'
+})
+@Expose()
+public stoppedEngineEngineOilLevel: string;
+
+@ApiProperty({
+  description: 'Уровень масла КПП',
+  example: 'string'
+})
+@Expose()
+public stoppedEngineGearboxOilLevel: string;
+
+@ApiProperty({
+  description: 'Уровень жидкости ГУР',
+  example: 'string'
+})
+@Expose()
+public stoppedEngineGurLiquidLevel: string;
+
+@ApiProperty({
+  description: 'Уровень тормозной жидкости',
+  example: 'string'
+})
+@Expose()
+public stoppedEngineBrakeFluidLevel: string;
+
+@ApiProperty({
+  description: 'Уровень охлаждающей жидкости',
+  example: 'string'
+})
+@Expose()
+public stoppedEngineCoolantLevel: string;
+
+@ApiProperty({
+  description: 'Комментарий тех жидкости',
+  example: 'string'
+})
+@Expose()
+public stoppedEngineTechnicalFluidsComment: string;
+
+@ApiProperty({
+  description: 'Приводные ремни',
+  example: 'string'
+})
+@Expose()
+public stoppedEngineDriveBelts: string;
+
+@ApiProperty({
+  description: 'Тормозные диски',
+  example: 'string'
+})
+@Expose()
+public stoppedEngineBrakeDiscs: string;
+
+@ApiProperty({
+  description: 'Тормозные колодки',
+  example: 'string'
+})
+@Expose()
+public stoppedEngineBrakePads: string;
+
+@ApiProperty({
+  description: 'Комментарий износа',
+  example: 'string'
+})
+@Expose()
+public stoppedEngineWearComment: string;
+
+@ApiProperty({
+  description: 'Запотевание есть или нет',
+  example: false
+})
+@Expose()
+public stoppedEngineIsFogging: boolean;
+
+@ApiProperty({
+  description: 'Имя',
+  example: 'string'
+})
+@Expose()
+public stoppedEngineNameOne: string;
+
+@ApiProperty({
+  description: 'Запотевание',
+  example: ['string']
+})
+@Expose()
+public stoppedEngineFoggingOne: string[];
+
+@ApiProperty({
+  description: 'Фото',
+  example: ['string']
+})
+@Expose()
+public stoppedEnginePhotoOne: string[];
+
+@ApiProperty({
+  description: 'Комментарий',
+  example: 'string'
+})
+@Expose()
+public stoppedEngineCommentOne: string;
+
+@ApiProperty({
+  description: 'Имя',
+  example: 'string'
+})
+@Expose()
+public stoppedEngineNameTwo: string;
+
+@ApiProperty({
+  description: 'Запотевание',
+  example: ['string']
+})
+@Expose()
+public stoppedEngineFoggingTwo: string[];
+
+@ApiProperty({
+  description: 'Фото',
+  example: ['string']
+})
+@Expose()
+public stoppedEnginePhotoTwo: string[];
+
+@ApiProperty({
+  description: 'Комментарий',
+  example: 'string'
+})
+@Expose()
+public stoppedEngineCommenTwo: string;
+
+@ApiProperty({
+  description: 'Имя',
+  example: 'string'
+})
+@Expose()
+public stoppedEngineNameThree: string;
+
+@ApiProperty({
+  description: 'Запотевание',
+  example: ['string']
+})
+@Expose()
+public stoppedEngineFoggingThree: string[];
+
+@ApiProperty({
+  description: 'Фото',
+  example: ['string']
+})
+@Expose()
+public stoppedEnginePhotoThree: string[];
+
+@ApiProperty({
+  description: 'Комментарий',
+  example: 'string'
+})
+@Expose()
+public stoppedEngineCommentThree: string;
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+@ApiProperty({
+  description: 'Двигатель не запускается',
+  example: false
+})
+@Expose()
+public runningEngineEngineNotStart: boolean;
+
+@ApiProperty({
+  description: 'Комментарий',
+  example: 'string'
+})
+@Expose()
+public runningEngineComment: string;
+
+@ApiProperty({
+  description: 'Видео запуска двигателя',
+  example: 'string'
+})
+@Expose()
+public runningEngineEngineVideo: string;
+
+@ApiProperty({
+  description: 'Все системы в порядке',
+  example: false
+})
+@Expose()
+public runningEngineAllSystemOkElectric: boolean;
+
+@ApiProperty({
+  description: 'Все системы в порядке',
+  example: false
+})
+@Expose()
+public runningEngineAllSystemOkMechanical: boolean;
+
+@ApiProperty({
+  description: 'Имя',
+  example: 'string'
+})
+@Expose()
+public runningEngineElectricalNameOne: string;
+
+@ApiProperty({
+  description: 'Выбрано',
+  example: false
+})
+@Expose()
+public runningEngineElectricalIsCheckOne: boolean;
+
+@ApiProperty({
+  description: 'Комментарий',
+  example: 'string'
+})
+@Expose()
+public runningEngineElectricalCommentOne: string;
+
+@ApiProperty({
+  description: 'Имя',
+  example: 'string'
+})
+@Expose()
+public runningEngineElectricalNameTwo: string;
+
+@ApiProperty({
+  description: 'Выбрано',
+  example: false
+})
+@Expose()
+public runningEngineElectricalIsCheckTwo: boolean;
+
+@ApiProperty({
+  description: 'Комментарий',
+  example: 'string'
+})
+@Expose()
+public runningEngineElectricalCommentTwo: string;
+
+@ApiProperty({
+  description: 'Имя',
+  example: 'string'
+})
+@Expose()
+public runningEngineElectricalNameThree: string;
+
+@ApiProperty({
+  description: 'Выбрано',
+  example: false
+})
+@Expose()
+public runningEngineElectricalIsCheckThree: boolean;
+
+@ApiProperty({
+  description: 'Комментарий',
+  example: 'string'
+})
+@Expose()
+public runningEngineElectricalCommentThree: string;
+
+@ApiProperty({
+  description: 'Имя',
+  example: 'string'
+})
+@Expose()
+public runningEngineMechanicalNameOne: string;
+
+@ApiProperty({
+  description: 'Выбрано',
+  example: false
+})
+@Expose()
+public runningEngineMechanicalIsCheckOne: boolean;
+
+@ApiProperty({
+  description: 'Комментарий',
+  example: 'string'
+})
+@Expose()
+public runningEngineMechanicalCommentOne: string;
+
+@ApiProperty({
+  description: 'Имя',
+  example: 'string'
+})
+@Expose()
+public runningEngineMechanicalNameTwo: string;
+
+@ApiProperty({
+  description: 'Выбрано',
+  example: false
+})
+@Expose()
+public runningEngineMechanicalIsCheckTwo: boolean;
+
+@ApiProperty({
+  description: 'Комментарий',
+  example: 'string'
+})
+@Expose()
+public runningEngineMechanicalCommentTwo: string;
+
+@ApiProperty({
+  description: 'Имя',
+  example: 'string'
+})
+@Expose()
+public runningEngineMechanicalNameThree: string;
+
+@ApiProperty({
+  description: 'Выбрано',
+  example: false
+})
+@Expose()
+public runningEngineMechanicalIsCheckThree: boolean;
+
+@ApiProperty({
+  description: 'Комментарий',
+  example: 'string'
+})
+@Expose()
+public runningEngineMechanicalCommentThree: string;
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+@ApiProperty({
+  description: 'Ошибки отсутствуют',
+  example: false
+})
+@Expose()
+public dashboardNoErrors: boolean;
+
+@ApiProperty({
+  description: 'Файл диагностики',
+  example: ["string"]
+})
+@Expose()
+public dashboardDiagnosticsFile?: string[];
+
+@ApiProperty({
+  description: 'Комментарий эксперта',
+  example: "string"
+})
+@Expose()
+public dashboardDiagnosticsComment: string;
+
+@ApiProperty({
+  description: 'Пробег на приборной панели',
+  example: "string"
+})
+@Expose()
+public dashboardMileageOnDashboard?: string;
+
+@ApiProperty({
+  description: 'Пробег в блоках ДВС',
+  example: "string"
+})
+@Expose()
+public dashboardMileageInTheEngineBlock?: string;
+
+@ApiProperty({
+  description: 'Пробег в блоке КПП',
+  example: "string"
+})
+@Expose()
+public dashboardMileageInTheGearbox?: string;
+
+@ApiProperty({
+  description: 'Пробег в доп блоке',
+  example: "string"
+})
+@Expose()
+public dashboardMileageInAdditionalBlocks?: string;
+
+@ApiProperty({
+  description: 'Без пробега',
+  example: false
+})
+@Expose()
+public dashboardIsNoMileage?: boolean;
+
+@ApiProperty({
+  description: 'Комментарий',
+  example: "string"
+})
+@Expose()
+public dashboardTotalComment: string;
+
+@ApiProperty({
+  description: 'Имя',
+  example: 'string'
+})
+@Expose()
+public dashboardNameOne: string;
+
+@ApiProperty({
+  description: 'Выбрано',
+  example: false
+})
+@Expose()
+public dashboardIsCheckOne: boolean;
+
+@ApiProperty({
+  description: 'Комментарий',
+  example: 'string'
+})
+@Expose()
+public dashboardCommentOne: string;
+
+@ApiProperty({
+  description: 'Имя',
+  example: 'string'
+})
+@Expose()
+public dashboardNameTwo: string;
+
+@ApiProperty({
+  description: 'Выбрано',
+  example: false
+})
+@Expose()
+public dashboardIsCheckTwo: boolean;
+
+@ApiProperty({
+  description: 'Комментарий',
+  example: 'string'
+})
+@Expose()
+public dashboardCommentTwo: string;
+
+@ApiProperty({
+  description: 'Имя',
+  example: 'string'
+})
+@Expose()
+public dashboardNameThree: string;
+
+@ApiProperty({
+  description: 'Выбрано',
+  example: false
+})
+@Expose()
+public dashboardIsCheckThree: boolean;
+
+@ApiProperty({
+  description: 'Комментарий',
+  example: 'string'
+})
+@Expose()
+public dashboardCommentThree: string;
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+@ApiProperty({
+  description: 'Все системы работают исправно',
+  example: false
+})
+@Expose()
+public testDriveAllSystemOk: boolean;
+
+@ApiProperty({
+  description: 'Неисправности',
+  example: ['string']
+})
+@Expose()
+public testDriveMalfunctions: string[];
+
+@ApiProperty({
+  description: 'Имя',
+  example: 'string'
+})
+@Expose()
+public testDriveNameOne: string;
+
+@ApiProperty({
+  description: 'Выбрано',
+  example: false
+})
+@Expose()
+public testDriveIsCheckOne: boolean;
+
+@ApiProperty({
+  description: 'Комментарий',
+  example: 'string'
+})
+@Expose()
+public testDriveCommentOne: string;
+
+@ApiProperty({
+  description: 'Имя',
+  example: 'string'
+})
+@Expose()
+public testDriveNameTwo: string;
+
+@ApiProperty({
+  description: 'Выбрано',
+  example: false
+})
+@Expose()
+public testDriveIsCheckTwo: boolean;
+
+@ApiProperty({
+  description: 'Комментарий',
+  example: 'string'
+})
+@Expose()
+public testDriveCommentTwo: string;
+
+@ApiProperty({
+  description: 'Имя',
+  example: 'string'
+})
+@Expose()
+public testDriveNameThree: string;
+
+@ApiProperty({
+  description: 'Выбрано',
+  example: false
+})
+@Expose()
+public testDriveIsCheckThree: boolean;
+
+@ApiProperty({
+  description: 'Комментарий',
+  example: 'string'
+})
+@Expose()
+public testDriveCommentThree: string;
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+@ApiProperty({
+  description: 'Комментарий плюсов',
+  example: 'string'
+})
+@Expose()
+public expertOpinionPlusComment: string;
+
+@ApiProperty({
+  description: 'Комментарий минусов',
+  example: 'string'
+})
+@Expose()
+public expertOpinionMinusComment: string;
+
+@ApiProperty({
+  description: 'Комментарий общий',
+  example: 'string'
+})
+@Expose()
+public expertOpinionTotalComment: string;
+
+@ApiProperty({
+  description: 'Файл истории',
+  example: ['string']
+})
+@Expose()
+public expertOpinionHistoryFile: string[];
+
+@ApiProperty({
+  description: 'Комментарий истории автомобиля',
+  example: 'string'
+})
+@Expose()
+public expertOpinionHistoryComment: string;
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+@ApiProperty({
+  description: 'Проверка компрессии',
+  example: ["string"]
+})
+@Expose()
+public serviceInspectionCompressionCheck: string[];
+
+@ApiProperty({
+  description: 'Проверка эндоскопом',
+  example: ["string"]
+})
+@Expose()
+public serviceInspectionEndoscopeCheck: string[];
+
+@ApiProperty({
+  description: 'Осмотр ДВС',
+  example: ["string"]
+})
+@Expose()
+public serviceInspectionEngineInspection: string[];
+
+@ApiProperty({
+  description: 'Осмотр КПП',
+  example: ["string"]
+})
+@Expose()
+public serviceInspectionCheckpointInspection: string[];
+
+@ApiProperty({
+  description: 'Осмотр ГУР',
+  example: ["string"]
+})
+@Expose()
+public serviceInspectionPowerSteeringInspection: string[];
+
+@ApiProperty({
+  description: 'Осмотр раздатки',
+  example: ["string"]
+})
+@Expose()
+public serviceInspectionTransferCaseInspection: string[];
+
+@ApiProperty({
+  description: 'Осмотр задний мост',
+  example: ["string"]
+})
+@Expose()
+public serviceInspectionRearAxleInspection: string[];
+
+@ApiProperty({
+  description: 'Передний мост',
+  example: ["string"]
+})
+@Expose()
+public serviceInspectionFrontAxleInspection: string[];
+
+@ApiProperty({
+  description: 'Осмотр рулевой рейки',
+  example: ["string"]
+})
+@Expose()
+public serviceInspectionSteeringRackInspection: string[];
+
+@ApiProperty({
+  description: 'Осмотр ходовой части',
+  example: ["string"]
+})
+@Expose()
+public serviceInspectionChassisInspection: string[];
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
   @ApiProperty({
     description: 'Дата создания',

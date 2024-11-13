@@ -1,22 +1,6 @@
 import { Entity } from '@backend/util/util-types';
 import {
-  Report, 
-  LeftSideDamage,
-  BackSideDamage,
-  TrunkDamage,
-  RightSideDamage,
-  RoofDamage,
-  GlassDamage,
-  DiscDamage,
-  InteriorDamage,
-  ExteriorPhoto,
-  InteriorPhoto,
-  RoundViewVideo,
-  StoppedEngine,
-  RunningEngine,
-  Dashboard,
-  TestDrive,
-  ExpertOpinion,
+  Report
  } from '@backend/shared/shared-types';
 
 
@@ -260,22 +244,257 @@ export class BetcarReportEntity implements Entity<BetcarReportEntity>, Report {
   public frontSideDamageAddNameThree: string;
   public frontSideDamageAddInfoThree: string[];
 
-  public leftSideDamage: LeftSideDamage[];
-  public backSideDamage: BackSideDamage[];
-  public trunkDamage: TrunkDamage[];
-  public rightSideDamage: RightSideDamage[];
-  public roofDamage: RoofDamage[];
-  public glassDamage: GlassDamage[];
-  public discDamage: DiscDamage[];
-  public interiorDamage: InteriorDamage[];
-  public exteriorPhoto: ExteriorPhoto[];
-  public interiorPhoto: InteriorPhoto[];
-  public roundViewVideo: RoundViewVideo[];
-  public stoppedEngine: StoppedEngine[];
-  public runningEngine: RunningEngine[];
-  public dashboard: Dashboard[];
-  public testDrive: TestDrive[];
-  public expertOpinion: ExpertOpinion[];
+  public leftSideDamageWithoutDamage: boolean;
+  public leftSideDamageLeftFrontFender: string[]; 
+  public leftSideDamageLeftFrontPillar: string[]; 
+  public leftSideDamageLeftFrontDoor: string[]; 
+  public leftSideDamageLeftCenterPillar: string[]; 
+  public leftSideDamageLeftRearDoor: string[]; 
+  public leftSideDamageLeftRearPillar: string[]; 
+  public leftSideDamageLeftRearFender: string[]; 
+  public leftSideDamageLeftMirror: string[]; 
+  public leftSideDamageLeftThreshold: string[]; 
+  public leftSideDamageAddNameOne: string;
+  public leftSideDamageAddInfoOne: string[];
+  public leftSideDamageAddNameTwo: string;
+  public leftSideDamageAddInfTwo: string[];
+  public leftSideDamageAddNameThree: string;
+  public leftSideDamageAddInfoThree: string[];
+
+  public backSideDamageWithoutDamage: boolean;
+  public backSideDamageTailgate: string[]; 
+  public backSideDamageRearBumper: string[]; 
+  public backSideDamageLeftLamp: string[]; 
+  public backSideDamageRightLamp: string[]; 
+  public backSideDamageAddNameOne: string;
+  public backSideDamageAddInfoOne: string[];
+  public backSideDamageAddNameTwo: string;
+  public backSideDamageAddInfTwo: string[];
+  public backSideDamageAddNameThree: string;
+  public backSideDamageAddInfoThree: string[];
+
+  public trunkDamageWithoutDamage: boolean;
+  public trunkDamageCoverTrim: string[]; 
+  public trunkDamageCarpetFloor: string[]; 
+  public trunkDamageRightTrim: string[]; 
+  public trunkDamageRightGlass: string[]; 
+  public trunkDamageLeftTrim: string[]; 
+  public trunkDamageLeftGlass: string[]; 
+  public trunkDamageSeatBackTrim: string[]; 
+  public trunkDamageSpareWheelWell: string[]; 
+  public trunkDamageAddNameOne: string;
+  public trunkDamageAddInfoOne: string[];
+  public trunkDamageAddNameTwo: string;
+  public trunkDamageAddInfTwo: string[];
+  public trunkDamageAddNameThree: string;
+  public trunkDamageAddInfoThree: string[];
+
+  public rightSideDamageWithoutDamage: boolean;
+  public rightSideDamageRightFrontFender: string[]; 
+  public rightSideDamageRightFrontPillar: string[]; 
+  public rightSideDamageRightFrontDoor: string[]; 
+  public rightSideDamageRightCenterPillar: string[]; 
+  public rightSideDamageRightRearDoor: string[]; 
+  public rightSideDamageRightRearPillar: string[]; 
+  public rightSideDamageRightRearFender: string[]; 
+  public rightSideDamageRightMirror: string[]; 
+  public rightSideDamageRightThreshold: string[]; 
+  public rightSideDamageAddNameOne: string;
+  public rightSideDamageAddInfoOne: string[];
+  public rightSideDamageAddNameTwo: string;
+  public rightSideDamageAddInfTwo: string[];
+  public rightSideDamageAddNameThree: string;
+  public rightSideDamageAddInfoThree: string[];
+
+  public roofDamageWithoutDamage: boolean;
+  public roofDamageRoofRails: string[];
+  public roofDamageRoof: string[];
+  public roofDamageLuke: string[];
+  public roofDamagePanorama: string[];
+  public roofDamageAddNameOne: string;
+  public roofDamageAddInfoOne: string[];
+  public  roofDamageAddNameTwo: string;
+  public roofDamageAddInfTwo: string[];
+  public roofDamageAddNameThree: string;
+  public roofDamageAddInfoThree: string[];
+
+  public glassDamageWithoutDamage: boolean;
+  public glassDamageAllGlassIsFactory: boolean;
+  public glassDamageWindshield: string[];
+  public glassDamageLeftFrontGlass: string[];
+  public glassDamageLeftRearGlass: string[];
+  public glassDamageRearGlass: string[];
+  public glassDamageRightFrontGlass: string[];
+  public glassDamageRightRearGlass: string[];
+  public glassDamageAddNameOne: string;
+  public glassDamageAddInfoOne: string[];
+  public glassDamageAddNameTwo: string;
+  public glassDamageAddInfTwo: string[];
+  public glassDamageAddNameThree: string;
+  public glassDamageAddInfoThree: string[];
+
+  public discDamageWithoutDamage: boolean;
+  public discDamageLeftFrontDisc: string[];
+  public discDamageLeftRearDisc: string[];
+  public discDamageRightFrontDisc: string[];
+  public discDamageRightRearDisc: string[];
+  public discDamageAddNameOne: string;
+  public discDamageAddInfoOne: string[];
+  public discDamageAddNameTwo: string;
+  public discDamageAddInfTwo: string[];
+  public discDamageAddNameThree: string;
+  public discDamageAddInfoThree: string[];
+
+  public interiorDamageWithoutDamage: boolean;
+  public interiorDamageFrontLeftDoorCard: string[];
+  public interiorDamageDriversSeat: string[];
+  public interiorDamageSalonCarpet: string[];
+  public interiorDamageTorpedo: string[];
+  public interiorDamageCeiling: string[];
+  public interiorDamageBackLeftDoorCard: string[];
+  public interiorDamageBackSeat: string[];
+  public interiorDamageBackRightDoorCard: string[];
+  public interiorDamageFrontRightDoorCard: string[];
+  public interiorDamagePassengerSeat: string[];
+  public interiorDamageSleepingCompartment: string[];
+  public interiorDamageAddNameOne: string;
+  public interiorDamageAddInfoOne: string[];
+  public interiorDamageAddNameTwo: string;
+  public interiorDamageAddInfTwo: string[];
+  public interiorDamageAddNameThree: string;
+  public interiorDamageAddInfoThree: string[];
+
+  public exteriorPhotoRightFrontPhoto: string;
+  public exteriorPhotoFrontPhoto: string;
+  public exteriorPhotoLeftFrontPhoto: string;
+  public exteriorPhotoRightBackPhoto: string;
+  public exteriorPhotoBackPhoto: string;
+  public exteriorPhotoLeftBackPhoto: string;
+  public exteriorPhotoLeftPhoto: string;
+  public exteriorPhotoRightPhoto: string;
+  public exteriorPhotoHoodOpen: string;
+  public exteriorPhotoTrunkOpen: string;
+  public exteriorPhotoAddPhoto: string[];
+
+  public interiorPhotoLeftFrontDoor: string;
+  public interiorPhotoDriverSeatPhoto: string;
+  public interiorPhotoSteeringWheelPhoto: string;
+  public interiorPhotoDashboardPhoto: string;
+  public interiorPhotoLeftBackDoor: string;
+  public interiorPhotoBackLeftSeatsPhoto: string;
+  public interiorPhotoFrontSeatsPhoto: string;
+  public interiorPhotoRightBackDoor: string;
+  public interiorPhotoBackRightSeatsPhoto: string;
+  public interiorPhotoRightFrontDoor: string;
+  public interiorPhotoPassengerSeatPhoto: string;
+  public interiorPhotoAddPhoto: string[];
+
+  public roundViewVideoVideo: string;
+  public roundViewVideoComment: string;
+
+  public stoppedEngineIsNew: boolean;
+  public stoppedEngineIsNotGo: boolean;
+  public stoppedEngineIsEmergency: boolean;
+  public stoppedEngineIsUnderstaffed: boolean;
+  public stoppedEngineComment: string;
+  public stoppedEngineEngineOilLevel: string;
+  public stoppedEngineGearboxOilLevel: string;
+  public stoppedEngineGurLiquidLevel: string;
+  public stoppedEngineBrakeFluidLevel: string;
+  public stoppedEngineCoolantLevel: string;
+  public stoppedEngineTechnicalFluidsComment: string;
+  public stoppedEngineDriveBelts: string;
+  public stoppedEngineBrakeDiscs: string;
+  public stoppedEngineBrakePads: string;
+  public stoppedEngineWearComment: string;
+  public stoppedEngineIsFogging: boolean;
+  public stoppedEngineNameOne: string;
+  public stoppedEngineFoggingOne: string[];
+  public stoppedEnginePhotoOne: string[];
+  public stoppedEngineCommentOne: string;
+  public stoppedEngineNameTwo: string;
+  public stoppedEngineFoggingTwo: string[];
+  public stoppedEnginePhotoTwo: string[];
+  public stoppedEngineCommenTwo: string;
+  public stoppedEngineNameThree: string;
+  public stoppedEngineFoggingThree: string[];
+  public stoppedEnginePhotoThree: string[];
+  public stoppedEngineCommentThree: string;
+
+  public runningEngineEngineNotStart: boolean;
+  public runningEngineComment: string;
+  public runningEngineEngineVideo: string;
+  public runningEngineAllSystemOkElectric: boolean;
+  public runningEngineAllSystemOkMechanical: boolean;
+
+  public runningEngineElectricalNameOne: string;
+  public runningEngineElectricalIsCheckOne: boolean;
+  public runningEngineElectricalCommentOne: string;
+  public runningEngineElectricalNameTwo: string;
+  public runningEngineElectricalIsCheckTwo: boolean;
+  public runningEngineElectricalCommentTwo: string;
+  public runningEngineElectricalNameThree: string;
+  public runningEngineElectricalIsCheckThree: boolean;
+  public runningEngineElectricalCommentThree: string;
+
+  public runningEngineMechanicalNameOne: string;
+  public runningEngineMechanicalIsCheckOne: boolean;
+  public runningEngineMechanicalCommentOne: string;
+  public runningEngineMechanicalNameTwo: string;
+  public runningEngineMechanicalIsCheckTwo: boolean;
+  public runningEngineMechanicalCommentTwo: string;
+  public runningEngineMechanicalNameThree: string;
+  public runningEngineMechanicalIsCheckThree: boolean;
+  public runningEngineMechanicalCommentThree: string;
+
+  public dashboardNoErrors: boolean;
+  public dashboardDiagnosticsFile?: string[];
+  public dashboardDiagnosticsComment: string;
+  public dashboardMileageOnDashboard?: string;
+  public dashboardMileageInTheEngineBlock?: string;
+  public dashboardMileageInTheGearbox?: string;
+  public dashboardMileageInAdditionalBlocks?: string;
+  public dashboardIsNoMileage?: boolean;
+  public dashboardTotalComment: string;
+  public dashboardNameOne: string;
+  public dashboardIsCheckOne: boolean;
+  public dashboardCommentOne: string;
+  public dashboardNameTwo: string;
+  public dashboardIsCheckTwo: boolean;
+  public dashboardCommentTwo: string;
+  public dashboardNameThree: string;
+  public dashboardIsCheckThree: boolean;
+  public dashboardCommentThree: string;
+
+  public testDriveAllSystemOk: boolean;
+  public testDriveMalfunctions: string[];
+  public testDriveNameOne: string;
+  public testDriveIsCheckOne: boolean;
+  public testDriveCommentOne: string;
+  public testDriveNameTwo: string;
+  public testDriveIsCheckTwo: boolean;
+  public testDriveCommentTwo: string;
+  public testDriveNameThree: string;
+  public testDriveIsCheckThree: boolean;
+  public testDriveCommentThree: string;
+
+  public expertOpinionPlusComment: string;
+  public expertOpinionMinusComment: string;
+  public expertOpinionTotalComment: string;
+  public expertOpinionHistoryFile: string[];
+  public expertOpinionHistoryComment: string;
+
+  public serviceInspectionCompressionCheck: string[];
+  public serviceInspectionEndoscopeCheck: string[];
+  public serviceInspectionEngineInspection: string[];
+  public serviceInspectionCheckpointInspection: string[];
+  public serviceInspectionPowerSteeringInspection: string[];
+  public serviceInspectionTransferCaseInspection: string[];
+  public serviceInspectionRearAxleInspection: string[];
+  public serviceInspectionFrontAxleInspection: string[];
+  public serviceInspectionSteeringRackInspection: string[];
+  public serviceInspectionChassisInspection: string[];
+
   public createdAt: Date;
   public publishAt: Date;
 
@@ -522,22 +741,257 @@ export class BetcarReportEntity implements Entity<BetcarReportEntity>, Report {
     this.frontSideDamageAddNameThree = entity.frontSideDamageAddNameThree;
     this.frontSideDamageAddInfoThree = entity.frontSideDamageAddInfoThree;
 
-    this.leftSideDamage = [];
-    this.backSideDamage = [];
-    this.trunkDamage = [];
-    this.rightSideDamage = [];
-    this.roofDamage = [];
-    this.glassDamage = [];
-    this.discDamage = [];
-    this.interiorDamage = [];
-    this.exteriorPhoto = [];
-    this.interiorPhoto = [];
-    this.roundViewVideo = [];
-    this.stoppedEngine = [];
-    this.runningEngine = [];
-    this.dashboard = [];
-    this.testDrive = [];
-    this.expertOpinion = [];
+    this.leftSideDamageWithoutDamage = entity.leftSideDamageWithoutDamage;
+    this.leftSideDamageLeftFrontFender = entity.leftSideDamageLeftFrontFender;
+    this.leftSideDamageLeftFrontPillar = entity.leftSideDamageLeftFrontPillar;
+    this.leftSideDamageLeftFrontDoor = entity.leftSideDamageLeftFrontDoor;
+    this.leftSideDamageLeftCenterPillar = entity.leftSideDamageLeftCenterPillar;
+    this.leftSideDamageLeftRearDoor = entity.leftSideDamageLeftRearDoor;
+    this.leftSideDamageLeftRearPillar = entity.leftSideDamageLeftRearPillar;
+    this.leftSideDamageLeftRearFender = entity.leftSideDamageLeftRearFender;
+    this.leftSideDamageLeftMirror = entity.leftSideDamageLeftMirror;
+    this.leftSideDamageLeftThreshold = entity.leftSideDamageLeftThreshold;
+    this.leftSideDamageAddNameOne = entity.leftSideDamageAddNameOne;
+    this.leftSideDamageAddInfoOne = entity.leftSideDamageAddInfoOne;
+    this.leftSideDamageAddNameTwo = entity.leftSideDamageAddNameTwo;
+    this.leftSideDamageAddInfTwo = entity.leftSideDamageAddInfTwo;
+    this.leftSideDamageAddNameThree = entity.leftSideDamageAddNameThree;
+    this.leftSideDamageAddInfoThree = entity.leftSideDamageAddInfoThree;
+
+    this.backSideDamageWithoutDamage = entity.backSideDamageWithoutDamage;
+    this.backSideDamageTailgate = entity.backSideDamageTailgate;
+    this.backSideDamageRearBumper = entity.backSideDamageRearBumper;
+    this.backSideDamageLeftLamp = entity.backSideDamageLeftLamp;
+    this.backSideDamageRightLamp = entity.backSideDamageRightLamp;
+    this.backSideDamageAddNameOne = entity.backSideDamageAddNameOne;
+    this.backSideDamageAddInfoOne = entity.backSideDamageAddInfoOne;
+    this.backSideDamageAddNameTwo = entity.backSideDamageAddNameTwo;
+    this.backSideDamageAddInfTwo = entity.backSideDamageAddInfTwo;
+    this.backSideDamageAddNameThree = entity.backSideDamageAddNameThree;
+    this.backSideDamageAddInfoThree = entity.backSideDamageAddInfoThree;
+
+    this.trunkDamageWithoutDamage = entity.trunkDamageWithoutDamage;
+    this.trunkDamageCoverTrim = entity.trunkDamageCoverTrim;
+    this.trunkDamageCarpetFloor = entity.trunkDamageCarpetFloor;
+    this.trunkDamageRightTrim = entity.trunkDamageRightTrim;
+    this.trunkDamageRightGlass = entity.trunkDamageRightGlass;
+    this.trunkDamageLeftTrim = entity.trunkDamageLeftTrim;
+    this.trunkDamageLeftGlass = entity.trunkDamageLeftGlass;
+    this.trunkDamageSeatBackTrim = entity.trunkDamageSeatBackTrim;
+    this.trunkDamageSpareWheelWell = entity.trunkDamageSpareWheelWell;
+    this.trunkDamageAddNameOne = entity.trunkDamageAddNameOne;
+    this.trunkDamageAddInfoOne = entity.trunkDamageAddInfoOne;
+    this.trunkDamageAddNameTwo = entity.trunkDamageAddNameTwo;
+    this.trunkDamageAddInfTwo = entity.trunkDamageAddInfTwo;
+    this.trunkDamageAddNameThree = entity.trunkDamageAddNameThree;
+    this.trunkDamageAddInfoThree = entity.trunkDamageAddInfoThree;
+
+    this.rightSideDamageWithoutDamage = entity.rightSideDamageWithoutDamage;
+    this.rightSideDamageRightFrontFender = entity.rightSideDamageRightFrontFender;
+    this.rightSideDamageRightFrontPillar = entity.rightSideDamageRightFrontPillar;
+    this.rightSideDamageRightFrontDoor = entity.rightSideDamageRightFrontDoor;
+    this.rightSideDamageRightCenterPillar = entity.rightSideDamageRightCenterPillar;
+    this.rightSideDamageRightRearDoor = entity.rightSideDamageRightRearDoor;
+    this.rightSideDamageRightRearPillar = entity.rightSideDamageRightRearPillar;
+    this.rightSideDamageRightRearFender = entity.rightSideDamageRightRearFender;
+    this.rightSideDamageRightMirror = entity.rightSideDamageRightMirror;
+    this.rightSideDamageRightThreshold = entity.rightSideDamageRightThreshold;
+    this.rightSideDamageAddNameOne = entity.rightSideDamageAddNameOne;
+    this.rightSideDamageAddInfoOne = entity.rightSideDamageAddInfoOne;
+    this.rightSideDamageAddNameTwo = entity.rightSideDamageAddNameTwo;
+    this.rightSideDamageAddInfTwo = entity.rightSideDamageAddInfTwo;
+    this.rightSideDamageAddNameThree = entity.rightSideDamageAddNameThree;
+    this.rightSideDamageAddInfoThree = entity.rightSideDamageAddInfoThree;
+
+    this.roofDamageWithoutDamage = entity.roofDamageWithoutDamage;
+    this.roofDamageRoofRails = entity.roofDamageRoofRails;
+    this.roofDamageRoof = entity.roofDamageRoof;
+    this.roofDamageLuke = entity.roofDamageLuke;
+    this.roofDamagePanorama = entity.roofDamagePanorama;
+    this.roofDamageAddNameOne = entity.roofDamageAddNameOne;
+    this.roofDamageAddInfoOne = entity.roofDamageAddInfoOne;
+    this.roofDamageAddNameTwo = entity.roofDamageAddNameTwo;
+    this.roofDamageAddInfTwo = entity.roofDamageAddInfTwo;
+    this.roofDamageAddNameThree = entity.roofDamageAddNameThree;
+    this.roofDamageAddInfoThree = entity.roofDamageAddInfoThree;
+
+    this.glassDamageWithoutDamage = entity.glassDamageWithoutDamage;
+    this.glassDamageAllGlassIsFactory = entity.glassDamageAllGlassIsFactory;
+    this.glassDamageWindshield = entity.glassDamageWindshield;
+    this.glassDamageLeftFrontGlass = entity.glassDamageLeftFrontGlass;
+    this.glassDamageLeftRearGlass = entity.glassDamageLeftRearGlass;
+    this.glassDamageRearGlass = entity.glassDamageRearGlass;
+    this.glassDamageRightFrontGlass = entity.glassDamageRightFrontGlass;
+    this.glassDamageRightRearGlass = entity.glassDamageRightRearGlass;
+    this.glassDamageAddNameOne = entity.glassDamageAddNameOne;
+    this.glassDamageAddInfoOne = entity.glassDamageAddInfoOne;
+    this.glassDamageAddNameTwo = entity.glassDamageAddNameTwo;
+    this.glassDamageAddInfTwo = entity.glassDamageAddInfTwo;
+    this.glassDamageAddNameThree = entity.glassDamageAddNameThree;
+    this.glassDamageAddInfoThree = entity.glassDamageAddInfoThree;
+
+    this.discDamageWithoutDamage = entity.discDamageWithoutDamage;
+    this.discDamageLeftFrontDisc = entity.discDamageLeftFrontDisc;
+    this.discDamageLeftRearDisc = entity.discDamageLeftRearDisc;
+    this.discDamageRightFrontDisc = entity.discDamageRightFrontDisc;
+    this.discDamageRightRearDisc = entity.discDamageRightRearDisc;
+    this.discDamageAddNameOne = entity.discDamageAddNameOne;
+    this.discDamageAddInfoOne = entity.discDamageAddInfoOne;
+    this.discDamageAddNameTwo = entity.discDamageAddNameTwo;
+    this.discDamageAddInfTwo = entity.discDamageAddInfTwo;
+    this.discDamageAddNameThree = entity.discDamageAddNameThree;
+    this.discDamageAddInfoThree = entity.discDamageAddInfoThree;
+
+    this.interiorDamageWithoutDamage = entity.interiorDamageWithoutDamage;
+    this.interiorDamageFrontLeftDoorCard = entity.interiorDamageFrontLeftDoorCard;
+    this.interiorDamageDriversSeat = entity.interiorDamageDriversSeat;
+    this.interiorDamageSalonCarpet = entity.interiorDamageSalonCarpet;
+    this.interiorDamageTorpedo = entity.interiorDamageTorpedo;
+    this.interiorDamageCeiling = entity.interiorDamageCeiling;
+    this.interiorDamageBackLeftDoorCard = entity.interiorDamageBackLeftDoorCard;
+    this.interiorDamageBackSeat = entity.interiorDamageBackSeat;
+    this.interiorDamageBackRightDoorCard = entity.interiorDamageBackRightDoorCard;
+    this.interiorDamageFrontRightDoorCard = entity.interiorDamageFrontRightDoorCard;
+    this.interiorDamagePassengerSeat = entity.interiorDamagePassengerSeat;
+    this.interiorDamageSleepingCompartment = entity.interiorDamageSleepingCompartment;
+    this.interiorDamageAddNameOne = entity.interiorDamageAddNameOne;
+    this.interiorDamageAddInfoOne = entity.interiorDamageAddInfoOne;
+    this.interiorDamageAddNameTwo = entity.interiorDamageAddNameTwo;
+    this.interiorDamageAddInfTwo = entity.interiorDamageAddInfTwo;
+    this.interiorDamageAddNameThree = entity.interiorDamageAddNameThree;
+    this.interiorDamageAddInfoThree = entity.interiorDamageAddInfoThree;
+
+    this.exteriorPhotoRightFrontPhoto = entity.exteriorPhotoRightFrontPhoto;
+    this.exteriorPhotoFrontPhoto = entity.exteriorPhotoFrontPhoto;
+    this.exteriorPhotoLeftFrontPhoto = entity.exteriorPhotoLeftFrontPhoto;
+    this.exteriorPhotoRightBackPhoto = entity.exteriorPhotoRightBackPhoto;
+    this.exteriorPhotoBackPhoto = entity.exteriorPhotoBackPhoto;
+    this.exteriorPhotoLeftBackPhoto = entity.exteriorPhotoLeftBackPhoto;
+    this.exteriorPhotoLeftPhoto = entity.exteriorPhotoLeftPhoto;
+    this.exteriorPhotoRightPhoto = entity.exteriorPhotoRightPhoto;
+    this.exteriorPhotoHoodOpen = entity.exteriorPhotoHoodOpen;
+    this.exteriorPhotoTrunkOpen = entity.exteriorPhotoTrunkOpen;
+    this.exteriorPhotoAddPhoto = entity.exteriorPhotoAddPhoto;
+
+    this.interiorPhotoLeftFrontDoor = entity.interiorPhotoLeftFrontDoor;
+    this.interiorPhotoDriverSeatPhoto = entity.interiorPhotoDriverSeatPhoto;
+    this.interiorPhotoSteeringWheelPhoto = entity.interiorPhotoSteeringWheelPhoto;
+    this.interiorPhotoDashboardPhoto = entity.interiorPhotoDashboardPhoto;
+    this.interiorPhotoLeftBackDoor = entity.interiorPhotoLeftBackDoor;
+    this.interiorPhotoBackLeftSeatsPhoto = entity.interiorPhotoBackLeftSeatsPhoto;
+    this.interiorPhotoFrontSeatsPhoto = entity.interiorPhotoFrontSeatsPhoto;
+    this.interiorPhotoRightBackDoor = entity.interiorPhotoRightBackDoor;
+    this.interiorPhotoBackRightSeatsPhoto = entity.interiorPhotoBackRightSeatsPhoto;
+    this.interiorPhotoRightFrontDoor = entity.interiorPhotoRightFrontDoor;
+    this.interiorPhotoPassengerSeatPhoto = entity.interiorPhotoPassengerSeatPhoto;
+    this.interiorPhotoAddPhoto = entity.interiorPhotoAddPhoto;
+
+    this.roundViewVideoVideo = entity.roundViewVideoVideo;
+    this.roundViewVideoComment = entity.roundViewVideoComment;
+
+    this.stoppedEngineIsNew = entity.stoppedEngineIsNew;
+    this.stoppedEngineIsNotGo = entity.stoppedEngineIsNotGo;
+    this.stoppedEngineIsEmergency = entity.stoppedEngineIsEmergency;
+    this.stoppedEngineIsUnderstaffed = entity.stoppedEngineIsUnderstaffed;
+    this.stoppedEngineComment = entity.stoppedEngineComment;
+    this.stoppedEngineEngineOilLevel = entity.stoppedEngineEngineOilLevel;
+    this.stoppedEngineGearboxOilLevel = entity.stoppedEngineGearboxOilLevel;
+    this.stoppedEngineGurLiquidLevel = entity.stoppedEngineGurLiquidLevel;
+    this.stoppedEngineBrakeFluidLevel = entity.stoppedEngineBrakeFluidLevel;
+    this.stoppedEngineCoolantLevel = entity.stoppedEngineCoolantLevel;
+    this.stoppedEngineTechnicalFluidsComment = entity.stoppedEngineTechnicalFluidsComment;
+    this.stoppedEngineDriveBelts = entity.stoppedEngineDriveBelts;
+    this.stoppedEngineBrakeDiscs = entity.stoppedEngineBrakeDiscs;
+    this.stoppedEngineBrakePads = entity.stoppedEngineBrakePads;
+    this.stoppedEngineWearComment = entity.stoppedEngineWearComment;
+    this.stoppedEngineIsFogging = entity.stoppedEngineIsFogging;
+    this.stoppedEngineNameOne = entity.stoppedEngineNameOne;
+    this.stoppedEngineFoggingOne = entity.stoppedEngineFoggingOne;
+    this.stoppedEnginePhotoOne = entity.stoppedEnginePhotoOne;
+    this.stoppedEngineCommentOne = entity.stoppedEngineCommentOne;
+    this.stoppedEngineNameTwo = entity.stoppedEngineNameTwo;
+    this.stoppedEngineFoggingTwo = entity.stoppedEngineFoggingTwo;
+    this.stoppedEnginePhotoTwo = entity.stoppedEnginePhotoTwo;
+    this.stoppedEngineCommenTwo = entity.stoppedEngineCommenTwo;
+    this.stoppedEngineNameThree = entity.stoppedEngineNameThree;
+    this.stoppedEngineFoggingThree = entity.stoppedEngineFoggingThree;
+    this.stoppedEnginePhotoThree = entity.stoppedEnginePhotoThree;
+    this.stoppedEngineCommentThree = entity.stoppedEngineCommentThree;
+
+    this.runningEngineEngineNotStart = entity.runningEngineEngineNotStart;
+    this.runningEngineComment = entity.runningEngineComment;
+    this.runningEngineEngineVideo = entity.runningEngineEngineVideo;
+    this.runningEngineAllSystemOkElectric = entity.runningEngineAllSystemOkElectric;
+    this.runningEngineAllSystemOkMechanical = entity.runningEngineAllSystemOkMechanical;
+  
+    this.runningEngineElectricalNameOne = entity.runningEngineElectricalNameOne;
+    this.runningEngineElectricalIsCheckOne = entity.runningEngineElectricalIsCheckOne;
+    this.runningEngineElectricalCommentOne = entity.runningEngineElectricalCommentOne;
+    this.runningEngineElectricalNameTwo = entity.runningEngineElectricalNameTwo;
+    this.runningEngineElectricalIsCheckTwo = entity.runningEngineElectricalIsCheckTwo;
+    this.runningEngineElectricalCommentTwo = entity.runningEngineElectricalCommentTwo;
+    this.runningEngineElectricalNameThree = entity.runningEngineElectricalNameThree;
+    this.runningEngineElectricalIsCheckThree = entity.runningEngineElectricalIsCheckThree;
+    this.runningEngineElectricalCommentThree = entity.runningEngineElectricalCommentThree;
+  
+    this.runningEngineMechanicalNameOne = entity.runningEngineMechanicalNameOne;
+    this.runningEngineMechanicalIsCheckOne = entity.runningEngineMechanicalIsCheckOne;
+    this.runningEngineMechanicalCommentOne = entity.runningEngineMechanicalCommentOne;
+    this.runningEngineMechanicalNameTwo = entity.runningEngineMechanicalNameTwo;
+    this.runningEngineMechanicalIsCheckTwo = entity.runningEngineMechanicalIsCheckTwo;
+    this.runningEngineMechanicalCommentTwo = entity.runningEngineMechanicalCommentTwo;
+    this.runningEngineMechanicalNameThree = entity.runningEngineMechanicalNameThree;
+    this.runningEngineMechanicalIsCheckThree = entity.runningEngineMechanicalIsCheckThree;
+    this.runningEngineMechanicalCommentThree = entity.runningEngineMechanicalCommentThree;
+
+    this.dashboardNoErrors = entity.dashboardNoErrors;
+    this.dashboardDiagnosticsFile = entity.dashboardDiagnosticsFile;
+    this.dashboardDiagnosticsComment = entity.dashboardDiagnosticsComment;
+    this.dashboardMileageOnDashboard = entity.dashboardMileageOnDashboard;
+    this.dashboardMileageInTheEngineBlock = entity.dashboardMileageInTheEngineBlock;
+    this.dashboardMileageInTheGearbox = entity.dashboardMileageInTheGearbox;
+    this.dashboardMileageInAdditionalBlocks = entity.dashboardMileageInAdditionalBlocks;
+    this.dashboardIsNoMileage = entity.dashboardIsNoMileage;
+    this.dashboardTotalComment = entity.dashboardTotalComment;
+    this.dashboardNameOne = entity.dashboardNameOne;
+    this.dashboardIsCheckOne = entity.dashboardIsCheckOne;
+    this.dashboardCommentOne = entity.dashboardCommentOne;
+    this.dashboardNameTwo = entity.dashboardNameTwo;
+    this.dashboardIsCheckTwo = entity.dashboardIsCheckTwo;
+    this.dashboardCommentTwo = entity.dashboardCommentTwo;
+    this.dashboardNameThree = entity.dashboardNameThree;
+    this.dashboardIsCheckThree = entity.dashboardIsCheckThree;
+    this.dashboardCommentThree = entity.dashboardCommentThree;
+
+    this.testDriveAllSystemOk = entity.testDriveAllSystemOk;
+    this.testDriveMalfunctions = entity.testDriveMalfunctions;
+    this.testDriveNameOne = entity.testDriveNameOne;
+    this.testDriveIsCheckOne = entity.testDriveIsCheckOne;
+    this.testDriveCommentOne = entity.testDriveCommentOne;
+    this.testDriveNameTwo = entity.testDriveNameTwo;
+    this.testDriveIsCheckTwo = entity.testDriveIsCheckTwo;
+    this.testDriveCommentTwo = entity.testDriveCommentTwo;
+    this.testDriveNameThree = entity.testDriveNameThree;
+    this.testDriveIsCheckThree = entity.testDriveIsCheckThree;
+    this.testDriveCommentThree = entity.testDriveCommentThree;
+
+    this.expertOpinionPlusComment = entity.expertOpinionPlusComment;
+    this.expertOpinionMinusComment = entity.expertOpinionMinusComment;
+    this.expertOpinionTotalComment = entity.expertOpinionTotalComment;
+    this.expertOpinionHistoryFile = entity.expertOpinionHistoryFile;
+    this.expertOpinionHistoryComment = entity.expertOpinionHistoryComment;
+
+    this.serviceInspectionCompressionCheck = entity.serviceInspectionCompressionCheck;
+    this.serviceInspectionEndoscopeCheck = entity.serviceInspectionEndoscopeCheck;
+    this.serviceInspectionEngineInspection = entity.serviceInspectionEngineInspection;
+    this.serviceInspectionCheckpointInspection = entity.serviceInspectionCheckpointInspection;
+    this.serviceInspectionPowerSteeringInspection = entity.serviceInspectionPowerSteeringInspection;
+    this.serviceInspectionTransferCaseInspection = entity.serviceInspectionTransferCaseInspection;
+    this.serviceInspectionRearAxleInspection = entity.serviceInspectionRearAxleInspection;
+    this.serviceInspectionFrontAxleInspection = entity.serviceInspectionFrontAxleInspection;
+    this.serviceInspectionSteeringRackInspection = entity.serviceInspectionSteeringRackInspection;
+    this.serviceInspectionChassisInspection = entity.serviceInspectionChassisInspection;
+
     this.createdAt = new Date();
     this.publishAt = new Date();
   }
@@ -545,22 +999,6 @@ export class BetcarReportEntity implements Entity<BetcarReportEntity>, Report {
   public toObject(): BetcarReportEntity {
     return { 
       ...this,
-      leftSideDamage: this.leftSideDamage.map(({ leftSideDamageId }) => ({ leftSideDamageId })),
-      backSideDamage: this.backSideDamage.map(({ backSideDamageId }) => ({ backSideDamageId })),
-      trunkDamage: this.trunkDamage.map(({ trunkDamageId }) => ({ trunkDamageId })),
-      rightSideDamage: this.rightSideDamage.map(({ rightSideDamageId }) => ({ rightSideDamageId })),
-      roofDamage: this.roofDamage.map(({ roofDamageId }) => ({ roofDamageId })),
-      glassDamage: this.glassDamage.map(({ glassDamageId }) => ({ glassDamageId })),
-      discDamage: this.discDamage.map(({ discDamageId }) => ({ discDamageId })),
-      interiorDamage: this.interiorDamage.map(({ interiorDamageId }) => ({ interiorDamageId })),
-      exteriorPhoto: this.exteriorPhoto.map(({ exteriorPhotoId }) => ({ exteriorPhotoId })),
-      interiorPhoto: this.interiorPhoto.map(({ interiorPhotoId }) => ({ interiorPhotoId })),
-      roundViewVideo: this.roundViewVideo.map(({ roundViewVideoId }) => ({ roundViewVideoId })),
-      stoppedEngine: this.stoppedEngine.map(({ stoppedEngineId }) => ({ stoppedEngineId })),
-      runningEngine: this.runningEngine.map(({ runningEngineId }) => ({ runningEngineId })),
-      dashboard: this.dashboard.map(({ dashboardId }) => ({ dashboardId })),
-      testDrive: this.testDrive.map(({ testDriveId }) => ({ testDriveId })),
-      expertOpinion: this.expertOpinion.map(({ expertOpinionId }) => ({ expertOpinionId })),
     };
   }
 }

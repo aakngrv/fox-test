@@ -1,28 +1,3 @@
-import { 
-  LeftSideDamage,
-  BackSideDamage,
-  TrunkDamage,
-  RightSideDamage,
-  RoofDamage,
-  GlassDamage,
-  DiscDamage,
-  InteriorDamage,
-  ExteriorPhoto,
-  InteriorPhoto,
-  RoundViewVideo
-} from "./body-and-interior.interface";
-
-import  { 
-  StoppedEngine,
-  RunningEngine,
-  Dashboard,
-  TestDrive,
-} from "./technical-inspection.interface";
-
-import {
-  ExpertOpinion,
-} from "./expert-opinion.interface";
-
 export interface Report {
   reportId?: number;
   userId: number;
@@ -36,8 +11,6 @@ export interface Report {
   sellerDetailsCarCost: string;
   sellerDetailsRole: string;
   sellerDetailsComment: string;
-
-
 
   vinNumber: string;
   vinBodyNumberExpertConfirm: boolean;
@@ -271,22 +244,258 @@ export interface Report {
   frontSideDamageAddNameThree: string;
   frontSideDamageAddInfoThree: string[];
 
-  leftSideDamage: LeftSideDamage[];
-  backSideDamage: BackSideDamage[];
-  trunkDamage: TrunkDamage[];
-  rightSideDamage: RightSideDamage[];
-  roofDamage: RoofDamage[];
-  glassDamage: GlassDamage[];
-  discDamage: DiscDamage[];
-  interiorDamage: InteriorDamage[];
-  exteriorPhoto: ExteriorPhoto[];
-  interiorPhoto: InteriorPhoto[];
-  roundViewVideo: RoundViewVideo[];
-  stoppedEngine: StoppedEngine[];
-  runningEngine: RunningEngine[];
-  dashboard: Dashboard[];
-  testDrive: TestDrive[];
-  expertOpinion: ExpertOpinion[];
+  leftSideDamageWithoutDamage: boolean;
+  leftSideDamageLeftFrontFender: string[]; 
+  leftSideDamageLeftFrontPillar: string[]; 
+  leftSideDamageLeftFrontDoor: string[]; 
+  leftSideDamageLeftCenterPillar: string[]; 
+  leftSideDamageLeftRearDoor: string[]; 
+  leftSideDamageLeftRearPillar: string[]; 
+  leftSideDamageLeftRearFender: string[]; 
+  leftSideDamageLeftMirror: string[]; 
+  leftSideDamageLeftThreshold: string[]; 
+  leftSideDamageAddNameOne: string;
+  leftSideDamageAddInfoOne: string[];
+  leftSideDamageAddNameTwo: string;
+  leftSideDamageAddInfTwo: string[];
+  leftSideDamageAddNameThree: string;
+  leftSideDamageAddInfoThree: string[];
+
+
+  backSideDamageWithoutDamage: boolean;
+  backSideDamageTailgate: string[]; 
+  backSideDamageRearBumper: string[]; 
+  backSideDamageLeftLamp: string[]; 
+  backSideDamageRightLamp: string[]; 
+  backSideDamageAddNameOne: string;
+  backSideDamageAddInfoOne: string[];
+  backSideDamageAddNameTwo: string;
+  backSideDamageAddInfTwo: string[];
+  backSideDamageAddNameThree: string;
+  backSideDamageAddInfoThree: string[];
+
+  trunkDamageWithoutDamage: boolean;
+  trunkDamageCoverTrim: string[]; 
+  trunkDamageCarpetFloor: string[]; 
+  trunkDamageRightTrim: string[]; 
+  trunkDamageRightGlass: string[]; 
+  trunkDamageLeftTrim: string[]; 
+  trunkDamageLeftGlass: string[]; 
+  trunkDamageSeatBackTrim: string[]; 
+  trunkDamageSpareWheelWell: string[]; 
+  trunkDamageAddNameOne: string;
+  trunkDamageAddInfoOne: string[];
+  trunkDamageAddNameTwo: string;
+  trunkDamageAddInfTwo: string[];
+  trunkDamageAddNameThree: string;
+  trunkDamageAddInfoThree: string[];
+
+  rightSideDamageWithoutDamage: boolean;
+  rightSideDamageRightFrontFender: string[]; 
+  rightSideDamageRightFrontPillar: string[]; 
+  rightSideDamageRightFrontDoor: string[]; 
+  rightSideDamageRightCenterPillar: string[]; 
+  rightSideDamageRightRearDoor: string[]; 
+  rightSideDamageRightRearPillar: string[]; 
+  rightSideDamageRightRearFender: string[]; 
+  rightSideDamageRightMirror: string[]; 
+  rightSideDamageRightThreshold: string[]; 
+  rightSideDamageAddNameOne: string;
+  rightSideDamageAddInfoOne: string[];
+  rightSideDamageAddNameTwo: string;
+  rightSideDamageAddInfTwo: string[];
+  rightSideDamageAddNameThree: string;
+  rightSideDamageAddInfoThree: string[];
+
+  roofDamageWithoutDamage: boolean;
+  roofDamageRoofRails: string[];
+  roofDamageRoof: string[];
+  roofDamageLuke: string[];
+  roofDamagePanorama: string[];
+  roofDamageAddNameOne: string;
+  roofDamageAddInfoOne: string[];
+  roofDamageAddNameTwo: string;
+  roofDamageAddInfTwo: string[];
+  roofDamageAddNameThree: string;
+  roofDamageAddInfoThree: string[];
+
+  glassDamageWithoutDamage: boolean;
+  glassDamageAllGlassIsFactory: boolean;
+  glassDamageWindshield: string[];
+  glassDamageLeftFrontGlass: string[];
+  glassDamageLeftRearGlass: string[];
+  glassDamageRearGlass: string[];
+  glassDamageRightFrontGlass: string[];
+  glassDamageRightRearGlass: string[];
+  glassDamageAddNameOne: string;
+  glassDamageAddInfoOne: string[];
+  glassDamageAddNameTwo: string;
+  glassDamageAddInfTwo: string[];
+  glassDamageAddNameThree: string;
+  glassDamageAddInfoThree: string[];
+
+  discDamageWithoutDamage: boolean;
+  discDamageLeftFrontDisc: string[];
+  discDamageLeftRearDisc: string[];
+  discDamageRightFrontDisc: string[];
+  discDamageRightRearDisc: string[];
+  discDamageAddNameOne: string;
+  discDamageAddInfoOne: string[];
+  discDamageAddNameTwo: string;
+  discDamageAddInfTwo: string[];
+  discDamageAddNameThree: string;
+  discDamageAddInfoThree: string[];
+
+  interiorDamageWithoutDamage: boolean;
+  interiorDamageFrontLeftDoorCard: string[];
+  interiorDamageDriversSeat: string[];
+  interiorDamageSalonCarpet: string[];
+  interiorDamageTorpedo: string[];
+  interiorDamageCeiling: string[];
+  interiorDamageBackLeftDoorCard: string[];
+  interiorDamageBackSeat: string[];
+  interiorDamageBackRightDoorCard: string[];
+  interiorDamageFrontRightDoorCard: string[];
+  interiorDamagePassengerSeat: string[];
+  interiorDamageSleepingCompartment: string[];
+  interiorDamageAddNameOne: string;
+  interiorDamageAddInfoOne: string[];
+  interiorDamageAddNameTwo: string;
+  interiorDamageAddInfTwo: string[];
+  interiorDamageAddNameThree: string;
+  interiorDamageAddInfoThree: string[];
+
+  exteriorPhotoRightFrontPhoto: string;
+  exteriorPhotoFrontPhoto: string;
+  exteriorPhotoLeftFrontPhoto: string;
+  exteriorPhotoRightBackPhoto: string;
+  exteriorPhotoBackPhoto: string;
+  exteriorPhotoLeftBackPhoto: string;
+  exteriorPhotoLeftPhoto: string;
+  exteriorPhotoRightPhoto: string;
+  exteriorPhotoHoodOpen: string;
+  exteriorPhotoTrunkOpen: string;
+  exteriorPhotoAddPhoto: string[];
+
+  interiorPhotoLeftFrontDoor: string;
+  interiorPhotoDriverSeatPhoto: string;
+  interiorPhotoSteeringWheelPhoto: string;
+  interiorPhotoDashboardPhoto: string;
+  interiorPhotoLeftBackDoor: string;
+  interiorPhotoBackLeftSeatsPhoto: string;
+  interiorPhotoFrontSeatsPhoto: string;
+  interiorPhotoRightBackDoor: string;
+  interiorPhotoBackRightSeatsPhoto: string;
+  interiorPhotoRightFrontDoor: string;
+  interiorPhotoPassengerSeatPhoto: string;
+  interiorPhotoAddPhoto: string[];
+
+  roundViewVideoVideo: string;
+  roundViewVideoComment: string;
+
+  stoppedEngineIsNew: boolean;
+  stoppedEngineIsNotGo: boolean;
+  stoppedEngineIsEmergency: boolean;
+  stoppedEngineIsUnderstaffed: boolean;
+  stoppedEngineComment: string;
+  stoppedEngineEngineOilLevel: string;
+  stoppedEngineGearboxOilLevel: string;
+  stoppedEngineGurLiquidLevel: string;
+  stoppedEngineBrakeFluidLevel: string;
+  stoppedEngineCoolantLevel: string;
+  stoppedEngineTechnicalFluidsComment: string;
+  stoppedEngineDriveBelts: string;
+  stoppedEngineBrakeDiscs: string;
+  stoppedEngineBrakePads: string;
+  stoppedEngineWearComment: string;
+  stoppedEngineIsFogging: boolean;
+  stoppedEngineNameOne: string;
+  stoppedEngineFoggingOne: string[];
+  stoppedEnginePhotoOne: string[];
+  stoppedEngineCommentOne: string;
+  stoppedEngineNameTwo: string;
+  stoppedEngineFoggingTwo: string[];
+  stoppedEnginePhotoTwo: string[];
+  stoppedEngineCommenTwo: string;
+  stoppedEngineNameThree: string;
+  stoppedEngineFoggingThree: string[];
+  stoppedEnginePhotoThree: string[];
+  stoppedEngineCommentThree: string;
+
+  runningEngineEngineNotStart: boolean;
+  runningEngineComment: string;
+  runningEngineEngineVideo: string;
+  runningEngineAllSystemOkElectric: boolean;
+  runningEngineAllSystemOkMechanical: boolean;
+
+  runningEngineElectricalNameOne: string;
+  runningEngineElectricalIsCheckOne: boolean;
+  runningEngineElectricalCommentOne: string;
+  runningEngineElectricalNameTwo: string;
+  runningEngineElectricalIsCheckTwo: boolean;
+  runningEngineElectricalCommentTwo: string;
+  runningEngineElectricalNameThree: string;
+  runningEngineElectricalIsCheckThree: boolean;
+  runningEngineElectricalCommentThree: string;
+
+  runningEngineMechanicalNameOne: string;
+  runningEngineMechanicalIsCheckOne: boolean;
+  runningEngineMechanicalCommentOne: string;
+  runningEngineMechanicalNameTwo: string;
+  runningEngineMechanicalIsCheckTwo: boolean;
+  runningEngineMechanicalCommentTwo: string;
+  runningEngineMechanicalNameThree: string;
+  runningEngineMechanicalIsCheckThree: boolean;
+  runningEngineMechanicalCommentThree: string;
+
+  dashboardNoErrors: boolean;
+  dashboardDiagnosticsFile?: string[];
+  dashboardDiagnosticsComment: string;
+  dashboardMileageOnDashboard?: string;
+  dashboardMileageInTheEngineBlock?: string;
+  dashboardMileageInTheGearbox?: string;
+  dashboardMileageInAdditionalBlocks?: string;
+  dashboardIsNoMileage?: boolean;
+  dashboardTotalComment: string;
+  dashboardNameOne: string;
+  dashboardIsCheckOne: boolean;
+  dashboardCommentOne: string;
+  dashboardNameTwo: string;
+  dashboardIsCheckTwo: boolean;
+  dashboardCommentTwo: string;
+  dashboardNameThree: string;
+  dashboardIsCheckThree: boolean;
+  dashboardCommentThree: string;
+
+  testDriveAllSystemOk: boolean;
+  testDriveMalfunctions: string[];
+  testDriveNameOne: string;
+  testDriveIsCheckOne: boolean;
+  testDriveCommentOne: string;
+  testDriveNameTwo: string;
+  testDriveIsCheckTwo: boolean;
+  testDriveCommentTwo: string;
+  testDriveNameThree: string;
+  testDriveIsCheckThree: boolean;
+  testDriveCommentThree: string;
+
+  expertOpinionPlusComment: string;
+  expertOpinionMinusComment: string;
+  expertOpinionTotalComment: string;
+  expertOpinionHistoryFile: string[];
+  expertOpinionHistoryComment: string;
+
+  serviceInspectionCompressionCheck: string[];
+  serviceInspectionEndoscopeCheck: string[];
+  serviceInspectionEngineInspection: string[];
+  serviceInspectionCheckpointInspection: string[];
+  serviceInspectionPowerSteeringInspection: string[];
+  serviceInspectionTransferCaseInspection: string[];
+  serviceInspectionRearAxleInspection: string[];
+  serviceInspectionFrontAxleInspection: string[];
+  serviceInspectionSteeringRackInspection: string[];
+  serviceInspectionChassisInspection: string[];
+
   createdAt: Date;
   publishAt: Date;
 }
