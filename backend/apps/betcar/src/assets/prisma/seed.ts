@@ -10,23 +10,16 @@ async function fillDb() {
       reportId: 1,
       userId: 1,
       title: "string",
-    }
-  });
-  await prisma.serviceInspection.upsert({
-    where: { serviceInspectionId: 1 },
-    update: {},
-    create: {
-      serviceInspectionId: 1,
-      compressionCheck: ["rrr", "tttt"],
-      endoscopeCheck: ["rrr", "tttt"],
-      engineInspection: ["rrr", "tttt"],
-      checkpointInspection: ["rrr", "tttt"],
-      powerSteeringInspection: ["rrr", "tttt"],
-      transferCaseInspection: ["rrr", "tttt"],
-      rearAxleInspection: ["rrr", "tttt"],
-      frontAxleInspection: ["rrr", "tttt"],
-      steeringRackInspection: ["rrr", "tttt"],
-      chassisInspection: ["rrr", "tttt"],
+      serviceInspectionCompressionCheck: ["rrr", "tttt"],
+      serviceInspectionEndoscopeCheck: ["rrr", "tttt"],
+      serviceInspectionEngineInspection: ["rrr", "tttt"],
+      serviceInspectionCheckpointInspection: ["rrr", "tttt"],
+      serviceInspectionPowerSteeringInspection: ["rrr", "tttt"],
+      serviceInspectionTransferCaseInspection: ["rrr", "tttt"],
+      serviceInspectionRearAxleInspection: ["rrr", "tttt"],
+      serviceInspectionFrontAxleInspection: ["rrr", "tttt"],
+      serviceInspectionSteeringRackInspection: ["rrr", "tttt"],
+      serviceInspectionChassisInspection: ["rrr", "tttt"],
     }
   });
   console.info('🤘️ Database was filled')
