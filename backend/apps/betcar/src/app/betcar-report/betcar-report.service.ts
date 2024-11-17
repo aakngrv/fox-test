@@ -4,6 +4,7 @@ import { CreateReportDto } from './dto/create-report.dto';
 import { Report } from '@backend/shared/shared-types';
 import { UpdateReportDto } from './dto/update-report.dto';
 import { BetcarReportEntity } from './betcar-report.entity';
+import { vinSearchDto } from './dto/vin-search.dto';
 
 
 @Injectable()
@@ -29,9 +30,10 @@ export class BetcarReportService {
     return this.betcarReportRepository.findById(id);
   }
 
-  // async getReportByVIN(vin: string): Promise<Report> {
-  //   return await this.betcarReportRepository.findByVIN(vin);
-  // }
+  async getReportByVIN(vin: vinSearchDto): Promise<Report> {
+    const { vinNumber } = vin;
+    return await this.betcarReportRepository.findByVIN(vinNumber);
+  }
 
   async getReports(): Promise<Report[]> {
     return this.betcarReportRepository.find();

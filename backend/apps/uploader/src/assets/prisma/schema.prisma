@@ -69,7 +69,7 @@ model Report {
   sellerDetailsRole                String   @default("") @map("seller_details_role")
   sellerDetailsComment             String   @default("") @map("seller_details_comment")
 
-  vinNumber                   String    @default("") @map("vin_number")
+  vinNumber                    String    @default("") @map("vin_number") @unique
   vinBodyNumberExpertConfirm   Boolean   @default(false) @map("vin_number_expert_confirm")
   vinBodyNumberNumberState     Boolean[] @default([]) @map("vin_number_number_state")
   vinBodyNumberPhoto           String[]  @default([""]) @map("vin_number_photo")
