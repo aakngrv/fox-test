@@ -5,6 +5,7 @@ import { ReportRdo } from './rdo/report.rdo';
 import { CreateReportDto } from './dto/create-report.dto';
 import { UpdateReportDto } from './dto/update-report.dto';
 import { ApiResponse, ApiTags } from '@nestjs/swagger';
+import { vinSearchDto } from './dto/vin-search.dto';
 
 
 @ApiTags('Отчеты')
@@ -40,8 +41,8 @@ export class BetcarReportController {
     status: HttpStatus.OK,
     description: 'Данные отчета найдены'
   })
-  @Post('/:vin')
-  async showVIN(@Param('vinNumber') vin: string) {
+  @Post('/vin')
+  async showVIN(@Body() vin: vinSearchDto) {
     const existReportVIN = await this.betcarReportService.getReportByVIN(vin);
     return fillObject(ReportRdo, existReportVIN);
   }

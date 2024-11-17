@@ -45,6 +45,7 @@ export class BetcarReportRepository implements CRUDRepository<BetcarReportEntity
     });
   }
 
+
   public find(): Promise<Report[]> {
     return this.prisma.report.findMany({});
   }
@@ -62,3 +63,4 @@ export class BetcarReportRepository implements CRUDRepository<BetcarReportEntity
     });
   }
 }
+
