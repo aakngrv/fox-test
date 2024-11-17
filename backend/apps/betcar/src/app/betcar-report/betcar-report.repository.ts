@@ -37,26 +37,16 @@ export class BetcarReportRepository implements CRUDRepository<BetcarReportEntity
     });
   }
 
-  // public async findByVIN(vinNumber: string): Promise<Report | null> {
-  //   return this.prisma.report.findFirst({
-  //     where: {
-  //       vinNumber: vinNumber
-  //     },
-  //   });
-  // }
-
-  // public async findByEmail(userEmail: string): Promise<Report | null> {
-  //   return this.prisma.report.findFirst({
-  //     where: {
-  //       userEmail  
-  //     },
-  //   });
-  // }
+  public async findByVIN(vinNumber: string): Promise<Report | null> {
+    return this.prisma.report.findUnique({
+      where: {
+        vinNumber: vinNumber
+      },
+    });
+  }
 
   public find(): Promise<Report[]> {
-    return this.prisma.report.findMany({
-
-    });
+    return this.prisma.report.findMany({});
   }
 
 
