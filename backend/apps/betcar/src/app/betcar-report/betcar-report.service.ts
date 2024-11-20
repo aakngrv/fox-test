@@ -30,7 +30,7 @@ export class BetcarReportService {
     return this.betcarReportRepository.findById(id);
   }
 
-  async getReportByVIN(vin: vinSearchDto): Promise<Report> {
+  async getReportByVIN(vin: vinSearchDto): Promise<Report[]> {
     const { vinNumber } = vin;
     return await this.betcarReportRepository.findByVIN(vinNumber);
   }
