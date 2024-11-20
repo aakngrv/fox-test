@@ -44,7 +44,14 @@ export class BetcarReportRepository implements CRUDRepository<BetcarReportEntity
       },
     });
   }
-
+  
+  public async findByEmail(userEmail: string): Promise<Report[] | null> {
+    return this.prisma.report.findMany({
+      where: {
+        userEmail: userEmail
+      },
+    });
+  }
 
   public find(): Promise<Report[]> {
     return this.prisma.report.findMany({});

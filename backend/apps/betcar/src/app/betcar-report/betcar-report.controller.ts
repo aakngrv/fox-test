@@ -6,6 +6,7 @@ import { CreateReportDto } from './dto/create-report.dto';
 import { UpdateReportDto } from './dto/update-report.dto';
 import { ApiResponse, ApiTags } from '@nestjs/swagger';
 import { vinSearchDto } from './dto/vin-search.dto';
+import { userEmailDto } from './dto/user-email.dto';
 
 
 @ApiTags('Отчеты')
@@ -46,6 +47,17 @@ export class BetcarReportController {
     const existReportVIN = await this.betcarReportService.getReportByVIN(vin);
     return fillObject(ReportRdo, existReportVIN);
   }
+
+  @ApiResponse({
+    type: ReportRdo,
+    status: HttpStatus.OK,
+    description: 'Данные отчета найдены'
+  })
+  @Post('/email')
+  async showEmail(@Body() email: userEmailDto) {
+    const existReportEmail = await this.betcarReportService.getReportByEmail(email);
+    return fillObject(ReportRdo, existReportEmail);
+  }
   
   @ApiResponse({
     type: ReportRdo,
@@ -57,17 +69,6 @@ export class BetcarReportController {
     const reports = await this.betcarReportService.getReports();
     return fillObject(ReportRdo, reports);
   }
-
-  // @ApiResponse({
-  //   type: ReportRdo,
-  //   status: HttpStatus.OK,
-  //   description: 'Данные отчетов найдены'
-  // })
-  // @Get('email')
-  // async email(@Param('userEmail') email: string) {
-  //   const reports = await this.betcarReportService.getReportsByEmail(email);
-  //   return fillObject(ReportRdo, reports);
-  // }
   
   @ApiResponse({
     status: HttpStatus.NO_CONTENT,

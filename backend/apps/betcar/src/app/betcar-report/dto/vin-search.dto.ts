@@ -4,8 +4,8 @@ import { ApiProperty } from "@nestjs/swagger";
 export class vinSearchDto {
 
   @ApiProperty({
-    description: 'Электронная почта пользователя',
-    example: 'executor@mail.ru'
+    description: 'vin номер',
+    example: 'C343CXX43LDXXX'
   })
   public vinNumber: string;
 
