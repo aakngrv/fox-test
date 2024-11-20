@@ -5,6 +5,7 @@ import { Report } from '@backend/shared/shared-types';
 import { UpdateReportDto } from './dto/update-report.dto';
 import { BetcarReportEntity } from './betcar-report.entity';
 import { vinSearchDto } from './dto/vin-search.dto';
+import { userEmailDto } from './dto/user-email.dto';
 
 
 @Injectable()
@@ -35,13 +36,14 @@ export class BetcarReportService {
     return await this.betcarReportRepository.findByVIN(vinNumber);
   }
 
+  async getReportByEmail(email: userEmailDto): Promise<Report[]> {
+    const { userEmail } = email;
+    return await this.betcarReportRepository.findByEmail(userEmail);
+  }
+
   async getReports(): Promise<Report[]> {
     return this.betcarReportRepository.find();
   }
-
-  // async getReportsByEmail(email: string): Promise<Report> {
-  //   return this.betcarReportRepository.findByEmail(email);
-  // }
 
   async updateReport(id: number, dto: UpdateReportDto): Promise<Report> {
     const reportEntity = new BetcarReportEntity({ 
