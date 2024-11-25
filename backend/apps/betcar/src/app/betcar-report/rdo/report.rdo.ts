@@ -18,6 +18,13 @@ export class ReportRdo {
   public reportId: number;
   
   @ApiProperty({
+    description: 'Порядковый номер отчета',
+    example: 1
+  })
+  @Expose()
+  public reportNumber: number;
+  
+  @ApiProperty({
     description: 'Название отчета',
     example: 'Осмотр автомобиля BMW X6'
   })

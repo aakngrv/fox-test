@@ -37,6 +37,14 @@ export class BetcarReportRepository implements CRUDRepository<BetcarReportEntity
     });
   }
 
+  public async findByNumber(reportNumber: number): Promise<Report | null> {
+    return this.prisma.report.findFirst({
+      where: {
+        reportNumber
+      }
+    });
+  }
+
   public async findByVIN(vinNumber: string): Promise<Report[] | null> {
     return this.prisma.report.findMany({
       where: {

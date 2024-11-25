@@ -58,6 +58,7 @@ model Report {
   userId                  Int                       @map("user_id")
   title                   String                    @default("")
   userEmail               String                    @default("") @map("user_email")
+  reportNumber            Int                       @default(autoincrement()) @map("report_number")
   createdAt               DateTime                  @default(now()) @map("created_at")
   publishAt               DateTime                  @updatedAt @map("publish_at")
 

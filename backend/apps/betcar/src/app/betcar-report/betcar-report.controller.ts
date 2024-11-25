@@ -42,6 +42,17 @@ export class BetcarReportController {
     status: HttpStatus.OK,
     description: 'Данные отчета найдены'
   })
+  @Get('/:reportNumber')
+  async showByNumber(@Param('reportNumber') number: number) {
+    const existReportByNumber = await this.betcarReportService.getReportByNumber(number);
+    return fillObject(ReportRdo, existReportByNumber);
+  }
+
+  @ApiResponse({
+    type: ReportRdo,
+    status: HttpStatus.OK,
+    description: 'Данные отчета найдены'
+  })
   @Post('/vin')
   async showVIN(@Body() vin: vinSearchDto) {
     const existReportVIN = await this.betcarReportService.getReportByVIN(vin);

@@ -10,6 +10,7 @@ export class BetcarReportEntity implements Entity<BetcarReportEntity>, Report {
   public userId: number;
   public title: string;
   public userEmail: string;
+  public reportNumber?: number;
   public vinNumber: string;
   public sellerDetailsRefusalOfInspection: boolean;
   public sellerDetailsLinkToAd: string[];
@@ -502,11 +503,13 @@ export class BetcarReportEntity implements Entity<BetcarReportEntity>, Report {
     this.fillEntity(report);
   }
 
+
   public fillEntity(entity: Report): void {
     this.reportId = entity.reportId;
     this.userId = entity.userId;
     this.title = entity.title;
     this.userEmail = entity.userEmail;
+    this.reportNumber = entity.reportNumber;
     this.sellerDetailsRefusalOfInspection = entity.sellerDetailsRefusalOfInspection;
     this.sellerDetailsLinkToAd = entity.sellerDetailsLinkToAd;
     this.sellerDetailsName = entity.sellerDetailsName;

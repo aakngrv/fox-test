@@ -2,6 +2,7 @@ export interface Report {
   reportId?: number;
   userId: number;
   userEmail: string;
+  reportNumber?: number;
   title: string;
 
   sellerDetailsRefusalOfInspection: boolean;
