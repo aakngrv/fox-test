@@ -43,8 +43,8 @@ export class BetcarReportController {
     description: 'Данные отчета найдены'
   })
   @Get('/:reportNumber')
-  async showByNumber(@Param('reportNumber') number: number) {
-    const existReportByNumber = await this.betcarReportService.getReportByNumber(number);
+  async showByNumber(@Param('reportNumber') reportNumber: number) {
+    const existReportByNumber = await this.betcarReportService.getReportByNumber(reportNumber);
     return fillObject(ReportRdo, existReportByNumber);
   }
 
