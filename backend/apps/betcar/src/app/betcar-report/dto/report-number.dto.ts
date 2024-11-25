@@ -7,6 +7,6 @@ export class reportNumberDto {
     description: 'Порядковый номер отчета',
     example: ''
   })
-  public vinNumber: number;
+  public reportNumber: number;
 
 }

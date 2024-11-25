@@ -7,6 +7,7 @@ import { UpdateReportDto } from './dto/update-report.dto';
 import { ApiResponse, ApiTags } from '@nestjs/swagger';
 import { vinSearchDto } from './dto/vin-search.dto';
 import { userEmailDto } from './dto/user-email.dto';
+import { reportNumberDto } from './dto/report-number.dto';
 
 
 @ApiTags('Отчеты')
@@ -42,8 +43,8 @@ export class BetcarReportController {
     status: HttpStatus.OK,
     description: 'Данные отчета найдены'
   })
-  @Get('/:reportNumber')
-  async showByNumber(@Param('reportNumber') reportNumber: number) {
+  @Post('/reportNumber')
+  async showByNumber(@Body() reportNumber: reportNumberDto) {
     const existReportByNumber = await this.betcarReportService.getReportByNumber(reportNumber);
     return fillObject(ReportRdo, existReportByNumber);
   }
