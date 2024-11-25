@@ -32,7 +32,7 @@ export class BetcarReportService {
   }
 
   async getReportByNumber(number: number): Promise<Report> {
-    return this.betcarReportRepository.findById(number);
+    return this.betcarReportRepository.findByNumber(number);
   }
 
   async getReportByVIN(vin: vinSearchDto): Promise<Report[]> {
