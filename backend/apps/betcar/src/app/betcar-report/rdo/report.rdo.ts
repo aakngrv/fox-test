@@ -1109,7 +1109,7 @@ public complectationSafetyAirbags: string[];
   example: ["string"]
 })
 @Expose()
-public isofix: string[];
+public complectationSafetyIsofix: string[];
 
 @ApiProperty({
   description: 'Вспомогательные системы',
