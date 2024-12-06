@@ -481,6 +481,57 @@ model Report {
   stoppedEngineBrakePads              String           @default("") @map("brake_pads")
   stoppedEngineWearComment            String           @default("") @map("wear_comment")
   stoppedEngineIsFogging              Boolean          @default(false) @map("is_fogging")
+
+  stoppedEnginePipesFogging           Boolean          @default(false) @map("stopped_engine_pipes_fogging")
+  stoppedEnginePipesSmudges           Boolean          @default(false) @map("stopped_engine_pipes_smudges")
+  stoppedEnginePipesPhoto             String           @default("")  @map("stopped_engine_pipes_photo")
+  stoppedEnginePipesComment           String           @default("")  @map("stopped_engine_pipes_comment")
+
+  stoppedEngineValveCoverFogging           Boolean          @default(false) @map("stopped_engine_valve_cover_fogging")
+  stoppedEngineValveCoverSmudges           Boolean          @default(false) @map("stopped_engine_valve_cover_smudges")
+  stoppedEngineValveCoverPhoto             String           @default("")  @map("stopped_engine_valve_cover_photo")
+  stoppedEngineValveCoverComment           String           @default("")  @map("stopped_engine_valve_cover_comment")
+
+  stoppedEngineCamshaftSensorFogging           Boolean          @default(false) @map("stopped_engine_camshaft_sensor_fogging")
+  stoppedEngineCamshaftSensorSmudges           Boolean          @default(false) @map("stopped_engine_camshaft_sensor_smudges")
+  stoppedEngineCamshaftSensorPhoto             String           @default("")  @map("stopped_engine_camshaft_sensor_photo")
+  stoppedEngineCamshaftSensorComment           String           @default("")  @map("stopped_engine_camshaft_sensor_comment")
+
+  stoppedEngineOilPressureSensorFogging           Boolean          @default(false) @map("stopped_engine_oil_pressure_sensor_fogging")
+  stoppedEngineOilPressureSensorSmudges           Boolean          @default(false) @map("stopped_engine_oil_pressure_sensor_smudges")
+  stoppedEngineOilPressureSensorPhoto             String           @default("")  @map("stopped_engine_oil_pressure_sensor_photo")
+  stoppedEngineOilPressureSensorComment           String           @default("")  @map("stopped_engine_oil_pressure_sensor_comment")
+
+  stoppedEngineCrankshaftOilSealFogging           Boolean          @default(false) @map("stopped_engine_crankshaft_oil_seal_fogging")
+  stoppedEngineCrankshaftOilSealSmudges           Boolean          @default(false) @map("stopped_engine_crankshaft_oil_seal_smudges")
+  stoppedEngineCrankshaftOilSealPhoto             String           @default("")  @map("stopped_engine_crankshaft_oil_seal_photo")
+  stoppedEngineCrankshaftOilSealComment           String           @default("")  @map("stopped_engine_crankshaft_oil_seal_comment")
+
+  stoppedEngineCamshaftOilSealFogging           Boolean          @default(false) @map("stopped_engine_camshaft_oil_seal_fogging")
+  stoppedEngineCamshaftOilSealSmudges           Boolean          @default(false) @map("stopped_engine_camshaft_oil_seal_smudges")
+  stoppedEngineCamshaftOilSealPhoto             String           @default("")  @map("stopped_engine_camshaft_oil_seal_photo")
+  stoppedEngineCamshaftOilSealComment           String           @default("")  @map("stopped_engine_camshaft_oil_seal_comment")
+
+  stoppedEngineCrankcaseFogging           Boolean          @default(false) @map("stopped_engine_сrankcase_fogging")
+  stoppedEngineCrankcaseSmudges           Boolean          @default(false) @map("stopped_engine_сrankcase_smudges")
+  stoppedEngineCrankcasePhoto             String           @default("")  @map("stopped_engine_сrankcase_photo")
+  stoppedEngineCrankcaseComment           String           @default("")  @map("stopped_engine_сrankcase_comment")
+
+  stoppedEngineGurFogging           Boolean          @default(false) @map("stopped_engine_gur_fogging")
+  stoppedEngineGurSmudges           Boolean          @default(false) @map("stopped_engine_gur_smudges")
+  stoppedEngineGurPhoto             String           @default("")  @map("stopped_engine_gur_photo")
+  stoppedEngineGurComment           String           @default("")  @map("stopped_engine_gur_comment")
+
+  stoppedEngineSteeringRackFogging           Boolean          @default(false) @map("stopped_engine_steering_rack_fogging")
+  stoppedEngineSteeringRackSmudges           Boolean          @default(false) @map("stopped_engine_steering_rack_smudges")
+  stoppedEngineSteeringRackPhoto             String           @default("")  @map("stopped_engine_steering_rack_photo")
+  stoppedEngineSteeringRackComment           String           @default("")  @map("stopped_engine_steering_rack_comment")
+
+  stoppedEngineShockAbsorbersFogging           Boolean          @default(false) @map("stopped_engine_shock_absorbers_fogging")
+  stoppedEngineShockAbsorbersSmudges           Boolean          @default(false) @map("stopped_engine_shock_absorbers_smudges")
+  stoppedEngineShockAbsorbersPhoto             String           @default("")  @map("stopped_engine_shock_absorbers_photo")
+  stoppedEngineShockAbsorbersComment           String           @default("")  @map("stopped_engine_shock_absorbers_comment")
+
   stoppedEngineNameOne                  String         @default("")
   stoppedEngineFoggingOne               String[]       @default([""])
   stoppedEnginePhotoOne                 String[]       @default([""])
@@ -520,6 +571,73 @@ model Report {
   runningEngineMechanicalIsCheckThree               Boolean        @default(false)
   runningEngineMechanicalCommentThree               String         @default("")
 
+  runningEngineElectricalBattery                  Boolean @default(false) @map("running_engine_electrical_battery")
+  runningEngineElectricalBatteryComment           String @default("") @map("running_engine_electrical_battery_comment")
+
+  runningEngineElectricalLightingEngineering                  Boolean @default(false) @map("running_engine_electrical_lighting_engineering")
+  runningEngineElectricalLightingEngineeringComment           String @default("") @map("running_engine_electrical_lighting_engineering_comment")
+
+  runningEngineElectricalAudiosystem                Boolean @default(false) @map("running_engine_electrical_audiosystem")
+  runningEngineElectricalAudiosystemComment         String @default("") @map("running_engine_electrical_audiosystem_comment")
+
+  runningEngineElectricalHeatedSteeringWheel              Boolean @default(false) @map("running_engine_electrical_heated_steering_wheel")
+  runningEngineElectricalHeatedSteeringWheelComment       String @default("") @map("running_engine_electrical_heated_steering_wheel_comment")
+
+  runningEngineElectricalSoundSignal            Boolean @default(false) @map("running_engine_electrical_sound_signal")
+  runningEngineElectricalSoundSignalComment     String @default("") @map("running_engine_electrical_sound_signal_comment")
+
+  runningEngineElectricalSeatMassage              Boolean @default(false) @map("running_engine_electrical_seat_massage")
+  runningEngineElectricalSeatMassageComment       String @default("") @map("running_engine_electrical_seat_massage_comment")
+
+  runningEngineElectricalWindshieldWashers              Boolean @default(false) @map("running_engine_electrical_windshield_washers")
+  runningEngineElectricalWindshieldWashersComment       String @default("") @map("running_engine_electrical_windshield_washers_comment")
+
+  runningEngineElectricalHeatedSeats               Boolean @default(false) @map("running_engine_electrical_heated_seats")
+  runningEngineElectricalHeatedSeatsComment        String @default("") @map("running_engine_electrical_heated_seats_comment")
+
+  runningEngineElectricalWindshieldWipers              Boolean @default(false) @map("running_engine_electrical_windshield_wipers")
+  runningEngineElectricalWindshieldWipersComment       String @default("") @map("running_engine_electrical_windshield_wipers_comment")
+
+  runningEngineElectricalWindowLifters                Boolean @default(false) @map("running_engine_electrical_window_lifters")
+  runningEngineElectricalWindowLiftersComment         String @default("") @map("running_engine_electrical_window_lifters_comment")
+
+  runningEngineElectricalElectricSunroof               Boolean @default(false) @map("running_engine_electrical_electric_sunroof")
+  runningEngineElectricalElectricSunroofComment        String @default("") @map("running_engine_electrical_electric_sunroof_comment")
+
+  runningEngineElectricalElectricSteering                Boolean @default(false) @map("running_engine_electrical_electric_steering")
+  runningEngineElectricalElectricSteeringComment         String @default("") @map("running_engine_electrical_electric_steering_comment")
+
+  runningEngineElectricalElectricMirrors               Boolean @default(false) @map("running_engine_electrical_electric_mirrors")
+  runningEngineElectricalElectricMirrorsComment         String @default("") @map("running_engine_electrical_electric_mirrors_comment")
+
+  runningEngineElectricalElectricSeats                Boolean @default(false) @map("running_engine_electrical_electric_seats")
+  runningEngineElectricalElectricSeatsComment         String @default("") @map("running_engine_electrical_electric_seats_comment")
+
+  runningEngineElectricalElectricPanorama                Boolean @default(false) @map("running_engine_electrical_electric_panorama")
+  runningEngineElectricalElectricPanoramaComment         String @default("") @map("running_engine_electrical_electric_panorama_comment")
+
+  runningEngineElectricalHeatedWindshield                Boolean @default(false) @map("running_engine_electrical_heated_windshield")
+  runningEngineElectricalHeatedWindshieldComment         String @default("") @map("running_engine_electrical_heated_windshield_comment")
+
+  runningEngineElectricalElectricTrunkDrive             Boolean @default(false) @map("running_engine_electrical_electric_trunk_drive")
+  runningEngineElectricalElectricTrunkDriveComment      String @default("") @map("running_engine_electrical_electric_trunk_drive_comment")
+
+
+  runningEngineMechanicalGearShifting         Boolean @default(false) @map("running_engine_mechanical_gear_shifting")
+  runningEngineMechanicalGearShiftingComment  String @default("") @map("running_engine_mechanical_gear_shifting_comment")
+
+  runningEngineMechanicalEngineOperation         Boolean @default(false) @map("running_engine_mechanical_engine_operation")
+  runningEngineMechanicalEngineOperationComment  String @default("") @map("running_engine_mechanical_engine_operation_comment")
+
+  runningEngineMechanicalInteriorHeater         Boolean @default(false) @map("running_engine_mechanical_interior_heater")
+  runningEngineMechanicalInteriorHeaterComment  String @default("") @map("running_engine_mechanical_interior_heater_comment")
+
+  runningEngineMechanicalPowerSteering         Boolean @default(false) @map("running_engine_mechanical_power_steering")
+  runningEngineMechanicalPowerSteeringComment  String @default("") @map("running_engine_mechanical_power_steering_comment")
+
+  runningEngineMechanicalAirConditioner         Boolean @default(false) @map("running_engine_mechanical_air_conditioner")
+  runningEngineMechanicalAirConditionerComment  String @default("") @map("running_engine_mechanical_air_conditioner_comment")
+
   dashboardDiagnosticsFile           String[]         @default([""]) @map("dashboard_diagnostics_file")
   dashboardDiagnosticsComment        String           @default("") @map("dashboard_diagnostics_comment")
   dashboardMileageOnDashboard        String?          @default("") @map("dashboard_mileage_on_dashboard")
@@ -539,8 +657,29 @@ model Report {
   dashboardIsCheckThree               Boolean        @default(false)
   dashboardCommentThree               String         @default("")
 
+  dashboardABS         Boolean @default(false) @map("dashboard_abs")
+  dashboardABSComment  String  @default("") @map("dashboard_abs_comment")
+
+  dashboardESP         Boolean @default(false) @map("dashboard_esp")
+  dashboardESPComment  String  @default("") @map("dashboard_esp_comment")
+
+  dashboardAirbag         Boolean @default(false) @map("dashboard_airbag")
+  dashboardAirbagComment String  @default("") @map("dashboard_airbag_comment")
+
+  dashboardCheckEngine         Boolean @default(false) @map("dashboard_check_engine")
+  dashboardCheckEngineComment String  @default("") @map("dashboard_check_engine_comment")
+
+  dashboardBattery         Boolean @default(false) @map("dashboard_battery")
+  dashboardBatteryComment String  @default("") @map("dashboard_battery_comment")
+
+  dashboardTirePressure         Boolean @default(false) @map("dashboard_tire_pressure")
+  dashboardTirePressureComment String  @default("") @map("dashboard_tire_pressure_comment")
+
+  dashboardOilPressure         Boolean @default(false) @map("dashboard_oil_pressure")
+  dashboardOilPressureComment String  @default("") @map("dashboard_oil_pressure_comment")
+
   testDriveAllSystemOk    Boolean          @default(false) @map("test_drive_all_system_ok")
-  testDriveMalfunctions   String[]         @default([""]) @map("test_drive_malfunctions")
+
   testDriveNameOne                   String         @default("")
   testDriveIsCheckOne                Boolean        @default(false)
   testDriveCommentOne                String         @default("")
@@ -550,6 +689,27 @@ model Report {
   testDriveNameThree                   String         @default("")
   testDriveIsCheckThree               Boolean        @default(false)
   testDriveCommentThree               String         @default("")
+
+  testDriveSuspension         Boolean @default(false) @map("test_drive_suspension")
+  testDriveSuspensionComment  String @default("") @map("test_drive_suspension_comment")
+
+  testDriveEngine        Boolean @default(false) @map("test_drive_engine")
+  testDriveEngineComment  String @default("") @map("test_drive_engine_comment")
+
+  testDriveTransmission       Boolean @default(false) @map("test_drive_transmission")
+  testDriveTransmissionComment  String @default("") @map("test_drive_transmission_comment")
+
+  testDriveSteering       Boolean @default(false) @map("test_drive_steering")
+  testDriveSteeringComment  String @default("") @map("test_drive_steering_comment")
+
+  testDriveBrakeSystem       Boolean @default(false) @map("test_drive_brake_system")
+  testDriveBrakeSystemComment  String @default("") @map("test_drive_brake_system_comment")
+
+  testDriveParkingBrake      Boolean @default(false) @map("test_drive_parking_brake")
+  testDriveParkingBrakeComment  String @default("") @map("test_drive_parking_brake_comment")
+
+  testDriveExhaustSystem        Boolean @default(false) @map("test_drive_exhaust_system")
+  testDriveExhaustSystemComment  String @default("") @map("test_drive_exhaust_system_comment")
 
   expertOpinionPlusComment     String   @default("") @map("expert_opinion_plus_comment")
   expertOpinionMinusComment    String   @default("") @map("expert_opinion_minus_comment")

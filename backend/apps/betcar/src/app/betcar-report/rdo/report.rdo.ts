@@ -2777,6 +2777,288 @@ public stoppedEnginePhotoThree: string[];
 @Expose()
 public stoppedEngineCommentThree: string;
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+@ApiProperty({
+  description: 'Запотевание',
+  example: false
+})
+@Expose()
+public stoppedEnginePipesFogging: boolean;
+
+@ApiProperty({
+  description: 'Подтек',
+  example: false
+})
+@Expose()
+public stoppedEnginePipesSmudges: boolean;
+
+@ApiProperty({
+  description: 'Фото',
+  example: ''
+})
+@Expose()
+public stoppedEnginePipesPhoto: string;
+
+@ApiProperty({
+  description: 'Комментарий',
+  example: ''
+})
+@Expose()
+public stoppedEnginePipesComment: string;
+
+@ApiProperty({
+  description: 'Запотевание',
+  example: false
+})
+@Expose()
+public stoppedEngineValveCoverFogging: boolean;
+
+@ApiProperty({
+  description: 'Подтек',
+  example: false
+})
+@Expose()
+public stoppedEngineValveCoverSmudges: boolean;
+
+@ApiProperty({
+  description: 'Фото',
+  example: ''
+})
+@Expose()
+public stoppedEngineValveCoverPhoto: string;
+
+@ApiProperty({
+  description: 'Комментарий',
+  example: ''
+})
+@Expose()
+public stoppedEngineValveCoverComment: string;
+
+@ApiProperty({
+  description: 'Запотевание',
+  example: false
+})
+@Expose()
+public stoppedEngineCamshaftSensorFogging: boolean;
+
+@ApiProperty({
+  description: 'Подтек',
+  example: false
+})
+@Expose()
+public stoppedEngineCamshaftSensorSmudges: boolean;
+
+@ApiProperty({
+  description: 'Фото',
+  example: ''
+})
+@Expose()
+public stoppedEngineCamshaftSensorPhoto: string;
+
+@ApiProperty({
+  description: 'Комментарий',
+  example: ''
+})
+@Expose()
+public stoppedEngineCamshaftSensorComment: string;
+
+@ApiProperty({
+  description: 'Запотевание',
+  example: false
+})
+@Expose()
+public stoppedEngineOilPressureSensorFogging: boolean;
+
+@ApiProperty({
+  description: 'Подтек',
+  example: false
+})
+@Expose()
+public stoppedEngineOilPressureSensorSmudges: boolean;
+
+@ApiProperty({
+  description: 'Фото',
+  example: ''
+})
+@Expose()
+public stoppedEngineOilPressureSensorPhoto: string;
+
+@ApiProperty({
+  description: 'Комментарий',
+  example: ''
+})
+@Expose()
+public stoppedEngineOilPressureSensorComment: string;
+
+@ApiProperty({
+  description: 'Запотевание',
+  example: false
+})
+@Expose()
+public stoppedEngineCrankshaftOilSealFogging: boolean;
+
+@ApiProperty({
+  description: 'Подтек',
+  example: false
+})
+@Expose()
+public stoppedEngineCrankshaftOilSealSmudges: boolean;
+
+@ApiProperty({
+  description: 'Фото',
+  example: ''
+})
+@Expose()
+public stoppedEngineCrankshaftOilSealPhoto: string;
+
+@ApiProperty({
+  description: 'Комментарий',
+  example: ''
+})
+@Expose()
+public stoppedEngineCrankshaftOilSealComment: string;
+
+@ApiProperty({
+  description: 'Запотевание',
+  example: false
+})
+@Expose()
+public stoppedEngineCamshaftOilSealFogging: boolean;
+
+@ApiProperty({
+  description: 'Подтек',
+  example: false
+})
+@Expose()
+public stoppedEngineCamshaftOilSealSmudges: boolean;
+
+@ApiProperty({
+  description: 'Фото',
+  example: ''
+})
+@Expose()
+public stoppedEngineCamshaftOilSealPhoto: string;
+
+@ApiProperty({
+  description: 'Комментарий',
+  example: ''
+})
+@Expose()
+public stoppedEngineCamshaftOilSealComment: string;
+
+@ApiProperty({
+  description: 'Запотевание',
+  example: false
+})
+@Expose()
+public stoppedEngineCrankcaseFogging: boolean;
+
+@ApiProperty({
+  description: 'Подтек',
+  example: false
+})
+@Expose()
+public stoppedEngineCrankcaseSmudges: boolean;
+
+@ApiProperty({
+  description: 'Фото',
+  example: ''
+})
+@Expose()
+public stoppedEngineCrankcasePhoto: string;
+
+@ApiProperty({
+  description: 'Комментарий',
+  example: ''
+})
+@Expose()
+public stoppedEngineCrankcaseComment: string;
+
+@ApiProperty({
+  description: 'Запотевание',
+  example: false
+})
+@Expose()
+public stoppedEngineGurFogging: boolean;
+
+@ApiProperty({
+  description: 'Подтек',
+  example: false
+})
+@Expose()
+public stoppedEngineGurSmudges: boolean;
+
+@ApiProperty({
+  description: 'Фото',
+  example: ''
+})
+@Expose()
+public stoppedEngineGurPhoto: string;
+
+@ApiProperty({
+  description: 'Комментарий',
+  example: ''
+})
+@Expose()
+public stoppedEngineGurComment: string;
+
+@ApiProperty({
+  description: 'Запотевание',
+  example: false
+})
+@Expose()
+public stoppedEngineSteeringRackFogging: boolean;
+
+@ApiProperty({
+  description: 'Подтек',
+  example: false
+})
+@Expose()
+public stoppedEngineSteeringRackSmudges: boolean;
+
+@ApiProperty({
+  description: 'Фото',
+  example: ''
+})
+@Expose()
+public stoppedEngineSteeringRackPhoto: string;
+
+@ApiProperty({
+  description: 'Комментарий',
+  example: ''
+})
+@Expose()
+public stoppedEngineSteeringRackComment: string;
+
+@ApiProperty({
+  description: 'Запотевание',
+  example: false
+})
+@Expose()
+public stoppedEngineShockAbsorbersFogging: boolean;
+
+@ApiProperty({
+  description: 'Подтек',
+  example: false
+})
+@Expose()
+public stoppedEngineShockAbsorbersSmudges: boolean;
+
+@ApiProperty({
+  description: 'Фото',
+  example: ''
+})
+@Expose()
+public stoppedEngineShockAbsorbersPhoto: string;
+
+@ApiProperty({
+  description: 'Комментарий',
+  example: ''
+})
+@Expose()
+public stoppedEngineShockAbsorbersComment: string;
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 @ApiProperty({
   description: 'Двигатель не запускается',
   example: false
@@ -2938,6 +3220,317 @@ public runningEngineMechanicalIsCheckThree: boolean;
 @Expose()
 public runningEngineMechanicalCommentThree: string;
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+@ApiProperty({
+  description: 'Выбрано',
+  example: false
+})
+@Expose()
+public runningEngineElectricalBattery: boolean;
+
+@ApiProperty({
+  description: 'Комментарий',
+  example: ''
+})
+@Expose()
+public runningEngineElectricalBatteryComment: string;
+
+@ApiProperty({
+  description: 'Выбрано',
+  example: false
+})
+@Expose()
+public runningEngineElectricalLightingEngineering: boolean;
+
+@ApiProperty({
+  description: 'Комментарий',
+  example: ''
+})
+@Expose()
+public runningEngineElectricalLightingEngineeringComment: string;
+
+@ApiProperty({
+  description: 'Выбрано',
+  example: false
+})
+@Expose()
+public runningEngineElectricalAudiosystem: boolean;
+
+@ApiProperty({
+  description: 'Комментарий',
+  example: ''
+})
+@Expose()
+public runningEngineElectricalAudiosystemComment: string;
+
+@ApiProperty({
+  description: 'Выбрано',
+  example: false
+})
+@Expose()
+public runningEngineElectricalHeatedSteeringWheel: boolean;
+
+@ApiProperty({
+  description: 'Комментарий',
+  example: ''
+})
+@Expose()
+public runningEngineElectricalHeatedSteeringWheelComment: string;
+
+@ApiProperty({
+  description: 'Выбрано',
+  example: false
+})
+@Expose()
+public runningEngineElectricalSoundSignal: boolean;
+
+@ApiProperty({
+  description: 'Комментарий',
+  example: ''
+})
+@Expose()
+public runningEngineElectricalSoundSignalComment: string;
+
+@ApiProperty({
+  description: 'Выбрано',
+  example: false
+})
+@Expose()
+public runningEngineElectricalSeatMassage: boolean;
+
+@ApiProperty({
+  description: 'Комментарий',
+  example: ''
+})
+@Expose()
+public runningEngineElectricalSeatMassageComment: string;
+
+@ApiProperty({
+  description: 'Выбрано',
+  example: false
+})
+@Expose()
+public runningEngineElectricalWindshieldWashers: boolean;
+
+@ApiProperty({
+  description: 'Комментарий',
+  example: ''
+})
+@Expose()
+public runningEngineElectricalWindshieldWashersComment: string;
+
+@ApiProperty({
+  description: 'Выбрано',
+  example: false
+})
+@Expose()
+public runningEngineElectricalHeatedSeats: boolean;
+
+@ApiProperty({
+  description: 'Комментарий',
+  example: ''
+})
+@Expose()
+public runningEngineElectricalHeatedSeatsComment: string;
+
+@ApiProperty({
+  description: 'Выбрано',
+  example: false
+})
+@Expose()
+public runningEngineElectricalWindshieldWipers: boolean;
+
+@ApiProperty({
+  description: 'Комментарий',
+  example: ''
+})
+@Expose()
+public runningEngineElectricalWindshieldWipersComment: string;
+
+@ApiProperty({
+  description: 'Выбрано',
+  example: false
+})
+@Expose()
+public runningEngineElectricalWindowLifters: boolean;
+
+@ApiProperty({
+  description: 'Комментарий',
+  example: ''
+})
+@Expose()
+public runningEngineElectricalWindowLiftersComment: string;
+
+@ApiProperty({
+  description: 'Выбрано',
+  example: false
+})
+@Expose()
+public runningEngineElectricalElectricSunroof: boolean;
+
+@ApiProperty({
+  description: 'Комментарий',
+  example: ''
+})
+@Expose()
+public runningEngineElectricalElectricSunroofComment: string;
+
+@ApiProperty({
+  description: 'Выбрано',
+  example: false
+})
+@Expose()
+public runningEngineElectricalElectricSteering: boolean;
+
+@ApiProperty({
+  description: 'Комментарий',
+  example: ''
+})
+@Expose()
+public runningEngineElectricalElectricSteeringComment: string;
+
+@ApiProperty({
+  description: 'Выбрано',
+  example: false
+})
+@Expose()
+public runningEngineElectricalElectricMirrors: boolean;
+
+@ApiProperty({
+  description: 'Комментарий',
+  example: ''
+})
+@Expose()
+public runningEngineElectricalElectricMirrorsComment: string;
+
+@ApiProperty({
+  description: 'Выбрано',
+  example: false
+})
+@Expose()
+public runningEngineElectricalElectricSeats: boolean;
+
+@ApiProperty({
+  description: 'Комментарий',
+  example: ''
+})
+@Expose()
+public runningEngineElectricalElectricSeatsComment: string;
+
+@ApiProperty({
+  description: 'Выбрано',
+  example: false
+})
+@Expose()
+public runningEngineElectricalElectricPanorama: boolean;
+
+@ApiProperty({
+  description: 'Комментарий',
+  example: ''
+})
+@Expose()
+public runningEngineElectricalElectricPanoramaComment: string;
+
+@ApiProperty({
+  description: 'Выбрано',
+  example: false
+})
+@Expose()
+public runningEngineElectricalHeatedWindshield: boolean;
+
+@ApiProperty({
+  description: 'Комментарий',
+  example: ''
+})
+@Expose()
+public runningEngineElectricalHeatedWindshieldComment: string;
+
+@ApiProperty({
+  description: 'Выбрано',
+  example: false
+})
+@Expose()
+public runningEngineElectricalElectricTrunkDrive: boolean;
+
+@ApiProperty({
+  description: 'Комментарий',
+  example: ''
+})
+@Expose()
+public runningEngineElectricalElectricTrunkDriveComment: string;
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+@ApiProperty({
+  description: 'Выбрано',
+  example: false
+})
+@Expose()
+public runningEngineMechanicalGearShifting: boolean;
+
+@ApiProperty({
+  description: 'Комментарий',
+  example: ''
+})
+@Expose()
+public runningEngineMechanicalGearShiftingComment: string;
+
+@ApiProperty({
+  description: 'Выбрано',
+  example: false
+})
+@Expose()
+public runningEngineMechanicalEngineOperation: boolean;
+
+@ApiProperty({
+  description: 'Комментарий',
+  example: ''
+})
+@Expose()
+public runningEngineMechanicalEngineOperationComment: string;
+
+@ApiProperty({
+  description: 'Выбрано',
+  example: false
+})
+@Expose()
+public runningEngineMechanicalInteriorHeater: boolean;
+
+@ApiProperty({
+  description: 'Комментарий',
+  example: ''
+})
+@Expose()
+public runningEngineMechanicalInteriorHeaterComment: string;
+
+@ApiProperty({
+  description: 'Выбрано',
+  example: false
+})
+@Expose()
+public runningEngineMechanicalPowerSteering: boolean;
+
+@ApiProperty({
+  description: 'Комментарий',
+  example: ''
+})
+@Expose()
+public runningEngineMechanicalPowerSteeringComment: string;
+
+@ApiProperty({
+  description: 'Выбрано',
+  example: false
+})
+@Expose()
+public runningEngineMechanicalAirConditioner: boolean;
+
+@ApiProperty({
+  description: 'Комментарий',
+  example: ''
+})
+@Expose()
+public runningEngineMechanicalAirConditionerComment: string;
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 @ApiProperty({
   description: 'Ошибки отсутствуют',
   example: false
@@ -3064,19 +3657,112 @@ public dashboardIsCheckThree: boolean;
 @Expose()
 public dashboardCommentThree: string;
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+@ApiProperty({
+  description: 'Выбрано',
+  example: false
+})
+@Expose()
+public dashboardABS: boolean;
+
+@ApiProperty({
+  description: 'Комментарий',
+  example: 'string'
+})
+@Expose()
+public dashboardABSComment: string;
+
+@ApiProperty({
+  description: 'Выбрано',
+  example: false
+})
+@Expose()
+public dashboardESP: boolean;
+
+@ApiProperty({
+  description: 'Комментарий',
+  example: 'string'
+})
+@Expose()
+public dashboardESPComment: string;
+
+@ApiProperty({
+  description: 'Выбрано',
+  example: false
+})
+@Expose()
+public dashboardAirbag: boolean;
+
+@ApiProperty({
+  description: 'Комментарий',
+  example: 'string'
+})
+@Expose()
+public dashboardAirbagComment: string;
+
+@ApiProperty({
+  description: 'Выбрано',
+  example: false
+})
+@Expose()
+public dashboardCheckEngine: boolean;
+
+@ApiProperty({
+  description: 'Комментарий',
+  example: 'string'
+})
+@Expose()
+public dashboardCheckEngineComment: string;
+
+@ApiProperty({
+  description: 'Выбрано',
+  example: false
+})
+@Expose()
+public dashboardBattery: boolean;
+
+@ApiProperty({
+  description: 'Комментарий',
+  example: 'string'
+})
+@Expose()
+public dashboardBatteryComment: string;
+
+@ApiProperty({
+  description: 'Выбрано',
+  example: false
+})
+@Expose()
+public dashboardTirePressure: boolean;
+
+@ApiProperty({
+  description: 'Комментарий',
+  example: 'string'
+})
+@Expose()
+public dashboardTirePressureComment: string;
+
+@ApiProperty({
+  description: 'Выбрано',
+  example: false
+})
+@Expose()
+public dashboardOilPressure: boolean;
+
+@ApiProperty({
+  description: 'Комментарий',
+  example: 'string'
+})
+@Expose()
+public dashboardOilPressureComment: string;
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 @ApiProperty({
   description: 'Все системы работают исправно',
   example: false
 })
 @Expose()
 public testDriveAllSystemOk: boolean;
-
-@ApiProperty({
-  description: 'Неисправности',
-  example: ['string']
-})
-@Expose()
-public testDriveMalfunctions: string[];
 
 @ApiProperty({
   description: 'Имя',
@@ -3141,6 +3827,106 @@ public testDriveIsCheckThree: boolean;
 @Expose()
 public testDriveCommentThree: string;
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+@ApiProperty({
+  description: 'Выбрано',
+  example: false
+})
+@Expose()
+public testDriveSuspension: boolean;
+
+@ApiProperty({
+  description: 'Комментарий',
+  example: 'string'
+})
+@Expose()
+public testDriveSuspensionComment: string;
+
+@ApiProperty({
+  description: 'Выбрано',
+  example: false
+})
+@Expose()
+public testDriveEngine: boolean;
+
+@ApiProperty({
+  description: 'Комментарий',
+  example: 'string'
+})
+@Expose()
+public testDriveEngineComment: string;
+
+@ApiProperty({
+  description: 'Выбрано',
+  example: false
+})
+@Expose()
+public testDriveTransmission: boolean;
+
+@ApiProperty({
+  description: 'Комментарий',
+  example: 'string'
+})
+@Expose()
+public testDriveTransmissionComment: string;
+
+@ApiProperty({
+  description: 'Выбрано',
+  example: false
+})
+@Expose()
+public testDriveSteering: boolean;
+
+@ApiProperty({
+  description: 'Комментарий',
+  example: 'string'
+})
+@Expose()
+public testDriveSteeringComment: string;
+
+@ApiProperty({
+  description: 'Выбрано',
+  example: false
+})
+@Expose()
+public testDriveBrakeSystem: boolean;
+
+@ApiProperty({
+  description: 'Комментарий',
+  example: 'string'
+})
+@Expose()
+public testDriveBrakeSystemComment: string;
+
+@ApiProperty({
+  description: 'Выбрано',
+  example: false
+})
+@Expose()
+public testDriveParkingBrake: boolean;
+
+@ApiProperty({
+  description: 'Комментарий',
+  example: 'string'
+})
+@Expose()
+public testDriveParkingBrakeComment: string;
+
+@ApiProperty({
+  description: 'Выбрано',
+  example: false
+})
+@Expose()
+public testDriveExhaustSystem: boolean;
+
+@ApiProperty({
+  description: 'Комментарий',
+  example: 'string'
+})
+@Expose()
+public testDriveExhaustSystemComment: string;
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 @ApiProperty({
   description: 'Комментарий плюсов',
   example: 'string'

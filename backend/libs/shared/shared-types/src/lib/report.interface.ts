@@ -410,6 +410,57 @@ export interface Report {
   stoppedEngineBrakePads: string;
   stoppedEngineWearComment: string;
   stoppedEngineIsFogging: boolean;
+
+  stoppedEnginePipesFogging: boolean;
+  stoppedEnginePipesSmudges: boolean;
+  stoppedEnginePipesPhoto: string;
+  stoppedEnginePipesComment: string;
+
+  stoppedEngineValveCoverFogging: boolean;
+  stoppedEngineValveCoverSmudges: boolean;
+  stoppedEngineValveCoverPhoto: string;
+  stoppedEngineValveCoverComment: string;
+
+  stoppedEngineCamshaftSensorFogging: boolean;
+  stoppedEngineCamshaftSensorSmudges: boolean;
+  stoppedEngineCamshaftSensorPhoto: string;
+  stoppedEngineCamshaftSensorComment: string;
+
+  stoppedEngineOilPressureSensorFogging: boolean;
+  stoppedEngineOilPressureSensorSmudges: boolean;
+  stoppedEngineOilPressureSensorPhoto: string;
+  stoppedEngineOilPressureSensorComment: string;
+
+  stoppedEngineCrankshaftOilSealFogging: boolean;
+  stoppedEngineCrankshaftOilSealSmudges: boolean;
+  stoppedEngineCrankshaftOilSealPhoto: string;
+  stoppedEngineCrankshaftOilSealComment: string;
+
+  stoppedEngineCamshaftOilSealFogging: boolean;
+  stoppedEngineCamshaftOilSealSmudges: boolean;
+  stoppedEngineCamshaftOilSealPhoto: string;
+  stoppedEngineCamshaftOilSealComment: string;
+
+  stoppedEngineCrankcaseFogging: boolean;
+  stoppedEngineCrankcaseSmudges: boolean;
+  stoppedEngineCrankcasePhoto: string;
+  stoppedEngineCrankcaseComment: string;
+
+  stoppedEngineGurFogging: boolean;
+  stoppedEngineGurSmudges: boolean;
+  stoppedEngineGurPhoto: string;
+  stoppedEngineGurComment: string;
+
+  stoppedEngineSteeringRackFogging: boolean;
+  stoppedEngineSteeringRackSmudges: boolean;
+  stoppedEngineSteeringRackPhoto: string;
+  stoppedEngineSteeringRackComment: string;
+
+  stoppedEngineShockAbsorbersFogging: boolean;
+  stoppedEngineShockAbsorbersSmudges: boolean;
+  stoppedEngineShockAbsorbersPhoto: string;
+  stoppedEngineShockAbsorbersComment: string;
+
   stoppedEngineNameOne: string;
   stoppedEngineFoggingOne: string[];
   stoppedEnginePhotoOne: string[];
@@ -439,6 +490,57 @@ export interface Report {
   runningEngineElectricalIsCheckThree: boolean;
   runningEngineElectricalCommentThree: string;
 
+  runningEngineElectricalBattery: boolean;
+  runningEngineElectricalBatteryComment: string;
+
+  runningEngineElectricalLightingEngineering: boolean;
+  runningEngineElectricalLightingEngineeringComment: string;
+
+  runningEngineElectricalAudiosystem: boolean;
+  runningEngineElectricalAudiosystemComment: string;
+
+  runningEngineElectricalHeatedSteeringWheel: boolean;
+  runningEngineElectricalHeatedSteeringWheelComment: string;
+
+  runningEngineElectricalSoundSignal: boolean;
+  runningEngineElectricalSoundSignalComment: string;
+
+  runningEngineElectricalSeatMassage: boolean;
+  runningEngineElectricalSeatMassageComment: string;
+
+  runningEngineElectricalWindshieldWashers: boolean;
+  runningEngineElectricalWindshieldWashersComment: string;
+
+  runningEngineElectricalHeatedSeats: boolean;
+  runningEngineElectricalHeatedSeatsComment: string;
+
+  runningEngineElectricalWindshieldWipers: boolean;
+  runningEngineElectricalWindshieldWipersComment: string;
+
+  runningEngineElectricalWindowLifters: boolean;
+  runningEngineElectricalWindowLiftersComment: string;
+
+  runningEngineElectricalElectricSunroof: boolean;
+  runningEngineElectricalElectricSunroofComment: string;
+
+  runningEngineElectricalElectricSteering: boolean;
+  runningEngineElectricalElectricSteeringComment: string;
+
+  runningEngineElectricalElectricMirrors: boolean;
+  runningEngineElectricalElectricMirrorsComment: string;
+
+  runningEngineElectricalElectricSeats: boolean;
+  runningEngineElectricalElectricSeatsComment: string;
+
+  runningEngineElectricalElectricPanorama: boolean;
+  runningEngineElectricalElectricPanoramaComment: string;
+
+  runningEngineElectricalHeatedWindshield: boolean;
+  runningEngineElectricalHeatedWindshieldComment: string;
+
+  runningEngineElectricalElectricTrunkDrive: boolean;
+  runningEngineElectricalElectricTrunkDriveComment: string;
+
   runningEngineMechanicalNameOne: string;
   runningEngineMechanicalIsCheckOne: boolean;
   runningEngineMechanicalCommentOne: string;
@@ -448,6 +550,21 @@ export interface Report {
   runningEngineMechanicalNameThree: string;
   runningEngineMechanicalIsCheckThree: boolean;
   runningEngineMechanicalCommentThree: string;
+
+  runningEngineMechanicalGearShifting: boolean;
+  runningEngineMechanicalGearShiftingComment: string;
+
+  runningEngineMechanicalEngineOperation: boolean;
+  runningEngineMechanicalEngineOperationComment: string;
+
+  runningEngineMechanicalInteriorHeater: boolean;
+  runningEngineMechanicalInteriorHeaterComment: string;
+
+  runningEngineMechanicalPowerSteering: boolean;
+  runningEngineMechanicalPowerSteeringComment: string;
+
+  runningEngineMechanicalAirConditioner: boolean;
+  runningEngineMechanicalAirConditionerComment: string;
 
   dashboardNoErrors: boolean;
   dashboardDiagnosticsFile?: string[];
@@ -468,8 +585,29 @@ export interface Report {
   dashboardIsCheckThree: boolean;
   dashboardCommentThree: string;
 
+  dashboardABS: boolean;
+  dashboardABSComment: string;
+
+  dashboardESP: boolean;
+  dashboardESPComment: string;
+
+  dashboardAirbag: boolean;
+  dashboardAirbagComment: string;
+
+  dashboardCheckEngine: boolean;
+  dashboardCheckEngineComment: string;
+
+  dashboardBattery: boolean;
+  dashboardBatteryComment: string;
+
+  dashboardTirePressure: boolean;
+  dashboardTirePressureComment: string;
+
+  dashboardOilPressure: boolean;
+  dashboardOilPressureComment: string;
+
   testDriveAllSystemOk: boolean;
-  testDriveMalfunctions: string[];
+
   testDriveNameOne: string;
   testDriveIsCheckOne: boolean;
   testDriveCommentOne: string;
@@ -479,6 +617,27 @@ export interface Report {
   testDriveNameThree: string;
   testDriveIsCheckThree: boolean;
   testDriveCommentThree: string;
+
+  testDriveSuspension: boolean;
+  testDriveSuspensionComment: string;
+
+  testDriveEngine: boolean;
+  testDriveEngineComment: string;
+
+  testDriveTransmission: boolean;
+  testDriveTransmissionComment: string;
+
+  testDriveSteering: boolean;
+  testDriveSteeringComment: string;
+
+  testDriveBrakeSystem: boolean;
+  testDriveBrakeSystemComment: string;
+
+  testDriveParkingBrake: boolean;
+  testDriveParkingBrakeComment: string;
+
+  testDriveExhaustSystem: boolean;
+  testDriveExhaustSystemComment: string;
 
   expertOpinionPlusComment: string;
   expertOpinionMinusComment: string;

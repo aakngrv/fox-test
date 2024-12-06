@@ -422,6 +422,56 @@ export class BetcarReportEntity implements Entity<BetcarReportEntity>, Report {
   public stoppedEnginePhotoThree: string[];
   public stoppedEngineCommentThree: string;
 
+  public stoppedEnginePipesFogging: boolean;
+  public stoppedEnginePipesSmudges: boolean;
+  public stoppedEnginePipesPhoto: string;
+  public stoppedEnginePipesComment: string;
+
+  public stoppedEngineValveCoverFogging: boolean;
+  public stoppedEngineValveCoverSmudges: boolean;
+  public stoppedEngineValveCoverPhoto: string;
+  public stoppedEngineValveCoverComment: string;
+
+  public stoppedEngineCamshaftSensorFogging: boolean;
+  public stoppedEngineCamshaftSensorSmudges: boolean;
+  public stoppedEngineCamshaftSensorPhoto: string;
+  public stoppedEngineCamshaftSensorComment: string;
+
+  public stoppedEngineOilPressureSensorFogging: boolean;
+  public stoppedEngineOilPressureSensorSmudges: boolean;
+  public stoppedEngineOilPressureSensorPhoto: string;
+  public stoppedEngineOilPressureSensorComment: string;
+
+  public stoppedEngineCrankshaftOilSealFogging: boolean;
+  public stoppedEngineCrankshaftOilSealSmudges: boolean;
+  public stoppedEngineCrankshaftOilSealPhoto: string;
+  public stoppedEngineCrankshaftOilSealComment: string;
+
+  public stoppedEngineCamshaftOilSealFogging: boolean;
+  public stoppedEngineCamshaftOilSealSmudges: boolean;
+  public stoppedEngineCamshaftOilSealPhoto: string;
+  public stoppedEngineCamshaftOilSealComment: string;
+
+  public stoppedEngineCrankcaseFogging: boolean;
+  public stoppedEngineCrankcaseSmudges: boolean;
+  public stoppedEngineCrankcasePhoto: string;
+  public stoppedEngineCrankcaseComment: string;
+
+  public stoppedEngineGurFogging: boolean;
+  public stoppedEngineGurSmudges: boolean;
+  public stoppedEngineGurPhoto: string;
+  public stoppedEngineGurComment: string;
+
+  public stoppedEngineSteeringRackFogging: boolean;
+  public stoppedEngineSteeringRackSmudges: boolean;
+  public stoppedEngineSteeringRackPhoto: string;
+  public stoppedEngineSteeringRackComment: string;
+
+  public stoppedEngineShockAbsorbersFogging: boolean;
+  public stoppedEngineShockAbsorbersSmudges: boolean;
+  public stoppedEngineShockAbsorbersPhoto: string;
+  public stoppedEngineShockAbsorbersComment: string;
+
   public runningEngineEngineNotStart: boolean;
   public runningEngineComment: string;
   public runningEngineEngineVideo: string;
@@ -448,6 +498,72 @@ export class BetcarReportEntity implements Entity<BetcarReportEntity>, Report {
   public runningEngineMechanicalIsCheckThree: boolean;
   public runningEngineMechanicalCommentThree: string;
 
+  public runningEngineElectricalBattery: boolean;
+  public runningEngineElectricalBatteryComment: string;
+
+  public runningEngineElectricalLightingEngineering: boolean;
+  public runningEngineElectricalLightingEngineeringComment: string;
+
+  public runningEngineElectricalAudiosystem: boolean;
+  public runningEngineElectricalAudiosystemComment: string;
+
+  public runningEngineElectricalHeatedSteeringWheel: boolean;
+  public runningEngineElectricalHeatedSteeringWheelComment: string;
+
+  public runningEngineElectricalSoundSignal: boolean;
+  public runningEngineElectricalSoundSignalComment: string;
+
+  public runningEngineElectricalSeatMassage: boolean;
+  public runningEngineElectricalSeatMassageComment: string;
+
+  public runningEngineElectricalWindshieldWashers: boolean;
+  public runningEngineElectricalWindshieldWashersComment: string;
+
+  public runningEngineElectricalHeatedSeats: boolean;
+  public runningEngineElectricalHeatedSeatsComment: string;
+
+  public runningEngineElectricalWindshieldWipers: boolean;
+  public runningEngineElectricalWindshieldWipersComment: string;
+
+  public runningEngineElectricalWindowLifters: boolean;
+  public runningEngineElectricalWindowLiftersComment: string;
+
+  public runningEngineElectricalElectricSunroof: boolean;
+  public runningEngineElectricalElectricSunroofComment: string;
+
+  public runningEngineElectricalElectricSteering: boolean;
+  public runningEngineElectricalElectricSteeringComment: string;
+
+  public runningEngineElectricalElectricMirrors: boolean;
+  public runningEngineElectricalElectricMirrorsComment: string;
+
+  public runningEngineElectricalElectricSeats: boolean;
+  public runningEngineElectricalElectricSeatsComment: string;
+
+  public runningEngineElectricalElectricPanorama: boolean;
+  public runningEngineElectricalElectricPanoramaComment: string;
+
+  public runningEngineElectricalHeatedWindshield: boolean;
+  public runningEngineElectricalHeatedWindshieldComment: string;
+
+  public runningEngineElectricalElectricTrunkDrive: boolean;
+  public runningEngineElectricalElectricTrunkDriveComment: string;
+
+  public runningEngineMechanicalGearShifting: boolean;
+  public runningEngineMechanicalGearShiftingComment: string;
+
+  public runningEngineMechanicalEngineOperation: boolean;
+  public runningEngineMechanicalEngineOperationComment: string;
+
+  public runningEngineMechanicalInteriorHeater: boolean;
+  public runningEngineMechanicalInteriorHeaterComment: string;
+
+  public runningEngineMechanicalPowerSteering: boolean;
+  public runningEngineMechanicalPowerSteeringComment: string;
+
+  public runningEngineMechanicalAirConditioner: boolean;
+  public runningEngineMechanicalAirConditionerComment: string;
+
   public dashboardNoErrors: boolean;
   public dashboardDiagnosticsFile?: string[];
   public dashboardDiagnosticsComment: string;
@@ -467,8 +583,28 @@ export class BetcarReportEntity implements Entity<BetcarReportEntity>, Report {
   public dashboardIsCheckThree: boolean;
   public dashboardCommentThree: string;
 
+  public dashboardABS: boolean;
+  public dashboardABSComment: string;
+
+  public dashboardESP: boolean;
+  public dashboardESPComment: string;
+
+  public dashboardAirbag: boolean;
+  public dashboardAirbagComment: string;
+
+  public dashboardCheckEngine: boolean;
+  public dashboardCheckEngineComment: string;
+
+  public dashboardBattery: boolean;
+  public dashboardBatteryComment: string;
+
+  public dashboardTirePressure: boolean;
+  public dashboardTirePressureComment: string;
+
+  public dashboardOilPressure: boolean;
+  public dashboardOilPressureComment: string;
+
   public testDriveAllSystemOk: boolean;
-  public testDriveMalfunctions: string[];
   public testDriveNameOne: string;
   public testDriveIsCheckOne: boolean;
   public testDriveCommentOne: string;
@@ -478,6 +614,27 @@ export class BetcarReportEntity implements Entity<BetcarReportEntity>, Report {
   public testDriveNameThree: string;
   public testDriveIsCheckThree: boolean;
   public testDriveCommentThree: string;
+
+  public testDriveSuspension: boolean;
+  public testDriveSuspensionComment: string;
+
+  public testDriveEngine: boolean;
+  public testDriveEngineComment: string;
+
+  public testDriveTransmission: boolean;
+  public testDriveTransmissionComment: string;
+
+  public testDriveSteering: boolean;
+  public testDriveSteeringComment: string;
+
+  public testDriveBrakeSystem: boolean;
+  public testDriveBrakeSystemComment: string;
+
+  public testDriveParkingBrake: boolean;
+  public testDriveParkingBrakeComment: string;
+
+  public testDriveExhaustSystem: boolean;
+  public testDriveExhaustSystemComment: string;
 
   public expertOpinionPlusComment: string;
   public expertOpinionMinusComment: string;
@@ -921,6 +1078,56 @@ export class BetcarReportEntity implements Entity<BetcarReportEntity>, Report {
     this.stoppedEnginePhotoThree = entity.stoppedEnginePhotoThree;
     this.stoppedEngineCommentThree = entity.stoppedEngineCommentThree;
 
+    this.stoppedEnginePipesFogging = entity.stoppedEnginePipesFogging;
+    this.stoppedEnginePipesSmudges = entity.stoppedEnginePipesSmudges;
+    this.stoppedEnginePipesPhoto = entity.stoppedEnginePipesPhoto;
+    this.stoppedEnginePipesComment = entity.stoppedEnginePipesComment;
+  
+    this.stoppedEngineValveCoverFogging = entity.stoppedEngineValveCoverFogging;
+    this.stoppedEngineValveCoverSmudges = entity.stoppedEngineValveCoverSmudges;
+    this.stoppedEngineValveCoverPhoto = entity.stoppedEngineValveCoverPhoto;
+    this.stoppedEngineValveCoverComment = entity.stoppedEngineValveCoverComment;
+  
+    this.stoppedEngineCamshaftSensorFogging = entity.stoppedEngineCamshaftSensorFogging;
+    this.stoppedEngineCamshaftSensorSmudges = entity.stoppedEngineCamshaftSensorSmudges;
+    this.stoppedEngineCamshaftSensorPhoto = entity.stoppedEngineCamshaftSensorPhoto;
+    this.stoppedEngineCamshaftSensorComment = entity.stoppedEngineCamshaftSensorComment;
+  
+    this.stoppedEngineOilPressureSensorFogging = entity.stoppedEngineOilPressureSensorFogging;
+    this.stoppedEngineOilPressureSensorSmudges = entity.stoppedEngineOilPressureSensorSmudges;
+    this.stoppedEngineOilPressureSensorPhoto = entity.stoppedEngineOilPressureSensorPhoto;
+    this.stoppedEngineOilPressureSensorComment = entity.stoppedEngineOilPressureSensorComment;
+  
+    this.stoppedEngineCrankshaftOilSealFogging = entity.stoppedEngineCrankshaftOilSealFogging;
+    this.stoppedEngineCrankshaftOilSealSmudges = entity.stoppedEngineCrankshaftOilSealSmudges;
+    this.stoppedEngineCrankshaftOilSealPhoto = entity.stoppedEngineCrankshaftOilSealPhoto;
+    this.stoppedEngineCrankshaftOilSealComment = entity.stoppedEngineCrankshaftOilSealComment;
+  
+    this.stoppedEngineCamshaftOilSealFogging = entity.stoppedEngineCamshaftOilSealFogging;
+    this.stoppedEngineCamshaftOilSealSmudges = entity.stoppedEngineCamshaftOilSealSmudges;
+    this.stoppedEngineCamshaftOilSealPhoto = entity.stoppedEngineCamshaftOilSealPhoto;
+    this.stoppedEngineCamshaftOilSealComment = entity.stoppedEngineCamshaftOilSealComment;
+  
+    this.stoppedEngineCrankcaseFogging = entity.stoppedEngineCrankcaseFogging;
+    this.stoppedEngineCrankcaseSmudges = entity.stoppedEngineCrankcaseSmudges;
+    this.stoppedEngineCrankcasePhoto = entity.stoppedEngineCrankcasePhoto;
+    this.stoppedEngineCrankcaseComment = entity.stoppedEngineCrankcaseComment;
+  
+    this.stoppedEngineGurFogging = entity.stoppedEngineGurFogging;
+    this.stoppedEngineGurSmudges = entity.stoppedEngineGurSmudges;
+    this.stoppedEngineGurPhoto = entity.stoppedEngineGurPhoto;
+    this.stoppedEngineGurComment = entity.stoppedEngineGurComment;
+  
+    this.stoppedEngineSteeringRackFogging = entity.stoppedEngineSteeringRackFogging;
+    this.stoppedEngineSteeringRackSmudges = entity.stoppedEngineSteeringRackSmudges;
+    this.stoppedEngineSteeringRackPhoto = entity.stoppedEngineSteeringRackPhoto;
+    this.stoppedEngineSteeringRackComment = entity.stoppedEngineSteeringRackComment;
+  
+    this.stoppedEngineShockAbsorbersFogging = entity.stoppedEngineShockAbsorbersFogging;
+    this.stoppedEngineShockAbsorbersSmudges = entity.stoppedEngineShockAbsorbersSmudges;
+    this.stoppedEngineShockAbsorbersPhoto = entity.stoppedEngineShockAbsorbersPhoto;
+    this.stoppedEngineShockAbsorbersComment = entity.stoppedEngineShockAbsorbersComment;
+
     this.runningEngineEngineNotStart = entity.runningEngineEngineNotStart;
     this.runningEngineComment = entity.runningEngineComment;
     this.runningEngineEngineVideo = entity.runningEngineEngineVideo;
@@ -947,6 +1154,72 @@ export class BetcarReportEntity implements Entity<BetcarReportEntity>, Report {
     this.runningEngineMechanicalIsCheckThree = entity.runningEngineMechanicalIsCheckThree;
     this.runningEngineMechanicalCommentThree = entity.runningEngineMechanicalCommentThree;
 
+    this.runningEngineElectricalBattery = entity.runningEngineElectricalBattery;
+    this.runningEngineElectricalBatteryComment = entity.runningEngineElectricalBatteryComment;
+  
+    this.runningEngineElectricalLightingEngineering = entity.runningEngineElectricalLightingEngineering;
+    this.runningEngineElectricalLightingEngineeringComment = entity.runningEngineElectricalLightingEngineeringComment;
+  
+    this.runningEngineElectricalAudiosystem = entity.runningEngineElectricalAudiosystem;
+    this.runningEngineElectricalAudiosystemComment = entity.runningEngineElectricalAudiosystemComment;
+  
+    this.runningEngineElectricalHeatedSteeringWheel = entity.runningEngineElectricalHeatedSteeringWheel;
+    this.runningEngineElectricalHeatedSteeringWheelComment = entity.runningEngineElectricalHeatedSteeringWheelComment;
+  
+    this.runningEngineElectricalSoundSignal = entity.runningEngineElectricalSoundSignal;
+    this.runningEngineElectricalSoundSignalComment = entity.runningEngineElectricalSoundSignalComment;
+  
+    this.runningEngineElectricalSeatMassage = entity.runningEngineElectricalSeatMassage;
+    this.runningEngineElectricalSeatMassageComment = entity.runningEngineElectricalSeatMassageComment;
+  
+    this.runningEngineElectricalWindshieldWashers = entity.runningEngineElectricalWindshieldWashers;
+    this.runningEngineElectricalWindshieldWashersComment = entity.runningEngineElectricalWindshieldWashersComment;
+  
+    this.runningEngineElectricalHeatedSeats = entity.runningEngineElectricalHeatedSeats;
+    this.runningEngineElectricalHeatedSeatsComment = entity.runningEngineElectricalHeatedSeatsComment;
+  
+    this.runningEngineElectricalWindshieldWipers = entity.runningEngineElectricalWindshieldWipers;
+    this.runningEngineElectricalWindshieldWipersComment = entity.runningEngineElectricalWindshieldWipersComment;
+  
+    this.runningEngineElectricalWindowLifters = entity.runningEngineElectricalWindowLifters;
+    this.runningEngineElectricalWindowLiftersComment = entity.runningEngineElectricalWindowLiftersComment;
+  
+    this.runningEngineElectricalElectricSunroof = entity.runningEngineElectricalElectricSunroof;
+    this.runningEngineElectricalElectricSunroofComment = entity.runningEngineElectricalElectricSunroofComment;
+  
+    this.runningEngineElectricalElectricSteering = entity.runningEngineElectricalElectricSteering;
+    this.runningEngineElectricalElectricSteeringComment = entity.runningEngineElectricalElectricSteeringComment;
+  
+    this.runningEngineElectricalElectricMirrors = entity.runningEngineElectricalElectricMirrors;
+    this.runningEngineElectricalElectricMirrorsComment = entity.runningEngineElectricalElectricMirrorsComment;
+  
+    this.runningEngineElectricalElectricSeats = entity.runningEngineElectricalElectricSeats;
+    this.runningEngineElectricalElectricSeatsComment = entity.runningEngineElectricalElectricSeatsComment;
+  
+    this.runningEngineElectricalElectricPanorama = entity.runningEngineElectricalElectricPanorama;
+    this.runningEngineElectricalElectricPanoramaComment = entity.runningEngineElectricalElectricPanoramaComment;
+  
+    this.runningEngineElectricalHeatedWindshield = entity.runningEngineElectricalHeatedWindshield;
+    this.runningEngineElectricalHeatedWindshieldComment = entity.runningEngineElectricalHeatedWindshieldComment;
+  
+    this.runningEngineElectricalElectricTrunkDrive = entity.runningEngineElectricalElectricTrunkDrive;
+    this.runningEngineElectricalElectricTrunkDriveComment = entity.runningEngineElectricalElectricTrunkDriveComment;
+
+    this.runningEngineMechanicalGearShifting = entity.runningEngineMechanicalGearShifting;
+    this.runningEngineMechanicalGearShiftingComment = entity.runningEngineMechanicalGearShiftingComment;
+  
+    this.runningEngineMechanicalEngineOperation = entity.runningEngineMechanicalEngineOperation;
+    this.runningEngineMechanicalEngineOperationComment = entity.runningEngineMechanicalEngineOperationComment;
+  
+    this.runningEngineMechanicalInteriorHeater = entity.runningEngineMechanicalInteriorHeater;
+    this.runningEngineMechanicalInteriorHeaterComment = entity.runningEngineMechanicalInteriorHeaterComment;
+  
+    this.runningEngineMechanicalPowerSteering = entity.runningEngineMechanicalPowerSteering;
+    this.runningEngineMechanicalPowerSteeringComment = entity.runningEngineMechanicalPowerSteeringComment;
+  
+    this.runningEngineMechanicalAirConditioner = entity.runningEngineMechanicalAirConditioner;
+    this.runningEngineMechanicalAirConditionerComment = entity.runningEngineMechanicalAirConditionerComment;
+
     this.dashboardNoErrors = entity.dashboardNoErrors;
     this.dashboardDiagnosticsFile = entity.dashboardDiagnosticsFile;
     this.dashboardDiagnosticsComment = entity.dashboardDiagnosticsComment;
@@ -966,8 +1239,28 @@ export class BetcarReportEntity implements Entity<BetcarReportEntity>, Report {
     this.dashboardIsCheckThree = entity.dashboardIsCheckThree;
     this.dashboardCommentThree = entity.dashboardCommentThree;
 
+    this.dashboardABS = entity.dashboardABS;
+    this.dashboardABSComment = entity.dashboardABSComment;
+  
+    this.dashboardESP = entity.dashboardESP;
+    this.dashboardESPComment = entity.dashboardESPComment;
+  
+    this.dashboardAirbag = entity.dashboardAirbag;
+    this.dashboardAirbagComment = entity.dashboardAirbagComment;
+  
+    this.dashboardCheckEngine = entity.dashboardCheckEngine;
+    this.dashboardCheckEngineComment = entity.dashboardCheckEngineComment;
+  
+    this.dashboardBattery = entity.dashboardBattery;
+    this.dashboardBatteryComment = entity.dashboardBatteryComment;
+  
+    this.dashboardTirePressure = entity.dashboardTirePressure;
+    this.dashboardTirePressureComment = entity.dashboardTirePressureComment;
+  
+    this.dashboardOilPressure = entity.dashboardOilPressure;
+    this.dashboardOilPressureComment = entity.dashboardOilPressureComment;
+
     this.testDriveAllSystemOk = entity.testDriveAllSystemOk;
-    this.testDriveMalfunctions = entity.testDriveMalfunctions;
     this.testDriveNameOne = entity.testDriveNameOne;
     this.testDriveIsCheckOne = entity.testDriveIsCheckOne;
     this.testDriveCommentOne = entity.testDriveCommentOne;
@@ -977,6 +1270,27 @@ export class BetcarReportEntity implements Entity<BetcarReportEntity>, Report {
     this.testDriveNameThree = entity.testDriveNameThree;
     this.testDriveIsCheckThree = entity.testDriveIsCheckThree;
     this.testDriveCommentThree = entity.testDriveCommentThree;
+
+    this.testDriveSuspension = entity.testDriveSuspension;
+    this.testDriveSuspensionComment = entity.testDriveSuspensionComment;
+  
+    this.testDriveEngine = entity.testDriveEngine;
+    this.testDriveEngineComment = entity.testDriveEngineComment;
+  
+    this.testDriveTransmission = entity.testDriveTransmission;
+    this.testDriveTransmissionComment = entity.testDriveTransmissionComment;
+  
+    this.testDriveSteering = entity.testDriveSteering;
+    this.testDriveSteeringComment = entity.testDriveSteeringComment;
+  
+    this.testDriveBrakeSystem = entity.testDriveBrakeSystem;
+    this.testDriveBrakeSystemComment = entity.testDriveBrakeSystemComment;
+  
+    this.testDriveParkingBrake = entity.testDriveParkingBrake;
+    this.testDriveParkingBrakeComment = entity.testDriveParkingBrakeComment;
+  
+    this.testDriveExhaustSystem = entity.testDriveExhaustSystem;
+    this.testDriveExhaustSystemComment = entity.testDriveExhaustSystemComment;
 
     this.expertOpinionPlusComment = entity.expertOpinionPlusComment;
     this.expertOpinionMinusComment = entity.expertOpinionMinusComment;
