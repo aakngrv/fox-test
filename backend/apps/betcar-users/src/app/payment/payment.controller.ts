@@ -16,7 +16,7 @@ export class PaymentController {
   })
   @Post('create-payment')
   public async createPayment() {
-    const newPayment = await this.paymentService.createPayment();
+    const newPayment = await this.paymentService.getPaymentLink();
     return newPayment;
   }
 }
