@@ -1,23 +1,22 @@
 import {Body, Controller, Delete, Get, HttpCode, HttpStatus, Param, Patch, Post} from '@nestjs/common';
-import { fillObject } from '@backend/util/util-core';
 import { ApiResponse, ApiTags } from '@nestjs/swagger';
 import { PaymentService } from './payment.service';
 
 
-@ApiTags('authentication')
-@Controller('auth')
+@ApiTags('Payments')
+@Controller('payment')
 export class PaymentController {
   constructor(
     private readonly paymentService: PaymentService
   ) {}
 
-  // @ApiResponse({
-  //   status: HttpStatus.CREATED,
-  //   description: 'The new pay has been successfully created.'
-  // })
-  // @Post('register-payment')
-  // public async createPayment(@Body() dto: CreateUserDto) {
-  //   const newUser = await this.authService.register(dto);
-  //   return fillObject(UserRdo, newUser);
-  // }
+  @ApiResponse({
+    status: HttpStatus.CREATED,
+    description: 'The new payment has been successfully created.'
+  })
+  @Post('create-payment')
+  public async createPayment() {
+    const newPayment = await this.paymentService.createPayment();
+    return newPayment;
+  }
 }

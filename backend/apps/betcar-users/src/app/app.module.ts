@@ -3,6 +3,7 @@ import { BetcarUserModule } from './betcar-user/betcar-user.module';
 import { AuthenticationModule } from './authentication/authentication.module';
 import { PrismaModule } from "./prisma/prisma.module";
 import { ConfigUsersModule } from '@backend/config/config-users';
+import { PaymentModule } from './payment/payment.module';
 
 
 @Module({
@@ -11,6 +12,7 @@ import { ConfigUsersModule } from '@backend/config/config-users';
     AuthenticationModule,
     PrismaModule,
     ConfigUsersModule,
+    PaymentModule
   ],
   controllers: [],
   providers: [],
