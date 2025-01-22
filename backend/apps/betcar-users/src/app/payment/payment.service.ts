@@ -7,6 +7,25 @@ import { CreatePaymentDto } from './dto/create-payment.dto';
 @Injectable()
 export class PaymentService {
 
+  
+  public getPaymentStatus = async (paiment_id: string) => {
+
+    try {
+      const response = await axios.get(
+        PAYMENT_URL + '/' + paiment_id,
+        {
+          auth: {
+            username: SHOP_ID,
+            password: SHOP_PASSWORD
+          },
+        },
+      )
+      return response.data;
+    } catch (err) {
+      console.error(err)
+    }
+  }
+
   public getPaymentLink = async (dto: CreatePaymentDto) => {
 
     const {
@@ -29,14 +48,14 @@ export class PaymentService {
             return_url: RETURN_URL
           },
           capture: true,
-          description: "Покупка услуги",
+          description: "Пополнение счета",
           receipt: {
             customer: {
               email: userEmail !== '' ? userEmail : 'aakngrv@mail.ru'
             },
             items: [
               {
-                description: "Покупка услуги",
+                description: "Пополнение счета",
                 quantity: "1.000",
                 amount: {
                   value: paymentAmount !== '' ? paymentAmount : '2.00',
@@ -60,7 +79,7 @@ export class PaymentService {
             password: SHOP_PASSWORD
           },
         },
-      )
+      );
       return response.data;
     } catch (err) {
       console.error(err)

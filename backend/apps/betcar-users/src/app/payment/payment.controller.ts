@@ -1,4 +1,4 @@
-import {Body, Controller, Delete, Get, HttpCode, HttpStatus, Param, Patch, Post} from '@nestjs/common';
+import { Body, Controller, Get, HttpStatus, Param, Post } from '@nestjs/common';
 import { ApiResponse, ApiTags } from '@nestjs/swagger';
 import { PaymentService } from './payment.service';
 import { CreatePaymentDto } from './dto/create-payment.dto';
@@ -19,5 +19,15 @@ export class PaymentController {
   public async createPayment(@Body() dto: CreatePaymentDto) {
     const newPayment = await this.paymentService.getPaymentLink(dto);
     return newPayment;
+  }
+
+  @ApiResponse({
+    status: HttpStatus.CREATED,
+    description: 'Payment status has been successfully received.'
+  })
+  @Get(':id')
+  public async getPaymentStatus(@Param('id') id: string) {
+    const newPaymentStatus = await this.paymentService.getPaymentStatus(id);
+    return newPaymentStatus;
   }
 }
