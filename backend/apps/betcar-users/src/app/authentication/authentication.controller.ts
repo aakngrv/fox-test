@@ -12,7 +12,7 @@ import { JwtRefreshGuard } from './guards/jwt-refresh.guard';
 import { RequestWithUser } from '@backend/shared/shared-types';
 
 
-@ApiTags('authentication')
+@ApiTags('Authentication')
 @Controller('auth')
 export class AuthenticationController {
   constructor(

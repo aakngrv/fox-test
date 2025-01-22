@@ -2,11 +2,17 @@ import { Injectable } from '@nestjs/common';
 import axios  from 'axios';
 import { v4 as uuidv4 } from 'uuid';
 import { PAYMENT_URL, RETURN_URL, SHOP_ID, SHOP_PASSWORD } from './payment.constants';
+import { CreatePaymentDto } from './dto/create-payment.dto';
 
 @Injectable()
 export class PaymentService {
 
-  public getPaymentLink = async () => {
+  public getPaymentLink = async (dto: CreatePaymentDto) => {
+
+    const {
+      paymentAmount,
+      userEmail
+    } = dto;
 
     const idempotenceKey = uuidv4();
 
@@ -15,7 +21,7 @@ export class PaymentService {
         PAYMENT_URL,
         {
           amount: {
-            value: "2.00",
+            value: paymentAmount !== '' ? paymentAmount : '2.00',
             currency: "RUB"
           },
           confirmation: {
@@ -26,14 +32,14 @@ export class PaymentService {
           description: "Покупка услуги",
           receipt: {
             customer: {
-              email: "aakngrv@mail.ru"
+              email: userEmail !== '' ? userEmail : 'aakngrv@mail.ru'
             },
             items: [
               {
                 description: "Покупка услуги",
                 quantity: "1.000",
                 amount: {
-                  value: "2.00",
+                  value: paymentAmount !== '' ? paymentAmount : '2.00',
                   currency: "RUB"
                 },
                 vat_code: 1,
@@ -55,7 +61,7 @@ export class PaymentService {
           },
         },
       )
-      return response.data.confirmation.confirmation_url;
+      return response.data;
     } catch (err) {
       console.error(err)
     }
