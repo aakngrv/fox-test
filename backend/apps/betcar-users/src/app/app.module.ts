@@ -4,6 +4,10 @@ import { AuthenticationModule } from './authentication/authentication.module';
 import { PrismaModule } from "./prisma/prisma.module";
 import { ConfigUsersModule } from '@backend/config/config-users';
 import { PaymentModule } from './payment/payment.module';
+import { UserBidsModule } from './bids/bids.module';
+import { OrgBidsModule } from './organization-bids/org-bids.module';
+import { UserFormModule } from './user-form/user-form.module';
+import { TurnkeySelectionModule } from './turnkey-selection/turnkey-selection.module';
 
 
 @Module({
@@ -12,7 +16,11 @@ import { PaymentModule } from './payment/payment.module';
     AuthenticationModule,
     PrismaModule,
     ConfigUsersModule,
-    PaymentModule
+    PaymentModule,
+    UserBidsModule,
+    OrgBidsModule,
+    UserFormModule,
+    TurnkeySelectionModule
   ],
   controllers: [],
   providers: [],

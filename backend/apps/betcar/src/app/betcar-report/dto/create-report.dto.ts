@@ -21,6 +21,12 @@ export class CreateReportDto {
   public userEmail: string;
 
   @ApiProperty({
+    description: 'Тариф',
+    example: false
+  })
+  public isPrime: boolean;
+
+  @ApiProperty({
     description: 'Отказа от осмотра',
     example: false
   })

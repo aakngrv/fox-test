@@ -39,6 +39,13 @@ export class ReportRdo {
   public userEmail: string;
 
   @ApiProperty({
+    description: 'Тариф',
+    example: false
+  })
+  @Expose()
+  public isPrime: boolean;
+
+  @ApiProperty({
     description: 'Отказа от осмотра',
     example: false
   })

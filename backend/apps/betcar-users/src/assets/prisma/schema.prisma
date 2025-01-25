@@ -51,16 +51,75 @@ model RefreshToken {
 
 // ************************************************************************************************ //
 
+// ** Модели заявок ** //
+
+model UserBid {
+  bidId     Int      @id @default(autoincrement()) @map("bid_id")
+  firstname String   @default("")
+  email     String   @default("")
+  city      String   @default("")
+  phone     String   @default("")
+  createdAt DateTime @default(now()) @map("created_at")
+
+  @@map("user_bids")
+}
+
+model OrganizatonBid {
+  bidId             Int      @id @default(autoincrement()) @map("bid_id")
+  firstname         String   @default("")
+  email             String   @default("")
+  organizationName  String   @default("") @map("organization_name")
+  city              String   @default("")
+  phone             String   @default("")
+  createdAt         DateTime @default(now()) @map("created_at")
+
+  @@map("organization_bids")
+}
+
+model UserProfile {
+  userProfileId           Int      @id @default(autoincrement()) @map("user_profile_id")
+  firstname               String   @default("")
+  email                   String   @default("")
+  age                     String   @default("")
+  city                    String   @default("")
+  phone                   String   @default("")
+  driverLicense           String[] @default([""]) @map("driver_license")
+  experienceWithTransport String[] @default([""]) @map("experience_with_transport")
+  workExperience          String   @default("") @map("work_experience")
+  createdAt               DateTime @default(now()) @map("created_at")
+
+  @@map("user_profiles")
+}
+
+model TurnkeySelection {
+  turnkeySelectionId Int      @id @default(autoincrement()) @map("turnkey_selection_id")
+  firstname          String   @default("")
+  phone              String   @default("")
+  autoModel          String   @default("")
+  mileage            String[] @default([""])
+  gearboxType        String[] @default([""]) @map("gearbox_type")
+  driveType          String[] @default([""]) @map("drive_type")
+  yearOfIssue        String[] @default([""]) @map("year_of_issue")
+  colors             String[] @default([""]) 
+  engineType         String[] @default([""]) @map("engine_type")
+
+   @@map("turnkey_selections")
+}
+
+// ************************************************************************************************ //
+
 // ** Модели сервиса "betcar" ** //
 
 model Report {
-  reportId                Int                       @id @default(autoincrement()) @map("report_id")
-  userId                  Int                       @map("user_id")
-  title                   String                    @default("")
-  userEmail               String                    @default("") @map("user_email")
-  reportNumber            Int                       @default(autoincrement()) @map("report_number")
-  createdAt               DateTime                  @default(now()) @map("created_at")
-  publishAt               DateTime                  @updatedAt @map("publish_at")
+  reportId     Int       @id @default(autoincrement()) @map("report_id")
+  userId       Int       @map("user_id")
+  title        String    @default("")
+  userEmail    String    @default("") @map("user_email")
+  reportNumber Int       @default(autoincrement()) @map("report_number")
+  isPrime      Boolean   @default(false) @map("is_prime")
+  createdAt    DateTime  @default(now()) @map("created_at")
+  publishAt    DateTime  @updatedAt @map("publish_at")
+
 
   sellerDetailsRefusalOfInspection Boolean  @default(false) @map("seller_details_refusal_of_inspection")
   sellerDetailsLinkToAd            String[] @default([""]) @map("seller_details_link_to_ad")

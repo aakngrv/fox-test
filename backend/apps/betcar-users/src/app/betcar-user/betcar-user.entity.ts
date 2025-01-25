@@ -1,7 +1,6 @@
 import { User } from "@backend/shared/shared-types";
 import { compare, genSalt, hash } from 'bcrypt';
 import { SALT_ROUNDS } from './betcar-user.constants';
-import { Report } from "@backend/shared/shared-types";
 
 
 export class BetcarUserEntity implements User {

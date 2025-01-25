@@ -4,6 +4,7 @@ export interface Report {
   userEmail: string;
   reportNumber?: number;
   title: string;
+  isPrime: boolean;
 
   sellerDetailsRefusalOfInspection: boolean;
   sellerDetailsLinkToAd: string[];

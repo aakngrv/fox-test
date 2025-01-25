@@ -1,5 +1,3 @@
-import { Report } from "./report.interface";
-
 export interface User {
   userId?: number;
   firstname: string;
