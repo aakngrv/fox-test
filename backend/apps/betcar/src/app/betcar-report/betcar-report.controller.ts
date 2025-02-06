@@ -55,7 +55,7 @@ export class BetcarReportController {
     status: HttpStatus.OK,
     description: 'Данные отчета найдены'
   })
-  @Post('/vin')
+  @Post('/vin-body-number-search')
   async showVIN(@Body() vin: vinSearchDto) {
     const existReportVIN = await this.betcarReportService.getReportByVIN(vin);
     return fillObject(ReportRdo, existReportVIN);
@@ -66,7 +66,7 @@ export class BetcarReportController {
     status: HttpStatus.OK,
     description: 'Данные отчета найдены'
   })
-  @Post('/state-body-number-search')
+  @Post('/state-number-search')
   async showStateNumber(@Body() stateNumber: StateNumberSearchDto) {
     const existReportStateNumber = await this.betcarReportService.getReportByStateNumber(stateNumber);
     return fillObject(ReportRdo, existReportStateNumber);
