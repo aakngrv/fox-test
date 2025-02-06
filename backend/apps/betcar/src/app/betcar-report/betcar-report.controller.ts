@@ -8,6 +8,7 @@ import { ApiResponse, ApiTags } from '@nestjs/swagger';
 import { vinSearchDto } from './dto/vin-search.dto';
 import { userEmailDto } from './dto/user-email.dto';
 import { reportNumberDto } from './dto/report-number.dto';
+import { StateNumberSearchDto } from './dto/state-number-search.dto';
 
 
 @ApiTags('Отчеты')
@@ -58,6 +59,17 @@ export class BetcarReportController {
   async showVIN(@Body() vin: vinSearchDto) {
     const existReportVIN = await this.betcarReportService.getReportByVIN(vin);
     return fillObject(ReportRdo, existReportVIN);
+  }
+
+  @ApiResponse({
+    type: ReportRdo,
+    status: HttpStatus.OK,
+    description: 'Данные отчета найдены'
+  })
+  @Post('/state-body-number-search')
+  async showStateNumber(@Body() stateNumber: StateNumberSearchDto) {
+    const existReportStateNumber = await this.betcarReportService.getReportByStateNumber(stateNumber);
+    return fillObject(ReportRdo, existReportStateNumber);
   }
 
   @ApiResponse({

@@ -143,7 +143,7 @@ model Report {
 
   stateNumberAbsent        Boolean  @default(false) @map("state_number_absent")
   stateNumberForeign       Boolean  @default(false) @map("state_number_foreign")
-  stateNumberStateNumber              String   @default("") @map("state_number")
+  stateNumberStateNumber   String   @default("") @map("state_number")
   stateNumberComment       String   @default("") @map("state_number_comment")
 
   tCPAbsent         Boolean  @default(false)  @map("tcp__absent")
