@@ -10,13 +10,13 @@ export class UpdateReportDto {
   
   @ApiProperty({
     description: 'Заголовок отчета',
-    example: 'Осмотр автомобиля BMW X6'
+    example: ''
   })
   public title: string;
 
   @ApiProperty({
     description: 'Email заказчика осмотра',
-    example: 'string@email.com'
+    example: ''
   })
   public userEmail: string;
 
@@ -34,44 +34,44 @@ export class UpdateReportDto {
 
   @ApiProperty({
     description: 'Ссылка на объявление',
-    example: ["string"]
+    example: ""
   })
-  public sellerDetailsLinkToAd: string[];
+  public sellerDetailsLinkToAd: string;
 
   @ApiProperty({
     description: 'Имя продавца',
-    example: 'Иван'
+    example: ''
   })
   public sellerDetailsName: string;
   
   @ApiProperty({
     description: 'Номер телефона',
-    example: '+79195674839'
+    example: ''
   })
   public sellerDetailsPhone: string;
   
   @ApiProperty({
     description: 'Стоимость автомобиля',
-    example: '100000'
+    example: ''
   })
   public sellerDetailsCarCost: string;
   
   @ApiProperty({
     description: 'Собственник или дилер',
-    example: "string"
+    example: ""
   })
   public sellerDetailsRole: string;
   
   @ApiProperty({
     description: 'Общий комментнарий',
-    example: 'Тачка огонь!!!'
+    example: ''
   })
   public sellerDetailsComment: string;
 
   ////////////////////////////////////////
   @ApiProperty({
     description: 'VIN номер',
-    example: "string"
+    example: ""
   })
   public vinNumber: string;
 
@@ -89,19 +89,19 @@ export class UpdateReportDto {
 
   @ApiProperty({
     description: 'Фото VIN',
-    example: ["string"]
+    example: [""]
   })
   public vinBodyNumberPhoto: string[];
 
   @ApiProperty({
     description: 'Комментарий',
-    example: "string"
+    example: ""
   })
   public vinBodyNumberComment: string;
 
   @ApiProperty({
     description: 'Рамы номер',
-    example: "string"
+    example: ""
   })
   public frameNumber: string;
 
@@ -119,13 +119,13 @@ export class UpdateReportDto {
 
   @ApiProperty({
     description: 'Фото номера рамы',
-    example: ["string"]
+    example: [""]
   })
   public frameNumberPhoto: string[];
   
   @ApiProperty({
     description: 'Комментарий',
-    example: "string"
+    example: ""
   })
   public frameNumberComment: string;
 
@@ -143,13 +143,13 @@ export class UpdateReportDto {
 
   @ApiProperty({
     description: 'Гос номер',
-    example: "string"
+    example: ""
   })
   public stateNumberStateNumber: string;
 
   @ApiProperty({
     description: 'Комментарий',
-    example: "string"
+    example: ""
   })
   public stateNumberComment: string;
 
@@ -161,25 +161,25 @@ export class UpdateReportDto {
 
   @ApiProperty({
     description: 'Тип ПТС',
-    example: 'string'
+    example: ''
   })
   public tCPType: string;
 
   @ApiProperty({
     description: 'Фото',
-    example: ["string"]
+    example: [""]
   })
   public tCPPhoto: string[];
 
   @ApiProperty({
     description: 'Количество владельцев',
-    example: "string"
+    example: ""
   })
   public tCPNumberOfOwners: string;
 
   @ApiProperty({
     description: 'Комментарий',
-    example: 'string'
+    example: ''
   })
   public tCPComment: string;
 
@@ -191,73 +191,73 @@ export class UpdateReportDto {
 
   @ApiProperty({
     description: 'Фото',
-    example: ["string"]
+    example: [""]
   })
   public sTSPhoto: string[];
 
   @ApiProperty({
     description: 'Комментарий',
-    example: "string"
+    example: ""
   })
   public sTSComment: string;
 
   @ApiProperty({
     description: 'Марка',
-    example: "string"
+    example: ""
   })
   public carDataCarBrand: string;
 
   @ApiProperty({
     description: 'Модель',
-    example: "string"
+    example: ""
   })
   public carDataCarModel: string;
 
   @ApiProperty({
     description: 'Год',
-    example: "string"
+    example: ""
   })
   public carDataManufactureYear: string;
 
   @ApiProperty({
     description: 'Цвет',
-    example: "string"
+    example: ""
   })
   public carDataColor: string;
 
   @ApiProperty({
     description: 'Тип кузова',
-    example: "string"
+    example: ""
   })
   public carDataBodyType: string;
 
   @ApiProperty({
     description: 'Тип двигателя',
-    example: "string"
+    example: ""
   })
   public carDataEnginesType: string;
 
   @ApiProperty({
     description: 'Тип КПП',
-    example: "string"
+    example: ""
   })
   public carDataGearboxType: string;
 
   @ApiProperty({
     description: 'Привод',
-    example: "string"
+    example: ""
   })
   public carDataDriveUnit: string;
 
   @ApiProperty({
     description: 'Расположение руля',
-    example: "string"
+    example: ""
   })
   public carDataSteeringWheelLocation: string;
   
   @ApiProperty({
     description: 'Номер двигателя',
-    example: "string"
+    example: ""
   })
   public engineNumber: string;
 
@@ -275,79 +275,79 @@ export class UpdateReportDto {
 
   @ApiProperty({
     description: 'Фото номера рамы',
-    example: ["string"]
+    example: [""]
   })
   public engineNumberPhoto: string[];
 
   @ApiProperty({
     description: 'Номер двигателя',
-    example: "string"
+    example: ""
   })
   public engineNumberEngineNumber: string;
 
   @ApiProperty({
     description: 'Комментарий',
-    example: "string"
+    example: ""
   })
   public engineNumberComment: string;
 
   @ApiProperty({
     description: 'Объем двигателя',
-    example: "string"
+    example: ""
   })
   public carDataEngineCapacity: string;
 
   @ApiProperty({
     description: 'Мощность',
-    example: "string"
+    example: ""
   })
   public carDataPower: string;
 
   @ApiProperty({
     description: 'Сервисная книжка',
-    example: "string"
+    example: ""
   })
   public carDataServiceBook: string;
 
   @ApiProperty({
     description: 'Комментарий',
-    example: "string"
+    example: ""
   })
   public additionalDocumentsComment: string;
 
   @ApiProperty({
     description: 'Фото',
-    example: ["string"]
+    example: [""]
   })
   public additionalDocumentsPhoto: string[];
   /////////////////////////////////////////
   @ApiProperty({
     description: 'Страна',
-    example: "string"
+    example: ""
   })
   public locationCountry: string;
 
   @ApiProperty({
     description: 'Регион',
-    example: "string"
+    example: ""
   })
   public locationRegion: string;
 
   @ApiProperty({
     description: 'Город',
-    example: "string"
+    example: ""
   })
   public locationCity: string;
 
   @ApiProperty({
     description: 'Адрес',
-    example: "string"
+    example: ""
   })
   public locationAddress: string;
 
   @ApiProperty({
     description: 'Комментарий',
-    example: "string"
+    example: ""
   })
   public locationComment: string;
   ///////////////////////////////////////////
@@ -402,145 +402,145 @@ export class UpdateReportDto {
 
   @ApiProperty({
     description: 'Тип дисков',
-    example: 'string'
+    example: ''
   })
   public complectationWheelsTypeOfDisks: string;
 
   @ApiProperty({
     description: 'Сезонность',
-    example: "string"
+    example: ""
   })
   public complectationWheelsSeasonality: string;
 
   @ApiProperty({
     description: 'Марка шин переднего левого колеса',
-    example: 'string'
+    example: ''
   })
   public complectationWheelsFrontLeftBrand: string;
 
   @ApiProperty({
     description: 'Марка шин заднего левого колеса',
-    example: 'string'
+    example: ''
   })
   public complectationWheelsBackLeftBrand: string;
 
   @ApiProperty({
     description: 'Марка шин переднего правого колеса',
-    example: 'string'
+    example: ''
   })
   public complectationWheelsFrontRightBrand: string;
 
   @ApiProperty({
     description: 'Марка шин заднего правого колеса',
-    example: 'string'
+    example: ''
   })
   public complectationWheelsBackRightBrand: string;
 
   @ApiProperty({
     description: 'Модель шин переднего левого колеса',
-    example: 'string'
+    example: ''
   })
   public complectationWheelsFrontLeftModel: string;
 
   @ApiProperty({
     description: 'Модель шин заднего левого колеса',
-    example: 'string'
+    example: ''
   })
   public complectationWheelsBackLeftModel: string;
 
   @ApiProperty({
     description: 'Модель шин переднего правого колеса',
-    example: 'string'
+    example: ''
   })
   public complectationWheelsFrontRightModel: string;
 
   @ApiProperty({
     description: 'Модель шин заднего правого колеса',
-    example: 'string'
+    example: ''
   })
   public complectationWheelsBackRightModel: string;
 
   @ApiProperty({
     description: 'Дата выпуска шин переднего левого колеса',
-    example: 'string'
+    example: ''
   })
   public complectationWheelsFrontLeftIssueDate: string;
 
   @ApiProperty({
     description: 'Дата выпуска шин заднего левого колеса',
-    example: 'string'
+    example: ''
   })
   public complectationWheelsBackLeftIssueDate: string;
 
   @ApiProperty({
     description: 'Дата выпуска шин переднего правого колеса',
-    example: 'string'
+    example: ''
   })
   public complectationWheelsFrontRightIssueDate: string;
 
   @ApiProperty({
     description: 'Дата выпуска шин заднего правого колеса',
-    example: 'string'
+    example: ''
   })
   public complectationWheelsBackRightIssueDate: string;
 
   @ApiProperty({
     description: 'Параметры шин переднего левого колеса',
-    example: ['string']
+    example: ['']
   })
   public complectationWheelsFrontLeftOptions: string[];
 
   @ApiProperty({
     description: 'Параметры шин заднего левого колеса',
-    example: ['string']
+    example: ['']
   })
   public complectationWheelsBackLeftOptions: string[];
 
   @ApiProperty({
     description: 'Параметры шин переднего правого колеса',
-    example: ['string']
+    example: ['']
   })
   public complectationWheelsFrontRightOptions: string[];
 
   @ApiProperty({
     description: 'Параметры шин заднего правого колеса',
-    example: ['string']
+    example: ['']
   })
   public complectationWheelsBackRightOptions: string[];
 
   @ApiProperty({
     description: 'Износ шин переднего левого колеса',
-    example: 'string'
+    example: ''
   })
   public complectationWheelsFrontLeftWear: string;
 
   @ApiProperty({
     description: 'Износ шин заднего левого колеса',
-    example: 'string'
+    example: ''
   })
   public complectationWheelsBackLeftWear: string;
 
   @ApiProperty({
     description: 'Износ шин переднего правого колеса',
-    example: 'string'
+    example: ''
   })
   public complectationWheelsFrontRightWear: string;
 
   @ApiProperty({
     description: 'Износ шин заднего правого колеса',
-    example: 'string'
+    example: ''
   })
   public complectationWheelsBackRightWear: string;
   
   @ApiProperty({
     description: 'Дополнительные шины - сезонность',
-    example: ['string']
+    example: ['']
   })
   public complectationWheelsAdditionalTiresSeasonality: string[];
   
   @ApiProperty({
     description: 'Дополнительные диски - тип',
-    example: 'string'
+    example: ''
   })
   public complectationWheelsAdditionalDisksType: string;
   ///////////////////////////////////////////////////////////////////////////////////////
@@ -613,43 +613,43 @@ export class UpdateReportDto {
 
   @ApiProperty({
     description: 'Материал салона',
-    example: "string"
+    example: ""
   })
   public complectationSalonInteriorMaterial: string;
 
   @ApiProperty({
     description: 'Подогрев сидений',
-    example: ["string"]
+    example: [""]
   })
   public complectationSalonHeatedSeats: string[];
 
   @ApiProperty({
     description: 'Регулировка сидений по высоте',
-    example: "string"
+    example: ""
   })
   public complectationSalonSeatHeightAdjustment: string;
 
   @ApiProperty({
     description: 'Электрорегулировка сидений',
-    example: ["string"]
+    example: [""]
   })
   public complectationSalonElectricallyAdjustableSeats: string[];
 
   @ApiProperty({
     description: 'Память положения сидений',
-    example: "string"
+    example: ""
   })
   public complectationSalonSeatPositionMemory: string;
 
   @ApiProperty({
     description: 'Вентиляция сидений',
-    example: ["string"]
+    example: [""]
   })
   public complectationSalonSeatVentilation: string[];
 
   @ApiProperty({
     description: 'Сиденья с массажем',
-    example: ["string"]
+    example: [""]
   })
   public complectationSalonSeatMassage: string[];
   ///////////////////////////////////////////////////////////////////////////
@@ -698,7 +698,7 @@ export class UpdateReportDto {
 
   @ApiProperty({
     description: 'Фары',
-    example: "string"
+    example: ""
   })
   public complectationHeadlightsHeadlights: string;
   /////////////////////////////////////////////////////////////////////////////////
@@ -867,55 +867,55 @@ export class UpdateReportDto {
 
   @ApiProperty({
     description: 'Камера',
-    example: ["string"]
+    example: [""]
   })
   public complectationComfortCamera: string[];
 
   @ApiProperty({
     description: 'Подвеска',
-    example: ["string"]
+    example: [""]
   })
   public complectationComfortSuspension: string[];
 
   @ApiProperty({
     description: 'Кондиционер',
-    example: "string"
+    example: ""
   })
   public complectationComfortAirConditioner: string;
 
   @ApiProperty({
     description: 'Усилитель руля',
-    example: "string"
+    example: ""
   })
   public complectationComfortPowerSteering: string;
 
   @ApiProperty({
     description: 'Круиз-контроль',
-    example: "string"
+    example: ""
   })
   public complectationComfortCruiseControl: string;
 
   @ApiProperty({
     description: 'Электроподогрев',
-    example: ["string"]
+    example: [""]
   })
   public complectationComfortElectricHeating: string[];
 
   @ApiProperty({
     description: 'Регулировка руля',
-    example: ["string"]
+    example: [""]
   })
   public complectationComfortSteeringWheelAdjustment: string[];
 
   @ApiProperty({
     description: 'Помощь при парковке',
-    example: ["string"]
+    example: [""]
   })
   public complectationComfortParkingAssistanceSystem: string[];
 
   @ApiProperty({
     description: 'Электроподъемние стекла',
-    example: ["string"]
+    example: [""]
   })
   public complectationComfortElectricLifts: string[];
   /////////////////////////////////////////////////////////////////////////////////////////////////
@@ -939,19 +939,19 @@ export class UpdateReportDto {
 
   @ApiProperty({
     description: 'Подушки безопасности',
-    example: ["string"]
+    example: [""]
   })
   public complectationSafetyAirbags: string[];
 
   @ApiProperty({
     description: 'Система крепления isofix',
-    example: ["string"]
+    example: [""]
   })
   public complectationSafetyIsofix: string[];
 
   @ApiProperty({
     description: 'Вспомогательные системы',
-    example: ["string"]
+    example: [""]
   })
   public complectationSafetyAuxiliarySystems: string[];
   ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -987,7 +987,7 @@ export class UpdateReportDto {
 
   @ApiProperty({
     description: 'Сигнализация',
-    example: "string"
+    example: ""
   })
   public complectationProtectionSignaling: string;
   //////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -1029,13 +1029,13 @@ export class UpdateReportDto {
 
   @ApiProperty({
     description: 'Количество ключей',
-    example: "string"
+    example: ""
   })
   public complectationOtherNumberOfKeys: string;
 
   @ApiProperty({
     description: 'Запасное колесо',
-    example: "string"
+    example: ""
   })
   public complectationOtherSpareWheel: string;
   ///////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -1053,175 +1053,175 @@ export class UpdateReportDto {
 
   @ApiProperty({
     description: 'Крыша',
-    example: ["string"]
+    example: [""]
   })
   public paintworkInspectionRoof: string[];
 
   @ApiProperty({
     description: 'Крышка багажника',
-    example: ["string"]
+    example: [""]
   })
   public paintworkInspectionTrunkLid: string[];
 
   @ApiProperty({
     description: 'Правое заднее крыло',
-    example: ["string"]
+    example: [""]
   })
   public paintworkInspectionRightRearFender: string[];
 
   @ApiProperty({
     description: 'Правая задняя стойка',
-    example: ["string"]
+    example: [""]
   })
   public paintworkInspectionRightRearPillar: string[];
 
   @ApiProperty({
     description: 'Правая задняя дверь',
-    example: ["string"]
+    example: [""]
   })
   public paintworkInspectionRightRearDoor: string[];
 
   @ApiProperty({
     description: 'Правый проем задней двери',
-    example: ["string"]
+    example: [""]
   })
   public paintworkInspectionRightRearDoorOpening: string[];
 
   @ApiProperty({
     description: 'Правая центральная стойка',
-    example: ["string"]
+    example: [""]
   })
   public paintworkInspectionRightCenterPillar: string[];
 
   @ApiProperty({
     description: 'Правый порог',
-    example: ["string"]
+    example: [""]
   })
   public paintworkInspectionRightThreshold: string[];
 
   @ApiProperty({
     description: 'Правая передняя дверь',
-    example: ["string"]
+    example: [""]
   })
   public paintworkInspectionRightFrontDoor: string[];
 
   @ApiProperty({
     description: 'Правый проем передней двери',
-    example: ["string"]
+    example: [""]
   })
   public paintworkInspectionRightFrontDoorOpening: string[];
 
   @ApiProperty({
     description: 'Правая передняя стойка',
-    example: ["string"]
+    example: [""]
   })
   public paintworkInspectionRightFrontPillar: string[];
 
   @ApiProperty({
     description: 'Правое переднее крыло',
-    example: ["string"]
+    example: [""]
   })
   public paintworkInspectionRightFrontFender: string[];
 
   @ApiProperty({
     description: 'Капот',
-    example: ["string"]
+    example: [""]
   })
   public paintworkInspectionHood: string[];
   
   @ApiProperty({
     description: 'Левое переднее крыло',
-    example: ["string"]
+    example: [""]
   })
   public paintworkInspectionLeftFrontFender: string[];
 
   @ApiProperty({
     description: 'Левая передняя стойка',
-    example: ["string"]
+    example: [""]
   })
   public paintworkInspectionLeftFrontPillar: string[];
 
   @ApiProperty({
     description: 'Левая передняя дверь',
-    example: ["string"]
+    example: [""]
   })
   public paintworkInspectionLeftFrontDoor: string[];
 
   @ApiProperty({
     description: 'Левый проем передней двери',
-    example: ["string"]
+    example: [""]
   })
   public paintworkInspectionLeftFrontDoorOpening: string[];
 
   @ApiProperty({
     description: 'Левая центральная стойка',
-    example: ["string"]
+    example: [""]
   })
   public paintworkInspectionLeftCenterPillar: string[];
 
   @ApiProperty({
     description: 'Левый порог',
-    example: ["string"]
+    example: [""]
   })
   public paintworkInspectionLeftThreshold: string[];
 
   @ApiProperty({
     description: 'Левая задняя дверь',
-    example: ["string"]
+    example: [""]
   })
   public paintworkInspectionLeftRearDoor: string[];
 
   @ApiProperty({
     description: 'Левый проем задней двери',
-    example: ["string"]
+    example: [""]
   })
   public paintworkInspectionLeftRearDoorOpening: string[];
 
   @ApiProperty({
     description: 'Левая задняя стойка',
-    example: ["string"]
+    example: [""]
   })
   public paintworkInspectionLeftRearPillar: string[];
 
   @ApiProperty({
     description: 'Левое заднее крыло',
-    example: ["string"]
+    example: [""]
   })
   public paintworkInspectionLeftRearFender: string[];
   
   @ApiProperty({
     description: 'Имя элемента',
-    example: "string"
+    example: ""
   })
   public paintworkInspectionAddNameOne: string;
   
   @ApiProperty({
     description: 'Инфо элемента',
-    example: ["string"]
+    example: [""]
   })
   public paintworkInspectionAddInfoOne: string[];
 
   @ApiProperty({
     description: 'Имя элемента',
-    example: "string"
+    example: ""
   })
   public paintworkInspectionAddNameTwo: string;
 
   @ApiProperty({
     description: 'Инфо элемента',
-    example: ["string"]
+    example: [""]
   })
   public paintworkInspectionAddInfTwo: string[];
 
   @ApiProperty({
     description: 'Имя элемента',
-    example: "string"
+    example: ""
   })
   public paintworkInspectionAddNameThree: string;
 
   @ApiProperty({
     description: 'Инфо элемента',
-    example: ["string"]
+    example: [""]
   })
   public paintworkInspectionAddInfoThree: string[];
   /////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -1234,79 +1234,79 @@ export class UpdateReportDto {
 
   @ApiProperty({
     description: 'Левый лонжерон',
-    example: ['string']
+    example: ['']
   })
   public engineCompartmentDamageLeftSideMember: string[];
 
   @ApiProperty({
     description: 'Левый стакан',
-    example: ['string']
+    example: ['']
   })
   public engineCompartmentDamageLeftGlass: string[];
 
   @ApiProperty({
     description: 'Правый лонжерон',
-    example: ['string']
+    example: ['']
   })
   public engineCompartmentDamageRightSideMember: string[];
 
   @ApiProperty({
     description: 'Правый стакан',
-    example: ['string']
+    example: ['']
   })
   public engineCompartmentDamageRightGlass: string[];
 
   @ApiProperty({
     description: 'Петли капота',
-    example: ['string']
+    example: ['']
   })
   public engineCompartmentDamageHoodHinges: string[]; 
 
   @ApiProperty({
     description: 'Телевизор',
-    example: ['string']
+    example: ['']
   })
   public engineCompartmentDamageTelevisor: string[];
   
   @ApiProperty({
     description: 'Моторный щит',
-    example: ['string']
+    example: ['']
   })
   public engineCompartmentDamageMotorShield: string[];
 
   @ApiProperty({
     description: 'Имя элемента',
-    example: "string"
+    example: ""
   })
   public engineCompartmentDamageAddNameOne: string;
 
   @ApiProperty({
     description: 'Инфо элемента',
-    example: ["string"]
+    example: [""]
   })
   public engineCompartmentDamageAddInfoOne: string[];
 
   @ApiProperty({
     description: 'Имя элемента',
-    example: "string"
+    example: ""
   })
   public engineCompartmentDamageAddNameTwo: string;
 
   @ApiProperty({
     description: 'Инфо элемента',
-    example: ["string"]
+    example: [""]
   })
   public engineCompartmentDamageAddInfTwo: string[];
 
   @ApiProperty({
     description: 'Имя элемента',
-    example: "string"
+    example: ""
   })
   public engineCompartmentDamageAddNameThree: string;
 
   @ApiProperty({
     description: 'Инфо элемента',
-    example: ["string"]
+    example: [""]
   })
   public engineCompartmentDamageAddInfoThree: string[];
   ////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -1319,73 +1319,73 @@ export class UpdateReportDto {
   
   @ApiProperty({
     description: 'Противотуманные фары',
-    example: ["string"]
+    example: [""]
   })
   public frontSideDamageFogLights: string[]; 
 
   @ApiProperty({
     description: 'Решетка радиатора',
-    example: ["string"]
+    example: [""]
   })
   public frontSideDamageRadiatorGrille: string[]; 
 
   @ApiProperty({
     description: 'Бампер',
-    example: ["string"]
+    example: [""]
   })
   public frontSideDamageFrontBumper: string[]; 
 
   @ApiProperty({
     description: 'Правая фара',
-    example: ["string"]
+    example: [""]
   })
   public frontSideDamageRightHeadlight: string[]; 
 
   @ApiProperty({
     description: 'Левая фара',
-    example: ["string"]
+    example: [""]
   })
   public frontSideDamageLeftHeadlight: string[]; 
 
   @ApiProperty({
     description: 'Капот',
-    example: ["string"]
+    example: [""]
   })
   public frontSideDamageHood: string[]; 
   
   @ApiProperty({
     description: 'Имя элемента',
-    example: "string"
+    example: ""
   })
   public frontSideDamageAddNameOne: string;
 
   @ApiProperty({
     description: 'Инфо элемента',
-    example: ["string"]
+    example: [""]
   })
   public frontSideDamageAddInfoOne: string[];
 
   @ApiProperty({
     description: 'Имя элемента',
-    example: "string"
+    example: ""
   })
   public frontSideDamageAddNameTwo: string;
 
   @ApiProperty({
     description: 'Инфо элемента',
-    example: ["string"]
+    example: [""]
   })
   public frontSideDamageAddInfTwo: string[];
 
   @ApiProperty({
     description: 'Имя элемента',
-    example: "string"
+    example: ""
   })
   public frontSideDamageAddNameThree: string;
 
   @ApiProperty({
     description: 'Инфо элемента',
-    example: ["string"]
+    example: [""]
   })
   public frontSideDamageAddInfoThree: string[];
   //////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -1398,91 +1398,91 @@ export class UpdateReportDto {
   
   @ApiProperty({
     description: 'Переднее крыло',
-    example: ['string']
+    example: ['']
   })
   public leftSideDamageLeftFrontFender: string[]; 
 
   @ApiProperty({
     description: 'Передняя стойка',
-    example: ['string']
+    example: ['']
   })
   public leftSideDamageLeftFrontPillar: string[]; 
 
   @ApiProperty({
     description: 'Передняя дверь',
-    example: ['string']
+    example: ['']
   })
   public leftSideDamageLeftFrontDoor: string[]; 
 
   @ApiProperty({
     description: 'Центральная стойка',
-    example: ['string']
+    example: ['']
   })
   public leftSideDamageLeftCenterPillar: string[];
   
   @ApiProperty({
     description: 'Задняя дверь',
-    example: ['string']
+    example: ['']
   })
   public leftSideDamageLeftRearDoor: string[]; 
 
   @ApiProperty({
     description: 'Задняя стойка',
-    example: ['string']
+    example: ['']
   })
   public leftSideDamageLeftRearPillar: string[]; 
 
   @ApiProperty({
     description: 'Заднее крыло',
-    example: ['string']
+    example: ['']
   })
   public leftSideDamageLeftRearFender: string[]; 
 
   @ApiProperty({
     description: 'Левое зеркало',
-    example: ['string']
+    example: ['']
   })
   public leftSideDamageLeftMirror: string[]; 
 
   @ApiProperty({
     description: 'Порог',
-    example: ['string']
+    example: ['']
   })
   public leftSideDamageLeftThreshold: string[]; 
 
   @ApiProperty({
     description: 'Имя элемента',
-    example: "string"
+    example: ""
   })
   public leftSideDamageAddNameOne: string;
 
   @ApiProperty({
     description: 'Инфо элемента',
-    example: ["string"]
+    example: [""]
   })
   public leftSideDamageAddInfoOne: string[];
 
   @ApiProperty({
     description: 'Имя элемента',
-    example: "string"
+    example: ""
   })
   public leftSideDamageAddNameTwo: string;
 
   @ApiProperty({
     description: 'Инфо элемента',
-    example: ["string"]
+    example: [""]
   })
   public leftSideDamageAddInfTwo: string[];
 
   @ApiProperty({
     description: 'Имя элемента',
-    example: "string"
+    example: ""
   })
   public leftSideDamageAddNameThree: string;
 
   @ApiProperty({
     description: 'Инфо элемента',
-    example: ["string"]
+    example: [""]
   })
   public leftSideDamageAddInfoThree: string[];
   /////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -1494,61 +1494,61 @@ export class UpdateReportDto {
   
   @ApiProperty({
     description: 'Крышка багажника',
-    example: ['string']
+    example: ['']
   })
   public backSideDamageTailgate: string[]; 
 
   @ApiProperty({
     description: 'Задний бампер',
-    example: ['string']
+    example: ['']
   })
   public backSideDamageRearBumper: string[]; 
 
   @ApiProperty({
     description: 'Левый фонарь',
-    example: ['string']
+    example: ['']
   })
   public backSideDamageLeftLamp: string[]; 
 
   @ApiProperty({
     description: 'Правый фонарь',
-    example: ['string']
+    example: ['']
   })
   public backSideDamageRightLamp: string[]; 
 
   @ApiProperty({
     description: 'Имя элемента',
-    example: "string"
+    example: ""
   })
   public backSideDamageAddNameOne: string;
 
   @ApiProperty({
     description: 'Инфо элемента',
-    example: ["string"]
+    example: [""]
   })
   public backSideDamageAddInfoOne: string[];
 
   @ApiProperty({
     description: 'Имя элемента',
-    example: "string"
+    example: ""
   })
   public backSideDamageAddNameTwo: string;
 
   @ApiProperty({
     description: 'Инфо элемента',
-    example: ["string"]
+    example: [""]
   })
   public backSideDamageAddInfTwo: string[];
 
   @ApiProperty({
     description: 'Имя элемента',
-    example: "string"
+    example: ""
   })
   public backSideDamageAddNameThree: string;
 
   @ApiProperty({
     description: 'Инфо элемента',
-    example: ["string"]
+    example: [""]
   })
   public backSideDamageAddInfoThree: string[];
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -1560,85 +1560,85 @@ export class UpdateReportDto {
   
   @ApiProperty({
     description: 'Обшивка крышки',
-    example: ['string']
+    example: ['']
   })
   public trunkDamageCoverTrim: string[]; 
 
   @ApiProperty({
     description: 'Ковролин пола',
-    example: ['string']
+    example: ['']
   })
   public trunkDamageCarpetFloor: string[]; 
 
   @ApiProperty({
     description: 'Обшивка правая',
-    example: ['string']
+    example: ['']
   })
   public trunkDamageRightTrim: string[]; 
 
   @ApiProperty({
     description: 'Правый стакан',
-    example: ['string']
+    example: ['']
   })
   public trunkDamageRightGlass: string[]; 
 
   @ApiProperty({
     description: 'Обшивка левая',
-    example: ['string']
+    example: ['']
   })
   public trunkDamageLeftTrim: string[]; 
 
   @ApiProperty({
     description: 'Левый стакан',
-    example: ['string']
+    example: ['']
   })
   public trunkDamageLeftGlass: string[]; 
 
   @ApiProperty({
     description: 'Обшивка спинки сиденья',
-    example: ['string']
+    example: ['']
   })
   public trunkDamageSeatBackTrim: string[]; 
 
   @ApiProperty({
     description: 'Ниша запасного колеса',
-    example: ['string']
+    example: ['']
   })
   public trunkDamageSpareWheelWell: string[]; 
 
   @ApiProperty({
     description: 'Имя элемента',
-    example: "string"
+    example: ""
   })
   public trunkDamageAddNameOne: string;
 
   @ApiProperty({
     description: 'Инфо элемента',
-    example: ["string"]
+    example: [""]
   })
   public trunkDamageAddInfoOne: string[];
 
   @ApiProperty({
     description: 'Имя элемента',
-    example: "string"
+    example: ""
   })
   public trunkDamageAddNameTwo: string;
 
   @ApiProperty({
     description: 'Инфо элемента',
-    example: ["string"]
+    example: [""]
   })
   public trunkDamageAddInfTwo: string[];
 
   @ApiProperty({
     description: 'Имя элемента',
-    example: "string"
+    example: ""
   })
   public trunkDamageAddNameThree: string;
 
   @ApiProperty({
     description: 'Инфо элемента',
-    example: ["string"]
+    example: [""]
   })
   public trunkDamageAddInfoThree: string[];
   ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -1650,91 +1650,91 @@ export class UpdateReportDto {
   
   @ApiProperty({
     description: 'Переднее крыло',
-    example: ['string']
+    example: ['']
   })
   public rightSideDamageRightFrontFender: string[]; 
 
   @ApiProperty({
     description: 'Передняя стойка',
-    example: ['string']
+    example: ['']
   })
   public rightSideDamageRightFrontPillar: string[]; 
 
   @ApiProperty({
     description: 'Передняя дверь',
-    example: ['string']
+    example: ['']
   })
   public rightSideDamageRightFrontDoor: string[]; 
 
   @ApiProperty({
     description: 'Центральная стойка',
-    example: ['string']
+    example: ['']
   })
   public rightSideDamageRightCenterPillar: string[];
   
   @ApiProperty({
     description: 'Задняя дверь',
-    example: ['string']
+    example: ['']
   })
   public rightSideDamageRightRearDoor: string[]; 
 
   @ApiProperty({
     description: 'Задняя стойка',
-    example: ['string']
+    example: ['']
   })
   public rightSideDamageRightRearPillar: string[]; 
 
   @ApiProperty({
     description: 'Заднее крыло',
-    example: ['string']
+    example: ['']
   })
   public rightSideDamageRightRearFender: string[]; 
 
   @ApiProperty({
     description: 'Левое зеркало',
-    example: ['string']
+    example: ['']
   })
   public rightSideDamageRightMirror: string[]; 
 
   @ApiProperty({
     description: 'Порог',
-    example: ['string']
+    example: ['']
   })
   public rightSideDamageRightThreshold: string[]; 
 
   @ApiProperty({
     description: 'Имя элемента',
-    example: "string"
+    example: ""
   })
   public rightSideDamageAddNameOne: string;
 
   @ApiProperty({
     description: 'Инфо элемента',
-    example: ["string"]
+    example: [""]
   })
   public rightSideDamageAddInfoOne: string[];
 
   @ApiProperty({
     description: 'Имя элемента',
-    example: "string"
+    example: ""
   })
   public rightSideDamageAddNameTwo: string;
 
   @ApiProperty({
     description: 'Инфо элемента',
-    example: ["string"]
+    example: [""]
   })
   public rightSideDamageAddInfTwo: string[];
 
   @ApiProperty({
     description: 'Имя элемента',
-    example: "string"
+    example: ""
   })
   public rightSideDamageAddNameThree: string;
 
   @ApiProperty({
     description: 'Инфо элемента',
-    example: ["string"]
+    example: [""]
   })
   public rightSideDamageAddInfoThree: string[];
   ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -1747,61 +1747,61 @@ export class UpdateReportDto {
   
   @ApiProperty({
     description: 'Рейлинги',
-    example: ['string']
+    example: ['']
   })
   public roofDamageRoofRails: string[];
 
   @ApiProperty({
     description: 'Крыша',
-    example: ['string']
+    example: ['']
   })
   public roofDamageRoof: string[];
 
   @ApiProperty({
     description: 'Люк',
-    example: ['string']
+    example: ['']
   })
   public roofDamageLuke: string[];
 
   @ApiProperty({
     description: 'Панорама',
-    example: ['string']
+    example: ['']
   })
   public roofDamagePanorama: string[];
 
   @ApiProperty({
     description: 'Имя элемента',
-    example: "string"
+    example: ""
   })
   public roofDamageAddNameOne: string;
 
   @ApiProperty({
     description: 'Инфо элемента',
-    example: ["string"]
+    example: [""]
   })
   public roofDamageAddInfoOne: string[];
 
   @ApiProperty({
     description: 'Имя элемента',
-    example: "string"
+    example: ""
   })
   public roofDamageAddNameTwo: string;
 
   @ApiProperty({
     description: 'Инфо элемента',
-    example: ["string"]
+    example: [""]
   })
   public roofDamageAddInfTwo: string[];
 
   @ApiProperty({
     description: 'Имя элемента',
-    example: "string"
+    example: ""
   })
   public roofDamageAddNameThree: string;
 
   @ApiProperty({
     description: 'Инфо элемента',
-    example: ["string"]
+    example: [""]
   })
   public roofDamageAddInfoThree: string[];
   //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -1813,37 +1813,37 @@ export class UpdateReportDto {
   
   @ApiProperty({
     description: 'Лобовое стекло',
-    example: ['string']
+    example: ['']
   })
   public glassDamageWindshield: string[];
 
   @ApiProperty({
     description: 'Левое переднее',
-    example: ['string']
+    example: ['']
   })
   public glassDamageLeftFrontGlass: string[];
 
   @ApiProperty({
     description: 'Левое заднее',
-    example: ['string']
+    example: ['']
   })
   public glassDamageLeftRearGlass: string[];
 
   @ApiProperty({
     description: 'Заднее стекло',
-    example: ['string']
+    example: ['']
   })
   public glassDamageRearGlass: string[];
 
   @ApiProperty({
     description: 'Правое переднее',
-    example: ['string']
+    example: ['']
   })
   public glassDamageRightFrontGlass: string[];
 
   @ApiProperty({
     description: 'Правое заднее',
-    example: ['string']
+    example: ['']
   })
   public glassDamageRightRearGlass: string[];
   
@@ -1855,37 +1855,37 @@ export class UpdateReportDto {
 
   @ApiProperty({
     description: 'Имя элемента',
-    example: "string"
+    example: ""
   })
   public glassDamageAddNameOne: string;
 
   @ApiProperty({
     description: 'Инфо элемента',
-    example: ["string"]
+    example: [""]
   })
   public glassDamageAddInfoOne: string[];
 
   @ApiProperty({
     description: 'Имя элемента',
-    example: "string"
+    example: ""
   })
   public glassDamageAddNameTwo: string;
 
   @ApiProperty({
     description: 'Инфо элемента',
-    example: ["string"]
+    example: [""]
   })
   public glassDamageAddInfTwo: string[];
 
   @ApiProperty({
     description: 'Имя элемента',
-    example: "string"
+    example: ""
   })
   public glassDamageAddNameThree: string;
 
   @ApiProperty({
     description: 'Инфо элемента',
-    example: ["string"]
+    example: [""]
   })
   public glassDamageAddInfoThree: string[];
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -1897,61 +1897,61 @@ export class UpdateReportDto {
   
   @ApiProperty({
     description: 'Левое переднее',
-    example: ['string']
+    example: ['']
   })
   public discDamageLeftFrontDisc: string[];
 
   @ApiProperty({
     description: 'Левое заднее',
-    example: ['string']
+    example: ['']
   })
   public discDamageLeftRearDisc: string[];
 
   @ApiProperty({
     description: 'Правое переднее',
-    example: ['string']
+    example: ['']
   })
   public discDamageRightFrontDisc: string[];
 
   @ApiProperty({
     description: 'Правое заднее',
-    example: ['string']
+    example: ['']
   })
   public discDamageRightRearDisc: string[];
 
   @ApiProperty({
     description: 'Имя элемента',
-    example: "string"
+    example: ""
   })
   public discDamageAddNameOne: string;
 
   @ApiProperty({
     description: 'Инфо элемента',
-    example: ["string"]
+    example: [""]
   })
   public discDamageAddInfoOne: string[];
 
   @ApiProperty({
     description: 'Имя элемента',
-    example: "string"
+    example: ""
   })
   public discDamageAddNameTwo: string;
 
   @ApiProperty({
     description: 'Инфо элемента',
-    example: ["string"]
+    example: [""]
   })
   public discDamageAddInfTwo: string[];
 
   @ApiProperty({
     description: 'Имя элемента',
-    example: "string"
+    example: ""
   })
   public discDamageAddNameThree: string;
 
   @ApiProperty({
     description: 'Инфо элемента',
-    example: ["string"]
+    example: [""]
   })
   public discDamageAddInfoThree: string[];
   /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -1964,254 +1964,254 @@ export class UpdateReportDto {
 
   @ApiProperty({
     description: 'Передняя левая карта двери',
-    example: ['string']
+    example: ['']
   })
   public interiorDamageFrontLeftDoorCard: string[];
 
   @ApiProperty({
     description: 'Водительское сиденье',
-    example: ['string']
+    example: ['']
   })
   public interiorDamageDriversSeat: string[];
 
   @ApiProperty({
     description: 'Ковер салона',
-    example: ['string']
+    example: ['']
   })
   public interiorDamageSalonCarpet: string[];
 
   @ApiProperty({
     description: 'Торпеда',
-    example: ['string']
+    example: ['']
   })
   public interiorDamageTorpedo: string[];
 
   @ApiProperty({
     description: 'Потолок',
-    example: ['string']
+    example: ['']
   })
   public interiorDamageCeiling: string[];
 
   @ApiProperty({
     description: 'Задняя левая карта двери',
-    example: ['string']
+    example: ['']
   })
   public interiorDamageBackLeftDoorCard: string[];
 
   @ApiProperty({
     description: 'Заднее сиденье',
-    example: ['string']
+    example: ['']
   })
   public interiorDamageBackSeat: string[];
 
   @ApiProperty({
     description: 'Задняя правая карта двери',
-    example: ['string']
+    example: ['']
   })
   public interiorDamageBackRightDoorCard: string[];
 
   @ApiProperty({
     description: 'Передняя правая карта двери',
-    example: ['string']
+    example: ['']
   })
   public interiorDamageFrontRightDoorCard: string[];
 
   @ApiProperty({
     description: 'Пассажирское сиденье',
-    example: ['string']
+    example: ['']
   })
   public interiorDamagePassengerSeat: string[];
 
   @ApiProperty({
     description: 'Спальное отделение',
-    example: ['string']
+    example: ['']
   })
   public interiorDamageSleepingCompartment: string[];
 
   @ApiProperty({
     description: 'Имя элемента',
-    example: "string"
+    example: ""
   })
   public interiorDamageAddNameOne: string;
 
   @ApiProperty({
     description: 'Инфо элемента',
-    example: ["string"]
+    example: [""]
   })
   public interiorDamageAddInfoOne: string[];
 
   @ApiProperty({
     description: 'Имя элемента',
-    example: "string"
+    example: ""
   })
   public interiorDamageAddNameTwo: string;
 
   @ApiProperty({
     description: 'Инфо элемента',
-    example: ["string"]
+    example: [""]
   })
   public interiorDamageAddInfTwo: string[];
 
   @ApiProperty({
     description: 'Имя элемента',
-    example: "string"
+    example: ""
   })
   public interiorDamageAddNameThree: string;
 
   @ApiProperty({
     description: 'Инфо элемента',
-    example: ["string"]
+    example: [""]
   })
   public interiorDamageAddInfoThree: string[];
   ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
   @ApiProperty({
     description: 'Перед справа',
-    example: 'string'
+    example: ''
   })
   public exteriorPhotoRightFrontPhoto: string;
 
   @ApiProperty({
     description: 'Перед',
-    example: 'string'
+    example: ''
   })
   public exteriorPhotoFrontPhoto: string;
 
   @ApiProperty({
     description: 'Перед слева',
-    example: 'string'
+    example: ''
   })
   public exteriorPhotoLeftFrontPhoto: string;
 
   @ApiProperty({
     description: 'Справа сзади',
-    example: 'string'
+    example: ''
   })
   public exteriorPhotoRightBackPhoto: string;
 
   @ApiProperty({
     description: 'Сзади',
-    example: 'string'
+    example: ''
   })
   public exteriorPhotoBackPhoto: string;
 
   @ApiProperty({
     description: 'Слева сзади',
-    example: 'string'
+    example: ''
   })
   public exteriorPhotoLeftBackPhoto: string;
 
   @ApiProperty({
     description: 'Слева',
-    example: 'string'
+    example: ''
   })
   public exteriorPhotoLeftPhoto: string;
 
   @ApiProperty({
     description: 'Справа',
-    example: 'string'
+    example: ''
   })
   public exteriorPhotoRightPhoto: string;
 
   @ApiProperty({
     description: 'Открытй капот',
-    example: 'string'
+    example: ''
   })
   public exteriorPhotoHoodOpen: string;
 
   @ApiProperty({
     description: 'Открытый багажник',
-    example: 'string'
+    example: ''
   })
   public exteriorPhotoTrunkOpen: string;
 
   @ApiProperty({
     description: 'Дополнительное фото',
-    example: ['string']
+    example: ['']
   })
   public exteriorPhotoAddPhoto: string[];
   //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
   @ApiProperty({
     description: 'Левая передняя дверь',
-    example: 'string'
+    example: ''
   })
   public interiorPhotoLeftFrontDoor: string;
 
   @ApiProperty({
     description: 'Сиденье водителя',
-    example: 'string'
+    example: ''
   })
   public interiorPhotoDriverSeatPhoto: string;
 
   @ApiProperty({
     description: 'Фото руля',
-    example: 'string'
+    example: ''
   })
   public interiorPhotoSteeringWheelPhoto: string;
 
   @ApiProperty({
     description: 'Приборная панель',
-    example: 'string'
+    example: ''
   })
   public interiorPhotoDashboardPhoto: string;
 
   @ApiProperty({
     description: 'Левая задняя дверь',
-    example: 'string'
+    example: ''
   })
   public interiorPhotoLeftBackDoor: string;
 
   @ApiProperty({
     description: 'Заднее сидень слева',
-    example: 'string'
+    example: ''
   })
   public interiorPhotoBackLeftSeatsPhoto: string;
 
   @ApiProperty({
     description: 'Передние сиденья',
-    example: 'string'
+    example: ''
   })
   public interiorPhotoFrontSeatsPhoto: string;
 
   @ApiProperty({
     description: 'Правая задняя дверь',
-    example: 'string'
+    example: ''
   })
   public interiorPhotoRightBackDoor: string;
 
   @ApiProperty({
     description: 'Заднее сидень справа',
-    example: 'string'
+    example: ''
   })
   public interiorPhotoBackRightSeatsPhoto: string;
 
   @ApiProperty({
     description: 'Правая передняя дверь',
-    example: 'string'
+    example: ''
   })
   public interiorPhotoRightFrontDoor: string;
 
   @ApiProperty({
     description: 'Пассажирское сиденье',
-    example: 'string'
+    example: ''
   })
   public interiorPhotoPassengerSeatPhoto: string;
 
   @ApiProperty({
     description: 'Дополнительное фото',
-    example: ['string']
+    example: ['']
   })
   public interiorPhotoAddPhoto: string[];
   //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
   @ApiProperty({
     description: 'Круговое видео',
-    example: 'string'
+    example: ''
   })
   public roundViewVideoVideo: string;
 
   @ApiProperty({
     description: 'Комментарий',
-    example: 'string'
+    example: ''
   })
   public roundViewVideoComment: string;
   ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -2241,67 +2241,67 @@ export class UpdateReportDto {
 
   @ApiProperty({
     description: 'Комментарий',
-    example: 'string'
+    example: ''
   })
   public stoppedEngineComment: string;
 
   @ApiProperty({
     description: 'Уровень масла ДВС',
-    example: 'string'
+    example: ''
   })
   public stoppedEngineEngineOilLevel: string;
 
   @ApiProperty({
     description: 'Уровень масла КПП',
-    example: 'string'
+    example: ''
   })
   public stoppedEngineGearboxOilLevel: string;
 
   @ApiProperty({
     description: 'Уровень жидкости ГУР',
-    example: 'string'
+    example: ''
   })
   public stoppedEngineGurLiquidLevel: string;
 
   @ApiProperty({
     description: 'Уровень тормозной жидкости',
-    example: 'string'
+    example: ''
   })
   public stoppedEngineBrakeFluidLevel: string;
 
   @ApiProperty({
     description: 'Уровень охлаждающей жидкости',
-    example: 'string'
+    example: ''
   })
   public stoppedEngineCoolantLevel: string;
 
   @ApiProperty({
     description: 'Комментарий тех жидкости',
-    example: 'string'
+    example: ''
   })
   public stoppedEngineTechnicalFluidsComment: string;
 
   @ApiProperty({
     description: 'Приводные ремни',
-    example: 'string'
+    example: ''
   })
   public stoppedEngineDriveBelts: string;
 
   @ApiProperty({
     description: 'Тормозные диски',
-    example: 'string'
+    example: ''
   })
   public stoppedEngineBrakeDiscs: string;
 
   @ApiProperty({
     description: 'Тормозные колодки',
-    example: 'string'
+    example: ''
   })
   public stoppedEngineBrakePads: string;
 
   @ApiProperty({
     description: 'Комментарий износа',
-    example: 'string'
+    example: ''
   })
   public stoppedEngineWearComment: string;
   
@@ -2313,73 +2313,73 @@ export class UpdateReportDto {
   
   @ApiProperty({
     description: 'Имя',
-    example: 'string'
+    example: ''
   })
   public stoppedEngineNameOne: string;
 
   @ApiProperty({
     description: 'Запотевание',
-    example: ['string']
+    example: ['']
   })
   public stoppedEngineFoggingOne: string[];
 
   @ApiProperty({
     description: 'Фото',
-    example: ['string']
+    example: ['']
   })
   public stoppedEnginePhotoOne: string[];
 
   @ApiProperty({
     description: 'Комментарий',
-    example: 'string'
+    example: ''
   })
   public stoppedEngineCommentOne: string;
 
   @ApiProperty({
     description: 'Имя',
-    example: 'string'
+    example: ''
   })
   public stoppedEngineNameTwo: string;
 
   @ApiProperty({
     description: 'Запотевание',
-    example: ['string']
+    example: ['']
   })
   public stoppedEngineFoggingTwo: string[];
 
   @ApiProperty({
     description: 'Фото',
-    example: ['string']
+    example: ['']
   })
   public stoppedEnginePhotoTwo: string[];
 
   @ApiProperty({
     description: 'Комментарий',
-    example: 'string'
+    example: ''
   })
   public stoppedEngineCommenTwo: string;
 
   @ApiProperty({
     description: 'Имя',
-    example: 'string'
+    example: ''
   })
   public stoppedEngineNameThree: string;
 
   @ApiProperty({
     description: 'Запотевание',
-    example: ['string']
+    example: ['']
   })
   public stoppedEngineFoggingThree: string[];
 
   @ApiProperty({
     description: 'Фото',
-    example: ['string']
+    example: ['']
   })
   public stoppedEnginePhotoThree: string[];
 
   @ApiProperty({
     description: 'Комментарий',
-    example: 'string'
+    example: ''
   })
   public stoppedEngineCommentThree: string;
   //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -2623,9 +2623,7 @@ export class UpdateReportDto {
     example: ''
   })
   public stoppedEngineShockAbsorbersComment: string;
-
-  //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
+  ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
   @ApiProperty({
     description: 'Двигатель не запускается',
     example: false
@@ -2634,13 +2632,13 @@ export class UpdateReportDto {
 
   @ApiProperty({
     description: 'Комментарий',
-    example: 'string'
+    example: ''
   })
   public runningEngineComment: string;
 
   @ApiProperty({
     description: 'Видео запуска двигателя',
-    example: 'string'
+    example: ''
   })
   public runningEngineEngineVideo: string;
   
@@ -2658,7 +2656,7 @@ export class UpdateReportDto {
 
   @ApiProperty({
     description: 'Имя',
-    example: 'string'
+    example: ''
   })
   public runningEngineElectricalNameOne: string;
 
@@ -2670,13 +2668,13 @@ export class UpdateReportDto {
 
   @ApiProperty({
     description: 'Комментарий',
-    example: 'string'
+    example: ''
   })
   public runningEngineElectricalCommentOne: string;
 
   @ApiProperty({
     description: 'Имя',
-    example: 'string'
+    example: ''
   })
   public runningEngineElectricalNameTwo: string;
 
@@ -2688,13 +2686,13 @@ export class UpdateReportDto {
 
   @ApiProperty({
     description: 'Комментарий',
-    example: 'string'
+    example: ''
   })
   public runningEngineElectricalCommentTwo: string;
 
   @ApiProperty({
     description: 'Имя',
-    example: 'string'
+    example: ''
   })
   public runningEngineElectricalNameThree: string;
 
@@ -2706,13 +2704,13 @@ export class UpdateReportDto {
 
   @ApiProperty({
     description: 'Комментарий',
-    example: 'string'
+    example: ''
   })
   public runningEngineElectricalCommentThree: string;
   
   @ApiProperty({
     description: 'Имя',
-    example: 'string'
+    example: ''
   })
   public runningEngineMechanicalNameOne: string;
 
@@ -2724,13 +2722,13 @@ export class UpdateReportDto {
 
   @ApiProperty({
     description: 'Комментарий',
-    example: 'string'
+    example: ''
   })
   public runningEngineMechanicalCommentOne: string;
 
   @ApiProperty({
     description: 'Имя',
-    example: 'string'
+    example: ''
   })
   public runningEngineMechanicalNameTwo: string;
 
@@ -2742,13 +2740,13 @@ export class UpdateReportDto {
 
   @ApiProperty({
     description: 'Комментарий',
-    example: 'string'
+    example: ''
   })
   public runningEngineMechanicalCommentTwo: string;
 
   @ApiProperty({
     description: 'Имя',
-    example: 'string'
+    example: ''
   })
   public runningEngineMechanicalNameThree: string;
 
@@ -2760,11 +2758,11 @@ export class UpdateReportDto {
 
   @ApiProperty({
     description: 'Комментарий',
-    example: 'string'
+    example: ''
   })
   public runningEngineMechanicalCommentThree: string;
   /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
+  
   @ApiProperty({
     description: 'Выбрано',
     example: false
@@ -3029,8 +3027,7 @@ export class UpdateReportDto {
     example: ''
   })
   public runningEngineMechanicalAirConditionerComment: string;
-  /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
+  ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
   @ApiProperty({
     description: 'Ошибки отсутствуют',
     example: false
@@ -3039,37 +3036,37 @@ export class UpdateReportDto {
   
   @ApiProperty({
     description: 'Файл диагностики',
-    example: ["string"]
+    example: [""]
   })
   public dashboardDiagnosticsFile?: string[];
 
   @ApiProperty({
     description: 'Комментарий эксперта',
-    example: "string"
+    example: ""
   })
   public dashboardDiagnosticsComment: string;
 
   @ApiProperty({
     description: 'Пробег на приборной панели',
-    example: "string"
+    example: ""
   })
   public dashboardMileageOnDashboard?: string;
 
   @ApiProperty({
     description: 'Пробег в блоках ДВС',
-    example: "string"
+    example: ""
   })
   public dashboardMileageInTheEngineBlock?: string;
 
   @ApiProperty({
     description: 'Пробег в блоке КПП',
-    example: "string"
+    example: ""
   })
   public dashboardMileageInTheGearbox?: string;
 
   @ApiProperty({
     description: 'Пробег в доп блоке',
-    example: "string"
+    example: ""
   })
   public dashboardMileageInAdditionalBlocks?: string;
 
@@ -3081,13 +3078,13 @@ export class UpdateReportDto {
 
   @ApiProperty({
     description: 'Комментарий',
-    example: "string"
+    example: ""
   })
   public dashboardTotalComment: string;
 
   @ApiProperty({
     description: 'Имя',
-    example: 'string'
+    example: ''
   })
   public dashboardNameOne: string;
 
@@ -3099,13 +3096,13 @@ export class UpdateReportDto {
 
   @ApiProperty({
     description: 'Комментарий',
-    example: 'string'
+    example: ''
   })
   public dashboardCommentOne: string;
 
   @ApiProperty({
     description: 'Имя',
-    example: 'string'
+    example: ''
   })
   public dashboardNameTwo: string;
 
@@ -3117,13 +3114,13 @@ export class UpdateReportDto {
 
   @ApiProperty({
     description: 'Комментарий',
-    example: 'string'
+    example: ''
   })
   public dashboardCommentTwo: string;
 
   @ApiProperty({
     description: 'Имя',
-    example: 'string'
+    example: ''
   })
   public dashboardNameThree: string;
 
@@ -3135,11 +3132,11 @@ export class UpdateReportDto {
 
   @ApiProperty({
     description: 'Комментарий',
-    example: 'string'
+    example: ''
   })
   public dashboardCommentThree: string;
   //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
+  
   @ApiProperty({
     description: 'Выбрано',
     example: false
@@ -3148,7 +3145,7 @@ export class UpdateReportDto {
 
   @ApiProperty({
     description: 'Комментарий',
-    example: 'string'
+    example: ''
   })
   public dashboardABSComment: string;
   
@@ -3160,7 +3157,7 @@ export class UpdateReportDto {
 
   @ApiProperty({
     description: 'Комментарий',
-    example: 'string'
+    example: ''
   })
   public dashboardESPComment: string;
   
@@ -3172,7 +3169,7 @@ export class UpdateReportDto {
 
   @ApiProperty({
     description: 'Комментарий',
-    example: 'string'
+    example: ''
   })
   public dashboardAirbagComment: string;
   
@@ -3184,7 +3181,7 @@ export class UpdateReportDto {
 
   @ApiProperty({
     description: 'Комментарий',
-    example: 'string'
+    example: ''
   })
   public dashboardCheckEngineComment: string;
   
@@ -3196,7 +3193,7 @@ export class UpdateReportDto {
 
   @ApiProperty({
     description: 'Комментарий',
-    example: 'string'
+    example: ''
   })
   public dashboardBatteryComment: string;
   
@@ -3208,7 +3205,7 @@ export class UpdateReportDto {
 
   @ApiProperty({
     description: 'Комментарий',
-    example: 'string'
+    example: ''
   })
   public dashboardTirePressureComment: string;
   
@@ -3220,7 +3217,7 @@ export class UpdateReportDto {
 
   @ApiProperty({
     description: 'Комментарий',
-    example: 'string'
+    example: ''
   })
   public dashboardOilPressureComment: string;
   ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -3234,7 +3231,7 @@ export class UpdateReportDto {
 
   @ApiProperty({
     description: 'Имя',
-    example: 'string'
+    example: ''
   })
   public testDriveNameOne: string;
 
@@ -3246,13 +3243,13 @@ export class UpdateReportDto {
 
   @ApiProperty({
     description: 'Комментарий',
-    example: 'string'
+    example: ''
   })
   public testDriveCommentOne: string;
 
   @ApiProperty({
     description: 'Имя',
-    example: 'string'
+    example: ''
   })
   public testDriveNameTwo: string;
 
@@ -3264,13 +3261,13 @@ export class UpdateReportDto {
 
   @ApiProperty({
     description: 'Комментарий',
-    example: 'string'
+    example: ''
   })
   public testDriveCommentTwo: string;
 
   @ApiProperty({
     description: 'Имя',
-    example: 'string'
+    example: ''
   })
   public testDriveNameThree: string;
 
@@ -3282,11 +3279,11 @@ export class UpdateReportDto {
 
   @ApiProperty({
     description: 'Комментарий',
-    example: 'string'
+    example: ''
   })
   public testDriveCommentThree: string;
   //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
+  
   @ApiProperty({
     description: 'Выбрано',
     example: false
@@ -3295,7 +3292,7 @@ export class UpdateReportDto {
 
   @ApiProperty({
     description: 'Комментарий',
-    example: 'string'
+    example: ''
   })
   public testDriveSuspensionComment: string;
   
@@ -3307,7 +3304,7 @@ export class UpdateReportDto {
 
   @ApiProperty({
     description: 'Комментарий',
-    example: 'string'
+    example: ''
   })
   public testDriveEngineComment: string;
   
@@ -3319,7 +3316,7 @@ export class UpdateReportDto {
 
   @ApiProperty({
     description: 'Комментарий',
-    example: 'string'
+    example: ''
   })
   public testDriveTransmissionComment: string;
   
@@ -3331,7 +3328,7 @@ export class UpdateReportDto {
 
   @ApiProperty({
     description: 'Комментарий',
-    example: 'string'
+    example: ''
   })
   public testDriveSteeringComment: string;
   
@@ -3343,7 +3340,7 @@ export class UpdateReportDto {
 
   @ApiProperty({
     description: 'Комментарий',
-    example: 'string'
+    example: ''
   })
   public testDriveBrakeSystemComment: string;
   
@@ -3355,7 +3352,7 @@ export class UpdateReportDto {
 
   @ApiProperty({
     description: 'Комментарий',
-    example: 'string'
+    example: ''
   })
   public testDriveParkingBrakeComment: string;
   
@@ -3367,98 +3364,98 @@ export class UpdateReportDto {
 
   @ApiProperty({
     description: 'Комментарий',
-    example: 'string'
+    example: ''
   })
   public testDriveExhaustSystemComment: string;
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
   @ApiProperty({
     description: 'Комментарий плюсов',
-    example: 'string'
+    example: ''
   })
   public expertOpinionPlusComment: string;
 
   @ApiProperty({
     description: 'Комментарий минусов',
-    example: 'string'
+    example: ''
   })
   public expertOpinionMinusComment: string;
 
   @ApiProperty({
     description: 'Комментарий общий',
-    example: 'string'
+    example: ''
   })
   public expertOpinionTotalComment: string;
   
   @ApiProperty({
     description: 'Файл истории',
-    example: ['string']
+    example: ['']
   })
   public expertOpinionHistoryFile: string[];
 
   @ApiProperty({
     description: 'Комментарий истории автомобиля',
-    example: 'string'
+    example: ''
   })
   public expertOpinionHistoryComment: string;
   /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
   @ApiProperty({
     description: 'Проверка компрессии',
-    example: ["string"]
+    example: [""]
   })
   public serviceInspectionCompressionCheck: string[];
 
   @ApiProperty({
     description: 'Проверка эндоскопом',
-    example: ["string"]
+    example: [""]
   })
   public serviceInspectionEndoscopeCheck: string[];
 
   @ApiProperty({
     description: 'Осмотр ДВС',
-    example: ["string"]
+    example: [""]
   })
   public serviceInspectionEngineInspection: string[];
 
   @ApiProperty({
     description: 'Осмотр КПП',
-    example: ["string"]
+    example: [""]
   })
   public serviceInspectionCheckpointInspection: string[];
 
   @ApiProperty({
     description: 'Осмотр ГУР',
-    example: ["string"]
+    example: [""]
   })
   public serviceInspectionPowerSteeringInspection: string[];
 
   @ApiProperty({
     description: 'Осмотр раздатки',
-    example: ["string"]
+    example: [""]
   })
   public serviceInspectionTransferCaseInspection: string[];
 
   @ApiProperty({
     description: 'Осмотр задний мост',
-    example: ["string"]
+    example: [""]
   })
   public serviceInspectionRearAxleInspection: string[];
 
   @ApiProperty({
     description: 'Передний мост',
-    example: ["string"]
+    example: [""]
   })
   public serviceInspectionFrontAxleInspection: string[];
 
   @ApiProperty({
     description: 'Осмотр рулевой рейки',
-    example: ["string"]
+    example: [""]
   })
   public serviceInspectionSteeringRackInspection: string[];
 
   @ApiProperty({
     description: 'Осмотр ходовой части',
-    example: ["string"]
+    example: [""]
   })
   public serviceInspectionChassisInspection: string[];
   ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

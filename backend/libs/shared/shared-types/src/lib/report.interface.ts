@@ -7,7 +7,7 @@ export interface Report {
   isPrime: boolean;
 
   sellerDetailsRefusalOfInspection: boolean;
-  sellerDetailsLinkToAd: string[];
+  sellerDetailsLinkToAd: string;
   sellerDetailsName: string;
   sellerDetailsPhone: string;
   sellerDetailsCarCost: string;

@@ -3,6 +3,7 @@ import { CRUDRepository } from '@backend/util/util-types';
 import { BetcarReportEntity } from './betcar-report.entity';
 import { Report } from '@backend/shared/shared-types';
 import { PrismaService } from '../prisma/prisma.service';
+import { LinkSearchDto } from './dto/link-search.dto';
 
 
 @Injectable()
@@ -57,6 +58,14 @@ export class BetcarReportRepository implements CRUDRepository<BetcarReportEntity
     return this.prisma.report.findMany({
       where: {
         stateNumberStateNumber: stateNumber
+      },
+    });
+  }
+
+  public async findByLink(link: string): Promise<Report[] | null> {
+    return this.prisma.report.findMany({
+      where: {
+        sellerDetailsLinkToAd: link
       },
     });
   }

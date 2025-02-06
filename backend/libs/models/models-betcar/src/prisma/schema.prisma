@@ -122,7 +122,7 @@ model Report {
 
 
   sellerDetailsRefusalOfInspection Boolean  @default(false) @map("seller_details_refusal_of_inspection")
-  sellerDetailsLinkToAd            String[] @default([""]) @map("seller_details_link_to_ad")
+  sellerDetailsLinkToAd            String   @default("") @map("seller_details_link_to_ad")
   sellerDetailsName                String   @default("") @map("seller_details_name")
   sellerDetailsPhone               String   @default("")  @map("seller_details_phone")
   sellerDetailsCarCost             String   @default("") @map("seller_details_car_cost")

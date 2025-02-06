@@ -14,7 +14,7 @@ export class BetcarReportEntity implements Entity<BetcarReportEntity>, Report {
   public vinNumber: string;
   public isPrime: boolean;
   public sellerDetailsRefusalOfInspection: boolean;
-  public sellerDetailsLinkToAd: string[];
+  public sellerDetailsLinkToAd: string;
   public sellerDetailsName: string;
   public sellerDetailsPhone: string;
   public sellerDetailsCarCost: string;

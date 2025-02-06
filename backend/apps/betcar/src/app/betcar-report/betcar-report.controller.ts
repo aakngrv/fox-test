@@ -9,6 +9,7 @@ import { vinSearchDto } from './dto/vin-search.dto';
 import { userEmailDto } from './dto/user-email.dto';
 import { reportNumberDto } from './dto/report-number.dto';
 import { StateNumberSearchDto } from './dto/state-number-search.dto';
+import { LinkSearchDto } from './dto/link-search.dto';
 
 
 @ApiTags('Отчеты')
@@ -70,6 +71,17 @@ export class BetcarReportController {
   async showStateNumber(@Body() stateNumber: StateNumberSearchDto) {
     const existReportStateNumber = await this.betcarReportService.getReportByStateNumber(stateNumber);
     return fillObject(ReportRdo, existReportStateNumber);
+  }
+
+  @ApiResponse({
+    type: ReportRdo,
+    status: HttpStatus.OK,
+    description: 'Данные отчета найдены'
+  })
+  @Post('/link-search')
+  async showLink(@Body() link: LinkSearchDto) {
+    const existReportLink = await this.betcarReportService.getReportByLink(link);
+    return fillObject(ReportRdo, existReportLink);
   }
 
   @ApiResponse({

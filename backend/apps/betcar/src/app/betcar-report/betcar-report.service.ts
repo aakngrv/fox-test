@@ -8,6 +8,7 @@ import { vinSearchDto } from './dto/vin-search.dto';
 import { userEmailDto } from './dto/user-email.dto';
 import { reportNumberDto } from './dto/report-number.dto';
 import { StateNumberSearchDto } from './dto/state-number-search.dto';
+import { LinkSearchDto } from './dto/link-search.dto';
 
 
 @Injectable()
@@ -46,6 +47,11 @@ export class BetcarReportService {
   async getReportByStateNumber(stNumber: StateNumberSearchDto): Promise<Report[]> {
     const { stateNumber } = stNumber;
     return await this.betcarReportRepository.findByStateNumber(stateNumber);
+  }
+
+  async getReportByLink(link: LinkSearchDto): Promise<Report[]> {
+    const { sellerDetailsLinkToAd } = link;
+    return await this.betcarReportRepository.findByLink(sellerDetailsLinkToAd);
   }
 
   async getReportByEmail(email: userEmailDto): Promise<Report[]> {
