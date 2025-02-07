@@ -44,3 +44,16 @@ export interface TurnkeySelection {
   linkToAd: string;
   createdAt: Date;
 }
+
+export interface TurnkeySelectionManually {
+  turnkeySelectionManuallyId?: number;
+  firstname: string;
+  phone: string
+  autoModel: string;
+  autoMark: string;
+  yearOfIssue: string[];
+  colors: string[];
+  inspectionRegion: string;
+  sellerPhone: string;
+  createdAt: Date;
+}

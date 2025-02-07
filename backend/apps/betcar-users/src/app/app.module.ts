@@ -8,6 +8,7 @@ import { UserBidsModule } from './bids/bids.module';
 import { OrgBidsModule } from './organization-bids/org-bids.module';
 import { UserFormModule } from './user-form/user-form.module';
 import { TurnkeySelectionModule } from './turnkey-selection/turnkey-selection.module';
+import { TurnkeySelectionManuallyModule } from './turnkey-selection-manually/turnkey-selection-manually.module';
 
 
 @Module({
@@ -20,7 +21,8 @@ import { TurnkeySelectionModule } from './turnkey-selection/turnkey-selection.mo
     UserBidsModule,
     OrgBidsModule,
     UserFormModule,
-    TurnkeySelectionModule
+    TurnkeySelectionModule,
+    TurnkeySelectionManuallyModule
   ],
   controllers: [],
   providers: [],

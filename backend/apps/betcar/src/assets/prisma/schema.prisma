@@ -95,7 +95,7 @@ model TurnkeySelection {
   turnkeySelectionId Int      @id @default(autoincrement()) @map("turnkey_selection_id")
   firstname          String   @default("")
   phone              String   @default("")
-  autoModel          String   @default("")
+  autoModel          String   @default("")  @map("auto_model")
   mileage            String[] @default([""])
   gearboxType        String[] @default([""]) @map("gearbox_type")
   driveType          String[] @default([""]) @map("drive_type")
@@ -107,6 +107,22 @@ model TurnkeySelection {
 
    @@map("turnkey_selections")
 }
+
+model TurnkeySelectionManually {
+  turnkeySelectionManuallyId Int      @id @default(autoincrement()) @map("turnkey_selection_manually_id")
+  firstname                  String   @default("")
+  phone                      String   @default("")
+  autoModel                  String   @default("") @map("auto_model")
+  autoMark                   String   @default("") @map("auto_mark")
+  yearOfIssue                String[] @default([""]) @map("year_of_issue")
+  colors                     String[] @default([""]) 
+  inspectionRegion           String   @default("") @map("inspection_region")
+  sellerPhone                String   @default("") @map("seller_phone")
+  createdAt                  DateTime @default(now()) @map("created_at")
+
+   @@map("turnkey_selections_manually")
+}
+
 
 // ************************************************************************************************ //
 
