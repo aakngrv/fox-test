@@ -72,4 +72,18 @@ export class TurnkeySelectionRdo {
   })
   @Expose()
   public engineType: string[];
+
+  @ApiProperty({
+    description: 'Ссылка на объявление',
+    example: ''
+  })
+  @Expose()
+  public linkToAd: string;
+
+  @ApiProperty({
+    description: 'Дата создания',
+    example: ''
+  })
+  @Expose()
+  public createdAt: Date;
 }

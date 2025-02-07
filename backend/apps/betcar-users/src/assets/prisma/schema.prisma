@@ -102,6 +102,8 @@ model TurnkeySelection {
   yearOfIssue        String[] @default([""]) @map("year_of_issue")
   colors             String[] @default([""]) 
   engineType         String[] @default([""]) @map("engine_type")
+  linkToAd           String   @default("")  @map("link_to_ad")
+  createdAt    DateTime  @default(now()) @map("created_at")
 
    @@map("turnkey_selections")
 }

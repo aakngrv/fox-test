@@ -41,4 +41,6 @@ export interface TurnkeySelection {
   yearOfIssue: string[];
   colors: string[];
   engineType: string[];
+  linkToAd: string;
+  createdAt: Date;
 }

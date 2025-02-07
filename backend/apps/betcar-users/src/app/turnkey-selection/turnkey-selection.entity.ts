@@ -12,6 +12,8 @@ export class TurnkeySelectionEntity implements TurnkeySelection {
   public yearOfIssue: string[];
   public colors: string[];
   public engineType: string[];
+  public linkToAd: string;
+  public createdAt: Date;
 
   constructor(turnkeySelectionId: TurnkeySelection) {
     this.fillEntity(turnkeySelectionId);
@@ -29,6 +31,8 @@ export class TurnkeySelectionEntity implements TurnkeySelection {
     this.yearOfIssue = turnkeySelectionId.yearOfIssue;
     this.colors = turnkeySelectionId.colors;
     this.engineType = turnkeySelectionId.engineType;
+    this.linkToAd = turnkeySelectionId.linkToAd;
+    this.createdAt = new Date();
   }
 
   public toObject(): TurnkeySelectionEntity {

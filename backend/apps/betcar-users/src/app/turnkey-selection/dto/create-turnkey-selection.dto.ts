@@ -51,8 +51,20 @@ export class CreateTurnkeySelectionDto {
   public colors: string[];
 
   @ApiProperty({
+    description: 'Ссылка на объявление',
+    example: ''
+  })
+  public linkToAd: string;
+
+  @ApiProperty({
     description: 'Тип ДВС',
     example: ['']
   })
   public engineType: string[];
+
+  @ApiProperty({
+    description: 'Дата создания',
+    example: ''
+  })
+  public createdAt: Date;
 }
