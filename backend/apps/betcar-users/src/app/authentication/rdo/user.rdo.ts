@@ -68,6 +68,13 @@ export class UserRdo {
   public admin: boolean;
 
   @ApiProperty({
+    description: 'Баланс пользователя',
+    example: ''
+  })
+  @Expose()
+  public userBalance: string;
+
+  @ApiProperty({
     description: 'Дата регистрации',
     example: ''
   })

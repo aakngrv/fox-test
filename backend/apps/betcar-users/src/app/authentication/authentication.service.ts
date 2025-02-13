@@ -33,6 +33,7 @@ export class AuthenticationService {
       admin,
       password,
       createdAt,
+      userBalance
     } = dto;
 
     const betcarUser = {
@@ -44,6 +45,7 @@ export class AuthenticationService {
       customer: true,
       executor: false,
       admin: false,
+      userBalance,
       passwordHash: '',
       createdAt: new Date(),
     };
@@ -98,6 +100,7 @@ export class AuthenticationService {
       admin,
       passwordHash,
       createdAt,
+      userBalance
     } = dto;
 
     const betcarUser = {
@@ -110,6 +113,7 @@ export class AuthenticationService {
       executor: false,
       admin: false,
       passwordHash: '',
+      userBalance,
       createdAt: new Date(),
     };
 
@@ -135,6 +139,7 @@ export class AuthenticationService {
       admin: user.admin,
       lastname: user.lastname,
       firstname: user.firstname,
+      userBalance: user.userBalance,
     };
 
     return {

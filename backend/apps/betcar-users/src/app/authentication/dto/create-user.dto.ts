@@ -65,6 +65,13 @@ export class CreateUserDto {
   })
   @IsBoolean()
   public admin: boolean;
+  
+  @ApiProperty({
+    description: 'Баланс пользователя',
+    example: ''
+  })
+  @IsString()
+  public userBalance: string;
 
   @ApiProperty({
     description: 'Дата регистрации',

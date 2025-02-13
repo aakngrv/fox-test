@@ -6,4 +6,5 @@ export interface TokenPayload {
   admin: boolean;
   lastname: string;
   firstname: string;
+  userBalance: string;
 }

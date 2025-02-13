@@ -8,6 +8,7 @@ export interface User {
   customer: boolean;
   executor: boolean;
   admin: boolean;
+  userBalance: string;
   passwordHash: string;
   createdAt: Date;
 }

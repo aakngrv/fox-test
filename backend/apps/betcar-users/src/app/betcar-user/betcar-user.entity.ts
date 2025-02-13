@@ -14,6 +14,7 @@ export class BetcarUserEntity implements User {
   public customer: boolean;
   public admin: boolean;
   public city: string;
+  public userBalance: string;
   public createdAt: Date;
 
   constructor(betcarUser: User) {
@@ -31,6 +32,7 @@ export class BetcarUserEntity implements User {
     this.admin = betcarUser.admin;
     this.phone = betcarUser.phone;
     this.city = betcarUser.city;
+    this.userBalance = betcarUser.userBalance;
     this.createdAt = new Date();
     
   }

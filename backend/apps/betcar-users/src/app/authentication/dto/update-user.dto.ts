@@ -67,6 +67,13 @@ export class UpdateUserDto {
   public admin: boolean;
 
   @ApiProperty({
+    description: 'Баланс пользователя',
+    example: ''
+  })
+  @IsString()
+  public userBalance: string;
+
+  @ApiProperty({
     description: 'Дата регистрации',
     example: ''
   })

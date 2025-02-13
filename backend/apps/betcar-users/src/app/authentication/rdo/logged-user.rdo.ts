@@ -24,6 +24,14 @@ export class LoggedUserRdo {
   @Expose()
   public accessToken: string;
 
+  
+  @ApiProperty({
+    description: 'Баланс пользователя',
+    example: ''
+  })
+  @Expose()
+  public userBalance: string;
+
   @ApiProperty({
     description: 'Refresh token',
     example: ''
