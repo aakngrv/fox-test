@@ -33,7 +33,8 @@ export class AuthenticationService {
       admin,
       password,
       createdAt,
-      userBalance
+      userBalance,
+      reports
     } = dto;
 
     const betcarUser = {
@@ -46,6 +47,7 @@ export class AuthenticationService {
       executor: false,
       admin: false,
       userBalance,
+      reports,
       passwordHash: '',
       createdAt: new Date(),
     };
@@ -100,7 +102,8 @@ export class AuthenticationService {
       admin,
       passwordHash,
       createdAt,
-      userBalance
+      userBalance,
+      reports
     } = dto;
 
     const betcarUser = {
@@ -115,6 +118,7 @@ export class AuthenticationService {
       passwordHash: '',
       userBalance,
       createdAt: new Date(),
+      reports
     };
 
     // const existUser = await this.betcarUserRepository

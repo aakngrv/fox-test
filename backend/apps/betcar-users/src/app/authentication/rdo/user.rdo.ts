@@ -1,7 +1,6 @@
 import { Expose } from 'class-transformer';
 import { ApiProperty } from '@nestjs/swagger';
 
-
 export class UserRdo {
 
   @ApiProperty({
@@ -80,4 +79,11 @@ export class UserRdo {
   })
   @Expose()
   public  createdAt: Date;
+
+  @ApiProperty({
+    description: 'Купленные отчеты ползователя',
+    example: [0]
+  })
+  @Expose()
+  public reports: number[];
 }

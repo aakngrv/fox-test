@@ -34,6 +34,7 @@ model User {
   executor     Boolean  @default(false)
   customer     Boolean  @default(false)
   admin        Boolean  @default(false)
+  reports      Int[]
   userBalance  String   @default("") @map("user_balance")
   createdAt    DateTime @default(now()) @map("created_at")
 

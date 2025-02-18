@@ -13,7 +13,9 @@ export class BetcarUserRepository implements CRUDRepository<BetcarUserEntity, nu
   public async create(item: BetcarUserEntity): Promise<User> {
     const entityData = item.toObject();
     return this.prisma.user.create({
-      data: { ...entityData }
+      data: { 
+        ...entityData,
+      }
     });
   }
 
@@ -56,7 +58,10 @@ export class BetcarUserRepository implements CRUDRepository<BetcarUserEntity, nu
       where: {
         userId
       },
-      data: { ...item.toObject(), userId }
+      data: { 
+        ...item.toObject(), 
+        userId 
+      },
     });
   }
 }

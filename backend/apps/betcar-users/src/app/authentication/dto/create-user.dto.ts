@@ -74,6 +74,12 @@ export class CreateUserDto {
   public userBalance: string;
 
   @ApiProperty({
+    description: 'Купленные отчеты ползователя',
+    example: [0]
+  })
+  public reports: number[];
+
+  @ApiProperty({
     description: 'Дата регистрации',
     example: ''
   })

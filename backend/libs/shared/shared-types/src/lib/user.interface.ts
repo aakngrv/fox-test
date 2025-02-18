@@ -1,3 +1,5 @@
+import { Report } from './report.interface';
+
 export interface User {
   userId?: number;
   firstname: string;
@@ -11,4 +13,5 @@ export interface User {
   userBalance: string;
   passwordHash: string;
   createdAt: Date;
+  reports?: number[];
 }

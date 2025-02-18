@@ -2,7 +2,6 @@ import { User } from "@backend/shared/shared-types";
 import { compare, genSalt, hash } from 'bcrypt';
 import { SALT_ROUNDS } from './betcar-user.constants';
 
-
 export class BetcarUserEntity implements User {
   public userId?: number;
   public email: string;
@@ -16,6 +15,7 @@ export class BetcarUserEntity implements User {
   public city: string;
   public userBalance: string;
   public createdAt: Date;
+  public reports?: number[];
 
   constructor(betcarUser: User) {
     this.fillEntity(betcarUser);
@@ -34,6 +34,7 @@ export class BetcarUserEntity implements User {
     this.city = betcarUser.city;
     this.userBalance = betcarUser.userBalance;
     this.createdAt = new Date();
+    this.reports = betcarUser.reports;
     
   }
 
@@ -48,6 +49,8 @@ export class BetcarUserEntity implements User {
   }
 
   public toObject(): BetcarUserEntity {
-    return {...this};
+    return {
+      ...this,
+    };
   }
 }
