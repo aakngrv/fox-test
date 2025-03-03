@@ -37,6 +37,7 @@ model User {
   reports      Int[]
   userBalance  String   @default("") @map("user_balance")
   createdAt    DateTime @default(now()) @map("created_at")
+  avatar       String @default("") 
 
   @@map("users")
 }

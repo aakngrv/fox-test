@@ -86,4 +86,11 @@ export class UserRdo {
   })
   @Expose()
   public reports: number[];
+
+  @ApiProperty({
+    description: 'Аватар пользователя',
+    example: ''
+  })
+  @Expose()
+  public avatar: string;
 }

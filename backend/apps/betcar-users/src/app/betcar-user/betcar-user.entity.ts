@@ -16,6 +16,7 @@ export class BetcarUserEntity implements User {
   public userBalance: string;
   public createdAt: Date;
   public reports?: number[];
+  public avatar: string;
 
   constructor(betcarUser: User) {
     this.fillEntity(betcarUser);
@@ -35,6 +36,7 @@ export class BetcarUserEntity implements User {
     this.userBalance = betcarUser.userBalance;
     this.createdAt = new Date();
     this.reports = betcarUser.reports;
+    this.avatar = betcarUser.avatar;
     
   }
 

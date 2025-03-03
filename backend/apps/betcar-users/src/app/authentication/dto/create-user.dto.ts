@@ -84,4 +84,10 @@ export class CreateUserDto {
     example: ''
   })
   public  createdAt: Date;
+   
+  @ApiProperty({
+    description: 'Аватар пользователя',
+    example: ''
+  })
+  public avatar: string;
 }
