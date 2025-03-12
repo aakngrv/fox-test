@@ -138,6 +138,10 @@ services:
       - "--certificatesresolvers.myresolver.acme.httpchallenge=web"
       - "--certificatesresolvers.myresolver.acme.httpchallenge=true"
       - "--certificatesresolvers.myresolver.acme.email=info@lotcars.com"
+    depends_on:
+      - betcar
+      - frontend
+    restart: always
     ports:
       - 80:80
       - 443:443
