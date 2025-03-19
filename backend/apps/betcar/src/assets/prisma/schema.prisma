@@ -126,6 +126,17 @@ model TurnkeySelectionManually {
    @@map("turnkey_selections_manually")
 }
 
+model ExpertOnDay {
+  expertOnDayId Int      @id @default(autoincrement()) @map("expert_on_day_id")
+  firstname     String   @default("")
+  phone         String   @default("")
+  city          String   @default("")
+  provisionDate String   @default("") @map("provision_date")
+  createdAt     DateTime @default(now()) @map("created_at")
+
+  @@map("experts_on_day")
+}
+
 
 // ************************************************************************************************ //
 

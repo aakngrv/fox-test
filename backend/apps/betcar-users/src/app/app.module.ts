@@ -9,6 +9,7 @@ import { OrgBidsModule } from './organization-bids/org-bids.module';
 import { UserFormModule } from './user-form/user-form.module';
 import { TurnkeySelectionModule } from './turnkey-selection/turnkey-selection.module';
 import { TurnkeySelectionManuallyModule } from './turnkey-selection-manually/turnkey-selection-manually.module';
+import { ExpertOnDayModule } from './expert-on-day/expert-on-day.module';
 
 
 @Module({
@@ -22,7 +23,8 @@ import { TurnkeySelectionManuallyModule } from './turnkey-selection-manually/tur
     OrgBidsModule,
     UserFormModule,
     TurnkeySelectionModule,
-    TurnkeySelectionManuallyModule
+    TurnkeySelectionManuallyModule,
+    ExpertOnDayModule
   ],
   controllers: [],
   providers: [],

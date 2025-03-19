@@ -1,3 +1,5 @@
+import exp = require("constants");
+
 export interface UserBid {
   bidId?: number;
   firstname: string;
@@ -55,5 +57,14 @@ export interface TurnkeySelectionManually {
   colors: string[];
   inspectionRegion: string;
   sellerPhone: string;
+  createdAt: Date;
+}
+
+export interface ExpertOnDay {
+  expertOnDayId?: number;
+  firstname: string;
+  phone: string;
+  city: string;
+  provisionDate: string; 
   createdAt: Date;
 }
