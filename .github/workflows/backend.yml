@@ -22,4 +22,3 @@ jobs:
             git fetch origin main
             git merge -Xtheirs
             docker-compose -f ./docker-compose-build.yml up -d --build --no-deps betcar users uploader
-            docker system prune -a -f

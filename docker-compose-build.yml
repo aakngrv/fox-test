@@ -28,7 +28,7 @@ services:
       - .env
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.pgadmin.rule=Host(`pgadmin.betcar.ru`)"
+      - "traefik.http.routers.pgadmin.rule=Host(`pgadmin.lotcars.com`)"
       - "traefik.http.routers.pgadmin.entrypoints=websecure"
       - "traefik.http.routers.pgadmin.tls.certresolver=myresolver"
       - "traefik.http.routers.pgadmin.service=pgadmin-service"
@@ -49,19 +49,19 @@ services:
 
   betcar:
     container_name: betcar
-    build:      
+    build:
       target: production
       context: ./backend
       dockerfile: ./apps/betcar/Dockerfile_prod
     depends_on:
-      - postgres	
+      - postgres
       - rabbitmq
     restart: always
     env_file:
       - .env
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.betcar.rule=Host(`api.service.betcar.ru`)"
+      - "traefik.http.routers.betcar.rule=Host(`api.service.lotcars.com`)"
       - "traefik.http.routers.betcar.entrypoints=websecure"
       - "traefik.http.routers.betcar.tls.certresolver=myresolver"
       - "traefik.http.routers.betcar.service=betcar-service"
@@ -69,11 +69,11 @@ services:
 
   users:
     container_name: users
-    build:      
+    build:
       target: production
       context: ./backend
       dockerfile: ./apps/betcar-users/Dockerfile_prod
-    depends_on:   
+    depends_on:
       - postgres
       - rabbitmq
       - betcar
@@ -82,7 +82,7 @@ services:
       - .env
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.users.rule=Host(`api.users.betcar.ru`)"
+      - "traefik.http.routers.users.rule=Host(`api.users.lotcars.com`)"
       - "traefik.http.routers.users.entrypoints=websecure"
       - "traefik.http.routers.users.tls.certresolver=myresolver"
       - "traefik.http.routers.users.service=users-service"
@@ -90,11 +90,11 @@ services:
 
   uploader:
     container_name: uploader
-    build:      
+    build:
       target: production
       context: ./backend
       dockerfile: ./apps/uploader/Dockerfile_prod
-    depends_on:   
+    depends_on:
       - postgres
       - rabbitmq
       - betcar
@@ -106,14 +106,14 @@ services:
       - ~/cdn/uploads/:/dist/apps/uploader/uploads/
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.uploader.rule=Host(`api.uploader.betcar.ru`)"
+      - "traefik.http.routers.uploader.rule=Host(`api.uploader.lotcars.com`)"
       - "traefik.http.routers.uploader.entrypoints=websecure"
       - "traefik.http.routers.uploader.tls.certresolver=myresolver"
       - "traefik.http.routers.uploader.service=uploader-service"
       - "traefik.http.services.uploader-service.loadbalancer.server.port=6000"
 
   frontend:
-    build:      
+    build:
       target: production
       context: ./betcar-front/site
       dockerfile: Dockerfile_prod
@@ -123,7 +123,7 @@ services:
     restart: always
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.front.rule=Host(`betcar.ru`)"
+      - "traefik.http.routers.front.rule=Host(`lotcars.com`)"
       - "traefik.http.routers.front.entrypoints=websecure"
       - "traefik.http.routers.front.tls.certresolver=myresolver"
       - "traefik.http.routers.front.service=front-service"
@@ -137,7 +137,11 @@ services:
       - "--providers.docker.exposedbydefault=false"
       - "--certificatesresolvers.myresolver.acme.httpchallenge=web"
       - "--certificatesresolvers.myresolver.acme.httpchallenge=true"
-      - "--certificatesresolvers.myresolver.acme.email=info@betcar.ru"
+      - "--certificatesresolvers.myresolver.acme.email=info@lotcars.com"
+    depends_on:
+      - betcar
+      - frontend
+    restart: always
     ports:
       - 80:80
       - 443:443
