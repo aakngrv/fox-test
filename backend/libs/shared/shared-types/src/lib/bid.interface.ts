@@ -51,7 +51,7 @@ export interface TurnkeySelectionManually {
   turnkeySelectionManuallyId?: number;
   firstname: string;
   phone: string
-  autoModel: string[];
+  autoModel: string;
   autoMark: string;
   yearOfIssue: string[];
   colors: string[];

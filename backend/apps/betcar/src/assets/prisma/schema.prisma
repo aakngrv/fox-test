@@ -115,7 +115,7 @@ model TurnkeySelectionManually {
   turnkeySelectionManuallyId Int      @id @default(autoincrement()) @map("turnkey_selection_manually_id")
   firstname                  String   @default("")
   phone                      String   @default("")
-  autoModel                  String[] @default([""]) @map("auto_model")
+  autoModel                  String   @default("") @map("auto_model")
   autoMark                   String   @default("") @map("auto_mark")
   yearOfIssue                String[] @default([""]) @map("year_of_issue")
   colors                     String[] @default([""]) 

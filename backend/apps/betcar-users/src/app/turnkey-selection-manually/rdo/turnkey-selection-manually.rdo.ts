@@ -33,10 +33,10 @@ export class TurnkeySelectionManuallyRdo {
   
   @ApiProperty({
     description: 'Модель',
-    example: ['']
+    example: ''
   })
   @Expose()
-  public autoModel: string[];
+  public autoModel: string;
 
   @ApiProperty({
     description: 'Год выпуска',
