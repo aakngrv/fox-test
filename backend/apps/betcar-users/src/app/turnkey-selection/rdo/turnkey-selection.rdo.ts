@@ -26,10 +26,10 @@ export class TurnkeySelectionRdo {
   
   @ApiProperty({
     description: 'Модель',
-    example: ''
+    example: ['']
   })
   @Expose()
-  public autoModel: string;
+  public autoModel: string[];
 
   @ApiProperty({
     description: 'Пробег',

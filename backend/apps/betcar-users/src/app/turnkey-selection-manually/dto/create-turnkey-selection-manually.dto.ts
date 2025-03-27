@@ -22,9 +22,9 @@ export class CreateTurnkeySelectionManuallyDto {
   
   @ApiProperty({
     description: 'Модель',
-    example: ''
+    example: ['']
   })
-  public autoModel: string;
+  public autoModel: string[];
 
   @ApiProperty({
     description: 'Год выпуска',

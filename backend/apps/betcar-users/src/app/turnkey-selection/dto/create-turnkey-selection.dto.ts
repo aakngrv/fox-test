@@ -16,9 +16,9 @@ export class CreateTurnkeySelectionDto {
   
   @ApiProperty({
     description: 'Модель',
-    example: ''
+    example: ['']
   })
-  public autoModel: string;
+  public autoModel: string[];
 
   @ApiProperty({
     description: 'Пробег',

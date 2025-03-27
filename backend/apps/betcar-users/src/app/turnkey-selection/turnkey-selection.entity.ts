@@ -5,7 +5,7 @@ export class TurnkeySelectionEntity implements TurnkeySelection {
   public turnkeySelectionId?: number;
   public firstname: string;
   public phone: string;
-  public autoModel: string;
+  public autoModel: string[];
   public mileage: string[];
   public gearboxType: string[];
   public driveType: string[];

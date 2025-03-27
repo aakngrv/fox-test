@@ -5,7 +5,7 @@ export class TurnkeySelectionManuallyEntity implements TurnkeySelectionManually 
   public turnkeySelectionManuallyId?: number;
   public firstname: string;
   public phone: string;
-  public autoModel: string;
+  public autoModel: string[];
   public autoMark: string;
   public inspectionRegion: string;
   public sellerPhone: string;
