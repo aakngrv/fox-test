@@ -10,6 +10,7 @@ import { UserFormModule } from './user-form/user-form.module';
 import { TurnkeySelectionModule } from './turnkey-selection/turnkey-selection.module';
 import { TurnkeySelectionManuallyModule } from './turnkey-selection-manually/turnkey-selection-manually.module';
 import { ExpertOnDayModule } from './expert-on-day/expert-on-day.module';
+import { CustomerReviewsModule } from './customer-reviews/customer-reviews.module';
 
 
 @Module({
@@ -24,7 +25,8 @@ import { ExpertOnDayModule } from './expert-on-day/expert-on-day.module';
     UserFormModule,
     TurnkeySelectionModule,
     TurnkeySelectionManuallyModule,
-    ExpertOnDayModule
+    ExpertOnDayModule,
+    CustomerReviewsModule
   ],
   controllers: [],
   providers: [],

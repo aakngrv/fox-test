@@ -1,5 +1,3 @@
-import exp = require("constants");
-
 export interface UserBid {
   bidId?: number;
   firstname: string;

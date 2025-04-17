@@ -137,6 +137,17 @@ model ExpertOnDay {
   @@map("experts_on_day")
 }
 
+model CustomerReviews {
+  customerReviewsId Int      @id @default(autoincrement()) @map("customer_review_id")
+  userId            String   @default("") @map("user_id")
+  userName          String   @default("") @map("user_name")
+  userReview        String   @default("") @map("user_review")
+  ourAnswer         String   @default("") @map("our_answer")
+  createdAt         DateTime @default(now()) @map("created_at")
+
+  @@map("customers_reviews")
+}
+
 
 // ************************************************************************************************ //
 
