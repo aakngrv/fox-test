@@ -24,7 +24,7 @@ export class FileService {
     private readonly applicationConfig: ConfigType<typeof uploaderConfig>,
     private readonly fileRepository: FileRepository,
   ) {}
-  private async writeFile(file: Express.Multer.File): Promise<WritedFile> {
+  private async writeFile(file: any): Promise<WritedFile> {
     const [ year, month, day ] = dayjs().format('YYYY MM DD').split(' ');
     const { uploadDirectory } = this.applicationConfig;
     const subDirectory = `${year}/${month}/${day}`;
