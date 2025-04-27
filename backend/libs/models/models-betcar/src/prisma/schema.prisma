@@ -106,7 +106,8 @@ model TurnkeySelection {
   colors             String[] @default([""]) 
   engineType         String[] @default([""]) @map("engine_type")
   linkToAd           String   @default("")  @map("link_to_ad")
-  createdAt    DateTime  @default(now()) @map("created_at")
+  isPremium          Boolean @default(false) @map("is_premium")
+  createdAt          DateTime  @default(now()) @map("created_at")
 
    @@map("turnkey_selections")
 }
@@ -121,6 +122,7 @@ model TurnkeySelectionManually {
   colors                     String[] @default([""]) 
   inspectionRegion           String   @default("") @map("inspection_region")
   sellerPhone                String   @default("") @map("seller_phone")
+  isPremium                  Boolean @default(false) @map("is_premium")
   createdAt                  DateTime @default(now()) @map("created_at")
 
    @@map("turnkey_selections_manually")

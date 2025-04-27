@@ -63,6 +63,12 @@ export class CreateTurnkeySelectionDto {
   public engineType: string[];
 
   @ApiProperty({
+    description: 'Тип тарифа',
+    example: false
+  })
+  public isPremium: boolean;
+
+  @ApiProperty({
     description: 'Дата создания',
     example: ''
   })

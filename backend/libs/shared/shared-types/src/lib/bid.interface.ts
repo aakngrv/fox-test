@@ -42,6 +42,7 @@ export interface TurnkeySelection {
   colors: string[];
   engineType: string[];
   linkToAd: string;
+  isPremium: boolean;
   createdAt: Date;
 }
 
@@ -55,6 +56,7 @@ export interface TurnkeySelectionManually {
   colors: string[];
   inspectionRegion: string;
   sellerPhone: string;
+  isPremium: boolean;
   createdAt: Date;
 }
 

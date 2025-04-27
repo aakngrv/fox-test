@@ -65,6 +65,13 @@ export class TurnkeySelectionManuallyRdo {
   })
   @Expose()
   public sellerPhone: string;
+  
+  @ApiProperty({
+    description: 'Тип тарифа',
+    example: false
+  })
+  @Expose()
+  public isPremium: boolean;
 
   @ApiProperty({
     description: 'Дата создания',

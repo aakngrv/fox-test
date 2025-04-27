@@ -11,6 +11,7 @@ export class TurnkeySelectionManuallyEntity implements TurnkeySelectionManually 
   public sellerPhone: string;
   public yearOfIssue: string[];
   public colors: string[];
+  public isPremium: boolean;
   public createdAt: Date;
 
   constructor(turnkeySelectionManuallyId: TurnkeySelectionManually) {
@@ -28,6 +29,7 @@ export class TurnkeySelectionManuallyEntity implements TurnkeySelectionManually 
     this.sellerPhone = turnkeySelectionManuallyId.sellerPhone;
     this.yearOfIssue = turnkeySelectionManuallyId.yearOfIssue;
     this.colors = turnkeySelectionManuallyId.colors;
+    this.isPremium = turnkeySelectionManuallyId.isPremium;
     this.createdAt = new Date();
   }
 
