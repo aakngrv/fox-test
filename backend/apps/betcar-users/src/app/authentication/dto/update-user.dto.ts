@@ -75,7 +75,7 @@ export class UpdateUserDto {
 
   @ApiProperty({
     description: 'Купленные отчеты ползователя',
-    example: [0]
+    example: []
   })
   public reports: number[];
 
