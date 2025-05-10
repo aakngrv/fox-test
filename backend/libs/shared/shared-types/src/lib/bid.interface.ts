@@ -1,5 +1,3 @@
-import exp = require("constants");
-
 export interface UserBid {
   bidId?: number;
   firstname: string;
@@ -44,6 +42,7 @@ export interface TurnkeySelection {
   colors: string[];
   engineType: string[];
   linkToAd: string;
+  isPremium: boolean;
   createdAt: Date;
 }
 
@@ -51,12 +50,13 @@ export interface TurnkeySelectionManually {
   turnkeySelectionManuallyId?: number;
   firstname: string;
   phone: string
-  autoModel: string[];
+  autoModel: string;
   autoMark: string;
   yearOfIssue: string[];
   colors: string[];
   inspectionRegion: string;
   sellerPhone: string;
+  isPremium: boolean;
   createdAt: Date;
 }
 

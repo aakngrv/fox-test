@@ -81,6 +81,13 @@ export class TurnkeySelectionRdo {
   public linkToAd: string;
 
   @ApiProperty({
+    description: 'Тип тарифа',
+    example: false
+  })
+  @Expose()
+  public isPremium: boolean;
+
+  @ApiProperty({
     description: 'Дата создания',
     example: ''
   })

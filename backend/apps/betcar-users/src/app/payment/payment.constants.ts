@@ -1,4 +1,4 @@
-export const SHOP_ID = '990633';
-export const SHOP_PASSWORD = 'live_DrxUqOiVxN7tMlZJ6A9MGNHVZqa3eG7ywD3v_DLn1zM';
+export const SHOP_ID = '1061043';
+export const SHOP_PASSWORD = 'live_i_PJbqz_Tlmty50RE6uISVLPMvktquXURfy7-nOhf1k';
 export const PAYMENT_URL = `https://api.yookassa.ru/v3/payments`;
-export const RETURN_URL = "https://www.betcar.ru";
+export const RETURN_URL = "https://www.lotcars.com";

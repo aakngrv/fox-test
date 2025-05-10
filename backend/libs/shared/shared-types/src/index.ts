@@ -6,3 +6,4 @@ export * from './lib/refresh-token-payload.interface';
 export * from './lib/token.interface';
 export * from './lib/file.interface';
 export * from './lib/bid.interface';
+export * from './lib/customer-reviews.interface';
