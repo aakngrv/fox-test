@@ -5,11 +5,11 @@ export interface User {
   email: string;
   city: string;
   phone: string;
-  customer: boolean;
-  executor: boolean;
-  admin: boolean;
+  customer?: boolean;
+  executor?: boolean;
+  admin?: boolean;
   userBalance: string;
-  passwordHash: string;
+  passwordHash?: string;
   createdAt: Date;
   reports?: number[];
   avatar: string;

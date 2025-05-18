@@ -99,10 +99,10 @@ export class AuthenticationService {
       email,
       city,
       phone,
-      customer,
-      executor,
-      admin,
-      passwordHash,
+      // customer,
+      // executor,
+      // admin,
+      // passwordHash,
       createdAt,
       userBalance,
       reports,
@@ -115,10 +115,10 @@ export class AuthenticationService {
       email,
       city,
       phone,
-      customer: true,
-      executor,
-      admin,
-      passwordHash: '',
+      // customer: true,
+      // executor,
+      // admin,
+      // passwordHash: '',
       userBalance,
       createdAt: new Date(),
       reports,
@@ -133,7 +133,7 @@ export class AuthenticationService {
     // }
 
     const userUpdateEntity = await new BetcarUserEntity(betcarUser)
-      .setPassword(passwordHash)
+      // .setPassword(passwordHash)
     
     return this.betcarUserRepository.update(id, userUpdateEntity);
   }

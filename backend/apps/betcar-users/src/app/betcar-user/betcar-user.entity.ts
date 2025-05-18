@@ -7,11 +7,11 @@ export class BetcarUserEntity implements User {
   public email: string;
   public firstname: string;
   public lastname: string;
-  public passwordHash: string;
+  public passwordHash?: string;
   public phone: string;
-  public executor: boolean;
-  public customer: boolean;
-  public admin: boolean;
+  public executor?: boolean;
+  public customer?: boolean;
+  public admin?: boolean;
   public city: string;
   public userBalance: string;
   public createdAt: Date;

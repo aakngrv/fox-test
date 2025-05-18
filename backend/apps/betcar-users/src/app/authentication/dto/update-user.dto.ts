@@ -38,33 +38,33 @@ export class UpdateUserDto {
   @IsString()
   public lastname: string;
 
-  @ApiProperty({
-    description: 'Пароль пользователя',
-    example: 'Password123456'
-  })
-  @IsString()
-  public passwordHash: string;
+  // @ApiProperty({
+  //   description: 'Пароль пользователя',
+  //   example: 'Password123456'
+  // })
+  // @IsString()
+  // public passwordHash: string;
 
-  @ApiProperty({
-    description: 'Роль - осмотрщик',
-    example: false
-  })
-  @IsBoolean()
-  public executor: boolean;
+  // @ApiProperty({
+  //   description: 'Роль - осмотрщик',
+  //   example: false
+  // })
+  // @IsBoolean()
+  // public executor: boolean;
 
-  @ApiProperty({
-    description: 'Роль - пользователь',
-    example: false
-  })
-  @IsBoolean()
-  public customer: boolean;
+  // @ApiProperty({
+  //   description: 'Роль - пользователь',
+  //   example: false
+  // })
+  // @IsBoolean()
+  // public customer: boolean;
 
-  @ApiProperty({
-    description: 'Роль - админ',
-    example: false
-  })
-  @IsBoolean()
-  public admin: boolean;
+  // @ApiProperty({
+  //   description: 'Роль - админ',
+  //   example: false
+  // })
+  // @IsBoolean()
+  // public admin: boolean;
 
   @ApiProperty({
     description: 'Баланс пользователя',
