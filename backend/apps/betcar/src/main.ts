@@ -15,8 +15,8 @@ async function bootstrap() {
   });
 
   const config = new DocumentBuilder()
-  .setTitle('The «Betcar» service')
-  .setDescription('Betcars service API')
+  .setTitle('The Lotcars service')
+  .setDescription('Lotcars service API')
   .setVersion('1.0')
   .build();
 

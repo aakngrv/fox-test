@@ -4,19 +4,19 @@ import { SALT_ROUNDS } from './betcar-user.constants';
 
 export class BetcarUserEntity implements User {
   public userId?: number;
-  public email: string;
-  public firstname: string;
-  public lastname: string;
+  public email?: string;
+  public firstname?: string;
+  public lastname?: string;
   public passwordHash?: string;
-  public phone: string;
+  public phone?: string;
   public executor?: boolean;
   public customer?: boolean;
   public admin?: boolean;
-  public city: string;
-  public userBalance: string;
-  public createdAt: Date;
+  public city?: string;
+  public userBalance?: string;
+  public createdAt?: Date;
   public reports?: number[];
-  public avatar: string;
+  public avatar?: string;
 
   constructor(betcarUser: User) {
     this.fillEntity(betcarUser);

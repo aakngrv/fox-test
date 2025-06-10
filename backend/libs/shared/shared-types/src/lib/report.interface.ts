@@ -5,6 +5,8 @@ export interface Report {
   reportNumber?: number;
   title?: string;
   isPrime?: boolean;
+  uniqueLink?: string;
+  isActivatedLink?: boolean;
 
   sellerDetailsRefusalOfInspection?: boolean;
   sellerDetailsLinkToAd?: string;

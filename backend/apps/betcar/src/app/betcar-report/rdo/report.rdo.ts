@@ -45,6 +45,20 @@ export class ReportRdo {
   @Expose()
   public isPrime: boolean;
 
+    @ApiProperty({
+    description: 'Проверка активации ссылки',
+    example: false
+  })
+  @Expose()
+  public isActivatedLink?: boolean;
+
+  @ApiProperty({
+    description: 'Уникальная ссылка на отчет',
+    example: ''
+  })
+  @Expose()
+  public uniqueLink?: string;
+
   @ApiProperty({
     description: 'Отказа от осмотра',
     example: false

@@ -2,6 +2,7 @@ import { Entity } from '@backend/util/util-types';
 import {
   Report
  } from '@backend/shared/shared-types';
+ import { v4 as uuidv4 } from 'uuid';
 
 
 export class BetcarReportEntity implements Entity<BetcarReportEntity>, Report {
@@ -13,6 +14,8 @@ export class BetcarReportEntity implements Entity<BetcarReportEntity>, Report {
   public reportNumber?: number;
   public vinNumber?: string;
   public isPrime?: boolean;
+  public uniqueLink?: string;
+  public isActivatedLink?: boolean;
   public sellerDetailsRefusalOfInspection?: boolean;
   public sellerDetailsLinkToAd?: string;
   public sellerDetailsName?: string;
@@ -662,8 +665,6 @@ export class BetcarReportEntity implements Entity<BetcarReportEntity>, Report {
     this.fillEntity(report);
   }
 
-
-
   public fillEntity(entity: Report): void {
     this.reportId = entity.reportId;
     this.userId = entity.userId;
@@ -671,6 +672,8 @@ export class BetcarReportEntity implements Entity<BetcarReportEntity>, Report {
     this.userEmail = entity.userEmail;
     this.reportNumber = entity.reportNumber;
     this.isPrime = entity.isPrime;
+    this.uniqueLink = uuidv4();
+    this.isActivatedLink = entity.isActivatedLink;
     this.sellerDetailsRefusalOfInspection = entity.sellerDetailsRefusalOfInspection;
     this.sellerDetailsLinkToAd = entity.sellerDetailsLinkToAd;
     this.sellerDetailsName = entity.sellerDetailsName;

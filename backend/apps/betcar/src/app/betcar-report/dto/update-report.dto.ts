@@ -1,7 +1,7 @@
 import { ApiProperty } from '@nestjs/swagger';
 
 export class UpdateReportDto {
-   
+
   @ApiProperty({
     description: 'ID пользователя',
     example: 1

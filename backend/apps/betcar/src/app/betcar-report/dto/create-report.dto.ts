@@ -25,6 +25,18 @@ export class CreateReportDto {
     example: false
   })
   public isPrime: boolean;
+  
+  @ApiProperty({
+    description: 'Проверка активации ссылки',
+    example: false
+  })
+  public isActivatedLink?: boolean;
+
+  @ApiProperty({
+    description: 'Уникальная ссылка на отчет',
+    example: ''
+  })
+  public uniqueLink?: string;
 
   @ApiProperty({
     description: 'Отказа от осмотра',
