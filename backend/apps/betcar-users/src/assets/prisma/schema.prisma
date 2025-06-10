@@ -156,14 +156,16 @@ model CustomerReviews {
 // ** Модели сервиса "betcar" ** //
 
 model Report {
-  reportId     Int       @id @default(autoincrement()) @map("report_id")
-  userId       Int       @map("user_id")
-  title        String    @default("")
-  userEmail    String    @default("") @map("user_email")
-  reportNumber Int       @default(autoincrement()) @map("report_number")
-  isPrime      Boolean   @default(false) @map("is_prime")
-  createdAt    DateTime  @default(now()) @map("created_at")
-  publishAt    DateTime  @updatedAt @map("publish_at")
+  reportId        Int       @id @default(autoincrement()) @map("report_id")
+  userId          Int       @map("user_id")
+  title           String    @default("")
+  userEmail       String    @default("") @map("user_email")
+  reportNumber    Int       @default(autoincrement()) @map("report_number")
+  isPrime         Boolean   @default(false) @map("is_prime")
+  createdAt       DateTime  @default(now()) @map("created_at")
+  publishAt       DateTime  @updatedAt @map("publish_at")
+  uniqueLink      String    @default("") @map("unique_link")
+  isActivatedLink Boolean   @default(false) @map("is_activated_link")
 
 
   sellerDetailsRefusalOfInspection Boolean  @default(false) @map("seller_details_refusal_of_inspection")
