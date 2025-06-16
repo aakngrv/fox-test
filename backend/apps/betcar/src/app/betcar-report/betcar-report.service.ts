@@ -9,6 +9,7 @@ import { userEmailDto } from './dto/user-email.dto';
 import { reportNumberDto } from './dto/report-number.dto';
 import { StateNumberSearchDto } from './dto/state-number-search.dto';
 import { LinkSearchDto } from './dto/link-search.dto';
+import { HashSearchDto } from './dto/hash-search.dto';
 
 
 @Injectable()
@@ -52,6 +53,11 @@ export class BetcarReportService {
   async getReportByLink(link: LinkSearchDto): Promise<Report[]> {
     const { sellerDetailsLinkToAd } = link;
     return await this.betcarReportRepository.findByLink(sellerDetailsLinkToAd);
+  }
+
+    async getReportByHash(hash: HashSearchDto): Promise<Report[]> {
+    const { uniqueLink } = hash;
+    return await this.betcarReportRepository.findByHash(uniqueLink);
   }
 
   async getReportByEmail(email: userEmailDto): Promise<Report[]> {
