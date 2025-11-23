@@ -4,11 +4,9 @@ export function createJWTPayload(user: User): TokenPayload {
   return {
     sub: user.userId,
     email: user.email,
-    customer: user.customer,
+    author: user.author,
     executor: user.executor,
-    admin: user.admin,
-    lastname: user.lastname,
-    firstname: user.firstname,
-    userBalance: user.userBalance,
+    userName: user.name,
+ 
   };
 }

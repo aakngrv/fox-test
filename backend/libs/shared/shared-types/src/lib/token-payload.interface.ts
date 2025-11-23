@@ -1,10 +1,7 @@
 export interface TokenPayload {
   sub: number;
   email: string;
-  customer: boolean;
+  author: boolean;
   executor: boolean;
-  admin: boolean;
-  lastname: string;
-  firstname: string;
-  userBalance: string;
+  userName: string;
 }

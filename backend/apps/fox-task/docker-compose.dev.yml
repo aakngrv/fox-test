@@ -1,0 +1,42 @@
+version: '3.5'
+services:
+  fox.postgres:
+    image: postgres:14-alpine
+    container_name: fox.postgres 
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: test
+      POSTGRES_DB: fox
+    ports:
+      - 5432:5432
+    volumes:
+      - fox.postgres:/var/lib/postgresql/data
+
+    healthcheck:
+      test: [ "CMD-SHELL", "pg_isready -U admin -d test" ]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 10s
+
+    networks:
+      - fox
+
+  fox.pgadmin:
+    image: dpage/pgadmin4
+    container_name: fox.pgadmin
+    environment:
+      PGADMIN_DEFAULT_EMAIL: "fox@list.ru"
+      PGADMIN_DEFAULT_PASSWORD: "test"
+      PGADMIN_CONFIG_SERVER_MODE: "False"
+    ports:
+      - 8082:80
+    networks:
+      - fox
+
+volumes:
+  fox.postgres:
+
+networks:
+  fox:
+      driver: bridge
