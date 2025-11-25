@@ -15,18 +15,12 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@backend/config/config-betcar": [
-        "libs/config/config-betcar/src/index.ts"
-      ],
-      "@backend/config/config-notify": [
-        "libs/config/config-notify/src/index.ts"
-      ],
-      "@backend/config/config-uploader": [
-        "libs/config/config-uploader/src/index.ts"
+      "@backend/config/config-task": [
+        "libs/config/config-task/src/index.ts"
       ],
       "@backend/config/config-users": ["libs/config/config-users/src/index.ts"],
-      "@backend/models/models-betcar": [
-        "libs/models/models-betcar/src/index.ts"
+      "@backend/models/models-task": [
+        "libs/models/models-task/src/index.ts"
       ],
       "@backend/shared/shared-pipes": ["libs/shared/shared-pipes/src/index.ts"],
       "@backend/shared/shared-types": ["libs/shared/shared-types/src/index.ts"],
