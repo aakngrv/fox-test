@@ -1,10 +1,9 @@
-import {useEffect, useState} from 'react';
+import { useEffect, useState } from 'react';
 import {Alert, Button, Form, Input} from 'antd';
 import axios from 'axios';
-import { Checkbox } from 'antd';
 import { CREATE_TASK_URL } from "../constants/links.ts";
 import { DATE, POST } from "../constants/constants.ts";
-import {useNavigate} from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
 
 
 type FieldType = {
@@ -12,17 +11,15 @@ type FieldType = {
   description?: string;
   author?: string;
   executor?: string;
-  email?: string;
 };
 
 
 function Task() {
 
   const [title, setTitle] = useState<string>('');
-  const [email, setEmail] = useState<string>('');
   const [description, setDescription] = useState<string>('');
-  const [author, setAuthor] = useState<boolean>(false);
-  const [executor, setExecutor] = useState<boolean>(false);
+  const [author, setAuthor] = useState<string>('');
+  const [executor, setExecutor] = useState<string>('');
   const [isSuccess, setIsSuccess] = useState(false);
   const [isError, setIsError] = useState(false);
 
@@ -37,17 +34,15 @@ function Task() {
 
   function createTask(
     title: string,
-    mail: string,
     description: string,
-    author: boolean,
-    executor: boolean
+    author: string,
+    executor: string
   ) {
     axios({
       method: POST,
       url: CREATE_TASK_URL ,
       data: {
         title: title,
-        userEmail: mail,
         description: description,
         author: author,
         executor: executor,
@@ -90,19 +85,6 @@ function Task() {
       </Form.Item>
 
       <Form.Item<FieldType>
-
-        style={{ minWidth: 340 }}
-        name="email"
-        rules={[{ required: true, message: 'Введите email!' }]}
-      >
-        <Input
-          type="email"
-          placeholder="Email"
-          onChange={(e) => setEmail(e.target.value)}
-        />
-      </Form.Item>
-
-      <Form.Item<FieldType>
         style={{ minWidth: 340 }}
         name="description"
         rules={[{ required: true, message: 'Введите описание!' }]}
@@ -114,21 +96,25 @@ function Task() {
       </Form.Item>
 
       <Form.Item<FieldType>
+        style={{ minWidth: 340 }}
         name="author"
-        valuePropName="checked"
-        label={null}
-        style={{ display: 'flex', justifyContent: 'start', marginRight: 'auto' }}
+        rules={[{ required: true, message: 'Укажите автора!' }]}
       >
-        <Checkbox onChange={(event) => setAuthor(event.target.checked)}>Автор</Checkbox>
+        <Input type="text"
+               placeholder="Автор"
+               onChange={(e) => setAuthor(e.target.value)}
+        />
       </Form.Item>
 
       <Form.Item<FieldType>
+        style={{ minWidth: 340 }}
         name="executor"
-        valuePropName="checked"
-        label={null}
-        style={{ display: 'flex', justifyContent: 'start', marginRight: 'auto' }}
+        rules={[{ required: true, message: 'Укажите исполнителя!' }]}
       >
-        <Checkbox onChange={(event) => setExecutor(event.target.checked)}>Исполнитель</Checkbox>
+        <Input type="text"
+               placeholder="Исполнитель"
+               onChange={(e) => setExecutor(e.target.value)}
+        />
       </Form.Item>
 
       <Form.Item
@@ -138,10 +124,17 @@ function Task() {
         <Button
           type="primary"
           htmlType="submit"
-          onClick={() => createTask(title, email, description, author, executor )} style={{ width: 340 }}
+          onClick={() => createTask(title, description, author, executor )} style={{ width: 340 }}
         >
           Создать
         </Button>
+      </Form.Item>
+      <Form.Item label={null} style={{ display: 'flex', justifyContent: 'center'}}>
+        <Link to="/tasks">
+          <Button type="primary"  style={{width: 340}}>
+            Посмотреть задачи
+          </Button>
+        </Link>
       </Form.Item>
       {isSuccess ?
         <Alert title="Задача создана!" type="success" showIcon />
