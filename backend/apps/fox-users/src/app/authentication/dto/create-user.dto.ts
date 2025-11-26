@@ -13,20 +13,6 @@ export class CreateUserDto {
   public name: string;
 
   @ApiProperty({
-    description: 'Роль пользователя',
-    example: false
-  })
-  @IsBoolean()
-  public author: boolean;
-
-  @ApiProperty({
-    description: 'Роль пользователя',
-    example: false
-  })
-  @IsBoolean()
-  public executor: boolean;
-
-  @ApiProperty({
     description: 'Почта пользователя',
     example: ''
   })

@@ -37,14 +37,6 @@ export class TaskRepository implements CRUDRepository<TaskEntity, number, Task> 
     });
   }
 
-  public async findByEmail(userEmail: string): Promise<Task[] | null> {
-    return this.prisma.task.findMany({
-      where: {
-        userEmail: userEmail
-      },
-    });
-  }
-
   public find(): Promise<Task[]> {
     return this.prisma.task.findMany({});
   }

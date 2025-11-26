@@ -18,33 +18,25 @@ export class TaskRdo {
   public title: string;
 
   @ApiProperty({
-    description: 'Роль пользователя',
-    example: false
-  })
-  @Expose()
-  public author: boolean;
-
-  @ApiProperty({
-    description: 'Роль пользователя',
-    example: false
-  })
-  @Expose()
-  public executor: boolean;
-
-  @ApiProperty({
     description: 'Описание задачи',
     example: ''
   })
   @Expose()
   public description: string;
 
-
   @ApiProperty({
-    description: 'Email пользователя',
+    description: 'Роль пользователя',
     example: ''
   })
   @Expose()
-  public userEmail: string;
+  public author: string;
+
+  @ApiProperty({
+    description: 'Роль пользователя',
+    example: ''
+  })
+  @Expose()
+  public executor: string;
 
 
   @ApiProperty({

@@ -1,7 +1,7 @@
 export interface Task {
   taskId?: number;
-  author?: boolean;
-  executor?: boolean;
+  author?: string;
+  executor?: string;
   userEmail?: string;
   description?: string;
   title?: string;

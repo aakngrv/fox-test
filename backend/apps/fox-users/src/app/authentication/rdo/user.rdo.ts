@@ -17,21 +17,7 @@ export class UserRdo {
   })
   @Expose()
   public name: string;
-
-  @ApiProperty({
-     description: 'Роль пользователя',
-     example: false
-   })
-   @Expose()
-   public author: boolean;
- 
-   @ApiProperty({
-     description: 'Роль пользователя',
-     example: false
-   })
-   @Expose()
-   public executor: boolean;
-
+  
   @ApiProperty({
     description: 'Почта пользователя',
     example: ''

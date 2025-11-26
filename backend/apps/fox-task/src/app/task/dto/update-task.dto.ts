@@ -10,31 +10,23 @@ export class UpdateTaskDto {
   public title: string;
 
   @ApiProperty({
-    description: 'Роль пользователя',
-    example: false
-  })
-  public author: boolean;
-
-  @ApiProperty({
-    description: 'Роль пользователя',
-    example: false
-  })
-  public executor: boolean;
-
-  @ApiProperty({
     description: 'Описание задачи',
     example: ''
   })
   public description: string;
 
-
   @ApiProperty({
-    description: 'Email пользователя',
+    description: 'Роль пользователя',
     example: ''
   })
-  public userEmail: string;
+  public author: string;
 
-
+  @ApiProperty({
+    description: 'Роль пользователя',
+    example: ''
+  })
+  public executor: string;
+  
   @ApiProperty({
     description: 'Дата создания',
     example: ''

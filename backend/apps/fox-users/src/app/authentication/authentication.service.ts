@@ -26,16 +26,12 @@ export class AuthenticationService {
       email,
       password,
       createdAt,
-      author,
-      executor,
       name,
 
     } = dto;
 
     const user = {
       email,
-      author,
-      executor,
       passwordHash: '',
       createdAt: new Date(),
       name,
@@ -83,15 +79,11 @@ export class AuthenticationService {
     const {
     email,
     createdAt,
-    author,
-    executor,
     name,
     } = dto;
 
     const user = {
       email,
-      author,
-      executor,
       passwordHash: '',
       createdAt: new Date(),
       name,
@@ -107,8 +99,6 @@ export class AuthenticationService {
       sub: user.userId,
       email: user.email,
       userName: user.name,
-      author: user.author,
-      executor: user.executor,
     };
 
     return {

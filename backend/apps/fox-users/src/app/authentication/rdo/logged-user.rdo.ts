@@ -23,20 +23,6 @@ export class LoggedUserRdo {
   })
   @Expose()
   public accessToken: string;
-  
-   @ApiProperty({
-     description: 'Роль пользователя',
-     example: false
-   })
-   @Expose()
-   public author: boolean;
- 
-   @ApiProperty({
-     description: 'Роль пользователя',
-     example: false
-   })
-   @Expose()
-   public executor: boolean;
 
   @ApiProperty({
     description: 'Refresh token',

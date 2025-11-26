@@ -6,8 +6,6 @@ export class UserEntity implements User {
   public userId?: number;
   public name?: string;
   public email?: string;
-  public author?: boolean;
-  public executor?: boolean;
   public passwordHash?: string;
   public createdAt?: Date;
 
@@ -19,8 +17,6 @@ export class UserEntity implements User {
   this.userId = user.userId;
   this.name = user.name;
   this.email = user.email;
-  this.author = user.author;
-  this.executor = user.executor;
   this.passwordHash = user.passwordHash;
   this.createdAt = new Date();
   }
