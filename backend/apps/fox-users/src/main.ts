@@ -1,0 +1,40 @@
+import { Logger } from '@nestjs/common';
+import { NestFactory } from '@nestjs/core';
+import { ConfigService } from '@nestjs/config';
+import { AppModule } from './app/app.module';
+import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
+
+async function bootstrap() {
+  const app = await NestFactory.create(AppModule);
+  app.enableCors({
+    origin: true,
+    methods: 'GET, POST, PUT, DELETE, HEAD, OPTIONS, PATCH',
+    credentials: true
+  });
+ 
+
+  const config = new DocumentBuilder()
+    .setTitle('The Fox Users» service')
+    .setDescription('Fox Users service API')
+    .setVersion('1.0')
+    .build();
+  
+  const globalPrefix = 'api';
+  app.setGlobalPrefix(globalPrefix);
+
+  const configService = app.get(ConfigService);
+
+  const document = SwaggerModule.createDocument(app, config);
+  SwaggerModule.setup('api', app, document);
+
+  const port = configService.get('application.port');
+  await app.listen(port);
+  Logger.log(
+    `🚀 Application is running on: http://localhost:${port}/${globalPrefix}`
+  );
+  Logger.log(
+    `🎯  Current mode: ${configService.get('application.environment')}`
+  )
+}
+
+bootstrap();
